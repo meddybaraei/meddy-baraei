@@ -2,10 +2,11 @@
 
 **Tag in post:** @Ring  @Google Nest
 **Link:** https://novaprohome.com/contact (same landing page as the Google Ads "Ring – NoVA" campaign)
+**Hashtags:** built from your Google Ads keywords (Ring – NoVA, Google Nest – NoVA and Smart Locks ad groups)
 
 **Photos — upload in this order (Facebook carousel, 10 images):**
 1. `01_arlington_ring_install.jpg`: Ring Camera Installation, Arlington (cover image)
-2. `02_nest_install.jpg`: Nest Camera Installation (Nest Cam with Floodlight; house number blurred)
+2. `02_nest_install.jpg`: Nest Camera Installation, Vienna (Nest Cam with Floodlight; house number blurred)
 3. `03_mclean_solar_install.jpg`: Ring Solar Panel Installation, McLean (4 panels)
 4. `04_installer_on_ladder.jpg`: on the job, mounting under the deck
 5. `05_installer_garage.jpg`: on the job at the garage
@@ -28,7 +29,7 @@ Nova Pro Home is a **Ring Authorized Dealer** and **Google Nest Pro** serving Lo
 Recent jobs 👇
 📍 **Arlington**: Ring Spotlight & Floodlight Cams, mounted clean on stone, trim and deck framing
 📍 **McLean**: 4 Ring Solar Panels installed, so the cameras stay charged with no batteries to swap and no wires to run ☀️
-📍 **Google Nest**: Nest Cam and Nest Cam with Floodlight, hardwired on board-and-batten siding to cover the driveway and backyard porch 🏠
+📍 **Vienna**: Google Nest Cam and Nest Cam with Floodlight, hardwired on board-and-batten siding to cover the driveway and backyard porch 🏠
 
 We handle it all, start to finish:
 ✅ Ring & Nest video doorbells, wired properly, with transformer and chime upgrades when needed
@@ -45,13 +46,15 @@ No DIY headaches. No ladders. No guesswork. Just a clean install, done right. �
 📞 Call/Text: (571) 241-9569
 📧 meddy@novaprohome.com
 
-#NovaProHome #Ring #GoogleNest #NestPro #RingDoorbell #RingSolar #SmartHome #HomeSecurity #SmartHomeInstallation #NorthernVirginia #NoVA #Arlington #McLean #LoudounCounty #FairfaxCounty #Sterling #Ashburn
+#NovaProHome #RingCameraInstallation #RingDoorbellInstallation #RingDoorbellInstaller #InstallRingDoorbell #RingFloodlightInstallation #DoorbellCameraInstallation #VideoDoorbellInstallation #FloodlightCameraInstallation #GoogleNestInstaller #NestProInstaller #NestDoorbellInstallation #NestThermostatInstallation #SmartThermostatInstallation #SmartLockInstallation
+#NorthernVirginia #NoVA #Arlington #McLean #Vienna #FairfaxCounty #LoudounCounty #Sterling #Ashburn
 
 ---
 
 ## Short version (for a Story / Reel caption)
 
-Ring 🔔 + Nest 🏠 installed by pros. Latest jobs: Arlington cameras, McLean solar ☀️ and Nest floodlight cams
+Ring 🔔 + Nest 🏠 installed by pros. Latest jobs: Arlington cameras, McLean solar ☀️ and Vienna Nest floodlight cams
+#RingDoorbellInstallation #GoogleNestInstaller #NestProInstaller #RingCameraInstallation #NorthernVirginia
 Nova Pro Home: Ring Authorized Dealer & Google Nest Pro in Northern Virginia.
 Free quote 👉 novaprohome.com/contact · (571) 241-9569
 
