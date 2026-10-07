@@ -27,6 +27,7 @@ Work top to bottom; mark each one done with the date.
 - AI-generated footage only with the owner's OK, and it must be labeled "altered or synthetic content" on upload.
 - **Posting (owner's standing instruction, Oct 7 2026):** Claude acts as the owner's agent for YouTube: creates, schedules and posts directly through Metricool (brand 6916320, YouTube channel @NovaProHome) without asking first. Publish at **4:00 PM ET** Monday & Thursday (Claude chose the days/times at the owner's request). Always: public, not made for kids, category HOWTO_STYLE, `isAiGeneratedContent: true` whenever the video has an AI voice or AI footage. After each post, send the owner a short summary (title, time, planner link).
 - Paid AI credits (vidIQ voiceover / AI video): use only when the vidIQ balance stays above 20 credits after the job; otherwise make the video without voiceover (music only) and say so.
+- **Metricool plan limit:** on Oct 7 the 11th post failed with "You have reached your Metricool account limit." Before scheduling, check getScheduledPosts for ERROR statuses; if a post hits the limit, tell the owner right away (he can upgrade Metricool or upload that video in YouTube Studio). The AI installer Short (video/ai_installer_clip.mp4) is still unposted.
 - Facebook is not part of the standing instruction; cross-post there only when the owner asks.
 
 ## Tools
