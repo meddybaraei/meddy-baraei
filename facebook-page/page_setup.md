@@ -14,7 +14,7 @@ Settings → Edit page → Cover photo → Upload.
 Keep the Nova Pro Home logo (house + lightning bolt). Use the logo on a white square so it reads at small sizes.
 
 ## 3. Page name
-**Nova Pro Home – Ring & Google Nest Installation**
+**Nova Pro Home - Ring & Google Nest Installation** (use a plain hyphen; Facebook rejects the long dash)
 (Facebook may ask for a review on a name change, usually approved within a few days.)
 
 ## 4. Category
