@@ -9,8 +9,8 @@ Work top to bottom; mark each one done with the date.
 
 | # | Topic / title | Monthly searches | Competition | Status |
 |---|---|---|---|---|
-| 1 | How to Wire a Ring Doorbell (Step by Step Install) | ~5,400 | low (19) | ✅ made Oct 7 (`how_to_install_ring_wired_doorbell.mp4`) |
-| 2 | Ring Doorbell Not Working? 5 Fixes to Try First | ~5,400 | low (14) | |
+| 1 | How to Wire a Ring Doorbell (Step by Step Install) | ~5,400 | low (19) | ✅ posted Oct 7 |
+| 2 | Ring Doorbell Not Working? 5 Fixes to Try First (long version; a 3-check Short was posted Oct 7) | ~5,400 | low (14) | |
 | 3 | How to Make Your Ring Doorbell More Sensitive to Motion | ~5,300 | very low (12) | |
 | 4 | How to Hook Up a Ring Solar Panel (use McLean solar photos) | ~5,300 | low (16) | |
 | 5 | How to Reset Your Ring Doorbell | ~5,300 | low (16) | |
@@ -25,7 +25,12 @@ Work top to bottom; mark each one done with the date.
 - End every video with the Nova Pro Home end card (novaprohome.com · (571) 241-9569 · Ring Authorized Dealer · Google Nest Pro).
 - No music baked in (the owner adds licensed music in the YouTube app).
 - AI-generated footage only with the owner's OK, and it must be labeled "altered or synthetic content" on upload.
-- Nothing is uploaded or posted automatically. The owner reviews and uploads.
+- **Posting (owner's standing instruction, Oct 7 2026):** Claude acts as the owner's agent for YouTube: creates, schedules and posts directly through Metricool (brand 6916320, YouTube channel @NovaProHome) without asking first. Publish at **4:00 PM ET** (Metricool best time). Always: public, not made for kids, category HOWTO_STYLE, `isAiGeneratedContent: true` whenever the video has an AI voice or AI footage. After each post, send the owner a short summary (title, time, planner link).
+- Paid AI credits (vidIQ voiceover / AI video): use only when the vidIQ balance stays above 20 credits after the job; otherwise make the video without voiceover (music only) and say so.
+- Facebook is not part of the standing instruction; cross-post there only when the owner asks.
 
 ## Tools
 `video/tools/make_video.py` (vertical photo Short) and `video/tools/make_howto.py` (16:9 how-to with steps) render with Pillow + ffmpeg. Copy one, change the scenes/steps, and render to `video/weekly/YYYY-MM-DD_<slug>.mp4`.
+
+## Posted Oct 7, 2026 (YouTube)
+Intro, Ring doorbell how-to, 7 topic Shorts (cameras placement, battery vs wired, solar, not working 3 checks, Nest compatibility, Airbnb smart locks, why hire a pro), promo Short, AI installer Short. Don't repeat these topics as-is.
