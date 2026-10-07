@@ -5,15 +5,17 @@
 
 **Photos — upload in this order (Facebook carousel, 10 images):**
 1. `01_arlington_ring_install.jpg`: Ring Camera Installation, Arlington (cover image)
-2. `02_mclean_solar_install.jpg`: Ring Solar Panel Installation, McLean (4 panels)
-3. `03_installer_on_ladder.jpg`: on the job, mounting under the deck
-4. `04_installer_garage.jpg`: on the job at the garage
-5. `05_spotlight_cam_stone.jpg`: Spotlight Cam on stone/trim
-6. `06_solar_floodlight.jpg`: solar-powered floodlight cam
-7. `07_solar_stucco.jpg`: solar panel + camera on stucco
-8. `08_ring_doorbell.jpg`: Ring Video Doorbell
+2. `02_nest_install.jpg`: Nest Camera Installation (Nest Cam with Floodlight; house number blurred)
+3. `03_mclean_solar_install.jpg`: Ring Solar Panel Installation, McLean (4 panels)
+4. `04_installer_on_ladder.jpg`: on the job, mounting under the deck
+5. `05_installer_garage.jpg`: on the job at the garage
+6. `06_nest_cam.jpg`: Nest Cam on board-and-batten siding
+7. `07_ring_floodlight.jpg`: Ring Floodlight Cam at the garage corner
+8. `08_ring_doorbell_brick.jpg`: Ring Video Doorbell on brick with mounting plate
 9. `09_ring_collage.jpg`: floodlight & doorbell installs (with logo)
 10. `10_security_collage.jpg`: doorbell, garage cam, Ring Alarm (house number blurred)
+
+Facebook shows 10 photos in a carousel. Spare shots for a follow-up post are in `extras/`.
 
 ---
 
@@ -26,6 +28,7 @@ Nova Pro Home is a **Ring Authorized Dealer** and **Google Nest Pro** serving Lo
 Recent jobs 👇
 📍 **Arlington**: Ring Spotlight & Floodlight Cams, mounted clean on stone, trim and deck framing
 📍 **McLean**: 4 Ring Solar Panels installed, so the cameras stay charged with no batteries to swap and no wires to run ☀️
+📍 **Google Nest**: Nest Cam and Nest Cam with Floodlight, hardwired on board-and-batten siding to cover the driveway and backyard porch 🏠
 
 We handle it all, start to finish:
 ✅ Ring & Nest video doorbells, wired properly, with transformer and chime upgrades when needed
@@ -48,7 +51,7 @@ No DIY headaches. No ladders. No guesswork. Just a clean install, done right. �
 
 ## Short version (for a Story / Reel caption)
 
-Ring 🔔 + Nest 🏠 installed by pros. Latest jobs: Arlington cameras + McLean solar ☀️
+Ring 🔔 + Nest 🏠 installed by pros. Latest jobs: Arlington cameras, McLean solar ☀️ and Nest floodlight cams
 Nova Pro Home: Ring Authorized Dealer & Google Nest Pro in Northern Virginia.
 Free quote 👉 novaprohome.com/contact · (571) 241-9569
 
