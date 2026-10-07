@@ -188,10 +188,12 @@ steps = [
     ('Test everything', 'Press the button and listen for your chime. Check live view, then set motion zones in the app.', v_test()),
 ]
 
-scenes = [(4.0, title_slide()), (5.0, safety_slide())]
+import json, os
+D = json.loads(os.environ['DURS']) if os.environ.get('DURS') else [4.0, 5.0] + [6.5] * len(steps) + [6.0]
+scenes = [(D[0], title_slide()), (D[1], safety_slide())]
 for i, (t, b, v) in enumerate(steps, 1):
-    scenes.append((6.5, step_slide(i, len(steps), t, b, v)))
-scenes.append((6.0, outro_slide()))
+    scenes.append((D[i + 1], step_slide(i, len(steps), t, b, v)))
+scenes.append((D[-1], outro_slide()))
 scenes[0][1].save(S + 'howto_thumb.jpg', quality=90)
 
 XF = 0.4
