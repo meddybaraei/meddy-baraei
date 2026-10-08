@@ -2,38 +2,39 @@
  "badge": "Smart Home Starter Series \u00b7 1/10",
  "scenes": [
   {
-   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
+   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
    "kicker": "Product 1 \u00b7 The best place to start",
    "title": "Ring Video Doorbell",
    "body": "See, hear and talk to anyone at your door.",
-   "dur": 4.2
+   "dur": 3.8
   },
   {
-   "photo": "facebook-post/extras/ring_doorbell_trim.jpg",
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "kicker": "Our install",
+   "title": "Wired Doorbell 4K Pro",
+   "body": "Mounted on the door trim, wired and set up.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_storm_door.jpg",
    "kicker": "Why it's smart",
    "title": "Alerts on your phone",
    "body": "Get notified when someone rings or moves near the door.",
-   "dur": 4.2
+   "dur": 3.8
   },
   {
-   "photo": "facebook-post/10_security_collage.jpg",
+   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
    "kicker": "Wired or battery",
    "title": "Wired models never need charging",
    "body": "Battery models install almost anywhere.",
-   "dur": 4.2,
-   "crop": [
-    0,
-    0,
-    0.5,
-    0.5
-   ]
+   "dur": 3.8
   },
   {
    "photo": "facebook-post/05_installer_garage.jpg",
    "kicker": "Nova Pro Home",
    "title": "We mount it, wire it & set up the app",
    "body": "",
-   "dur": 4.2
+   "dur": 3.8
   }
  ],
  "end": [

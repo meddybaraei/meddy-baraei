@@ -149,6 +149,30 @@ def card_scene(s):
         for ln in wrap(d, s.get('body', ''), fs(44), 1000): d.text((140, y), ln, font=fs(44), fill=SOFT); y += 60
     return lambda t: im
 
+def product_scene(s):
+    """Official product photo on a card (for small screenshots that can't fill the frame)."""
+    src = Image.open(ROOT + s['product']).convert('RGB')
+    bg = src.getpixel((2, 2))
+    if V: box = (90, 330, W - 90, 1180)
+    else: box = (1260, 140, 1860, 940)
+    bw, bh = box[2] - box[0], box[3] - box[1]
+    im0 = src.copy(); sc = min((bw - 80) / im0.width, (bh - 80) / im0.height); im0 = im0.resize((int(im0.width * sc), int(im0.height * sc)), Image.LANCZOS)
+    def f(t):
+        im = Image.new('RGB', (W, H), NAVY); d = top(im)
+        d.rounded_rectangle(box, 36, fill=bg)
+        z = 0.96 + 0.04 * t; pi = im0.resize((int(im0.width * z), int(im0.height * z)), Image.BILINEAR)
+        im.paste(pi, (box[0] + (bw - pi.width) // 2, box[1] + (bh - pi.height) // 2))
+        if s.get('note'): ctr(d, box[3] + 14, s['note'], fm(26), GREY, (box[0] + box[2]) / 2)
+        if V: panel(d, s)
+        else:
+            y = 300
+            if s.get('kicker'): d.text((140, y), s['kicker'], font=fs(40), fill=BLUE); y += 70
+            for ln in wrap(d, s.get('title', ''), fb(72), 1000): d.text((140, y), ln, font=fb(72), fill=WHITE); y += 90
+            y += 20
+            for ln in wrap(d, s.get('body', ''), fs(44), 1000): d.text((140, y), ln, font=fs(44), fill=SOFT); y += 60
+        return im
+    return f
+
 def end_card():
     im = Image.new('RGB', (W, H), NAVY); d = ImageDraw.Draw(im)
     c, m = logo_card(620 if V else 560); y0 = 420 if V else 110
@@ -160,7 +184,7 @@ def end_card():
     ctr(d, y, 'Ring Authorized Dealer · Google Nest Pro', fs(40), SOFT)
     return lambda t: im
 
-scenes = [(s.get('dur', 4.0), photo_scene(s) if 'photo' in s else card_scene(s)) for s in CFG['scenes']]
+scenes = [(s.get('dur', 4.0), photo_scene(s) if 'photo' in s else product_scene(s) if 'product' in s else card_scene(s)) for s in CFG['scenes']]
 scenes.append((3.5, end_card()))
 total = sum(d for d, _ in scenes)
 scenes[0][1](0.0).save(OUT.rsplit('.', 1)[0] + '_thumb.jpg', quality=90)

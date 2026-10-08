@@ -1,0 +1,40 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 Bonus",
+ "scenes": [
+  {
+   "product": "video/series/photos/product_ring_elite_180.png",
+   "kicker": "Bonus \u00b7 Ring's new pro camera",
+   "title": "Ring Elite 180 4K",
+   "body": "Three lenses in one camera for a wide 180\u00b0 view.",
+   "dur": 4.2
+  },
+  {
+   "product": "video/series/photos/product_ring_elite_180.png",
+   "kicker": "Perfect for",
+   "title": "Driveways, parking areas & businesses",
+   "body": "A wide view from a single camera.",
+   "dur": 4.0
+  },
+  {
+   "art": "list",
+   "title": "Power options",
+   "items": [
+    "Plug-in",
+    "PoE (Power over Ethernet)"
+   ],
+   "body": "PoE runs power and internet through one cable. We run it for you.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We run the cable, mount it & set it up",
+   "body": "Ring Authorized Dealer in Northern Virginia.",
+   "dur": 3.8
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}
