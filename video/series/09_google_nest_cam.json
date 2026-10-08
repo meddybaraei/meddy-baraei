@@ -1,0 +1,49 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 9/10",
+ "scenes": [
+  {
+   "photo": "facebook-post/06_nest_cam.jpg",
+   "kicker": "Product 9 \u00b7 Smart alerts",
+   "title": "Google Nest Cam",
+   "body": "Indoor and outdoor cameras from Google.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Why it's smart",
+   "title": "Knows a person from a car or an animal",
+   "body": "So you get the alerts that matter.",
+   "dur": 4.2,
+   "crop": [
+    0.01,
+    0.14,
+    0.57,
+    0.925
+   ]
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Works with",
+   "title": "The Google Home app",
+   "body": "See all your cameras in one place.",
+   "dur": 4.2,
+   "crop": [
+    0.58,
+    0.54,
+    0.99,
+    0.925
+   ]
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "Google Nest Pro installs",
+   "body": "Mounted, connected and explained.",
+   "dur": 4.2
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 3/10",
+ "scenes": [
+  {
+   "art": "thermostat",
+   "kicker": "Product 3 \u00b7 Automation that saves money",
+   "title": "Google Nest Learning Thermostat",
+   "body": "Learns the temperatures you like and builds a schedule.",
+   "dur": 4.4
+  },
+  {
+   "art": "thermostat",
+   "kicker": "Why it's smart",
+   "title": "Eco mode when you're away",
+   "body": "Saves energy automatically when nobody's home.",
+   "dur": 4.2
+  },
+  {
+   "art": "thermostat",
+   "kicker": "Control from anywhere",
+   "title": "Adjust from your phone",
+   "body": "Come home to the right temperature.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We check your wiring & install it",
+   "body": "Not sure about a C-wire? We'll check compatibility first.",
+   "dur": 4.2
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}

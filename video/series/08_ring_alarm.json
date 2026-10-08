@@ -1,0 +1,57 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 8/10",
+ "scenes": [
+  {
+   "photo": "facebook-post/10_security_collage.jpg",
+   "kicker": "Product 8 \u00b7 Whole-home security",
+   "title": "Ring Alarm",
+   "body": "A base station, door sensors, motion detectors and a keypad.",
+   "dur": 4.2,
+   "crop": [
+    0,
+    0.5,
+    0.5,
+    1
+   ]
+  },
+  {
+   "photo": "facebook-post/10_security_collage.jpg",
+   "kicker": "Why it's smart",
+   "title": "Arm & disarm from your phone",
+   "body": "Get an alert the moment a door or window opens.",
+   "dur": 4.2,
+   "crop": [
+    0,
+    0.5,
+    0.5,
+    1
+   ],
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  {
+   "art": "list",
+   "title": "Works with",
+   "items": [
+    "Ring doorbells",
+    "Ring cameras",
+    "Smart locks"
+   ],
+   "body": "Optional professional monitoring is available with a Ring plan.",
+   "dur": 4.5
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We place every sensor & test the system",
+   "body": "",
+   "dur": 4.2
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}

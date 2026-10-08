@@ -1,0 +1,53 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 10/10",
+ "scenes": [
+  {
+   "photo": "facebook-post/extras/nest_floodlight_garage.jpg",
+   "kicker": "Product 10 \u00b7 Light up your driveway",
+   "title": "Google Nest Cam with Floodlight",
+   "body": "A Nest camera with two bright LED lights.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Why it's smart",
+   "title": "Lights turn on when it sees motion",
+   "body": "And you can turn them on from your phone.",
+   "dur": 4.2,
+   "crop": [
+    0.58,
+    0.14,
+    0.99,
+    0.53
+   ]
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Perfect for",
+   "title": "Garages, driveways & backyards",
+   "body": "Wired, so it never needs charging.",
+   "dur": 4.2,
+   "crop": [
+    0.01,
+    0.14,
+    0.57,
+    0.925
+   ],
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We replace your old flood light",
+   "body": "Google Nest Pro installation in Northern Virginia.",
+   "dur": 4.2
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}

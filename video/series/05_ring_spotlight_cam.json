@@ -1,0 +1,43 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 5/10",
+ "scenes": [
+  {
+   "photo": "facebook-post/extras/ring_spotlight_cam_stone.jpg",
+   "kicker": "Product 5 \u00b7 Back doors & side yards",
+   "title": "Ring Spotlight Cam",
+   "body": "A camera with LED spotlights built in.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "Why it's smart",
+   "title": "Light + video where you need it",
+   "body": "Motion turns on the lights and starts recording.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/01_arlington_ring_install.jpg",
+   "kicker": "Power options",
+   "title": "Wired, battery or solar",
+   "body": "We help you pick the right one for each spot.",
+   "dur": 4.2,
+   "crop": [
+    0,
+    0.15,
+    0.57,
+    0.92
+   ]
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We mount it at the right height & angle",
+   "body": "",
+   "dur": 4.2
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}
