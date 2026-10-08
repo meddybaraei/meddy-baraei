@@ -35,3 +35,9 @@ Work top to bottom; mark each one done with the date.
 
 ## Posted Oct 7, 2026 (YouTube)
 Intro, Ring doorbell how-to, 7 topic Shorts (cameras placement, battery vs wired, solar, not working 3 checks, Nest compatibility, Airbnb smart locks, why hire a pro), promo Short, AI installer Short. Don't repeat these topics as-is.
+
+## Smart Home Starter Series (made Oct 8, 2026; music only)
+Owner asked for a "why automate your home first" video plus one video per product, using real photos. Files are in `video/series/` (configs + `video/tools/make_series.py`). All scheduled on YouTube via Metricool:
+- Fri Oct 9, 4:00 PM: Why Make Your Home Smart? Start With Automation First (16:9). 4:30 PM: Short version.
+- Daily at 12:00 PM, Oct 10 to Oct 19: product Shorts 1–10 (Ring Video Doorbell, Smart Lock, Nest Learning Thermostat, Ring Floodlight Cam, Ring Spotlight Cam, Ring Solar Panel, Ring Stick Up Cam, Ring Alarm, Google Nest Cam, Nest Cam with Floodlight).
+- Smart Lock (Oct 11) and Nest Thermostat (Oct 12) use drawn product art because there are no install photos yet. If the owner sends photos before then, re-render and swap the media with updateScheduledPost.
