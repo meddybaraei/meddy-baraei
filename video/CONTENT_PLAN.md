@@ -10,7 +10,7 @@ Work top to bottom; mark each one done with the date.
 | # | Topic / title | Monthly searches | Competition | Status |
 |---|---|---|---|---|
 | 1 | How to Wire a Ring Doorbell (Step by Step Install) | ~5,400 | low (19) | ✅ posted Oct 7 |
-| 2 | Ring Doorbell Not Working? 5 Fixes to Try First (long version; a 3-check Short was posted Oct 7) | ~5,400 | low (14) | |
+| 2 | Ring Doorbell Not Working? 5 Fixes to Try First (long version; a 3-check Short was posted Oct 7) | ~5,400 | low (14) | ✅ Oct 8 (video + Short, music only) |
 | 3 | How to Make Your Ring Doorbell More Sensitive to Motion | ~5,300 | very low (12) | |
 | 4 | How to Hook Up a Ring Solar Panel (use McLean solar photos) | ~5,300 | low (16) | |
 | 5 | How to Reset Your Ring Doorbell | ~5,300 | low (16) | |
@@ -31,7 +31,7 @@ Work top to bottom; mark each one done with the date.
 - Facebook is not part of the standing instruction; cross-post there only when the owner asks.
 
 ## Tools
-`video/tools/make_video.py` (vertical photo Short) and `video/tools/make_howto.py` (16:9 how-to with steps) render with Pillow + ffmpeg. Copy one, change the scenes/steps, and render to `video/weekly/YYYY-MM-DD_<slug>.mp4`.
+`video/tools/make_tips.py CONFIG.json OUT` (text-led tip video + vertical Short from a JSON config, see video/weekly/*.json), `video/tools/make_video.py` (vertical photo Short) and `video/tools/make_howto.py` (16:9 how-to with steps) render with Pillow + ffmpeg. Copy one, change the scenes/steps, and render to `video/weekly/YYYY-MM-DD_<slug>.mp4`.
 
 ## Posted Oct 7, 2026 (YouTube)
 Intro, Ring doorbell how-to, 7 topic Shorts (cameras placement, battery vs wired, solar, not working 3 checks, Nest compatibility, Airbnb smart locks, why hire a pro), promo Short, AI installer Short. Don't repeat these topics as-is.

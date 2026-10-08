@@ -1,0 +1,10 @@
+{"title": ["Ring Doorbell Not Working?", "5 Fixes to Try First"],
+ "sub": "Offline, no alerts or no live view",
+ "safety": ["Use your Ring app and the manual for your model.", "Wired doorbells: turn the breaker off before touching any wiring.", "Save any recordings you want before a factory reset."],
+ "steps": [
+  {"title": "Reconnect from the Ring app", "body": "Open the doorbell's Device Health page, then try Reconnect (or Reboot) under Network.", "icon": "app"},
+  {"title": "Check the power", "body": "Battery model: charge it fully. Wired model: check for loose or damaged wires and a working transformer.", "icon": "battery"},
+  {"title": "Check the Wi-Fi signal", "body": "Device Health shows signal strength. If it's weak, move the router closer or add a Wi-Fi extender. 2.4 GHz reaches farther.", "icon": "wifi"},
+  {"title": "Restart your router and modem", "body": "Unplug both for 30 seconds, plug them back in, and give the doorbell a few minutes to reconnect.", "icon": "router"},
+  {"title": "Reset and set it up again", "body": "Still offline? Factory reset the doorbell, then use Set Up a Device in the Ring app. Still stuck? Contact Ring support.", "icon": "reset"}],
+ "outro": ["Still not working?", "We'll fix it for you."]}
