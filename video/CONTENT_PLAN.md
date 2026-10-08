@@ -41,3 +41,5 @@ Owner asked for a "why automate your home first" video plus one video per produc
 - Fri Oct 9, 4:00 PM: Why Make Your Home Smart? Start With Automation First (16:9). 4:30 PM: Short version.
 - Daily at 12:00 PM, Oct 10 to Oct 19: product Shorts 1–10 (Ring Video Doorbell, Smart Lock, Nest Learning Thermostat, Ring Floodlight Cam, Ring Spotlight Cam, Ring Solar Panel, Ring Stick Up Cam, Ring Alarm, Google Nest Cam, Nest Cam with Floodlight).
 - Smart Lock (Oct 11) and Nest Thermostat (Oct 12) use drawn product art because there are no install photos yet. If the owner sends photos before then, re-render and swap the media with updateScheduledPost.
+- Oct 8 update: owner sent install photos + ring.com product screenshots (saved, faces/stickers blurred, in `video/series/photos/`). Re-rendered #1, #4, #7, #8 and swapped them in Metricool; added bonus Short "Ring Elite 180 4K" on Tue Oct 20, 12:00 PM.
+- Owner also sent two 10s AI (Gemini) promo videos; not posted yet. If posted, set isAiGeneratedContent true. The first shows a Ring logo on a thermostat (no such product), so don't use it as is.
