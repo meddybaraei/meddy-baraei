@@ -44,3 +44,13 @@ Owner asked for a "why automate your home first" video plus one video per produc
 - Oct 8 update: owner sent install photos + ring.com product screenshots (saved, faces/stickers blurred, in `video/series/photos/`). Re-rendered #1, #4, #7, #8 and swapped them in Metricool; added bonus Short "Ring Elite 180 4K" on Tue Oct 20, 12:00 PM.
 - Owner also sent two 10s AI (Gemini) promo videos; not posted yet. If posted, set isAiGeneratedContent true. The first shows a Ring logo on a thermostat (no such product), so don't use it as is.
 - Oct 9: owner sent a real ecobee heat-pump job (Vienna). Made Monday's Job of the Week Short `video/weekly/2026-10-12_job-ecobee-heat-pump.mp4` (Mon Oct 12, 4:00 PM). Swapped the last scene of series #3 (Nest thermostat) for the real wiring photo. Never show the customer's name (the Amazon screenshot had it; only the product crop is used).
+
+## Local SEO rule (owner, Oct 9 2026)
+Every YouTube and Facebook video targets the home-base area only:
+- Title names a city ("... Installation in Sterling & Ashburn, VA"; use the real job city when known, e.g. Vienna, McLean).
+- First line of the description names the service + cities. Say "based in Sterling, VA".
+- Add the 📍 Serving line (Sterling, Ashburn, Herndon, Reston, Chantilly, South Riding, Leesburg, Vienna, McLean, Fairfax, Arlington) and ZIPs 20164 · 20165 · 20166 · 20147 · 20148 · 20170 · 20190 · 20151 · 20152 · 20175 · 22180 · 22101 · 22030.
+- Tags: "<service> installation sterling va", "<service> installer ashburn va", "... northern virginia", "loudoun county".
+- Hashtags: #SterlingVA #AshburnVA #LoudounCounty #NorthernVirginia (+ #ViennaVA / #McLeanVA for jobs there).
+Organic YouTube/Facebook reach can't be locked to ZIP codes; only paid boosts/ads can.
+All 14 pending YouTube posts and the Oct 10 Facebook video were rewritten this way on Oct 9.
