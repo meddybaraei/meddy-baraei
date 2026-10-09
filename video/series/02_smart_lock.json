@@ -1,0 +1,37 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 2/10",
+ "scenes": [
+  {
+   "art": "lock",
+   "kicker": "Product 2 \u00b7 Automation that saves time",
+   "title": "Smart Lock",
+   "body": "Lock and unlock your door from your phone.",
+   "dur": 4.2
+  },
+  {
+   "art": "lock",
+   "kicker": "Why it's smart",
+   "title": "A code for every guest",
+   "body": "Family, cleaners and Airbnb guests each get their own code.",
+   "dur": 4.2
+  },
+  {
+   "art": "lock",
+   "kicker": "Peace of mind",
+   "title": "Auto-lock & alerts",
+   "body": "Many locks can lock themselves and tell you who came in.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We install it & set up every code",
+   "body": "Ask us which lock fits your door.",
+   "dur": 4.2
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}

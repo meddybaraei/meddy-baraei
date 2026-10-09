@@ -1,0 +1,49 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 6/10",
+ "scenes": [
+  {
+   "photo": "facebook-post/extras/ring_solar_floodlight.jpg",
+   "kicker": "Product 6 \u00b7 No outlet? No problem",
+   "title": "Ring Solar Panel",
+   "body": "Keeps battery cameras and doorbells charged with sunlight.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "kicker": "Why it's smart",
+   "title": "Fewer battery swaps",
+   "body": "Solar keeps the battery topped up.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/03_mclean_solar_install.jpg",
+   "kicker": "Tip",
+   "title": "Give it direct sunlight",
+   "body": "Placement matters. We find the sunniest spot.",
+   "dur": 4.2,
+   "crop": [
+    0.51,
+    0.53,
+    0.99,
+    0.9
+   ]
+  },
+  {
+   "photo": "facebook-post/03_mclean_solar_install.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "4 solar panels installed in McLean",
+   "body": "Neat, secure, no wires to run.",
+   "dur": 4.2,
+   "crop": [
+    0.67,
+    0.02,
+    0.99,
+    0.53
+   ]
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}

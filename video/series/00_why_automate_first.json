@@ -1,0 +1,77 @@
+{
+ "badge": "Smart Home Starter Series",
+ "scenes": [
+  {
+   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
+   "kicker": "Why make your home smart?",
+   "title": "Start with automation first",
+   "body": "Let your home do the work for you.",
+   "dur": 4.5
+  },
+  {
+   "photo": "facebook-post/extras/ring_doorbell_trim.jpg",
+   "kicker": "Reason 1",
+   "title": "See who's at your door from anywhere",
+   "body": "Answer from your phone, at work or on vacation.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/07_ring_floodlight.jpg",
+   "kicker": "Reason 2",
+   "title": "Lights that turn on by themselves",
+   "body": "Motion lights up the driveway and starts recording.",
+   "dur": 4.2
+  },
+  {
+   "art": "thermostat",
+   "kicker": "Reason 3",
+   "title": "Save energy automatically",
+   "body": "A smart thermostat lowers heating & cooling when you're away.",
+   "dur": 4.2
+  },
+  {
+   "art": "lock",
+   "kicker": "Reason 4",
+   "title": "No more lost keys",
+   "body": "Lock from your phone and give guests their own code.",
+   "dur": 4.2
+  },
+  {
+   "photo": "facebook-post/10_security_collage.jpg",
+   "kicker": "Reason 5",
+   "title": "Peace of mind when you're away",
+   "body": "An alarm system alerts your phone the moment a door opens.",
+   "dur": 4.2,
+   "crop": [
+    0,
+    0.5,
+    0.5,
+    1
+   ]
+  },
+  {
+   "art": "list",
+   "title": "Where to start",
+   "items": [
+    "Video doorbell",
+    "Smart lock",
+    "Smart thermostat",
+    "Cameras & lights",
+    "Alarm system"
+   ],
+   "body": "Next: one video for each product.",
+   "dur": 5.5
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We install it and set it all up",
+   "body": "Ring Authorized Dealer & Google Nest Pro in Northern Virginia.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Free quote & smart home shop",
+  "novaprohome.com"
+ ]
+}

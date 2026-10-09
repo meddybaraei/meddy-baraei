@@ -1,0 +1,37 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 4/10",
+ "scenes": [
+  {
+   "photo": "video/series/photos/ring_floodlight_siding.jpg",
+   "kicker": "Product 4 \u00b7 Lights + camera in one",
+   "title": "Ring Floodlight Cam",
+   "body": "Bright motion-activated lights with a built-in camera.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/series/photos/ring_floodlight_back_door.jpg",
+   "kicker": "Why it's smart",
+   "title": "Lights up when someone walks by",
+   "body": "And sends a live view to your phone.",
+   "dur": 3.8
+  },
+  {
+   "photo": "facebook-post/07_ring_floodlight.jpg",
+   "kicker": "Perfect for",
+   "title": "Driveways, garages & backyards",
+   "body": "Built-in siren you can trigger from the app.",
+   "dur": 3.8
+  },
+  {
+   "photo": "facebook-post/extras/ring_floodlight_ivy.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "We replace your old flood light",
+   "body": "Clean wiring, aimed right, set up in the app.",
+   "dur": 3.8
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}
