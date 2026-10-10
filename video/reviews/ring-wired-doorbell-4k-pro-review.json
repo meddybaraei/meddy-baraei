@@ -1,0 +1,128 @@
+{
+ "badge": "Installer's Review",
+ "scenes": [
+  {
+   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "kicker": "Installer's review",
+   "title": "Ring Wired Doorbell 4K Pro: Worth Buying?",
+   "body": "We install these across Northern Virginia. Here's our honest take.",
+   "dur": 6.0
+  },
+  {
+   "art": "list",
+   "title": "In this review",
+   "items": [
+    "Video quality",
+    "Zoom",
+    "Night view",
+    "Power & install",
+    "App & subscription",
+    "Verdict"
+   ],
+   "dur": 5.5
+  },
+  {
+   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "kicker": "1 \u00b7 Video quality",
+   "title": "Retinal 4K video",
+   "body": "4K detail makes faces and packages at the door easier to make out.",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "kicker": "2 \u00b7 Zoom",
+   "title": "10x Enhanced Zoom",
+   "body": "Zoom in to check details on whoever is at your door.",
+   "dur": 5.5,
+   "focus": [
+    0.45,
+    0.4
+   ]
+  },
+  {
+   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "kicker": "3 \u00b7 Night view",
+   "title": "Low Light Sight",
+   "body": "Built for clearer video at night and in low light.",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "kicker": "4 \u00b7 Power",
+   "title": "Hardwired: never needs charging",
+   "body": "It runs on your existing doorbell wires, so there is no battery to recharge.",
+   "dur": 5.5,
+   "focus": [
+    0.45,
+    0.55
+   ]
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "4 \u00b7 Install",
+   "title": "Check your wiring first",
+   "body": "Your doorbell wiring and transformer need to meet Ring's requirements. We check this before we install.",
+   "dur": 6.0
+  },
+  {
+   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "kicker": "Style",
+   "title": "4 finishes to match your door",
+   "body": "Pick the one that suits your trim and hardware.",
+   "dur": 4.5
+  },
+  {
+   "art": "list",
+   "title": "5 \u00b7 App & subscription",
+   "items": [
+    "Live view",
+    "Two-way talk",
+    "Motion alerts"
+   ],
+   "body": "These work in the Ring app. Saving and replaying video needs a Ring Home plan.",
+   "dur": 6.0
+  },
+  {
+   "art": "list",
+   "title": "What we like",
+   "items": [
+    "Sharp 4K picture",
+    "Never needs charging",
+    "Zoom to check details"
+   ],
+   "dur": 5.0
+  },
+  {
+   "art": "list",
+   "title": "Watch out for",
+   "items": [
+    "Needs doorbell wiring",
+    "Video history needs a plan",
+    "Renting? A battery model may fit better"
+   ],
+   "dur": 5.5
+  },
+  {
+   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "kicker": "6 \u00b7 Verdict",
+   "title": "Worth it if you have doorbell wiring",
+   "body": "and want clear 4K detail at your front door.",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "Want it installed for you?",
+   "body": "Ring Authorized Dealer based in Sterling, VA. We mount it, wire it and set up the app.",
+   "dur": 5.5,
+   "focus": [
+    0.45,
+    0.45
+   ]
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}
