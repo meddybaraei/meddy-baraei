@@ -55,3 +55,4 @@ Every YouTube and Facebook video targets the home-base area only:
 Organic YouTube/Facebook reach can't be locked to ZIP codes; only paid boosts/ads can.
 All 14 pending YouTube posts and the Oct 10 Facebook video were rewritten this way on Oct 9.
 - Oct 10: owner sent a Ring Alarm Pro job (14-piece kit + 2 extra sensors, "Chantilly" from voice note). Made `video/weekly/2026-10-13_job-ring-alarm-pro-chantilly.mp4` (Tue Oct 13, 4 PM) and re-rendered series #8 Ring Alarm with the real install photos. Wi-Fi network name on the phone screen is blurred.
+- Oct 10: owner asked for the Chantilly job on Facebook too (Reel, Tue Oct 13 6:30 PM) and a reference how-to "How to Install a Ring Alarm Pro 14-Piece Kit" from the same photos: YouTube video Thu Oct 15 4:00 PM + Short 4:30 PM, Facebook video Thu Oct 15 6:30 PM. This takes the Oct 15 Thursday tip slot; topic #3 (motion sensitivity) moves to Oct 22.
