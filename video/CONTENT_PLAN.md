@@ -74,3 +74,9 @@ Ring Battery Doorbell Pro + install. Rules: `video/GIVEAWAY_RULES.md` (public li
 
 ## Approval rule (owner, Oct 11)
 Before scheduling or changing any post, show the owner the video + title + description and wait for "go". Posts already approved can publish as scheduled.
+
+## TikTok (connected Oct 11, @NovaProHome via Metricool)
+- Owner rule (Oct 11): EVERY post on every platform includes a link to the website (default https://novaprohome.com/contact). TikTok captions aren't clickable, so write "novaprohome.com/contact (link in bio)".
+- Metricool TikTok posts need tiktokData.title. Post Shorts there at ~6 PM ET (weekend noon), commercialContentOwnBrand true, isAigc false.
+- Scheduled: Oct 12 alarm job, Oct 15 how-to, Oct 17 ecobee, Oct 20 doorbell review, Oct 27 alarm review.
+- Giveaway is NOT on TikTok (rules only count YouTube/Facebook comments).
