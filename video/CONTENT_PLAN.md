@@ -70,3 +70,4 @@ Ring Battery Doorbell Pro + install. Rules: `video/GIVEAWAY_RULES.md` (public li
 - Every post using an affiliate link must say so next to it: "Affiliate link: as an Amazon Associate, Nova Pro Home earns from qualifying purchases."
 - Only use it where a battery doorbell fits; never in giveaway posts (no purchase necessary).
 - Owner's standard doorbell install price: $100. Giveaway ARV $329.99. Owner can't edit novaprohome.com, so rules stay on the GitHub link.
+- Giveaway area (owner, Oct 11): homes in ZIP 20165 or within 2 miles of its boundary. Owner wants subscribers: encourage subscribing ("subscribe to see the winner reveal") but never make it a condition of entry (YouTube fake-engagement policy).
