@@ -211,7 +211,7 @@ for dur, fn in scenes:
     prev = np.asarray(fn(1.0), dtype=np.float32)
 ff.stdin.close(); ff.wait()
 music = OUT + '.music.wav'
-subprocess.run([sys.executable, HERE + 'make_music.py', music, str(total + 1)], check=True, stdout=subprocess.DEVNULL)
+subprocess.run([sys.executable, HERE + 'make_music.py', music, str(total + 1), CFG.get('music', 'calm')], check=True, stdout=subprocess.DEVNULL)
 subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', silent, '-i', music, '-filter_complex',
                 f'[1:a]volume=0.55,afade=t=out:st={total - 1.5}:d=1.5[a]', '-map', '0:v', '-map', '[a]',
                 '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', OUT], check=True)
