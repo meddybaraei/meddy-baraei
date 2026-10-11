@@ -80,3 +80,4 @@ Before scheduling or changing any post, show the owner the video + title + descr
 - Metricool TikTok posts need tiktokData.title. Post Shorts there at ~6 PM ET (weekend noon), commercialContentOwnBrand true, isAigc false.
 - Scheduled: Oct 12 alarm job, Oct 15 how-to, Oct 17 ecobee, Oct 20 doorbell review, Oct 27 alarm review.
 - Giveaway is NOT on TikTok (rules only count YouTube/Facebook comments).
+- TikTok style (owner approved Oct 11): Gen Z cut via `video/tools/make_tiktok.py` — POV/question hook on frame 1, 4-beat punch-zoom cuts at 140 bpm, bold Inter Black captions with yellow keywords, original phonk beat (music "phonk"), 14–18 s, CTA card "link in bio". Configs in `video/tiktok/`. Captions start with the hook; add #SmartHome #FirstHome. Business accounts can't use copyrighted chart songs (only TikTok Commercial Music Library).
