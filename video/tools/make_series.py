@@ -19,6 +19,12 @@ W, H = (1080, 1920) if ORIENT == 'v' else (1920, 1080)
 FPS = 30
 NAVY = (19, 33, 56); NAVY2 = (28, 46, 76); BLUE = (58, 155, 213); WHITE = (255, 255, 255)
 SOFT = (200, 212, 228); GREEN = (76, 199, 154); YEL = (244, 161, 29); GREY = (120, 132, 150)
+# Theme: "navy" (default, Starter Series / jobs) or "warm" (Installer's Review series: cream, white panels, orange).
+WARM = CFG.get('theme') == 'warm'
+if WARM:
+    BG, PANEL, CARD2, ACC, TXT, SUB = (246, 241, 233), (255, 255, 255), (255, 255, 255), (232, 93, 4), (28, 28, 30), (88, 88, 96)
+else:
+    BG, PANEL, CARD2, ACC, TXT, SUB = NAVY, NAVY, NAVY2, BLUE, WHITE, SOFT
 F = '/usr/share/fonts/opentype/inter/'
 fb = lambda s: ImageFont.truetype(F + 'Inter-Bold.otf', s)
 fs = lambda s: ImageFont.truetype(F + 'Inter-SemiBold.otf', s)
@@ -53,7 +59,7 @@ def top(im):
     if b:
         f = fs(34 if V else 30); w = d.textlength(b, font=f)
         x = W - 50 - w - 44 if not V else 50; y = 50 + c.height + 24 if V else 64
-        d.rounded_rectangle((x, y, x + w + 44, y + 64), 32, fill=BLUE + (240,))
+        d.rounded_rectangle((x, y, x + w + 44, y + 64), 32, fill=ACC + (240,))
         d.text((x + 22, y + 13), b, font=f, fill=WHITE)
     return d
 
@@ -64,23 +70,25 @@ def panel(d, s):
         bl = wrap(d, s.get('body', ''), fs(46), W - 180) if s.get('body') else []
         h = 70 + (56 if s.get('kicker') else 0) + 88 * len(tl) + (20 + 60 * len(bl) if bl else 0)
         y0 = H - 260 - h
-        d.rounded_rectangle((50, y0, W - 50, H - 260), 34, fill=NAVY + (238,))
+        d.rounded_rectangle((50, y0, W - 50, H - 260), 34, fill=PANEL + (238,))
+        if WARM: d.rounded_rectangle((50, y0, 64, H - 260), 7, fill=ACC)
         y = y0 + 36
-        if s.get('kicker'): d.text((90, y), s['kicker'], font=fs(40), fill=BLUE); y += 56
-        for ln in tl: d.text((90, y), ln, font=fb(74), fill=WHITE); y += 88
+        if s.get('kicker'): d.text((90, y), s['kicker'], font=fs(40), fill=ACC); y += 56
+        for ln in tl: d.text((90, y), ln, font=fb(74), fill=TXT); y += 88
         y += 20
-        for ln in bl: d.text((90, y), ln, font=fs(46), fill=SOFT); y += 60
+        for ln in bl: d.text((90, y), ln, font=fs(46), fill=SUB); y += 60
     else:
         tl = wrap(d, s.get('title', ''), fb(66), 1060)
         bl = wrap(d, s.get('body', ''), fs(40), 1060) if s.get('body') else []
         h = 60 + (52 if s.get('kicker') else 0) + 80 * len(tl) + (16 + 54 * len(bl) if bl else 0)
         y0 = H - 70 - h
-        d.rounded_rectangle((70, y0, 1210, H - 70), 30, fill=NAVY + (238,))
+        d.rounded_rectangle((70, y0, 1210, H - 70), 30, fill=PANEL + (238,))
+        if WARM: d.rounded_rectangle((70, y0, 84, H - 70), 7, fill=ACC)
         y = y0 + 30
-        if s.get('kicker'): d.text((110, y), s['kicker'], font=fs(36), fill=BLUE); y += 52
-        for ln in tl: d.text((110, y), ln, font=fb(66), fill=WHITE); y += 80
+        if s.get('kicker'): d.text((110, y), s['kicker'], font=fs(36), fill=ACC); y += 52
+        for ln in tl: d.text((110, y), ln, font=fb(66), fill=TXT); y += 80
         y += 16
-        for ln in bl: d.text((110, y), ln, font=fs(40), fill=SOFT); y += 54
+        for ln in bl: d.text((110, y), ln, font=fs(40), fill=SUB); y += 54
 
 def photo_scene(s):
     src = ImageOps.exif_transpose(Image.open(ROOT + s['photo'])).convert('RGB')
@@ -121,20 +129,20 @@ def draw_art(d, kind, cx, cy, r):
             d.ellipse((cx + x * r - r * .12, cy + y * r - r * .12, cx + x * r + r * .12, cy + y * r + r * .12), fill=c)
 
 def card_scene(s):
-    im = Image.new('RGB', (W, H), NAVY); d = top(im)
+    im = Image.new('RGB', (W, H), BG); d = top(im)
     if s['art'] == 'list':
         y = 520 if V else 220
-        d.text((80 if V else 140, y - 10), s.get('title', ''), font=fb(72 if V else 70), fill=WHITE)
+        d.text((80 if V else 140, y - 10), s.get('title', ''), font=fb(72 if V else 70), fill=TXT)
         y += 120 if V else 110
         for i, t in enumerate(s['items']):
             x = 80 if V else 140 + (i // 3) * 860; yy = y + (i if V else i % 3) * (150 if V else 150)
-            d.rounded_rectangle((x, yy, x + (W - 160 if V else 800), yy + 120), 24, fill=NAVY2)
-            d.ellipse((x + 24, yy + 22, x + 100, yy + 98), fill=BLUE)
+            d.rounded_rectangle((x, yy, x + (W - 160 if V else 800), yy + 120), 24, fill=CARD2, outline=(226, 218, 206) if WARM else None, width=2)
+            d.ellipse((x + 24, yy + 22, x + 100, yy + 98), fill=ACC)
             ctr(d, yy + 32, str(i + 1), fb(44), WHITE, x + 62)
-            d.text((x + 130, yy + 32), t, font=fs(48 if V else 46), fill=WHITE)
+            d.text((x + 130, yy + 32), t, font=fs(48 if V else 46), fill=TXT)
         if s.get('body'):
             yy = y + (len(s['items']) if V else 3) * 150 + 30
-            for ln in wrap(d, s['body'], fs(44), W - 200): ctr(d, yy, ln, fs(44), SOFT); yy += 58
+            for ln in wrap(d, s['body'], fs(44), W - 200): ctr(d, yy, ln, fs(44), SUB); yy += 58
         return lambda t: im
     if V: draw_art(d, s['art'], W / 2, 760, 300)
     else: draw_art(d, s['art'], 1480, 520, 300)
@@ -143,10 +151,10 @@ def card_scene(s):
     if V: panel(d, s)
     else:
         y = 300
-        if s.get('kicker'): d.text((140, y), s['kicker'], font=fs(40), fill=BLUE); y += 70
-        for ln in wrap(d, s.get('title', ''), fb(72), 1000): d.text((140, y), ln, font=fb(72), fill=WHITE); y += 90
+        if s.get('kicker'): d.text((140, y), s['kicker'], font=fs(40), fill=ACC); y += 70
+        for ln in wrap(d, s.get('title', ''), fb(72), 1000): d.text((140, y), ln, font=fb(72), fill=TXT); y += 90
         y += 20
-        for ln in wrap(d, s.get('body', ''), fs(44), 1000): d.text((140, y), ln, font=fs(44), fill=SOFT); y += 60
+        for ln in wrap(d, s.get('body', ''), fs(44), 1000): d.text((140, y), ln, font=fs(44), fill=SUB); y += 60
     return lambda t: im
 
 def product_scene(s):
@@ -158,7 +166,8 @@ def product_scene(s):
     bw, bh = box[2] - box[0], box[3] - box[1]
     im0 = src.copy(); sc = min((bw - 80) / im0.width, (bh - 80) / im0.height); im0 = im0.resize((int(im0.width * sc), int(im0.height * sc)), Image.LANCZOS)
     def f(t):
-        im = Image.new('RGB', (W, H), NAVY); d = top(im)
+        im = Image.new('RGB', (W, H), BG); d = top(im)
+        if WARM: d.rounded_rectangle((box[0] + 10, box[1] + 14, box[2] + 10, box[3] + 14), 36, fill=(225, 216, 202))
         d.rounded_rectangle(box, 36, fill=bg)
         z = 0.96 + 0.04 * t; pi = im0.resize((int(im0.width * z), int(im0.height * z)), Image.BILINEAR)
         im.paste(pi, (box[0] + (bw - pi.width) // 2, box[1] + (bh - pi.height) // 2))
@@ -166,22 +175,22 @@ def product_scene(s):
         if V: panel(d, s)
         else:
             y = 300
-            if s.get('kicker'): d.text((140, y), s['kicker'], font=fs(40), fill=BLUE); y += 70
-            for ln in wrap(d, s.get('title', ''), fb(72), 1000): d.text((140, y), ln, font=fb(72), fill=WHITE); y += 90
+            if s.get('kicker'): d.text((140, y), s['kicker'], font=fs(40), fill=ACC); y += 70
+            for ln in wrap(d, s.get('title', ''), fb(72), 1000): d.text((140, y), ln, font=fb(72), fill=TXT); y += 90
             y += 20
-            for ln in wrap(d, s.get('body', ''), fs(44), 1000): d.text((140, y), ln, font=fs(44), fill=SOFT); y += 60
+            for ln in wrap(d, s.get('body', ''), fs(44), 1000): d.text((140, y), ln, font=fs(44), fill=SUB); y += 60
         return im
     return f
 
 def end_card():
-    im = Image.new('RGB', (W, H), NAVY); d = ImageDraw.Draw(im)
+    im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im)
     c, m = logo_card(620 if V else 560); y0 = 420 if V else 110
     im.paste(c, ((W - c.width) // 2, y0), m); y = y0 + c.height + 70
     a, b = CFG.get('end', ['Shop it & book your install', 'novaprohome.com'])
-    ctr(d, y, a, fb(60), WHITE); y += 90
-    ctr(d, y, b, fb(84), BLUE); y += 120
-    ctr(d, y, '(571) 241-9569', fb(70), WHITE); y += 110
-    ctr(d, y, 'Ring Authorized Dealer · Google Nest Pro', fs(40), SOFT)
+    ctr(d, y, a, fb(60), TXT); y += 90
+    ctr(d, y, b, fb(84), ACC); y += 120
+    ctr(d, y, '(571) 241-9569', fb(70), TXT); y += 110
+    ctr(d, y, 'Ring Authorized Dealer · Google Nest Pro', fs(40), SUB)
     return lambda t: im
 
 scenes = [(s.get('dur', 4.0), photo_scene(s) if 'photo' in s else product_scene(s) if 'product' in s else card_scene(s)) for s in CFG['scenes']]

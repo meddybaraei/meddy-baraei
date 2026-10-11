@@ -1,0 +1,133 @@
+{
+ "theme": "warm",
+ "badge": "Installer's Review",
+ "scenes": [
+  {
+   "product": "video/series/photos/product_ring_alarm_kit.png",
+   "kicker": "Installer's review",
+   "title": "Ring Alarm Pro: Worth Buying?",
+   "body": "We just installed a 14-piece kit in Chantilly, VA. Here's our honest take.",
+   "dur": 6.0
+  },
+  {
+   "art": "list",
+   "title": "In this review",
+   "items": [
+    "The base station",
+    "Wi-Fi built in",
+    "Sensors & keypad",
+    "Backup & monitoring",
+    "Install time",
+    "Verdict"
+   ],
+   "dur": 5.5
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_station.jpg",
+   "kicker": "1 \u00b7 Base station",
+   "title": "The brain of the system",
+   "body": "Sensors, keypad and siren all connect to it. Arm and disarm from your phone or the keypad.",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_app_setup.jpg",
+   "kicker": "2 \u00b7 Wi-Fi",
+   "title": "eero Wi-Fi 6 router built in",
+   "body": "Covers up to 1,500 sq ft and supports 75+ connected devices. Use it as your router or join your network.",
+   "dur": 6.0
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_door.jpg",
+   "kicker": "3 \u00b7 Sensors",
+   "title": "Contact sensors on doors & windows",
+   "body": "Get an alert the moment a door or window opens.",
+   "dur": 5.0,
+   "focus": [
+    0.5,
+    0.25
+   ]
+  },
+  {
+   "photo": "video/weekly/photos/alarm_motion_detector.jpg",
+   "kicker": "3 \u00b7 Sensors",
+   "title": "Motion detectors",
+   "body": "Mounted high in a corner to cover the room.",
+   "dur": 4.8,
+   "focus": [
+    0.5,
+    0.22
+   ]
+  },
+  {
+   "photo": "video/weekly/photos/alarm_keypad.jpg",
+   "kicker": "3 \u00b7 Keypad",
+   "title": "Keypad by the main door",
+   "body": "Arm, disarm and set access codes for everyone at home.",
+   "dur": 4.8,
+   "focus": [
+    0.5,
+    0.38
+   ]
+  },
+  {
+   "art": "list",
+   "title": "4 \u00b7 Backup & monitoring",
+   "items": [
+    "Battery backup up to 24 hrs",
+    "Backup internet with a plan",
+    "Optional pro monitoring"
+   ],
+   "body": "Battery time is in Low Power Mode. Check ring.com for current plans and prices.",
+   "dur": 6.5
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
+   "kicker": "5 \u00b7 Install",
+   "title": "14-piece kit + 2 extra sensors",
+   "body": "Our Chantilly install took under 2 hours, tested and explained.",
+   "dur": 5.5
+  },
+  {
+   "art": "list",
+   "title": "What we like",
+   "items": [
+    "Alarm + Wi-Fi router in one",
+    "Easy to add more sensors",
+    "Works with Ring cameras & doorbells"
+   ],
+   "dur": 5.0
+  },
+  {
+   "art": "list",
+   "title": "Watch out for",
+   "items": [
+    "Backup internet & monitoring need a plan",
+    "Sensor placement matters",
+    "Plan where the base station goes"
+   ],
+   "dur": 5.5
+  },
+  {
+   "product": "video/series/photos/product_ring_alarm_kit.png",
+   "kicker": "6 \u00b7 Verdict",
+   "title": "Worth it for whole-home security",
+   "body": "especially if you already use Ring or need better Wi-Fi.",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_door3.jpg",
+   "kicker": "Nova Pro Home",
+   "title": "Want it installed for you?",
+   "body": "Ring Authorized Dealer based in Sterling, VA. We place every sensor and test the system.",
+   "dur": 5.4,
+   "focus": [
+    0.5,
+    0.12
+   ]
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}
