@@ -6,7 +6,7 @@
 
 **2. Not affiliated.** This giveaway is not sponsored, endorsed, administered by, or associated with Ring, Amazon, YouTube, Google, Facebook or Meta. By entering, you release them from any liability connected to this giveaway.
 
-**3. Who can enter.** Legal U.S. residents who are 18 or older and own a home located in ZIP code 20165 (Sterling, Virginia) or within 2 miles of the 20165 ZIP code boundary, as measured by Sponsor using Google Maps. Employees of Sponsor and their immediate family members can't enter.
+**3. Who can enter.** Legal U.S. residents who are 18 or older and own a home in Virginia located within 20 miles (straight-line distance) of Sponsor's office in Sterling, Virginia 20165, as measured by Sponsor using Google Maps. This area includes Sterling, Ashburn, Leesburg, Herndon, Reston, Chantilly, South Riding, Centreville, Fairfax, Vienna and McLean. Employees of Sponsor and their immediate family members can't enter.
 
 **4. Giveaway period.** Starts October 11, 2026 and ends November 11, 2026 at 11:59 PM Eastern, unless ended earlier under Section 10.
 
