@@ -20,7 +20,15 @@ YEL, WHITE, INK = (255, 225, 26), (255, 255, 255), (12, 12, 14)
 
 def load(path, focus=(0.5, 0.5)):
     src = ImageOps.exif_transpose(Image.open(ROOT + path)).convert('RGB')
-    return ImageOps.fit(src, (int(W * 1.18), int(H * 1.18)), Image.LANCZOS, centering=tuple(focus))
+    size = (int(W * 1.18), int(H * 1.18))
+    if path.endswith('.png'):  # product shot: whole product on a blurred, darkened copy of itself
+        from PIL import ImageFilter
+        bg = ImageOps.fit(src, size, Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
+        bg = Image.blend(bg, Image.new('RGB', size, (0, 0, 0)), 0.45)
+        fg = src.copy(); fg.thumbnail((int(size[0] * 0.78), int(size[1] * 0.5)), Image.LANCZOS)
+        bg.paste(fg, ((size[0] - fg.width) // 2, int(size[1] * 0.22)))
+        return bg
+    return ImageOps.fit(src, size, Image.LANCZOS, centering=tuple(focus))
 
 def zoom(base, z):
     cw, ch = int(base.width / 1.18 * z), int(base.height / 1.18 * z)
@@ -39,7 +47,7 @@ def wrap(d, text, font, maxw):
 def caption(im, text, hl='', size=92, cy=0.66, pop=1.0, box=False):
     """Centered bold caption with black stroke; words in `hl` drawn yellow."""
     d = ImageDraw.Draw(im)
-    size = int(size * pop); f = BLACK(size); hlw = set(hl.lower().split())
+    size = int(size * pop); f = BLACK(size); hlw = set(w.strip('.,!?:') for w in hl.lower().split())
     lines = wrap(d, text.upper(), f, W - 140)
     lh = int(size * 1.12); y = int(H * cy) - lh * len(lines) // 2
     if box:

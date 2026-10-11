@@ -1,0 +1,54 @@
+{
+ "hook": "is the Ring 4K Pro actually worth it?",
+ "hook_hl": "worth it?",
+ "hook_photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+ "clips": [
+  {
+   "photo": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "text": "retinal 4K video",
+   "hl": "4K"
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "focus": [
+    0.45,
+    0.4
+   ],
+   "text": "10x zoom on who's at the door",
+   "hl": "10x"
+  },
+  {
+   "photo": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "text": "clearer video at night",
+   "hl": "night"
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "focus": [
+    0.45,
+    0.55
+   ],
+   "text": "hardwired = never charge it",
+   "hl": "never"
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "text": "catch: you need doorbell wiring",
+   "hl": "catch:"
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "focus": [
+    0.45,
+    0.45
+   ],
+   "text": "verdict: worth it if you're wired",
+   "hl": "worth it"
+  }
+ ],
+ "cta": [
+  "Want it installed?",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}
