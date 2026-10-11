@@ -60,7 +60,13 @@ All 14 pending YouTube posts and the Oct 10 Facebook video were rewritten this w
 ## Review series: "Worth Buying? (Installer's Review)" (owner, Oct 10 2026)
 Owner shared two reference videos (techmania "Ring Doorbell 4K Elite Review – Worth Buying?", Pixel Review "Ring Elite Wired Doorbell Review"): 4–6 min product reviews, feature-by-feature chapters with specs, verdict, shop links. Our version: 16:9 + Short, one product each, chapters (features → power/install → app & subscription → pros/cons → verdict), owner's install photos, ends with "Want it installed?". Music only for now (owner's choice, Oct 10). Only put specs on screen that are confirmed (ring.com is blocked from the agent; use the owner's screenshots or ask).
 - #1 Ring Wired Doorbell 4K Pro: `video/reviews/ring-wired-doorbell-4k-pro-review(.mp4|_short.mp4)`, YouTube Tue Oct 20 4:00 PM (video) + 4:30 PM (Short).
-- #2 Ring Alarm Pro: `video/reviews/ring-alarm-pro-review(.mp4|_short.mp4)`, YouTube Tue Oct 27 4:00 PM (video) + 4:30 PM (Short). Owner asked (Oct 11) for a totally different look from the earlier videos: review series uses `"theme": "warm"` in make_series.py (cream background, white panels, orange accent). Shop link from owner: https://link.amazon/B0fNtx7iN (Ring Alarm Pro, assumed; not confirmed if affiliate).
+- #2 Ring Alarm Pro: `video/reviews/ring-alarm-pro-review(.mp4|_short.mp4)`, YouTube Tue Oct 27 4:00 PM (video) + 4:30 PM (Short). Owner asked (Oct 11) for a totally different look from the earlier videos: review series uses `"theme": "warm"` in make_series.py (cream background, white panels, orange accent). https://link.amazon/B0fNtx7iN is the owner's Amazon AFFILIATE link for the Ring Battery Doorbell (confirmed Oct 11), not the Alarm Pro.
 
 ## Giveaway (Oct 11 – Nov 11, 2026)
 Ring Battery Doorbell Pro + install. Rules: `video/GIVEAWAY_RULES.md` (public link until novaprohome.com/giveaway is live: https://github.com/meddybaraei/meddy-baraei/blob/facebook-ring-nest-post/video/GIVEAWAY_RULES.md). Entry = comment your city; never ask for likes/subscribes as entry. Guaranteed final drawing within 7 days after Nov 11 + bonus drawing per 1,000-subscriber milestone. Every new YouTube post until Nov 11 gets the giveaway block in its description. Announcement Short: `video/giveaway/2026-10-11_giveaway-announcement_short.mp4`, Oct 11 5:00 PM.
+
+## Affiliate links
+- Ring Battery Doorbell (Amazon affiliate, owner earns commission): https://link.amazon/B0fNtx7iN
+- Every post using an affiliate link must say so next to it: "Affiliate link: as an Amazon Associate, Nova Pro Home earns from qualifying purchases."
+- Only use it where a battery doorbell fits; never in giveaway posts (no purchase necessary).
+- Owner's standard doorbell install price: $100. Giveaway ARV $329.99. Owner can't edit novaprohome.com, so rules stay on the GitHub link.
