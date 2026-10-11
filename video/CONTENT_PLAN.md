@@ -71,3 +71,6 @@ Ring Battery Doorbell Pro + install. Rules: `video/GIVEAWAY_RULES.md` (public li
 - Only use it where a battery doorbell fits; never in giveaway posts (no purchase necessary).
 - Owner's standard doorbell install price: $100. Giveaway ARV $329.99. Owner can't edit novaprohome.com, so rules stay on the GitHub link.
 - Giveaway area (owner, Oct 11, revised): Virginia homes within 20 miles of the office in Sterling 20165 (Sterling, Ashburn, Leesburg, Herndon, Reston, Chantilly, South Riding, Centreville, Fairfax, Vienna, McLean). Owner wants subscribers: encourage subscribing ("subscribe to see the winner reveal") but never make it a condition of entry (YouTube fake-engagement policy).
+
+## Approval rule (owner, Oct 11)
+Before scheduling or changing any post, show the owner the video + title + description and wait for "go". Posts already approved can publish as scheduled.
