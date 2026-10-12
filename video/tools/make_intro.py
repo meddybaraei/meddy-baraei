@@ -116,7 +116,7 @@ def website():
     return im
 
 scenes = [
-    (6.5, still(card(['Welcome to Nova Pro Home'], ['Ring & Google Nest installation · Northern Virginia']))),
+    (6.5, still(card(['Welcome to NovaProHome'], ['Ring & Google Nest installation · Northern Virginia']))),
     (8.2, still(about())),
     (3.4, zoom_photo(P + '08_ring_doorbell_brick.jpg', 'Video doorbells', 'Ring & Nest · wired the right way')),
     (2.2, zoom_photo(P + '07_ring_floodlight.jpg', 'Security cameras', 'Floodlight · spotlight · indoor')),

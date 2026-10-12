@@ -1,8 +1,8 @@
-# Nova Pro Home Doorbell Giveaway: Official Rules
+# NovaProHome Doorbell Giveaway: Official Rules
 
 **NO PURCHASE NECESSARY TO ENTER OR WIN. A purchase does not improve your chances of winning.**
 
-**1. Sponsor.** Nova Pro Home LLC, Sterling, Virginia ("Sponsor"). Contact: (571) 241-9569 · novaprohome.com/contact.
+**1. Sponsor.** NovaProHome LLC, Sterling, Virginia ("Sponsor"). Contact: (571) 241-9569 · novaprohome.com/contact.
 
 **2. Not affiliated.** This giveaway is not sponsored, endorsed, administered by, or associated with Ring, Amazon, YouTube, Google, Facebook or Meta. By entering, you release them from any liability connected to this giveaway.
 
@@ -11,14 +11,14 @@
 **4. Giveaway period.** Starts October 11, 2026 and ends November 11, 2026 at 11:59 PM Eastern, unless ended earlier under Section 10.
 
 **5. How to enter (free).** You can enter either way:
-- **Comment:** leave a comment that includes your city on any Nova Pro Home video on YouTube (youtube.com/@NovaProHome) or any Nova Pro Home post on Facebook.
+- **Comment:** leave a comment that includes your city on any NovaProHome video on YouTube (youtube.com/@NovaProHome) or any NovaProHome post on Facebook.
 - **Online form:** send the word "GIVEAWAY" with your name, city and phone number through novaprohome.com/contact.
 
 Limit: one entry per person per drawing, however many comments or forms you send. Liking, subscribing, following or sharing is **not** required to enter and doesn't give you extra entries. (We'd love for you to subscribe so you see the winner announcement, but it's optional.)
 
 **6. Drawings.** At least one winner is guaranteed: a final drawing is held within 7 days after the giveaway ends. In addition, a bonus drawing is held within 7 days after the YouTube channel @NovaProHome first reaches each new 1,000-subscriber milestone (1,000, 2,000, 3,000 and so on) during the giveaway period. Each drawing picks one winner at random from all eligible entries received during the giveaway period that have not already won. The odds of winning depend on how many eligible entries are received.
 
-**7. Prize.** Each winner gets one (1) Ring Battery Doorbell Pro plus standard installation by Nova Pro Home at the winner's eligible home. Approximate retail value: $329.99 ($229.99 Ring list price for the doorbell + $100 standard installation). Installation is scheduled at a mutually agreed time within 60 days. Standard installation means mounting the doorbell, connecting it to the home's Wi-Fi, and setting up the Ring app. Any extra work, such as new wiring, electrical repairs, a Ring subscription or other accessories, is not included. The prize can't be transferred or exchanged for cash. Winners are responsible for any taxes on the prize.
+**7. Prize.** Each winner gets one (1) Ring Battery Doorbell Pro plus standard installation by NovaProHome at the winner's eligible home. Approximate retail value: $329.99 ($229.99 Ring list price for the doorbell + $100 standard installation). Installation is scheduled at a mutually agreed time within 60 days. Standard installation means mounting the doorbell, connecting it to the home's Wi-Fi, and setting up the Ring app. Any extra work, such as new wiring, electrical repairs, a Ring subscription or other accessories, is not included. The prize can't be transferred or exchanged for cash. Winners are responsible for any taxes on the prize.
 
 **8. Winner notice.** Sponsor will contact the winner by replying to their comment, or by phone or email for form entries, and may announce the winner's first name and city. The winner must respond within 7 days and confirm eligibility. If they don't, an alternate winner may be drawn.
 
