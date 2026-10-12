@@ -86,5 +86,5 @@ Before scheduling or changing any post, show the owner the video + title + descr
 
 ## Logo + tools (owner, Oct 12)
 - Logo confirmed: youtube-branding/logo_full_white_bg.png (= video/tools/logo.png) is the real logo. Use it unchanged.
-- Mix production tools: make some videos with Adobe Express and some with Canva (plus our own cuts). Still show each one for "go" before scheduling.
+- Mix production tools: make some videos with Adobe Express and some with Canva (plus our own cuts). Owner prefers the CANVA style (Oct 12) — default to Canva. Still show each one for "go" before scheduling.
 - Backyard deck Ring cams job (Oct 2026) was in Arlington, VA.
