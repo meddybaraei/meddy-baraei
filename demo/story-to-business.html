@@ -1,0 +1,411 @@
+<title>Seedline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: one calm app column; a sticky 4-step path; a conversation that becomes a plan. */
+:root{
+  --bg:#F3F6F6; --surface:#FFFFFF; --ink:#13232B; --muted:#56666D; --line:#D9E2E3;
+  --teal:#1C6B67; --teal-soft:#E1EFED; --sun:#F2B33D; --sun-ink:#3A2600; --warn:#9A4A00; --warn-soft:#FFF1DF;
+  --bubble-me:#13232B; --bubble-me-ink:#F3F6F6;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F;
+  --teal:#5FC2B9; --teal-soft:#183A3A; --sun:#F2B33D; --sun-ink:#2B1C00; --warn:#FFB869; --warn-soft:#33240F;
+  --bubble-me:#E7EFEF; --bubble-me-ink:#0E1A1F; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F;
+  --teal:#5FC2B9; --teal-soft:#183A3A; --sun:#F2B33D; --sun-ink:#2B1C00; --warn:#FFB869; --warn-soft:#33240F;
+  --bubble-me:#E7EFEF; --bubble-me-ink:#0E1A1F; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:20px 64px}
+h1,h2,h3{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,3.1rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.45rem,4vw,1.9rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.muted{color:var(--muted)}
+.label{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted)}
+button{font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.btn{border:0;border-radius:999px;padding:.75rem 1.4rem;font-weight:700;background:var(--ink);color:var(--bg)}
+.btn.sun{background:var(--sun);color:var(--sun-ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:disabled{opacity:.45;cursor:default}
+
+/* brand + stepper */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:800;font-size:1.25rem;display:flex;align-items:center;gap:8px;background:none;border:0;color:var(--ink);padding:0}
+.seed{width:22px;height:22px;border-radius:50% 50% 50% 0;background:var(--sun);transform:rotate(-45deg)}
+.steps{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.step{flex:1 1 0;min-width:120px;display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted);padding:6px 10px;border-radius:10px;border:1px solid transparent}
+.step b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);font-size:.75rem;flex:none}
+.step.on{color:var(--ink);border-color:var(--line);background:var(--surface)}
+.step.on b{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.step.done b{background:var(--teal);border-color:var(--teal);color:var(--bg)}
+
+/* home */
+.hero{display:grid;gap:14px;margin-bottom:28px}
+.hero p{font-size:1.12rem;max-width:58ch}
+.how{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:700;font-size:.95rem}
+.how span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.3rem .8rem}
+.how i{font-style:normal;color:var(--muted)}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.person{text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:8px;color:var(--ink);align-content:start}
+.person:hover{border-color:var(--teal)}
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;color:var(--sun-ink);background:var(--sun)}
+.person .role{font-size:.92rem;color:var(--muted)}
+.own{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--teal-soft);border-radius:16px;padding:16px}
+.own p{flex:1 1 260px}
+
+/* chat */
+.chat{display:grid;gap:10px;margin-block:18px}
+.msg{max-width:85%;padding:.7rem 1rem;border-radius:18px;animation:pop .35s ease both}
+.msg.ai{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:6px;justify-self:start}
+.msg.me{background:var(--bubble-me);color:var(--bubble-me-ink);border-bottom-right-radius:6px;justify-self:end}
+.msg .who{display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin-bottom:2px}
+.typing{justify-self:start;color:var(--muted);font-size:.9rem;padding-left:6px}
+@keyframes pop{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.msg{animation:none}}
+.composer{display:flex;gap:8px;align-items:flex-end;margin-top:8px}
+.composer textarea{flex:1;min-width:0;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:.7rem .9rem;resize:vertical;min-height:52px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
+
+/* strengths */
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:10px;align-content:start}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--teal-soft);color:var(--ink);border-radius:999px;padding:.25rem .7rem;font-size:.92rem}
+
+/* ideas */
+.ideas{display:grid;gap:14px;margin-top:18px}
+.idea{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:18px;display:grid;gap:10px}
+.idea.first{border-color:var(--sun);box-shadow:0 0 0 3px color-mix(in srgb,var(--sun) 25%,transparent)}
+.idea-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.badge{background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:.78rem;border-radius:999px;padding:.2rem .65rem;white-space:nowrap}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fact{border-top:1px solid var(--line);padding-top:6px;min-width:0}
+.fact strong{display:block;font-variant-numeric:tabular-nums}
+.safety{background:var(--warn-soft);color:var(--ink);border-radius:12px;padding:.6rem .8rem;font-size:.93rem}
+.safety b{color:var(--warn)}
+@media (max-width:520px){.facts{grid-template-columns:1fr}}
+
+/* plan */
+.plan{display:grid;gap:16px;margin-top:18px}
+.namecard{background:var(--ink);color:var(--bg);border-radius:20px;padding:22px;display:grid;gap:6px}
+.namecard .label{color:inherit;opacity:.7}
+.namecard h2{font-size:clamp(1.7rem,5vw,2.4rem)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:10px;align-content:start}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.checks label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.checks input{width:20px;height:20px;margin-top:3px;accent-color:var(--teal);flex:none}
+.checks input:checked + span{text-decoration:line-through;color:var(--muted)}
+ol.plain,ul.plain{margin:0;padding-left:1.2rem;display:grid;gap:6px}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.note{font-size:.88rem;color:var(--muted);margin-top:28px;border-top:1px solid var(--line);padding-top:14px}
+.err{background:var(--warn-soft);border-radius:12px;padding:.8rem 1rem}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brandrow">
+      <button class="brand" id="homeBtn" type="button" aria-label="Back to start"><span class="seed" aria-hidden="true"></span>Seedline</button>
+      <span class="muted" style="font-size:.9rem">Your story → your business</span>
+    </div>
+    <nav class="steps" id="steps" aria-label="Progress"></nav>
+  </header>
+  <main id="app" aria-live="polite"></main>
+  <p class="note">Demo. The people here are examples. Seedline gives you a path to your first customer. It never promises income.</p>
+</div>
+
+<script>
+const STEPS = ["Talk", "Your strengths", "Your ideas", "Your launch plan"];
+
+const PEOPLE = [
+{
+  id:"maria", name:"Maria", initial:"M", role:"Sells used items on Facebook Marketplace and eBay on weekends",
+  chat:[
+    ["Tell me a little about what you do.","I sell things on Facebook Marketplace and eBay on weekends. Mostly kids' clothes and toys I find at yard sales."],
+    ["What do people ask you to help them with?","My neighbors always ask me to sell their stuff. They say I get better prices and they don't have time."],
+    ["What do you enjoy most?","Taking nice photos and finding a good deal. I love it when something sells in one day."],
+    ["What do you already have that could help?","A garage with shelves, a ring light, and about 300 five-star reviews on eBay."],
+    ["How much time and money can you put in?","Maybe 15 hours a week. I could spend about $200 to start."]
+  ],
+  strengths:{skills:["Pricing used items","Product photos","Writing listings","Fast shipping"],have:["Garage storage","Ring light","300 five-star eBay reviews"],people:["Neighbors who trust her","Local parents' groups"],timeMoney:["15 hours a week","About $200 to start"]},
+  ideas:[
+    {title:"\"I sell it for you\" service", pitch:"Pick up neighbors' unwanted items, sell them online, and keep a share of each sale.", why:"People already ask you to do this. You have the skills, the space and the reviews.", firstDollar:"1–2 weeks", startCost:"About $50", price:"Keep 30–40% of each sale", startHere:true, safety:null,
+     plan:{name:"Second Spin Sellers", offer:"We sell your stuff. You get paid when it sells.", steps:["Write a one-page agreement: your share, and what happens to items that don't sell in 30 days","Make a simple page with a \"Request a pickup\" form","Post in your Nextdoor and neighborhood Facebook groups","Do your first 3 pickups and photograph everything the same day","Share before-and-after results (with permission) to get the next 3"], firstCustomers:["The neighbors who already asked you","Local parents' Facebook groups","A Nextdoor post with real photos of sold items"], grow:["Website with pickup booking","Simple payouts to customers","Small Facebook ad ($5/day) to your ZIP codes after 3 happy customers"]}},
+    {title:"Kids' clothing bundle shop", pitch:"Sell curated bundles by size and season from your own online store and Instagram.", why:"You already source kids' clothes cheaply and know what sells.", firstDollar:"3–4 weeks", startCost:"About $150", price:"$25–45 per bundle", startHere:false, safety:null,
+     plan:{name:"Little Bundles", offer:"Ready-to-wear outfit bundles, sorted by size.", steps:["Pick 3 sizes to start","Make 10 bundles and photograph them on one background","Open a simple online shop with payments","Post every bundle on Instagram and Marketplace","Ask every buyer for a review"], firstCustomers:["Your past eBay buyers","Local parents' groups","Instagram posts with size tags"], grow:["Own online store","Email to repeat buyers each season","Small Instagram ads once bundles sell out"]}},
+    {title:"\"Learn to resell\" workshop", pitch:"Teach beginners how to find, price and sell used items.", why:"Your 300 reviews prove you know how. Many people want a side income and don't know where to start.", firstDollar:"4–6 weeks", startCost:"About $30", price:"$49 per seat", startHere:false, safety:"Teach the skill only. Never tell students how much they will earn.",
+     plan:{name:"Resell Ready", offer:"A 2-hour, hands-on reselling workshop.", steps:["Write your 5-part lesson outline","Book a library room or set up an online call","Make a sign-up page","Invite 10 people you know","Collect feedback and improve"], firstCustomers:["Friends who ask how you do it","Local community boards","Facebook groups for side hustles"], grow:["Recorded version people can buy","Monthly live Q&A","Small Facebook ads to your area"]}}
+  ]
+},
+{
+  id:"daniel", name:"Daniel", initial:"D", role:"Furniture salesperson for 8 years",
+  chat:[
+    ["Tell me a little about what you do.","I've sold furniture at a big store for 8 years."],
+    ["What do people ask you to help them with?","\"Will this fit in my living room?\" \"What color goes with my couch?\" I help people picture the whole room."],
+    ["What do you enjoy most?","When a customer sends me a photo of their finished room. That makes my day."],
+    ["What do you already have that could help?","A good eye for design, a pickup truck, and I know the delivery and assembly guys."],
+    ["How much time and money can you put in?","Evenings and Sundays, about 10 hours a week. Around $300."]
+  ],
+  strengths:{skills:["Room layout","Color and style matching","Knowing furniture quality","Selling with trust"],have:["Pickup truck","Contacts in delivery and assembly"],people:["Years of happy customers"],timeMoney:["10 hours a week","About $300 to start"]},
+  ideas:[
+    {title:"Room styling sessions", pitch:"Online or in-home sessions: you give a room layout and a shopping list.", why:"You already do this every day at work. Customers love it.", firstDollar:"1–2 weeks", startCost:"About $40", price:"$99 per room", startHere:true, safety:"Check your job's rules on side work, and don't take customers from your current store.",
+     plan:{name:"Room by Daniel", offer:"A finished-room plan in one session: layout, colors and a shopping list.", steps:["Make a sample plan for a friend's living room","Create a page with photos and a booking calendar","Set your price and take payment when people book","Post your sample before-and-after","Do 3 sessions and ask for reviews"], firstCustomers:["Friends and family who are moving","Neighborhood Facebook groups","New-homeowner groups on Nextdoor"], grow:["Website with booking and payment","Short room-tip videos on TikTok and Instagram","Small Facebook ads to new movers in your area"]}},
+    {title:"Fix-and-flip furniture", pitch:"Buy quality used furniture, clean or repair it, and resell it.", why:"You know which brands are well made and what they're worth, and you have a truck.", firstDollar:"2–3 weeks", startCost:"About $300", price:"Varies by piece", startHere:false, safety:null,
+     plan:{name:"Second Home Furniture", offer:"Quality pre-owned furniture, cleaned and ready.", steps:["Buy 2 pieces you know are underpriced","Clean, repair and photograph them well","List on Marketplace with delivery for a fee","Track what you paid and what it sold for","Reinvest in the next 3 pieces"], firstCustomers:["Facebook Marketplace","Local buy/sell groups","Past customers who want a deal"], grow:["Simple online showroom","Instagram with before-and-after photos","Delivery add-on"]}},
+    {title:"Assembly and small delivery", pitch:"Assemble furniture and make small deliveries with your truck.", why:"People buy flat-pack furniture and have no truck or time.", firstDollar:"1–2 weeks", startCost:"About $100", price:"$60–150 per job", startHere:false, safety:"Get liability insurance and a local business license before your first job.",
+     plan:{name:"Truck & Tools", offer:"Same-week assembly and small delivery.", steps:["Get a business license and liability insurance","Make a page with prices and booking","List on Google Business Profile","Post in neighborhood groups","Do 3 jobs and ask for reviews"], firstCustomers:["Neighbors","Nextdoor","People selling big items on Marketplace"], grow:["Google Business Profile reviews","Booking and payment online","Small Google search ads ($5–10/day) for \"furniture assembly near me\""]}}
+  ]
+},
+{
+  id:"sam", name:"Sam", initial:"S", role:"Retail manager for 20 years",
+  chat:[
+    ["Tell me a little about what you do.","I've worked in retail for 20 years. I've managed up to 6 stores: hiring, schedules, sales goals, the P&L."],
+    ["What do people ask you to help them with?","Small shop owners ask how to raise sales. New managers ask me how to handle their team."],
+    ["What do you enjoy most?","Coaching people. Watching a struggling store turn around."],
+    ["What do you already have that could help?","Training guides I wrote, a big LinkedIn network, and I know a lot of local shop owners."],
+    ["How much time and money can you put in?","About 8 hours a week for now. I could put in $500."]
+  ],
+  strengths:{skills:["Raising store sales","Hiring and training","Scheduling","Reading a P&L"],have:["Training guides already written","Years of proven results"],people:["LinkedIn network","Local shop owners"],timeMoney:["8 hours a week","About $500 to start"]},
+  ideas:[
+    {title:"Sales coaching for small shops", pitch:"One store visit and a 30-day plan to fix sales, staffing and displays.", why:"Owners already ask you for this. You have 20 years of proof.", firstDollar:"2–3 weeks", startCost:"About $100", price:"$350 per store plan", startHere:true, safety:"Sell the plan and the coaching. Don't promise a specific sales increase.",
+     plan:{name:"Store Turnaround Coaching", offer:"A store visit plus a clear 30-day action plan.", steps:["Write your store checklist (what you look at on a visit)","Make a page with your story and a booking form","Offer 2 shop owners you know a first visit","Turn their results into a short case story (with permission)","Post on LinkedIn every week about one store lesson"], firstCustomers:["Shop owners you already know","Your LinkedIn network","Local Chamber of Commerce events"], grow:["Monthly coaching plan","Website with booking and payment","LinkedIn and Google ads to local business owners"]}},
+    {title:"Store manager toolkit", pitch:"Sell your hiring, scheduling and training templates as a download.", why:"You already wrote them. New managers need them on day one.", firstDollar:"3–4 weeks", startCost:"About $50", price:"$29–79 per toolkit", startHere:false, safety:"Remove anything that belongs to your employer. Use only what you created yourself.",
+     plan:{name:"Manager Starter Kit", offer:"Ready-to-use templates for a new store manager.", steps:["Pick your 10 best templates and remove company names","Make them clean and easy to edit","Set up a simple online store","Write 3 LinkedIn posts showing one template each","Ask 5 managers for feedback"], firstCustomers:["Your LinkedIn network","Retail manager groups","Former coworkers"], grow:["More kits (holiday season, inventory)","Email list","Small LinkedIn ads"]}},
+    {title:"New manager course", pitch:"An online group course for people stepping up to manager.", why:"You've trained many managers. A course reaches more people at once.", firstDollar:"6–8 weeks", startCost:"About $200", price:"$199 per person", startHere:false, safety:null,
+     plan:{name:"First-Time Manager Academy", offer:"4 live sessions to become a confident store manager.", steps:["Outline 4 sessions","Pre-sell 5 seats before building everything","Run it live on video calls","Record it for the next group","Collect reviews"], firstCustomers:["Your LinkedIn network","Retail groups","Companies that promote from within"], grow:["Recorded version","Team packages for companies","LinkedIn ads"]}}
+  ]
+},
+{
+  id:"amir", name:"Amir", initial:"A", role:"Moved to Virginia from Afghanistan last year",
+  chat:[
+    ["Tell me a little about yourself.","I came to Virginia from Afghanistan last year. I speak Dari, Pashto and English. Back home I was an office administrator."],
+    ["What do people ask you to help them with?","New families from my community ask me to help with bank accounts, phones, the DMV and school forms. I translate for them."],
+    ["What do you enjoy most?","Helping people feel at home. And cooking for big community events."],
+    ["What do you already have that could help?","A car, a laptop, and the trust of my community. Our WhatsApp groups have about 400 people."],
+    ["How much time and money can you put in?","About 20 hours a week. Maybe $100."]
+  ],
+  strengths:{skills:["Dari, Pashto and English","Office and paperwork skills","Cooking for events"],have:["Car","Laptop"],people:["Trust of his community","WhatsApp groups with about 400 people"],timeMoney:["20 hours a week","About $100 to start"]},
+  ideas:[
+    {title:"Newcomer setup helper", pitch:"Help new arrivals with bank accounts, phones, DMV appointments and school enrollment, with translation.", why:"People already come to you for this. You speak their language and they trust you.", firstDollar:"About 1 week", startCost:"About $20", price:"$40–60 per hour, or a setup package", startHere:true, safety:"Do not give immigration legal advice or fill out immigration forms for pay. Only licensed lawyers or accredited representatives may. Keep your service to everyday setup and translation, and refer legal questions.",
+     plan:{name:"Welcome Home Setup", offer:"We help new families get set up: bank, phone, DMV and school.", steps:["Write a list of what you do and what you don't do (no legal advice)","Set a simple package price","Make a one-page site in English, Dari and Pashto","Share it in your WhatsApp groups","Help 3 families and ask for a voice-note review"], firstCustomers:["Families in your WhatsApp groups","Local mosques and community centers","Refugee resettlement volunteers"], grow:["Booking and payment online","Short help videos in Dari and Pashto","Small Facebook ads in Dari and Pashto to your area"]}},
+    {title:"Document translation", pitch:"Translate documents from Dari and Pashto to English, with a signed statement of accuracy.", why:"Offices often need translations, and few people can do these languages well.", firstDollar:"2–3 weeks", startCost:"About $50", price:"$25–40 per page", startHere:false, safety:"Some offices have their own rules for translations. Check what each one accepts, and never translate immigration filings as legal advice.",
+     plan:{name:"Dari & Pashto Translations", offer:"Accurate document translations with a signed accuracy statement.", steps:["Make a translation template and accuracy statement","Set per-page prices","Create an upload-and-pay page","Tell community groups and local offices","Deliver fast and ask for reviews"], firstCustomers:["Your community","Schools and clinics that serve newcomers","Translation directories"], grow:["Online ordering","Google Business Profile","Google search ads for \"Dari translator\""]}},
+    {title:"Afghan home-style catering", pitch:"Cook for events, parties and offices.", why:"You already cook for big community events and people love your food.", firstDollar:"3–6 weeks", startCost:"$300 or more", price:"Per-person event pricing", startHere:false, safety:"Virginia requires permits and a licensed kitchen for most food you sell. Start by renting a commercial kitchen by the hour.",
+     plan:{name:"Kabul Kitchen Catering", offer:"Home-style Afghan food for your events.", steps:["Look up the food permit rules for your county","Rent a licensed kitchen by the hour","Choose a 6-dish menu with per-person prices","Cater one community event","Take photos and collect reviews"], firstCustomers:["Community events","Office lunches","Wedding and party planners"], grow:["Online menu with ordering","Instagram food photos","Google Business Profile"]}}
+  ]
+}
+];
+
+const OWN_QUESTIONS = [
+  "Tell me a little about yourself. What do you do, or what did you do before?",
+  "What do people often ask you to help them with?",
+  "What do you enjoy most? What are you proud of?",
+  "What do you already have that could help? (a car, a space, tools, languages, friends in a community)",
+  "How many hours a week and how much money could you put in to start?"
+];
+
+const S = {view:"home", person:null, own:null};
+const app = document.getElementById("app");
+const stepsEl = document.getElementById("steps");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function setStep(i){
+  stepsEl.innerHTML = STEPS.map((t,n)=>`<div class="step ${n===i?"on":""} ${n<i?"done":""}"><b>${n<i?"✓":n+1}</b>${t}</div>`).join("");
+  stepsEl.hidden = i < 0;
+  window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
+}
+
+function home(){
+  S.view="home"; S.person=null; setStep(-1);
+  app.innerHTML = `
+  <section class="hero">
+    <span class="label">No idea needed. Just your story.</span>
+    <h1>Tell us about your life. We'll find the business in it.</h1>
+    <p class="muted">Answer 5 friendly questions in your own words. Seedline maps what you're good at, shows you 3 ways to earn from it, and gives you a simple plan to reach your first customer.</p>
+    <div class="how"><span>Talk</span><i>→</i><span>Your strengths</span><i>→</i><span>Your ideas</span><i>→</i><span>Your launch plan</span></div>
+  </section>
+  <h2>See it with a real-life example</h2>
+  <div class="people">${PEOPLE.map(p=>`
+    <button class="person" type="button" data-id="${p.id}">
+      <span class="avatar" aria-hidden="true">${p.initial}</span>
+      <h3>${p.name}</h3><span class="role">${esc(p.role)}</span>
+    </button>`).join("")}
+  </div>
+  <div class="own">
+    <p><strong>Or tell your own story.</strong> <span class="muted">Answer in any language. Seedline's AI will find your ideas.</span></p>
+    <button class="btn sun" type="button" id="ownBtn">Start my conversation</button>
+  </div>`;
+  app.querySelectorAll(".person").forEach(b=>b.onclick=()=>talkSample(PEOPLE.find(p=>p.id===b.dataset.id)));
+  document.getElementById("ownBtn").onclick=talkOwn;
+}
+
+function bubble(chat, who, text){
+  const d=document.createElement("div");
+  d.className="msg "+(who==="ai"?"ai":"me");
+  d.innerHTML=`<span class="who">${who==="ai"?"Seedline":esc(who)}</span>${esc(text)}`;
+  chat.appendChild(d);
+}
+
+function talkSample(p){
+  S.view="talk"; S.person=p; setStep(0);
+  app.innerHTML = `<h2>${p.name}'s conversation</h2><p class="muted" style="margin-top:6px">${esc(p.role)}</p><div class="chat" id="chat"></div><div class="actions" id="act"></div>`;
+  const chat=document.getElementById("chat"), act=document.getElementById("act");
+  const lines = p.chat.flatMap(([q,a])=>[["ai",q],[p.name,a]]);
+  let i=0;
+  const next=()=>{
+    if(i>=lines.length){
+      bubble(chat,"ai",`Thank you, ${p.name}. I've learned a lot about you. Let's look at what you're good at.`);
+      act.innerHTML=`<button class="btn" type="button" id="go">See ${p.name}'s strengths →</button>`;
+      document.getElementById("go").onclick=()=>strengths(p);
+      return;
+    }
+    bubble(chat, lines[i][0], lines[i][1]); i++;
+    setTimeout(next, reduce?0:650);
+  };
+  if(reduce){ while(i<lines.length){ bubble(chat, lines[i][0], lines[i][1]); i++; } }
+  next();
+}
+
+function talkOwn(){
+  S.view="talk"; S.own={answers:[], name:""}; setStep(0);
+  app.innerHTML = `<h2>Your conversation</h2><p class="muted" style="margin-top:6px">Write the way you talk. Short answers are fine. Any language works.</p>
+  <div class="chat" id="chat"></div>
+  <form class="composer" id="form"><label for="ans" class="label" style="position:absolute;left:-9999px">Your answer</label>
+    <textarea id="ans" rows="2" placeholder="Type your answer…"></textarea>
+    <button class="btn" type="submit">Send</button></form>
+  <div class="actions" id="act"></div>`;
+  const chat=document.getElementById("chat"), form=document.getElementById("form"), ta=document.getElementById("ans");
+  let q=0; bubble(chat,"ai",OWN_QUESTIONS[0]);
+  form.onsubmit=e=>{
+    e.preventDefault();
+    const v=ta.value.trim(); if(!v) return;
+    bubble(chat,"You",v); S.own.answers.push(v); ta.value=""; q++;
+    if(q<OWN_QUESTIONS.length){ setTimeout(()=>bubble(chat,"ai",OWN_QUESTIONS[q]), reduce?0:400); }
+    else { form.hidden=true; analyzeOwn(chat); }
+  };
+  ta.addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); form.requestSubmit(); }});
+  ta.focus();
+}
+
+async function analyzeOwn(chat){
+  const act=document.getElementById("act");
+  const t=document.createElement("div"); t.className="typing"; t.textContent="Seedline is finding the business in your story…"; chat.appendChild(t);
+  const sample = window.claude?.use ? await window.claude.use("sample").catch(()=>null) : null;
+  if(!sample){ t.remove(); act.innerHTML=`<p class="err">The live AI isn't available in this view. Try one of the example people instead.</p><button class="btn ghost" type="button" id="back">Back to start</button>`; document.getElementById("back").onclick=home; return; }
+  const convo = OWN_QUESTIONS.map((q,i)=>`Q: ${q}\nA: ${S.own.answers[i]}`).join("\n\n");
+  const prompt = `You are Seedline, a friendly business coach for people who are new to AI and new to business (for example retail workers, salespeople, resellers and recent immigrants). From the conversation below, find realistic small online or local businesses this person could start using what they already know and have.
+
+Rules:
+- Write in the same language the person used in their answers. Use short, plain sentences. No jargon.
+- Give exactly 3 ideas, ordered from fastest and cheapest first dollar to slowest. The first idea must be a simple service built on a skill they already have; mark only it startHere=true.
+- Fit their stated time and budget.
+- Never promise or estimate income or profit. "price" is what they would charge a customer, not what they will earn.
+- "safety": if an idea needs a license, permit or insurance, or could be illegal without one (for example immigration legal advice, food sales, contracting, tax or financial advice, or a conflict with a current employer), explain it in one or two plain sentences and steer to a safe version. Otherwise null.
+- Each plan has exactly 5 steps for the first week, 3 places to find first customers, and 3 "grow" tools (website, payments, small ads of about $5-10 a day, reviews and so on).
+
+Return only JSON with this shape:
+{"firstName": string or "", "strengths": {"skills": [string], "have": [string], "people": [string], "timeMoney": [string]},
+ "ideas": [{"title": string, "pitch": string, "why": string, "firstDollar": string, "startCost": string, "price": string, "startHere": boolean, "safety": string or null,
+   "plan": {"name": string, "offer": string, "steps": [string], "firstCustomers": [string], "grow": [string]}}]}
+
+Conversation:
+${convo}`;
+  try{
+    const r = await sample.json(prompt, {modelTier:"default"});
+    t.remove();
+    if(!r || !Array.isArray(r.ideas) || !r.strengths) throw {code:"invalid_json"};
+    const p = {id:"own", name: r.firstName || "You", initial:(r.firstName||"Y")[0].toUpperCase(), role:"Your story", strengths:r.strengths, ideas:r.ideas.slice(0,3), own:true};
+    S.person=p;
+    bubble(chat,"ai","Thank you. I've learned a lot about you. Let's look at what you're good at.");
+    act.innerHTML=`<button class="btn" type="button" id="go">See my strengths →</button>`;
+    document.getElementById("go").onclick=()=>strengths(p);
+  }catch(e){
+    t.remove();
+    const msg = e?.code==="not_granted" ? "Seedline needs your permission to use AI on this page. Allow it and try again, or pick an example person."
+      : e?.code==="rate_limited" ? "Too many requests right now. Wait a minute, then try again."
+      : "Something went wrong while finding your ideas. Try again, or pick an example person.";
+    act.innerHTML=`<p class="err">${msg}</p><button class="btn" type="button" id="retry">Try again</button><button class="btn ghost" type="button" id="back">Back to start</button>`;
+    document.getElementById("retry").onclick=()=>{act.innerHTML=""; analyzeOwn(chat);};
+    document.getElementById("back").onclick=home;
+  }
+}
+
+function strengths(p){
+  S.view="strengths"; setStep(1);
+  const st=p.strengths, who = p.own ? "you" : p.name;
+  const g=(t,arr)=>`<div class="group"><span class="label">${t}</span><div class="chips">${(arr||[]).map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>`;
+  app.innerHTML=`<span class="label">Step 2</span><h2 style="margin-top:6px">Here's what ${p.own?"you're":esc(p.name)+" is"} good at</h2>
+  <p class="muted" style="margin-top:6px">Seedline turned the conversation into a simple map. This is the raw material for a business.</p>
+  <div class="map">${g("Skills",st.skills)}${g(p.own?"What you have":"What "+esc(p.name)+" has",st.have)}${g("People who trust "+(p.own?"you":who),st.people)}${g("Time and money",st.timeMoney)}</div>
+  <div class="actions"><button class="btn" type="button" id="go">Show 3 ways to earn from it →</button><button class="btn ghost" type="button" id="back">← Back</button></div>`;
+  document.getElementById("go").onclick=()=>ideas(p);
+  document.getElementById("back").onclick=()=>p.own?home():talkSample(p);
+}
+
+function ideas(p){
+  S.view="ideas"; setStep(2);
+  app.innerHTML=`<span class="label">Step 3</span><h2 style="margin-top:6px">3 ways ${p.own?"you":esc(p.name)} could earn from this</h2>
+  <p class="muted" style="margin-top:6px">Sorted from fastest and cheapest to start. Pick one.</p>
+  <div class="ideas">${p.ideas.map((d,i)=>`
+    <article class="idea ${d.startHere?"first":""}">
+      <div class="idea-head"><h3>${esc(d.title)}</h3>${d.startHere?`<span class="badge">Start here</span>`:""}</div>
+      <p>${esc(d.pitch)}</p>
+      <p class="muted"><strong>Why it fits:</strong> ${esc(d.why)}</p>
+      <div class="facts">
+        <div class="fact"><span class="label">First customer in</span><strong>${esc(d.firstDollar)}</strong></div>
+        <div class="fact"><span class="label">Cost to start</span><strong>${esc(d.startCost)}</strong></div>
+        <div class="fact"><span class="label">You'd charge</span><strong>${esc(d.price)}</strong></div>
+      </div>
+      ${d.safety?`<p class="safety"><b>Before you start:</b> ${esc(d.safety)}</p>`:""}
+      <div><button class="btn ${d.startHere?"sun":"ghost"}" type="button" data-i="${i}">Choose this idea</button></div>
+    </article>`).join("")}</div>
+  <div class="actions"><button class="btn ghost" type="button" id="back">← Back</button></div>`;
+  app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>plan(p,p.ideas[+b.dataset.i]));
+  document.getElementById("back").onclick=()=>strengths(p);
+}
+
+function plan(p,d){
+  S.view="plan"; setStep(3);
+  const pl=d.plan||{};
+  app.innerHTML=`<span class="label">Step 4</span><h2 style="margin-top:6px">${p.own?"Your":esc(p.name)+"'s"} launch plan</h2>
+  <div class="plan">
+    <div class="namecard"><span class="label">Business name idea</span><h2>${esc(pl.name)}</h2><p>${esc(pl.offer)}</p><p style="opacity:.75">${esc(d.price)} · costs ${esc(d.startCost)} to start</p></div>
+    ${d.safety?`<p class="safety"><b>Before you start:</b> ${esc(d.safety)}</p>`:""}
+    <div class="box">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><h3>This week</h3><span class="muted" id="count"></span></div>
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+      <ul class="checks">${(pl.steps||[]).map((s,i)=>`<li><label><input type="checkbox" id="task${i}"><span>${esc(s)}</span></label></li>`).join("")}</ul>
+    </div>
+    <div class="cols">
+      <div class="box"><h3>Find your first customers</h3><ol class="plain">${(pl.firstCustomers||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
+      <div class="box"><h3>Grow it yourself</h3><p class="muted" style="font-size:.93rem">Seedline sets these up for you, in your name:</p><ul class="plain">${(pl.grow||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    </div>
+    <div class="box" style="background:var(--teal-soft);border-color:transparent">
+      <h3>Your daily coach</h3>
+      <p>Every morning Seedline gives you 3 small tasks. Every week you see a simple scoreboard: visitors, leads and customers. New tools unlock as you reach each goal.</p>
+    </div>
+  </div>
+  <div class="actions"><button class="btn sun" type="button" id="launch">Build my website and launch kit</button><button class="btn ghost" type="button" id="back">← Pick another idea</button><button class="btn ghost" type="button" id="restart">Try another person</button></div>
+  <p id="launched" class="muted" hidden style="margin-top:10px">In the full product, this builds the website, booking and payments, and Google Business listing, all owned by ${p.own?"you":esc(p.name)}. This demo stops here.</p>`;
+  const boxes=[...app.querySelectorAll(".checks input")], bar=document.getElementById("bar"), count=document.getElementById("count");
+  const upd=()=>{const n=boxes.filter(b=>b.checked).length; bar.style.width=(boxes.length?n/boxes.length*100:0)+"%"; count.textContent=`${n} of ${boxes.length} done`;};
+  boxes.forEach(b=>b.onchange=upd); upd();
+  document.getElementById("launch").onclick=()=>{document.getElementById("launched").hidden=false;};
+  document.getElementById("back").onclick=()=>ideas(p);
+  document.getElementById("restart").onclick=home;
+}
+
+document.getElementById("homeBtn").onclick=home;
+home();
+</script>
