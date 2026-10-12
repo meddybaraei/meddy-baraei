@@ -11,7 +11,7 @@ Work top to bottom; mark each one done with the date.
 |---|---|---|---|---|
 | 1 | How to Wire a Ring Doorbell (Step by Step Install) | ~5,400 | low (19) | ✅ posted Oct 7 |
 | 2 | Ring Doorbell Not Working? 5 Fixes to Try First (long version; a 3-check Short was posted Oct 7) | ~5,400 | low (14) | ✅ Oct 8 (video + Short, music only) |
-| 3 | How to Make Your Ring Doorbell More Sensitive to Motion | ~5,300 | very low (12) | |
+| 3 | How to Make Your Ring Doorbell More Sensitive to Motion | ~5,300 | very low (12) | moved to Thu Oct 29 |
 | 4 | How to Hook Up a Ring Solar Panel (use McLean solar photos) | ~5,300 | low (16) | |
 | 5 | How to Reset Your Ring Doorbell | ~5,300 | low (16) | |
 | 6 | How to Install a Ring Doorbell Without Drilling | ~5,400 | low (20) | |
@@ -106,3 +106,8 @@ Before scheduling or changing any post, show the owner the video + title + descr
 ## Contact info + reach (owner, Oct 12) — overrides older rules mentioning the phone
 - YouTube: NEVER show the phone number (not in video, title, description or comments). Use **Meddy@novaprohome.com** + **https://novaprohome.com/contact** (and https://novaprohome.com). Video end cards now show the email (video/tools/* updated; TikTok, Facebook and LinkedIn may keep the phone number — owner OK, Oct 12).
 - Every post must sell locally AND pull views from everywhere: title leads with the general search phrase (e.g. "How to Install a Ring Floodlight Cam") then the city ("| Sterling, VA"); description first line = general benefit, then the local SEO block; tags/hashtags mix general (#RingCamera #SmartHome #HomeSecurity #DIY) with local (#SterlingVA #NorthernVirginia).
+
+## Ecobee humidity fix (owner's field-guide deck, Oct 12) — scheduled after owner's "go"
+Real job, Vienna VA (Carrier heat pump + ecobee Premium). Files: video/weekly/2026-10-22_ecobee-humidity-fix(.json|.mp4|_short.mp4), video/tiktok/2026-10-22_ecobee-humidity_tiktok.mp4, video/social/ecobee-humidity/slide-01..12.jpg.
+- YouTube Thu Oct 22 4:00 PM (video) + 4:30 PM (Short); TikTok Oct 22 6 PM; Facebook Reel Oct 22 6:30 PM; LinkedIn PDF guide Fri Oct 23 9 AM; Facebook photo set Sat Oct 24 12 PM.
+- Took the Oct 22 Thursday tip slot; topic #3 (Ring motion sensitivity) moves to Thu Oct 29.
