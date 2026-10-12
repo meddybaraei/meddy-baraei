@@ -88,3 +88,8 @@ Before scheduling or changing any post, show the owner the video + title + descr
 - Logo confirmed: youtube-branding/logo_full_white_bg.png (= video/tools/logo.png) is the real logo. Use it unchanged.
 - Mix production tools: make some videos with Adobe Express and some with Canva (plus our own cuts). Owner prefers the CANVA style (Oct 12) — default to Canva. Still show each one for "go" before scheduling.
 - Backyard deck Ring cams job (Oct 2026) was in Arlington, VA.
+
+## YouTube monetization goal (owner, Oct 12)
+- Goal: get into the YouTube Partner Program. Status Oct 12: 1 subscriber, ~1.3K views (mostly Shorts).
+- Targets: 500 subs + 3,000 public watch hours (12 mo) for fan-funding tier; 1,000 subs + 4,000 watch hours for ad revenue. (Shorts path: 3M / 10M Shorts views in 90 days — unrealistic for now.)
+- Strategy: more long-form (6-10 min reviews/how-tos) for watch hours; every Short points to a long video (related video link); subscribe CTA; track subs + watch hours in the Monday report. Owner applies himself in YouTube Studio > Earn once eligible.
