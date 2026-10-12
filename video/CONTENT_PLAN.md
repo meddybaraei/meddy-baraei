@@ -104,5 +104,5 @@ Before scheduling or changing any post, show the owner the video + title + descr
 - Trend: problem/question topics > promos. Double down on "X not working? / Which one should I buy?" formats.
 
 ## Contact info + reach (owner, Oct 12) — overrides older rules mentioning the phone
-- YouTube: NEVER show the phone number (not in video, title, description or comments). Use **Meddy@novaprohome.com** + **https://novaprohome.com/contact** (and https://novaprohome.com). Video end cards now show the email (video/tools/* updated; make_tiktok.py still has the phone — TikTok/Facebook pending owner's decision).
+- YouTube: NEVER show the phone number (not in video, title, description or comments). Use **Meddy@novaprohome.com** + **https://novaprohome.com/contact** (and https://novaprohome.com). Video end cards now show the email (video/tools/* updated; TikTok, Facebook and LinkedIn may keep the phone number — owner OK, Oct 12).
 - Every post must sell locally AND pull views from everywhere: title leads with the general search phrase (e.g. "How to Install a Ring Floodlight Cam") then the city ("| Sterling, VA"); description first line = general benefit, then the local SEO block; tags/hashtags mix general (#RingCamera #SmartHome #HomeSecurity #DIY) with local (#SterlingVA #NorthernVirginia).
