@@ -93,3 +93,12 @@ Before scheduling or changing any post, show the owner the video + title + descr
 - Goal: get into the YouTube Partner Program. Status Oct 12: 1 subscriber, ~1.3K views (mostly Shorts).
 - Targets: 500 subs + 3,000 public watch hours (12 mo) for fan-funding tier; 1,000 subs + 4,000 watch hours for ad revenue. (Shorts path: 3M / 10M Shorts views in 90 days — unrealistic for now.)
 - Strategy: more long-form (6-10 min reviews/how-tos) for watch hours; every Short points to a long video (related video link); subscribe CTA; track subs + watch hours in the Monday report. Owner applies himself in YouTube Studio > Earn once eligible.
+
+## Weekly review — Oct 5–11, 2026
+- YouTube: 1,531 views (first week live), 1 sub. Best: question/problem Shorts ("No outlet? Ring Solar Panel" 144, "Ring Doorbell not working? 3 things" 121, "Battery vs Wired" 64). Worst: generic promo Short (1 view). 10 uploads in 40 min on Oct 7 diluted reach. Avg view duration 2–25 s → hooks must land in first second.
+- TikTok: first video 96 views, 1 like.
+- Facebook: 423 media views (vs 62), followers 9 (+2); 2 posts same day = 0 impressions; hard-sell CTA posts flop; install album + how-to reel did best.
+- LinkedIn: 6 impressions, 1 click.
+- Website tracking: Metricool shows 0 visits → pixel likely not installed; no way to measure clicks per post yet.
+- vidIQ comments blocked ("Not enough credits"); Metricool shows 0 YouTube comments.
+- Trend: problem/question topics > promos. Double down on "X not working? / Which one should I buy?" formats.
