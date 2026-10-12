@@ -83,3 +83,8 @@ Before scheduling or changing any post, show the owner the video + title + descr
 - TikTok style (owner approved Oct 11): Gen Z cut via `video/tools/make_tiktok.py` — POV/question hook on frame 1, 4-beat punch-zoom cuts at 140 bpm, bold Inter Black captions with yellow keywords, original phonk beat (music "phonk"), 14–18 s, CTA card "link in bio". Configs in `video/tiktok/`. Captions start with the hook; add #SmartHome #FirstHome. Business accounts can't use copyrighted chart songs (only TikTok Commercial Music Library).
 
 ## Brand name (owner, Oct 12) — ALWAYS "NovaProHome" (one word). Never "Nova Pro Home". Use the real logo (youtube-branding/logo_full_white_bg.png / Drive "LOGO.png"), never a re-drawn version.
+
+## Logo + tools (owner, Oct 12)
+- Logo confirmed: youtube-branding/logo_full_white_bg.png (= video/tools/logo.png) is the real logo. Use it unchanged.
+- Mix production tools: make some videos with Adobe Express and some with Canva (plus our own cuts). Still show each one for "go" before scheduling.
+- Backyard deck Ring cams job (Oct 2026) was in Arlington, VA.
