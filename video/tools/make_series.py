@@ -189,7 +189,7 @@ def end_card():
     a, b = CFG.get('end', ['Shop it & book your install', 'novaprohome.com'])
     ctr(d, y, a, fb(60), TXT); y += 90
     ctr(d, y, b, fb(84), ACC); y += 120
-    ctr(d, y, '(571) 241-9569', fb(70), TXT); y += 110
+    ctr(d, y, 'Meddy@novaprohome.com', fb(64), TXT); y += 110
     ctr(d, y, 'Ring Authorized Dealer · Google Nest Pro', fs(40), SUB)
     return lambda t: im
 

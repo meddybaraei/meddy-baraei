@@ -114,7 +114,7 @@ def wide_frames():
     c, m = logo_card(520); im.paste(c, ((W - c.width) // 2, 120), m)
     ctr(d, 400, CFG['outro'][0], fb(84), WHITE, W / 2)
     ctr(d, 510, CFG['outro'][1], fb(84), BLUE, W / 2)
-    ctr(d, 680, 'novaprohome.com   •   (571) 241-9569', fb(60), WHITE, W / 2)
+    ctr(d, 680, 'novaprohome.com/contact   •   Meddy@novaprohome.com', fb(60), WHITE, W / 2)
     ctr(d, 790, 'Ring Authorized Dealer · Google Nest Pro · Northern Virginia', fs(40), SOFT, W / 2)
     frames.append((6.0, im))
     return (W, H), frames
@@ -144,7 +144,7 @@ def tall_frames():
     ctr(d, 800, CFG['outro'][0], fb(64), WHITE, W / 2)
     ctr(d, 885, CFG['outro'][1], fs(54), BLUE, W / 2)
     ctr(d, 1040, 'novaprohome.com', fb(84), WHITE, W / 2)
-    ctr(d, 1150, '(571) 241-9569', fb(72), WHITE, W / 2)
+    ctr(d, 1150, 'Meddy@novaprohome.com', fb(64), WHITE, W / 2)
     frames.append((3.5, im))
     return (W, H), frames
 

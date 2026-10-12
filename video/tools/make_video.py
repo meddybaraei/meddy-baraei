@@ -74,7 +74,7 @@ scenes = [
 INTRO = title_card(['Ring & Google Nest', 'Installation'], ['Northern Virginia'])
 OUTRO = title_card(['Get a free quote'], None, [
     ('novaprohome.com', fb(70), WHITE),
-    ('(571) 241-9569', fb(70), WHITE),
+    ('Meddy@novaprohome.com', fb(64), WHITE),
     ('Ring Authorized Dealer · Google Nest Pro', fs(40), BLUE),
     ('Loudoun · Fairfax · Arlington · Prince William', fm(36), (200, 212, 228)),
 ])

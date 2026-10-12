@@ -112,7 +112,7 @@ def website():
         d.text((440, y + 14), lab, font=fm(28), fill=(140, 150, 166))
     d.rounded_rectangle((1240, 760, 1500, 840), 18, fill=BLUE)
     ctr(d, 778, 'Get Quote', fb(36), WHITE, 1370)
-    ctr(d, 950, 'Or call / text (571) 241-9569', fb(52), WHITE)
+    ctr(d, 950, 'Or email Meddy@novaprohome.com', fb(52), WHITE)
     return im
 
 scenes = [
@@ -128,7 +128,7 @@ scenes = [
     (8.4, still(steps())),
     (8.6, still(website())),
     (7.5, still(card(['New videos every', 'Tuesday & Sunday'], ['How-tos, quick fixes & real installs. Subscribe!'], BLUE, 380))),
-    (5.4, still(card(['Get a free quote'], ['novaprohome.com  ·  (571) 241-9569', 'Ring Authorized Dealer · Google Nest Pro'], SOFT, 520))),
+    (5.4, still(card(['Get a free quote'], ['novaprohome.com/contact  ·  Meddy@novaprohome.com', 'Ring Authorized Dealer · Google Nest Pro'], SOFT, 520))),
 ]
 
 if __name__ == '__main__':

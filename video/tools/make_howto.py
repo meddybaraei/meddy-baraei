@@ -172,7 +172,7 @@ def outro_slide():
     c, m = logo_card(520); im.paste(c, ((W - c.width) // 2, 120), m)
     ctr(d, 400, 'Not comfortable with wiring?', fb(88), WHITE)
     ctr(d, 510, "We'll install it for you.", fb(88), BLUE)
-    ctr(d, 680, 'novaprohome.com   •   (571) 241-9569', fb(60), WHITE)
+    ctr(d, 680, 'novaprohome.com/contact   •   Meddy@novaprohome.com', fb(60), WHITE)
     ctr(d, 790, 'Ring Authorized Dealer · Google Nest Pro · Northern Virginia', fs(40), SOFT)
     return im
 

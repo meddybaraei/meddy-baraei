@@ -81,7 +81,7 @@ def end_card():
     ctr(d, 800, 'Shop the gear we install', fb(64), WHITE)
     ctr(d, 885, '& book your free install quote', fs(48), BLUE)
     ctr(d, 1040, 'novaprohome.com', fb(84), WHITE)
-    ctr(d, 1150, '(571) 241-9569', fb(72), WHITE)
+    ctr(d, 1150, 'Meddy@novaprohome.com', fb(64), WHITE)
     ctr(d, 1290, 'Ring Authorized Dealer · Google Nest Pro', fs(40), SOFT)
     return lambda t: im
 
