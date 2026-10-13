@@ -221,6 +221,8 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
   .btn{padding:.75rem 1.2rem}
   .btn.small{padding:.5rem .9rem}
 }
+.acchip{display:flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted);margin-top:6px;flex-basis:100%}
+.acchip button{border:0;background:none;color:var(--teal);font-weight:700;text-decoration:underline;padding:0;cursor:pointer;font-size:.85rem}
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -794,10 +796,10 @@ function openCoachWith(text){ toggleCoach(true); const ta=document.getElementByI
 
 /* ---------- voice input ---------- */
 const VOICE = {
- en:{speak:"Talk instead of typing", listening:"Listening…", micTip:"To talk instead of type, tap the microphone on your phone's keyboard and speak. On iPhone it's next to the space bar. On Android it's at the top of the keyboard. Your words appear here as text."},
- es:{speak:"Habla en vez de escribir", listening:"Escuchando…", micTip:"Para hablar en vez de escribir, toca el micrófono del teclado de tu teléfono y habla. En iPhone está junto a la barra espaciadora. En Android está arriba del teclado. Tus palabras aparecerán aquí como texto."},
- fa:{speak:"به جای تایپ، حرف بزن", listening:"در حال گوش دادن…", micTip:"برای حرف زدن به جای تایپ، روی میکروفون صفحه‌کلید گوشی بزن و صحبت کن. در آیفون کنار دکمه فاصله است و در اندروید بالای صفحه‌کلید. حرف‌هایت اینجا به متن تبدیل می‌شود."},
- ar:{speak:"تحدّث بدل الكتابة", listening:"جارٍ الاستماع…", micTip:"لتتحدث بدل أن تكتب، اضغط على الميكروفون في لوحة مفاتيح هاتفك وتكلّم. في آيفون تجده بجانب زر المسافة، وفي أندرويد أعلى لوحة المفاتيح. ستظهر كلماتك هنا كنص."}
+ en:{speak:"Talk instead of typing", listening:"Listening…", micTip:"To talk instead of type, tap the microphone on your phone's keyboard and speak. On iPhone it's next to the space bar. On Android it's at the top of the keyboard. Your words appear here as text. We fix spelling and punctuation as you go.", checking:"Checking spelling…", corrected:"Corrected", undo:"Undo"},
+ es:{speak:"Habla en vez de escribir", listening:"Escuchando…", micTip:"Para hablar en vez de escribir, toca el micrófono del teclado de tu teléfono y habla. En iPhone está junto a la barra espaciadora. En Android está arriba del teclado. Tus palabras aparecerán aquí como texto. Corregimos la ortografía y la puntuación mientras hablas.", checking:"Revisando la ortografía…", corrected:"Corregido", undo:"Deshacer"},
+ fa:{speak:"به جای تایپ، حرف بزن", listening:"در حال گوش دادن…", micTip:"برای حرف زدن به جای تایپ، روی میکروفون صفحه‌کلید گوشی بزن و صحبت کن. در آیفون کنار دکمه فاصله است و در اندروید بالای صفحه‌کلید. حرف‌هایت اینجا به متن تبدیل می‌شود. املا و نشانه‌گذاری را همزمان درست می‌کنیم.", checking:"در حال بررسی املا…", corrected:"اصلاح شد", undo:"برگرداندن"},
+ ar:{speak:"تحدّث بدل الكتابة", listening:"جارٍ الاستماع…", micTip:"لتتحدث بدل أن تكتب، اضغط على الميكروفون في لوحة مفاتيح هاتفك وتكلّم. في آيفون تجده بجانب زر المسافة، وفي أندرويد أعلى لوحة المفاتيح. ستظهر كلماتك هنا كنص. نصحّح الإملاء وعلامات الترقيم أثناء حديثك.", checking:"جارٍ تدقيق الإملاء…", corrected:"تم التصحيح", undo:"تراجع"}
 };
 Object.keys(VOICE).forEach(l=>Object.assign(I18N[l],VOICE[l]));
 ICON.mic='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>';
@@ -819,10 +821,39 @@ function startMic(b){
   const base=ta.value?ta.value.trimEnd()+" ":"", ph=ta.placeholder; let got=false;
   r.onresult=e=>{ got=true; let txt=""; for(const x of e.results) txt+=x[0].transcript; ta.value=base+txt; ta.dispatchEvent(new Event("input")); };
   r.onerror=()=>{ if(!got) micTip(b, ta); };
-  r.onend=()=>{ if(rec===r){ rec=null; recBtn=null; } b.classList.remove("on"); ta.placeholder=ph; };
-  try{ r.start(); rec=r; recBtn=b; b.classList.add("on"); ta.placeholder=T().listening; }catch{ micTip(b, ta); }
+  r.onend=()=>{ if(rec===r){ rec=null; recBtn=null; } b.classList.remove("on"); ta.placeholder=ph; if(!got) micTip(b, ta); };
+  try{ r.start(); rec=r; recBtn=b; b.classList.add("on"); ta.placeholder=T().listening; setTimeout(()=>{ if(!got && rec===r){ try{ r.abort(); }catch{} rec=null; recBtn=null; b.classList.remove("on"); ta.placeholder=ph; micTip(b, ta); } }, 4000); }catch{ micTip(b, ta); }
 }
 document.addEventListener("click", e=>{ const b=e.target.closest("[data-mic]"); if(b){ e.preventDefault(); startMic(b); } });
+
+/* ---------- correct as you go ---------- */
+const AC = {timers:new WeakMap(), last:new WeakMap(), busy:new WeakSet()};
+const AC_SEL = "#ans,#coachText,#adj,.edtext,#paste";
+function acChip(ta){
+  let c = ta._acchip;
+  if(!c || !c.isConnected){ c=document.createElement("div"); c.className="acchip"; c.setAttribute("aria-live","polite"); (ta.closest(".row,.composer")||ta).insertAdjacentElement("afterend",c); ta._acchip=c; }
+  return c;
+}
+async function acCorrect(ta){
+  const text=ta.value; if(!ta.isConnected || AC.busy.has(ta)) return;
+  if(text.trim().split(/\s+/).length<3 || text===AC.last.get(ta)) return;
+  const sample = window.claude?.use ? await window.claude.use("sample").catch(()=>null) : null;
+  if(!sample) return;
+  const t=T(), chip=acChip(ta); chip.textContent=t.checking; AC.busy.add(ta);
+  try{
+    const r = await sample(`Fix spelling, punctuation, capitalization and obvious speech-to-text mistakes in the text below. Keep the text's own language (the app language is ${I18N[S.lang].name}), its meaning and the person's own words. Do not translate, shorten, add anything or answer it. Return only the corrected text.\n\nText:\n${text}`, {modelTier:"quick", cache:false});
+    const fixed=(r.text||"").trim();
+    AC.busy.delete(ta);
+    if(!ta.isConnected){ return; }
+    if(ta.value!==text || !fixed || fixed===text.trim()){ AC.last.set(ta, ta.value); chip.textContent=""; if(ta.value!==text) acSchedule(ta); return; }
+    const before=text; ta.value=fixed; AC.last.set(ta, fixed);
+    chip.innerHTML=""; const s1=document.createElement("span"); s1.textContent="✓ "+t.corrected; const u=document.createElement("button"); u.type="button"; u.textContent=t.undo;
+    u.onclick=()=>{ ta.value=before; AC.last.set(ta,before); chip.textContent=""; ta.focus(); };
+    chip.append(s1,u);
+  }catch{ AC.busy.delete(ta); chip.textContent=""; }
+}
+function acSchedule(ta){ clearTimeout(AC.timers.get(ta)); AC.timers.set(ta, setTimeout(()=>acCorrect(ta), 1500)); }
+document.addEventListener("input", e=>{ const ta=e.target; if(ta.matches?.(AC_SEL)) acSchedule(ta); });
 
 /* ---------- state + helpers ---------- */
 const LANGS = ["en","es","fa","ar"];
