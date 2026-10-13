@@ -206,6 +206,21 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .slotbtns .editbtn{color:var(--muted)}
 @media (max-width:480px){.stepbody{padding-inline-start:12px}}
 
+
+/* voice + mobile */
+.mic{flex:none}
+.mic.on{background:var(--warn-soft);border-color:var(--warn);color:var(--warn);animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--warn) 25%,transparent)}}
+@media (prefers-reduced-motion: reduce){.mic.on{animation:none}}
+.edrow .mic,.actions .mic{width:40px;height:40px}
+.mictip{background:var(--teal-soft);color:var(--ink);border-radius:12px;padding:.6rem .8rem;font-size:.92rem;margin-top:8px;flex-basis:100%}
+@media (max-width:600px){
+  input,select,textarea{font-size:16px!important}
+  .coach.coach{inset-inline:8px;width:auto;height:min(72vh,600px)}
+  .coachbtn{padding:.65rem 1rem}
+  .btn{padding:.75rem 1.2rem}
+  .btn.small{padding:.5rem .9rem}
+}
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -227,7 +242,7 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .coach .msg img{display:block;max-width:160px;border-radius:10px;margin-top:6px}
 .coach form{border-top:1px solid var(--line);padding:10px;display:grid;gap:8px}
 .coach .row{display:flex;gap:8px;align-items:flex-end}
-.coach textarea{flex:1;min-width:0;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:.55rem .7rem;resize:none;min-height:44px}
+.coach textarea{flex:1;min-width:0;width:0;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:.55rem .7rem;resize:none;min-height:44px}
 .iconbtn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;width:44px;height:44px;display:grid;place-items:center;flex:none;cursor:pointer}
 .iconbtn svg{width:20px;height:20px}
 .coach .btn{height:44px;padding:0 14px;display:grid;place-items:center}
@@ -261,6 +276,7 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
       <input id="coachFile" class="sr" type="file" accept="image/*">
       <label for="coachText" class="sr" id="coachTextLabel"></label>
       <textarea id="coachText" rows="1"></textarea>
+      <button type="button" class="iconbtn mic" data-mic="coachText" id="coachMic"></button>
       <button class="btn" type="submit" id="coachSend"></button>
     </div>
   </form>
@@ -776,6 +792,38 @@ OWN_Q.ar.push("أين تعيش؟ يكفي الرمز البريدي أو الم�
 ICON.info='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>';
 function openCoachWith(text){ toggleCoach(true); const ta=document.getElementById("coachText"); ta.value=text; ta.focus(); }
 
+/* ---------- voice input ---------- */
+const VOICE = {
+ en:{speak:"Talk instead of typing", listening:"Listening…", micTip:"To talk instead of type, tap the microphone on your phone's keyboard and speak. On iPhone it's next to the space bar. On Android it's at the top of the keyboard. Your words appear here as text."},
+ es:{speak:"Habla en vez de escribir", listening:"Escuchando…", micTip:"Para hablar en vez de escribir, toca el micrófono del teclado de tu teléfono y habla. En iPhone está junto a la barra espaciadora. En Android está arriba del teclado. Tus palabras aparecerán aquí como texto."},
+ fa:{speak:"به جای تایپ، حرف بزن", listening:"در حال گوش دادن…", micTip:"برای حرف زدن به جای تایپ، روی میکروفون صفحه‌کلید گوشی بزن و صحبت کن. در آیفون کنار دکمه فاصله است و در اندروید بالای صفحه‌کلید. حرف‌هایت اینجا به متن تبدیل می‌شود."},
+ ar:{speak:"تحدّث بدل الكتابة", listening:"جارٍ الاستماع…", micTip:"لتتحدث بدل أن تكتب، اضغط على الميكروفون في لوحة مفاتيح هاتفك وتكلّم. في آيفون تجده بجانب زر المسافة، وفي أندرويد أعلى لوحة المفاتيح. ستظهر كلماتك هنا كنص."}
+};
+Object.keys(VOICE).forEach(l=>Object.assign(I18N[l],VOICE[l]));
+ICON.mic='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>';
+function micBtn(id){ const t=T(); return `<button type="button" class="iconbtn mic" data-mic="${id}" aria-label="${t.speak}" title="${t.speak}">${ICON.mic}</button>`; }
+let rec=null, recBtn=null;
+function micTip(b, ta){
+  document.querySelectorAll(".mictip").forEach(x=>x.remove());
+  const p=document.createElement("p"); p.className="mictip"; p.textContent=T().micTip;
+  (b.closest(".edrow,.composer,.actions,.row")||b.parentElement).after(p);
+  ta.focus();
+}
+function startMic(b){
+  const ta=document.getElementById(b.dataset.mic); if(!ta) return;
+  if(rec){ const same=recBtn===b; try{ rec.stop(); }catch{} if(same) return; }
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR) return micTip(b, ta);
+  let r; try{ r=new SR(); }catch{ return micTip(b, ta); }
+  r.lang={en:"en-US",es:"es-US",fa:"fa-IR",ar:"ar-SA"}[S.lang]; r.interimResults=true; r.continuous=true;
+  const base=ta.value?ta.value.trimEnd()+" ":"", ph=ta.placeholder; let got=false;
+  r.onresult=e=>{ got=true; let txt=""; for(const x of e.results) txt+=x[0].transcript; ta.value=base+txt; ta.dispatchEvent(new Event("input")); };
+  r.onerror=()=>{ if(!got) micTip(b, ta); };
+  r.onend=()=>{ if(rec===r){ rec=null; recBtn=null; } b.classList.remove("on"); ta.placeholder=ph; };
+  try{ r.start(); rec=r; recBtn=b; b.classList.add("on"); ta.placeholder=T().listening; }catch{ micTip(b, ta); }
+}
+document.addEventListener("click", e=>{ const b=e.target.closest("[data-mic]"); if(b){ e.preventDefault(); startMic(b); } });
+
 /* ---------- state + helpers ---------- */
 const LANGS = ["en","es","fa","ar"];
 const store = {get(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
@@ -901,7 +949,7 @@ function addEdit(d,i){
   const t=T(), b=document.createElement("button");
   b.type="button"; b.className="editbtn"; b.textContent=t.edit; d.appendChild(b);
   b.onclick=()=>{
-    d.innerHTML=`<label class="sr" for="ed${i}">${t.edit}</label><textarea id="ed${i}" class="edtext" rows="3"></textarea><div class="edrow"><button class="btn small" type="button">${t.save}</button><button class="btn small ghost" type="button">${t.cancel}</button></div>`;
+    d.innerHTML=`<label class="sr" for="ed${i}">${t.edit}</label><textarea id="ed${i}" class="edtext" rows="3"></textarea><div class="edrow">${micBtn("ed"+i)}<button class="btn small" type="button">${t.save}</button><button class="btn small ghost" type="button">${t.cancel}</button></div>`;
     const ta=d.querySelector("textarea"); ta.value=S.convo[i].a; ta.focus();
     const [sv,cn]=d.querySelectorAll(".edrow button");
     sv.onclick=()=>{ const v=ta.value.trim(); if(v && v!==S.convo[i].a){ S.convo[i].a=v; S.dirty=true; if(S.own && S.convo[i].loc) S.own.location=v; } talkView(true); };
@@ -918,6 +966,7 @@ function talkOwn(rerender){
   <div class="chat" id="chat"></div>
   <form class="composer" id="form"><label for="ans" class="sr">${t.placeholder}</label>
     <textarea id="ans" rows="2" placeholder="${t.placeholder}"></textarea>
+    ${micBtn("ans")}
     <button class="btn" type="submit">${t.send}</button></form>`;
   const chat=document.getElementById("chat"), form=document.getElementById("form"), ta=document.getElementById("ans");
   if(o.mode!=="own") bubble(chat,"ai",t.fewMore);
@@ -1123,7 +1172,7 @@ function ideas(){
       <div><button class="btn ${d.startHere?"sun":"ghost"}" type="button" data-i="${i}">${t.choose}</button></div>
     </article>`).join("")}</div>
   <section class="adjust"><h3>${t.adjustH}</h3><p class="muted">${t.adjustP}</p><label class="sr" for="adj">${t.adjustH}</label><textarea id="adj" class="paste" style="min-height:80px" placeholder="${t.adjustPh}"></textarea>
-    <div class="actions" id="act" style="margin-top:0"><button class="btn" type="button" id="adjBtn">${t.adjust}</button></div></section>
+    <div class="actions" id="act" style="margin-top:0">${micBtn("adj")}<button class="btn" type="button" id="adjBtn">${t.adjust}</button></div></section>
   <div class="actions"><button class="btn ghost" type="button" id="back">${t.back}</button></div>`;
   app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{ S.idea=+b.dataset.i; S.openStep=null; plan(); });
   document.getElementById("adjBtn").onclick=()=>{ const v=document.getElementById("adj").value.trim(); if(!v) return document.getElementById("adj").focus(); runUpdate({feedback:v, strengthsEdited:person().strengths}, ()=>ideas()); };
@@ -1221,7 +1270,7 @@ function plan(noScroll){
   app.querySelectorAll("[data-det]").forEach(b=>b.onclick=loadDetails);
   app.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>{
     const i=+b.dataset.edit, head=b.closest(".stephead"), title=head.querySelector(".st");
-    title.parentElement.outerHTML=`<div class="steptitle" style="display:grid;gap:6px"><label class="sr" for="se${i}">${t.edit}</label><textarea id="se${i}" class="edtext" rows="2"></textarea><div class="edrow"><button class="btn small" type="button" id="ss${i}">${t.save}</button><button class="btn small ghost" type="button" id="sc${i}">${t.cancel}</button></div></div>`;
+    title.parentElement.outerHTML=`<div class="steptitle" style="display:grid;gap:6px"><label class="sr" for="se${i}">${t.edit}</label><textarea id="se${i}" class="edtext" rows="2"></textarea><div class="edrow">${micBtn("se"+i)}<button class="btn small" type="button" id="ss${i}">${t.save}</button><button class="btn small ghost" type="button" id="sc${i}">${t.cancel}</button></div></div>`;
     b.remove(); const ta=document.getElementById("se"+i); ta.value=pl.steps[i]; ta.focus();
     document.getElementById("ss"+i).onclick=()=>{ const v=ta.value.trim(); if(v && v!==pl.steps[i]){ ensureCopy().ideas[S.idea].plan.steps[i]=v; } S.openStep=i; plan(true); };
     document.getElementById("sc"+i).onclick=()=>plan(true);
@@ -1362,6 +1411,7 @@ function coachChrome(){
   document.getElementById("coachAttach").innerHTML=ICON.photo; document.getElementById("coachAttach").title=t.attach;
   document.getElementById("coachAttach").setAttribute("aria-label",t.attach);
   document.getElementById("coachText").placeholder=t.coachPh; document.getElementById("coachTextLabel").textContent=t.coachPh;
+  const cm=document.getElementById("coachMic"); cm.innerHTML=ICON.mic; cm.setAttribute("aria-label",t.speak); cm.title=t.speak;
   document.getElementById("coachSend").innerHTML=ICON.send; document.getElementById("coachSend").setAttribute("aria-label",t.send);
   drawCoach();
 }
