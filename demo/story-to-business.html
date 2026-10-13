@@ -288,6 +288,13 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .rf:hover{background:#fff6dc}.rf:focus{background:#fff1c4;box-shadow:0 0 0 2px #f2b33d}
 .resume.printing .rf{background:none!important;box-shadow:none!important}
 @media (max-width:600px){.resume{padding:20px 18px}}
+/* seedline ai actions */
+.actcard{border:1.5px solid var(--teal);background:var(--teal-soft);border-radius:14px;padding:.6rem .8rem;display:grid;gap:6px;max-width:92%;font-size:.93rem}
+.actcard .label{display:block}
+.actcard.applied{border-color:transparent}
+.actcard.skipped{background:var(--surface);border-color:var(--line);color:var(--muted)}
+.actstate{font-size:.82rem;font-weight:700;color:var(--teal)}
+.actcard.skipped .actstate{color:var(--muted)}
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -2158,7 +2165,7 @@ function drawCoach(){
   const add=(role,text,img)=>{ const d=document.createElement("div"); d.className="msg "+(role==="assistant"?"ai":"me"); d.innerHTML=`<span class="who">${role==="assistant"?t.ai:t.you}</span>`; d.append(document.createTextNode(text)); if(img){ const im=document.createElement("img"); im.src=img; im.alt=""; d.append(im);} log.appendChild(d); };
   add("assistant", t.coachIntro);
   if(!C.log.length && !C.busy){ const w=document.createElement("div"); w.className="choices"; t.suggest.forEach(q=>{ const b=document.createElement("button"); b.type="button"; b.className="pchoice"; b.textContent=q; b.onclick=()=>{ document.getElementById("coachText").value=q; document.getElementById("coachForm").requestSubmit(); }; w.append(b); }); log.appendChild(w); }
-  C.log.forEach(m=>add(m.role, m.shown ?? m.content, m.img));
+  C.log.forEach(m=>{ if(m.role==="action") log.appendChild(actionCard(m)); else add(m.role, m.shown ?? m.content, m.img); });
   if(C.busy){ const d=document.createElement("div"); d.className="typing"; d.textContent=t.thinking; log.appendChild(d); }
   log.scrollTop=log.scrollHeight;
   const pend=document.getElementById("coachPending");
@@ -2218,6 +2225,149 @@ ${coachContext()}`;
   }
 };
 
+/* ---------- Seedline AI: one assistant that can act in the app ---------- */
+const SUPER = {
+en:{ coachBtn:"Seedline AI", coachH:"Seedline AI",
+  coachIntro:"I'm Seedline AI, your assistant for everything here. I can explain any step, and I can also do things for you: add tasks to your day, create agents, change your plan, update your résumé or portfolio notes, and take you anywhere in the app. I always ask before changing anything. Type, talk or send a screenshot.",
+  suggest:["What should I do today?","Add my next step to my day","Make me an agent to find customers","Update my résumé with what I did this week"],
+  propose:"Seedline AI wants to:", approve:"Do it", skip:"Skip", applied:"Done", skipped:"Skipped",
+  act:{addDay:"Add to My day: {x}", newAgent:"Create the agent “{x}”", stepEdit:"Change step {n} to: {x}", stepDone:"Mark step {n} as done", stepUndone:"Mark step {n} as not done", profile:"Update your profile: {x}", pfNote:"Add a note to {x}", resume:"Update your résumé: {x}", open:"Opened {x}"} },
+es:{ coachBtn:"Seedline IA", coachH:"Seedline IA",
+  coachIntro:"Soy Seedline IA, tu asistente para todo aquí. Puedo explicarte cualquier paso y también hacer cosas por ti: agregar tareas a tu día, crear agentes, cambiar tu plan, actualizar tu currículum o las notas de tu portafolio y llevarte a cualquier parte de la app. Siempre te pregunto antes de cambiar algo. Escribe, habla o envía una captura.",
+  suggest:["¿Qué debo hacer hoy?","Agrega mi siguiente paso a mi día","Crea un agente para encontrar clientes","Actualiza mi currículum con lo que hice esta semana"],
+  propose:"Seedline IA quiere:", approve:"Hazlo", skip:"Omitir", applied:"Hecho", skipped:"Omitido",
+  act:{addDay:"Agregar a Mi día: {x}", newAgent:"Crear el agente “{x}”", stepEdit:"Cambiar el paso {n} a: {x}", stepDone:"Marcar el paso {n} como hecho", stepUndone:"Marcar el paso {n} como no hecho", profile:"Actualizar tu perfil: {x}", pfNote:"Agregar una nota a {x}", resume:"Actualizar tu currículum: {x}", open:"Abrí {x}"} },
+fa:{ coachBtn:"هوش مصنوعی Seedline", coachH:"هوش مصنوعی Seedline",
+  coachIntro:"من هوش مصنوعی Seedline هستم، دستیار تو برای همه چیز اینجا. می‌توانم هر قدم را توضیح بدهم و کارهایی را هم برایت انجام دهم: افزودن کار به روزت، ساختن دستیار، تغییر برنامه‌ات، به‌روز کردن رزومه یا یادداشت‌های نمونه‌کارها، و بردنت به هر بخش اپ. همیشه قبل از تغییر هر چیزی از تو می‌پرسم. بنویس، حرف بزن یا اسکرین‌شات بفرست.",
+  suggest:["امروز چه کار کنم؟","قدم بعدی‌ام را به روزم اضافه کن","یک دستیار برای پیدا کردن مشتری بساز","رزومه‌ام را با کارهای این هفته به‌روز کن"],
+  propose:"هوش مصنوعی Seedline می‌خواهد:", approve:"انجام بده", skip:"رد شو", applied:"انجام شد", skipped:"رد شد",
+  act:{addDay:"افزودن به روز من: {x}", newAgent:"ساختن دستیار «{x}»", stepEdit:"تغییر قدم {n} به: {x}", stepDone:"علامت‌گذاری قدم {n} به‌عنوان انجام‌شده", stepUndone:"برداشتن علامت انجام از قدم {n}", profile:"به‌روز کردن پروفایلت: {x}", pfNote:"افزودن یادداشت به {x}", resume:"به‌روز کردن رزومه‌ات: {x}", open:"{x} باز شد"} },
+ar:{ coachBtn:"ذكاء Seedline", coachH:"ذكاء Seedline",
+  coachIntro:"أنا ذكاء Seedline، مساعدك في كل شيء هنا. أستطيع شرح أي خطوة، وأستطيع أيضًا أن أنجز أشياء لك: إضافة مهام إلى يومك، وإنشاء وكلاء، وتغيير خطتك، وتحديث سيرتك الذاتية أو ملاحظات ملف أعمالك، ونقلك إلى أي قسم في التطبيق. أسألك دائمًا قبل تغيير أي شيء. اكتب أو تحدّث أو أرسل لقطة شاشة.",
+  suggest:["ماذا أفعل اليوم؟","أضف خطوتي التالية إلى يومي","أنشئ لي وكيلًا لإيجاد العملاء","حدّث سيرتي الذاتية بما أنجزته هذا الأسبوع"],
+  propose:"يريد ذكاء Seedline أن:", approve:"نفّذ", skip:"تخطَّ", applied:"تم", skipped:"تم التخطي",
+  act:{addDay:"إضافة إلى يومي: {x}", newAgent:"إنشاء الوكيل «{x}»", stepEdit:"تغيير الخطوة {n} إلى: {x}", stepDone:"وضع علامة «تمّت» على الخطوة {n}", stepUndone:"إزالة علامة «تمّت» من الخطوة {n}", profile:"تحديث ملفك: {x}", pfNote:"إضافة ملاحظة إلى {x}", resume:"تحديث سيرتك الذاتية: {x}", open:"تم فتح {x}"} }
+};
+Object.keys(SUPER).forEach(l=>Object.assign(I18N[l],SUPER[l]));
+
+async function superState(){
+  const p=S.pi!=null?person():null, d=p?.ideas?.[S.idea], week=p&&d?(store.get(planKey()+"-week")||[]):[];
+  const files=await pfAll().catch(()=>[]);
+  const st={ screen:S.view, appLanguage:I18N[S.lang].name,
+    profile:Object.fromEntries(Object.entries(S.profile).filter(([k,v])=>k!=="welcomed"&&v!=="__skip")),
+    journey: p?{ person: p.own?"the user":p.name, location: locationOf(), chosenIdea: d?.title||null, businessName: d?.plan?.name||null,
+      planSteps:(d?.plan?.steps||[]).map((s,i)=>({n:i+1, text:s, done:!!week[i]})) }:null,
+    agents: AG.list.map(a=>({name:a.name, goal:a.goal})),
+    portfolio: files.slice(0,30).map(f=>({file:f.name, step:f.step, note:f.note||""})),
+    resume: RS.data?{name:RS.data.name, headline:RS.data.headline, summary:RS.data.summary, skills:RS.data.skills}:null,
+    myDayAddedTasks: agentTasks().map(x=>x.text).slice(-10) };
+  return JSON.stringify(st).slice(0,12000);
+}
+function propose(label, apply){
+  return new Promise(resolve=>{
+    C.log.push({role:"action", label, state:"pending", apply, resolve});
+    drawCoach();
+  });
+}
+const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView() };
+function superTools(){
+  const t=T(), needPlan=()=>{ const p=S.pi!=null?person():null, d=p?.ideas?.[S.idea]; if(!d?.plan) throw new Error("The person has not chosen an idea and plan yet."); return d.plan; };
+  return [
+    {name:"add_to_my_day", description:"Propose adding one task to the person's daily routine (My day). The person approves or skips. Returns whether it was approved.",
+     inputSchema:{type:"object",properties:{text:{type:"string",description:"The task, short, in the person's language"},time:{type:"string",description:"24h time HH:MM, default 18:00"},kind:{type:"string",enum:["biz","health","family","life","mind"]}},required:["text"]},
+     execute:async({text,time,kind})=>{ text=String(text||"").slice(0,160); if(!text) throw new Error("text is required");
+       const ok=await propose(fmt(t.act.addDay,{x:text}),()=>{ const l=agentTasks(); l.push({id:"a"+Date.now(), time:/^\d{2}:\d{2}$/.test(String(time))?String(time):"18:00", kind:["biz","health","family","life","mind"].includes(kind)?kind:"biz", text}); store.set("seedline-agent-tasks",l); });
+       return ok?"approved and added":"the person skipped it"; }},
+    {name:"create_agent", description:"Propose creating a personal AI agent with a goal. The person approves or skips. Returns whether it was created.",
+     inputSchema:{type:"object",properties:{name:{type:"string"},goal:{type:"string"},tone:{type:"string",enum:["friendly","direct","patient"]},instructions:{type:"string"}},required:["name","goal"]},
+     execute:async({name,goal,tone,instructions})=>{ name=String(name||"").slice(0,60); goal=String(goal||"").slice(0,240); if(!name||!goal) throw new Error("name and goal are required");
+       const ok=await propose(fmt(t.act.newAgent,{x:name}),()=>{ AG.list.push({id:"ag"+Date.now(), name, goal, tone:["friendly","direct","patient"].includes(tone)?tone:"friendly", extra:String(instructions||"").slice(0,600), log:[]}); saveAgents(); if(S.view==="agents") agentsView(); });
+       return ok?"approved and created":"the person skipped it"; }},
+    {name:"update_plan_step", description:"Propose changing the text of one first-week plan step (1-based step number). Returns whether it was approved.",
+     inputSchema:{type:"object",properties:{step:{type:"number"},text:{type:"string"}},required:["step","text"]},
+     execute:async({step,text})=>{ const pl=needPlan(), i=Number(step)-1; text=String(text||"").slice(0,240); if(!(i>=0&&i<pl.steps.length)||!text) throw new Error("invalid step or text");
+       const ok=await propose(fmt(t.act.stepEdit,{n:num(i+1),x:text}),()=>{ ensureCopy().ideas[S.idea].plan.steps[i]=text; if(S.view==="plan") plan(true); });
+       return ok?"approved and changed":"the person skipped it"; }},
+    {name:"mark_step_done", description:"Propose marking a first-week plan step done or not done (1-based). Returns whether it was approved.",
+     inputSchema:{type:"object",properties:{step:{type:"number"},done:{type:"boolean"}},required:["step"]},
+     execute:async({step,done})=>{ const pl=needPlan(), i=Number(step)-1; if(!(i>=0&&i<pl.steps.length)) throw new Error("invalid step"); const v=done!==false;
+       const ok=await propose(fmt(v?t.act.stepDone:t.act.stepUndone,{n:num(i+1)}),()=>{ const s=store.get(planKey()+"-week")||[]; s[i]=v; store.set(planKey()+"-week",s); if(S.view==="plan") plan(true); });
+       return ok?"approved":"the person skipped it"; }},
+    {name:"update_profile", description:"Propose updating one profile answer. Fields: firstName, goal (text), wake (HH:MM), transport (car|transit|walk|rides), devices (phone|computer|both), place (home|out|mix), people (love|ok|rather), monthly (m0|m50|m200|mmore). Returns whether it was approved.",
+     inputSchema:{type:"object",properties:{field:{type:"string"},value:{type:"string"}},required:["field","value"]},
+     execute:async({field,value})=>{ field=String(field); value=String(value||"").slice(0,200); const q=PQ.find(x=>x.id===field);
+       if(field!=="firstName" && !q) throw new Error("unknown field"); if(q?.type==="one" && !q.opts.includes(value)) throw new Error("value must be one of "+q.opts.join(", "));
+       const shown = field==="firstName"?value : `${t.pq.q[field]} ${q.type==="one"?t.pq.opts[value]:value}`;
+       const ok=await propose(fmt(t.act.profile,{x:shown}),()=>{ S.profile[field]=value; saveProfile(); });
+       return ok?"approved":"the person skipped it"; }},
+    {name:"add_portfolio_note", description:"Propose adding or replacing the note on one portfolio file, matched by file name. Returns whether it was approved.",
+     inputSchema:{type:"object",properties:{file:{type:"string"},note:{type:"string"}},required:["file","note"]},
+     execute:async({file,note})=>{ const files=await pfAll(); const f=files.find(x=>x.name===String(file))||files.find(x=>x.name.toLowerCase().includes(String(file).toLowerCase())); if(!f) throw new Error("no such file");
+       const ok=await propose(fmt(t.act.pfNote,{x:f.name}),async()=>{ f.note=String(note).slice(0,500); await pfPut(f); if(S.view==="portfolio") portfolioView(); });
+       return ok?"approved":"the person skipped it"; }},
+    {name:"update_resume", description:"Propose a change to the résumé. part: headline | summary | add_skill | add_bullet (adds a bullet to experience entry index, 0-based). Only use facts the person gave. Returns whether it was approved.",
+     inputSchema:{type:"object",properties:{part:{type:"string",enum:["headline","summary","add_skill","add_bullet"]},text:{type:"string"},experience:{type:"number"}},required:["part","text"]},
+     execute:async({part,text,experience})=>{ if(!RS.data) throw new Error("No résumé yet. Suggest building it in the Résumé section."); text=String(text||"").slice(0,400);
+       const ok=await propose(fmt(t.act.resume,{x:text}),()=>{ const r=RS.data;
+         if(part==="headline") r.headline=text; else if(part==="summary") r.summary=text; else if(part==="add_skill") (r.skills ||= []).push(text);
+         else { const e=r.experience?.[Number(experience)||0]; if(e) (e.bullets ||= []).push(text); }
+         store.set("seedline-resume",r); if(S.view==="resume") resumeView(); });
+       return ok?"approved":"the person skipped it"; }},
+    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | agents | portfolio | resume | profile.",
+     inputSchema:{type:"object",properties:{section:{type:"string"}},required:["section"]},
+     execute:async({section})=>{ const go=SECTION_GO[String(section)]; if(!go) throw new Error("unknown section");
+       if(["strengths","ideas","plan","day","package"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
+       if(["plan","day","package"].includes(section) && !person()?.ideas?.[S.idea]?.plan) throw new Error("No plan chosen yet.");
+       go(); C.log.push({role:"action", label:fmt(t.act.open,{x:section}), state:"applied"}); drawCoach(); return "opened"; }}
+  ];
+}
+async function superSubmit(e){
+  e.preventDefault(); if(C.busy) return;
+  const t=T(), ta=document.getElementById("coachText"); const q=ta.value.trim();
+  if(!q && !C.img) return;
+  const img=C.img; C.img=null; ta.value="";
+  // tell the model what happened to proposals since its last reply
+  const since=[]; for(let i=C.log.length-1;i>=0 && C.log[i].role!=="assistant";i--){ if(C.log[i].role==="action" && C.log[i].state!=="pending") since.unshift(`${C.log[i].label} → ${C.log[i].state}`); }
+  C.log.push({role:"user", content:(q||"(screenshot attached)")+(since.length?`\n(Since your last reply: ${since.join("; ")})`:""), shown:q||"📷", img:img?.url});
+  C.busy=true; drawCoach();
+  const reply=txt=>{ C.busy=false; C.log.push({role:"assistant", content:txt}); drawCoach(); };
+  let sample; try{ sample=await getSample(); }catch(err){ return reply(errMsg(err)); }
+  const caps=await sample.limits().catch(()=>null);
+  let images=[]; if(img){ if(caps?.images) images=[img.blob]; else return reply(t.noImages); }
+  const useTools=!!caps?.tools;
+  const system=`You are Seedline AI, the one assistant for everything in Seedline: a platform that helps people who are new to AI and new to business turn their life experience into a small business of their own, with a plan, a daily routine, personal agents, a portfolio and a résumé.
+- Answer in the language the person writes in; if unsure use ${I18N[S.lang].name}. Plain words, short answers, one or two next steps.
+- Be honest, never flattering. Never promise income or use the word "passive". Flag anything needing a license, permit, lawyer or other professional, and point to free local help (SBDC, SCORE, library) when a person is needed. You are an AI and say so if asked.
+- If a screenshot or photo is attached, say in one line what you see, then what to do next.
+${useTools?`- You can act in the app with your tools. Changes are only PROPOSED: the person taps "Do it" or "Skip". Propose at most 3 changes per reply, only when they help, and say in your reply what you proposed. Never change things the person didn't ask about. open_section moves them right away.`:"- You cannot change the app in this view; tell the person where to tap instead."}
+Current state of their Seedline (JSON):
+${await superState()}`;
+  const convo=C.log.filter(m=>m.role==="user"||m.role==="assistant");
+  const msgs=convo.map((m,i)=>({role:m.role, content: i===0 ? system+"\n\nTheir message: "+m.content : m.content}));
+  try{
+    const opts={modelTier:"default", onText:({text})=>{ const el=document.querySelector("#coachLog .typing"); if(el) el.textContent=text||t.thinking; }};
+    if(images.length) opts.images=images;
+    if(useTools) opts.tools=superTools(); else opts.cache=false;
+    const r=await sample(msgs, opts);
+    C.log.forEach(m=>{ if(m.role==="action" && m.state==="pending"){ m.state="skipped"; m.resolve?.(false); } });
+    reply(r.text||"");
+  }catch(err){ C.log.forEach(m=>{ if(m.role==="action" && m.state==="pending"){ m.state="skipped"; m.resolve?.(false); } }); reply(err?.code==="not_granted"?t.errPerm:err?.code==="rate_limited"?t.errRate:(err?.text||t.errGeneric)); }
+}
+function actionCard(m){
+  const t=T(), d=document.createElement("div"); d.className="actcard "+m.state;
+  const lab=document.createElement("div"); lab.innerHTML=m.state==="pending"?`<span class="label">${t.propose}</span>`:""; const txt=document.createElement("strong"); txt.textContent=m.label; lab.append(txt); d.append(lab);
+  if(m.state==="pending"){
+    const row=document.createElement("div"); row.className="edrow";
+    const y=document.createElement("button"); y.type="button"; y.className="btn small sun"; y.textContent=t.approve;
+    const n=document.createElement("button"); n.type="button"; n.className="btn small ghost"; n.textContent=t.skip;
+    y.onclick=async()=>{ m.state="applied"; try{ await m.apply(); }catch{} m.resolve(true); drawCoach(); };
+    n.onclick=()=>{ m.state="skipped"; m.resolve(false); drawCoach(); };
+    row.append(y,n); d.append(row);
+  } else { const s=document.createElement("span"); s.className="actstate"; s.textContent=m.state==="applied"?"✓ "+t.applied:t.skipped; d.append(s); }
+  return d;
+}
+
+document.getElementById("coachForm").onsubmit=superSubmit;
 const _renderChrome = renderChrome;
 renderChrome = function(){ _renderChrome(); coachChrome(); renderProfBtn(); };
 document.getElementById("profBtn").onclick=profileView;
