@@ -223,6 +223,18 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 }
 .acchip{display:flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted);margin-top:6px;flex-basis:100%}
 .acchip button{border:0;background:none;color:var(--teal);font-weight:700;text-decoration:underline;padding:0;cursor:pointer;font-size:.85rem}
+/* profile */
+.know{background:var(--surface);border:1.5px dashed var(--teal);border-radius:18px;padding:16px;display:grid;gap:12px;margin-top:16px}
+.pq{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:12px}
+.choices{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pchoice{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:.45rem .95rem;font-weight:700;font-size:.92rem;cursor:pointer}
+.pchoice[aria-pressed="true"]{background:var(--teal-soft);border-color:var(--teal);color:var(--teal)}
+.linkbtn{border:0;background:none;color:var(--muted);text-decoration:underline;font-size:.85rem;justify-self:start;padding:0;cursor:pointer}
+.field{display:grid;gap:4px}
+.pinput{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:.6rem .75rem;max-width:320px;min-width:0}
+.welcome{display:grid;gap:14px;margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.plist{display:grid;gap:10px;margin-top:12px}
+.reality{border-inline-start:4px solid var(--warn);padding-inline-start:10px;font-size:.93rem}
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -260,7 +272,7 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
   <header class="top">
     <div class="brandrow">
       <button class="brand" id="homeBtn" type="button"><span class="seed" aria-hidden="true"></span>Seedline</button>
-      <div class="langs" id="langs" role="group" aria-label="Language"></div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn small ghost" type="button" id="profBtn" hidden></button><div class="langs" id="langs" role="group" aria-label="Language"></div></div>
     </div>
     <nav class="steps" id="steps" aria-label="Progress"></nav>
   </header>
@@ -855,6 +867,84 @@ async function acCorrect(ta){
 function acSchedule(ta){ clearTimeout(AC.timers.get(ta)); AC.timers.set(ta, setTimeout(()=>acCorrect(ta), 1500)); }
 document.addEventListener("input", e=>{ const ta=e.target; if(ta.matches?.(AC_SEL)) acSchedule(ta); });
 
+/* ---------- profile ---------- */
+const PROF = {
+en:{ welcomeH:"First, a little about you", welcomeP:"Just your first name and age. Both are optional.", nameL:"First name", ageL:"Age",
+  whyNameAge:"We use your first name to talk to you, and your age to suggest the right steps. Saved on this device only.", cont:"Continue →", skip:"Skip",
+  under18:"Because you're under 18, you'll need a parent or guardian to help you register a business, open accounts or pay for anything. You can still explore every step.",
+  under13:"Seedline is for people 13 and older. Please come back with a parent or guardian.",
+  knowH:"Get to know you better", knowP:"Answer if you like. Each answer makes your plan fit you better. Skip anything.",
+  profileBtn:"My profile", profileH:"Your profile", profileP:"Built from your answers. Saved on this device only. You can change or delete anything.",
+  deleteP:"Delete my profile", deleted:"Your profile was deleted.", notAnswered:"Not answered", hi:"Hi {name}! ",
+  pq:{ q:{transport:"How do you get around?",devices:"What do you have?",place:"Where would you rather work?",people:"How do you feel about talking to new people?",monthly:"How much could you set aside each month for your business?",goal:"What's your main goal for the next 12 months?",wake:"What time do you usually wake up?",home:"Who lives with you?"},
+    why:{transport:"Some businesses need a car. We'll only suggest ones that fit.",devices:"So every step uses tools you already have.",place:"So your ideas fit how you like to work.",people:"Some ideas need a lot of selling. We'll match your comfort.",monthly:"So we only suggest tools and ads you can afford.",goal:"So your plan aims at what matters most to you.",wake:"So your daily routine starts when you do.",home:"So we protect time for the people at home."},
+    opts:{car:"Car",transit:"Bus or train",walk:"Bike or walk",rides:"Rides from others",phone:"Smartphone",computer:"Computer",both:"Both",home:"From home",out:"Out and about",mix:"A mix",love:"I love it",ok:"It's okay",rather:"I'd rather not",m0:"$0",m50:"Under $50",m200:"$50–200",mmore:"More than $200",alone:"Just me",partner:"Partner",kids:"Kids",family:"Parents or other family"} } },
+es:{ welcomeH:"Primero, un poco sobre ti", welcomeP:"Solo tu nombre y tu edad. Ambos son opcionales.", nameL:"Nombre", ageL:"Edad",
+  whyNameAge:"Usamos tu nombre para hablarte y tu edad para sugerirte los pasos correctos. Se guarda solo en este dispositivo.", cont:"Continuar →", skip:"Omitir",
+  under18:"Como eres menor de 18 años, necesitarás a un padre, madre o tutor para registrar un negocio, abrir cuentas o pagar cualquier cosa. Aun así puedes explorar todos los pasos.",
+  under13:"Seedline es para personas de 13 años o más. Vuelve con tu padre, madre o tutor.",
+  knowH:"Conozcámonos mejor", knowP:"Responde si quieres. Cada respuesta hace que tu plan se ajuste mejor a ti. Puedes omitir cualquier pregunta.",
+  profileBtn:"Mi perfil", profileH:"Tu perfil", profileP:"Hecho con tus respuestas. Se guarda solo en este dispositivo. Puedes cambiar o borrar cualquier cosa.",
+  deleteP:"Borrar mi perfil", deleted:"Tu perfil fue borrado.", notAnswered:"Sin responder", hi:"¡Hola, {name}! ",
+  pq:{ q:{transport:"¿Cómo te mueves?",devices:"¿Qué tienes?",place:"¿Dónde prefieres trabajar?",people:"¿Cómo te sientes al hablar con gente nueva?",monthly:"¿Cuánto podrías apartar cada mes para tu negocio?",goal:"¿Cuál es tu meta principal para los próximos 12 meses?",wake:"¿A qué hora te despiertas normalmente?",home:"¿Quién vive contigo?"},
+    why:{transport:"Algunos negocios necesitan auto. Solo te sugeriremos los que encajen.",devices:"Para que cada paso use herramientas que ya tienes.",place:"Para que tus ideas encajen con tu forma de trabajar.",people:"Algunas ideas requieren vender mucho. Nos ajustaremos a tu comodidad.",monthly:"Para sugerirte solo herramientas y anuncios que puedas pagar.",goal:"Para que tu plan apunte a lo que más te importa.",wake:"Para que tu rutina diaria empiece cuando tú empiezas.",home:"Para proteger el tiempo con las personas de tu casa."},
+    opts:{car:"Auto",transit:"Autobús o tren",walk:"Bici o a pie",rides:"Me llevan otros",phone:"Teléfono inteligente",computer:"Computadora",both:"Ambos",home:"Desde casa",out:"En la calle",mix:"Un poco de ambos",love:"Me encanta",ok:"Está bien",rather:"Prefiero no",m0:"$0",m50:"Menos de $50",m200:"$50–200",mmore:"Más de $200",alone:"Solo yo",partner:"Pareja",kids:"Hijos",family:"Padres u otros familiares"} } },
+fa:{ welcomeH:"اول، کمی درباره خودت", welcomeP:"فقط نام کوچک و سنت. هر دو اختیاری است.", nameL:"نام کوچک", ageL:"سن",
+  whyNameAge:"از نامت برای صحبت با تو و از سنت برای پیشنهاد قدم‌های درست استفاده می‌کنیم. فقط روی همین دستگاه ذخیره می‌شود.", cont:"ادامه ←", skip:"رد شدن",
+  under18:"چون زیر ۱۸ سال هستی، برای ثبت کسب‌وکار، باز کردن حساب یا پرداخت هر چیزی به کمک پدر، مادر یا سرپرستت نیاز داری. همچنان می‌توانی همه قدم‌ها را ببینی.",
+  under13:"Seedline برای افراد ۱۳ سال به بالاست. لطفاً همراه پدر، مادر یا سرپرستت برگرد.",
+  knowH:"بیشتر با تو آشنا شویم", knowP:"اگر دوست داری جواب بده. هر جواب برنامه‌ات را مناسب‌تر می‌کند. می‌توانی از هر سؤالی رد شوی.",
+  profileBtn:"پروفایل من", profileH:"پروفایل تو", profileP:"از جواب‌های خودت ساخته شده. فقط روی همین دستگاه ذخیره می‌شود. هر چیزی را می‌توانی تغییر دهی یا پاک کنی.",
+  deleteP:"پاک کردن پروفایلم", deleted:"پروفایلت پاک شد.", notAnswered:"جواب داده نشده", hi:"سلام {name}! ",
+  pq:{ q:{transport:"معمولاً چطور رفت‌وآمد می‌کنی؟",devices:"چه وسایلی داری؟",place:"ترجیح می‌دهی کجا کار کنی؟",people:"حرف زدن با آدم‌های جدید برایت چطور است؟",monthly:"ماهانه چقدر می‌توانی برای کسب‌وکارت کنار بگذاری؟",goal:"مهم‌ترین هدفت برای ۱۲ ماه آینده چیست؟",wake:"معمولاً چه ساعتی بیدار می‌شوی؟",home:"چه کسانی با تو زندگی می‌کنند؟"},
+    why:{transport:"بعضی کسب‌وکارها ماشین لازم دارند. فقط آن‌هایی را پیشنهاد می‌کنیم که مناسبت باشد.",devices:"تا هر قدم با ابزارهایی باشد که از قبل داری.",place:"تا ایده‌هایت با روش کار دلخواهت جور باشد.",people:"بعضی ایده‌ها فروش زیادی لازم دارند. با راحتی تو هماهنگ می‌کنیم.",monthly:"تا فقط ابزار و تبلیغاتی پیشنهاد کنیم که از پسش برمی‌آیی.",goal:"تا برنامه‌ات به سمت چیزی برود که برایت مهم‌تر است.",wake:"تا برنامه روزانه‌ات وقتی شروع شود که تو شروع می‌کنی.",home:"تا وقت با اهل خانه‌ات محفوظ بماند."},
+    opts:{car:"ماشین",transit:"اتوبوس یا مترو",walk:"دوچرخه یا پیاده",rides:"دیگران می‌رسانندم",phone:"گوشی هوشمند",computer:"کامپیوتر",both:"هر دو",home:"از خانه",out:"بیرون از خانه",mix:"ترکیبی",love:"خیلی دوست دارم",ok:"مشکلی ندارم",rather:"ترجیح می‌دهم نه",m0:"۰ دلار",m50:"کمتر از ۵۰ دلار",m200:"۵۰ تا ۲۰۰ دلار",mmore:"بیشتر از ۲۰۰ دلار",alone:"فقط خودم",partner:"همسر",kids:"فرزندان",family:"پدر و مادر یا خانواده"} } },
+ar:{ welcomeH:"أولًا، قليلًا عنك", welcomeP:"اسمك الأول وعمرك فقط. وكلاهما اختياري.", nameL:"الاسم الأول", ageL:"العمر",
+  whyNameAge:"نستخدم اسمك لنخاطبك، وعمرك لنقترح الخطوات المناسبة. يُحفظ على هذا الجهاز فقط.", cont:"متابعة ←", skip:"تخطَّ",
+  under18:"لأن عمرك أقل من ١٨ عامًا، ستحتاج إلى أحد والديك أو وليّ أمرك لتسجيل مشروع أو فتح حسابات أو دفع أي شيء. لا يزال بإمكانك استكشاف كل الخطوات.",
+  under13:"Seedline مخصص لمن هم في سن ١٣ عامًا فأكثر. يُرجى العودة مع أحد والديك أو وليّ أمرك.",
+  knowH:"لنتعرّف عليك أكثر", knowP:"أجب إن أردت. كل إجابة تجعل خطتك أنسب لك. يمكنك تخطي أي سؤال.",
+  profileBtn:"ملفي", profileH:"ملفك الشخصي", profileP:"مبني من إجاباتك. يُحفظ على هذا الجهاز فقط. يمكنك تغيير أو حذف أي شيء.",
+  deleteP:"احذف ملفي", deleted:"تم حذف ملفك.", notAnswered:"لم تتم الإجابة", hi:"مرحبًا {name}! ",
+  pq:{ q:{transport:"كيف تتنقّل عادةً؟",devices:"ما الأجهزة التي لديك؟",place:"أين تفضّل أن تعمل؟",people:"ما شعورك تجاه التحدث مع أشخاص جدد؟",monthly:"كم يمكنك أن تخصص شهريًا لمشروعك؟",goal:"ما هدفك الأهم في الأشهر الاثني عشر القادمة؟",wake:"في أي ساعة تستيقظ عادةً؟",home:"من يعيش معك؟"},
+    why:{transport:"بعض المشاريع تحتاج إلى سيارة. سنقترح فقط ما يناسبك.",devices:"لتكون كل خطوة بأدوات تملكها بالفعل.",place:"لتناسب أفكارك طريقة العمل التي تحبها.",people:"بعض الأفكار تحتاج إلى بيع كثير. سنراعي ما يريحك.",monthly:"لنقترح فقط أدوات وإعلانات تقدر عليها.",goal:"لتتجه خطتك نحو ما يهمك أكثر.",wake:"ليبدأ روتينك اليومي عندما تبدأ يومك.",home:"لنحمي وقتك مع من يعيشون معك."},
+    opts:{car:"سيارة",transit:"حافلة أو قطار",walk:"دراجة أو مشيًا",rides:"يوصلني الآخرون",phone:"هاتف ذكي",computer:"حاسوب",both:"كلاهما",home:"من المنزل",out:"خارج المنزل",mix:"مزيج من الاثنين",love:"أحب ذلك",ok:"لا بأس",rather:"أفضّل لا",m0:"٠ دولار",m50:"أقل من ٥٠ دولارًا",m200:"٥٠–٢٠٠ دولار",mmore:"أكثر من ٢٠٠ دولار",alone:"أنا فقط",partner:"الزوج أو الزوجة",kids:"الأطفال",family:"الوالدان أو العائلة"} } }
+};
+Object.keys(PROF).forEach(l=>Object.assign(I18N[l],PROF[l]));
+const PQ=[{id:"transport",step:"strengths",type:"one",opts:["car","transit","walk","rides"]},{id:"devices",step:"strengths",type:"one",opts:["phone","computer","both"]},
+  {id:"place",step:"ideas",type:"one",opts:["home","out","mix"]},{id:"people",step:"ideas",type:"one",opts:["love","ok","rather"]},
+  {id:"monthly",step:"plan",type:"one",opts:["m0","m50","m200","mmore"]},{id:"goal",step:"plan",type:"text"},
+  {id:"wake",step:"day",type:"time"},{id:"home",step:"day",type:"multi",opts:["alone","partner","kids","family"]}];
+
+/* ---------- fixes from competitor research ---------- */
+const FIX = {
+en:{ realityH:"Reality check", testH:"Test it this weekend first", freeH:"Free help near you", freeP:"Real people who help new business owners for free. Bring your plan to them.",
+  honest:"No free trials that turn into charges. No credits that run out. Cancel in one tap on your phone. We remind you 3 days before any renewal, and refunds are one tap away.",
+  copyPlan:"Copy my plan as text (free)", copied:"Copied. It's yours to keep and paste anywhere.",
+  forgive:"Missed a day? That's okay. Life happens. Just start again tomorrow.",
+  coachIntro:"I'm Seedline's AI coach, here with you at every step. I'll be honest, even when an idea needs work. Ask me anything, or send a screenshot if you're not sure how to ask. If you need a person, I'll point you to free local help.",
+  suggest:["What should I do first today?","Is this legal where I live?","How do I find my first customer?"] },
+es:{ realityH:"Prueba de realidad", testH:"Pruébalo primero este fin de semana", freeH:"Ayuda gratis cerca de ti", freeP:"Personas reales que ayudan gratis a los nuevos dueños de negocio. Llévales tu plan.",
+  honest:"Sin pruebas gratis que se convierten en cobros. Sin créditos que se acaban. Cancela con un toque en tu teléfono. Te avisamos 3 días antes de cualquier renovación y el reembolso está a un toque.",
+  copyPlan:"Copiar mi plan como texto (gratis)", copied:"Copiado. Es tuyo para guardarlo y pegarlo donde quieras.",
+  forgive:"¿Te saltaste un día? No pasa nada. La vida sucede. Empieza de nuevo mañana.",
+  coachIntro:"Soy el coach de IA de Seedline y estoy contigo en cada paso. Seré honesto, incluso cuando una idea necesite mejorar. Pregúntame lo que quieras o envía una captura si no sabes cómo preguntar. Si necesitas a una persona, te indicaré ayuda local gratuita.",
+  suggest:["¿Qué debo hacer primero hoy?","¿Esto es legal donde vivo?","¿Cómo encuentro a mi primer cliente?"] },
+fa:{ realityH:"بررسی واقع‌بینانه", testH:"اول این آخر هفته امتحانش کن", freeH:"کمک رایگان نزدیک تو", freeP:"آدم‌های واقعی که رایگان به صاحبان کسب‌وکار تازه کمک می‌کنند. برنامه‌ات را پیششان ببر.",
+  honest:"هیچ دوره آزمایشی رایگانی که بعد پولی شود نداریم. اعتباری نداریم که تمام شود. با یک ضربه روی گوشی لغو کن. ۳ روز قبل از هر تمدید یادآوری می‌کنیم و بازپرداخت هم با یک ضربه است.",
+  copyPlan:"کپی برنامه‌ام به‌صورت متن (رایگان)", copied:"کپی شد. مال خودت است؛ هر جا خواستی نگهش دار.",
+  forgive:"یک روز جا ماند؟ اشکالی ندارد. زندگی است. فردا دوباره شروع کن.",
+  coachIntro:"من مربی هوش مصنوعی Seedline هستم و در هر قدم کنارت هستم. صادق خواهم بود، حتی وقتی یک ایده به کار بیشتری نیاز دارد. هر سؤالی داری بپرس، یا اگر نمی‌دانی چطور بپرسی اسکرین‌شات بفرست. اگر به یک آدم نیاز داشتی، کمک رایگان محلی را معرفی می‌کنم.",
+  suggest:["امروز اول چه کار کنم؟","این کار در محل زندگی من قانونی است؟","چطور اولین مشتری‌ام را پیدا کنم؟"] },
+ar:{ realityH:"فحص واقعي", testH:"جرّبها أولًا في عطلة نهاية الأسبوع", freeH:"مساعدة مجانية بالقرب منك", freeP:"أشخاص حقيقيون يساعدون أصحاب المشاريع الجدد مجانًا. خذ خطتك إليهم.",
+  honest:"لا تجارب مجانية تتحول إلى رسوم. لا رصيد ينفد. ألغِ بضغطة واحدة على هاتفك. نذكّرك قبل أي تجديد بثلاثة أيام، والاسترداد بضغطة واحدة.",
+  copyPlan:"انسخ خطتي كنص (مجانًا)", copied:"تم النسخ. إنها لك، احتفظ بها والصقها أينما شئت.",
+  forgive:"فاتك يوم؟ لا بأس. هذه هي الحياة. ابدأ من جديد غدًا.",
+  coachIntro:"أنا مدرّب Seedline بالذكاء الاصطناعي، معك في كل خطوة. سأكون صادقًا حتى عندما تحتاج الفكرة إلى تحسين. اسألني أي شيء، أو أرسل لقطة شاشة إن لم تعرف كيف تسأل. وإن احتجت إلى شخص، سأدلّك على مساعدة محلية مجانية.",
+  suggest:["ماذا أفعل أولًا اليوم؟","هل هذا قانوني حيث أعيش؟","كيف أجد أول عميل لي؟"] }
+};
+Object.keys(FIX).forEach(l=>Object.assign(I18N[l],FIX[l]));
+
 /* ---------- state + helpers ---------- */
 const LANGS = ["en","es","fa","ar"];
 const store = {get(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
@@ -890,7 +980,7 @@ function renderChrome(){
   document.getElementById("footnote").textContent = t.footnote;
 }
 function render(){
-  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume:()=>uploadView("resume"), work:()=>uploadView("work"), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView})[S.view]();
+  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume:()=>uploadView("resume"), work:()=>uploadView("work"), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, welcome:()=>welcome(), profile:profileView})[S.view]();
 }
 
 /* ---------- home ---------- */
@@ -929,7 +1019,7 @@ function home(){
     </div>
   </section>`;
   app.querySelectorAll(".person").forEach(b=>b.onclick=()=>{ S.pi=+b.dataset.i; S.dirty=false; S.strDirty=false; S.convo=null; S.ownPerson=null; S.openStep=null; talkSample(); });
-  app.querySelectorAll(".start").forEach(b=>b.onclick=()=>{ S.own={answers:[],resumeText:"",fileName:"",images:[],mode:b.dataset.m,location:""}; S.convo=null; S.ownPerson=null; S.dirty=false; S.strDirty=false; S.openStep=null; b.dataset.m==="own"?talkOwn():uploadView(b.dataset.m); });
+  app.querySelectorAll(".start").forEach(b=>b.onclick=()=>startMode(b.dataset.m));
 }
 
 /* ---------- conversation ---------- */
@@ -982,7 +1072,7 @@ function addEdit(d,i){
   b.onclick=()=>{
     d.innerHTML=`<label class="sr" for="ed${i}">${t.edit}</label><textarea id="ed${i}" class="edtext" rows="3"></textarea><div class="edrow">${micBtn("ed"+i)}<button class="btn small" type="button">${t.save}</button><button class="btn small ghost" type="button">${t.cancel}</button></div>`;
     const ta=d.querySelector("textarea"); ta.value=S.convo[i].a; ta.focus();
-    const [sv,cn]=d.querySelectorAll(".edrow button");
+    const [sv,cn]=d.querySelectorAll(".edrow .btn");
     sv.onclick=()=>{ const v=ta.value.trim(); if(v && v!==S.convo[i].a){ S.convo[i].a=v; S.dirty=true; if(S.own && S.convo[i].loc) S.own.location=v; } talkView(true); };
     cn.onclick=()=>talkView(true);
   };
@@ -1002,7 +1092,7 @@ function talkOwn(rerender){
   const chat=document.getElementById("chat"), form=document.getElementById("form"), ta=document.getElementById("ans");
   if(o.mode!=="own") bubble(chat,"ai",t.fewMore);
   o.answers.forEach((a,k)=>{ bubble(chat,"ai",Q[qIdx[k]]); bubble(chat,t.you,a); });
-  bubble(chat,"ai",Q[qIdx[o.answers.length]]);
+  bubble(chat,"ai",(o.answers.length===0&&S.profile.firstName?fmt(t.hi,{name:S.profile.firstName}):"")+Q[qIdx[o.answers.length]]);
   form.onsubmit=e=>{
     e.preventDefault(); const v=ta.value.trim(); if(!v) return;
     bubble(chat,t.you,v); o.answers.push(v); ta.value="";
@@ -1106,8 +1196,12 @@ async function generate({images=false, feedback="", strengthsEdited=null}={}){
 
 Rules:
 ${COMMON_RULES(locationOf())}
+- Respect the profile below: transport, devices, where they like to work, comfort with selling and monthly budget must fit every idea.
 - Give exactly 3 ideas, ordered from fastest and cheapest first customer to slowest. The first idea must be a simple service built on a skill they already have; mark only it startHere=true.
 - Fit their stated time and budget.
+- Be honest, not flattering. "realityCheck": 1-2 sentences on real demand where they live, nearby competition, and the main risk or reason it could fail.
+- "weekendTest": one cheap way (under $50) to test real demand this weekend before spending more.
+- Never use the word "passive" and never describe money as easy.
 - "why" for each idea must point to something specific they said or showed.
 - "strengthsWhy" explains, for each group, which of their answers it came from (one short sentence each).
 - "safety": if an idea needs a license, permit or insurance in their location, or could be illegal without one (immigration legal advice, food sales, contracting, tax or financial advice, a conflict with a current employer), explain it in one or two plain sentences, name the office, and steer to a safe version. Otherwise null.
@@ -1116,9 +1210,9 @@ ${imgs.length?`- ${imgs.length} photo(s) are attached showing this person's work
 Return only JSON with this shape:
 {"firstName": string or "", "strengths": {"skills": [string], "have": [string], "people": [string], "timeMoney": [string]},
  "strengthsWhy": {"skills": string, "have": string, "people": string, "timeMoney": string},
- "ideas": [{"title": string, "pitch": string, "why": string, "firstDollar": string, "startCost": string, "price": string, "startHere": boolean, "safety": string or null,
+ "ideas": [{"title": string, "pitch": string, "why": string, "firstDollar": string, "startCost": string, "price": string, "startHere": boolean, "safety": string or null, "realityCheck": string, "weekendTest": string,
    "plan": {"name": string, "offer": string, "steps": [string], "firstCustomers": [string], "grow": [string]}}]}
-${S.own?.resumeText&&S.pi==="own"?`\nRésumé text:\n${S.own.resumeText.slice(0,12000)}\n`:""}${strengthsEdited?`\nThe person edited their strengths map. Treat it as true and build on it:\n${JSON.stringify(strengthsEdited)}\n`:""}${feedback&&cur?`\nThe person saw these ideas: ${cur.ideas.map(i=>i.title).join("; ")}. They asked for these changes: ${feedback}\nGive 3 ideas that respect this.\n`:""}
+${S.own?.resumeText&&S.pi==="own"?`\nRésumé text:\n${S.own.resumeText.slice(0,12000)}\n`:""}${strengthsEdited?`\nThe person edited their strengths map. Treat it as true and build on it:\n${JSON.stringify(strengthsEdited)}\n`:""}${profileText()}${feedback&&cur?`\nThe person saw these ideas: ${cur.ideas.map(i=>i.title).join("; ")}. They asked for these changes: ${feedback}\nGive 3 ideas that respect this.\n`:""}
 Conversation:
 ${convo}`;
   const r = await sample.json(prompt, imgs.length?{modelTier:"default",images:imgs}:{modelTier:"default"});
@@ -1128,7 +1222,7 @@ ${convo}`;
 function applyResult(r){
   const cur = S.pi==="own"?S.ownPerson:(typeof S.pi==="number"?person():null);
   const persona = cur && (cur.own===false || typeof S.pi==="number") ? cur : null;
-  S.ownPerson = { own:!persona, id:persona?.id||"own", name:persona?.name||r.firstName||"", role:persona?.role||"", location:locationOf(),
+  S.ownPerson = { own:!persona, id:persona?.id||"own", name:persona?.name||S.profile.firstName||r.firstName||"", role:persona?.role||"", location:locationOf(),
     initial:(persona?.name||r.firstName||"Y")[0], strengths:r.strengths, strengthsWhy:r.strengthsWhy||null, ideas:r.ideas.slice(0,3) };
   S.pi="own"; S.dirty=false; S.strDirty=false; S.idea=0; S.openStep=null; S.convoSaved=clone(S.convo||[]);
 }
@@ -1169,7 +1263,7 @@ function strengths(noScroll){
     const a=c[qmap[k]]?.a; return a?`${t.whySaid} “${esc(a.length>150?a.slice(0,147)+"…":a)}”`:"";
   };
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(2)})}</span><h2 style="margin-top:6px">${nm(p,t.strengthsMine,t.strengthsH)}</h2>
-  <p class="muted" style="margin-top:6px">${t.strengthsLead} ${t.editHint}</p>${helpBox(1)}
+  <p class="muted" style="margin-top:6px">${t.strengthsLead} ${t.editHint}</p>${helpBox(1)}${knowCard("strengths")}
   <div class="map">${groups.map(([k,h])=>`<div class="group">
     <span class="label">${h}</span>
     <div class="chips">${(st[k]||[]).map((x,i)=>`<span class="chip">${esc(x)}<button type="button" class="chipx" data-k="${k}" data-i="${i}" aria-label="${t.remove}">×</button></span>`).join("")}</div>
@@ -1188,7 +1282,7 @@ function ideas(){
   S.view="ideas"; setStep(2);
   const p=person(), t=T();
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(3)})}</span><h2 style="margin-top:6px">${nm(p,t.ideasMine,t.ideasH)}</h2>
-  <p class="muted" style="margin-top:6px">${t.ideasLead}</p>${helpBox(2)}
+  <p class="muted" style="margin-top:6px">${t.ideasLead}</p>${helpBox(2)}${knowCard("ideas")}
   <div class="ideas">${p.ideas.map((d,i)=>`
     <article class="idea ${d.startHere?"first":""}">
       <div class="idea-head"><h3>${esc(d.title)}</h3>${d.startHere?`<span class="badge">${t.startHere}</span>`:""}</div>
@@ -1199,6 +1293,8 @@ function ideas(){
         <div class="fact"><span class="label">${t.fCost}</span><strong>${esc(d.startCost)}</strong></div>
         <div class="fact"><span class="label">${t.fPrice}</span><strong>${esc(d.price)}</strong></div>
       </div>
+      ${d.realityCheck?`<p class="reality"><b>${t.realityH}:</b> ${esc(d.realityCheck)}</p>`:""}
+      ${d.weekendTest?`<p class="tipbox"><b>${t.testH}:</b> ${esc(d.weekendTest)}</p>`:""}
       ${d.safety?`<p class="safety"><b>${t.before}</b> ${esc(d.safety)}</p>`:""}
       <div><button class="btn ${d.startHere?"sun":"ghost"}" type="button" data-i="${i}">${t.choose}</button></div>
     </article>`).join("")}</div>
@@ -1224,7 +1320,7 @@ ${COMMON_RULES(locationOf())}
 - Be realistic and specific. Each "how" item is one concrete action they can do today.
 
 Business idea: ${d.title}. ${d.pitch}. They would charge: ${d.price}. Cost to start: ${d.startCost}. Safety note: ${d.safety||"none"}.
-About the person: ${JSON.stringify(p.strengths)}
+About the person: ${JSON.stringify(p.strengths)}${profileText()}
 Plan steps, in order:
 ${(pl.steps||[]).map((s,i)=>`${i+1}. ${s}`).join("\n")}
 First-customer places: ${(pl.firstCustomers||[]).join(" | ")}
@@ -1234,8 +1330,10 @@ Return only JSON:
 {"steps":[{"why":"why this step matters and why it comes now, 1-2 sentences","time":"for example 30 minutes","cost":"for example $0","how":["3 to 5 concrete actions in order"],"tip":"one practical tip","watchOut":"one common mistake or local rule to watch, or empty string"}],
  "firstCustomers":[{"why":"why this place fits this person","how":"the first concrete action to reach them"}],
  "grow":[{"why":"why and when to add this"}],
+
+ "freeHelp":[{"name":"a real free help organization near them (for example the local Small Business Development Center, SCORE chapter, public library business help, or a community or immigrant organization)","what":"what they can help with, one sentence"}],
  "local":[{"step":"a setup step to become a legal business owner where they live (business registration, local business license, tax registration, permits, insurance, anything specific to this idea)","who":"the office or agency to check with","why":"why it matters, one sentence"}]}
-"steps" must have exactly ${(pl.steps||[]).length} items in the same order. "firstCustomers" must have ${(pl.firstCustomers||[]).length} items and "grow" ${(pl.grow||[]).length} items in the same order. "local" has 4 to 6 items.`;
+"steps" must have exactly ${(pl.steps||[]).length} items in the same order. "firstCustomers" must have ${(pl.firstCustomers||[]).length} items and "grow" ${(pl.grow||[]).length} items in the same order. "local" has 4 to 6 items. In "local", say plainly when something is free from the government (for example an EIN from the IRS is free) and warn not to pay a third party for it. "freeHelp" has 2 to 4 items; only name organizations you are confident exist.`;
     const r=await sample.json(prompt,{modelTier:"default"});
     if(!r || !Array.isArray(r.steps)) throw {code:"invalid_json"};
     store.set(key,r);
@@ -1265,7 +1363,7 @@ function plan(noScroll){
       </div>`:""}
     </li>`; };
   const whyOf=(arr,i,field)=>{ const v=det?.[arr]?.[i]?.[field]; return v?`<span class="why">${ICON.info}<span>${esc(v)}</span></span>`:""; };
-  app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(4)})}</span><h2 style="margin-top:6px">${nm(p,t.planMine,t.planH)}</h2>${helpBox(3)}
+  app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(4)})}</span><h2 style="margin-top:6px">${nm(p,t.planMine,t.planH)}</h2>${helpBox(3)}${knowCard("plan")}${ageNote()}
   <div class="plan">
     <div class="namecard"><span class="label">${t.nameIdea}</span><h2>${esc(pl.name)}</h2><p>${esc(pl.offer)}</p><p style="opacity:.75">${esc(d.price)} · ${fmt(t.costs,{x:esc(d.startCost)})}</p></div>
     ${d.safety?`<p class="safety"><b>${t.before}</b> ${esc(d.safety)}</p>`:""}
@@ -1280,6 +1378,7 @@ function plan(noScroll){
       <p class="muted" style="font-size:.92rem">${fmt(t.localP,{loc:esc(locationOf())})}</p>
       ${det?.local?.length?`<ol class="plain">${det.local.map(l=>`<li><strong>${esc(l.step)}</strong><span class="why">${ICON.info}<span>${t.whoLabel}: ${esc(l.who)}. ${esc(l.why)}</span></span></li>`).join("")}</ol>`:`<div>${detNote}</div>`}
     </div>
+    ${det?.freeHelp?.length?`<div class="box"><h3>${t.freeH}</h3><p class="muted" style="font-size:.92rem">${t.freeP}</p><ul class="plain">${det.freeHelp.map(f=>`<li><strong>${esc(f.name)}</strong><span class="why">${ICON.info}<span>${esc(f.what)}</span></span></li>`).join("")}</ul></div>`:""}
     <div class="cols">
       <div class="box"><h3>${t.findFirst}</h3><ol class="plain">${(pl.firstCustomers||[]).map((x,i)=>`<li>${esc(x)}${whyOf("firstCustomers",i,"why")}${det?.firstCustomers?.[i]?.how?`<span class="why"><b>${t.howReach}:</b>&nbsp;${esc(det.firstCustomers[i].how)}</span>`:""}</li>`).join("")}</ol></div>
       <div class="box"><h3>${t.growH}</h3><p class="muted" style="font-size:.93rem">${t.growNote}</p><ul class="plain">${(pl.grow||[]).map((x,i)=>`<li>${esc(x)}${whyOf("grow",i,"why")}</li>`).join("")}</ul></div>
@@ -1323,14 +1422,14 @@ function day(noScroll){
   const tasks=[open[0]||(pl.steps||[])[0]||"", open[1]||(pl.firstCustomers||[])[0]||""];
   const key=planKey()+"-day"; const st=Object.assign({checked:{},custom:[],removed:{},edits:{}}, store.get(key)||{});
   let bi=0;
-  const items=t.day.map((d,i)=>({id:"t"+i,time:d[0],kind:d[1],tpl:true,text:st.edits["t"+i] ?? (d[1]==="biz"?fmt(d[2],{task:tasks[bi++]}):d[2])}))
+  const items=t.day.map((d,i)=>({id:"t"+i,time:wakeShift(d[0]),kind:d[1],tpl:true,text:st.edits["t"+i] ?? (d[1]==="biz"?fmt(d[2],{task:tasks[bi++]}):d[2])}))
     .filter(x=>!st.removed[x.id]).concat(st.custom).sort((a,b)=>a.time.localeCompare(b.time));
   const save=()=>store.set(key,st);
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(5)})}</span><h2 style="margin-top:6px">${t.dayH}</h2>
-  <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${helpBox(4)}
+  <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${helpBox(4)}${knowCard("day")}
   <div class="dayhead">
     <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bgc" cx="50" cy="50" r="40"/><circle class="fg" id="ring" cx="50" cy="50" r="40" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)"/><text id="ringtxt" x="50" y="56" text-anchor="middle"></text></svg>
-    <div><h3 id="kept"></h3><p class="muted">${esc(pl.name||"")}</p></div>
+    <div><h3 id="kept"></h3><p class="muted">${esc(pl.name||"")}</p><p class="muted" style="font-size:.88rem">${t.forgive}</p></div>
   </div>
   <p class="cheer" id="cheer" hidden>${t.allDone}</p>
   <ul class="timeline">${items.map(x=>`
@@ -1376,12 +1475,103 @@ function day(noScroll){
   upd();
 }
 
+/* ---------- profile logic ---------- */
+S.profile = store.get("seedline-profile") || {};
+const answered = v => v!==undefined && v!=="__skip";
+function saveProfile(){ store.set("seedline-profile", S.profile); renderProfBtn(); }
+function renderProfBtn(){ const b=document.getElementById("profBtn"); if(!b) return; const p=S.profile; const has=p.firstName||p.age||PQ.some(q=>answered(p[q.id])); b.hidden=!has; b.textContent=T().profileBtn+(p.firstName?" · "+p.firstName:""); }
+function pqLabel(q,v){ const t=T(); if(!answered(v)) return t.notAnswered; if(q.type==="one") return t.pq.opts[v]||v; if(q.type==="multi") return (v||[]).map(x=>t.pq.opts[x]).join(", ")||t.notAnswered; if(q.type==="time") return timeLabel(v); return v; }
+function pqItem(q, noSkip){
+  const t=T(), v=S.profile[q.id]; let ctl;
+  if(q.type==="one") ctl=`<div class="choices">${q.opts.map(o=>`<button type="button" class="pchoice" data-pq="${q.id}" data-pv="${o}" aria-pressed="${v===o}">${t.pq.opts[o]}</button>`).join("")}</div>`;
+  else if(q.type==="multi") ctl=`<div class="choices">${q.opts.map(o=>`<button type="button" class="pchoice" data-pm="${q.id}" data-pv="${o}" aria-pressed="${Array.isArray(v)&&v.includes(o)}">${t.pq.opts[o]}</button>`).join("")}<button type="button" class="btn small" data-psave="${q.id}">${t.save}</button></div>`;
+  else ctl=`<div class="choices"><label class="sr" for="pq-${q.id}">${t.pq.q[q.id]}</label><input id="pq-${q.id}" class="pinput" type="${q.type==="time"?"time":"text"}" value="${esc(answered(v)?v:(q.type==="time"?"07:00":""))}">${q.type==="text"?micBtn("pq-"+q.id):""}<button type="button" class="btn small" data-psave="${q.id}">${t.save}</button></div>`;
+  return `<div class="pq"><strong>${t.pq.q[q.id]}</strong>${ctl}<span class="why">${ICON.info}<span>${t.pq.why[q.id]}</span></span>${noSkip?"":`<button type="button" class="linkbtn" data-pskip="${q.id}">${t.skip}</button>`}</div>`;
+}
+function knowCard(step){
+  if(!isOwnUser()) return "";
+  const t=T(), qs=PQ.filter(q=>q.step===step && S.profile[q.id]===undefined);
+  if(!qs.length) return "";
+  return `<section class="know"><div><h3>${t.knowH}${S.profile.firstName?", "+esc(S.profile.firstName):""}</h3><p class="muted" style="font-size:.93rem">${t.knowP}</p></div>${qs.map(q=>pqItem(q)).join("")}</section>`;
+}
+function ageNote(){ const a=+S.profile.age; return isOwnUser() && a && a<18 ? `<p class="safety"><b>${T().before}</b> ${T().under18}</p>` : ""; }
+function profileText(){
+  if(!isOwnUser()) return "";
+  const p=S.profile, en=I18N.en.pq, parts=[];
+  if(p.firstName) parts.push(`First name: ${p.firstName}`);
+  if(p.age) parts.push(`Age: ${p.age}${+p.age<18?" (a minor: any registration, accounts or payments need a parent or guardian)":""}`);
+  PQ.forEach(q=>{ const v=p[q.id]; if(!answered(v)) return; const val=q.type==="one"?en.opts[v]:q.type==="multi"?v.map(x=>en.opts[x]).join(", "):v; parts.push(`${en.q[q.id]} ${val}`); });
+  return parts.length?`\nProfile the person chose to share (use it to fit everything to them; do not repeat it back):\n- ${parts.join("\n- ")}\n`:"";
+}
+function rerenderSoft(){ const y=window.scrollY; render(); window.scrollTo(0,y); }
+document.addEventListener("click", e=>{
+  const one=e.target.closest("[data-pq]"); if(one){ S.profile[one.dataset.pq]=one.dataset.pv; saveProfile(); return rerenderSoft(); }
+  const m=e.target.closest("[data-pm]"); if(m){ m.setAttribute("aria-pressed", m.getAttribute("aria-pressed")!=="true"); return; }
+  const sv=e.target.closest("[data-psave]"); if(sv){
+    const id=sv.dataset.psave, q=PQ.find(x=>x.id===id);
+    if(q.type==="multi") S.profile[id]=[...document.querySelectorAll(`[data-pm="${id}"][aria-pressed="true"]`)].map(b=>b.dataset.pv);
+    else { const v=document.getElementById("pq-"+id).value.trim(); if(!v) return; S.profile[id]=v; }
+    saveProfile(); return rerenderSoft();
+  }
+  const sk=e.target.closest("[data-pskip]"); if(sk){ S.profile[sk.dataset.pskip]="__skip"; saveProfile(); return rerenderSoft(); }
+});
+function startMode(mode){
+  S.own={answers:[],resumeText:"",fileName:"",images:[],mode,location:""}; S.convo=null; S.ownPerson=null; S.dirty=false; S.strDirty=false; S.openStep=null;
+  if(!S.profile.welcomed) return welcome(mode);
+  mode==="own"?talkOwn():uploadView(mode);
+}
+function welcome(mode){
+  if(mode) S.nextMode=mode;
+  S.view="welcome"; setStep(-1); const t=T(), p=S.profile;
+  app.innerHTML=`<h2>${t.welcomeH}</h2><p class="muted" style="margin-top:6px">${t.welcomeP}</p>
+  <form class="welcome" id="wf">
+    <div class="field"><label class="label" for="fn">${t.nameL}</label><input id="fn" class="pinput" type="text" autocomplete="given-name" value="${esc(p.firstName||"")}"></div>
+    <div class="field"><label class="label" for="agein">${t.ageL}</label><input id="agein" class="pinput" type="number" inputmode="numeric" min="1" max="120" value="${esc(p.age||"")}"></div>
+    <p class="why">${ICON.lock}<span>${t.whyNameAge}</span></p>
+    <p id="agemsg" aria-live="polite"></p>
+    <div class="actions" style="margin-top:0"><button class="btn sun" type="submit">${t.cont}</button><button class="btn ghost" type="button" id="skipw">${t.skip}</button></div>
+  </form>`;
+  const go=()=>{ S.profile.welcomed=true; saveProfile(); const m=S.nextMode||"own"; m==="own"?talkOwn():uploadView(m); };
+  document.getElementById("wf").onsubmit=e=>{
+    e.preventDefault();
+    const name=document.getElementById("fn").value.trim(), age=parseInt(document.getElementById("agein").value,10), msg=document.getElementById("agemsg");
+    if(age && age<13){ msg.className="err"; msg.textContent=t.under13; return; }
+    if(name) S.profile.firstName=name; else delete S.profile.firstName;
+    if(age) S.profile.age=age; else delete S.profile.age;
+    if(age && age<18 && !msg.dataset.shown){ msg.className="safety"; msg.textContent=t.under18; msg.dataset.shown="1"; saveProfile(); return; }
+    go();
+  };
+  document.getElementById("skipw").onclick=go;
+}
+function profileView(){
+  if(S.view!=="profile") S.prevView=S.view;
+  S.view="profile"; setStep(-1); const t=T(), p=S.profile;
+  app.innerHTML=`<h2>${t.profileH}</h2><p class="muted" style="margin-top:6px">${t.profileP}</p>
+  <div class="welcome">
+    <div class="field"><label class="label" for="fn">${t.nameL}</label><input id="fn" class="pinput" type="text" value="${esc(p.firstName||"")}"></div>
+    <div class="field"><label class="label" for="agein">${t.ageL}</label><input id="agein" class="pinput" type="number" inputmode="numeric" min="13" max="120" value="${esc(p.age||"")}"></div>
+    <div><button class="btn small" type="button" id="savena">${t.save}</button></div>
+  </div>
+  <div class="plist">${PQ.map(q=>`<div class="box"><span class="label">${esc(pqLabel(q,p[q.id]))}</span>${pqItem(q,true)}</div>`).join("")}</div>
+  <div class="actions"><button class="btn ghost" type="button" id="back">${t.back}</button><button class="btn ghost" type="button" id="delp">${t.deleteP}</button></div>
+  <p id="delmsg" class="muted" aria-live="polite"></p>`;
+  document.getElementById("savena").onclick=()=>{ const n=document.getElementById("fn").value.trim(), a=parseInt(document.getElementById("agein").value,10); if(n) S.profile.firstName=n; else delete S.profile.firstName; if(a>=13) S.profile.age=a; else delete S.profile.age; saveProfile(); profileView(); };
+  document.getElementById("delp").onclick=()=>{ S.profile={}; saveProfile(); profileView(); document.getElementById("delmsg").textContent=t.deleted; };
+  document.getElementById("back").onclick=()=>{ S.view=S.prevView&&S.prevView!=="profile"?S.prevView:"home"; render(); };
+}
+function wakeShift(hm){
+  const w=S.profile.wake; if(!isOwnUser() || !answered(w)) return hm;
+  const [wh,wm]=w.split(":").map(Number), [h,m]=hm.split(":").map(Number);
+  let mins=h*60+m+(wh*60+wm-420); mins=Math.max(0,Math.min(23*60+59,mins));
+  return String(Math.floor(mins/60)).padStart(2,"0")+":"+String(mins%60).padStart(2,"0");
+}
+
 /* ---------- levels + package ---------- */
 function levelsBox(here){
   const t=T();
   return `<section class="section"><div><h2>${t.levelsH}</h2><p class="muted" style="margin-top:4px">${t.levelsLead}</p></div>
   <div class="levels">${t.levels.map((l,i)=>`<div class="level ${i===here?"here":""}">${i===here?`<span class="tag">${t.here}</span>`:""}<h3>${l[0]}</h3><span class="price">${l[1]}</span><p class="muted" style="font-size:.92rem">${l[2]}</p>${i>here?`<div><button class="btn small ${i===here+1?"sun":"ghost"}" type="button" data-unlock>${t.unlock}</button></div>`:""}</div>`).join("")}</div>
-  <p class="muted" id="paynote" hidden>${t.demoPay}</p></section>`;
+  <p class="why" style="margin-top:4px">${ICON.lock}<span>${t.honest}</span></p><p class="muted" id="paynote" hidden>${t.demoPay}</p></section>`;
 }
 function wireLevels(){ app.querySelectorAll("[data-unlock]").forEach(b=>b.onclick=()=>{ document.getElementById("paynote").hidden=false; }); }
 function packageView(){
@@ -1401,12 +1591,20 @@ function packageView(){
     <div class="box"><h3>${t.pkgPlan}</h3><ul class="checks">${(pl.steps||[]).map((s,i)=>`<li><label><input type="checkbox" disabled ${week[i]?"checked":""}><span>${esc(s)}</span></label></li>`).join("")}</ul></div>
     <div class="box"><h3>${t.pkgDay}</h3><ul class="plain" style="list-style:none;padding:0">${routine.map(r=>`<li><strong style="font-variant-numeric:tabular-nums">${timeLabel(r[0])}</strong> · ${esc(r[1])}</li>`).join("")}</ul></div>
     ${d.safety?`<p class="safety"><b>${t.before}</b> ${esc(d.safety)}</p>`:""}
+    <div><button class="btn ghost" type="button" id="copyplan">${t.copyPlan}</button> <span class="muted" id="copymsg" aria-live="polite"></span></div>
     <div class="lockbar"><p>${t.packageLock}</p><button class="btn sun" type="button" data-unlock>${t.unlock}</button></div>
     <p class="muted" id="paynote" hidden>${t.demoPay}</p>
   </div>
   ${levelsBox(0).replace('id="paynote"','id="paynote2"')}
   <div class="actions"><button class="btn ghost" type="button" id="back">${t.back}</button></div>`;
   wireLevels();
+  document.getElementById("copyplan").onclick=async()=>{
+    const lines=[pl.name, d.title, pl.offer, d.price+" · "+fmt(t.costs,{x:d.startCost}), "", t.pkgPlan+":", ...(pl.steps||[]).map((s,i)=>`${i+1}. ${s}`), "", t.findFirst+":", ...(pl.firstCustomers||[]).map(x=>"- "+x), "", t.pkgDay+":", ...routine.map(r=>`${timeLabel(r[0])} ${r[1]}`)];
+    if(d.safety) lines.push("", t.before+" "+d.safety);
+    const text=lines.join("\n"), msg=document.getElementById("copymsg");
+    try{ await navigator.clipboard.writeText(text); msg.textContent=t.copied; }
+    catch{ const ta=document.createElement("textarea"); ta.value=text; ta.className="paste"; ta.style.marginTop="8px"; document.getElementById("copyplan").parentElement.after(ta); ta.select(); }
+  };
   document.getElementById("back").onclick=plan;
 }
 
@@ -1420,6 +1618,7 @@ function coachContext(){
       const d=p.ideas?.[S.idea]; if(d && ["plan","day","package"].includes(S.view)) parts.push(`Chosen idea: ${d.title}. Plan: ${JSON.stringify(d.plan)}. Safety note: ${d.safety||"none"}.`);
     }
   }
+  const pt=profileText(); if(pt) parts.push(pt);
   return parts.join("\n");
 }
 function drawCoach(){
@@ -1427,6 +1626,7 @@ function drawCoach(){
   log.innerHTML="";
   const add=(role,text,img)=>{ const d=document.createElement("div"); d.className="msg "+(role==="assistant"?"ai":"me"); d.innerHTML=`<span class="who">${role==="assistant"?t.ai:t.you}</span>`; d.append(document.createTextNode(text)); if(img){ const im=document.createElement("img"); im.src=img; im.alt=""; d.append(im);} log.appendChild(d); };
   add("assistant", t.coachIntro);
+  if(!C.log.length && !C.busy){ const w=document.createElement("div"); w.className="choices"; t.suggest.forEach(q=>{ const b=document.createElement("button"); b.type="button"; b.className="pchoice"; b.textContent=q; b.onclick=()=>{ document.getElementById("coachText").value=q; document.getElementById("coachForm").requestSubmit(); }; w.append(b); }); log.appendChild(w); }
   C.log.forEach(m=>add(m.role, m.shown ?? m.content, m.img));
   if(C.busy){ const d=document.createElement("div"); d.className="typing"; d.textContent=t.thinking; log.appendChild(d); }
   log.scrollTop=log.scrollHeight;
@@ -1472,7 +1672,9 @@ document.getElementById("coachForm").onsubmit=async e=>{
 - Be warm, honest and very simple. Short sentences. Give one or two concrete next steps, not a long list.
 - If a screenshot or photo is attached, first say in one line what you see, then tell them exactly what to tap or do next.
 - Never promise income. If something needs a license, permit or a lawyer, say so plainly.
-- If you don't know, say so and suggest asking a person on the Seedline team.
+- Be honest, never flattering. If an idea or step has a real problem, say so kindly and suggest a fix.
+- You are an AI. If they need a person, point them to free local help: their Small Business Development Center (SBDC), SCORE mentors, the public library, or community organizations.
+- If you don't know, say so.
 Context about where they are in the app:
 ${coachContext()}`;
   const msgs = C.log.map((m,i)=>({role:m.role, content: i===0 ? system+"\n\nTheir message: "+m.content : m.content}));
@@ -1486,7 +1688,8 @@ ${coachContext()}`;
 };
 
 const _renderChrome = renderChrome;
-renderChrome = function(){ _renderChrome(); coachChrome(); };
+renderChrome = function(){ _renderChrome(); coachChrome(); renderProfBtn(); };
+document.getElementById("profBtn").onclick=profileView;
 document.getElementById("homeBtn").onclick=home;
 renderChrome(); home();
 </script>
