@@ -174,6 +174,38 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .cheer{background:var(--sun);color:var(--sun-ink);border-radius:14px;padding:.8rem 1rem;font-weight:700}
 @media (max-width:480px){.slot{grid-template-columns:1fr auto}.slot time{grid-column:1/-1}}
 
+/* edit + why + steps */
+.editbtn{border:0;background:none;color:inherit;opacity:.8;font-size:.8rem;font-weight:700;text-decoration:underline;padding:0;cursor:pointer}
+.msg .editbtn{display:block;margin-top:4px}
+.edtext{width:100%;min-width:0;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:.5rem .6rem}
+.msg.me .edtext{min-width:min(260px,60vw)}
+.edrow{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.msg.me .btn:not(.ghost){background:var(--sun);color:var(--sun-ink)}
+.msg.me .btn.ghost{color:var(--bubble-me-ink);border-color:currentColor}
+.changed{background:var(--warn-soft);border-radius:12px;padding:.6rem .8rem;margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:4px}
+.chipx{border:0;background:none;color:var(--muted);font-size:1rem;line-height:1;padding:0 2px;cursor:pointer}
+.chipadd{display:flex;gap:6px}
+.chipadd input{flex:1;min-width:0;font:inherit;font-size:.92rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:.35rem .6rem}
+.why{display:flex;gap:6px;font-size:.88rem;color:var(--muted);margin-top:2px}
+.why svg{width:16px;height:16px;flex:none;margin-top:3px}
+.adjust{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:8px}
+.steplist{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.stepcard{border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.stepcard.open{border-color:var(--teal);background:var(--surface);box-shadow:0 0 0 2px color-mix(in srgb,var(--teal) 15%,transparent)}
+.stephead{display:flex;gap:10px;align-items:flex-start;padding:10px 12px}
+.stephead input{width:22px;height:22px;margin-top:4px;accent-color:var(--teal);flex:none}
+.steptitle{flex:1;min-width:0;text-align:start;background:none;border:0;color:var(--ink);padding:0;display:grid;gap:2px;cursor:pointer}
+.stepcard.done .st{text-decoration:line-through;color:var(--muted)}
+.stephead .editbtn{margin-top:4px;color:var(--muted)}
+.stepbody{padding:0 12px 14px;padding-inline-start:44px;display:grid;gap:10px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;font-size:.93rem}
+.tipbox{background:var(--teal-soft);border-radius:12px;padding:.6rem .8rem;font-size:.93rem}
+.slot .whyd{display:block;font-size:.8rem;color:var(--muted)}
+.slotbtns{display:flex;gap:6px;align-items:center}
+.slotbtns .editbtn{color:var(--muted)}
+@media (max-width:480px){.stepbody{padding-inline-start:12px}}
+
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -475,7 +507,7 @@ const OWN_Q = {
 };
 
 /* ---------- example people ---------- */
-const BASE = [{id:"maria",name:{en:"Maria",es:"María",fa:"ماریا",ar:"ماريا"},initial:"M"},{id:"daniel",name:{en:"Daniel",es:"Daniel",fa:"دنیل",ar:"دانيال"},initial:"D"},{id:"sam",name:{en:"Sam",es:"Sam",fa:"سم",ar:"سام"},initial:"S"},{id:"amir",name:{en:"Amir",es:"Amir",fa:"امیر",ar:"أمير"},initial:"A"}];
+const BASE = [{id:"maria",loc:"Sterling, VA 20164",name:{en:"Maria",es:"María",fa:"ماریا",ar:"ماريا"},initial:"M"},{id:"daniel",loc:"Fairfax, VA 22030",name:{en:"Daniel",es:"Daniel",fa:"دنیل",ar:"دانيال"},initial:"D"},{id:"sam",loc:"Ashburn, VA 20147",name:{en:"Sam",es:"Sam",fa:"سم",ar:"سام"},initial:"S"},{id:"amir",loc:"Alexandria, VA 22304",name:{en:"Amir",es:"Amir",fa:"امیر",ar:"أمير"},initial:"A"}];
 const P = {};
 P.en = [
 {role:"Sells used items on Facebook Marketplace and eBay on weekends",
@@ -681,6 +713,69 @@ Object.keys(EXTRA).forEach(l=>Object.assign(I18N[l],EXTRA[l]));
 ICON.send='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>';
 ICON.save='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
 
+/* ---------- edit, why and local-rules text ---------- */
+const EXTRA2 = {
+en:{ edit:"Edit", save:"Save", cancel:"Cancel",
+  changedNote:"You changed your answers. Update your results so everything matches what you said.",
+  update:"Update my results", keepGoing:"Keep my old results", updating:"Updating your results…",
+  whySaid:"Why we suggest this: you said", whyLabel:"Why", editHint:"Tap × to remove anything that isn't true, or add what we missed.",
+  chipPh:"Add your own…", strengthsChanged:"You changed your strengths. Update your ideas to match.", updateIdeas:"Update my ideas",
+  adjustH:"Not quite right?", adjustP:"Tell us what to change and we'll adjust your ideas.", adjustPh:"For example: I don't have a car, or I want to work from home.", adjust:"Adjust my ideas",
+  detailsLoading:"Writing out every step in detail for where you live…", detailsBtn:"Show every step in detail",
+  stepN:"Step {n}", whyStep:"Why this step", howTo:"How to do it", time:"Time", cost:"Cost", tip:"Tip", watch:"Watch out",
+  doneNext:"Done, next step →", askCoach:"Ask the coach about this step", coachPrefill:"Help me with this step: {s}", howReach:"How",
+  oneByOne:"Do one step at a time. Open a step to see why it matters, how long it takes, and exactly what to do. You can edit any step.",
+  localH:"Your local rules and setup", localP:"Based on {loc}. Rules change, so always confirm with the office named.", whoLabel:"Check with",
+  dayWhy:{health:"Energy and health keep you going on hard days.",family:"Your family is why you're doing this. Protect this time.",biz:"Two small tasks a day add up to a real business.",life:"Daily life still matters. Plan it so it doesn't pile up.",mind:"Writing down wins helps you see your own progress."},
+  eyebrow:"Be your own boss. No business idea needed.", fewMore:"Thanks! Just 3 quick questions." },
+es:{ edit:"Editar", save:"Guardar", cancel:"Cancelar",
+  changedNote:"Cambiaste tus respuestas. Actualiza tus resultados para que todo coincida con lo que dijiste.",
+  update:"Actualizar mis resultados", keepGoing:"Mantener mis resultados anteriores", updating:"Actualizando tus resultados…",
+  whySaid:"Por qué lo sugerimos: dijiste", whyLabel:"Por qué", editHint:"Toca × para quitar lo que no sea cierto, o agrega lo que nos faltó.",
+  chipPh:"Agrega el tuyo…", strengthsChanged:"Cambiaste tus fortalezas. Actualiza tus ideas para que coincidan.", updateIdeas:"Actualizar mis ideas",
+  adjustH:"¿No es exactamente lo que buscas?", adjustP:"Dinos qué cambiar y ajustaremos tus ideas.", adjustPh:"Por ejemplo: no tengo auto, o quiero trabajar desde casa.", adjust:"Ajustar mis ideas",
+  detailsLoading:"Escribiendo cada paso en detalle para tu zona…", detailsBtn:"Ver cada paso en detalle",
+  stepN:"Paso {n}", whyStep:"Por qué este paso", howTo:"Cómo hacerlo", time:"Tiempo", cost:"Costo", tip:"Consejo", watch:"Cuidado",
+  doneNext:"Listo, siguiente paso →", askCoach:"Preguntar al coach sobre este paso", coachPrefill:"Ayúdame con este paso: {s}", howReach:"Cómo",
+  oneByOne:"Haz un paso a la vez. Abre un paso para ver por qué importa, cuánto tarda y qué hacer exactamente. Puedes editar cualquier paso.",
+  localH:"Tus reglas locales y trámites", localP:"Según {loc}. Las reglas cambian, así que confirma siempre con la oficina indicada.", whoLabel:"Consulta con",
+  dayWhy:{health:"La energía y la salud te sostienen en los días difíciles.",family:"Tu familia es la razón por la que haces esto. Protege este tiempo.",biz:"Dos tareas pequeñas al día se convierten en un negocio real.",life:"La vida diaria también importa. Planéala para que no se acumule.",mind:"Anotar tus logros te ayuda a ver tu propio progreso."},
+  eyebrow:"Sé tu propio jefe. No necesitas una idea de negocio.", fewMore:"¡Gracias! Solo 3 preguntas rápidas." },
+fa:{ edit:"ویرایش", save:"ذخیره", cancel:"انصراف",
+  changedNote:"جواب‌هایت را تغییر دادی. نتایجت را به‌روز کن تا همه چیز با حرف‌هایت جور باشد.",
+  update:"نتایجم را به‌روز کن", keepGoing:"نتایج قبلی را نگه دار", updating:"در حال به‌روز کردن نتایجت…",
+  whySaid:"چرا این را پیشنهاد می‌کنیم: گفتی", whyLabel:"چرا", editHint:"با زدن × هر چیزی را که درست نیست حذف کن، یا آنچه را جا انداختیم اضافه کن.",
+  chipPh:"مورد خودت را اضافه کن…", strengthsChanged:"توانایی‌هایت را تغییر دادی. ایده‌هایت را به‌روز کن تا با آن جور شوند.", updateIdeas:"ایده‌هایم را به‌روز کن",
+  adjustH:"دقیقاً همان نیست؟", adjustP:"بگو چه چیزی را تغییر دهیم تا ایده‌هایت را تنظیم کنیم.", adjustPh:"مثلاً: ماشین ندارم، یا می‌خواهم از خانه کار کنم.", adjust:"ایده‌هایم را تنظیم کن",
+  detailsLoading:"در حال نوشتن جزئیات هر قدم برای محل زندگی‌ات…", detailsBtn:"جزئیات هر قدم را نشان بده",
+  stepN:"قدم {n}", whyStep:"چرا این قدم", howTo:"چطور انجامش بدهی", time:"زمان", cost:"هزینه", tip:"نکته", watch:"مراقب باش",
+  doneNext:"انجام شد، قدم بعدی ←", askCoach:"درباره این قدم از مربی بپرس", coachPrefill:"در این قدم کمکم کن: {s}", howReach:"چطور",
+  oneByOne:"هر بار یک قدم. هر قدم را باز کن تا ببینی چرا مهم است، چقدر وقت می‌گیرد و دقیقاً چه کار کنی. هر قدم را می‌توانی ویرایش کنی.",
+  localH:"قوانین محلی و کارهای ثبت", localP:"بر اساس {loc}. قوانین تغییر می‌کنند، پس همیشه با اداره نام‌برده تأیید کن.", whoLabel:"بررسی با",
+  dayWhy:{health:"انرژی و سلامتی در روزهای سخت نگهت می‌دارد.",family:"خانواده‌ات دلیل این همه تلاش است. از این وقت محافظت کن.",biz:"روزی دو کار کوچک، کم‌کم یک کسب‌وکار واقعی می‌سازد.",life:"زندگی روزمره هم مهم است. برنامه‌ریزی‌اش کن تا روی هم جمع نشود.",mind:"نوشتن موفقیت‌ها کمک می‌کند پیشرفت خودت را ببینی."},
+  eyebrow:"رئیس خودت باش. به ایده کسب‌وکار نیازی نیست.", fewMore:"ممنون! فقط ۳ سؤال کوتاه." },
+ar:{ edit:"تعديل", save:"حفظ", cancel:"إلغاء",
+  changedNote:"غيّرت إجاباتك. حدّث نتائجك لتتوافق مع ما قلته.",
+  update:"حدّث نتائجي", keepGoing:"احتفظ بنتائجي السابقة", updating:"جارٍ تحديث نتائجك…",
+  whySaid:"لماذا نقترح هذا: قلت", whyLabel:"لماذا", editHint:"اضغط × لإزالة ما ليس صحيحًا، أو أضف ما فاتنا.",
+  chipPh:"أضف ما يخصك…", strengthsChanged:"غيّرت نقاط قوتك. حدّث أفكارك لتتوافق معها.", updateIdeas:"حدّث أفكاري",
+  adjustH:"ليست مناسبة تمامًا؟", adjustP:"أخبرنا بما تريد تغييره وسنعدّل أفكارك.", adjustPh:"مثلًا: ليس لدي سيارة، أو أريد العمل من المنزل.", adjust:"عدّل أفكاري",
+  detailsLoading:"جارٍ كتابة كل خطوة بالتفصيل لمكان إقامتك…", detailsBtn:"اعرض كل خطوة بالتفصيل",
+  stepN:"الخطوة {n}", whyStep:"لماذا هذه الخطوة", howTo:"كيف تنفّذها", time:"الوقت", cost:"التكلفة", tip:"نصيحة", watch:"انتبه",
+  doneNext:"تمّت، الخطوة التالية ←", askCoach:"اسأل المدرّب عن هذه الخطوة", coachPrefill:"ساعدني في هذه الخطوة: {s}", howReach:"كيف",
+  oneByOne:"خطوة واحدة في كل مرة. افتح الخطوة لترى لماذا هي مهمة، وكم تستغرق، وماذا تفعل بالضبط. يمكنك تعديل أي خطوة.",
+  localH:"القواعد المحلية وخطوات التسجيل", localP:"بناءً على {loc}. القواعد تتغير، لذا تأكد دائمًا من الجهة المذكورة.", whoLabel:"راجع",
+  dayWhy:{health:"الطاقة والصحة تساعدانك على الاستمرار في الأيام الصعبة.",family:"عائلتك هي سبب كل هذا. احمِ هذا الوقت.",biz:"مهمتان صغيرتان يوميًا تصنعان مشروعًا حقيقيًا مع الوقت.",life:"الحياة اليومية مهمة أيضًا. خطّط لها حتى لا تتراكم.",mind:"تدوين إنجازاتك يساعدك على رؤية تقدّمك."},
+  eyebrow:"كن مدير نفسك. لا تحتاج إلى فكرة مشروع.", fewMore:"شكرًا! ثلاثة أسئلة سريعة فقط." }
+};
+Object.keys(EXTRA2).forEach(l=>Object.assign(I18N[l],EXTRA2[l]));
+OWN_Q.en.push("Where do you live? Your ZIP code, city or state is enough. We use it to check local rules and permits.");
+OWN_Q.es.push("¿Dónde vives? Basta con tu código postal, ciudad o estado. Lo usamos para revisar las reglas y permisos locales.");
+OWN_Q.fa.push("کجا زندگی می‌کنی؟ کدپستی، شهر یا ایالت کافی است. از آن برای بررسی قوانین و مجوزهای محلی استفاده می‌کنیم.");
+OWN_Q.ar.push("أين تعيش؟ يكفي الرمز البريدي أو المدينة أو الولاية. نستخدمه للتحقق من القواعد والتصاريح المحلية.");
+ICON.info='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>';
+function openCoachWith(text){ toggleCoach(true); const ta=document.getElementById("coachText"); ta.value=text; ta.focus(); }
+
 /* ---------- state + helpers ---------- */
 const LANGS = ["en","es","fa","ar"];
 const store = {get(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
@@ -698,12 +793,12 @@ function person(){
   const b=BASE[S.pi]; const t=P[S.lang][S.pi];
   return {...t, id:b.id, initial:b.initial, name:b.name[S.lang]||b.name.en};
 }
-function setStep(i){
+function setStep(i,noScroll){
   const t=T();
   stepsEl.innerHTML = t.steps.map((s,n)=>`<div class="step ${n===i?"on":""} ${n<i?"done":""}"><b>${n<i?"✓":num(n+1)}</b>${s}</div>`).join("");
   stepsEl.hidden = i < 0;
   if(i>=0){ const on=stepsEl.querySelector(".on"); on?.scrollIntoView?.({block:"nearest",inline:"nearest"}); }
-  window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
+  if(!noScroll) window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
 }
 const helpBox = i => `<div class="help">${ICON.hand}<div><strong>${T().helpLabel}:</strong> ${T().help[i]}</div></div>`;
 const privacyLine = () => `<p class="privacy">${ICON.lock}<span>${T().privacy}</span></p>`;
@@ -716,7 +811,7 @@ function renderChrome(){
   document.getElementById("footnote").textContent = t.footnote;
 }
 function render(){
-  ({home, talk:()=>talkSample(true), own:()=>talkOwn(true), resume:()=>uploadView("resume",true), work:()=>uploadView("work",true), strengths, ideas, plan, day, package:packageView})[S.view]();
+  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume:()=>uploadView("resume"), work:()=>uploadView("work"), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView})[S.view]();
 }
 
 /* ---------- home ---------- */
@@ -742,7 +837,7 @@ function home(){
     <div class="people">${BASE.map((b,i)=>`
       <button class="person" type="button" data-i="${i}">
         <span class="avatar" aria-hidden="true">${b.initial}</span>
-        <h3>${esc(b.name[S.lang])}</h3><span class="role">${esc(P[S.lang][i].role)}</span>
+        <h3>${esc(b.name[S.lang])}</h3><span class="role">${esc(P[S.lang][i].role)}</span><span class="role">📍 ${esc(b.loc)}</span>
       </button>`).join("")}</div>
   </section>
   <section class="section">
@@ -754,52 +849,85 @@ function home(){
       <div><span class="label">${t.founderLabel}</span><h3>Meddy Baraei</h3><span class="muted">${t.founderRole}</span><blockquote>“${t.founderQuote}”</blockquote></div>
     </div>
   </section>`;
-  app.querySelectorAll(".person").forEach(b=>b.onclick=()=>{ S.pi=+b.dataset.i; talkSample(); });
-  app.querySelectorAll(".start").forEach(b=>b.onclick=()=>{ S.own={answers:[],resumeText:"",fileName:"",images:[],mode:b.dataset.m}; b.dataset.m==="own"?talkOwn():uploadView(b.dataset.m); });
+  app.querySelectorAll(".person").forEach(b=>b.onclick=()=>{ S.pi=+b.dataset.i; S.dirty=false; S.strDirty=false; S.convo=null; S.ownPerson=null; S.openStep=null; talkSample(); });
+  app.querySelectorAll(".start").forEach(b=>b.onclick=()=>{ S.own={answers:[],resumeText:"",fileName:"",images:[],mode:b.dataset.m,location:""}; S.convo=null; S.ownPerson=null; S.dirty=false; S.strDirty=false; S.openStep=null; b.dataset.m==="own"?talkOwn():uploadView(b.dataset.m); });
 }
 
 /* ---------- conversation ---------- */
 function bubble(chat, who, text){
   const d=document.createElement("div"); const t=T();
   d.className="msg "+(who==="ai"?"ai":"me");
-  d.innerHTML=`<span class="who">${who==="ai"?t.ai:esc(who)}</span>${esc(text)}`;
-  chat.appendChild(d);
+  d.innerHTML=`<span class="who">${who==="ai"?t.ai:esc(who)}</span><span class="txt"></span>`;
+  d.querySelector(".txt").textContent=text;
+  chat.appendChild(d); return d;
 }
+const clone = x => JSON.parse(JSON.stringify(x));
+const isOwnUser = () => S.pi==="own" && (!S.ownPerson || S.ownPerson.own!==false);
+function speaker(){ if(isOwnUser()) return T().you; return person().name; }
+function locationOf(){ const p=person(); if(p?.location) return p.location; if(typeof S.pi==="number") return BASE[S.pi].loc; return S.own?.location||""; }
+function syncConvo(){ if(typeof S.pi==="number" && !S.dirty) S.convo=person().chat.map(([q,a])=>({q,a})); }
 let talkTimer=null;
-function talkSample(instant){
-  S.view="talk"; setStep(0); clearTimeout(talkTimer);
+function talkSample(){
+  S.view="talk"; setStep(0); clearTimeout(talkTimer); S.dirty=false; syncConvo();
+  if(reduce) return talkView();
   const p=person(), t=T();
-  app.innerHTML = `<h2>${fmt(t.convoOf,{name:esc(p.name)})}</h2><p class="muted" style="margin-top:6px">${esc(p.role)}</p>${helpBox(0)}<div class="chat" id="chat"></div><div class="actions" id="act"></div>`;
-  const chat=document.getElementById("chat"), act=document.getElementById("act");
-  const lines = p.chat.flatMap(([q,a])=>[["ai",q],[p.name,a]]);
-  let i=0;
-  const finish=()=>{ bubble(chat,"ai",fmt(t.thanks,{name:p.name})); act.innerHTML=`<button class="btn" type="button" id="go">${fmt(t.seeStrengths,{name:esc(p.name)})}</button>`; document.getElementById("go").onclick=strengths; };
-  if(instant||reduce){ lines.forEach(l=>bubble(chat,l[0],l[1])); finish(); return; }
-  const next=()=>{ if(i>=lines.length) return finish(); bubble(chat, lines[i][0], lines[i][1]); i++; talkTimer=setTimeout(next, 650); };
+  app.innerHTML=`<h2>${fmt(t.convoOf,{name:esc(p.name)})}</h2><p class="muted" style="margin-top:6px">${esc(p.role)} · ${esc(BASE[S.pi].loc)}</p>${helpBox(0)}<div class="chat" id="chat"></div>`;
+  const chat=document.getElementById("chat"); const lines=S.convo.flatMap(x=>[["ai",x.q],[p.name,x.a]]); let i=0;
+  const next=()=>{ if(S.view!=="talk") return; if(i>=lines.length) return talkView(true); bubble(chat,lines[i][0],lines[i][1]); i++; talkTimer=setTimeout(next,600); };
   next();
 }
-
+function talkView(noScroll){
+  S.view="talk"; setStep(0,noScroll); clearTimeout(talkTimer); syncConvo();
+  const t=T(), p=person(), own=isOwnUser(), loc=locationOf();
+  const title = own ? t.yourConvo : fmt(t.convoOf,{name:esc(p?.name||"")});
+  app.innerHTML=`<h2>${title}</h2><p class="muted" style="margin-top:6px">${!own&&p?.role?esc(p.role)+" · ":""}${esc(loc)}</p>${helpBox(0)}
+  <div class="chat" id="chat"></div><div id="dirty"></div><div class="actions" id="act"></div>`;
+  const chat=document.getElementById("chat");
+  if(S.own?.mode && S.own.mode!=="own" && own) bubble(chat,"ai",t.fewMore);
+  (S.convo||[]).forEach((x,i)=>{ bubble(chat,"ai",x.q); addEdit(bubble(chat,speaker(),x.a), i); });
+  const act=document.getElementById("act");
+  if(S.dirty){
+    document.getElementById("dirty").innerHTML=`<p class="changed">${t.changedNote}</p>`;
+    act.innerHTML=`<button class="btn sun" type="button" id="upd">${t.update}</button>${p?`<button class="btn ghost" type="button" id="keep">${t.keepGoing}</button>`:""}`;
+    document.getElementById("upd").onclick=()=>runUpdate({}, strengths);
+    const k=document.getElementById("keep"); if(k) k.onclick=()=>{ S.dirty=false; if(typeof S.pi==="number") syncConvo(); else S.convo=clone(S.convoSaved||S.convo); talkView(true); };
+  } else if(p){
+    bubble(chat,"ai", own?t.thanksOwn:fmt(t.thanks,{name:p.name}));
+    act.innerHTML=`<button class="btn" type="button" id="go">${own?t.seeMine:fmt(t.seeStrengths,{name:esc(p.name)})}</button>`;
+    document.getElementById("go").onclick=()=>strengths();
+  } else analyze();
+}
+function addEdit(d,i){
+  const t=T(), b=document.createElement("button");
+  b.type="button"; b.className="editbtn"; b.textContent=t.edit; d.appendChild(b);
+  b.onclick=()=>{
+    d.innerHTML=`<label class="sr" for="ed${i}">${t.edit}</label><textarea id="ed${i}" class="edtext" rows="3"></textarea><div class="edrow"><button class="btn small" type="button">${t.save}</button><button class="btn small ghost" type="button">${t.cancel}</button></div>`;
+    const ta=d.querySelector("textarea"); ta.value=S.convo[i].a; ta.focus();
+    const [sv,cn]=d.querySelectorAll(".edrow button");
+    sv.onclick=()=>{ const v=ta.value.trim(); if(v && v!==S.convo[i].a){ S.convo[i].a=v; S.dirty=true; if(S.own && S.convo[i].loc) S.own.location=v; } talkView(true); };
+    cn.onclick=()=>talkView(true);
+  };
+}
 function talkOwn(rerender){
   S.view="own"; S.pi="own"; setStep(0);
   const t=T(), Q=OWN_Q[S.lang], o=S.own;
-  const qIdx = o.mode==="own" ? [0,1,2,3,4] : [1,4];
+  const qIdx = o.mode==="own" ? [0,1,2,3,4,5] : [1,4,5];
+  const finish=()=>{ S.convo=qIdx.map((qi,k)=>({q:Q[qi],a:o.answers[k],loc:qi===5||undefined})); o.location=o.answers[qIdx.indexOf(5)]||""; talkView(); };
+  if(o.answers.length>=qIdx.length) return S.convo?talkView():finish();
   app.innerHTML = `<h2>${t.yourConvo}</h2><p class="muted" style="margin-top:6px">${t.writeHow}</p>${helpBox(0)}
   <div class="chat" id="chat"></div>
   <form class="composer" id="form"><label for="ans" class="sr">${t.placeholder}</label>
     <textarea id="ans" rows="2" placeholder="${t.placeholder}"></textarea>
-    <button class="btn" type="submit">${t.send}</button></form>
-  <div class="actions" id="act"></div>`;
+    <button class="btn" type="submit">${t.send}</button></form>`;
   const chat=document.getElementById("chat"), form=document.getElementById("form"), ta=document.getElementById("ans");
   if(o.mode!=="own") bubble(chat,"ai",t.fewMore);
   o.answers.forEach((a,k)=>{ bubble(chat,"ai",Q[qIdx[k]]); bubble(chat,t.you,a); });
-  const done=()=>{ form.hidden=true; analyzeOwn(chat, qIdx); };
-  if(o.answers.length>=qIdx.length){ if(o.result){ form.hidden=true; showOwnReady(chat); } else done(); return; }
   bubble(chat,"ai",Q[qIdx[o.answers.length]]);
   form.onsubmit=e=>{
     e.preventDefault(); const v=ta.value.trim(); if(!v) return;
     bubble(chat,t.you,v); o.answers.push(v); ta.value="";
     if(o.answers.length<qIdx.length) setTimeout(()=>bubble(chat,"ai",Q[qIdx[o.answers.length]]), reduce?0:350);
-    else done();
+    else finish();
   };
   ta.addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); form.requestSubmit(); }});
   if(!rerender) ta.focus();
@@ -821,7 +949,7 @@ async function shrink(file){
   c.getContext("2d").drawImage(bmp,0,0,c.width,c.height);
   return new Promise(r=>c.toBlob(b=>r(b),"image/jpeg",.85));
 }
-function uploadView(kind, rerender){
+function uploadView(kind){
   S.view=kind; S.pi="own"; setStep(0);
   const t=T(), o=S.own, isResume=kind==="resume";
   app.innerHTML = `<h2>${isResume?t.resumeH:t.workH}</h2><p class="muted" style="margin-top:6px">${isResume?t.resumeP:t.workP}</p>${helpBox(0)}
@@ -865,74 +993,116 @@ function uploadView(kind, rerender){
     const pasted=document.getElementById("paste")?.value.trim();
     if(pasted && !o.fileName) o.resumeText=pasted.slice(0,15000);
     if(!o.resumeText && !o.images.length){ msg.textContent=t.needSomething; return; }
-    o.answers=[]; o.result=null; talkOwn();
+    o.answers=[]; S.convo=null; S.ownPerson=null; S.dirty=false; talkOwn();
   };
   document.getElementById("back").onclick=home;
   draw();
 }
 
 /* ---------- live AI ---------- */
-async function analyzeOwn(chat, qIdx){
-  const t=T(), o=S.own, act=document.getElementById("act");
-  const tip=document.createElement("div"); tip.className="typing"; tip.textContent=t.finding; chat.appendChild(tip);
-  const sample = window.claude?.use ? await window.claude.use("sample").catch(()=>null) : null;
-  const fail=(m, retry=true)=>{ tip.remove(); act.innerHTML=`<p class="err">${m}</p>${retry?`<button class="btn" type="button" id="retry">${t.tryAgain}</button>`:""}<button class="btn ghost" type="button" id="bk">${t.backStart}</button>`; document.getElementById("bk").onclick=home; const r=document.getElementById("retry"); if(r) r.onclick=()=>{act.innerHTML=""; analyzeOwn(chat,qIdx);}; };
-  if(!sample) return fail(t.noAI,false);
-  let images=[];
-  if(o.images.length){
+async function getSample(){ const s = window.claude?.use ? await window.claude.use("sample").catch(()=>null) : null; if(!s) throw {code:"no_ai"}; return s; }
+function errMsg(e){ const t=T(); return e?.code==="no_ai"?t.noAI:e?.code==="no_images"?t.noImages:e?.code==="not_granted"?t.errPerm:e?.code==="rate_limited"?t.errRate:t.errGeneric; }
+function showErr(box,e,retry){
+  const t=T(); const d=document.createElement("div"); d.className="actions";
+  d.innerHTML=`<p class="err" style="flex-basis:100%">${errMsg(e)}</p>${e?.code==="no_ai"?"":`<button class="btn" type="button">${t.tryAgain}</button>`}<button class="btn ghost" type="button">${t.backStart}</button>`;
+  const bs=d.querySelectorAll("button"); if(bs.length===2){ bs[0].onclick=()=>{ d.remove(); retry(); }; bs[1].onclick=home; } else bs[0].onclick=home;
+  box.appendChild(d);
+}
+const COMMON_RULES = loc => `- Write every text value in ${I18N[S.lang].name}. Short, plain sentences. No jargon.
+- The goal is for this person to work for themselves and own a small business: self-employment, their own customers, their own brand. Do not suggest getting a job or working for an app platform as the business itself.
+- The person lives in: ${loc||"unknown (assume the United States and say they should confirm local rules)"}. Base licenses, permits, registrations, insurance and any legal limits on that state, county and city. Name the real office to check with (for example the state corporation commission, the county or city business license office, the state licensing board, the health department). Never invent exact fees or form numbers; if you are not sure, say to confirm with that office.
+- Never promise or estimate income or profit. Prices are what they would charge a customer, not what they will earn.`;
+async function generate({images=false, feedback="", strengthsEdited=null}={}){
+  const sample=await getSample();
+  let imgs=[];
+  if(images && S.own?.images?.length){
     const caps=await sample.limits().catch(()=>null);
-    if(!caps?.images) { if(!o.resumeText) return fail(t.noImages,false); }
-    else images=o.images.slice(0,caps.images.maxCount||4).map(x=>x.blob);
+    if(caps?.images) imgs=S.own.images.slice(0,caps.images.maxCount||4).map(x=>x.blob);
+    else if(!S.own.resumeText) throw {code:"no_images"};
   }
-  const Q=OWN_Q[S.lang];
-  const convo = o.answers.map((a,k)=>`Q: ${Q[qIdx[k]]}\nA: ${a}`).join("\n\n");
-  const prompt = `You are Seedline, a warm, honest business coach for people who are new to AI and new to business (for example retail workers, salespeople, resellers and recent immigrants). Using everything below, find realistic small online or local businesses this person could start with what they already know and have.
+  const cur = S.pi==="own"?S.ownPerson:(typeof S.pi==="number"?person():null);
+  const convo=(S.convo||[]).map(x=>`Q: ${x.q}\nA: ${x.a}`).join("\n\n");
+  const prompt = `You are Seedline, a warm, honest business coach for people who are new to AI and new to business (retail workers, salespeople, resellers, recent immigrants). Using everything below, find realistic small businesses this person could own, built on what they already know and have.
 
 Rules:
-- Write every text value in ${I18N[S.lang].name}${S.lang==="en"?"":" (the language this person chose)"}. Short, plain sentences. No jargon.
+${COMMON_RULES(locationOf())}
 - Give exactly 3 ideas, ordered from fastest and cheapest first customer to slowest. The first idea must be a simple service built on a skill they already have; mark only it startHere=true.
 - Fit their stated time and budget.
-- Never promise or estimate income or profit. "price" is what they would charge a customer, not what they will earn.
-- "safety": if an idea needs a license, permit or insurance, or could be illegal without one (immigration legal advice, food sales, contracting, tax or financial advice, a conflict with a current employer), explain it in one or two plain sentences and steer to a safe version. Otherwise null.
-- Each plan has exactly 5 first-week steps (each doable in about 30 minutes in the evening), 3 places to find first customers, and 3 "grow" tools (website, payments, small ads of about $5-10 a day, reviews and so on).
-${images.length?`- ${images.length} photo(s) are attached. They show this person's work or résumé. Use what you can see as evidence of skills.\n`:""}
+- "why" for each idea must point to something specific they said or showed.
+- "strengthsWhy" explains, for each group, which of their answers it came from (one short sentence each).
+- "safety": if an idea needs a license, permit or insurance in their location, or could be illegal without one (immigration legal advice, food sales, contracting, tax or financial advice, a conflict with a current employer), explain it in one or two plain sentences, name the office, and steer to a safe version. Otherwise null.
+- Each plan has exactly 5 first-week steps (each doable in about 30 minutes), 3 places to find first customers, and 3 "grow" tools.
+${imgs.length?`- ${imgs.length} photo(s) are attached showing this person's work or résumé. Use what you see as evidence of skills.\n`:""}
 Return only JSON with this shape:
 {"firstName": string or "", "strengths": {"skills": [string], "have": [string], "people": [string], "timeMoney": [string]},
+ "strengthsWhy": {"skills": string, "have": string, "people": string, "timeMoney": string},
  "ideas": [{"title": string, "pitch": string, "why": string, "firstDollar": string, "startCost": string, "price": string, "startHere": boolean, "safety": string or null,
    "plan": {"name": string, "offer": string, "steps": [string], "firstCustomers": [string], "grow": [string]}}]}
-${o.resumeText?`\nRésumé text:\n${o.resumeText.slice(0,12000)}\n`:""}
+${S.own?.resumeText&&S.pi==="own"?`\nRésumé text:\n${S.own.resumeText.slice(0,12000)}\n`:""}${strengthsEdited?`\nThe person edited their strengths map. Treat it as true and build on it:\n${JSON.stringify(strengthsEdited)}\n`:""}${feedback&&cur?`\nThe person saw these ideas: ${cur.ideas.map(i=>i.title).join("; ")}. They asked for these changes: ${feedback}\nGive 3 ideas that respect this.\n`:""}
 Conversation:
 ${convo}`;
-  try{
-    const r = await sample.json(prompt, images.length?{modelTier:"default",images}:{modelTier:"default"});
-    if(!r || !Array.isArray(r.ideas) || !r.strengths) throw {code:"invalid_json"};
-    tip.remove();
-    o.result=r;
-    S.ownPerson={own:true, name:r.firstName||"", initial:(r.firstName||"Y")[0], strengths:r.strengths, ideas:r.ideas.slice(0,3)};
-    showOwnReady(chat);
-  }catch(e){
-    fail(e?.code==="not_granted"?t.errPerm:e?.code==="rate_limited"?t.errRate:t.errGeneric);
-  }
+  const r = await sample.json(prompt, imgs.length?{modelTier:"default",images:imgs}:{modelTier:"default"});
+  if(!r || !Array.isArray(r.ideas) || !r.strengths) throw {code:"invalid_json"};
+  return r;
 }
-function showOwnReady(chat){
-  const t=T(), act=document.getElementById("act");
-  bubble(chat,"ai",t.thanksOwn);
-  act.innerHTML=`<button class="btn" type="button" id="go">${t.seeMine}</button>`;
-  document.getElementById("go").onclick=strengths;
+function applyResult(r){
+  const cur = S.pi==="own"?S.ownPerson:(typeof S.pi==="number"?person():null);
+  const persona = cur && (cur.own===false || typeof S.pi==="number") ? cur : null;
+  S.ownPerson = { own:!persona, id:persona?.id||"own", name:persona?.name||r.firstName||"", role:persona?.role||"", location:locationOf(),
+    initial:(persona?.name||r.firstName||"Y")[0], strengths:r.strengths, strengthsWhy:r.strengthsWhy||null, ideas:r.ideas.slice(0,3) };
+  S.pi="own"; S.dirty=false; S.strDirty=false; S.idea=0; S.openStep=null; S.convoSaved=clone(S.convo||[]);
+}
+function ensureCopy(){
+  if(typeof S.pi==="number"){
+    const p=person();
+    S.convo = S.convo || p.chat.map(([q,a])=>({q,a}));
+    S.ownPerson = clone({id:p.id,name:p.name,role:p.role,initial:p.initial,location:BASE[S.pi].loc,strengths:p.strengths,ideas:p.ideas,own:false});
+    S.convoSaved=clone(S.convo); S.pi="own";
+  }
+  return S.ownPerson;
+}
+async function analyze(){
+  const t=T(), chat=document.getElementById("chat"), act=document.getElementById("act");
+  const tip=document.createElement("div"); tip.className="typing"; tip.textContent=t.finding; chat.appendChild(tip);
+  try{ const r=await generate({images:true}); applyResult(r); talkView(true); }
+  catch(e){ tip.remove(); showErr(act,e,analyze); }
+}
+async function runUpdate(opts, then){
+  const t=T(), box=document.getElementById("act")||app;
+  const btns=[...app.querySelectorAll("button")]; btns.forEach(b=>b.disabled=true);
+  const msg=document.createElement("p"); msg.className="typing"; msg.style.flexBasis="100%"; msg.textContent=t.updating; box.appendChild(msg);
+  try{ const r=await generate(opts); applyResult(r); then(); }
+  catch(e){ btns.forEach(b=>b.disabled=false); msg.remove(); showErr(box,e,()=>runUpdate(opts,then)); }
 }
 
 /* ---------- strengths / ideas / plan ---------- */
 const nm = (p,own,other) => p.own ? own : fmt(other,{name:esc(p.name)});
-function strengths(){
-  S.view="strengths"; setStep(1);
+function strengths(noScroll){
+  S.view="strengths"; setStep(1,noScroll);
   const p=person(), t=T(), st=p.strengths;
-  const g=(h,arr)=>`<div class="group"><span class="label">${h}</span><div class="chips">${(arr||[]).map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>`;
+  const groups=[["skills",t.gSkills],["have",nm(p,t.gHaveMine,t.gHave)],["people",nm(p,t.gPeopleMine,t.gPeople)],["timeMoney",t.gTime]];
+  const qmap={skills:1,have:3,people:1,timeMoney:4};
+  const whyFor=k=>{
+    if(p.strengthsWhy?.[k]) return esc(p.strengthsWhy[k]);
+    const c=S.convo || (p.chat||[]).map(([q,a])=>({q,a}));
+    if(!c || c.length<5) return "";
+    const a=c[qmap[k]]?.a; return a?`${t.whySaid} “${esc(a.length>150?a.slice(0,147)+"…":a)}”`:"";
+  };
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(2)})}</span><h2 style="margin-top:6px">${nm(p,t.strengthsMine,t.strengthsH)}</h2>
-  <p class="muted" style="margin-top:6px">${t.strengthsLead}</p>${helpBox(1)}
-  <div class="map">${g(t.gSkills,st.skills)}${g(nm(p,t.gHaveMine,t.gHave),st.have)}${g(nm(p,t.gPeopleMine,t.gPeople),st.people)}${g(t.gTime,st.timeMoney)}</div>
-  <div class="actions"><button class="btn" type="button" id="go">${t.showIdeas}</button><button class="btn ghost" type="button" id="back">${t.back}</button></div>`;
-  document.getElementById("go").onclick=ideas;
-  document.getElementById("back").onclick=()=>p.own?talkOwn(true):talkSample(true);
+  <p class="muted" style="margin-top:6px">${t.strengthsLead} ${t.editHint}</p>${helpBox(1)}
+  <div class="map">${groups.map(([k,h])=>`<div class="group">
+    <span class="label">${h}</span>
+    <div class="chips">${(st[k]||[]).map((x,i)=>`<span class="chip">${esc(x)}<button type="button" class="chipx" data-k="${k}" data-i="${i}" aria-label="${t.remove}">×</button></span>`).join("")}</div>
+    <form class="chipadd" data-k="${k}"><label class="sr" for="add-${k}">${t.chipPh}</label><input id="add-${k}" type="text" placeholder="${t.chipPh}"><button class="btn small ghost" type="submit">${t.add}</button></form>
+    ${whyFor(k)?`<p class="why">${ICON.info}<span>${whyFor(k)}</span></p>`:""}
+  </div>`).join("")}</div>
+  ${S.strDirty?`<p class="changed">${t.strengthsChanged}</p>`:""}
+  <div class="actions" id="act">${S.strDirty?`<button class="btn sun" id="upd" type="button">${t.updateIdeas}</button>`:""}<button class="btn ${S.strDirty?"ghost":""}" type="button" id="go">${t.showIdeas}</button><button class="btn ghost" type="button" id="back">${t.back}</button></div>`;
+  app.querySelectorAll(".chipx").forEach(b=>b.onclick=()=>{ ensureCopy().strengths[b.dataset.k].splice(+b.dataset.i,1); S.strDirty=true; strengths(true); });
+  app.querySelectorAll(".chipadd").forEach(f=>f.onsubmit=e=>{ e.preventDefault(); const v=f.querySelector("input").value.trim(); if(!v) return; const c=ensureCopy(); (c.strengths[f.dataset.k] ||= []).push(v); S.strDirty=true; strengths(true); });
+  const u=document.getElementById("upd"); if(u) u.onclick=()=>runUpdate({strengthsEdited:person().strengths}, ()=>ideas());
+  document.getElementById("go").onclick=()=>ideas();
+  document.getElementById("back").onclick=()=>talkView();
 }
 function ideas(){
   S.view="ideas"; setStep(2);
@@ -943,7 +1113,7 @@ function ideas(){
     <article class="idea ${d.startHere?"first":""}">
       <div class="idea-head"><h3>${esc(d.title)}</h3>${d.startHere?`<span class="badge">${t.startHere}</span>`:""}</div>
       <p>${esc(d.pitch)}</p>
-      <p class="muted"><strong>${t.whyFits}</strong> ${esc(d.why)}</p>
+      <p class="why">${ICON.info}<span><strong>${t.whyFits}</strong> ${esc(d.why)}</span></p>
       <div class="facts">
         <div class="fact"><span class="label">${t.fFirst}</span><strong>${esc(d.firstDollar)}</strong></div>
         <div class="fact"><span class="label">${t.fCost}</span><strong>${esc(d.startCost)}</strong></div>
@@ -952,15 +1122,69 @@ function ideas(){
       ${d.safety?`<p class="safety"><b>${t.before}</b> ${esc(d.safety)}</p>`:""}
       <div><button class="btn ${d.startHere?"sun":"ghost"}" type="button" data-i="${i}">${t.choose}</button></div>
     </article>`).join("")}</div>
+  <section class="adjust"><h3>${t.adjustH}</h3><p class="muted">${t.adjustP}</p><label class="sr" for="adj">${t.adjustH}</label><textarea id="adj" class="paste" style="min-height:80px" placeholder="${t.adjustPh}"></textarea>
+    <div class="actions" id="act" style="margin-top:0"><button class="btn" type="button" id="adjBtn">${t.adjust}</button></div></section>
   <div class="actions"><button class="btn ghost" type="button" id="back">${t.back}</button></div>`;
-  app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{ S.idea=+b.dataset.i; plan(); });
-  document.getElementById("back").onclick=strengths;
+  app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{ S.idea=+b.dataset.i; S.openStep=null; plan(); });
+  document.getElementById("adjBtn").onclick=()=>{ const v=document.getElementById("adj").value.trim(); if(!v) return document.getElementById("adj").focus(); runUpdate({feedback:v, strengthsEdited:person().strengths}, ()=>ideas()); };
+  document.getElementById("back").onclick=()=>strengths();
 }
+function hash(s){ let h=0; for(const c of s) h=(h*31+c.charCodeAt(0))|0; return (h>>>0).toString(36); }
 function planKey(){ const p=person(); return "seedline-"+(p.own?"own":p.id)+"-"+S.idea; }
-function plan(){
-  S.view="plan"; setStep(3);
+function detKey(){ const p=person(), d=p.ideas[S.idea]; return "seedline-det-"+S.lang+"-"+hash(JSON.stringify(d.plan)+d.title+locationOf()); }
+const DET = {loading:{}, err:{}, tried:{}};
+async function loadDetails(){
+  const key=detKey(); if(DET.loading[key]) return;
+  DET.loading[key]=true; DET.tried[key]=true; delete DET.err[key]; if(S.view==="plan") plan(true);
+  try{
+    const sample=await getSample(); const p=person(), d=p.ideas[S.idea], pl=d.plan||{};
+    const prompt=`You are Seedline, a patient business coach. Explain this launch plan step by step for someone who is new to business and new to AI, so they can do each step alone.
+Rules:
+${COMMON_RULES(locationOf())}
+- Be realistic and specific. Each "how" item is one concrete action they can do today.
+
+Business idea: ${d.title}. ${d.pitch}. They would charge: ${d.price}. Cost to start: ${d.startCost}. Safety note: ${d.safety||"none"}.
+About the person: ${JSON.stringify(p.strengths)}
+Plan steps, in order:
+${(pl.steps||[]).map((s,i)=>`${i+1}. ${s}`).join("\n")}
+First-customer places: ${(pl.firstCustomers||[]).join(" | ")}
+Grow tools: ${(pl.grow||[]).join(" | ")}
+
+Return only JSON:
+{"steps":[{"why":"why this step matters and why it comes now, 1-2 sentences","time":"for example 30 minutes","cost":"for example $0","how":["3 to 5 concrete actions in order"],"tip":"one practical tip","watchOut":"one common mistake or local rule to watch, or empty string"}],
+ "firstCustomers":[{"why":"why this place fits this person","how":"the first concrete action to reach them"}],
+ "grow":[{"why":"why and when to add this"}],
+ "local":[{"step":"a setup step to become a legal business owner where they live (business registration, local business license, tax registration, permits, insurance, anything specific to this idea)","who":"the office or agency to check with","why":"why it matters, one sentence"}]}
+"steps" must have exactly ${(pl.steps||[]).length} items in the same order. "firstCustomers" must have ${(pl.firstCustomers||[]).length} items and "grow" ${(pl.grow||[]).length} items in the same order. "local" has 4 to 6 items.`;
+    const r=await sample.json(prompt,{modelTier:"default"});
+    if(!r || !Array.isArray(r.steps)) throw {code:"invalid_json"};
+    store.set(key,r);
+  }catch(e){ DET.err[key]=e; }
+  DET.loading[key]=false;
+  if(S.view==="plan") plan(true);
+}
+function plan(noScroll){
+  S.view="plan"; setStep(3,noScroll);
   const p=person(), t=T(), d=p.ideas[S.idea], pl=d.plan||{};
-  const saved=store.get(planKey()+"-week")||{};
+  const saved=store.get(planKey()+"-week")||[];
+  const key=detKey(), det=store.get(key), loading=DET.loading[key], err=DET.err[key];
+  if(S.openStep==null){ const f=(pl.steps||[]).findIndex((s,i)=>!saved[i]); S.openStep=f<0?0:f; }
+  const detNote = loading?`<p class="typing">${t.detailsLoading}</p>`:err?`<p class="err">${errMsg(err)}</p><button class="btn small ghost" type="button" data-det>${t.tryAgain}</button>`:`<button class="btn small ghost" type="button" data-det>${t.detailsBtn}</button>`;
+  const stepHtml=(s,i)=>{ const x=det?.steps?.[i], open=i===S.openStep;
+    return `<li class="stepcard ${open?"open":""} ${saved[i]?"done":""}">
+      <div class="stephead"><input type="checkbox" id="task${i}" data-chk="${i}" ${saved[i]?"checked":""} aria-label="${fmt(t.stepN,{n:num(i+1)})}">
+        <button type="button" class="steptitle" data-open="${i}" aria-expanded="${open}"><span class="label">${fmt(t.stepN,{n:num(i+1)})}${x?` · ${esc(x.time)}`:""}</span><span class="st">${esc(s)}</span></button>
+        <button type="button" class="editbtn" data-edit="${i}">${t.edit}</button></div>
+      ${open?`<div class="stepbody">
+        ${x?`<p class="why">${ICON.info}<span><strong>${t.whyStep}:</strong> ${esc(x.why)}</span></p>
+          <div class="meta"><span>${t.time}: <b>${esc(x.time)}</b></span><span>${t.cost}: <b>${esc(x.cost)}</b></span></div>
+          <div><strong>${t.howTo}:</strong><ol class="plain" style="margin-top:6px">${(x.how||[]).map(h=>`<li>${esc(h)}</li>`).join("")}</ol></div>
+          ${x.tip?`<p class="tipbox"><b>${t.tip}:</b> ${esc(x.tip)}</p>`:""}
+          ${x.watchOut?`<p class="safety"><b>${t.watch}:</b> ${esc(x.watchOut)}</p>`:""}`:`<div>${detNote}</div>`}
+        <div class="actions" style="margin-top:2px"><button class="btn small sun" type="button" data-next="${i}">${t.doneNext}</button><button class="btn small ghost" type="button" data-coach="${i}">${t.askCoach}</button></div>
+      </div>`:""}
+    </li>`; };
+  const whyOf=(arr,i,field)=>{ const v=det?.[arr]?.[i]?.[field]; return v?`<span class="why">${ICON.info}<span>${esc(v)}</span></span>`:""; };
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(4)})}</span><h2 style="margin-top:6px">${nm(p,t.planMine,t.planH)}</h2>${helpBox(3)}
   <div class="plan">
     <div class="namecard"><span class="label">${t.nameIdea}</span><h2>${esc(pl.name)}</h2><p>${esc(pl.offer)}</p><p style="opacity:.75">${esc(d.price)} · ${fmt(t.costs,{x:esc(d.startCost)})}</p></div>
@@ -968,11 +1192,17 @@ function plan(){
     <div class="box">
       <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><h3>${t.thisWeek}</h3><span class="muted" id="count"></span></div>
       <div class="progress" aria-hidden="true"><i id="bar"></i></div>
-      <ul class="checks">${(pl.steps||[]).map((s,i)=>`<li><label><input type="checkbox" id="task${i}" ${saved[i]?"checked":""}><span>${esc(s)}</span></label></li>`).join("")}</ul>
+      <p class="muted" style="font-size:.92rem">${t.oneByOne}</p>
+      <ol class="steplist">${(pl.steps||[]).map(stepHtml).join("")}</ol>
+    </div>
+    <div class="box">
+      <h3>${t.localH}</h3>
+      <p class="muted" style="font-size:.92rem">${fmt(t.localP,{loc:esc(locationOf())})}</p>
+      ${det?.local?.length?`<ol class="plain">${det.local.map(l=>`<li><strong>${esc(l.step)}</strong><span class="why">${ICON.info}<span>${t.whoLabel}: ${esc(l.who)}. ${esc(l.why)}</span></span></li>`).join("")}</ol>`:`<div>${detNote}</div>`}
     </div>
     <div class="cols">
-      <div class="box"><h3>${t.findFirst}</h3><ol class="plain">${(pl.firstCustomers||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
-      <div class="box"><h3>${t.growH}</h3><p class="muted" style="font-size:.93rem">${t.growNote}</p><ul class="plain">${(pl.grow||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+      <div class="box"><h3>${t.findFirst}</h3><ol class="plain">${(pl.firstCustomers||[]).map((x,i)=>`<li>${esc(x)}${whyOf("firstCustomers",i,"why")}${det?.firstCustomers?.[i]?.how?`<span class="why"><b>${t.howReach}:</b>&nbsp;${esc(det.firstCustomers[i].how)}</span>`:""}</li>`).join("")}</ol></div>
+      <div class="box"><h3>${t.growH}</h3><p class="muted" style="font-size:.93rem">${t.growNote}</p><ul class="plain">${(pl.grow||[]).map((x,i)=>`<li>${esc(x)}${whyOf("grow",i,"why")}</li>`).join("")}</ul></div>
     </div>
     <p class="saved">${ICON.save}<span>${t.saved}</span></p>
   </div>
@@ -980,40 +1210,54 @@ function plan(){
   <p id="launched" class="muted" hidden style="margin-top:10px">${fmt(t.launched,{name:p.own?t.you:esc(p.name)})}</p>
   ${levelsBox(0)}`;
   wireLevels();
+  const n=(pl.steps||[]).filter((s,i)=>saved[i]).length, tot=(pl.steps||[]).length;
+  document.getElementById("bar").style.width=(tot?n/tot*100:0)+"%";
+  document.getElementById("count").textContent=fmt(t.doneOf,{n:num(n),t:num(tot)});
+  const setDone=(i,v)=>{ const s=store.get(planKey()+"-week")||[]; s[i]=v; store.set(planKey()+"-week",s); };
+  app.querySelectorAll("[data-chk]").forEach(c=>c.onchange=()=>{ setDone(+c.dataset.chk,c.checked); plan(true); });
+  app.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>{ const i=+b.dataset.open; S.openStep=S.openStep===i?-1:i; plan(true); });
+  app.querySelectorAll("[data-next]").forEach(b=>b.onclick=()=>{ const i=+b.dataset.next; setDone(i,true); const s=store.get(planKey()+"-week")||[]; const nx=(pl.steps||[]).findIndex((x,j)=>!s[j]); S.openStep=nx; plan(true); });
+  app.querySelectorAll("[data-coach]").forEach(b=>b.onclick=()=>openCoachWith(fmt(t.coachPrefill,{s:pl.steps[+b.dataset.coach]})));
+  app.querySelectorAll("[data-det]").forEach(b=>b.onclick=loadDetails);
+  app.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.edit, head=b.closest(".stephead"), title=head.querySelector(".st");
+    title.parentElement.outerHTML=`<div class="steptitle" style="display:grid;gap:6px"><label class="sr" for="se${i}">${t.edit}</label><textarea id="se${i}" class="edtext" rows="2"></textarea><div class="edrow"><button class="btn small" type="button" id="ss${i}">${t.save}</button><button class="btn small ghost" type="button" id="sc${i}">${t.cancel}</button></div></div>`;
+    b.remove(); const ta=document.getElementById("se"+i); ta.value=pl.steps[i]; ta.focus();
+    document.getElementById("ss"+i).onclick=()=>{ const v=ta.value.trim(); if(v && v!==pl.steps[i]){ ensureCopy().ideas[S.idea].plan.steps[i]=v; } S.openStep=i; plan(true); };
+    document.getElementById("sc"+i).onclick=()=>plan(true);
+  });
+  document.getElementById("day").onclick=()=>day();
   document.getElementById("pkg").onclick=packageView;
-  const boxes=[...app.querySelectorAll(".checks input")], bar=document.getElementById("bar"), count=document.getElementById("count");
-  const upd=()=>{ const n=boxes.filter(b=>b.checked).length; bar.style.width=(boxes.length?n/boxes.length*100:0)+"%"; count.textContent=fmt(t.doneOf,{n:num(n),t:num(boxes.length)}); store.set(planKey()+"-week", boxes.map(b=>b.checked)); };
-  boxes.forEach(b=>b.onchange=upd); upd();
-  document.getElementById("day").onclick=day;
   document.getElementById("launch").onclick=()=>{document.getElementById("launched").hidden=false;};
   document.getElementById("back").onclick=ideas;
+  if(!det && !loading && !err && !DET.tried[key]) loadDetails();
 }
 
 /* ---------- my day ---------- */
 function timeLabel(hm){ const [h,m]=hm.split(":").map(Number); return new Date(2000,0,1,h,m).toLocaleTimeString(S.lang==="fa"?"fa-IR":S.lang==="ar"?"ar-EG":S.lang,{hour:"numeric",minute:"2-digit"}); }
-function day(){
-  S.view="day"; setStep(4);
+function day(noScroll){
+  S.view="day"; setStep(4,noScroll);
   const p=person(), t=T(), pl=p.ideas[S.idea].plan||{};
   const week=store.get(planKey()+"-week")||[];
   const open=(pl.steps||[]).filter((s,i)=>!week[i]);
   const tasks=[open[0]||(pl.steps||[])[0]||"", open[1]||(pl.firstCustomers||[])[0]||""];
-  const key=planKey()+"-day"; const st=store.get(key)||{checked:{},custom:[],removed:{}};
+  const key=planKey()+"-day"; const st=Object.assign({checked:{},custom:[],removed:{},edits:{}}, store.get(key)||{});
   let bi=0;
-  const items=t.day.map((d,i)=>({id:"t"+i,time:d[0],kind:d[1],text:d[1]==="biz"?fmt(d[2],{task:tasks[bi++]}):d[2]}))
+  const items=t.day.map((d,i)=>({id:"t"+i,time:d[0],kind:d[1],tpl:true,text:st.edits["t"+i] ?? (d[1]==="biz"?fmt(d[2],{task:tasks[bi++]}):d[2])}))
     .filter(x=>!st.removed[x.id]).concat(st.custom).sort((a,b)=>a.time.localeCompare(b.time));
   const save=()=>store.set(key,st);
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(5)})}</span><h2 style="margin-top:6px">${t.dayH}</h2>
   <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${helpBox(4)}
   <div class="dayhead">
     <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bgc" cx="50" cy="50" r="40"/><circle class="fg" id="ring" cx="50" cy="50" r="40" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)"/><text id="ringtxt" x="50" y="56" text-anchor="middle"></text></svg>
-    <div><h3 id="kept"></h3><p class="muted">${esc(p.ideas[S.idea].plan?.name||"")}</p></div>
+    <div><h3 id="kept"></h3><p class="muted">${esc(pl.name||"")}</p></div>
   </div>
   <p class="cheer" id="cheer" hidden>${t.allDone}</p>
   <ul class="timeline">${items.map(x=>`
     <li class="slot k-${x.kind} ${st.checked[x.id]?"done":""}" data-id="${x.id}">
       <time>${timeLabel(x.time)}</time>
-      <label><input type="checkbox" ${st.checked[x.id]?"checked":""}><span><span class="kind">${t.kinds[x.kind]||""}</span><span class="t">${esc(x.text)}</span></span></label>
-      <button type="button" class="x" aria-label="${t.remove}">×</button>
+      <label><input type="checkbox" ${st.checked[x.id]?"checked":""}><span><span class="kind">${t.kinds[x.kind]||""}</span><span class="t">${esc(x.text)}</span>${x.tpl&&t.dayWhy[x.kind]?`<span class="whyd">${t.whyLabel}: ${t.dayWhy[x.kind]}</span>`:""}</span></label>
+      <div class="slotbtns"><button type="button" class="editbtn" data-e>${t.edit}</button><button type="button" class="x" aria-label="${t.remove}">×</button></div>
     </li>`).join("")}</ul>
   <form class="addrow" id="addf">
     <div style="display:grid;gap:4px"><label class="label" for="addt">${t.timeLabel}</label><input id="addt" type="time" value="16:00"></div>
@@ -1023,7 +1267,6 @@ function day(){
   </form>
   <p class="saved" style="margin-top:12px">${ICON.save}<span>${t.saved}</span></p>
   <div class="actions"><button class="btn sun" type="button" id="pkg">${t.packageBtn}</button><button class="btn ghost" type="button" id="newday">${t.newDay}</button><button class="btn ghost" type="button" id="back">${t.back}</button><button class="btn ghost" type="button" id="restart">${t.restart}</button></div>`;
-  document.getElementById("pkg").onclick=packageView;
   const upd=()=>{
     const all=[...app.querySelectorAll(".slot")], n=all.filter(li=>st.checked[li.dataset.id]).length;
     document.getElementById("kept").textContent=fmt(t.kept,{n:num(n),t:num(all.length)});
@@ -1034,11 +1277,21 @@ function day(){
   app.querySelectorAll(".slot").forEach(li=>{
     const id=li.dataset.id;
     li.querySelector("input").onchange=e=>{ st.checked[id]=e.target.checked; li.classList.toggle("done",e.target.checked); save(); upd(); };
-    li.querySelector(".x").onclick=()=>{ if(id.startsWith("t")) st.removed[id]=true; else st.custom=st.custom.filter(c=>c.id!==id); delete st.checked[id]; save(); day(); };
+    li.querySelector(".x").onclick=()=>{ if(id.startsWith("t")) st.removed[id]=true; else st.custom=st.custom.filter(c=>c.id!==id); delete st.checked[id]; save(); day(true); };
+    li.querySelector("[data-e]").onclick=()=>{
+      const span=li.querySelector(".t"), cur=span.textContent;
+      const lab=li.querySelector("label"); const box=document.createElement("div"); box.style.cssText="display:grid;gap:6px;min-width:0";
+      box.innerHTML=`<input class="edtext" type="text"><div class="edrow"><button class="btn small" type="button">${t.save}</button><button class="btn small ghost" type="button">${t.cancel}</button></div>`;
+      lab.replaceWith(box); const inp=box.querySelector("input"); inp.value=cur; inp.focus();
+      const [sv,cn]=box.querySelectorAll("button");
+      sv.onclick=()=>{ const v=inp.value.trim(); if(v){ if(id.startsWith("t")) st.edits[id]=v; else { const c=st.custom.find(c=>c.id===id); if(c) c.text=v; } save(); } day(true); };
+      cn.onclick=()=>day(true);
+    };
   });
-  document.getElementById("addf").onsubmit=e=>{ e.preventDefault(); const x=document.getElementById("addx").value.trim(); if(!x) return; st.custom.push({id:"c"+Date.now(),time:document.getElementById("addt").value||"12:00",kind:document.getElementById("addk").value,text:x}); save(); day(); };
-  document.getElementById("newday").onclick=()=>{ st.checked={}; save(); day(); };
-  document.getElementById("back").onclick=plan;
+  document.getElementById("addf").onsubmit=e=>{ e.preventDefault(); const x=document.getElementById("addx").value.trim(); if(!x) return; st.custom.push({id:"c"+Date.now(),time:document.getElementById("addt").value||"12:00",kind:document.getElementById("addk").value,text:x}); save(); day(true); };
+  document.getElementById("newday").onclick=()=>{ st.checked={}; save(); day(true); };
+  document.getElementById("pkg").onclick=packageView;
+  document.getElementById("back").onclick=()=>plan();
   document.getElementById("restart").onclick=home;
   upd();
 }
