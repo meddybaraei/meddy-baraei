@@ -26,7 +26,7 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
-.wrap{max-width:800px;margin:0 auto;padding-inline:16px;padding-block:16px 64px}
+.wrap{max-width:800px;margin:0 auto;padding-inline:16px;padding-block:16px 110px}
 h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
 h1{font-size:clamp(2rem,6vw,3rem);font-weight:800;letter-spacing:-.02em}
 :lang(fa) h1,:lang(ar) h1{letter-spacing:0}
@@ -251,6 +251,43 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .difflist li{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
 .difflist svg{width:20px;height:20px;flex:none;color:var(--teal);margin-top:2px}
 .difflink{color:var(--teal);font-weight:700}
+/* workspace */
+.hub{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
+@media (max-width:520px){.hub{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.hub button{min-width:0;display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:.45rem .7rem;font-weight:700;font-size:.88rem;cursor:pointer;white-space:nowrap}
+.hub button svg{width:18px;height:18px}
+.hub button[aria-current="page"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.agentgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:16px}
+.agentcard{text-align:start;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;color:var(--ink);cursor:pointer;align-content:start}
+.agentcard:hover{border-color:var(--teal)}
+.agicon{width:40px;height:40px;border-radius:12px;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;flex:none}
+.agicon svg{width:22px;height:22px}
+.aghead{display:flex;gap:12px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.aghead>div{flex:1 1 200px}
+.agnext{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-weight:700}
+.agimg{display:block;max-width:180px;border-radius:10px;margin-top:6px}
+.pfgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
+.pfitem{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px;min-width:0}
+.pfthumb{width:72px;height:72px;border-radius:12px;overflow:hidden;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;flex:none}
+.pfthumb img{width:100%;height:100%;object-fit:cover}.pfthumb svg{width:30px;height:30px}
+.pfbody{display:grid;gap:6px;min-width:0;flex:1}
+.pfname{overflow-wrap:anywhere}
+.pfnote{min-height:52px!important}
+.resume{margin-top:18px;background:#ffffff;color:#16222a;border:1px solid #d9e2e3;border-radius:6px;padding:36px 40px;max-width:820px;font-family:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;font-size:15px;line-height:1.5;box-shadow:0 6px 24px rgb(0 0 0 / .08)}
+.resume[lang=fa],.resume[lang=ar]{font-family:"Vazirmatn",Tahoma,sans-serif}
+.resume h1{font-size:28px;margin:0;color:#16222a;font-family:"Bricolage Grotesque","Segoe UI",sans-serif}
+.resume .rhead{font-size:17px;margin:2px 0;color:#16222a}
+.resume .rcontact{color:#56666d;font-size:14px;margin:0 0 6px}
+.rsec{border-top:2px solid #1c6b67;margin-top:14px;padding-top:8px}
+.rsec h3{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#1c6b67;margin:0 0 6px}
+.resume[lang=fa] .rsec h3,.resume[lang=ar] .rsec h3{letter-spacing:0}
+.rsec p{margin:0 0 6px}
+.rexp{margin-bottom:10px}.rexp p{margin:0}.rdates{color:#56666d;font-size:13px}
+.resume ul{margin:4px 0 0;padding-inline-start:20px}
+.rf{border-radius:4px;outline:none}
+.rf:hover{background:#fff6dc}.rf:focus{background:#fff1c4;box-shadow:0 0 0 2px #f2b33d}
+.resume.printing .rf{background:none!important;box-shadow:none!important}
+@media (max-width:600px){.resume{padding:20px 18px}}
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -290,6 +327,7 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
       <button class="brand" id="homeBtn" type="button"><span class="seed" aria-hidden="true"></span>Seedline</button>
       <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn small ghost" type="button" id="profBtn" hidden></button><div class="langs" id="langs" role="group" aria-label="Language"></div></div>
     </div>
+    <nav class="hub" id="hub" aria-label="Sections"></nav>
     <nav class="steps" id="steps" aria-label="Progress"></nav>
   </header>
   <main id="app" aria-live="polite"></main>
@@ -961,6 +999,95 @@ ar:{ realityH:"فحص واقعي", testH:"جرّبها أولًا في عطلة 
 };
 Object.keys(FIX).forEach(l=>Object.assign(I18N[l],FIX[l]));
 
+/* ---------- workspace text: agents, portfolio, résumé ---------- */
+const WS = {
+en:{ nav:{journey:"My journey",agents:"My agents",portfolio:"Portfolio",resume:"Résumé"},
+  agentsH:"My agents", agentsP:"Create your own AI helpers. Give each one a goal and it works with you step by step. Agents give advice and plans. You stay in control and do the actions yourself.",
+  newAgent:"Create an agent", templatesL:"Start from an idea", agentName:"Name", agentGoal:"What should it help you achieve?", agentTone:"How should it talk to you?",
+  tones:{friendly:"Warm and encouraging",direct:"Short and direct",patient:"Patient, step by step"}, agentExtra:"Anything else it should know? (optional)",
+  createAgent:"Create agent", saveAgent:"Save changes", deleteAgent:"Delete agent", noAgents:"No agents yet. Start from one of the ideas above or make your own.",
+  agentGoalLabel:"Goal", addToDay:"Add to my day", addedToDay:"Added to My day", editAgent:"Edit",
+  agentSuggest:["What should I do today for my goal?","Make me a simple plan for this week","Check my progress and tell me honestly"],
+  templates:[{name:"Sales helper",goal:"Find and talk to my first 10 customers",ins:"Help me write short messages, practice what to say, and follow up politely."},{name:"Routine buddy",goal:"Keep a healthy routine with work, gym and family",ins:"Help me plan each day realistically and celebrate small wins."},{name:"Paperwork helper",goal:"Understand forms, letters and business paperwork",ins:"Explain documents in plain words. Tell me when I need a professional."},{name:"Skills tutor",goal:"Learn a new skill for my business",ins:"Teach me one small lesson at a time with a short practice task."}],
+  portH:"My portfolio", portP:"Add proof of what you've done: photos of your work, flyers, receipts, certificates, reviews and documents. It all feeds your résumé and business package.",
+  portDrop:"Drag files here, or", portChoose:"Choose files", portStepL:"For which step?", portGeneral:"General", portNote:"Add a note", portEmpty:"Nothing here yet. Add your first file.",
+  download:"Download", del:"Delete", portLocal:"Files are saved on this device only.", portNoStore:"This browser can't keep files after you close the page. Download anything you want to keep.",
+  portCantDl:"This file type can't be downloaded here. Keep your original copy.", addProof:"Add a file to my portfolio", portFor:"Adding files for: {s}",
+  resH:"My résumé", resP:"Seedline builds your résumé from what you share: your story, your answers, your uploads and the business steps you finish. Tap any text to edit it.",
+  resBuild:"Build my résumé", resRebuild:"Update my résumé", resRebuildWarn:"Updating replaces your edits with a new version.", resConfirm:"Yes, update it",
+  resBuilding:"Writing your résumé…", resLang:"Résumé language", resEn:"English (best for most U.S. employers)", resMine:"My language",
+  resPdf:"Download PDF", resDocx:"Download Word", resCopy:"Copy as text", resNew:"You've shared new things since your last résumé. Update it?",
+  resEmpty:"Tell your story or upload a résumé first. Then build your résumé here.",
+  resRules:"Honest by design: nothing is made up. Where we don't know something, you'll see [brackets] to fill in. We leave out age, photo and family details, as U.S. résumés usually do.",
+  resContact:"Email · Phone · City, State", secSummary:"Summary", secExp:"Experience", secSkills:"Skills", secLang:"Languages", secEdu:"Education", secProj:"Projects and business", secCert:"Certificates",
+  resSaved:"Downloaded.", resDlFail:"Downloads aren't available here. Use Copy as text instead.", resMaking:"Making your file…" },
+es:{ nav:{journey:"Mi camino",agents:"Mis agentes",portfolio:"Portafolio",resume:"Currículum"},
+  agentsH:"Mis agentes", agentsP:"Crea tus propios ayudantes de IA. Dale a cada uno una meta y trabajará contigo paso a paso. Los agentes dan consejos y planes. Tú mantienes el control y haces las acciones.",
+  newAgent:"Crear un agente", templatesL:"Empieza con una idea", agentName:"Nombre", agentGoal:"¿Qué quieres que te ayude a lograr?", agentTone:"¿Cómo debe hablarte?",
+  tones:{friendly:"Cálido y motivador",direct:"Breve y directo",patient:"Paciente, paso a paso"}, agentExtra:"¿Algo más que deba saber? (opcional)",
+  createAgent:"Crear agente", saveAgent:"Guardar cambios", deleteAgent:"Borrar agente", noAgents:"Aún no tienes agentes. Empieza con una de las ideas de arriba o crea el tuyo.",
+  agentGoalLabel:"Meta", addToDay:"Agregar a mi día", addedToDay:"Agregado a Mi día", editAgent:"Editar",
+  agentSuggest:["¿Qué hago hoy para mi meta?","Hazme un plan sencillo para esta semana","Revisa mi progreso y dime la verdad"],
+  templates:[{name:"Ayudante de ventas",goal:"Encontrar y hablar con mis primeros 10 clientes",ins:"Ayúdame a escribir mensajes cortos, practicar qué decir y hacer seguimiento con amabilidad."},{name:"Compañero de rutina",goal:"Mantener una rutina sana con trabajo, gimnasio y familia",ins:"Ayúdame a planear cada día de forma realista y a celebrar los pequeños logros."},{name:"Ayudante de trámites",goal:"Entender formularios, cartas y papeles del negocio",ins:"Explícame los documentos con palabras sencillas. Dime cuándo necesito a un profesional."},{name:"Tutor de habilidades",goal:"Aprender una habilidad nueva para mi negocio",ins:"Enséñame una lección pequeña a la vez con una práctica corta."}],
+  portH:"Mi portafolio", portP:"Agrega pruebas de lo que has hecho: fotos de tu trabajo, volantes, recibos, certificados, reseñas y documentos. Todo alimenta tu currículum y tu paquete de negocio.",
+  portDrop:"Arrastra archivos aquí, o", portChoose:"Elegir archivos", portStepL:"¿Para qué paso?", portGeneral:"General", portNote:"Agrega una nota", portEmpty:"Todavía no hay nada. Agrega tu primer archivo.",
+  download:"Descargar", del:"Borrar", portLocal:"Los archivos se guardan solo en este dispositivo.", portNoStore:"Este navegador no puede guardar archivos al cerrar la página. Descarga lo que quieras conservar.",
+  portCantDl:"Este tipo de archivo no se puede descargar aquí. Conserva tu copia original.", addProof:"Agregar un archivo a mi portafolio", portFor:"Agregando archivos para: {s}",
+  resH:"Mi currículum", resP:"Seedline crea tu currículum con lo que compartes: tu historia, tus respuestas, tus archivos y los pasos del negocio que terminas. Toca cualquier texto para editarlo.",
+  resBuild:"Crear mi currículum", resRebuild:"Actualizar mi currículum", resRebuildWarn:"Actualizar reemplaza tus cambios con una versión nueva.", resConfirm:"Sí, actualizarlo",
+  resBuilding:"Escribiendo tu currículum…", resLang:"Idioma del currículum", resEn:"Inglés (lo mejor para la mayoría de empleadores en EE. UU.)", resMine:"Mi idioma",
+  resPdf:"Descargar PDF", resDocx:"Descargar Word", resCopy:"Copiar como texto", resNew:"Compartiste cosas nuevas desde tu último currículum. ¿Lo actualizamos?",
+  resEmpty:"Primero cuenta tu historia o sube un currículum. Luego crea tu currículum aquí.",
+  resRules:"Honesto por diseño: no inventamos nada. Donde no sabemos algo verás [corchetes] para completar. Dejamos fuera la edad, la foto y los datos familiares, como suele hacerse en EE. UU.",
+  resContact:"Correo · Teléfono · Ciudad, Estado", secSummary:"Resumen", secExp:"Experiencia", secSkills:"Habilidades", secLang:"Idiomas", secEdu:"Educación", secProj:"Proyectos y negocio", secCert:"Certificados",
+  resSaved:"Descargado.", resDlFail:"Las descargas no están disponibles aquí. Usa Copiar como texto.", resMaking:"Preparando tu archivo…" },
+fa:{ nav:{journey:"مسیر من",agents:"دستیارهای من",portfolio:"نمونه‌کارها",resume:"رزومه"},
+  agentsH:"دستیارهای من", agentsP:"دستیارهای هوش مصنوعی خودت را بساز. به هرکدام یک هدف بده تا قدم‌به‌قدم با تو کار کند. دستیارها مشاوره و برنامه می‌دهند. کنترل دست توست و کارها را خودت انجام می‌دهی.",
+  newAgent:"ساختن دستیار", templatesL:"با یک ایده شروع کن", agentName:"نام", agentGoal:"در رسیدن به چه هدفی کمکت کند؟", agentTone:"چطور با تو حرف بزند؟",
+  tones:{friendly:"گرم و دلگرم‌کننده",direct:"کوتاه و صریح",patient:"صبور، قدم‌به‌قدم"}, agentExtra:"چیز دیگری که باید بداند؟ (اختیاری)",
+  createAgent:"ساختن دستیار", saveAgent:"ذخیره تغییرات", deleteAgent:"حذف دستیار", noAgents:"هنوز دستیاری نداری. با یکی از ایده‌های بالا شروع کن یا دستیار خودت را بساز.",
+  agentGoalLabel:"هدف", addToDay:"افزودن به روز من", addedToDay:"به روز من اضافه شد", editAgent:"ویرایش",
+  agentSuggest:["امروز برای هدفم چه کار کنم؟","یک برنامه ساده برای این هفته بده","پیشرفتم را بررسی کن و صادقانه بگو"],
+  templates:[{name:"دستیار فروش",goal:"پیدا کردن و صحبت با ۱۰ مشتری اولم",ins:"کمکم کن پیام‌های کوتاه بنویسم، حرف‌هایم را تمرین کنم و مؤدبانه پیگیری کنم."},{name:"همراه برنامه روزانه",goal:"داشتن برنامه سالم با کار، باشگاه و خانواده",ins:"کمکم کن هر روز را واقع‌بینانه برنامه‌ریزی کنم و موفقیت‌های کوچک را جشن بگیرم."},{name:"دستیار کارهای اداری",goal:"فهمیدن فرم‌ها، نامه‌ها و مدارک کسب‌وکار",ins:"مدارک را به زبان ساده توضیح بده. بگو کی به یک متخصص نیاز دارم."},{name:"معلم مهارت",goal:"یاد گرفتن یک مهارت تازه برای کسب‌وکارم",ins:"هر بار یک درس کوچک با یک تمرین کوتاه یادم بده."}],
+  portH:"نمونه‌کارهای من", portP:"مدرک کارهایی را که کرده‌ای اضافه کن: عکس کارهایت، تراکت، رسید، گواهی، نظر مشتری و مدارک. همه این‌ها در رزومه و بسته کسب‌وکارت استفاده می‌شود.",
+  portDrop:"فایل‌ها را اینجا بکش، یا", portChoose:"انتخاب فایل", portStepL:"برای کدام قدم؟", portGeneral:"عمومی", portNote:"یادداشت بنویس", portEmpty:"هنوز چیزی اینجا نیست. اولین فایلت را اضافه کن.",
+  download:"دانلود", del:"حذف", portLocal:"فایل‌ها فقط روی همین دستگاه ذخیره می‌شوند.", portNoStore:"این مرورگر بعد از بستن صفحه فایل‌ها را نگه نمی‌دارد. هر چه می‌خواهی نگه داری را دانلود کن.",
+  portCantDl:"این نوع فایل اینجا قابل دانلود نیست. نسخه اصلی را نگه دار.", addProof:"افزودن فایل به نمونه‌کارهایم", portFor:"افزودن فایل برای: {s}",
+  resH:"رزومه من", resP:"Seedline رزومه‌ات را از چیزهایی که به اشتراک می‌گذاری می‌سازد: داستانت، جواب‌هایت، فایل‌هایت و قدم‌هایی که در کسب‌وکار تمام می‌کنی. برای ویرایش روی هر متنی بزن.",
+  resBuild:"ساختن رزومه‌ام", resRebuild:"به‌روزرسانی رزومه‌ام", resRebuildWarn:"به‌روزرسانی، ویرایش‌هایت را با نسخه تازه جایگزین می‌کند.", resConfirm:"بله، به‌روز کن",
+  resBuilding:"در حال نوشتن رزومه‌ات…", resLang:"زبان رزومه", resEn:"انگلیسی (بهترین برای بیشتر کارفرمایان آمریکا)", resMine:"زبان خودم",
+  resPdf:"دانلود PDF", resDocx:"دانلود Word", resCopy:"کپی به‌صورت متن", resNew:"از آخرین رزومه چیزهای تازه‌ای گفته‌ای. به‌روزش کنیم؟",
+  resEmpty:"اول داستانت را بگو یا رزومه‌ات را بفرست. بعد اینجا رزومه‌ات را بساز.",
+  resRules:"صادقانه از پایه: هیچ چیزی ساختگی نیست. هر جا چیزی را ندانیم، [کروشه] می‌بینی تا خودت پر کنی. سن، عکس و جزئیات خانوادگی را مثل رزومه‌های معمول آمریکا نمی‌آوریم.",
+  resContact:"ایمیل · تلفن · شهر، ایالت", secSummary:"خلاصه", secExp:"سابقه کار", secSkills:"مهارت‌ها", secLang:"زبان‌ها", secEdu:"تحصیلات", secProj:"پروژه‌ها و کسب‌وکار", secCert:"گواهی‌ها",
+  resSaved:"دانلود شد.", resDlFail:"دانلود اینجا در دسترس نیست. از «کپی به‌صورت متن» استفاده کن.", resMaking:"در حال آماده کردن فایلت…" },
+ar:{ nav:{journey:"مساري",agents:"وكلائي",portfolio:"ملف الأعمال",resume:"السيرة الذاتية"},
+  agentsH:"وكلائي", agentsP:"أنشئ مساعدين بالذكاء الاصطناعي خاصين بك. أعطِ كل واحد هدفًا ليعمل معك خطوة بخطوة. الوكلاء يقدّمون النصيحة والخطط، وأنت تبقى المتحكم وتنفّذ بنفسك.",
+  newAgent:"أنشئ وكيلًا", templatesL:"ابدأ بفكرة", agentName:"الاسم", agentGoal:"ما الهدف الذي يساعدك على تحقيقه؟", agentTone:"كيف يتحدث معك؟",
+  tones:{friendly:"دافئ ومشجّع",direct:"مختصر ومباشر",patient:"صبور، خطوة بخطوة"}, agentExtra:"هل هناك شيء آخر يجب أن يعرفه؟ (اختياري)",
+  createAgent:"أنشئ الوكيل", saveAgent:"احفظ التغييرات", deleteAgent:"احذف الوكيل", noAgents:"لا يوجد وكلاء بعد. ابدأ بإحدى الأفكار أعلاه أو أنشئ وكيلك الخاص.",
+  agentGoalLabel:"الهدف", addToDay:"أضف إلى يومي", addedToDay:"أُضيف إلى يومي", editAgent:"تعديل",
+  agentSuggest:["ماذا أفعل اليوم لتحقيق هدفي؟","اصنع لي خطة بسيطة لهذا الأسبوع","راجع تقدّمي وأخبرني بصدق"],
+  templates:[{name:"مساعد المبيعات",goal:"إيجاد أول ١٠ عملاء والتحدث معهم",ins:"ساعدني في كتابة رسائل قصيرة، والتدرّب على ما أقول، والمتابعة بلطف."},{name:"رفيق الروتين",goal:"الحفاظ على روتين صحي بين العمل والنادي والعائلة",ins:"ساعدني على تخطيط كل يوم بواقعية والاحتفال بالإنجازات الصغيرة."},{name:"مساعد المعاملات",goal:"فهم الاستمارات والرسائل وأوراق المشروع",ins:"اشرح لي المستندات بكلمات بسيطة، وأخبرني متى أحتاج إلى مختص."},{name:"معلّم المهارات",goal:"تعلّم مهارة جديدة لمشروعي",ins:"علّمني درسًا صغيرًا في كل مرة مع تمرين قصير."}],
+  portH:"ملف أعمالي", portP:"أضف ما يثبت ما أنجزته: صور عملك، والمنشورات، والإيصالات، والشهادات، وآراء العملاء، والمستندات. كل ذلك يغذّي سيرتك الذاتية وحزمة مشروعك.",
+  portDrop:"اسحب الملفات إلى هنا، أو", portChoose:"اختر ملفات", portStepL:"لأي خطوة؟", portGeneral:"عام", portNote:"أضف ملاحظة", portEmpty:"لا شيء هنا بعد. أضف ملفك الأول.",
+  download:"تنزيل", del:"حذف", portLocal:"تُحفظ الملفات على هذا الجهاز فقط.", portNoStore:"لا يستطيع هذا المتصفح الاحتفاظ بالملفات بعد إغلاق الصفحة. نزّل ما تريد الاحتفاظ به.",
+  portCantDl:"لا يمكن تنزيل هذا النوع من الملفات هنا. احتفظ بنسختك الأصلية.", addProof:"أضف ملفًا إلى ملف أعمالي", portFor:"إضافة ملفات لـ: {s}",
+  resH:"سيرتي الذاتية", resP:"يبني Seedline سيرتك الذاتية مما تشاركه: قصتك وإجاباتك وملفاتك وخطوات المشروع التي تنجزها. اضغط على أي نص لتعديله.",
+  resBuild:"أنشئ سيرتي الذاتية", resRebuild:"حدّث سيرتي الذاتية", resRebuildWarn:"التحديث يستبدل تعديلاتك بنسخة جديدة.", resConfirm:"نعم، حدّثها",
+  resBuilding:"جارٍ كتابة سيرتك الذاتية…", resLang:"لغة السيرة الذاتية", resEn:"الإنجليزية (الأفضل لمعظم أصحاب العمل في أمريكا)", resMine:"لغتي",
+  resPdf:"تنزيل PDF", resDocx:"تنزيل Word", resCopy:"انسخ كنص", resNew:"شاركت أشياء جديدة منذ آخر سيرة ذاتية. هل نحدّثها؟",
+  resEmpty:"احكِ قصتك أو ارفع سيرة ذاتية أولًا، ثم أنشئ سيرتك هنا.",
+  resRules:"صادقة من الأساس: لا نختلق شيئًا. حيث لا نعرف معلومة سترى [أقواسًا] لتملأها. لا نضع العمر أو الصورة أو التفاصيل العائلية، كما هو المعتاد في أمريكا.",
+  resContact:"البريد الإلكتروني · الهاتف · المدينة، الولاية", secSummary:"نبذة", secExp:"الخبرة", secSkills:"المهارات", secLang:"اللغات", secEdu:"التعليم", secProj:"المشاريع والعمل الحر", secCert:"الشهادات",
+  resSaved:"تم التنزيل.", resDlFail:"التنزيل غير متاح هنا. استخدم «انسخ كنص».", resMaking:"جارٍ تجهيز ملفك…" }
+};
+Object.keys(WS).forEach(l=>Object.assign(I18N[l],WS[l]));
+ICON.agent='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/></svg>';
+ICON.folder='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>';
+ICON.route='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg>';
+ICON.file='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>';
+
 /* ---------- state + helpers ---------- */
 const LANGS = ["en","es","fa","ar"];
 const store = {get(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
@@ -980,6 +1107,8 @@ function person(){
 }
 function setStep(i,noScroll){
   const t=T();
+  if(i>=0) S.journeyView=S.view;
+  setTimeout(renderHub,0);
   stepsEl.innerHTML = t.steps.map((s,n)=>`<div class="step ${n===i?"on":""} ${n<i?"done":""}"><b>${n<i?"✓":num(n+1)}</b>${s}</div>`).join("");
   stepsEl.hidden = i < 0;
   if(i>=0){ const on=stepsEl.querySelector(".on"); on?.scrollIntoView?.({block:"nearest",inline:"nearest"}); }
@@ -996,12 +1125,12 @@ function renderChrome(){
   document.getElementById("footnote").textContent = t.footnote;
 }
 function render(){
-  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume:()=>uploadView("resume"), work:()=>uploadView("work"), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, welcome:()=>welcome(), profile:profileView})[S.view]();
+  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, welcome:()=>welcome(), profile:profileView})[S.view]();
 }
 
 /* ---------- home ---------- */
 function home(){
-  S.view="home"; S.pi=null; setStep(-1); const t=T();
+  S.view="home"; S.pfStep=null; setStep(-1); const t=T();
   const icons=[ICON.talk,ICON.doc,ICON.photo], modes=["own","resume","work"];
   app.innerHTML = `
   <section class="hero">
@@ -1137,7 +1266,7 @@ async function shrink(file){
   return new Promise(r=>c.toBlob(b=>r(b),"image/jpeg",.85));
 }
 function uploadView(kind){
-  S.view=kind; S.pi="own"; setStep(0);
+  S.view=kind==="resume"?"resume_up":kind; S.pi="own"; setStep(0);
   const t=T(), o=S.own, isResume=kind==="resume";
   app.innerHTML = `<h2>${isResume?t.resumeH:t.workH}</h2><p class="muted" style="margin-top:6px">${isResume?t.resumeP:t.workP}</p>${helpBox(0)}
   <div class="drop" id="drop">
@@ -1382,7 +1511,7 @@ function plan(noScroll){
           <div><strong>${t.howTo}:</strong><ol class="plain" style="margin-top:6px">${(x.how||[]).map(h=>`<li>${esc(h)}</li>`).join("")}</ol></div>
           ${x.tip?`<p class="tipbox"><b>${t.tip}:</b> ${esc(x.tip)}</p>`:""}
           ${x.watchOut?`<p class="safety"><b>${t.watch}:</b> ${esc(x.watchOut)}</p>`:""}`:`<div>${detNote}</div>`}
-        <div class="actions" style="margin-top:2px"><button class="btn small sun" type="button" data-next="${i}">${t.doneNext}</button><button class="btn small ghost" type="button" data-coach="${i}">${t.askCoach}</button></div>
+        <div class="actions" style="margin-top:2px"><button class="btn small sun" type="button" data-next="${i}">${t.doneNext}</button><button class="btn small ghost" type="button" data-coach="${i}">${t.askCoach}</button><button class="btn small ghost" type="button" data-proof="${i}">${t.addProof}</button></div>
       </div>`:""}
     </li>`; };
   const whyOf=(arr,i,field)=>{ const v=det?.[arr]?.[i]?.[field]; return v?`<span class="why">${ICON.info}<span>${esc(v)}</span></span>`:""; };
@@ -1421,6 +1550,7 @@ function plan(noScroll){
   app.querySelectorAll("[data-next]").forEach(b=>b.onclick=()=>{ const i=+b.dataset.next; setDone(i,true); const s=store.get(planKey()+"-week")||[]; const nx=(pl.steps||[]).findIndex((x,j)=>!s[j]); S.openStep=nx; plan(true); });
   app.querySelectorAll("[data-coach]").forEach(b=>b.onclick=()=>openCoachWith(fmt(t.coachPrefill,{s:pl.steps[+b.dataset.coach]})));
   app.querySelectorAll("[data-det]").forEach(b=>b.onclick=loadDetails);
+  app.querySelectorAll("[data-proof]").forEach(b=>b.onclick=()=>{ S.pfStep=pl.steps[+b.dataset.proof]; portfolioView(); });
   app.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>{
     const i=+b.dataset.edit, head=b.closest(".stephead"), title=head.querySelector(".st");
     title.parentElement.outerHTML=`<div class="steptitle" style="display:grid;gap:6px"><label class="sr" for="se${i}">${t.edit}</label><textarea id="se${i}" class="edtext" rows="2"></textarea><div class="edrow">${micBtn("se"+i)}<button class="btn small" type="button" id="ss${i}">${t.save}</button><button class="btn small ghost" type="button" id="sc${i}">${t.cancel}</button></div></div>`;
@@ -1446,7 +1576,7 @@ function day(noScroll){
   const key=planKey()+"-day"; const st=Object.assign({checked:{},custom:[],removed:{},edits:{}}, store.get(key)||{});
   let bi=0;
   const items=t.day.map((d,i)=>({id:"t"+i,time:wakeShift(d[0]),kind:d[1],tpl:true,text:st.edits["t"+i] ?? (d[1]==="biz"?fmt(d[2],{task:tasks[bi++]}):d[2])}))
-    .filter(x=>!st.removed[x.id]).concat(st.custom).sort((a,b)=>a.time.localeCompare(b.time));
+    .filter(x=>!st.removed[x.id]).concat(st.custom, agentTasks()).sort((a,b)=>a.time.localeCompare(b.time));
   const save=()=>store.set(key,st);
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(5)})}</span><h2 style="margin-top:6px">${t.dayH}</h2>
   <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${helpBox(4)}${knowCard("day")}
@@ -1479,14 +1609,14 @@ function day(noScroll){
   app.querySelectorAll(".slot").forEach(li=>{
     const id=li.dataset.id;
     li.querySelector("input").onchange=e=>{ st.checked[id]=e.target.checked; li.classList.toggle("done",e.target.checked); save(); upd(); };
-    li.querySelector(".x").onclick=()=>{ if(id.startsWith("t")) st.removed[id]=true; else st.custom=st.custom.filter(c=>c.id!==id); delete st.checked[id]; save(); day(true); };
+    li.querySelector(".x").onclick=()=>{ if(id.startsWith("t")) st.removed[id]=true; else if(id.startsWith("a")) store.set("seedline-agent-tasks",agentTasks().filter(c=>c.id!==id)); else st.custom=st.custom.filter(c=>c.id!==id); delete st.checked[id]; save(); day(true); };
     li.querySelector("[data-e]").onclick=()=>{
       const span=li.querySelector(".t"), cur=span.textContent;
       const lab=li.querySelector("label"); const box=document.createElement("div"); box.style.cssText="display:grid;gap:6px;min-width:0";
       box.innerHTML=`<input class="edtext" type="text"><div class="edrow"><button class="btn small" type="button">${t.save}</button><button class="btn small ghost" type="button">${t.cancel}</button></div>`;
       lab.replaceWith(box); const inp=box.querySelector("input"); inp.value=cur; inp.focus();
       const [sv,cn]=box.querySelectorAll("button");
-      sv.onclick=()=>{ const v=inp.value.trim(); if(v){ if(id.startsWith("t")) st.edits[id]=v; else { const c=st.custom.find(c=>c.id===id); if(c) c.text=v; } save(); } day(true); };
+      sv.onclick=()=>{ const v=inp.value.trim(); if(v){ if(id.startsWith("t")) st.edits[id]=v; else if(id.startsWith("a")){ const l=agentTasks(); const c=l.find(c=>c.id===id); if(c){ c.text=v; store.set("seedline-agent-tasks",l); } } else { const c=st.custom.find(c=>c.id===id); if(c) c.text=v; } save(); } day(true); };
       cn.onclick=()=>day(true);
     };
   });
@@ -1665,6 +1795,306 @@ function ruledBox(p){
 function diffSection(){
   const t=T();
   return `<section class="section"><h2>${t.diffH}</h2><ul class="difflist">${t.diff.map(x=>`<li>${ICON.save}<span>${x}</span></li>`).join("")}</ul><a class="difflink" href="${COMPARE_URL}" target="_blank" rel="noopener">${t.diffLink}</a></section>`;
+}
+
+/* ---------- workspace: hub menu ---------- */
+function renderHub(){
+  const t=T(), h=document.getElementById("hub"); if(!h) return;
+  const cur = ["agents","agentChat"].includes(S.view)?"agents":["portfolio","resume"].includes(S.view)?S.view:"journey";
+  const items=[["journey",ICON.route],["agents",ICON.agent],["portfolio",ICON.folder],["resume",ICON.file]];
+  h.innerHTML=items.map(([k,ic])=>`<button type="button" data-hub="${k}" aria-current="${k===cur?"page":"false"}">${ic}<span>${t.nav[k]}</span></button>`).join("");
+  h.querySelectorAll("[data-hub]").forEach(b=>b.onclick=()=>{
+    const k=b.dataset.hub;
+    if(k==="agents") agentsView(); else if(k==="portfolio") portfolioView(); else if(k==="resume") resumeView();
+    else { if(S.journeyView && S.pi!=null){ S.view=S.journeyView; render(); } else home(); }
+  });
+}
+const JOURNEY_VIEWS=["talk","own","resume_up","work","strengths","ideas","plan","day","package","welcome"];
+
+/* ---------- agents ---------- */
+const AG={ list: store.get("seedline-agents") || [] };
+function saveAgents(){ store.set("seedline-agents", AG.list.map(a=>({...a, log:(a.log||[]).slice(-40).map(m=>({role:m.role,content:m.content,shown:m.shown}))}))); }
+function agentsView(editId){
+  S.view="agents"; setStep(-1); renderHub();
+  const t=T(), ed=AG.list.find(a=>a.id===editId);
+  app.innerHTML=`<h2>${t.agentsH}</h2><p class="muted" style="margin-top:6px;max-width:62ch">${t.agentsP}</p>
+  <div class="agentgrid">${AG.list.length?AG.list.map(a=>`<button type="button" class="agentcard" data-agent="${a.id}"><span class="agicon" aria-hidden="true">${ICON.agent}</span><h3>${esc(a.name)}</h3><span class="muted">${esc(a.goal)}</span></button>`).join(""):`<p class="muted">${t.noAgents}</p>`}</div>
+  <form class="welcome" id="agf">
+    <h3>${ed?t.editAgent:t.newAgent}</h3>
+    ${ed?"":`<div style="display:grid;gap:6px"><span class="label">${t.templatesL}</span><div class="choices">${t.templates.map((x,i)=>`<button type="button" class="pchoice" data-tpl="${i}">${esc(x.name)}</button>`).join("")}</div></div>`}
+    <div class="field"><label class="label" for="agname">${t.agentName}</label><input id="agname" class="pinput" type="text" value="${esc(ed?.name||"")}" required></div>
+    <div class="field"><label class="label" for="aggoal">${t.agentGoal}</label><div class="composer" style="margin:0"><textarea id="aggoal" rows="2" required>${esc(ed?.goal||"")}</textarea>${micBtn("aggoal")}</div></div>
+    <div class="field"><label class="label" for="agtone">${t.agentTone}</label><select id="agtone" class="pinput">${Object.entries(t.tones).map(([k,v])=>`<option value="${k}" ${ed?.tone===k?"selected":""}>${v}</option>`).join("")}</select></div>
+    <div class="field"><label class="label" for="agextra">${t.agentExtra}</label><textarea id="agextra" class="paste" style="min-height:70px">${esc(ed?.extra||"")}</textarea></div>
+    <div class="actions" style="margin-top:0"><button class="btn sun" type="submit">${ed?t.saveAgent:t.createAgent}</button>${ed?`<button class="btn ghost" type="button" id="agdel">${t.deleteAgent}</button><button class="btn ghost" type="button" id="agback">${t.back}</button>`:""}</div>
+  </form>`;
+  app.querySelectorAll("[data-agent]").forEach(b=>b.onclick=()=>agentChat(b.dataset.agent));
+  app.querySelectorAll("[data-tpl]").forEach(b=>b.onclick=()=>{ const x=t.templates[+b.dataset.tpl]; agname.value=x.name; aggoal.value=x.goal; agextra.value=x.ins; app.querySelectorAll("[data-tpl]").forEach(c=>c.setAttribute("aria-pressed",c===b)); });
+  document.getElementById("agf").onsubmit=e=>{
+    e.preventDefault();
+    const v={name:agname.value.trim(), goal:aggoal.value.trim(), tone:agtone.value, extra:agextra.value.trim()};
+    if(!v.name||!v.goal) return;
+    if(ed){ Object.assign(ed,v); saveAgents(); return agentChat(ed.id); }
+    const a={id:"ag"+Date.now(), ...v, log:[]}; AG.list.push(a); saveAgents(); agentChat(a.id);
+  };
+  if(ed){ document.getElementById("agdel").onclick=()=>{ AG.list=AG.list.filter(a=>a!==ed); saveAgents(); agentsView(); }; document.getElementById("agback").onclick=()=>agentChat(ed.id); }
+}
+const AGX={busy:false, img:null};
+function splitNext(text){ const m=String(text||"").match(/\n?\s*NEXT:\s*(.+)\s*$/i); return m?{body:text.slice(0,m.index).trim(), next:m[1].trim()}:{body:String(text||"").trim(), next:""}; }
+function agentTasks(){ return store.get("seedline-agent-tasks")||[]; }
+function agentChat(id){
+  const a=AG.list.find(x=>x.id===id); if(!a) return agentsView();
+  S.view="agentChat"; S.agentId=id; setStep(-1); renderHub();
+  const t=T();
+  app.innerHTML=`<button type="button" class="linkbtn" id="agall">${t.back}</button>
+  <div class="aghead"><span class="agicon" aria-hidden="true">${ICON.agent}</span><div style="min-width:0"><h2>${esc(a.name)}</h2><p class="muted"><strong>${t.agentGoalLabel}:</strong> ${esc(a.goal)}</p></div><button type="button" class="btn small ghost" id="aged">${t.editAgent}</button></div>
+  <div class="chat" id="aglog"></div>
+  <div class="pending" id="agpend" hidden></div>
+  <form class="composer" id="agform">
+    <label class="iconbtn" for="agfile" title="${t.attach}" aria-label="${t.attach}">${ICON.photo}</label><input id="agfile" class="sr" type="file" accept="image/*">
+    <label class="sr" for="agtext">${t.coachPh}</label><textarea id="agtext" rows="2" placeholder="${t.coachPh}"></textarea>
+    ${micBtn("agtext")}<button class="btn" type="submit" aria-label="${t.send}">${ICON.send}</button>
+  </form>`;
+  const log=document.getElementById("aglog");
+  const draw=()=>{
+    log.innerHTML="";
+    const intro=document.createElement("div"); intro.className="msg ai"; intro.innerHTML=`<span class="who">${esc(a.name)}</span>`; intro.append(document.createTextNode(t.agentGoalLabel+": "+a.goal)); log.append(intro);
+    if(!a.log.length){ const w=document.createElement("div"); w.className="choices"; t.agentSuggest.forEach(q=>{ const b=document.createElement("button"); b.type="button"; b.className="pchoice"; b.textContent=q; b.onclick=()=>{ agtext.value=q; agform.requestSubmit(); }; w.append(b); }); log.append(w); }
+    a.log.forEach((m,i)=>{
+      const d=document.createElement("div"); d.className="msg "+(m.role==="assistant"?"ai":"me");
+      d.innerHTML=`<span class="who">${m.role==="assistant"?esc(a.name):t.you}</span>`;
+      if(m.role==="assistant"){ const {body,next}=splitNext(m.content); d.append(document.createTextNode(body));
+        if(next){ const n=document.createElement("div"); n.className="agnext"; const s=document.createElement("span"); s.textContent="→ "+next; const b=document.createElement("button"); b.type="button"; b.className="btn small sun"; b.textContent=t.addToDay;
+          b.onclick=()=>{ const list=agentTasks(); list.push({id:"a"+Date.now(), time:"18:00", kind:"biz", text:next}); store.set("seedline-agent-tasks",list); b.textContent=t.addedToDay; b.disabled=true; }; n.append(s,b); d.append(n); } }
+      else { d.append(document.createTextNode(m.shown??m.content)); if(m.img){ const im=document.createElement("img"); im.src=m.img; im.alt=""; im.className="agimg"; d.append(im); } }
+      log.append(d);
+    });
+    if(AGX.busy){ const d=document.createElement("div"); d.className="typing"; d.id="agtyping"; d.textContent=t.thinking; log.append(d); }
+    const p=document.getElementById("agpend"); p.hidden=!AGX.img; p.innerHTML=AGX.img?`<img src="${AGX.img.url}" alt=""><button type="button" class="btn small ghost" id="agrm">${t.remove}</button>`:"";
+    const rm=document.getElementById("agrm"); if(rm) rm.onclick=()=>{ AGX.img=null; draw(); };
+  };
+  draw();
+  document.getElementById("agall").onclick=()=>agentsView();
+  document.getElementById("aged").onclick=()=>agentsView(a.id);
+  document.getElementById("agfile").onchange=async e=>{ const f=e.target.files[0]; e.target.value=""; if(!f) return; try{ const blob=await shrink(f); AGX.img={blob,url:URL.createObjectURL(blob)}; draw(); }catch{} };
+  agtext.addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); agform.requestSubmit(); }});
+  document.getElementById("agform").onsubmit=async e=>{
+    e.preventDefault(); if(AGX.busy) return;
+    const q=agtext.value.trim(); if(!q && !AGX.img) return;
+    const img=AGX.img; AGX.img=null; agtext.value="";
+    a.log.push({role:"user", content:q||"(photo attached)", shown:q||"📷", img:img?.url}); AGX.busy=true; draw(); saveAgents();
+    const done=txt=>{ AGX.busy=false; a.log.push({role:"assistant", content:txt}); saveAgents(); if(S.view==="agentChat"&&S.agentId===a.id) draw(); };
+    let sample; try{ sample=await getSample(); }catch(err){ return done(errMsg(err)); }
+    let images=[]; if(img){ const caps=await sample.limits().catch(()=>null); if(caps?.images) images=[img.blob]; else return done(t.noImages); }
+    const tone={friendly:"warm and encouraging",direct:"short and direct",patient:"patient, explaining one small step at a time"}[a.tone]||"warm";
+    const p=person && S.pi!=null ? person() : null, d=p?.ideas?.[S.idea];
+    const system=`You are "${a.name}", a personal AI agent inside Seedline that one person created to help them reach a goal.
+Their goal for you: ${a.goal}
+${a.extra?`Their instructions: ${a.extra}\n`:""}Tone: ${tone}.
+Rules:
+- Answer in the language they write in; if unsure use ${I18N[S.lang].name}. Plain words, short paragraphs.
+- Work side by side with them toward the goal, one practical step at a time. You cannot act outside this chat (no sending messages, no payments, no sign-ups); tell them exactly what to do themselves.
+- Be honest, never flattering. Never promise income. Flag anything that needs a license, a lawyer, a doctor or another professional, and suggest free local help (SBDC, SCORE, library) when a person is needed.
+- If a photo or screenshot is attached, say in one line what you see, then what to do next.
+- End EVERY reply with one final line that starts with "NEXT:" and gives the single next action in under 15 words.
+${p?`Context: they are working on "${d?.title||""}"${d?.plan?.name?` (${d.plan.name})`:""}.`:""}
+${profileText()}`;
+    const msgs=a.log.map((m,i)=>({role:m.role, content: i===0? system+"\n\nTheir message: "+m.content : m.content}));
+    try{
+      const r=await sample(msgs,{modelTier:"default", cache:false, ...(images.length?{images}:{}), onText:({text})=>{ const el=document.getElementById("agtyping"); if(el) el.textContent=splitNext(text).body||t.thinking; }});
+      done(r.text||"");
+    }catch(err){ done(err?.text||errMsg(err)); }
+  };
+}
+
+/* ---------- portfolio ---------- */
+const PF={db:null, ok:true, mem:[], urls:[]};
+function pfOpen(){ return new Promise(res=>{ try{ const r=indexedDB.open("seedline",1); r.onupgradeneeded=()=>r.result.createObjectStore("files",{keyPath:"id"}); r.onsuccess=()=>{ PF.db=r.result; res(PF.db); }; r.onerror=()=>{ PF.ok=false; res(null); }; }catch{ PF.ok=false; res(null); } }); }
+async function pfTx(mode, fn){ const db=PF.db||await pfOpen(); if(!db) return null; return new Promise(res=>{ try{ const tx=db.transaction("files",mode); const st=tx.objectStore("files"); const out=fn(st); tx.oncomplete=()=>res(out?.result ?? true); tx.onerror=()=>{ PF.ok=false; res(null); }; }catch{ PF.ok=false; res(null); } }); }
+async function pfAll(){ const r=await pfTx("readonly", st=>st.getAll()); return (Array.isArray(r)?r:PF.mem).slice().sort((a,b)=>b.added-a.added); }
+async function pfPut(item){ const r=await pfTx("readwrite", st=>st.put(item)); if(r===null){ PF.mem=PF.mem.filter(x=>x.id!==item.id); PF.mem.push(item); } }
+async function pfDel(id){ await pfTx("readwrite", st=>st.delete(id)); PF.mem=PF.mem.filter(x=>x.id!==id); }
+const DL_EXT=["gif","png","jpg","jpeg","webp","mp4","webm","txt","json","md","docx","pptx","epub","csv","ttf","html","svg","pdf","xlsx","zip"];
+async function saveDownload(filename, data){
+  const dl = window.claude?.use ? await window.claude.use("downloads").catch(()=>null) : null;
+  if(!dl) throw {code:"unavailable"};
+  return dl.save({filename, data});
+}
+function sizeLabel(n){ return n>1048576? (n/1048576).toFixed(1)+" MB" : Math.max(1,Math.round(n/1024))+" KB"; }
+async function portfolioView(){
+  S.view="portfolio"; setStep(-1); renderHub();
+  const t=T(), p=S.pi!=null?person():null, steps=(p?.ideas?.[S.idea]?.plan?.steps)||[];
+  PF.urls.forEach(u=>URL.revokeObjectURL(u)); PF.urls=[];
+  const items=await pfAll();
+  if(S.view!=="portfolio") return;
+  const opts=[t.portGeneral,...steps];
+  const pre=S.pfStep||t.portGeneral;
+  app.innerHTML=`<h2>${t.portH}</h2><p class="muted" style="margin-top:6px;max-width:62ch">${t.portP}</p>
+  ${S.pfStep?`<p class="changed">${fmt(t.portFor,{s:esc(S.pfStep)})}</p>`:""}
+  <div class="drop" id="pfdrop">
+    <div class="field"><label class="label" for="pfstep">${t.portStepL}</label><select id="pfstep" class="pinput">${opts.map(o=>`<option ${o===pre?"selected":""}>${esc(o)}</option>`).join("")}${opts.includes(pre)?"":`<option selected>${esc(pre)}</option>`}</select></div>
+    <div class="actions" style="margin-top:0"><span class="muted">${t.portDrop}</span><label class="btn ghost filebtn" for="pffile">${ICON.folder}<span>${t.portChoose}</span></label><input id="pffile" class="sr" type="file" multiple></div>
+    <p class="privacy">${ICON.lock}<span>${PF.ok&&PF.db?t.portLocal:t.portNoStore}</span></p>
+    <p id="pfmsg" class="muted" aria-live="polite"></p>
+  </div>
+  <div class="pfgrid">${items.length?items.map(it=>{ const isImg=(it.type||"").startsWith("image/"); let thumb=ICON.file; if(isImg){ const u=URL.createObjectURL(it.blob); PF.urls.push(u); thumb=`<img src="${u}" alt="">`; }
+    return `<article class="pfitem" data-id="${it.id}"><div class="pfthumb">${thumb}</div><div class="pfbody"><strong class="pfname">${esc(it.name)}</strong><span class="muted" style="font-size:.85rem">${esc(it.step)} · ${sizeLabel(it.size)} · ${new Date(it.added).toLocaleDateString(S.lang==="fa"?"fa-IR":S.lang==="ar"?"ar-EG":S.lang)}</span>
+    <label class="sr" for="pn-${it.id}">${t.portNote}</label><textarea id="pn-${it.id}" class="paste pfnote" placeholder="${t.portNote}">${esc(it.note||"")}</textarea>
+    <div class="actions" style="margin-top:0"><button type="button" class="btn small ghost" data-dl>${t.download}</button><button type="button" class="btn small ghost" data-del>${t.del}</button></div></div></article>`; }).join(""):`<p class="muted">${t.portEmpty}</p>`}</div>`;
+  const msg=document.getElementById("pfmsg");
+  const add=async files=>{ for(const f of files){ await pfPut({id:"f"+Date.now()+Math.random().toString(36).slice(2,6), name:f.name, type:f.type, size:f.size, blob:f, step:pfstep.value, note:"", added:Date.now()}); } portfolioView(); };
+  document.getElementById("pffile").onchange=e=>{ add([...e.target.files]); };
+  const drop=document.getElementById("pfdrop");
+  drop.addEventListener("dragover",e=>{ e.preventDefault(); drop.classList.add("over"); });
+  drop.addEventListener("dragleave",()=>drop.classList.remove("over"));
+  drop.addEventListener("drop",e=>{ e.preventDefault(); drop.classList.remove("over"); add([...e.dataTransfer.files]); });
+  app.querySelectorAll(".pfitem").forEach(el=>{
+    const it=items.find(x=>x.id===el.dataset.id);
+    el.querySelector(".pfnote").onchange=e=>{ it.note=e.target.value; pfPut(it); };
+    el.querySelector("[data-del]").onclick=async()=>{ await pfDel(it.id); portfolioView(); };
+    el.querySelector("[data-dl]").onclick=async()=>{
+      const ext=(it.name.split(".").pop()||"").toLowerCase();
+      if(!DL_EXT.includes(ext)){ msg.textContent=t.portCantDl; return; }
+      try{ await saveDownload(it.name, it.blob); }catch(err){ if(err?.code!=="declined") msg.textContent=err?.code==="rejected_extension"?t.portCantDl:t.resDlFail; }
+    };
+  });
+}
+
+/* ---------- résumé ---------- */
+const RS={ data: store.get("seedline-resume"), lang: store.get("seedline-resume-lang") || "en", busy:false, confirm:false };
+async function resumeSources(){
+  const parts=[], p=S.pi!=null?person():null;
+  if(S.profile.firstName) parts.push(`First name: ${S.profile.firstName} (last name unknown)`);
+  const loc=S.pi!=null?locationOf():""; if(loc) parts.push(`Lives in: ${loc}`);
+  if(S.convo?.length) parts.push("Conversation:\n"+S.convo.map(x=>`Q: ${x.q}\nA: ${x.a}`).join("\n"));
+  if(S.own?.resumeText && isOwnUser()) parts.push("Their old résumé text:\n"+S.own.resumeText.slice(0,8000));
+  if(p?.strengths) parts.push("Strengths map: "+JSON.stringify(p.strengths));
+  if(p && !isOwnUser()) parts.push(`(This is the example person "${p.name}", ${p.role}.)`);
+  const d=p?.ideas?.[S.idea];
+  if(d){ const week=store.get(planKey()+"-week")||[]; const steps=d.plan?.steps||[]; parts.push(`Seedline business they chose: ${d.title} — ${d.pitch}. Business name idea: ${d.plan?.name||""}. First-week steps done: ${steps.filter((s,i)=>week[i]).join("; ")||"none yet"} (${steps.filter((s,i)=>week[i]).length} of ${steps.length}).`); }
+  const files=await pfAll(); if(files.length) parts.push("Portfolio files: "+files.map(f=>`${f.name} (step: ${f.step}${f.note?`; note: ${f.note}`:""})`).join("; "));
+  return parts.join("\n\n");
+}
+async function buildResume(){
+  const t=T(); RS.busy=true; RS.confirm=false; resumeView();
+  try{
+    const sample=await getSample(), src=await resumeSources();
+    const langName = RS.lang==="en" ? "English" : I18N[S.lang].name;
+    const r=await sample.json(`You write honest, professional résumés for people who are new to AI, new to business or new to the U.S. job market. Using ONLY the information below, write a one-page résumé in ${langName}.
+Rules:
+- Never invent employers, job titles, dates, schools, degrees, numbers or certificates. If something is missing, use a short placeholder in [brackets], for example [Company name] or [Year]–[Year].
+- Do not include age, birth date, photo, marital status, family, religion, nationality or immigration status.
+- Turn everyday experience into clear bullets that start with strong verbs, but only claim what they actually said or showed.
+- Include their Seedline business work as a project, honestly (what they have actually done so far).
+- Use portfolio files as evidence where they fit.
+- "contact": "[Email] · [Phone] · " followed by their city and state if known.
+Return only JSON: {"name":string,"headline":string,"contact":string,"summary":string,"experience":[{"title":string,"org":string,"place":string,"dates":string,"bullets":[string]}],"skills":[string],"languages":[string],"education":[{"school":string,"detail":string,"dates":string}],"projects":[{"name":string,"detail":string}],"certifications":[string]}
+
+Information:
+${src}`, {modelTier:"default"});
+    if(!r || typeof r!=="object" || !r.summary) throw {code:"invalid_json"};
+    RS.data=r; store.set("seedline-resume", r); store.set("seedline-resume-src", hash(src));
+  }catch(e){ RS.err=e; }
+  RS.busy=false; if(S.view==="resume") resumeView();
+}
+function rf(path,val,tag="span",cls=""){ return `<${tag} class="rf ${cls}" contenteditable="true" spellcheck="true" data-p="${path}">${esc(val??"")}</${tag}>`; }
+const LIST_PATHS=["skills","languages","certifications"];
+function setPath(obj,path,val){ const k=path.split("."); let o=obj; for(let i=0;i<k.length-1;i++){ o=o[isNaN(k[i])?k[i]:+k[i]]; if(o==null) return; } const last=k[k.length-1]; o[isNaN(last)?last:+last]=val; }
+function resumeText(r){
+  const t=T(), L=[]; if(!r) return "";
+  L.push(r.name, r.headline, r.contact, "", t.secSummary.toUpperCase(), r.summary, "");
+  if(r.experience?.length){ L.push(t.secExp.toUpperCase()); r.experience.forEach(x=>{ L.push(`${x.title} — ${x.org}${x.place?", "+x.place:""}${x.dates?" ("+x.dates+")":""}`); (x.bullets||[]).forEach(b=>L.push("• "+b)); L.push(""); }); }
+  if(r.projects?.length){ L.push(t.secProj.toUpperCase()); r.projects.forEach(x=>L.push(`${x.name}: ${x.detail}`)); L.push(""); }
+  if(r.skills?.length) L.push(t.secSkills.toUpperCase(), r.skills.join(", "), "");
+  if(r.languages?.length) L.push(t.secLang.toUpperCase(), r.languages.join(", "), "");
+  if(r.education?.length){ L.push(t.secEdu.toUpperCase()); r.education.forEach(x=>L.push(`${x.school}${x.detail?" — "+x.detail:""}${x.dates?" ("+x.dates+")":""}`)); L.push(""); }
+  if(r.certifications?.length) L.push(t.secCert.toUpperCase(), r.certifications.join(", "));
+  return L.join("\n").trim();
+}
+async function resumeView(){
+  S.view="resume"; setStep(-1); renderHub();
+  const t=T(), r=RS.data, rtl = RS.lang!=="en" && I18N[S.lang].dir==="rtl";
+  const canBuild = !!(S.convo?.length || S.own?.resumeText || S.profile.firstName || S.pi!=null);
+  let stale=false; if(r && canBuild){ const h=hash(await resumeSources()); stale = h!==store.get("seedline-resume-src"); }
+  if(S.view!=="resume") return;
+  const sec=(title,body)=>body?`<section class="rsec"><h3>${title}</h3>${body}</section>`:"";
+  const sheet = r ? `<article class="resume" id="sheet" dir="${rtl?"rtl":"ltr"}" lang="${RS.lang==="en"?"en":S.lang}">
+    ${rf("name",r.name,"h1")}${rf("headline",r.headline,"p","rhead")}${rf("contact",r.contact,"p","rcontact")}
+    ${sec(t.secSummary, rf("summary",r.summary,"p"))}
+    ${sec(t.secExp,(r.experience||[]).map((x,i)=>`<div class="rexp"><p>${rf(`experience.${i}.title`,x.title,"strong")} · ${rf(`experience.${i}.org`,x.org)}${x.place?` · ${rf(`experience.${i}.place`,x.place)}`:""}</p><p class="rdates">${rf(`experience.${i}.dates`,x.dates)}</p><ul>${(x.bullets||[]).map((b,j)=>`<li>${rf(`experience.${i}.bullets.${j}`,b)}</li>`).join("")}</ul></div>`).join(""))}
+    ${sec(t.secProj,(r.projects||[]).map((x,i)=>`<p>${rf(`projects.${i}.name`,x.name,"strong")}: ${rf(`projects.${i}.detail`,x.detail)}</p>`).join(""))}
+    ${sec(t.secSkills,r.skills?.length?rf("skills",r.skills.join(", "),"p"):"")}
+    ${sec(t.secLang,r.languages?.length?rf("languages",r.languages.join(", "),"p"):"")}
+    ${sec(t.secEdu,(r.education||[]).map((x,i)=>`<p>${rf(`education.${i}.school`,x.school,"strong")}${x.detail?` · ${rf(`education.${i}.detail`,x.detail)}`:""}${x.dates?` · ${rf(`education.${i}.dates`,x.dates)}`:""}</p>`).join(""))}
+    ${sec(t.secCert,r.certifications?.length?rf("certifications",r.certifications.join(", "),"p"):"")}
+  </article>` : "";
+  const err = RS.err ? `<p class="err">${errMsg(RS.err)}</p>` : "";
+  app.innerHTML=`<h2>${t.resH}</h2><p class="muted" style="margin-top:6px;max-width:62ch">${t.resP}</p>
+  <p class="why" style="margin-top:8px">${ICON.lock}<span>${t.resRules}</span></p>
+  <div class="field" style="margin-top:12px"><label class="label" for="rslang">${t.resLang}</label><select id="rslang" class="pinput"><option value="en" ${RS.lang==="en"?"selected":""}>${t.resEn}</option>${S.lang!=="en"?`<option value="mine" ${RS.lang!=="en"?"selected":""}>${t.resMine} (${I18N[S.lang].name})</option>`:""}</select></div>
+  ${!canBuild?`<p class="changed">${t.resEmpty}</p>`:""}
+  ${r&&stale&&!RS.busy?`<p class="changed">${t.resNew}</p>`:""}
+  <div class="actions" id="rsact">
+    ${RS.busy?`<p class="typing">${t.resBuilding}</p>`: RS.confirm?`<p class="changed" style="flex-basis:100%">${t.resRebuildWarn}</p><button class="btn sun" type="button" id="rsyes">${t.resConfirm}</button><button class="btn ghost" type="button" id="rsno">${t.cancel}</button>`
+      : `<button class="btn ${r?"ghost":"sun"}" type="button" id="rsbuild" ${canBuild?"":"disabled"}>${r?t.resRebuild:t.resBuild}</button>`}
+    ${r&&!RS.busy?`<button class="btn sun" type="button" id="rspdf">${t.resPdf}</button><button class="btn ghost" type="button" id="rsdocx">${t.resDocx}</button><button class="btn ghost" type="button" id="rscopy">${t.resCopy}</button>`:""}
+  </div>
+  <p id="rsmsg" class="muted" aria-live="polite"></p>
+  ${err}
+  ${sheet}`;
+  RS.err=null;
+  document.getElementById("rslang").onchange=e=>{ RS.lang=e.target.value==="en"?"en":"mine"; store.set("seedline-resume-lang",RS.lang); };
+  const b=document.getElementById("rsbuild"); if(b) b.onclick=()=>{ if(r){ RS.confirm=true; resumeView(); } else buildResume(); };
+  const y=document.getElementById("rsyes"); if(y) y.onclick=buildResume;
+  const n=document.getElementById("rsno"); if(n) n.onclick=()=>{ RS.confirm=false; resumeView(); };
+  const sh=document.getElementById("sheet");
+  if(sh){ let tm; sh.addEventListener("input",e=>{ const el=e.target.closest("[data-p]"); if(!el) return; const pth=el.dataset.p, v=el.innerText.trim(); setPath(RS.data,pth, LIST_PATHS.includes(pth)? v.split(/[,،]\s*/).filter(Boolean) : v); clearTimeout(tm); tm=setTimeout(()=>store.set("seedline-resume",RS.data),500); }); }
+  const msg=document.getElementById("rsmsg");
+  const fname=ext=>`${(r?.name||"resume").replace(/\[.*?\]/g,"").trim().replace(/\s+/g,"-")||"resume"}-resume.${ext}`;
+  const done=()=>{ msg.textContent=t.resSaved; }, fail=err=>{ msg.textContent= err?.code==="declined"?"":t.resDlFail; };
+  const c=document.getElementById("rscopy"); if(c) c.onclick=async()=>{ const text=resumeText(RS.data); try{ await navigator.clipboard.writeText(text); msg.textContent=t.copied; }catch{ const ta=document.createElement("textarea"); ta.className="paste"; ta.value=text; msg.after(ta); ta.select(); } };
+  const pdf=document.getElementById("rspdf"); if(pdf) pdf.onclick=async()=>{ msg.textContent=t.resMaking; try{ const blob=await resumePdf(sh); await saveDownload(fname("pdf"), blob); done(); }catch(err){ fail(err); } };
+  const dx=document.getElementById("rsdocx"); if(dx) dx.onclick=async()=>{ msg.textContent=t.resMaking; try{ const blob=await resumeDocx(RS.data, rtl); await saveDownload(fname("docx"), blob); done(); }catch(err){ fail(err); } };
+}
+let pdfLibs=null, zipLib=null;
+async function resumePdf(sheet){
+  if(!pdfLibs) pdfLibs=loadScript("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js").then(()=>loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"));
+  await pdfLibs;
+  const clone=sheet.cloneNode(true); clone.removeAttribute("id"); clone.classList.add("printing");
+  clone.style.cssText="position:fixed;left:-10000px;top:0;width:816px;max-width:none;margin:0;box-shadow:none;border:0;border-radius:0;padding:48px 56px";
+  document.body.append(clone);
+  let canvas; try{ canvas=await window.html2canvas(clone,{scale:2, backgroundColor:"#ffffff", windowWidth:900}); } finally { clone.remove(); }
+  const { jsPDF }=window.jspdf, pdf=new jsPDF({unit:"pt", format:"letter"});
+  const pw=pdf.internal.pageSize.getWidth(), ph=pdf.internal.pageSize.getHeight(), m=36, w=pw-2*m;
+  const pageH=Math.floor(canvas.width*(ph-2*m)/w);
+  for(let y=0, first=true; y<canvas.height; y+=pageH, first=false){
+    const part=document.createElement("canvas"); part.width=canvas.width; part.height=Math.min(pageH, canvas.height-y);
+    part.getContext("2d").drawImage(canvas,0,y,canvas.width,part.height,0,0,canvas.width,part.height);
+    if(!first) pdf.addPage();
+    pdf.addImage(part.toDataURL("image/jpeg",0.92),"JPEG",m,m,w,part.height*w/canvas.width);
+  }
+  return pdf.output("blob");
+}
+async function resumeDocx(r, rtl){
+  if(!zipLib) zipLib=loadScript("https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js");
+  await zipLib;
+  const t=T(), x=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const bidi=rtl?"<w:bidi/>":"", rr=rtl?"<w:rtl/>":"";
+  const para=(text,{bold=false,size=22,bullet=false,space=80,color=""}={})=>`<w:p><w:pPr>${bidi}<w:spacing w:after="${space}"/>${bullet?`<w:ind w:left="360" w:hanging="220"/>`:""}</w:pPr><w:r><w:rPr>${rr}${bold?"<w:b/>":""}${color?`<w:color w:val="${color}"/>`:""}<w:sz w:val="${size}"/></w:rPr><w:t xml:space="preserve">${bullet?"• ":""}${x(text)}</w:t></w:r></w:p>`;
+  const head=s=>para(s.toUpperCase(),{bold:true,size:22,space:60,color:"1C6B67"});
+  let body=para(r.name,{bold:true,size:36,space:40})+para(r.headline,{size:24,space:40})+para(r.contact,{size:20,space:200,color:"555555"});
+  body+=head(t.secSummary)+para(r.summary,{space:200});
+  if(r.experience?.length){ body+=head(t.secExp); r.experience.forEach(e=>{ body+=para(`${e.title} — ${e.org}${e.place?", "+e.place:""}`,{bold:true,space:20})+para(e.dates||"",{size:20,color:"555555",space:60}); (e.bullets||[]).forEach(b=>body+=para(b,{bullet:true,space:40})); body+=para("",{space:80}); }); }
+  if(r.projects?.length){ body+=head(t.secProj); r.projects.forEach(p=>body+=para(`${p.name}: ${p.detail}`,{space:60})); }
+  if(r.skills?.length) body+=head(t.secSkills)+para(r.skills.join(", "),{space:160});
+  if(r.languages?.length) body+=head(t.secLang)+para(r.languages.join(", "),{space:160});
+  if(r.education?.length){ body+=head(t.secEdu); r.education.forEach(e=>body+=para(`${e.school}${e.detail?" — "+e.detail:""}${e.dates?" ("+e.dates+")":""}`,{space:60})); }
+  if(r.certifications?.length) body+=head(t.secCert)+para(r.certifications.join(", "));
+  const zip=new window.JSZip();
+  zip.file("[Content_Types].xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>`);
+  zip.file("_rels/.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>`);
+  zip.file("word/document.xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${body}<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1080" w:right="1080" w:bottom="1080" w:left="1080" w:header="720" w:footer="720" w:gutter="0"/></w:sectPr></w:body></w:document>`);
+  return zip.generateAsync({type:"blob", mimeType:"application/vnd.openxmlformats-officedocument.wordprocessingml.document"});
 }
 
 /* ---------- levels + package ---------- */
