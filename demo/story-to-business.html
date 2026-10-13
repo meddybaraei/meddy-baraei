@@ -295,6 +295,14 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .actcard.skipped{background:var(--surface);border-color:var(--line);color:var(--muted)}
 .actstate{font-size:.82rem;font-weight:700;color:var(--teal)}
 .actcard.skipped .actstate{color:var(--muted)}
+/* dream */
+.dreamcard{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(135deg,color-mix(in srgb,var(--sun) 22%,var(--surface)),var(--surface));border:1.5px solid var(--sun);border-radius:20px;padding:16px;margin-top:16px;flex-wrap:wrap}
+.dreamcard>div:nth-child(2){flex:1 1 240px}
+.dreamcard.empty{align-items:center}
+.dreamicon{width:44px;height:44px;border-radius:14px;background:var(--sun);color:var(--sun-ink);display:grid;place-items:center;flex:none}
+.dreamicon svg{width:24px;height:24px}
+.dreamtext{font-size:1.25rem}
+.dreamquote{font-family:var(--display);font-weight:700;color:var(--teal)}
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -1132,7 +1140,7 @@ function renderChrome(){
   document.getElementById("footnote").textContent = t.footnote;
 }
 function render(){
-  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, welcome:()=>welcome(), profile:profileView})[S.view]();
+  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
 }
 
 /* ---------- home ---------- */
@@ -1145,6 +1153,7 @@ function home(){
     <h1>${t.h1}</h1>
     <p class="muted">${t.lead}</p>
   </section>
+  ${S.profile.welcomed||S.profile.dream?dreamCard():""}
   <section class="section" style="margin-top:0">
     <h2>${t.startH}</h2>
     <div class="starts">${t.starts.map((s,i)=>`
@@ -1522,7 +1531,7 @@ function plan(noScroll){
       </div>`:""}
     </li>`; };
   const whyOf=(arr,i,field)=>{ const v=det?.[arr]?.[i]?.[field]; return v?`<span class="why">${ICON.info}<span>${esc(v)}</span></span>`:""; };
-  app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(4)})}</span><h2 style="margin-top:6px">${nm(p,t.planMine,t.planH)}</h2>${helpBox(3)}${knowCard("plan")}${ageNote()}
+  app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(4)})}</span><h2 style="margin-top:6px">${nm(p,t.planMine,t.planH)}</h2>${helpBox(3)}${S.profile.dream?dreamCard():""}${knowCard("plan")}${ageNote()}
   <div class="plan">
     <div class="namecard"><span class="label">${t.nameIdea}</span><h2>${esc(pl.name)}</h2><p>${esc(pl.offer)}</p><p style="opacity:.75">${esc(d.price)} · ${fmt(t.costs,{x:esc(d.startCost)})}</p></div>
     ${d.safety?`<p class="safety"><b>${t.before}</b> ${esc(d.safety)}</p>`:""}
@@ -1586,7 +1595,7 @@ function day(noScroll){
     .filter(x=>!st.removed[x.id]).concat(st.custom, agentTasks()).sort((a,b)=>a.time.localeCompare(b.time));
   const save=()=>store.set(key,st);
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(5)})}</span><h2 style="margin-top:6px">${t.dayH}</h2>
-  <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${helpBox(4)}${knowCard("day")}
+  <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${helpBox(4)}${dreamCard()}${knowCard("day")}
   <div class="dayhead">
     <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bgc" cx="50" cy="50" r="40"/><circle class="fg" id="ring" cx="50" cy="50" r="40" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)"/><text id="ringtxt" x="50" y="56" text-anchor="middle"></text></svg>
     <div><h3 id="kept"></h3><p class="muted">${esc(pl.name||"")}</p><p class="muted" style="font-size:.88rem">${t.forgive}</p></div>
@@ -1660,6 +1669,8 @@ function profileText(){
   const p=S.profile, en=I18N.en.pq, parts=[];
   if(p.firstName) parts.push(`First name: ${p.firstName}`);
   if(p.age) parts.push(`Age: ${p.age}${+p.age<18?" (a minor: any registration, accounts or payments need a parent or guardian)":""}`);
+  if(p.dream) parts.push(`Their dream: ${p.dream}`); if(p.dreamWhy) parts.push(`Why it matters to them: ${p.dreamWhy}`);
+  if(p.ready?.some(Boolean)) parts.push(`Readiness to go full-time, checked: ${I18N.en.ready.filter((r,i)=>p.ready[i]).join('; ')}`);
   PQ.forEach(q=>{ const v=p[q.id]; if(!answered(v)) return; const val=q.type==="one"?en.opts[v]:q.type==="multi"?v.map(x=>en.opts[x]).join(", "):v; parts.push(`${en.q[q.id]} ${val}`); });
   return parts.length?`\nProfile the person chose to share (use it to fit everything to them; do not repeat it back):\n- ${parts.join("\n- ")}\n`:"";
 }
@@ -1687,6 +1698,7 @@ function welcome(mode){
   <form class="welcome" id="wf">
     <div class="field"><label class="label" for="fn">${t.nameL}</label><input id="fn" class="pinput" type="text" autocomplete="given-name" value="${esc(p.firstName||"")}"></div>
     <div class="field"><label class="label" for="agein">${t.ageL}</label><input id="agein" class="pinput" type="number" inputmode="numeric" min="1" max="120" value="${esc(p.age||"")}"></div>
+    <div class="field"><label class="label" for="dreamw">${t.welcomeDream}</label><textarea id="dreamw" class="paste" style="min-height:70px" placeholder="${t.dreamPh}">${esc(p.dream||"")}</textarea></div>
     <p class="why">${ICON.lock}<span>${t.whyNameAge}</span></p>
     <p id="agemsg" aria-live="polite"></p>
     <div class="actions" style="margin-top:0"><button class="btn sun" type="submit">${t.cont}</button><button class="btn ghost" type="button" id="skipw">${t.skip}</button></div>
@@ -1698,6 +1710,7 @@ function welcome(mode){
     if(age && age<13){ msg.className="err"; msg.textContent=t.under13; return; }
     if(name) S.profile.firstName=name; else delete S.profile.firstName;
     if(age) S.profile.age=age; else delete S.profile.age;
+    const dw=document.getElementById("dreamw").value.trim(); if(dw) S.profile.dream=dw;
     if(age && age<18 && !msg.dataset.shown){ msg.className="safety"; msg.textContent=t.under18; msg.dataset.shown="1"; saveProfile(); return; }
     go();
   };
@@ -1712,6 +1725,7 @@ function profileView(){
     <div class="field"><label class="label" for="agein">${t.ageL}</label><input id="agein" class="pinput" type="number" inputmode="numeric" min="13" max="120" value="${esc(p.age||"")}"></div>
     <div><button class="btn small" type="button" id="savena">${t.save}</button></div>
   </div>
+  <div class="box" style="margin-top:12px"><span class="label">${t.dreamLabel}</span><p>${esc(p.dream||t.notAnswered)}</p><div><button type="button" class="btn small ghost" data-dream>${p.dream?t.editDream:t.addDream}</button></div></div>
   <div class="plist">${PQ.map(q=>`<div class="box"><span class="label">${esc(pqLabel(q,p[q.id]))}</span>${pqItem(q,true)}</div>`).join("")}</div>
   <div class="actions"><button class="btn ghost" type="button" id="back">${t.back}</button><button class="btn ghost" type="button" id="delp">${t.deleteP}</button></div>
   <p id="delmsg" class="muted" aria-live="polite"></p>`;
@@ -1903,6 +1917,7 @@ Rules:
 - Work side by side with them toward the goal, one practical step at a time. You cannot act outside this chat (no sending messages, no payments, no sign-ups); tell them exactly what to do themselves.
 - Be honest, never flattering. Never promise income. Flag anything that needs a license, a lawyer, a doctor or another professional, and suggest free local help (SBDC, SCORE, library) when a person is needed.
 - If a photo or screenshot is attached, say in one line what you see, then what to do next.
+- If they shared a dream, connect your help to it and encourage them honestly. Never pressure anyone to quit a job before they're ready.
 - End EVERY reply with one final line that starts with "NEXT:" and gives the single next action in under 15 words.
 ${p?`Context: they are working on "${d?.title||""}"${d?.plan?.name?` (${d.plan.name})`:""}.`:""}
 ${profileText()}`;
@@ -2104,6 +2119,88 @@ async function resumeDocx(r, rtl){
   return zip.generateAsync({type:"blob", mimeType:"application/vnd.openxmlformats-officedocument.wordprocessingml.document"});
 }
 
+/* ---------- my dream ---------- */
+const DREAM = {
+en:{ dreamH:"My dream", dreamQ:"What's your dream? What would you love to build for yourself?", dreamPh:"For example: my own furniture styling business, so I can set my own hours and be home for my kids.",
+  whyQ:"Why does it matter to you?", whyPh:"For example: more time with my family, being my own boss, helping my community.",
+  dreamLabel:"Your dream", whyLabel2:"Why it matters", todayStep:"Today's step toward it", dayN:"Day {n} of your journey", editDream:"Edit my dream", addDream:"Write down my dream",
+  addDreamP:"People who write down their dream and look at it every day are more likely to keep going. It takes one minute.",
+  readyH:"When will you be ready to go out on your own?", readyP:"Keep your job while you build. Many business owners start on the side and go full-time only when they're ready. You decide when. Check what's true today:",
+  ready:["I have 3 to 6 months of living costs saved","I've had steady paying customers for 3 months","My family and I agree on the plan","I know how I'll get health insurance","My business is registered and licensed where needed"],
+  readyOf:"{n} of {t} ready", readyAll:"You've checked everything. Talk it over with your family and a free advisor before you make the jump.",
+  noStep:"Choose an idea to get your first step.", dreamNote:"Your dream is saved on this device only.", welcomeDream:"Your dream (optional)",
+  motivate:["Small steps, every day. That's how dreams get built.","You don't need to be ready. You need to start.","Every business owner started as a beginner.","Your experience is worth more than you think.","Progress, not perfection.","One customer at a time.","Your dream is allowed to start small."] },
+es:{ dreamH:"Mi sueño", dreamQ:"¿Cuál es tu sueño? ¿Qué te encantaría construir para ti?", dreamPh:"Por ejemplo: mi propio negocio de decoración de espacios, para manejar mi horario y estar en casa con mis hijos.",
+  whyQ:"¿Por qué es importante para ti?", whyPh:"Por ejemplo: más tiempo con mi familia, ser mi propio jefe, ayudar a mi comunidad.",
+  dreamLabel:"Tu sueño", whyLabel2:"Por qué importa", todayStep:"Tu paso de hoy hacia él", dayN:"Día {n} de tu camino", editDream:"Editar mi sueño", addDream:"Escribir mi sueño",
+  addDreamP:"Las personas que escriben su sueño y lo ven cada día tienen más probabilidades de seguir adelante. Toma un minuto.",
+  readyH:"¿Cuándo estarás listo para independizarte?", readyP:"Conserva tu trabajo mientras construyes. Muchos dueños de negocio empiezan a medio tiempo y se dedican de lleno solo cuando están listos. Tú decides cuándo. Marca lo que es cierto hoy:",
+  ready:["Tengo ahorrados de 3 a 6 meses de gastos","Tengo clientes que pagan de forma constante desde hace 3 meses","Mi familia y yo estamos de acuerdo con el plan","Sé cómo voy a obtener seguro médico","Mi negocio está registrado y tiene las licencias necesarias"],
+  readyOf:"{n} de {t} listos", readyAll:"Marcaste todo. Habla con tu familia y con un asesor gratuito antes de dar el salto.",
+  noStep:"Elige una idea para tener tu primer paso.", dreamNote:"Tu sueño se guarda solo en este dispositivo.", welcomeDream:"Tu sueño (opcional)",
+  motivate:["Pasos pequeños, cada día. Así se construyen los sueños.","No necesitas estar listo. Necesitas empezar.","Todo dueño de negocio empezó como principiante.","Tu experiencia vale más de lo que crees.","Progreso, no perfección.","Un cliente a la vez.","Tu sueño puede empezar pequeño."] },
+fa:{ dreamH:"رؤیای من", dreamQ:"رؤیایت چیست؟ دوست داری چه چیزی برای خودت بسازی؟", dreamPh:"مثلاً: کسب‌وکار چیدمان منزل خودم، تا ساعت کارم دست خودم باشد و پیش بچه‌هایم باشم.",
+  whyQ:"چرا برایت مهم است؟", whyPh:"مثلاً: وقت بیشتر با خانواده، رئیس خودم بودن، کمک به جامعه‌ام.",
+  dreamLabel:"رؤیای تو", whyLabel2:"چرا مهم است", todayStep:"قدم امروزت به سمتش", dayN:"روز {n} از مسیرت", editDream:"ویرایش رؤیایم", addDream:"رؤیایم را بنویسم",
+  addDreamP:"کسانی که رؤیایشان را می‌نویسند و هر روز نگاهش می‌کنند، بیشتر ادامه می‌دهند. فقط یک دقیقه وقت می‌گیرد.",
+  readyH:"کی آماده‌ای که مستقل کار کنی؟", readyP:"وقتی کسب‌وکارت را می‌سازی، شغلت را نگه دار. خیلی از صاحبان کسب‌وکار پاره‌وقت شروع می‌کنند و فقط وقتی آماده شدند تمام‌وقت می‌شوند. تصمیمش با خودت است. آنچه امروز درست است را علامت بزن:",
+  ready:["هزینه ۳ تا ۶ ماه زندگی‌ام را پس‌انداز کرده‌ام","۳ ماه است مشتری‌های ثابتی دارم که پول می‌دهند","من و خانواده‌ام روی این برنامه توافق داریم","می‌دانم بیمه درمانی‌ام را از کجا تهیه کنم","کسب‌وکارم ثبت شده و مجوزهای لازم را دارد"],
+  readyOf:"{n} از {t} آماده", readyAll:"همه را علامت زدی. قبل از برداشتن این قدم بزرگ، با خانواده‌ات و یک مشاور رایگان صحبت کن.",
+  noStep:"یک ایده انتخاب کن تا اولین قدمت مشخص شود.", dreamNote:"رؤیایت فقط روی همین دستگاه ذخیره می‌شود.", welcomeDream:"رؤیای تو (اختیاری)",
+  motivate:["قدم‌های کوچک، هر روز. رؤیاها این‌طور ساخته می‌شوند.","لازم نیست آماده باشی. لازم است شروع کنی.","هر صاحب کسب‌وکاری روزی تازه‌کار بوده است.","تجربه‌ات بیشتر از آنچه فکر می‌کنی ارزش دارد.","پیشرفت، نه بی‌نقص بودن.","هر بار یک مشتری.","رؤیایت می‌تواند کوچک شروع شود."] },
+ar:{ dreamH:"حلمي", dreamQ:"ما حلمك؟ ما الذي تحب أن تبنيه لنفسك؟", dreamPh:"مثلًا: مشروعي الخاص لتنسيق الأثاث، لأحدد ساعات عملي وأكون في البيت مع أطفالي.",
+  whyQ:"لماذا يهمك ذلك؟", whyPh:"مثلًا: وقت أكثر مع عائلتي، أن أكون مدير نفسي، مساعدة مجتمعي.",
+  dreamLabel:"حلمك", whyLabel2:"لماذا يهم", todayStep:"خطوتك اليوم نحوه", dayN:"اليوم {n} من رحلتك", editDream:"عدّل حلمي", addDream:"اكتب حلمي",
+  addDreamP:"من يكتبون حلمهم وينظرون إليه كل يوم يكونون أكثر قدرة على الاستمرار. يستغرق دقيقة واحدة.",
+  readyH:"متى ستكون مستعدًا للعمل لحسابك؟", readyP:"احتفظ بوظيفتك وأنت تبني مشروعك. كثير من أصحاب المشاريع يبدؤون إلى جانب عملهم ولا يتفرغون إلا عندما يكونون مستعدين. أنت تقرر متى. ضع علامة على ما هو صحيح اليوم:",
+  ready:["لدي مدخرات تكفي نفقات المعيشة من ٣ إلى ٦ أشهر","لدي عملاء يدفعون بانتظام منذ ٣ أشهر","أنا وعائلتي متفقون على الخطة","أعرف كيف سأحصل على التأمين الصحي","مشروعي مسجّل ومرخّص حيث يلزم"],
+  readyOf:"{n} من {t} جاهز", readyAll:"وضعت علامة على كل شيء. تحدّث مع عائلتك ومع مستشار مجاني قبل أن تخطو هذه الخطوة.",
+  noStep:"اختر فكرة لتحصل على خطوتك الأولى.", dreamNote:"يُحفظ حلمك على هذا الجهاز فقط.", welcomeDream:"حلمك (اختياري)",
+  motivate:["خطوات صغيرة كل يوم. هكذا تُبنى الأحلام.","لا تحتاج أن تكون مستعدًا. تحتاج أن تبدأ.","كل صاحب مشروع بدأ مبتدئًا.","خبرتك تساوي أكثر مما تظن.","التقدّم، لا الكمال.","عميل واحد في كل مرة.","مسموح لحلمك أن يبدأ صغيرًا."] }
+};
+Object.keys(DREAM).forEach(l=>Object.assign(I18N[l],DREAM[l]));
+ICON.star='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>';
+function journeyDays(){ if(!S.profile.started){ S.profile.started=Date.now(); saveProfile(); } return Math.max(1, Math.floor((Date.now()-S.profile.started)/86400000)+1); }
+function nextDreamStep(){
+  const p=S.pi!=null?person():null, d=p?.ideas?.[S.idea]; if(!d?.plan) return null;
+  const week=store.get(planKey()+"-week")||[]; return (d.plan.steps||[]).find((s,i)=>!week[i]) || null;
+}
+function dreamCard(){
+  const t=T(), p=S.profile;
+  if(!p.dream) return `<section class="dreamcard empty"><div class="dreamicon">${ICON.star}</div><div><h3>${t.addDream}</h3><p class="muted" style="font-size:.93rem">${t.addDreamP}</p></div><button type="button" class="btn sun small" data-dream>${t.addDream}</button></section>`;
+  const step=nextDreamStep(), quote=t.motivate[Math.floor(Date.now()/86400000)%t.motivate.length];
+  const ready=(p.ready||[]).filter(Boolean).length;
+  return `<section class="dreamcard"><div class="dreamicon">${ICON.star}</div><div style="min-width:0;display:grid;gap:6px">
+    <span class="label">${t.dreamLabel} · ${fmt(t.dayN,{n:num(journeyDays())})}</span>
+    <h3 class="dreamtext">${esc(p.dream)}</h3>
+    ${p.dreamWhy?`<p class="muted"><strong>${t.whyLabel2}:</strong> ${esc(p.dreamWhy)}</p>`:""}
+    <p><strong>${t.todayStep}:</strong> ${step?esc(step):`<span class="muted">${t.noStep}</span>`}</p>
+    <p class="dreamquote">“${t.motivate.includes(quote)?quote:""}”</p>
+    <div class="choices"><button type="button" class="btn small ghost" data-dream>${t.editDream}</button><span class="muted" style="font-size:.88rem">${fmt(t.readyOf,{n:num(ready),t:num(t.ready.length)})}</span></div>
+  </div></section>`;
+}
+function dreamView(){
+  if(S.view!=="dream") S.prevView=S.view;
+  S.view="dream"; setStep(-1); renderHub?.(); const t=T(), p=S.profile, rd=p.ready||[];
+  app.innerHTML=`<h2>${t.dreamH}</h2>
+  <form class="welcome" id="dreamf">
+    <div class="field"><label class="label" for="dreamin">${t.dreamQ}</label><div class="composer" style="margin:0"><textarea id="dreamin" rows="3" placeholder="${t.dreamPh}">${esc(p.dream||"")}</textarea>${micBtn("dreamin")}</div></div>
+    <div class="field"><label class="label" for="whyin">${t.whyQ}</label><div class="composer" style="margin:0"><textarea id="whyin" rows="2" placeholder="${t.whyPh}">${esc(p.dreamWhy||"")}</textarea>${micBtn("whyin")}</div></div>
+    <p class="why">${ICON.lock}<span>${t.dreamNote}</span></p>
+    <div class="actions" style="margin-top:0"><button class="btn sun" type="submit">${t.save}</button><button class="btn ghost" type="button" id="dreamback">${t.back}</button></div>
+  </form>
+  <section class="welcome"><h3>${t.readyH}</h3><p class="muted">${t.readyP}</p>
+    <ul class="checks">${t.ready.map((r,i)=>`<li><label><input type="checkbox" data-ready="${i}" ${rd[i]?"checked":""}><span>${r}</span></label></li>`).join("")}</ul>
+    <div class="progress"><i style="width:${rd.filter(Boolean).length/t.ready.length*100}%"></i></div>
+    <p class="muted" id="readymsg">${rd.filter(Boolean).length===t.ready.length?t.readyAll:fmt(t.readyOf,{n:num(rd.filter(Boolean).length),t:num(t.ready.length)})}</p>
+  </section>`;
+  document.getElementById("dreamf").onsubmit=e=>{ e.preventDefault(); const dv=dreamin.value.trim(), wv=whyin.value.trim(); if(dv) S.profile.dream=dv; else delete S.profile.dream; if(wv) S.profile.dreamWhy=wv; else delete S.profile.dreamWhy; journeyDays(); saveProfile(); goBackFromDream(); };
+  document.getElementById("dreamback").onclick=goBackFromDream;
+  app.querySelectorAll("[data-ready]").forEach(c=>c.onchange=()=>{ const r=S.profile.ready||[]; r[+c.dataset.ready]=c.checked; S.profile.ready=r; saveProfile(); dreamView(); });
+}
+function goBackFromDream(){ S.view=S.prevView&&S.prevView!=="dream"?S.prevView:"home"; render(); }
+document.addEventListener("click", e=>{ if(e.target.closest("[data-dream]")){ e.preventDefault(); dreamView(); } });
+
 /* ---------- levels + package ---------- */
 function levelsBox(here){
   const t=T();
@@ -2269,7 +2366,7 @@ function propose(label, apply){
     drawCoach();
   });
 }
-const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView() };
+const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView(), dream:()=>dreamView() };
 function superTools(){
   const t=T(), needPlan=()=>{ const p=S.pi!=null?person():null, d=p?.ideas?.[S.idea]; if(!d?.plan) throw new Error("The person has not chosen an idea and plan yet."); return d.plan; };
   return [
@@ -2293,11 +2390,11 @@ function superTools(){
      execute:async({step,done})=>{ const pl=needPlan(), i=Number(step)-1; if(!(i>=0&&i<pl.steps.length)) throw new Error("invalid step"); const v=done!==false;
        const ok=await propose(fmt(v?t.act.stepDone:t.act.stepUndone,{n:num(i+1)}),()=>{ const s=store.get(planKey()+"-week")||[]; s[i]=v; store.set(planKey()+"-week",s); if(S.view==="plan") plan(true); });
        return ok?"approved":"the person skipped it"; }},
-    {name:"update_profile", description:"Propose updating one profile answer. Fields: firstName, goal (text), wake (HH:MM), transport (car|transit|walk|rides), devices (phone|computer|both), place (home|out|mix), people (love|ok|rather), monthly (m0|m50|m200|mmore). Returns whether it was approved.",
+    {name:"update_profile", description:"Propose updating one profile answer. Fields: firstName, dream (their dream, text), dreamWhy (why it matters), goal (text), wake (HH:MM), transport (car|transit|walk|rides), devices (phone|computer|both), place (home|out|mix), people (love|ok|rather), monthly (m0|m50|m200|mmore). Returns whether it was approved.",
      inputSchema:{type:"object",properties:{field:{type:"string"},value:{type:"string"}},required:["field","value"]},
      execute:async({field,value})=>{ field=String(field); value=String(value||"").slice(0,200); const q=PQ.find(x=>x.id===field);
-       if(field!=="firstName" && !q) throw new Error("unknown field"); if(q?.type==="one" && !q.opts.includes(value)) throw new Error("value must be one of "+q.opts.join(", "));
-       const shown = field==="firstName"?value : `${t.pq.q[field]} ${q.type==="one"?t.pq.opts[value]:value}`;
+       if(!["firstName","dream","dreamWhy"].includes(field) && !q) throw new Error("unknown field"); if(q?.type==="one" && !q.opts.includes(value)) throw new Error("value must be one of "+q.opts.join(", "));
+       const shown = ["firstName","dream","dreamWhy"].includes(field)?value : `${t.pq.q[field]} ${q.type==="one"?t.pq.opts[value]:value}`;
        const ok=await propose(fmt(t.act.profile,{x:shown}),()=>{ S.profile[field]=value; saveProfile(); });
        return ok?"approved":"the person skipped it"; }},
     {name:"add_portfolio_note", description:"Propose adding or replacing the note on one portfolio file, matched by file name. Returns whether it was approved.",
@@ -2313,7 +2410,7 @@ function superTools(){
          else { const e=r.experience?.[Number(experience)||0]; if(e) (e.bullets ||= []).push(text); }
          store.set("seedline-resume",r); if(S.view==="resume") resumeView(); });
        return ok?"approved":"the person skipped it"; }},
-    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | agents | portfolio | resume | profile.",
+    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | agents | portfolio | resume | profile | dream.",
      inputSchema:{type:"object",properties:{section:{type:"string"}},required:["section"]},
      execute:async({section})=>{ const go=SECTION_GO[String(section)]; if(!go) throw new Error("unknown section");
        if(["strengths","ideas","plan","day","package"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
@@ -2338,6 +2435,7 @@ async function superSubmit(e){
   const system=`You are Seedline AI, the one assistant for everything in Seedline: a platform that helps people who are new to AI and new to business turn their life experience into a small business of their own, with a plan, a daily routine, personal agents, a portfolio and a résumé.
 - Answer in the language the person writes in; if unsure use ${I18N[S.lang].name}. Plain words, short answers, one or two next steps.
 - Be honest, never flattering. Never promise income or use the word "passive". Flag anything needing a license, permit, lawyer or other professional, and point to free local help (SBDC, SCORE, library) when a person is needed. You are an AI and say so if asked.
+- Help them work toward their OWN dream (in their profile) instead of only working for someone else: connect today's step to that dream and encourage them honestly. Never pressure anyone to quit a job; the safe path is building on the side until their readiness checklist is done.
 - If a screenshot or photo is attached, say in one line what you see, then what to do next.
 ${useTools?`- You can act in the app with your tools. Changes are only PROPOSED: the person taps "Do it" or "Skip". Propose at most 3 changes per reply, only when they help, and say in your reply what you proposed. Never change things the person didn't ask about. open_section moves them right away.`:"- You cannot change the app in this view; tell the person where to tap instead."}
 Current state of their Seedline (JSON):
