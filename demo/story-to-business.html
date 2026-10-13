@@ -235,6 +235,22 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .welcome{display:grid;gap:14px;margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
 .plist{display:grid;gap:10px;margin-top:12px}
 .reality{border-inline-start:4px solid var(--warn);padding-inline-start:10px;font-size:.93rem}
+/* day 1 */
+.compare{margin-top:16px;display:grid;gap:8px}
+.compare .tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.compare table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:520px}
+.compare th,.compare td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.compare thead th{font-weight:700}
+.compare tbody th{color:var(--muted);font-weight:700;white-space:nowrap}
+.compare tbody tr:last-child>*{border-bottom:0}
+.compare td{font-variant-numeric:tabular-nums}
+.risk{display:inline-block;border-radius:999px;padding:.1rem .55rem;font-weight:700;font-size:.82rem}
+.r-low{background:var(--teal-soft);color:var(--teal)} .r-medium{background:var(--warn-soft);color:var(--warn)} .r-high{background:var(--warn-soft);color:var(--warn);outline:1.5px solid var(--warn)}
+.ruled{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:8px}
+.difflist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.difflist li{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+.difflist svg{width:20px;height:20px;flex:none;color:var(--teal);margin-top:2px}
+.difflink{color:var(--teal);font-weight:700}
 /* levels */
 .levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
 .level{border:1.5px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:6px;align-content:start;background:var(--surface)}
@@ -1009,6 +1025,7 @@ function home(){
         <h3>${esc(b.name[S.lang])}</h3><span class="role">${esc(P[S.lang][i].role)}</span><span class="role">📍 ${esc(b.loc)}</span>
       </button>`).join("")}</div>
   </section>
+  ${diffSection()}
   <section class="section">
     <h2>${t.trustH}</h2>
     <div class="trust">${t.trust.map(c=>`<div class="tcard"><span class="dot" aria-hidden="true"></span><h3>${c[0]}</h3><p class="muted">${c[1]}</p></div>`).join("")}</div>
@@ -1200,6 +1217,9 @@ ${COMMON_RULES(locationOf())}
 - Give exactly 3 ideas, ordered from fastest and cheapest first customer to slowest. The first idea must be a simple service built on a skill they already have; mark only it startHere=true.
 - Fit their stated time and budget.
 - Be honest, not flattering. "realityCheck": 1-2 sentences on real demand where they live, nearby competition, and the main risk or reason it could fail.
+- In "realityCheck", say how the idea fits what they shared: their transport, monthly budget, devices, where they like to work and how comfortable they are selling.
+- "hoursPerWeek": a realistic [min, max] for the first month. "risk": how much money or stability they could lose.
+- "ruledOut": exactly 2 ideas that might seem obvious for this person but don't fit, each with the honest reason (budget, car, license, time, comfort with selling).
 - "weekendTest": one cheap way (under $50) to test real demand this weekend before spending more.
 - Never use the word "passive" and never describe money as easy.
 - "why" for each idea must point to something specific they said or showed.
@@ -1210,8 +1230,9 @@ ${imgs.length?`- ${imgs.length} photo(s) are attached showing this person's work
 Return only JSON with this shape:
 {"firstName": string or "", "strengths": {"skills": [string], "have": [string], "people": [string], "timeMoney": [string]},
  "strengthsWhy": {"skills": string, "have": string, "people": string, "timeMoney": string},
- "ideas": [{"title": string, "pitch": string, "why": string, "firstDollar": string, "startCost": string, "price": string, "startHere": boolean, "safety": string or null, "realityCheck": string, "weekendTest": string,
-   "plan": {"name": string, "offer": string, "steps": [string], "firstCustomers": [string], "grow": [string]}}]}
+ "ideas": [{"title": string, "pitch": string, "why": string, "firstDollar": string, "startCost": string, "price": string, "startHere": boolean, "safety": string or null, "realityCheck": string, "weekendTest": string, "hoursPerWeek": [number, number], "risk": "low" or "medium" or "high",
+   "plan": {"name": string, "offer": string, "steps": [string], "firstCustomers": [string], "grow": [string]}}],
+ "ruledOut": [{"title": string, "reason": string}]}
 ${S.own?.resumeText&&S.pi==="own"?`\nRésumé text:\n${S.own.resumeText.slice(0,12000)}\n`:""}${strengthsEdited?`\nThe person edited their strengths map. Treat it as true and build on it:\n${JSON.stringify(strengthsEdited)}\n`:""}${profileText()}${feedback&&cur?`\nThe person saw these ideas: ${cur.ideas.map(i=>i.title).join("; ")}. They asked for these changes: ${feedback}\nGive 3 ideas that respect this.\n`:""}
 Conversation:
 ${convo}`;
@@ -1223,7 +1244,7 @@ function applyResult(r){
   const cur = S.pi==="own"?S.ownPerson:(typeof S.pi==="number"?person():null);
   const persona = cur && (cur.own===false || typeof S.pi==="number") ? cur : null;
   S.ownPerson = { own:!persona, id:persona?.id||"own", name:persona?.name||S.profile.firstName||r.firstName||"", role:persona?.role||"", location:locationOf(),
-    initial:(persona?.name||r.firstName||"Y")[0], strengths:r.strengths, strengthsWhy:r.strengthsWhy||null, ideas:r.ideas.slice(0,3) };
+    initial:(persona?.name||r.firstName||"Y")[0], strengths:r.strengths, strengthsWhy:r.strengthsWhy||null, ideas:r.ideas.slice(0,3), ruledOut:Array.isArray(r.ruledOut)?r.ruledOut.slice(0,2):null, generated:true };
   S.pi="own"; S.dirty=false; S.strDirty=false; S.idea=0; S.openStep=null; S.convoSaved=clone(S.convo||[]);
 }
 function ensureCopy(){
@@ -1283,6 +1304,7 @@ function ideas(){
   const p=person(), t=T();
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(3)})}</span><h2 style="margin-top:6px">${nm(p,t.ideasMine,t.ideasH)}</h2>
   <p class="muted" style="margin-top:6px">${t.ideasLead}</p>${helpBox(2)}${knowCard("ideas")}
+  ${compareTable(p)}
   <div class="ideas">${p.ideas.map((d,i)=>`
     <article class="idea ${d.startHere?"first":""}">
       <div class="idea-head"><h3>${esc(d.title)}</h3>${d.startHere?`<span class="badge">${t.startHere}</span>`:""}</div>
@@ -1298,6 +1320,7 @@ function ideas(){
       ${d.safety?`<p class="safety"><b>${t.before}</b> ${esc(d.safety)}</p>`:""}
       <div><button class="btn ${d.startHere?"sun":"ghost"}" type="button" data-i="${i}">${t.choose}</button></div>
     </article>`).join("")}</div>
+  ${ruledBox(p)}
   <section class="adjust"><h3>${t.adjustH}</h3><p class="muted">${t.adjustP}</p><label class="sr" for="adj">${t.adjustH}</label><textarea id="adj" class="paste" style="min-height:80px" placeholder="${t.adjustPh}"></textarea>
     <div class="actions" id="act" style="margin-top:0">${micBtn("adj")}<button class="btn" type="button" id="adjBtn">${t.adjust}</button></div></section>
   <div class="actions"><button class="btn ghost" type="button" id="back">${t.back}</button></div>`;
@@ -1564,6 +1587,84 @@ function wakeShift(hm){
   const [wh,wm]=w.split(":").map(Number), [h,m]=hm.split(":").map(Number);
   let mins=h*60+m+(wh*60+wm-420); mins=Math.max(0,Math.min(23*60+59,mins));
   return String(Math.floor(mins/60)).padStart(2,"0")+":"+String(mins%60).padStart(2,"0");
+}
+
+/* ---------- day 1: compare, ruled out, how we're different ---------- */
+const D1 = {
+en:{ whyNotH:"Ideas we ruled out, and why", whyNotP:"We looked at other options too. Here's why these didn't make the list.",
+  compareH:"Compare side by side", hoursL:"Hours a week", riskL:"Risk", risk:{low:"Low",medium:"Medium",high:"High"},
+  diffH:"How Seedline is different", diffLink:"See how we compare to other apps →",
+  diff:["Ideas come from your own words, and we show you why.","Honest reality checks. No income promises, ever.","Rules for where you live, in your own language.","Small, clear prices. Cancel in one tap."] },
+es:{ whyNotH:"Ideas que descartamos y por qué", whyNotP:"También miramos otras opciones. Esta es la razón por la que no entraron en la lista.",
+  compareH:"Compara lado a lado", hoursL:"Horas por semana", riskL:"Riesgo", risk:{low:"Bajo",medium:"Medio",high:"Alto"},
+  diffH:"Qué hace diferente a Seedline", diffLink:"Mira cómo nos comparamos con otras apps →",
+  diff:["Las ideas salen de tus propias palabras, y te mostramos por qué.","Pruebas de realidad honestas. Nunca prometemos ingresos.","Reglas de donde vives, en tu propio idioma.","Precios pequeños y claros. Cancela con un toque."] },
+fa:{ whyNotH:"ایده‌هایی که کنار گذاشتیم و دلیلش", whyNotP:"گزینه‌های دیگر را هم بررسی کردیم. دلیل اینکه این‌ها در فهرست نیامدند را ببین.",
+  compareH:"مقایسه کنار هم", hoursL:"ساعت در هفته", riskL:"ریسک", risk:{low:"کم",medium:"متوسط",high:"زیاد"},
+  diffH:"چه چیزی Seedline را متفاوت می‌کند", diffLink:"ببین با اپ‌های دیگر چه فرقی داریم ←",
+  diff:["ایده‌ها از حرف‌های خودت می‌آیند و دلیلش را نشانت می‌دهیم.","بررسی واقع‌بینانه و صادقانه. هرگز وعده درآمد نمی‌دهیم.","قوانین محل زندگی‌ات، به زبان خودت.","قیمت‌های کم و روشن. لغو با یک ضربه."] },
+ar:{ whyNotH:"أفكار استبعدناها ولماذا", whyNotP:"درسنا خيارات أخرى أيضًا. إليك لماذا لم تدخل هذه القائمة.",
+  compareH:"قارن جنبًا إلى جنب", hoursL:"ساعات في الأسبوع", riskL:"المخاطرة", risk:{low:"منخفضة",medium:"متوسطة",high:"مرتفعة"},
+  diffH:"ما الذي يميّز Seedline", diffLink:"شاهد كيف نقارن بالتطبيقات الأخرى ←",
+  diff:["الأفكار تأتي من كلماتك أنت، ونوضح لك السبب.","فحص واقعي صادق. لا نعد بدخل أبدًا.","قواعد مكان إقامتك، بلغتك.","أسعار صغيرة وواضحة. ألغِ بضغطة واحدة."] }
+};
+Object.keys(D1).forEach(l=>Object.assign(I18N[l],D1[l]));
+const COMPARE_URL="https://claude.ai/artifact/G4z2Zif3CCN8Bh19yRP9rM";
+/* hours a week and risk for the example people's ideas, in order */
+const PERSONA_META=[[[[5,10],"low"],[[6,10],"medium"],[[3,6],"low"]],[[[3,6],"low"],[[6,10],"medium"],[[4,10],"medium"]],[[[4,8],"low"],[[3,6],"low"],[[5,8],"medium"]],[[[5,15],"low"],[[3,10],"low"],[[8,15],"high"]]];
+const RULED = {
+en:[[["Open a secondhand store","Rent and stock would cost thousands, far above your $200 budget."],["Sell new products from overseas suppliers","You'd pay for inventory up front and compete on price with big sellers."]],
+    [["Open a furniture showroom","It needs a lease and lots of inventory. Too risky for 10 hours a week."],["Start an interior design firm","Some design work needs training or credentials. Styling sessions are a safer first step."]],
+    [["Buy a franchise","Franchise fees usually cost far more than $500 and lock you into long contracts."],["Open your own store","Rent, staff and inventory are a big risk for 8 hours a week."]],
+    [["Immigration paperwork service","Filling out immigration forms for pay without a license is illegal and can hurt families."],["Food truck","A truck, permits and a licensed kitchen cost far more than $100."]]],
+es:[[["Abrir una tienda de segunda mano","El alquiler y el inventario costarían miles, muy por encima de tu presupuesto de $200."],["Vender productos nuevos de proveedores extranjeros","Pagarías el inventario por adelantado y competirías en precio con grandes vendedores."]],
+    [["Abrir una sala de exhibición de muebles","Necesita un local alquilado y mucho inventario. Demasiado riesgo para 10 horas a la semana."],["Crear una empresa de diseño de interiores","Algunos trabajos de diseño requieren formación o credenciales. Las sesiones de decoración son un primer paso más seguro."]],
+    [["Comprar una franquicia","Las cuotas de franquicia suelen costar mucho más de $500 y te atan a contratos largos."],["Abrir tu propia tienda","El alquiler, el personal y el inventario son un gran riesgo para 8 horas a la semana."]],
+    [["Servicio de trámites migratorios","Llenar formularios de inmigración a cambio de dinero sin licencia es ilegal y puede perjudicar a las familias."],["Camión de comida","El camión, los permisos y una cocina con licencia cuestan mucho más de $100."]]],
+fa:[[["باز کردن مغازه دست‌دوم‌فروشی","اجاره و جنس هزاران دلار هزینه دارد، خیلی بیشتر از بودجه ۲۰۰ دلاری تو."],["فروش محصولات نو از تأمین‌کنندگان خارجی","باید جنس را از قبل بخری و با فروشندگان بزرگ رقابت قیمتی کنی."]],
+    [["باز کردن نمایشگاه مبلمان","اجاره مغازه و موجودی زیادی لازم دارد. برای هفته‌ای ۱۰ ساعت ریسک زیادی است."],["راه‌اندازی شرکت طراحی داخلی","بعضی کارهای طراحی آموزش یا مدرک لازم دارند. جلسات چیدمان قدم اول امن‌تری است."]],
+    [["خرید نمایندگی (فرانچایز)","هزینه فرانچایز معمولاً خیلی بیشتر از ۵۰۰ دلار است و تو را به قراردادهای طولانی می‌بندد."],["باز کردن فروشگاه خودت","اجاره، نیرو و موجودی برای هفته‌ای ۸ ساعت ریسک بزرگی است."]],
+    [["خدمات پرونده‌های مهاجرتی","پر کردن فرم‌های مهاجرت در ازای پول بدون مجوز غیرقانونی است و می‌تواند به خانواده‌ها آسیب بزند."],["فودتراک","کامیون، مجوزها و آشپزخانه دارای مجوز خیلی بیشتر از ۱۰۰ دلار هزینه دارد."]]],
+ar:[[["فتح متجر للأغراض المستعملة","الإيجار والبضاعة سيكلفان آلاف الدولارات، أكثر بكثير من ميزانيتك البالغة ٢٠٠ دولار."],["بيع منتجات جديدة من موردين في الخارج","ستدفع ثمن البضاعة مقدمًا وتنافس كبار البائعين في السعر."]],
+    [["فتح معرض أثاث","يحتاج إلى إيجار وبضاعة كثيرة. مخاطرة كبيرة مع ١٠ ساعات أسبوعيًا."],["تأسيس شركة تصميم داخلي","بعض أعمال التصميم تحتاج إلى تدريب أو شهادات. جلسات التنسيق خطوة أولى أكثر أمانًا."]],
+    [["شراء امتياز تجاري (فرانشايز)","رسوم الامتياز تكلف عادةً أكثر بكثير من ٥٠٠ دولار وتلزمك بعقود طويلة."],["فتح متجرك الخاص","الإيجار والموظفون والبضاعة مخاطرة كبيرة مع ٨ ساعات أسبوعيًا."]],
+    [["خدمة معاملات الهجرة","ملء استمارات الهجرة مقابل أجر دون ترخيص غير قانوني وقد يضر بالعائلات."],["عربة طعام","العربة والتصاريح والمطبخ المرخّص تكلف أكثر بكثير من ١٠٠ دولار."]]]
+};
+function ideaMeta(p,i){
+  const d=p.ideas[i];
+  if(Array.isArray(d.hoursPerWeek) || d.risk) return {hours:d.hoursPerWeek, risk:d.risk};
+  const pi = typeof S.pi==="number" ? S.pi : BASE.findIndex(b=>b.id===p.id);
+  const m = pi>=0 && !p.own && !p.generated ? PERSONA_META[pi]?.[i] : null;
+  return m ? {hours:m[0], risk:m[1]} : {};
+}
+function ruledOutOf(p){
+  if(Array.isArray(p.ruledOut)) return p.ruledOut.map(r=>[r.title,r.reason]);
+  const pi = typeof S.pi==="number" ? S.pi : BASE.findIndex(b=>b.id===p.id);
+  return pi>=0 && !p.own && !p.generated ? (RULED[S.lang]||RULED.en)[pi] : [];
+}
+function compareTable(p){
+  const t=T(), hrs=h=>Array.isArray(h)&&h.length===2?`${num(h[0])}–${num(h[1])}`:"—";
+  const metas=p.ideas.map((d,i)=>ideaMeta(p,i));
+  if(!metas.some(m=>m.hours||m.risk)) return "";
+  const row=(label,cells)=>`<tr><th scope="row">${label}</th>${cells.map(c=>`<td>${c}</td>`).join("")}</tr>`;
+  return `<section class="compare"><h3>${t.compareH}</h3><div class="tablewrap"><table>
+    <thead><tr><th></th>${p.ideas.map(d=>`<th scope="col">${esc(d.title)}${d.startHere?` <span class="badge">${t.startHere}</span>`:""}</th>`).join("")}</tr></thead>
+    <tbody>
+      ${row(t.fFirst,p.ideas.map(d=>esc(d.firstDollar)))}
+      ${row(t.fCost,p.ideas.map(d=>esc(d.startCost)))}
+      ${row(t.fPrice,p.ideas.map(d=>esc(d.price)))}
+      ${row(t.hoursL,metas.map(m=>hrs(m.hours)))}
+      ${row(t.riskL,metas.map(m=>m.risk?`<span class="risk r-${m.risk}">${t.risk[m.risk]||esc(m.risk)}</span>`:"—"))}
+    </tbody></table></div></section>`;
+}
+function ruledBox(p){
+  const t=T(), list=ruledOutOf(p);
+  if(!list.length) return "";
+  return `<section class="ruled"><h3>${t.whyNotH}</h3><p class="muted" style="font-size:.93rem">${t.whyNotP}</p><ul class="plain">${list.map(([a,b])=>`<li><strong>${esc(a)}</strong><span class="why">${ICON.info}<span>${esc(b)}</span></span></li>`).join("")}</ul></section>`;
+}
+function diffSection(){
+  const t=T();
+  return `<section class="section"><h2>${t.diffH}</h2><ul class="difflist">${t.diff.map(x=>`<li>${ICON.save}<span>${x}</span></li>`).join("")}</ul><a class="difflink" href="${COMPARE_URL}" target="_blank" rel="noopener">${t.diffLink}</a></section>`;
 }
 
 /* ---------- levels + package ---------- */

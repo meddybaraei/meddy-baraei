@@ -35,3 +35,4 @@ Rules that never change: no income promises, never the word "passive", honest re
 
 ## Daily log
 - Oct 13: Profile (name, age, step-by-step questions, delete anytime), competitor comparison page, fixes from competitor research (reality check, weekend test, honest pricing, free plan export, AI-labeled coach with suggested questions, forgiving routine, free local help).
+- Day 1 done (Oct 13): ideas compared side by side (first customer, cost, price, hours a week, risk), "Ideas we ruled out, and why" for every person, reality check uses every profile answer, "How Seedline is different" section on the home page linking to the comparison page, new check on the test page. Tested in all 4 languages on a phone screen.
