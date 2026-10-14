@@ -334,6 +334,26 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 
 .note{font-size:.86rem;color:var(--muted);margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
 .err{background:var(--warn-soft);border-radius:12px;padding:.8rem 1rem}
+.kitai{margin:10px 0 4px;display:grid;gap:8px;justify-items:start}
+.namegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:8px}
+.namechoice{border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;gap:6px;justify-items:start;background:var(--surface)}
+.namechoice.cur{border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal)}
+.namechoice .tag{font-size:.78rem;font-weight:700;color:var(--teal)}
+.msgitem{display:grid;gap:6px;margin-top:12px}
+.msgitem textarea{width:100%;font:inherit}
+.flyer{position:relative;overflow:hidden;background:#FFF8E8;color:#1F2A2E;border-radius:18px;padding:26px 22px;display:grid;gap:8px;margin:12px 0;max-width:460px;border:2px solid #F2B33D;font-family:var(--body,system-ui)}
+.flyer h3{font-size:1.6rem;line-height:1.15;color:#1C6B67;margin:0}
+.flyer p{margin:0}
+.flyer ul{margin:0;padding-inline-start:20px;display:grid;gap:4px}
+.flyerseed{position:absolute;inset-inline-end:-22px;top:-22px;width:90px;height:90px;border-radius:50% 50% 50% 0;background:#F2B33D;opacity:.35;transform:rotate(-45deg)}
+.flyeroffer{font-size:1.05rem}
+.flyerprice{font-size:1.3rem;font-weight:800}
+.flyercta{font-weight:700;color:#1C6B67}
+.flyercontact{border-top:1px dashed #C9B98F;padding-top:8px;font-weight:700}
+.pricerow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
+.pricerow>div{border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.practice{border-style:dashed}
+#contactin{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:.55rem .7rem}
 </style>
 
 <div class="wrap">
@@ -1140,7 +1160,7 @@ function renderChrome(){
   document.getElementById("footnote").textContent = t.footnote;
 }
 function render(){
-  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
+  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, kit:()=>kitView(true), welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
 }
 
 /* ---------- home ---------- */
@@ -1553,7 +1573,7 @@ function plan(noScroll){
     </div>
     <p class="saved">${ICON.save}<span>${t.saved}</span></p>
   </div>
-  <div class="actions"><button class="btn sun" type="button" id="day">${t.planDay}</button><button class="btn ghost" type="button" id="pkg">${t.packageBtn}</button><button class="btn ghost" type="button" id="launch">${t.launch}</button><button class="btn ghost" type="button" id="back">${t.pickAnother}</button></div>
+  <div class="actions"><button class="btn sun" type="button" id="day">${t.planDay}</button><button class="btn sun" type="button" id="kit">${t.kitBtn}</button><button class="btn ghost" type="button" id="pkg">${t.packageBtn}</button><button class="btn ghost" type="button" id="launch">${t.launch}</button><button class="btn ghost" type="button" id="back">${t.pickAnother}</button></div>
   <p id="launched" class="muted" hidden style="margin-top:10px">${fmt(t.launched,{name:p.own?t.you:esc(p.name)})}</p>
   ${levelsBox(0)}`;
   wireLevels();
@@ -1576,6 +1596,7 @@ function plan(noScroll){
   });
   document.getElementById("day").onclick=()=>day();
   document.getElementById("pkg").onclick=packageView;
+  document.getElementById("kit").onclick=()=>kitView();
   document.getElementById("launch").onclick=()=>{document.getElementById("launched").hidden=false;};
   document.getElementById("back").onclick=ideas;
   if(!det && !loading && !err && !DET.tried[key]) loadDetails();
@@ -1830,7 +1851,7 @@ function renderHub(){
     else { if(S.journeyView && S.pi!=null){ S.view=S.journeyView; render(); } else home(); }
   });
 }
-const JOURNEY_VIEWS=["talk","own","resume_up","work","strengths","ideas","plan","day","package","welcome"];
+const JOURNEY_VIEWS=["talk","own","resume_up","work","strengths","ideas","plan","day","package","kit","welcome"];
 
 /* ---------- agents ---------- */
 const AG={ list: store.get("seedline-agents") || [] };
@@ -2201,6 +2222,194 @@ function dreamView(){
 function goBackFromDream(){ S.view=S.prevView&&S.prevView!=="dream"?S.prevView:"home"; render(); }
 document.addEventListener("click", e=>{ if(e.target.closest("[data-dream]")){ e.preventDefault(); dreamView(); } });
 
+/* ---------- launch kit (Day 2) ---------- */
+const KIT = {
+en:{ kitBtn:"Launch kit", kitH:"Your launch kit", kitLead:"Everything you need to tell people about your business today: a name, messages ready to send, a flyer and a fair price.",
+  kitLoading:"Making your launch kit…", kitMake:"Make my launch kit with AI", kitBasic:"This is a basic version. Use AI to make it fit you and your area.", kitAI:"Made by AI from your plan. Read everything and change what doesn't sound like you before you send it.",
+  namesH:"1. Pick a name", namesP:"Short, easy to say and easy to spell. Before you use a name, check these 3 things:",
+  nameChecks:["Search your state's business name list to make sure no one else uses it","Check if the website name (.com) is free. You don't need to buy it yet","Check Facebook, Instagram and WhatsApp Business for the same name"],
+  useName:"Use this name", yourName:"Your name", registryVA:"Virginia business name search (State Corporation Commission)", registryOther:"Search for \"{state} business name search\" and use the official state website (it ends in .gov). Searching is free.",
+  msgsH:"2. Messages ready to send", msgsP:"Change anything so it sounds like you, then copy and send. Start with people who already know you.",
+  msgKinds:{text:"Text message",whatsapp:"WhatsApp",facebook:"Facebook post",flyer:"Flyer text"}, copy:"Copy", openWa:"Open in WhatsApp",
+  flyerH:"3. Your flyer", flyerP:"Add how people can reach you. Then save it as a picture to share or print.", contactLabel:"How people can reach you", contactPh:"For example: Text Maria at (703) 555-0123",
+  saveFlyer:"Save flyer as a picture", flyerSaving:"Making the picture…", flyerDone:"Saved.", flyerFail:"Couldn't save the picture here. Take a screenshot instead.", toPortfolio:"Add to my portfolio", addedPf:"Added to your portfolio.",
+  priceH:"4. What to charge", priceP:"A fair price covers your costs and pays you for your time. These are estimates for your area, not a promise. Before you decide, look up 3 local businesses that sell something similar.",
+  priceLow:"Lower", priceTyp:"Typical", priceHigh:"Higher", priceStart:"A good starting price for you", priceCovers:"Make sure your price covers", priceBasic:"Your plan suggests: {price}. Use AI to compare prices in your area.",
+  practiceH:"Practice your first conversation", practiceP:"Talking to your first customer is easier after you practice. Seedline AI plays a friendly customer, asks real questions, then gives you kind tips.", practiceBtn:"Practice with Seedline AI",
+  practicePrefill:"Let's practice. Pretend you are a possible customer for my business \"{name}\" ({offer}). Ask me the questions a real customer would ask, one at a time. After 4 questions, tell me kindly what I did well and one thing to improve.",
+  tmpl:{text:"Hi! I just started {name}: {offer}. My starting price is {price}. Do you know anyone who could use this? I'd really appreciate it.",
+    whatsapp:"Hi everyone! 👋 I'm starting something new: {name}. {offer}. Starting price: {price}. If you or someone you know needs this, send me a message. Thank you for your support!",
+    facebook:"I'm excited to share that I've started {name}! {offer}. I'm taking my first customers now, starting at {price}. Comment or send me a message if you'd like to know more. Sharing this post helps a lot. Thank you!",
+    flyer:"{name}\n{offer}\nStarting at {price}\nContact me today!"} },
+es:{ kitBtn:"Kit de lanzamiento", kitH:"Tu kit de lanzamiento", kitLead:"Todo lo que necesitas para contarle hoy a la gente sobre tu negocio: un nombre, mensajes listos para enviar, un volante y un precio justo.",
+  kitLoading:"Preparando tu kit de lanzamiento…", kitMake:"Crear mi kit de lanzamiento con IA", kitBasic:"Esta es una versión básica. Usa la IA para adaptarla a ti y a tu zona.", kitAI:"Hecho por IA a partir de tu plan. Léelo todo y cambia lo que no suene como tú antes de enviarlo.",
+  namesH:"1. Elige un nombre", namesP:"Corto, fácil de decir y de escribir. Antes de usar un nombre, revisa estas 3 cosas:",
+  nameChecks:["Busca en la lista de nombres de negocios de tu estado para asegurarte de que nadie más lo usa","Revisa si el nombre del sitio web (.com) está libre. Todavía no necesitas comprarlo","Revisa Facebook, Instagram y WhatsApp Business con el mismo nombre"],
+  useName:"Usar este nombre", yourName:"Tu nombre", registryVA:"Búsqueda de nombres de negocios de Virginia (State Corporation Commission)", registryOther:"Busca \"{state} business name search\" y usa el sitio oficial del estado (termina en .gov). Buscar es gratis.",
+  msgsH:"2. Mensajes listos para enviar", msgsP:"Cambia lo que quieras para que suene como tú, luego copia y envía. Empieza con personas que ya te conocen.",
+  msgKinds:{text:"Mensaje de texto",whatsapp:"WhatsApp",facebook:"Publicación de Facebook",flyer:"Texto del volante"}, copy:"Copiar", openWa:"Abrir en WhatsApp",
+  flyerH:"3. Tu volante", flyerP:"Agrega cómo pueden contactarte. Luego guárdalo como imagen para compartir o imprimir.", contactLabel:"Cómo pueden contactarte", contactPh:"Por ejemplo: Escribe a María al (703) 555-0123",
+  saveFlyer:"Guardar volante como imagen", flyerSaving:"Creando la imagen…", flyerDone:"Guardado.", flyerFail:"No se pudo guardar la imagen aquí. Toma una captura de pantalla.", toPortfolio:"Agregar a mi portafolio", addedPf:"Agregado a tu portafolio.",
+  priceH:"4. Cuánto cobrar", priceP:"Un precio justo cubre tus costos y te paga tu tiempo. Son estimaciones para tu zona, no una promesa. Antes de decidir, busca 3 negocios locales que vendan algo parecido.",
+  priceLow:"Más bajo", priceTyp:"Común", priceHigh:"Más alto", priceStart:"Un buen precio inicial para ti", priceCovers:"Asegúrate de que tu precio cubra", priceBasic:"Tu plan sugiere: {price}. Usa la IA para comparar precios en tu zona.",
+  practiceH:"Practica tu primera conversación", practiceP:"Hablar con tu primer cliente es más fácil después de practicar. Seedline AI hace de cliente amable, te hace preguntas reales y luego te da consejos.", practiceBtn:"Practicar con Seedline AI",
+  practicePrefill:"Practiquemos. Haz de posible cliente de mi negocio \"{name}\" ({offer}). Hazme las preguntas que haría un cliente real, una por una. Después de 4 preguntas, dime con amabilidad qué hice bien y una cosa para mejorar.",
+  tmpl:{text:"¡Hola! Acabo de empezar {name}: {offer}. Mi precio inicial es {price}. ¿Conoces a alguien que lo necesite? Te lo agradecería mucho.",
+    whatsapp:"¡Hola a todos! 👋 Estoy empezando algo nuevo: {name}. {offer}. Precio inicial: {price}. Si tú o alguien que conoces lo necesita, mándame un mensaje. ¡Gracias por su apoyo!",
+    facebook:"¡Me alegra contarles que empecé {name}! {offer}. Estoy recibiendo a mis primeros clientes, desde {price}. Comenta o mándame un mensaje si quieres saber más. Compartir esta publicación ayuda mucho. ¡Gracias!",
+    flyer:"{name}\n{offer}\nDesde {price}\n¡Contáctame hoy!"} },
+fa:{ kitBtn:"بستهٔ شروع", kitH:"بستهٔ شروع تو", kitLead:"هر چیزی که لازم داری تا همین امروز کسب‌وکارت را به مردم معرفی کنی: یک اسم، پیام‌های آمادهٔ ارسال، یک آگهی و یک قیمت منصفانه.",
+  kitLoading:"در حال آماده کردن بستهٔ شروع تو…", kitMake:"بستهٔ شروعم را با هوش مصنوعی بساز", kitBasic:"این یک نسخهٔ ساده است. با هوش مصنوعی آن را برای خودت و منطقه‌ات دقیق‌تر کن.", kitAI:"هوش مصنوعی این را از روی برنامه‌ات ساخته. قبل از ارسال همه را بخوان و هر چیزی که شبیه حرف زدن خودت نیست را تغییر بده.",
+  namesH:"۱. یک اسم انتخاب کن", namesP:"کوتاه، راحت برای گفتن و نوشتن. قبل از استفاده از یک اسم، این ۳ چیز را بررسی کن:",
+  nameChecks:["در فهرست اسم کسب‌وکارهای ایالتت جست‌وجو کن تا مطمئن شوی کس دیگری از آن استفاده نمی‌کند","ببین اسم وب‌سایت (.com) آزاد است یا نه. فعلاً لازم نیست آن را بخری","همین اسم را در فیسبوک، اینستاگرام و واتس‌اپ بیزینس بررسی کن"],
+  useName:"از این اسم استفاده کن", yourName:"اسم تو", registryVA:"جست‌وجوی اسم کسب‌وکار در ویرجینیا (State Corporation Commission)", registryOther:"عبارت \"{state} business name search\" را جست‌وجو کن و از سایت رسمی ایالت استفاده کن (آدرسش با ‎.gov تمام می‌شود). جست‌وجو رایگان است.",
+  msgsH:"۲. پیام‌های آمادهٔ ارسال", msgsP:"هر جایش را که خواستی تغییر بده تا شبیه حرف زدن خودت شود، بعد کپی کن و بفرست. از کسانی شروع کن که تو را می‌شناسند.",
+  msgKinds:{text:"پیامک",whatsapp:"واتس‌اپ",facebook:"پست فیسبوک",flyer:"متن آگهی"}, copy:"کپی", openWa:"باز کردن در واتس‌اپ",
+  flyerH:"۳. آگهی تو", flyerP:"بنویس مردم چطور می‌توانند با تو تماس بگیرند. بعد آن را به صورت عکس ذخیره کن تا به اشتراک بگذاری یا چاپ کنی.", contactLabel:"راه تماس با تو", contactPh:"مثلاً: پیامک به ماریا ‎(703) 555-0123",
+  saveFlyer:"ذخیرهٔ آگهی به صورت عکس", flyerSaving:"در حال ساختن عکس…", flyerDone:"ذخیره شد.", flyerFail:"اینجا نشد عکس را ذخیره کرد. به جایش از صفحه اسکرین‌شات بگیر.", toPortfolio:"افزودن به نمونه‌کارهایم", addedPf:"به نمونه‌کارهایت اضافه شد.",
+  priceH:"۴. چقدر بگیرم؟", priceP:"قیمت منصفانه هزینه‌هایت را پوشش می‌دهد و پول وقتت را هم می‌دهد. این‌ها تخمین برای منطقهٔ توست، نه یک قول. قبل از تصمیم، ۳ کسب‌وکار محلی را که چیز مشابهی می‌فروشند پیدا کن.",
+  priceLow:"پایین‌تر", priceTyp:"معمول", priceHigh:"بالاتر", priceStart:"یک قیمت شروع خوب برای تو", priceCovers:"مطمئن شو قیمتت این‌ها را پوشش می‌دهد", priceBasic:"برنامه‌ات پیشنهاد می‌کند: {price}. با هوش مصنوعی قیمت‌های منطقه‌ات را مقایسه کن.",
+  practiceH:"اولین گفت‌وگویت را تمرین کن", practiceP:"صحبت با اولین مشتری بعد از تمرین راحت‌تر است. Seedline AI نقش یک مشتری مهربان را بازی می‌کند، سؤال‌های واقعی می‌پرسد و بعد نکته‌های مفید می‌گوید.", practiceBtn:"تمرین با Seedline AI",
+  practicePrefill:"بیا تمرین کنیم. نقش یک مشتری احتمالی برای کسب‌وکار من «{name}» ({offer}) را بازی کن. سؤال‌هایی را که یک مشتری واقعی می‌پرسد یکی‌یکی از من بپرس. بعد از ۴ سؤال، با مهربانی بگو چه کاری را خوب انجام دادم و یک چیز را که باید بهتر کنم.",
+  tmpl:{text:"سلام! تازه {name} را شروع کرده‌ام: {offer}. قیمت شروعم {price} است. کسی را می‌شناسی که به این نیاز داشته باشد؟ خیلی ممنون می‌شوم.",
+    whatsapp:"سلام به همه! 👋 دارم کار تازه‌ای شروع می‌کنم: {name}. {offer}. قیمت شروع: {price}. اگر خودت یا آشنایی به این نیاز دارد، به من پیام بده. از حمایتتان ممنونم!",
+    facebook:"خوشحالم که خبر بدهم {name} را شروع کرده‌ام! {offer}. الان اولین مشتری‌هایم را می‌پذیرم، از {price}. اگر دوست داری بیشتر بدانی کامنت بگذار یا پیام بده. هم‌رسانی این پست خیلی کمک می‌کند. ممنونم!",
+    flyer:"{name}\n{offer}\nاز {price}\nهمین امروز تماس بگیرید!"} },
+ar:{ kitBtn:"حقيبة الانطلاق", kitH:"حقيبة الانطلاق الخاصة بك", kitLead:"كل ما تحتاجه لتخبر الناس عن مشروعك اليوم: اسم، ورسائل جاهزة للإرسال، ومنشور إعلاني، وسعر عادل.",
+  kitLoading:"نجهّز حقيبة الانطلاق…", kitMake:"اصنع حقيبة الانطلاق بالذكاء الاصطناعي", kitBasic:"هذه نسخة بسيطة. استخدم الذكاء الاصطناعي لتناسبك وتناسب منطقتك.", kitAI:"صنعها الذكاء الاصطناعي من خطتك. اقرأ كل شيء وغيّر ما لا يشبه أسلوبك قبل الإرسال.",
+  namesH:"١. اختر اسمًا", namesP:"قصير، وسهل النطق والكتابة. قبل أن تستخدم اسمًا، تحقق من هذه الأمور الثلاثة:",
+  nameChecks:["ابحث في قائمة أسماء الشركات في ولايتك لتتأكد أن لا أحد يستخدمه","تحقق إن كان اسم الموقع (.com) متاحًا. لا تحتاج إلى شرائه الآن","تحقق من الاسم نفسه في فيسبوك وإنستغرام وواتساب للأعمال"],
+  useName:"استخدم هذا الاسم", yourName:"اسمك", registryVA:"البحث عن أسماء الشركات في فيرجينيا (State Corporation Commission)", registryOther:"ابحث عن \"{state} business name search\" واستخدم الموقع الرسمي للولاية (ينتهي بـ ‎.gov). البحث مجاني.",
+  msgsH:"٢. رسائل جاهزة للإرسال", msgsP:"غيّر ما تريد لتبدو بأسلوبك، ثم انسخ وأرسل. ابدأ بالأشخاص الذين يعرفونك.",
+  msgKinds:{text:"رسالة نصية",whatsapp:"واتساب",facebook:"منشور فيسبوك",flyer:"نص المنشور الإعلاني"}, copy:"نسخ", openWa:"افتح في واتساب",
+  flyerH:"٣. منشورك الإعلاني", flyerP:"أضف طريقة التواصل معك. ثم احفظه كصورة لتشاركه أو تطبعه.", contactLabel:"كيف يتواصل الناس معك", contactPh:"مثلًا: راسل ماريا على ‎(703) 555-0123",
+  saveFlyer:"احفظ المنشور كصورة", flyerSaving:"نصنع الصورة…", flyerDone:"تم الحفظ.", flyerFail:"تعذّر حفظ الصورة هنا. التقط لقطة شاشة بدلًا من ذلك.", toPortfolio:"أضف إلى ملف أعمالي", addedPf:"أُضيف إلى ملف أعمالك.",
+  priceH:"٤. كم تطلب؟", priceP:"السعر العادل يغطي تكاليفك ويدفع لك مقابل وقتك. هذه تقديرات لمنطقتك وليست وعدًا. قبل أن تقرر، ابحث عن ٣ مشاريع محلية تبيع شيئًا مشابهًا.",
+  priceLow:"أقل", priceTyp:"المعتاد", priceHigh:"أعلى", priceStart:"سعر بداية مناسب لك", priceCovers:"تأكد أن سعرك يغطي", priceBasic:"خطتك تقترح: {price}. استخدم الذكاء الاصطناعي لمقارنة الأسعار في منطقتك.",
+  practiceH:"تدرّب على أول محادثة", practiceP:"الحديث مع أول عميل أسهل بعد التدريب. يلعب Seedline AI دور عميل لطيف، ويسأل أسئلة حقيقية، ثم يعطيك نصائح.", practiceBtn:"تدرّب مع Seedline AI",
+  practicePrefill:"لنتدرّب. تخيّل أنك عميل محتمل لمشروعي \"{name}\" ({offer}). اسألني الأسئلة التي يسألها عميل حقيقي، سؤالًا واحدًا كل مرة. بعد ٤ أسئلة، أخبرني بلطف بما أحسنت فيه وبشيء واحد أحسّنه.",
+  tmpl:{text:"مرحبًا! بدأت للتو {name}: {offer}. سعري في البداية {price}. هل تعرف أحدًا قد يحتاج هذا؟ سأكون ممتنًا جدًا.",
+    whatsapp:"مرحبًا بالجميع! 👋 أبدأ شيئًا جديدًا: {name}. {offer}. السعر في البداية: {price}. إذا كنت أنت أو أحد معارفك بحاجة إليه، أرسل لي رسالة. شكرًا لدعمكم!",
+    facebook:"يسعدني أن أخبركم أنني بدأت {name}! {offer}. أستقبل أول عملائي الآن، ابتداءً من {price}. اترك تعليقًا أو أرسل لي رسالة إن أردت أن تعرف المزيد. مشاركة هذا المنشور تساعد كثيرًا. شكرًا!",
+    flyer:"{name}\n{offer}\nابتداءً من {price}\nتواصل معي اليوم!"} }
+};
+Object.keys(KIT).forEach(l=>Object.assign(I18N[l],KIT[l]));
+const KITS={loading:{}, err:{}, tried:{}};
+const MSG_KINDS=["text","whatsapp","facebook","flyer"];
+function kitKey(){ const p=person(), d=p.ideas[S.idea]; return "seedline-kit-"+S.lang+"-"+hash(d.title+"|"+(d.plan?.offer||"")+"|"+locationOf()); }
+function isVirginia(loc){ return /\bVA\b|virginia|ویرجینیا|فيرجينيا/i.test(loc||""); }
+function stateOf(loc){ const m=String(loc||"").match(/,\s*([A-Za-z .]+?)\s*(?:\d{5})?\s*$/); return m?m[1].trim():""; }
+function basicKit(){
+  const t=T(), p=person(), d=p.ideas[S.idea], pl=d.plan||{}, v={name:pl.name||d.title, offer:pl.offer||d.pitch||"", price:d.price||""};
+  const messages={}; MSG_KINDS.forEach(k=>messages[k]=fmt(t.tmpl[k],v));
+  return {basic:true, names:[{name:v.name, why:""}], messages, flyer:{headline:v.name, bullets:[], cta:""}, price:null};
+}
+async function loadKit(){
+  const key=kitKey(); if(KITS.loading[key]) return;
+  KITS.loading[key]=true; KITS.tried[key]=true; delete KITS.err[key]; if(S.view==="kit") kitView(true);
+  try{
+    const sample=await getSample(); const p=person(), d=p.ideas[S.idea], pl=d.plan||{};
+    const prompt=`You are Seedline, an honest small-business coach for beginners. Make a launch kit so this person can tell people about their new business today.
+Rules:
+${COMMON_RULES(locationOf())}
+- Never promise income or results. Never use the word "passive". No hype, no fake urgency, no made-up reviews or numbers of customers.
+- Messages must sound like a real person talking to people who know them, warm and simple. Use "{contact}" where their phone or contact should go only in the flyer, nowhere else.
+- Prices are estimates for where they live; say so honestly.
+
+Business idea: ${d.title}. ${d.pitch||""}. Current name: ${pl.name||""}. Offer: ${pl.offer||""}. Their plan price: ${d.price||""}. Cost to start: ${d.startCost||""}.
+About the person: ${JSON.stringify(p.strengths||{})}${profileText()}
+
+Return only JSON:
+{"names":[{"name":"a short business name","why":"why it fits, 1 sentence"}],
+ "messages":{"text":"a text message to a friend or neighbor, 2-3 sentences","whatsapp":"a message for a WhatsApp group of people who know them, 3-4 sentences, at most 1 emoji","facebook":"a Facebook post for their own page, 4-5 sentences, asks people to share","flyer":"flyer text, 4 short lines separated by \\n"},
+ "flyer":{"headline":"business name or a 3-6 word headline","bullets":["3 short benefits, each under 8 words"],"cta":"short call to action"},
+ "price":{"low":"lower price in their area","typical":"typical price in their area","high":"higher price in their area","start":"a fair starting price for a beginner","why":"why that starting price, 1-2 sentences","covers":["3 to 4 costs the price must cover, for example materials, gas, time, platform fees"]}}
+"names" has exactly 4 items and the first item is the current name "${pl.name||d.title}" (keep it unless it is hard to spell). All prices in US dollars with the unit (per hour, per item, per visit).`;
+    const r=await sample.json(prompt,{modelTier:"default"});
+    if(!r || !r.messages || !Array.isArray(r.names)) throw {code:"invalid_json"};
+    store.set(key,r);
+  }catch(e){ KITS.err[key]=e; }
+  KITS.loading[key]=false;
+  if(S.view==="kit") kitView(true);
+}
+function flyerHtml(k, pl, d){
+  const contact=S.profile.contact||"";
+  return `<div class="flyer" id="flyer" dir="${T().dir}"><div class="flyerseed" aria-hidden="true"></div>
+    <h3>${esc(k.flyer?.headline||pl.name)}</h3><p class="flyeroffer">${esc(pl.offer||"")}</p>
+    ${(k.flyer?.bullets||[]).length?`<ul>${k.flyer.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>`:""}
+    <p class="flyerprice">${esc(k.price?.start||d.price||"")}</p>
+    ${k.flyer?.cta?`<p class="flyercta">${esc(k.flyer.cta)}</p>`:""}
+    <p class="flyercontact">${esc(contact)||"&nbsp;"}</p></div>`;
+}
+function kitView(noScroll){
+  S.view="kit"; setStep(3,noScroll);
+  const p=person(), t=T(), d=p.ideas[S.idea], pl=d.plan||{};
+  const key=kitKey(), saved=store.get(key), loading=KITS.loading[key], err=KITS.err[key];
+  const k=saved||basicKit();
+  const loc=locationOf(), st=stateOf(loc);
+  const aiNote = loading?`<p class="typing">${t.kitLoading}</p>`:err?`<p class="err">${errMsg(err)}</p><button class="btn small ghost" type="button" data-kitai>${t.tryAgain}</button>`:k.basic?`<p class="muted">${t.kitBasic}</p><button class="btn small sun" type="button" data-kitai>${t.kitMake}</button>`:`<p class="why">${ICON.info}<span>${t.kitAI}</span></p>`;
+  const registry = isVirginia(loc)?`<a href="https://cis.scc.virginia.gov/" target="_blank" rel="noopener">${t.registryVA}</a>`:esc(fmt(t.registryOther,{state:st||"your state"}));
+  app.innerHTML=`<span class="label">${esc(pl.name||d.title)}</span><h2 style="margin-top:6px">${t.kitH}</h2><p class="muted" style="margin-top:6px">${t.kitLead}</p>
+  <div class="kitai">${aiNote}</div>
+  <div class="plan">
+    <section class="box"><h3>${t.namesH}</h3><p class="muted" style="font-size:.93rem">${t.namesP}</p>
+      <ol class="plain">${t.nameChecks.map((c,i)=>`<li>${esc(c)}${i===0?`<span class="why">${ICON.info}<span>${registry}</span></span>`:""}</li>`).join("")}</ol>
+      <div class="namegrid">${(k.names||[]).map((n,i)=>{ const cur=n.name===pl.name; return `<div class="namechoice ${cur?"cur":""}"><strong>${esc(n.name)}</strong>${n.why?`<span class="muted" style="font-size:.9rem">${esc(n.why)}</span>`:""}${cur?`<span class="tag">${t.yourName}</span>`:`<button type="button" class="btn small ghost" data-usename="${i}">${t.useName}</button>`}</div>`; }).join("")}</div>
+    </section>
+    <section class="box"><h3>${t.msgsH}</h3><p class="muted" style="font-size:.93rem">${t.msgsP}</p>
+      ${MSG_KINDS.map(m=>`<div class="msgitem"><label class="label" for="msg-${m}">${t.msgKinds[m]}</label><textarea id="msg-${m}" dir="auto" class="edtext" rows="${m==="facebook"?5:m==="flyer"?4:3}" data-msg="${m}">${esc(k.messages?.[m]||"")}</textarea>
+        <div class="choices"><button type="button" class="btn small" data-copy="${m}">${t.copy}</button>${m==="whatsapp"?`<a class="btn small ghost" target="_blank" rel="noopener" data-wa href="https://wa.me/?text=${encodeURIComponent(k.messages?.whatsapp||"")}">${t.openWa}</a>`:""}<span class="muted" data-copymsg="${m}" aria-live="polite"></span></div></div>`).join("")}
+    </section>
+    <section class="box"><h3>${t.flyerH}</h3><p class="muted" style="font-size:.93rem">${t.flyerP}</p>
+      <div class="field"><label class="label" for="contactin">${t.contactLabel}</label><input id="contactin" dir="auto" type="text" maxlength="80" placeholder="${t.contactPh}" value="${esc(S.profile.contact||"")}"></div>
+      ${flyerHtml(k,pl,d)}
+      <div class="choices"><button type="button" class="btn small sun" id="saveflyer">${t.saveFlyer}</button><button type="button" class="btn small ghost" id="flyerpf">${t.toPortfolio}</button><span class="muted" id="flyermsg" aria-live="polite"></span></div>
+    </section>
+    <section class="box"><h3>${t.priceH}</h3><p class="muted" style="font-size:.93rem">${t.priceP}</p>
+      ${k.price?`<div class="pricerow"><div><span class="label">${t.priceLow}</span><b>${esc(k.price.low)}</b></div><div><span class="label">${t.priceTyp}</span><b>${esc(k.price.typical)}</b></div><div><span class="label">${t.priceHigh}</span><b>${esc(k.price.high)}</b></div></div>
+        <div class="namecard"><span class="label">${t.priceStart}</span><h2>${esc(k.price.start)}</h2><p>${esc(k.price.why||"")}</p></div>
+        ${(k.price.covers||[]).length?`<div><strong>${t.priceCovers}:</strong><ul class="plain" style="margin-top:6px">${k.price.covers.map(c=>`<li>${esc(c)}</li>`).join("")}</ul></div>`:""}`
+      :`<p>${esc(fmt(t.priceBasic,{price:d.price||""}))}</p>`}
+    </section>
+    <section class="box practice"><h3>${t.practiceH}</h3><p class="muted" style="font-size:.93rem">${t.practiceP}</p><div><button type="button" class="btn small sun" id="practice">${t.practiceBtn}</button></div></section>
+  </div>
+  <div class="actions"><button class="btn sun" type="button" id="kday">${t.planDay}</button><button class="btn ghost" type="button" id="kback">${t.back}</button></div>`;
+  app.querySelectorAll("[data-kitai]").forEach(b=>b.onclick=loadKit);
+  app.querySelectorAll("[data-usename]").forEach(b=>b.onclick=()=>{
+    const n=(k.names||[])[+b.dataset.usename]?.name; if(!n) return; const old=pl.name;
+    ensureCopy().ideas[S.idea].plan.name=n;
+    const cur=store.get(key); if(cur){ if(old) MSG_KINDS.forEach(m=>{ if(cur.messages?.[m]) cur.messages[m]=cur.messages[m].split(old).join(n); }); if(cur.flyer?.headline===old) cur.flyer.headline=n; store.set(key,cur); }
+    kitView(true);
+  });
+  app.querySelectorAll("[data-msg]").forEach(ta=>ta.oninput=()=>{
+    const cur=store.get(key)||basicKit(); (cur.messages ||= {})[ta.dataset.msg]=ta.value; store.set(key,cur);
+    if(ta.dataset.msg==="whatsapp"){ const a=app.querySelector("[data-wa]"); if(a) a.href="https://wa.me/?text="+encodeURIComponent(ta.value); }
+  });
+  app.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{
+    const m=b.dataset.copy, ta=document.getElementById("msg-"+m), out=app.querySelector(`[data-copymsg="${m}"]`);
+    try{ await navigator.clipboard.writeText(ta.value); out.textContent=t.copied; }catch{ ta.focus(); ta.select(); }
+  });
+  const ci=document.getElementById("contactin");
+  ci.oninput=()=>{ S.profile.contact=ci.value.trim(); saveProfile(); const f=app.querySelector(".flyercontact"); if(f) f.textContent=ci.value.trim()||" "; };
+  const fm=document.getElementById("flyermsg");
+  const flyerBlob=async()=>{
+    if(!pdfLibs) pdfLibs=loadScript("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js").then(()=>loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"));
+    await pdfLibs;
+    const el=document.getElementById("flyer"), clone=el.cloneNode(true); clone.removeAttribute("id");
+    clone.style.cssText="position:fixed;left:-10000px;top:0;width:600px;max-width:none;margin:0";
+    document.body.append(clone);
+    let canvas; try{ canvas=await window.html2canvas(clone,{scale:2, backgroundColor:null}); } finally { clone.remove(); }
+    return new Promise(res=>canvas.toBlob(res,"image/png"));
+  };
+  const fname=()=>(pl.name||"flyer").replace(/[\\/:*?"<>|]+/g,"").trim().slice(0,40)+" flyer.png";
+  document.getElementById("saveflyer").onclick=async()=>{ fm.textContent=t.flyerSaving; try{ await saveDownload(fname(), await flyerBlob()); fm.textContent=t.flyerDone; }catch(e){ fm.textContent=e?.code==="declined"?"":t.flyerFail; } };
+  document.getElementById("flyerpf").onclick=async()=>{ fm.textContent=t.flyerSaving; try{ const b=await flyerBlob(); await pfPut({id:"f"+Date.now(), name:fname(), type:"image/png", size:b.size, blob:b, step:t.kitH, note:"", added:Date.now()}); fm.textContent=t.addedPf; }catch{ fm.textContent=t.flyerFail; } };
+  document.getElementById("practice").onclick=()=>openCoachWith(fmt(t.practicePrefill,{name:pl.name||d.title, offer:pl.offer||""}));
+  document.getElementById("kday").onclick=()=>day();
+  document.getElementById("kback").onclick=()=>plan();
+  if(!saved && !loading && !err && !KITS.tried[key] && window.claude?.use) loadKit();
+}
+
 /* ---------- levels + package ---------- */
 function levelsBox(here){
   const t=T();
@@ -2366,7 +2575,7 @@ function propose(label, apply){
     drawCoach();
   });
 }
-const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView(), dream:()=>dreamView() };
+const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), kit:()=>kitView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView(), dream:()=>dreamView() };
 function superTools(){
   const t=T(), needPlan=()=>{ const p=S.pi!=null?person():null, d=p?.ideas?.[S.idea]; if(!d?.plan) throw new Error("The person has not chosen an idea and plan yet."); return d.plan; };
   return [
@@ -2410,11 +2619,11 @@ function superTools(){
          else { const e=r.experience?.[Number(experience)||0]; if(e) (e.bullets ||= []).push(text); }
          store.set("seedline-resume",r); if(S.view==="resume") resumeView(); });
        return ok?"approved":"the person skipped it"; }},
-    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | agents | portfolio | resume | profile | dream.",
+    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | kit (launch kit: names, ready-to-send messages, flyer, prices, practice) | agents | portfolio | resume | profile | dream.",
      inputSchema:{type:"object",properties:{section:{type:"string"}},required:["section"]},
      execute:async({section})=>{ const go=SECTION_GO[String(section)]; if(!go) throw new Error("unknown section");
-       if(["strengths","ideas","plan","day","package"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
-       if(["plan","day","package"].includes(section) && !person()?.ideas?.[S.idea]?.plan) throw new Error("No plan chosen yet.");
+       if(["strengths","ideas","plan","day","package","kit"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
+       if(["plan","day","package","kit"].includes(section) && !person()?.ideas?.[S.idea]?.plan) throw new Error("No plan chosen yet.");
        go(); C.log.push({role:"action", label:fmt(t.act.open,{x:section}), state:"applied"}); drawCoach(); return "opened"; }}
   ];
 }
