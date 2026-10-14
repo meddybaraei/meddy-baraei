@@ -1,0 +1,37 @@
+{
+ "hook": "POV: you never charge your camera battery again",
+ "hook_hl": "never",
+ "hook_photo": "video/tiktok/photos/mclean_garage.jpg",
+ "clips": [
+  {
+   "photo": "facebook-post/extras/ring_solar_floodlight.jpg",
+   "text": "the trick: a ring solar panel",
+   "hl": "solar"
+  },
+  {
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "text": "it keeps your camera topped up",
+   "hl": "topped up"
+  },
+  {
+   "photo": "video/tiktok/photos/mclean_ladder.jpg",
+   "text": "give it direct sunlight",
+   "hl": "sunlight"
+  },
+  {
+   "photo": "video/tiktok/photos/mclean_panel_box.jpg",
+   "text": "4 panels installed in mclean",
+   "hl": "4 panels"
+  },
+  {
+   "photo": "facebook-post/extras/ring_solar_floodlight.jpg",
+   "text": "no outlet? no problem.",
+   "hl": "no problem."
+  }
+ ],
+ "cta": [
+  "No outlet? We got you",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}
