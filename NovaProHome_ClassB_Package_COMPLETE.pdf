@@ -146,7 +146,7 @@ endobj
 /Rotate 0
 /Type /Page
 /Parent 2 0 R
-/Annots [ 405 0 R 406 0 R 407 0 R 408 0 R 409 0 R 410 0 R 411 0 R 412 0 R 413 0 R 414 0 R 415 0 R 416 0 R 417 0 R ]
+/Annots [ 404 0 R 405 0 R 406 0 R 407 0 R 408 0 R 409 0 R 410 0 R 411 0 R 412 0 R 413 0 R 414 0 R 415 0 R 416 0 R ]
 >>
 endobj
 15 0 obj
@@ -4753,7 +4753,7 @@ endobj
 /Rotate 0
 /Type /Page
 /Parent 2 0 R
-/Annots [ 418 0 R 419 0 R 420 0 R 421 0 R 422 0 R 423 0 R 424 0 R 425 0 R 426 0 R 427 0 R 428 0 R 429 0 R 430 0 R 431 0 R ]
+/Annots [ 417 0 R 418 0 R 419 0 R 420 0 R 421 0 R 422 0 R 423 0 R 424 0 R 425 0 R 426 0 R 427 0 R 428 0 R 429 0 R 430 0 R ]
 >>
 endobj
 66 0 obj
@@ -9299,7 +9299,7 @@ endobj
 /Rotate 0
 /Type /Page
 /Parent 2 0 R
-/Annots [ 432 0 R ]
+/Annots [ 431 0 R ]
 >>
 endobj
 155 0 obj
@@ -9707,7 +9707,7 @@ endobj
 /Rotate 0
 /Type /Page
 /Parent 2 0 R
-/Annots [ 433 0 R 434 0 R 435 0 R 436 0 R 437 0 R 438 0 R 439 0 R 440 0 R ]
+/Annots [ 432 0 R 433 0 R 434 0 R 435 0 R 436 0 R 437 0 R 438 0 R 439 0 R ]
 >>
 endobj
 175 0 obj
@@ -12551,7 +12551,7 @@ endobj
 /Rotate 0
 /Type /Page
 /Parent 2 0 R
-/Annots [ 441 0 R 442 0 R ]
+/Annots [ 440 0 R 441 0 R ]
 >>
 endobj
 249 0 obj
@@ -14951,7 +14951,7 @@ endobj
 /Rotate 0
 /Type /Page
 /Parent 2 0 R
-/Annots [ 443 0 R 444 0 R 445 0 R 446 0 R 447 0 R 448 0 R 449 0 R ]
+/Annots [ 442 0 R 443 0 R 444 0 R 445 0 R 446 0 R 447 0 R 448 0 R ]
 >>
 endobj
 316 0 obj
@@ -19766,16 +19766,17 @@ endobj
 /CropBox [ 0 0 612 792 ]
 /MediaBox [ 0 0 612 792 ]
 /Resources <<
+/XObject <<
+/FFT0 380 0 R
+>>
 /Font <<
 /C2_0 357 0 R
+/F1 403 0 R
 /TT0 369 0 R
 /TT1 366 0 R
 /TT2 372 0 R
 >>
-/ProcSet [ /PDF /Text ]
-/XObject <<
-/FFT0 382 0 R
->>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
 /Rotate 0
 /Type /Page
@@ -19783,76 +19784,761 @@ endobj
 >>
 endobj
 379 0 obj
-[ 380 0 R 381 0 R ]
+<<
+/Length 10179
+>>
+stream
+q
+q
+BT
+/Content <</MCID 0 >>BDC 
+0 0 0 rg
+/RelativeColorimetric ri
+/TT0 1 Tf
+9 0 0 9 54 36.094 Tm
+(A501-27EXP-v9)Tj
+EMC 
+/Content <</MCID 1 >>BDC 
+41.736 0 Td
+(Board for Contractors/EXP VER FORM)Tj
+EMC 
+/Content <</MCID 2 >>BDC 
+-41.736 -1 Td
+(08/01/2026)Tj
+EMC 
+/Content <</MCID 3 >>BDC 
+51.805 0 Td
+(Page 2 of 2)Tj
+EMC 
+ET
+/Artifact <</MCID 4 >>BDC 
+0 0 1 RG
+0 i 1.527 w 2 J 
+q 1 0 0 1 54 756 cm
+0 0 m
+504 0 l
+S
+Q
+EMC 
+BT
+/Content <</MCID 5 >>BDC 
+1 i 
+/TT1 1 Tf
+11 0 0 11 54 743.815 Tm
+(Section B:  Verifier  )Tj
+/TT0 1 Tf
+10 0 0 10 139.717 743.815 Tm
+(\(Completed by an individual who can attest to the applicant's experienc\e listed above in Section A.\))Tj
+EMC 
+ET
+/Artifact <</MCID 6 >>BDC 
+0 i 
+q 1 0 0 1 54 738 cm
+0 0 m
+504 0 l
+S
+Q
+EMC 
+BT
+/Content <</MCID 7 >>BDC 
+1 i 
+11 0 0 11 62.675 722.315 Tm
+(1.)Tj
+EMC 
+/Content <</MCID 8 >>BDC 
+1.83 0 Td
+(Verifier's Information:)Tj
+EMC 
+ET
+/Content <</MCID 9 >>BDC 
+0 0 0 RG
+0 i 0.5 w 0 J 
+q 1 0 0 1 136.55 703.44 cm
+0 0 m
+421.7 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 10 >>BDC 
+1 i 
+11 0 0 11 82.8 706.755 Tm
+(Name)Tj
+EMC 
+ET
+/Content <</MCID 11 >>BDC 
+0 i 
+q 1 0 0 1 136.55 685.44 cm
+0 0 m
+184.1 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 12 >>BDC 
+1 i 
+11 0 0 11 82.8 688.755 Tm
+(Job Title:)Tj
+EMC 
+ET
+/Content <</MCID 13 >>BDC 
+0 i 
+q 1 0 0 1 388.55 685.44 cm
+0 0 m
+169.7 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 14 >>BDC 
+1 i 
+11 0 0 11 327.6 688.755 Tm
+(Email Address )Tj
+EMC 
+ET
+/Content <</MCID 15 >>BDC 
+0 i 
+q 1 0 0 1 168.95 667.44 cm
+0 0 m
+151.7 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 16 >>BDC 
+1 i 
+11 0 0 11 82.8 670.755 Tm
+(Contact Number )Tj
+EMC 
+ET
+/Artifact <</MCID 17 >>BDC 
+0 i 
+q 1 0 0 1 148.371 630.227 cm
+0 0 m
+409.31 0 l
+S
+Q
+EMC 
+/Artifact <</MCID 18 >>BDC 
+q 1 0 0 1 148.246 610.418 cm
+0 0 m
+410.01 0 l
+S
+Q
+EMC 
+BT
+/Content <</MCID 19 >>BDC 
+1 i 
+11 0 0 11 84.43 652.828 Tm
+(Mailing Address)Tj
+EMC 
+/Content <</MCID 20 >>BDC 
+10 0 0 10 85.83 592.598 Tm
+(City )Tj
+EMC 
+/Content <</MCID 21 >>BDC 
+26.44 -0.055 Td
+(State \(abbr.\))Tj
+EMC 
+/Content <</MCID 22 >>BDC 
+9.316 0 Td
+(Zip Code)Tj
+EMC 
+/Content <</MCID 23 >>BDC 
+-35.869 4.145 Td
+(Address)Tj
+EMC 
+/Content <</MCID 24 >>BDC 
+0.041 -1.934 Td
+(APT/Unit #)Tj
+EMC 
+ET
+/Artifact <</MCID 25 >>BDC 
+0 i 
+q 1 0 0 1 104.581 591.205 cm
+0 0 m
+240.39 0 l
+S
+Q
+EMC 
+/Artifact <</MCID 26 >>BDC 
+q 1 0 0 1 398.633 590.04 cm
+0 0 m
+39.522 0 l
+S
+Q
+EMC 
+/Artifact <</MCID 27 >>BDC 
+q 1 0 0 1 479.579 590.61 cm
+0 0 m
+77.948 0 l
+S
+Q
+EMC 
+BT
+/Content <</MCID 28 >>BDC 
+1 i 
+11 0 0 11 62.675 572.546 Tm
+(2.)Tj
+EMC 
+/Content <</MCID 29 >>BDC 
+1.83 0 Td
+(Indicate which of the following best describes your relationship to the \applicant:   \(Select )Tj
+/TT1 1 Tf
+32.14 0 Td
+(all)Tj
+/TT0 1 Tf
+( that apply\))Tj
+EMC 
+ET
+/Artifact <</MCID 30 >>BDC 
+0 i 0.37 w 2 J 
+q 1 0 0 1 436.342 571.528 cm
+0 0 m
+10.033 0 l
+S
+Q
+EMC 
+1 1 1 rg
+1 i 
+85.34 554.94 9.3 9.3 re
+f
+/Content <</MCID 31 >>BDC 
+0 i 0.5 w 0 J 
+85.34 554.94 9.3 9.3 re
+S
+EMC 
+BT
+/Caption <</MCID 32 >>BDC 
+0 0 0 rg
+1 i 
+11 0 0 11 104.06 556.405 Tm
+(Building Official - List Locality)Tj
+EMC 
+ET
+/Artifact <</MCID 33 >>BDC 
+0 i 
+q 1 0 0 1 240.61 552.03 cm
+0 0 m
+317.028 0 l
+S
+Q
+EMC 
+1 1 1 rg
+1 i 
+85.34 536.94 9.3 9.3 re
+f
+/Content <</MCID 34 >>BDC 
+0 i 
+85.34 536.94 9.3 9.3 re
+S
+EMC 
+BT
+/Caption <</MCID 35 >>BDC 
+0 0 0 rg
+1 i 
+11 0 0 11 104.06 538.405 Tm
+(Building Inspector - List Locality)Tj
+EMC 
+ET
+/Artifact <</MCID 36 >>BDC 
+0 i 
+q 1 0 0 1 240.61 534.03 cm
+0 0 m
+316.124 0 l
+S
+Q
+EMC 
+1 1 1 rg
+1 i 
+85.178 469.022 9.3 9.3 re
+f
+/Content <</MCID 37 >>BDC 
+0 i 
+85.178 469.022 9.3 9.3 re
+S
+EMC 
+BT
+/Caption <</MCID 38 >>BDC 
+0 0 0 rg
+1 i 
+11 0 0 11 103.107 470.487 Tm
+(Licensed Architect )Tj
+EMC 
+/Caption <</MCID 39 >>BDC 
+9.169 -0.081 Td
+( License Number )Tj
+7.5 0 0 7.5 274.661 469.597 Tm
+(\(if applicable\))Tj
+EMC 
+ET
+1 1 1 rg
+85.178 440.06 9.3 9.3 re
+f
+/Content <</MCID 40 >>BDC 
+0 i 
+85.178 440.06 9.3 9.3 re
+S
+EMC 
+BT
+/Caption <</MCID 41 >>BDC 
+0 0 0 rg
+1 i 
+11 0 0 11 103.898 441.525 Tm
+(Licensed Prof. Engineer)Tj
+EMC 
+ET
+/Content <</MCID 42 >>BDC 
+0 i 
+q 1 0 0 1 531.887 465.793 cm
+0 0 m
+23.18 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 43 >>BDC 
+1 i 
+9 0 0 9 534.859 458.687 Tm
+(State)Tj
+EMC 
+ET
+/Content <</MCID 44 >>BDC 
+0 i 
+q 1 0 0 1 531.887 439.992 cm
+0 0 m
+23.18 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 45 >>BDC 
+1 i 
+9 0 0 9 534.859 432.886 Tm
+(State)Tj
+EMC 
+ET
+1 1 1 rg
+85.178 417.284 9.3 9.3 re
+f
+/Content <</MCID 46 >>BDC 
+0 i 
+85.178 417.284 9.3 9.3 re
+S
+EMC 
+BT
+/Caption <</MCID 47 >>BDC 
+0 0 0 rg
+1 i 
+11 0 0 11 104.618 418.749 Tm
+(Other* - Provide a brief description of your relationship to the applica\nt:)Tj
+EMC 
+ET
+/Artifact <</MCID 48 >>BDC 
+0 i 
+q 1 0 0 1 390.214 414.374 cm
+0 0 m
+166.364 0 l
+S
+Q
+EMC 
+BT
+/Content <</MCID 49 >>BDC 
+1 i 
+10 0 0 10 75.447 398.903 Tm
+(* )Tj
+/TT2 1 Tf
+0.566 0 Td
+(Other )Tj
+/TT0 1 Tf
+2.299 0 Td
+(may )Tj
+1.797 0 Td
+(be )Tj
+1.16 0 Td
+(an )Tj
+1.16 0 Td
+(applicant's )Tj
+4.098 0 Td
+(supervisor, )Tj
+4.258 0 Td
+(a )Tj
+0.704 0 Td
+(member )Tj
+3.255 0 Td
+(of )Tj
+0.932 0 Td
+(Human )Tj
+2.891 0 Td
+(Resources )Tj
+4.167 0 Td
+(from )Tj
+1.888 0 Td
+(the )Tj
+1.388 0 Td
+(company, )Tj
+3.803 0 Td
+(a )Tj
+0.704 0 Td
+(client, )Tj
+2.39 0 Td
+(etc. )Tj
+1.57 0 Td
+( )Tj
+0.248 0 Td
+(A )Tj
+0.794 0 Td
+(spouse )Tj
+2.892 0 Td
+(or )Tj
+0.977 0 Td
+(family )Tj
+-43.218 -1.2 Td
+(member should )Tj
+5.88 0 Td
+(not)Tj
+( be used to verify experience. Use of Other will delay the application a\s a Board review will be required. )Tj
+EMC 
+ET
+/Artifact <</MCID 50 >>BDC 
+0 i 0.337 w 2 J 
+q 1 0 0 1 141.446 385.977 cm
+0 0 m
+11.401 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 51 >>BDC 
+1 i 
+11 0 0 11 200.979 441.724 Tm
+( License Number )Tj
+7.5 0 0 7.5 271.673 441.724 Tm
+(\(if applicable\))Tj
+EMC 
+ET
+1 1 1 rg
+85.181 517.205 9.3 9.3 re
+f
+/Content <</MCID 52 >>BDC 
+0 i 0.5 w 0 J 
+85.181 517.205 9.3 9.3 re
+S
+EMC 
+BT
+/Caption <</MCID 53 >>BDC 
+0 0 0 rg
+1 i 
+11 0 0 11 103.901 518.67 Tm
+(Licensed Contractor )Tj
+EMC 
+ET
+/Content <</MCID 54 >>BDC 
+0 i 
+q 1 0 0 1 315.314 515.032 cm
+0 0 m
+242.63 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 55 >>BDC 
+1 i 
+11 0 0 11 204.684 518.347 Tm
+(Business/Company Name)Tj
+EMC 
+/Caption <</MCID 56 >>BDC 
+-0.065 -1.989 Td
+( License Number )Tj
+7.5 0 0 7.5 274.658 496.472 Tm
+(\(if applicable\))Tj
+EMC 
+ET
+/Content <</MCID 57 >>BDC 
+0 i 
+q 1 0 0 1 532.42 492.373 cm
+0 0 m
+23.18 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 58 >>BDC 
+1 i 
+9 0 0 9 535.392 485.267 Tm
+(State)Tj
+EMC 
+/Content <</MCID 59 >>BDC 
+11 0 0 11 62.675 362.793 Tm
+(3.)Tj
+EMC 
+ET
+/Artifact <</MCID 60 >>BDC 
+0 i 
+55.44 185.301 501.12 141.12 re
+S
+EMC 
+BT
+/Content <</MCID 61 >>BDC 
+1 i 
+9.5 0 0 9.5 82.8 344.253 Tm
+(This )Tj
+1.853 0 Td
+(verification )Tj
+4.224 0 Td
+(form )Tj
+1.944 0 Td
+(is )Tj
+0.896 0 Td
+(used )Tj
+2.082 0 Td
+(as )Tj
+1.17 0 Td
+(a )Tj
+0.76 0 Td
+(means )Tj
+2.765 0 Td
+(for )Tj
+1.261 0 Td
+(the )Tj
+1.444 0 Td
+(Board )Tj
+2.492 0 Td
+(to )Tj
+0.988 0 Td
+(verify)Tj
+( )Tj
+2.263 0 Td
+(that )Tj
+1.672 0 Td
+(an )Tj
+1.216 0 Td
+(applicant )Tj
+3.587 0 Td
+(has )Tj
+1.626 0 Td
+(the )Tj
+1.444 0 Td
+(experience )Tj
+4.316 0 Td
+(necessary )Tj
+4.042 0 Td
+(to )Tj
+0.988 0 Td
+(become )Tj
+3.221 0 Td
+(a )Tj
+0.76 0 Td
+(licensed )Tj
+EMC 
+ET
+/Content <</MCID 62 >>BDC 
+0 i 0.32 w 2 J 
+q 1 0 0 1 290.646 343.373 cm
+0 0 m
+18.615 0 l
+S
+Q
+BT
+1 i 
+9.5 0 0 9.5 82.8 331.669 Tm
+(tradesman and/or contractor within the Commonwealth of Virginia. Your re\sponse is appreciated.)Tj
+11 0 0 11 416.678 331.669 Tm
+( )Tj
+ET
+EMC 
+BT
+/Content <</MCID 63 >>BDC 
+/C2_0 1 Tf
+9 0 0 9 71.991 345.389 Tm
+<00BE>Tj
+EMC 
+/Content <</MCID 64 >>BDC 
+/TT0 1 Tf
+11 0 0 11 84.744 364.879 Tm
+(In your own words, describe the applicant's work duties \()Tj
+/TT1 1 Tf
+20.533 0 Td
+(experience)Tj
+(\))Tj
+/TT0 1 Tf
+( for which you have been asked to attest:)Tj
+EMC 
+ET
+/Artifact <</MCID 65 >>BDC 
+0 i 0.37 w 
+q 1 0 0 1 310.604 363.861 cm
+0 0 m
+47.137 0 l
+S
+Q
+EMC 
+BT
+/Content <</MCID 66 >>BDC 
+1 i 
+11 0 0 11 62.675 162.906 Tm
+(4.)Tj
+EMC 
+ET
+/Content <</MCID 67 >>BDC 
+0 i 0.5 w 0 J 
+q 1 0 0 1 318.547 159.871 cm
+0 0 m
+239.703 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 68 >>BDC 
+1 i 
+11 0 0 11 82.8 163.186 Tm
+(Provide the date\(s\) of when this experience was obtained:  )Tj
+EMC 
+/Content <</MCID 69 >>BDC 
+-1.83 -1.867 Td
+(5.)Tj
+EMC 
+/Content <</MCID 70 >>BDC 
+1.83 0 Td
+(I certify, to the best of my knowledge, all information provided on this\ form is true and accurate.)Tj
+EMC 
+ET
+/Content <</MCID 71 >>BDC 
+0 i 
+q 1 0 0 1 168.95 107.407 cm
+0 0 m
+274.1 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 72 >>BDC 
+1 i 
+11 0 0 11 82.8 110.722 Tm
+(Verifier's Signature)Tj
+EMC 
+ET
+/Content <</MCID 73 >>BDC 
+0 i 
+q 1 0 0 1 485.75 107.407 cm
+0 0 m
+72.5 0 l
+S
+Q
+EMC 
+BT
+/Caption <</MCID 74 >>BDC 
+1 i 
+11 0 0 11 450 110.722 Tm
+(Date)Tj
+EMC 
+ET
+
+Q
+q 1 0 0 1 0 0 cm /FFT0 Do Q
+
+Q
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1 12 Tf
+14.4 TL
+ET
+BT
+/F1 8.6 Tf
+10.32 TL
+ET
+BT
+1 0 0 1 64 314 Tm
+(I have personal knowledge of the work Meddy Baraei performed on our projects\056 His duties were Electronic\057Communication) Tj
+T*
+ET
+BT
+1 0 0 1 64 303.4 Tm
+(Service \050low\055voltage\051 work\054 including\072) Tj
+T*
+ET
+BT
+1 0 0 1 64 292.8 Tm
+(\055 Security camera systems\072 planning camera locations\054 running and terminating low\055voltage and PoE cabling\054 mounting and) Tj
+T*
+ET
+BT
+1 0 0 1 72 282.2 Tm
+(aiming cameras\054 installing and configuring NVR\057DVR recorders\054 and setting up remote viewing for the owner\056) Tj
+T*
+ET
+BT
+1 0 0 1 64 271.6 Tm
+(\055 Networking\072 installing structured cabling \050Cat5e\057Cat6\051\054 terminating jacks and patch panels\054 installing and configuring) Tj
+T*
+ET
+BT
+1 0 0 1 72 261 Tm
+(routers\054 network switches and Wi\055Fi access points\054 and testing and troubleshooting network connections\056) Tj
+T*
+ET
+BT
+1 0 0 1 64 250.4 Tm
+(\055 Smart home \057 smart building systems\072 installing and configuring video doorbells\054 smart locks\054 smart thermostats\054 sensors\054) Tj
+T*
+ET
+BT
+1 0 0 1 72 239.8 Tm
+(hubs and lighting controls\054 connecting them to the network and apps\054 and testing each system before turnover\056) Tj
+T*
+ET
+BT
+1 0 0 1 64 229.2 Tm
+(He followed the manufacturers\047 installation instructions and completed this work as part of our project team\056) Tj
+T*
+ET
+0 0 0 rg
+BT
+/F1 10 Tf
+12 TL
+ET
+BT
+1 0 0 1 330 163 Tm
+(04\05701\0572021 \055 04\05701\0572026) Tj
+T*
+ET
+Q
+
+endstream
 endobj
 380 0 obj
-<<
-/Filter /FlateDecode
-/Length 2541
->>
-stream
-xúïYiè€F˝.¿ˇ°Ä˝êI‡©È˚0å û…ÏÆÉ8ql≈».,(≤5ÍE $5⁄˘˜ãÊ•ìî√6@±ã’Øé˜∫˙Î‰~:π{»≥ eº}{˜··˝O@‡«ÔzÄ	Åßxö‹}riT˘g˜êßy·WÆ*|Öü‹Mß(L[økA
-‡
-â0]MnﬁIBoô~¸Û„Ì≥˝~˙ﬂ…„á8˝"Ìæ((jÆÄ¿4ô‹‹ÁQë¿"/ º_DqïÂ›„ü·À„'¯˚oü>[dù≈€÷‰-≠msGË#LØÂ›ZI—ŸzÛ1zr¿ _ Îó>N'wÔä /¢x∑\Ï√G·”?&<PîL√¸ìØ@°˘U
-–RAº™ﬂ^M$@ ù|û¸ﬁ|‚\Äd˜
-Bh⁄ZmÃ
-éÜ :ü]\˘<É˚7 _\·ﬁ aª “&⁄î Â5’f7˘jù∫ %0Å(ü%˛Ÿ'õ(ÖÌ2á8  ™*WVPÂP-DÎuÍ„(´æ+¡˝oÌ
-Ô≤xˆ AÍÀ`&öÁœ|ùwÔpˆ˝8¥j≠?FëõoDQ†∏√N1TZÇfyª{ä√Ÿbz3hxõ+∆ﬂï>[‰≈*
-|s∞πc;ˆ∞Í⁄¥!(a‰0i(W(%h¬Qà›Æ£®œÏ;Z◊ˆ≈F6n–D°ñÕ∂çVn‘gJ“z®å<êÅÙ
-Ÿòá òﬁ√üÛ9L}ï∫ql)ìs÷OeØBR¯…ôFu‡Ë„*Ú)ºKí¬ï%å;+á@U≠•Ù°≥Ú∫∞´QP5È}Ö™˚u≥öª∆KíÍ!oÖAÆ)(Nê1Ωó¶ƒ"? Ç3v˚∫:4…ÑE	
-∫WÔÇ$ÁÎZ;ÑÅ@¡AIÜÜôÑëO}ˆ‘ÖlÑivÂ‘wP#C/êñ°¥çπ_Ω¿àëæêò
-¡Ω%HB4í…ÕÁ*™Ãn¢˘ºÿoêß6˙™	¯v$˙oøÜá<q#Î˙‚∏Âç≤ êäÊ„ówøc;$Ç¬-EÀE≥ˆ„ÙÓèÃW∑ÒbÉ˘NJCAZäå»]∏ô »Ì•bÍ4É∏5®xMpwgë[îå]¥®O-
-mQj[[TtgQk¥¬\NIf∆iHjÜR®:âÿ1{ÜáﬁgâèC˙ló>^Ìàyëßiæ…=tù∏2.¸‹ïío
-(j©ógÂ“Ø;*üΩÍ…¸ Ãn>ª‘≈Uß Z˘¡R—~9J”Cyq’2™jQrâÊ9ŸœÇ¸åp\!§ jØÑV¿˘!¡AÑlç±ë»H)–
-∞»ÎøÖõ,ŒHAzËIO∆C6>7`ŒNtıQ»C¬R*§È≈˜ü&!Tø->ˆQ
-∑ã/+¯%è£‘W/ê"æPBäÇî	ﬂ´™ë0sz\]Åû8¯˙– 1Ã‰µòqsäŸ˚¨\ªpj¯F–ÜdfG†)§L\ çjBY$å]ÇM√6∞v8s8éîhö†0∫FÓª¨t	º+‚•Ø∫o;ŒÒ'Ïéo®≤5gôÊî≠°}	°Q÷üˇ3-P)ZÔIZ›û0¸¢;3ÃSwÿ#z4;0	Q«Qê≥8û,ÅQ–k`46ò}H¬¯±»èŸìœú+FUü`I'9Ec4%Q€Ω¥cÈ9Ç9ﬁ? ò˛úŒiAHÉ™-5∆Ωóº‰≠eﬂÓ•˜í34Fù˜Ú$9®Ff.5'°Œf«È⁄±Ù–◊¥'EÉ]ÉZÿzøUKW¸ ∑!=û}‚ Çy·›¢e‚Ê˘bòé€*ôΩ ™7ff ^‹dTÄ†π>8˙(‰Íä„≥8““Ω¯’·,•k©e	Øw¸CßX#J’	‘ç£YCfm˚˚*jÑ3Emu˚lÓ⁄GΩÃç≤ì'{„áì@bM˚[πYª‚ŸóyÒ∫˝ç…Ó∑®~BPìNÀ¨\ﬂƒ82ŸÑÚE˚¶Â¨}ÙœÕ™uÑ°±¥}˙…ï˘¶à]ÁU›>Eæj˝6¶s D∏y∆˚gqæZGŸÀÎ÷	C¯†∑qÍ]VΩnΩ‡åÆä±5+ªœ∑kôË>ÛÆ≥f;kÂ:ﬂîÆﬂR∑—ºËˆÆ˚ΩD+ü6°∫5·0¿ˆ,ó˘&MÍW$ˆ{ÀÚ*<πÅπÉMËöUœaÄÚ≤9Ñ?Jä¢Ió≠OSH\ΩÏD]8—ÏU	4√√¬={∑m^ü;(‹◊ç/\ÇµÚXÄûS†TPB7≤ÜaWB≈Ÿ”ËQ˜êt@˙3Äµ5ßh÷LR/S*E•˘¡öÎ)5ú≤BÁ#ÚB◊îlXXÈüí_CØñª’ëHŸMÖ«*rà¥8ï»© I%æOZÇ°‚WDPFP†2¢võ› ““gÆ,ÔöbÜÉÒ⁄©ÌûüÇ∞R≤>Z{ΩæíÑU(4ªúßòçu$g(ÀêÎoW#“ºDn#ë©sj‰‘√ˇüôπbµT
-V8éó∫:â≤“pT	YG(RVW:e«π|‰è:¨f€Ü#¸_Oÿ∏,”85]˙≤Î˚≤kÂuœÎ∫XÀJ¨Î√aà‹Æ∞¢{ÿ!hl«zum∫51]∑é∫èQ}L™Á∏(+€ÖZ…›W€ïL—zΩ#M≥mVãû$™º#âæ◊7}Ωi˜ÕÎLÒﬁpTµñïÓ]Ôxùù{KÜ“tªZˆULç∏ª£ïÁ›∏,s±+À®xÈ4ÉŸÕ‹≈˘ u¬Ä—!p”Æcçñú:j≠úùrS¶¿9Çñ_hèTˆıw? BNQ©FáVEî∏2(ñ(KÓÚ‚]C›˙jÈ≥ö\Ú’*œ∂.J´zÑÙ≈O>Û¬øÅ:{UÆÛ–ç|L·bU.©oWõÇ*T˙–ÉêÈHQıq˜¿˛st’®)ZKÅâ‹‘ﬂrˇ¯„`ÀP=Ï]{ÌœÄµ∑óçn¸{ü5"<ﬂf∞Õã§|›OÀNÆ∏∂yÒ$õ ªf7áì1FPr~í}u4çxP™ÆÿΩ‰XFœÊŒeï5Í®πgª ˝ï<Jß a»è†"aøÕ˛‰Rh§¸‹Ö¬1öC
-m¶ä°%ÕôM‡xÍÎU±ÔÆA)4Pi—h∫O<5πÇ¨’–§µ.™Å5ﬁvÁ≤‚$™‹Ï¶ú}Rªt°&¸ﬁÖ¶ÉmTB>Ø"üπ‰å˘UœX∑ıå6¸∏.ô‹»ë…Æﬁ]0ÏMv!v!‚/ØªCa=ÀÕ∞zÅø≤|õ∫‰…ΩÜ(M¡ÔÆ a›l-ÅºŸ»Ï‘‘‚K®äçù ¢8ﬁQÂ∆c¶Ô˛ök*J4
-≤'ãÉ(πBÎ—À?J	j÷(öΩ[÷œ˛)ã™M1>Ω–C”– ;Ùó√Ï˝
-èáÆÖ$ˇt4∏ò¸˛Ù*F
-endstream
-endobj
-381 0 obj
-<<
-/Filter /FlateDecode
-/Length 29
->>
-stream
-xú+T0T0P0Äí…π
-˙nn!
-.˘
-Å M+Á
-endstream
-endobj
-382 0 obj
 <<
 /BBox [ 0 0 612 792 ]
 /Filter /FlateDecode
 /FormType 1
 /Resources <<
 /XObject <<
-/F0 383 0 R
-/F1 384 0 R
-/F10 385 0 R
-/F12 386 0 R
-/F14 387 0 R
-/F16 388 0 R
-/F17 389 0 R
-/F19 390 0 R
-/F2 391 0 R
-/F20 392 0 R
-/F22 393 0 R
-/F23 394 0 R
-/F24 395 0 R
-/F25 396 0 R
-/F26 397 0 R
-/F28 398 0 R
-/F3 399 0 R
-/F4 400 0 R
-/F5 401 0 R
-/F6 402 0 R
-/F7 403 0 R
-/F8 404 0 R
+/F0 381 0 R
+/F1 382 0 R
+/F10 383 0 R
+/F12 384 0 R
+/F14 385 0 R
+/F16 386 0 R
+/F17 387 0 R
+/F19 388 0 R
+/F2 389 0 R
+/F20 390 0 R
+/F22 391 0 R
+/F23 392 0 R
+/F24 393 0 R
+/F25 394 0 R
+/F26 395 0 R
+/F28 396 0 R
+/F3 397 0 R
+/F4 398 0 R
+/F5 399 0 R
+/F6 400 0 R
+/F7 401 0 R
+/F8 402 0 R
 >>
 >>
 /Subtype /Form
@@ -19865,7 +20551,7 @@ xúçì;NFAÖ{W¡
 †îVÕÓÉı€∂ºÿ;wT¿.;–∏óÖsô B—¬äÄlﬁª“≈UF—`Xw‡X˛µp>öK{ó'zvZèUWRÑ2≥;¡Ì'h˛‘†êâqöëg0L!'±!˝¬î≈tGFOâ¸`Õ›ß›2˛·7ÿ”∫…≈ŸÜMﬂ§üÙ÷]k∞ƒôØÎ•‘:"ì‡HßêÕô£’eÂ∑˙ CBﬁ¬ç1S{f@Ê∂.ﬁ 6t∂°æVè`∑˝Ó§Ç∏R„—™òlß:H¢π∆~OëKÒ”)KÚJv‰µƒzÓ‚/Ω?ÏL
 endstream
 endobj
-383 0 obj
+381 0 obj
 <<
 /BBox [ 0 0 421.20001 16.5599995 ]
 /Filter /FlateDecode
@@ -19887,7 +20573,7 @@ xú¡¡
 /|<Öï_C«◊∫º˜ºéπ«€ú®‚DhÖ	ûµkD˝©•M8¥ù·änà¯{Áä
 endstream
 endobj
-384 0 obj
+382 0 obj
 <<
 /BBox [ 0 0 183.60001 16.5599995 ]
 /Filter /FlateDecode
@@ -19908,7 +20594,7 @@ xú¡¡
 Ç@–˝˝äª¨Ö„{¢Émg– pQ<h-u0bB7ı˘ùS⁄èaàƒ•R[uûZª∆süqGÜ0Qx¶¬«S8Q˘E0îq|ØÀgœÎò˚P‹ÊD'B[(L®ÿ8/Zµ'⁄Ñ√ëˆBg∏¢"˛{‡ä
 endstream
 endobj
-385 0 obj
+383 0 obj
 <<
 /BBox [ 0 0 316.52802 16.5599995 ]
 /Filter /FlateDecode
@@ -19929,7 +20615,7 @@ xú≈±
 ¬0–˝~≈u0}/⁄R◊ÑZ:(ƒ°–6T$b˚˘‚YNa+Câî Ω\Èk˛´∏å∏!Cò(l)<Û˛T~EÏ_ÛÙ^Ú‹ÁSÿ]«D'Bõ(L,]%ÍÎ#m¿fK{¢1\–t?≠Ò
 endstream
 endobj
-386 0 obj
+384 0 obj
 <<
 /BBox [ 0 0 315.62399 16.5599995 ]
 /Filter /FlateDecode
@@ -19951,7 +20637,7 @@ xú¡±
 OûyG*øàÜ*Øe~Øe 1ÓÆS¶ä°Õfx∂.à˙˝Å6b≥•=—.Ë˙Ñ?´xÌ
 endstream
 endobj
-387 0 obj
+385 0 obj
 <<
 /BBox [ 0 0 210.73399 18 ]
 /Filter [ /FlateDecode ]
@@ -19969,51 +20655,51 @@ Hâ<Œ±1D—‹U∏Ç`∏Ç≠d≥ª‰∂È¥; ¯zC˝jÑŸﬂZ°ùΩˇÓˆ4aPı˜ƒ˚¯i*`µH⁄ëd"$I;íB!kX“é$¶
 -0√kÀ©¬X0£Zs*Òi ŸL6j
 endstream
 endobj
+386 0 obj
+<<
+/BBox [ 0 0 22.68 16.5130005 ]
+/Filter /FlateDecode
+/FormType 1
+/Matrix [ 1 0 0 1 0 0 ]
+/Resources <<
+/Font <<
+/CalifornianFB-Reg 333 0 R
+>>
+/ProcSet [ /PDF ]
+>>
+/Subtype /Form
+/Type /XObject
+/Length 121
+>>
+stream
+xú¡ª
+¬@–˛~≈-µp3c≤n“Ó!Ö2`!Å<à»äiÙÛ=ß∞cóàî Ω∏CM≠ú◊íÎà2Ñ3Ö'
+œº?Ñï_DCë˙◊2Ω◊ºÙ˘w◊q¶ä°MŒPueEÔ|°nh6[⁄≠·Ç∂K¯=é
+endstream
+endobj
+387 0 obj
+<<
+/BBox [ 0 0 22.68 16.5130005 ]
+/Filter /FlateDecode
+/FormType 1
+/Matrix [ 1 0 0 1 0 0 ]
+/Resources <<
+/Font <<
+/CalifornianFB-Reg 333 0 R
+>>
+/ProcSet [ /PDF ]
+>>
+/Subtype /Form
+/Type /XObject
+/Length 121
+>>
+stream
+xú¡ª
+¬@–˛~≈-µp3c≤n“Ó!Ö2`!Å<à»äiÙÛ=ß∞cóàî Ω∏CM≠ú◊íÎà2Ñ3Ö'
+œº?Ñï_DCë˙◊2Ω◊ºÙ˘w◊q¶ä°MŒPueEÔ|°nh6[⁄≠·Ç∂K¯=é
+endstream
+endobj
 388 0 obj
-<<
-/BBox [ 0 0 22.68 16.5130005 ]
-/Filter /FlateDecode
-/FormType 1
-/Matrix [ 1 0 0 1 0 0 ]
-/Resources <<
-/Font <<
-/CalifornianFB-Reg 333 0 R
->>
-/ProcSet [ /PDF ]
->>
-/Subtype /Form
-/Type /XObject
-/Length 121
->>
-stream
-xú¡ª
-¬@–˛~≈-µp3c≤n“Ó!Ö2`!Å<à»äiÙÛ=ß∞cóàî Ω∏CM≠ú◊íÎà2Ñ3Ö'
-œº?Ñï_DCë˙◊2Ω◊ºÙ˘w◊q¶ä°MŒPueEÔ|°nh6[⁄≠·Ç∂K¯=é
-endstream
-endobj
-389 0 obj
-<<
-/BBox [ 0 0 22.68 16.5130005 ]
-/Filter /FlateDecode
-/FormType 1
-/Matrix [ 1 0 0 1 0 0 ]
-/Resources <<
-/Font <<
-/CalifornianFB-Reg 333 0 R
->>
-/ProcSet [ /PDF ]
->>
-/Subtype /Form
-/Type /XObject
-/Length 121
->>
-stream
-xú¡ª
-¬@–˛~≈-µp3c≤n“Ó!Ö2`!Å<à»äiÙÛ=ß∞cóàî Ω∏CM≠ú◊íÎà2Ñ3Ö'
-œº?Ñï_DCë˙◊2Ω◊ºÙ˘w◊q¶ä°MŒPueEÔ|°nh6[⁄≠·Ç∂K¯=é
-endstream
-endobj
-390 0 obj
 <<
 /BBox [ 0 0 165.863998 16.5599995 ]
 /Filter /FlateDecode
@@ -20035,7 +20721,7 @@ xú¡¡
 G*Ü"Ôe˛¨yÚ9nS¢ä°Õ&î¨ù-õmƒnO{°5\—ˆØˆ
 endstream
 endobj
-391 0 obj
+389 0 obj
 <<
 /BBox [ 0 0 169.2 16.5599995 ]
 /Filter /FlateDecode
@@ -20056,7 +20742,7 @@ xú¡±
 ¬0–˝~≈u0}/ÿ®kB-î‚Ph*±ã˝|œ©leÏÒÖR©·‡<uÔÍ¿eƒ¬LaK·Öèßp†Úáh®RˇûßœRÊæú„Ó6f™8⁄DaÜgÌÇ®?ûh6[⁄ç·ä¶K¯{Êä
 endstream
 endobj
-392 0 obj
+390 0 obj
 <<
 /BBox [ 0 0 211.177 18 ]
 /Filter [ /FlateDecode ]
@@ -20075,7 +20761,7 @@ wŒ¿RÆß
 Ål’äSâO˚0 N¥6Ÿ
 endstream
 endobj
-393 0 obj
+391 0 obj
 <<
 /BBox [ 0 0 242.13 16.5599995 ]
 /Filter /FlateDecode
@@ -20096,7 +20782,7 @@ xú¡¡
 Ç@–˝˝äªÃE„{ìJng∞ pQ<h-u0b$7ı˘ùS⁄è°èƒJ•ØƒÈÅZπ∫·6·éa¢L·Öèßp§Úã`(„^ÊuÀÀêOaõUúm¶0¡≥vç®?∂¥ªÇˆBg∏¢Î#˛êí¥
 endstream
 endobj
-394 0 obj
+392 0 obj
 <<
 /BBox [ 0 0 211.638 18 ]
 /Filter [ /FlateDecode ]
@@ -20114,7 +20800,7 @@ Hâ<Œ±1D—ú*\¡0∆¶Ç≠d≥ª‰∂È¥; ¯z√Ì"∆hÔ©0ºØ&≥˝nzHR˝=Ò>~»]ß'ÌHÚ±§IÀ‡ch“é$·
 =–ÖkÀ©¬`ÿ¥Zs*Ò°ø  Ò›6w
 endstream
 endobj
-395 0 obj
+393 0 obj
 <<
 /BBox [ 0 0 22.68 16.5130005 ]
 /Filter /FlateDecode
@@ -20136,7 +20822,7 @@ xú¡ª
 œº?Ñï_DCë˙◊2Ω◊ºÙ˘w◊q¶ä°MŒPueEÔ|°nh6[⁄≠·Ç∂K¯=é
 endstream
 endobj
-396 0 obj
+394 0 obj
 <<
 /BBox [ 0 0 501.12 141.119995 ]
 /Filter /FlateDecode
@@ -20157,7 +20843,7 @@ xúÃª
 ¬@–˛~≈-µp31Ì.QR(bH≤Dd%i‚Á¯©¢’ÈNfo˙:#î MY:Õ©Î?Sá+Ñë¬#Ö'ﬁÓ¬ñ ﬁêÖÊ9ÙØ)M:¯’•ãTq"¥û¬à_$ÆÿÂ€bOk±¯,iTÜ3™:‡	%˚
 endstream
 endobj
-397 0 obj
+395 0 obj
 <<
 /BBox [ 0 0 239.203 16.5599995 ]
 /Filter /FlateDecode
@@ -20178,7 +20864,7 @@ xú≈±
 ¬0–˝~≈u0}Ø5’Æ	U:(ƒ°–6T$b˝|Ò,ß∞/Câ7î ≤⁄πR*Í÷˘öÀà+2Ñâ¬#Ö'ﬁÓ¬Å Ç°à˝sû^Kû˚|õÀò®‚DhÖ	™ç´E=˝ørﬂ–¨÷¥Z√mÒrüN
 endstream
 endobj
-398 0 obj
+396 0 obj
 <<
 /BBox [ 0 0 72 16.5599995 ]
 /Filter /FlateDecode
@@ -20200,7 +20886,7 @@ xú¡±
 o|v¬Å ¡Pƒ˛=Oü%œ}æÑ];&™8⁄Da¬¡≥r^t:”l∂¥j√uÒPc*
 endstream
 endobj
-399 0 obj
+397 0 obj
 <<
 /BBox [ 0 0 151.199997 16.5599995 ]
 /Filter /FlateDecode
@@ -20221,7 +20907,7 @@ xú¡±
 ¬0–˝~≈u0}Ø4—Æ	U:(ƒ°–6T$b˝|œ©Ï«ÿ'‚•Rõ÷’‘∆˘¿u¬¬L·â¬3Ô·HÂ—P•·µÃÔµ,C9∆›u Tq"¥ô¬åΩwÅﬁ—˙–“Fl∂¥':√]üœ(
 endstream
 endobj
-400 0 obj
+398 0 obj
 <<
 /BBox [ 0 0 408.81 16.5599995 ]
 /Filter /FlateDecode
@@ -20242,7 +20928,7 @@ xú¡±
 ¬@E—˛}≈-µŸÃ»ö§5!Ñ-Ñ±¢!"ÇiÙÛ=ßä]È—Géì≠N≠„9Ìk÷ªŒzÀò1Få#ó´1·|’Ö™√∫‹^%pKfƒc÷éúkwb“fK<5ÑNJØ?E„
 endstream
 endobj
-401 0 obj
+399 0 obj
 <<
 /BBox [ 0 0 409.51001 16.5599995 ]
 /Filter /FlateDecode
@@ -20263,7 +20949,7 @@ xú¡±
 ¬@E—˛}≈-µŸÃ»∆µ5!¬¬ÄÖX—`¡4˙˘û”ƒèÆˆË#«…VRÎxNÌñÂÆ≥ﬁ2&å∆ëÀ’qæÍBÕ~yﬁ^5pKfƒc“ÜúäÌä;1jµ&f°ìÜ⁄ÎE-	
 endstream
 endobj
-402 0 obj
+400 0 obj
 <<
 /BBox [ 0 0 239.89 16.5599995 ]
 /Filter /FlateDecode
@@ -20284,7 +20970,7 @@ xú¡±
 ¬@E—˛}≈-µŸÃƒË∆“Ñ [b!DÉ"ÇiÙÛ=ßä]È—GéSØrj∑xì÷ÊõNzÀò0ˆŒcƒ˘™Uª˘q}ï¿-ôwåI5M ÷fwb‘bI<5ÑéJØ?Iv
 endstream
 endobj
-403 0 obj
+401 0 obj
 <<
 /BBox [ 0 0 39.021999 16.5599995 ]
 /Filter /FlateDecode
@@ -20305,7 +20991,7 @@ xú¡±
 ¬@E—˛}≈-µŸÃ¨—µ5!¬¬ÄÖX—†à`˝|œi‚GW{Ùë„¨J≤úÒ6≠7Ã7ùÙñ1aÏ1ú/∆àÛUjvÛ„˙™Å[2#Óì2m*∂-Óƒ®≈íxj5‘^D
 endstream
 endobj
-404 0 obj
+402 0 obj
 <<
 /BBox [ 0 0 77.447998 16.5599995 ]
 /Filter /FlateDecode
@@ -20326,7 +21012,16 @@ xú¡±
 ¬@E—˛}≈-µŸÃ»∆MkBÑ-Ñ±¢A¡4˙˘û”ƒèæË#«)m π√sj∑,7ùÙñ1cÏ1ú/∆ÑÛUjvÀ„˙™Å[2#Ó≥6‰T¨+Óƒ§’öxj5÷AI)
 endstream
 endobj
-405 0 obj
+403 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+404 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 245 462 555 474 ]
@@ -20339,7 +21034,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-406 0 obj
+405 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 308.9 361.7 318.1 370.9 ]
@@ -20352,7 +21047,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-407 0 obj
+406 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 299 300 391 312 ]
@@ -20365,7 +21060,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-408 0 obj
+407 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 92.9 205.8 102.1 215 ]
@@ -20378,7 +21073,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-409 0 obj
+408 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 359 206 371 220 ]
@@ -20391,7 +21086,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-410 0 obj
+409 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 375 206 387 220 ]
@@ -20404,7 +21099,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-411 0 obj
+410 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 410 206 420 220 ]
@@ -20417,7 +21112,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-412 0 obj
+411 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 424 206 435 220 ]
@@ -20430,7 +21125,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-413 0 obj
+412 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 439 206 450 220 ]
@@ -20443,7 +21138,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-414 0 obj
+413 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 454 206 465 220 ]
@@ -20456,7 +21151,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-415 0 obj
+414 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 469 206 480 220 ]
@@ -20469,7 +21164,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-416 0 obj
+415 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 484 206 495 220 ]
@@ -20482,7 +21177,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-417 0 obj
+416 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 499 206 509 220 ]
@@ -20495,7 +21190,7 @@ endobj
 /P 14 0 R
 >>
 endobj
-418 0 obj
+417 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 150 721 555 733 ]
@@ -20508,7 +21203,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-419 0 obj
+418 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 106 682 344 694 ]
@@ -20521,7 +21216,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-420 0 obj
+419 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 400 682 437 694 ]
@@ -20534,7 +21229,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-421 0 obj
+420 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 481 682 557 694 ]
@@ -20547,7 +21242,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-422 0 obj
+421 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 85 644 94.2 653.3 ]
@@ -20560,7 +21255,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-423 0 obj
+422 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 170 562 296 574 ]
@@ -20573,7 +21268,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-424 0 obj
+423 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 145 534 556 545 ]
@@ -20586,7 +21281,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-425 0 obj
+424 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 118.8 476.2 128 485.4 ]
@@ -20599,7 +21294,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-426 0 obj
+425 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 58 259 188 273 ]
@@ -20612,7 +21307,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-427 0 obj
+426 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 194 259 275 273 ]
@@ -20625,7 +21320,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-428 0 obj
+427 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 279 267.5 427 274 ]
@@ -20638,7 +21333,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-429 0 obj
+428 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 279 261 427 267.5 ]
@@ -20651,7 +21346,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-430 0 obj
+429 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 517 267.5 556 274 ]
@@ -20664,7 +21359,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-431 0 obj
+430 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 517 261 556 267.5 ]
@@ -20677,7 +21372,7 @@ endobj
 /P 65 0 R
 >>
 endobj
-432 0 obj
+431 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 135.1 324.6 144.4 333.9 ]
@@ -20690,7 +21385,7 @@ endobj
 /P 154 0 R
 >>
 endobj
-433 0 obj
+432 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 90 708 124 722 ]
@@ -20703,7 +21398,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-434 0 obj
+433 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 130 708 232 722 ]
@@ -20716,7 +21411,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-435 0 obj
+434 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 238 708 332 722 ]
@@ -20729,7 +21424,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-436 0 obj
+435 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 495 717.5 528 723 ]
@@ -20742,7 +21437,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-437 0 obj
+436 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 495 712 528 717.5 ]
@@ -20755,7 +21450,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-438 0 obj
+437 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 118.8 275.1 128 284.3 ]
@@ -20768,7 +21463,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-439 0 obj
+438 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 140.4 199.5 149.6 208.8 ]
@@ -20781,7 +21476,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-440 0 obj
+439 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 140.4 120.5 149.6 129.7 ]
@@ -20794,7 +21489,7 @@ endobj
 /P 174 0 R
 >>
 endobj
-441 0 obj
+440 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 118.8 644.7 128 654 ]
@@ -20807,7 +21502,7 @@ endobj
 /P 248 0 R
 >>
 endobj
-442 0 obj
+441 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 116.9 566.3 126.9 576.3 ]
@@ -20820,7 +21515,7 @@ endobj
 /P 248 0 R
 >>
 endobj
-443 0 obj
+442 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 85 435 228 448 ]
@@ -20833,7 +21528,7 @@ endobj
 /P 315 0 R
 >>
 endobj
-444 0 obj
+443 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 236 435 378 448 ]
@@ -20846,7 +21541,7 @@ endobj
 /P 315 0 R
 >>
 endobj
-445 0 obj
+444 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 150 288 555 300 ]
@@ -20859,7 +21554,7 @@ endobj
 /P 315 0 R
 >>
 endobj
-446 0 obj
+445 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 104 247 345 260 ]
@@ -20872,7 +21567,7 @@ endobj
 /P 315 0 R
 >>
 endobj
-447 0 obj
+446 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 400 247 440 260 ]
@@ -20885,7 +21580,7 @@ endobj
 /P 315 0 R
 >>
 endobj
-448 0 obj
+447 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 480 247 555 260 ]
@@ -20898,7 +21593,7 @@ endobj
 /P 315 0 R
 >>
 endobj
-449 0 obj
+448 0 obj
 <<
 /Subtype /FreeText
 /Rect [ 208 227 330 240 ]
@@ -20912,7 +21607,7 @@ endobj
 >>
 endobj
 xref
-0 450
+0 449
 0000000000 65535 f 
 0000000015 00000 n 
 0000000117 00000 n 
@@ -21292,83 +21987,82 @@ xref
 0001852643 00000 n 
 0001852946 00000 n 
 0001864107 00000 n 
-0001864370 00000 n 
-0001864407 00000 n 
-0001867023 00000 n 
-0001867125 00000 n 
-0001867901 00000 n 
-0001868267 00000 n 
-0001868632 00000 n 
-0001868999 00000 n 
-0001869366 00000 n 
-0001869694 00000 n 
-0001870060 00000 n 
-0001870426 00000 n 
-0001870794 00000 n 
-0001871156 00000 n 
-0001871482 00000 n 
-0001871845 00000 n 
-0001872171 00000 n 
-0001872537 00000 n 
-0001872906 00000 n 
-0001873276 00000 n 
-0001873634 00000 n 
-0001874003 00000 n 
-0001874346 00000 n 
-0001874692 00000 n 
-0001875036 00000 n 
-0001875382 00000 n 
-0001875728 00000 n 
-0001875930 00000 n 
-0001876125 00000 n 
-0001876319 00000 n 
-0001876511 00000 n 
-0001876698 00000 n 
-0001876885 00000 n 
-0001877072 00000 n 
-0001877259 00000 n 
-0001877446 00000 n 
-0001877633 00000 n 
-0001877820 00000 n 
-0001878007 00000 n 
-0001878194 00000 n 
-0001878402 00000 n 
-0001878597 00000 n 
-0001878786 00000 n 
-0001878978 00000 n 
-0001879167 00000 n 
-0001879372 00000 n 
-0001879586 00000 n 
-0001879779 00000 n 
-0001879976 00000 n 
-0001880173 00000 n 
-0001880382 00000 n 
-0001880591 00000 n 
-0001880787 00000 n 
-0001880979 00000 n 
-0001881175 00000 n 
-0001881364 00000 n 
-0001881557 00000 n 
-0001881749 00000 n 
-0001881951 00000 n 
-0001882149 00000 n 
-0001882343 00000 n 
-0001882539 00000 n 
-0001882735 00000 n 
-0001882927 00000 n 
-0001883123 00000 n 
-0001883316 00000 n 
-0001883509 00000 n 
-0001883718 00000 n 
-0001883914 00000 n 
-0001884104 00000 n 
-0001884297 00000 n 
+0001864406 00000 n 
+0001874640 00000 n 
+0001875416 00000 n 
+0001875782 00000 n 
+0001876147 00000 n 
+0001876514 00000 n 
+0001876881 00000 n 
+0001877209 00000 n 
+0001877575 00000 n 
+0001877941 00000 n 
+0001878309 00000 n 
+0001878671 00000 n 
+0001878997 00000 n 
+0001879360 00000 n 
+0001879686 00000 n 
+0001880052 00000 n 
+0001880421 00000 n 
+0001880791 00000 n 
+0001881149 00000 n 
+0001881518 00000 n 
+0001881861 00000 n 
+0001882207 00000 n 
+0001882551 00000 n 
+0001882897 00000 n 
+0001883243 00000 n 
+0001883352 00000 n 
+0001883554 00000 n 
+0001883749 00000 n 
+0001883943 00000 n 
+0001884135 00000 n 
+0001884322 00000 n 
+0001884509 00000 n 
+0001884696 00000 n 
+0001884883 00000 n 
+0001885070 00000 n 
+0001885257 00000 n 
+0001885444 00000 n 
+0001885631 00000 n 
+0001885818 00000 n 
+0001886026 00000 n 
+0001886221 00000 n 
+0001886410 00000 n 
+0001886602 00000 n 
+0001886791 00000 n 
+0001886996 00000 n 
+0001887210 00000 n 
+0001887403 00000 n 
+0001887600 00000 n 
+0001887797 00000 n 
+0001888006 00000 n 
+0001888215 00000 n 
+0001888411 00000 n 
+0001888603 00000 n 
+0001888799 00000 n 
+0001888988 00000 n 
+0001889181 00000 n 
+0001889373 00000 n 
+0001889575 00000 n 
+0001889773 00000 n 
+0001889967 00000 n 
+0001890163 00000 n 
+0001890359 00000 n 
+0001890551 00000 n 
+0001890747 00000 n 
+0001890940 00000 n 
+0001891133 00000 n 
+0001891342 00000 n 
+0001891538 00000 n 
+0001891728 00000 n 
+0001891921 00000 n 
 trailer
 <<
-/Size 450
+/Size 449
 /Root 3 0 R
 /Info 1 0 R
 >>
 startxref
-1884503
+1892127
 %%EOF
