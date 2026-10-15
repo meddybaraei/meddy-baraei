@@ -130,6 +130,15 @@ def draw_art(d, kind, cx, cy, r):
 
 def card_scene(s):
     im = Image.new('RGB', (W, H), BG); d = top(im)
+    if s['art'] == 'chapter':
+        cx = W / 2; y = (720 if V else 300)
+        if s.get('num'):
+            d.ellipse((cx - 70, y - 70, cx + 70, y + 70), fill=ACC); ctr(d, y - 38, str(s['num']), fb(72), WHITE, cx); y += 130
+        for ln in wrap(d, s.get('title', ''), fb(84), W - 260): ctr(d, y, ln, fb(84), TXT, cx); y += 104
+        if s.get('body'):
+            y += 20
+            for ln in wrap(d, s['body'], fs(44), W - 300): ctr(d, y, ln, fs(44), SUB, cx); y += 60
+        return lambda t: im
     if s['art'] == 'list':
         y = 520 if V else 220
         d.text((80 if V else 140, y - 10), s.get('title', ''), font=fb(72 if V else 70), fill=TXT)
