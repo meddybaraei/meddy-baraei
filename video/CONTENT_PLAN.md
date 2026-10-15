@@ -111,3 +111,9 @@ Before scheduling or changing any post, show the owner the video + title + descr
 Real job, Vienna VA (Carrier heat pump + ecobee Premium). Files: video/weekly/2026-10-22_ecobee-humidity-fix(.json|.mp4|_short.mp4), video/tiktok/2026-10-22_ecobee-humidity_tiktok.mp4, video/social/ecobee-humidity/slide-01..12.jpg.
 - YouTube Thu Oct 22 4:00 PM (video) + 4:30 PM (Short); TikTok Oct 22 6 PM; Facebook Reel Oct 22 6:30 PM; LinkedIn PDF guide Fri Oct 23 9 AM; Facebook photo set Sat Oct 24 12 PM.
 - Took the Oct 22 Thursday tip slot; topic #3 (Ring motion sensitivity) moves to Thu Oct 29.
+
+## Long-form compilations (owner asked Oct 15 for longer YouTube videos; for watch hours)
+- `video/long/` configs merge existing configs with chapter cards (`"art": "chapter"` in make_series.py). Covers: *_cover.jpg.
+- Sat Oct 17 4 PM: Smart Home Starter Guide, 11 Devices Explained (5:48). Fri Oct 23 4 PM: 5 Real Smart Home Installs in Northern Virginia (4:04).
+- YouTube chapters: first at 0:00 and each ≥10 s (fold the short intro into chapter 1).
+- Keep making 1 long video per week (aim 6–10 min) alongside Shorts.
