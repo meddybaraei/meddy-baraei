@@ -117,3 +117,8 @@ Real job, Vienna VA (Carrier heat pump + ecobee Premium). Files: video/weekly/20
 - Sat Oct 17 4 PM: Smart Home Starter Guide, 11 Devices Explained (5:48). Fri Oct 23 4 PM: 5 Real Smart Home Installs in Northern Virginia (4:04).
 - YouTube chapters: first at 0:00 and each ≥10 s (fold the short intro into chapter 1).
 - Keep making 1 long video per week (aim 6–10 min) alongside Shorts.
+
+## Like & subscribe (owner, Oct 15) — every YouTube video
+- End card shows a red "LIKE & SUBSCRIBE · for more smart home tips" badge (make_series.py default; set "subscribe": "" in a config to hide).
+- Every YouTube description includes: "👍 Like & subscribe to @NovaProHome for more smart home tips!"
+- Subscribing is never a condition of the giveaway entry.

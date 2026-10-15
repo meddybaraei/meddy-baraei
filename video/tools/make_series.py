@@ -199,7 +199,12 @@ def end_card():
     ctr(d, y, a, fb(60), TXT); y += 90
     ctr(d, y, b, fb(84), ACC); y += 120
     ctr(d, y, 'Meddy@novaprohome.com', fb(64), TXT); y += 110
-    ctr(d, y, 'Ring Authorized Dealer · Google Nest Pro', fs(40), SUB)
+    ctr(d, y, 'Ring Authorized Dealer · Google Nest Pro', fs(40), SUB); y += 90
+    sub = CFG.get('subscribe', 'LIKE & SUBSCRIBE')
+    if sub:
+        f = fb(52); w = d.textlength(sub, font=f); x0 = (W - w) / 2 - 40
+        d.rounded_rectangle((x0, y - 14, x0 + w + 80, y + 76), 44, fill=(220, 38, 38)); ctr(d, y, sub, f, WHITE); y += 100
+        ctr(d, y, 'for more smart home tips', fs(40), TXT)
     return lambda t: im
 
 scenes = [(s.get('dur', 4.0), photo_scene(s) if 'photo' in s else product_scene(s) if 'product' in s else card_scene(s)) for s in CFG['scenes']]
