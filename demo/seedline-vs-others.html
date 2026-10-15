@@ -103,7 +103,7 @@ const P = [
  ["Promises of easy or “passive” AI income","FTC cases: Automators AI, Ascend Ecom, Click Profit, Air AI","No income promises, ever. The word “passive” is banned. Every idea shows real costs, time and risks.","In the demo"],
  ["Generic ideas that could fit anyone","ChatGPT lists, online courses, idea newsletters","Every idea says why it fits, quoting the person's own words, résumé or photos. They can edit any answer and the ideas update.","In the demo"],
  ["AI that says every idea is great","ChatGPT's 2025 “flattery” rollback; Polsia builds with no testing","A reality check on every idea (demand, competition, main risk) and a cheap weekend test before spending money.","In the demo"],
- ["Wrong or non-local legal advice","NYC's business chatbot gave illegal advice; mentors who don't know state rules","Local rules for their ZIP, county and state, naming the office to confirm with. Free government steps are marked free.","In the demo. Checked rules list with official links next."],
+ ["Wrong or non-local legal advice","NYC's business chatbot gave illegal advice; mentors who don't know state rules","Local rules for their ZIP, county and state, naming the office to confirm with. Free government steps are marked free.","In the demo, with a checked Virginia list and official links"],
  ["AI hurts beginners who don't know what to ask","Study of 640 business owners: AI advice helped strong ones, hurt weaker ones","Guided questions, one step at a time, suggested questions for the coach, and screenshot help.","In the demo"],
  ["People quit after setup","Polsia ~50% leave in month one; website builders stop at the website","A daily routine around work, gym and family, with business tasks taken from their plan.","In the demo. Weekly check-ins next."],
  ["Help only in English","SBDC reports, government programs, most tools","English, Spanish, Persian and Arabic, right-to-left layout, and voice typing with spelling fixed as you go.","In the demo"],
@@ -113,7 +113,7 @@ const P = [
  ["Upsells when people are most unsure","LegalZoom charging up to $159 for an EIN that's free from the IRS","The launch plan says what is free and official, what is optional, and real fees.","In the demo"],
  ["You can't take your work with you","Durable sites can't be exported","Copy your whole plan as text for free. You own it.","In the demo"],
  ["Guilt and streak shame","Habitica, streak-based habit apps","“Missed a day? That's okay.” Progress counts as promises kept, with no penalties.","In the demo"],
- ["Real human help is rare and slow","SCORE quality varies; immigrant programs are full","Names free local help, and later a one-page summary to bring to an SBDC or SCORE meeting.","Partly in the demo. Summary next."]
+ ["Real human help is rare and slow","SCORE quality varies; immigrant programs are full","Free help finder by ZIP, and a one-page summary to bring to an SBDC or SCORE meeting, with headings also in English.","In the demo"]
 ];
 document.getElementById("ledger").innerHTML = P.map((r,i)=>`<div class="row"><span class="num">${i+1}</span><div><h3>${r[0]}</h3><p class="who">${r[1]}</p></div><div class="fix"><p>${r[2]}</p><span><span class="pill ${r[3].startsWith("In the demo")&&!r[3].includes("next")?"y":"p"}">${r[3]}</span></span></div></div>`).join("");
 </script>

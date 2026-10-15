@@ -354,6 +354,19 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .pricerow>div{border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
 .practice{border-style:dashed}
 #contactin{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:.55rem .7rem}
+.valist{display:grid;gap:6px;border:1.5px solid var(--teal);border-radius:14px;padding:12px;margin:6px 0 10px}
+.vameta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.88rem;margin-top:4px}
+.txtin{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:.55rem .7rem}
+.bil{display:flex;gap:8px;align-items:center;margin:10px 0;font-size:.95rem}
+.advsheet{background:#fff;color:#14232A;border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px;margin-top:8px}
+.advsheet header{border-bottom:2px solid #F2B33D;padding-bottom:8px}
+.advsheet h2{font-size:1.4rem;color:#1C6B67}
+.advsheet h3{font-size:1rem;margin-bottom:4px}
+.advsheet .en{display:block;color:#5B6B70;font-weight:400;font-size:.85em}
+.advsheet ul,.advsheet ol{margin:0;padding-inline-start:20px;display:grid;gap:3px}
+.advsheet p{margin:0}
+.xq{border:0;background:none;color:#8A979B;font-size:1.1rem;cursor:pointer;padding:0 6px}
+.printing .xq{display:none}
 </style>
 
 <div class="wrap">
@@ -1160,7 +1173,7 @@ function renderChrome(){
   document.getElementById("footnote").textContent = t.footnote;
 }
 function render(){
-  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, kit:()=>kitView(true), welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
+  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, kit:()=>kitView(true), advisor:()=>advisorView(true), welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
 }
 
 /* ---------- home ---------- */
@@ -1564,9 +1577,11 @@ function plan(noScroll){
     <div class="box">
       <h3>${t.localH}</h3>
       <p class="muted" style="font-size:.92rem">${fmt(t.localP,{loc:esc(locationOf())})}</p>
-      ${det?.local?.length?`<ol class="plain">${det.local.map(l=>`<li><strong>${esc(l.step)}</strong><span class="why">${ICON.info}<span>${t.whoLabel}: ${esc(l.who)}. ${esc(l.why)}</span></span></li>`).join("")}</ol>`:`<div>${detNote}</div>`}
+      ${isVirginia(locationOf())?vaListHtml():""}
+      ${det?.local?.length?`<div><strong>${isVirginia(locationOf())?t.aiLocalH:""}</strong><p class="why">${ICON.info}<span>${isVirginia(locationOf())?t.aiLocalNote:t.otherState}</span></p><ol class="plain">${det.local.map(l=>`<li><strong>${esc(l.step)}</strong><span class="why">${ICON.info}<span>${t.whoLabel}: ${esc(l.who)}. ${esc(l.why)}</span></span></li>`).join("")}</ol></div>`:`<div>${detNote}</div>`}
+      <div><button class="btn small sun" type="button" id="advgo">${t.advBtn}</button></div>
     </div>
-    ${det?.freeHelp?.length?`<div class="box"><h3>${t.freeH}</h3><p class="muted" style="font-size:.92rem">${t.freeP}</p><ul class="plain">${det.freeHelp.map(f=>`<li><strong>${esc(f.name)}</strong><span class="why">${ICON.info}<span>${esc(f.what)}</span></span></li>`).join("")}</ul></div>`:""}
+    ${helpFinderHtml(det)}
     <div class="cols">
       <div class="box"><h3>${t.findFirst}</h3><ol class="plain">${(pl.firstCustomers||[]).map((x,i)=>`<li>${esc(x)}${whyOf("firstCustomers",i,"why")}${det?.firstCustomers?.[i]?.how?`<span class="why"><b>${t.howReach}:</b>&nbsp;${esc(det.firstCustomers[i].how)}</span>`:""}</li>`).join("")}</ol></div>
       <div class="box"><h3>${t.growH}</h3><p class="muted" style="font-size:.93rem">${t.growNote}</p><ul class="plain">${(pl.grow||[]).map((x,i)=>`<li>${esc(x)}${whyOf("grow",i,"why")}</li>`).join("")}</ul></div>
@@ -1597,6 +1612,8 @@ function plan(noScroll){
   document.getElementById("day").onclick=()=>day();
   document.getElementById("pkg").onclick=packageView;
   document.getElementById("kit").onclick=()=>kitView();
+  document.getElementById("advgo").onclick=()=>advisorView();
+  wireHelpFinder();
   document.getElementById("launch").onclick=()=>{document.getElementById("launched").hidden=false;};
   document.getElementById("back").onclick=ideas;
   if(!det && !loading && !err && !DET.tried[key]) loadDetails();
@@ -1851,7 +1868,7 @@ function renderHub(){
     else { if(S.journeyView && S.pi!=null){ S.view=S.journeyView; render(); } else home(); }
   });
 }
-const JOURNEY_VIEWS=["talk","own","resume_up","work","strengths","ideas","plan","day","package","kit","welcome"];
+const JOURNEY_VIEWS=["talk","own","resume_up","work","strengths","ideas","plan","day","package","kit","advisor","welcome"];
 
 /* ---------- agents ---------- */
 const AG={ list: store.get("seedline-agents") || [] };
@@ -2410,6 +2427,124 @@ function kitView(noScroll){
   if(!saved && !loading && !err && !KITS.tried[key] && window.claude?.use) loadKit();
 }
 
+/* ---------- local rules, advisor summary, free help (Day 3) ---------- */
+const VA_CHECKED="2026-10-15";
+const VA_LINKS={scc:"https://www.scc.virginia.gov/", irs:"https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number", tax:"https://www.tax.virginia.gov/register", dpor:"https://www.dpor.virginia.gov/", vdacs:"https://www.vdacs.virginia.gov/"};
+const HELP_LINKS=[["sbdc","https://americassbdc.org/find-your-sbdc/"],["score","https://www.score.org/"],["sba","https://www.sba.gov/local-assistance"]];
+const LOCAL3 = {
+en:{ vaH:"Checked list for Virginia", vaChecked:"Last checked {d}. Rules change, so confirm with each office.", aiLocalH:"More for your idea", aiLocalNote:"Suggested by AI. Confirm each one with the office named.", otherState:"We don't have a checked list for your state yet. These steps are suggested by AI. Confirm each one with the office named.",
+  official:"Official site", costL:"Cost", whoL:"Where",
+  va:[["Register your business name","Sole owner using a business name: file an assumed name certificate with the circuit court clerk in your county or city. LLC: file with the State Corporation Commission ($100, then $50 every year).","Circuit court clerk or State Corporation Commission","Small fee","scc","So your business name is legal and people can find you."],
+    ["Get an EIN (free)","An Employer Identification Number from the IRS. It's free. Never pay a website for it.","IRS","$0","irs","You need it to open a business bank account and to hire."],
+    ["Register with Virginia Tax","If you sell taxable things or hire people, register online. You get your account right away.","Virginia Department of Taxation","$0","tax","So you collect and pay the right taxes."],
+    ["Local business license","Most counties and cities need a business license (BPOL). Some don't charge below a set amount of sales.","Commissioner of the Revenue in your county or city","Depends on your area","","Working without it can mean fines."],
+    ["Working from home?","Ask if you need a home business (home occupation) permit.","Zoning office in your county or city","Often small or free","","Some neighborhoods limit customer visits, signs or parking."],
+    ["Special licenses for some work","Repair or building jobs of $1,000 or more, and hair, nails or similar work, need a state license. Food made at home has its own rules.","DPOR (licenses) or VDACS (food)","Depends on the license","dpor","Some jobs are not allowed without the right license."]],
+  advBtn:"Advisor summary", advH:"Bring this to your free advisor", advLead:"Free advisors at SBDC and SCORE help new business owners. Bring this one page to your first meeting so you can use the time well.",
+  advIdea:"My business idea", advWhere:"Where", advPrice:"Price and cost to start", advProgress:"What I've done so far", advRules:"Rules I need to check", advQs:"My questions", advQsPh:"Write your own question…", addQ:"Add",
+  advDefaultQs:["Which licenses and registrations do I really need for this business here?","Should I stay a sole owner or form an LLC, and when?","How do I keep my business money separate and track it simply?","What should I charge, and what costs am I missing?"],
+  bilingual:"Headings also in English (for your advisor)", dlPdf:"Download PDF", copyTxt:"Copy as text", savedPdf:"Saved.", noneDone:"Nothing checked off yet. That's okay.",
+  helpH:"Free help near you", helpP:"These official finders show free help near a ZIP code. Type your ZIP there.", zipL:"Your ZIP code", helpNames:{sbdc:"Small Business Development Center (SBDC) finder",score:"SCORE: free mentors",sba:"SBA local help finder"},
+  libHelp:"Your public library: many have free business help, computers and printing. Ask at the front desk.", aiHelpH:"Suggested by AI for your area", aiHelpNote:"Call first to confirm they can help you." },
+es:{ vaH:"Lista revisada para Virginia", vaChecked:"Última revisión: {d}. Las reglas cambian, así que confirma con cada oficina.", aiLocalH:"Más para tu idea", aiLocalNote:"Sugerido por IA. Confirma cada punto con la oficina indicada.", otherState:"Todavía no tenemos una lista revisada para tu estado. Estos pasos los sugiere la IA. Confirma cada uno con la oficina indicada.",
+  official:"Sitio oficial", costL:"Costo", whoL:"Dónde",
+  va:[["Registra el nombre de tu negocio","Dueño único con un nombre de negocio: presenta un certificado de nombre comercial (assumed name) ante el secretario del tribunal de circuito de tu condado o ciudad. LLC: regístrala en la State Corporation Commission ($100 y luego $50 cada año).","Secretario del tribunal de circuito o State Corporation Commission","Tarifa pequeña","scc","Para que el nombre de tu negocio sea legal y la gente te encuentre."],
+    ["Obtén un EIN (gratis)","Un número de identificación del empleador del IRS. Es gratis. Nunca le pagues a un sitio web por él.","IRS","$0","irs","Lo necesitas para abrir una cuenta bancaria de negocio y para contratar."],
+    ["Regístrate en Virginia Tax","Si vendes cosas con impuesto o contratas personas, regístrate en línea. Recibes tu cuenta de inmediato.","Departamento de Impuestos de Virginia","$0","tax","Para cobrar y pagar los impuestos correctos."],
+    ["Licencia local de negocio","La mayoría de los condados y ciudades piden una licencia de negocio (BPOL). Algunos no cobran por debajo de cierto nivel de ventas.","Commissioner of the Revenue de tu condado o ciudad","Depende de tu zona","","Trabajar sin ella puede traer multas."],
+    ["¿Trabajas desde casa?","Pregunta si necesitas un permiso de negocio en casa (home occupation).","Oficina de zonificación de tu condado o ciudad","A menudo bajo o gratis","","Algunos vecindarios limitan visitas de clientes, letreros o estacionamiento."],
+    ["Licencias especiales para algunos trabajos","Trabajos de reparación o construcción de $1,000 o más, y trabajos de cabello, uñas o similares, necesitan licencia estatal. La comida hecha en casa tiene sus propias reglas.","DPOR (licencias) o VDACS (comida)","Depende de la licencia","dpor","Algunos trabajos no se permiten sin la licencia correcta."]],
+  advBtn:"Resumen para asesor", advH:"Lleva esto a tu asesor gratuito", advLead:"Los asesores gratuitos de SBDC y SCORE ayudan a nuevos dueños de negocio. Lleva esta página a tu primera reunión para aprovechar bien el tiempo.",
+  advIdea:"Mi idea de negocio", advWhere:"Dónde", advPrice:"Precio y costo para empezar", advProgress:"Lo que he hecho hasta ahora", advRules:"Reglas que debo revisar", advQs:"Mis preguntas", advQsPh:"Escribe tu propia pregunta…", addQ:"Agregar",
+  advDefaultQs:["¿Qué licencias y registros necesito de verdad para este negocio aquí?","¿Debo seguir como dueño único o formar una LLC, y cuándo?","¿Cómo separo el dinero del negocio y lo llevo de forma sencilla?","¿Cuánto debo cobrar y qué costos me faltan?"],
+  bilingual:"Títulos también en inglés (para tu asesor)", dlPdf:"Descargar PDF", copyTxt:"Copiar como texto", savedPdf:"Guardado.", noneDone:"Todavía no has marcado nada. Está bien.",
+  helpH:"Ayuda gratuita cerca de ti", helpP:"Estos buscadores oficiales muestran ayuda gratuita cerca de un código postal. Escribe tu código ahí.", zipL:"Tu código postal", helpNames:{sbdc:"Buscador de Centros de Desarrollo de Pequeñas Empresas (SBDC)",score:"SCORE: mentores gratuitos",sba:"Buscador de ayuda local de la SBA"},
+  libHelp:"Tu biblioteca pública: muchas tienen ayuda gratuita para negocios, computadoras e impresión. Pregunta en la entrada.", aiHelpH:"Sugerido por IA para tu zona", aiHelpNote:"Llama primero para confirmar que pueden ayudarte." },
+fa:{ vaH:"فهرست بررسی‌شده برای ویرجینیا", vaChecked:"آخرین بررسی: {d}. قوانین تغییر می‌کنند، پس با هر اداره تأیید کن.", aiLocalH:"موارد بیشتر برای ایدهٔ تو", aiLocalNote:"پیشنهاد هوش مصنوعی. هر مورد را با ادارهٔ نام‌برده تأیید کن.", otherState:"هنوز فهرست بررسی‌شده‌ای برای ایالت تو نداریم. این قدم‌ها را هوش مصنوعی پیشنهاد داده. هر کدام را با ادارهٔ نام‌برده تأیید کن.",
+  official:"سایت رسمی", costL:"هزینه", whoL:"کجا",
+  va:[["ثبت اسم کسب‌وکار","مالک تنها با اسم تجاری: گواهی اسم تجاری (assumed name) را نزد منشی دادگاه ناحیهٔ (circuit court) شهرستان یا شهرت ثبت کن. LLC: نزد State Corporation Commission ثبت کن (۱۰۰ دلار و بعد هر سال ۵۰ دلار).","منشی دادگاه ناحیه یا State Corporation Commission","هزینهٔ کم","scc","تا اسم کسب‌وکارت قانونی باشد و مردم پیدایت کنند."],
+    ["گرفتن EIN (رایگان)","شمارهٔ شناسایی کارفرما از IRS. رایگان است. هرگز برای آن به سایتی پول نده.","IRS","۰ دلار","irs","برای باز کردن حساب بانکی کسب‌وکار و استخدام لازم است."],
+    ["ثبت در ادارهٔ مالیات ویرجینیا","اگر چیزهای مشمول مالیات می‌فروشی یا کسی را استخدام می‌کنی، آنلاین ثبت کن. حسابت فوراً ساخته می‌شود.","ادارهٔ مالیات ویرجینیا","۰ دلار","tax","تا مالیات درست را بگیری و بپردازی."],
+    ["مجوز محلی کسب‌وکار","بیشتر شهرستان‌ها و شهرها مجوز کسب‌وکار (BPOL) می‌خواهند. بعضی زیر مقدار مشخصی از فروش هزینه نمی‌گیرند.","Commissioner of the Revenue شهرستان یا شهرت","بسته به منطقه","","کار بدون آن ممکن است جریمه داشته باشد."],
+    ["از خانه کار می‌کنی؟","بپرس آیا مجوز کسب‌وکار خانگی (home occupation) لازم داری.","ادارهٔ منطقه‌بندی (zoning) شهرستان یا شهرت","اغلب کم یا رایگان","","بعضی محله‌ها رفت‌وآمد مشتری، تابلو یا پارکینگ را محدود می‌کنند."],
+    ["مجوزهای ویژه برای بعضی کارها","کارهای تعمیر یا ساخت از ۱٬۰۰۰ دلار به بالا و کارهای مو، ناخن و مشابه، مجوز ایالتی لازم دارند. غذای خانگی قوانین خودش را دارد.","DPOR (مجوزها) یا VDACS (غذا)","بسته به مجوز","dpor","بعضی کارها بدون مجوز درست مجاز نیستند."]],
+  advBtn:"خلاصه برای مشاور", advH:"این را پیش مشاور رایگانت ببر", advLead:"مشاوران رایگان SBDC و SCORE به صاحبان تازه‌کار کسب‌وکار کمک می‌کنند. این یک صفحه را به اولین جلسه ببر تا از وقتت خوب استفاده کنی.",
+  advIdea:"ایدهٔ کسب‌وکار من", advWhere:"کجا", advPrice:"قیمت و هزینهٔ شروع", advProgress:"کارهایی که تا حالا کرده‌ام", advRules:"قوانینی که باید بررسی کنم", advQs:"سؤال‌های من", advQsPh:"سؤال خودت را بنویس…", addQ:"افزودن",
+  advDefaultQs:["برای این کسب‌وکار در اینجا واقعاً چه مجوزها و ثبت‌هایی لازم دارم؟","مالک تنها بمانم یا LLC بسازم، و کی؟","چطور پول کسب‌وکار را جدا نگه دارم و ساده حسابش را داشته باشم؟","چقدر بگیرم و چه هزینه‌هایی را از قلم انداخته‌ام؟"],
+  bilingual:"عنوان‌ها به انگلیسی هم باشد (برای مشاورت)", dlPdf:"دانلود PDF", copyTxt:"کپی به صورت متن", savedPdf:"ذخیره شد.", noneDone:"هنوز چیزی علامت نزده‌ای. اشکالی ندارد.",
+  helpH:"کمک رایگان نزدیک تو", helpP:"این جست‌وجوگرهای رسمی کمک رایگان نزدیک یک کد پستی را نشان می‌دهند. کد پستی‌ات را آنجا بنویس.", zipL:"کد پستی تو", helpNames:{sbdc:"یافتن مرکز توسعهٔ کسب‌وکارهای کوچک (SBDC)",score:"SCORE: مربیان رایگان",sba:"یافتن کمک محلی SBA"},
+  libHelp:"کتابخانهٔ عمومی محله‌ات: خیلی‌هایشان کمک رایگان برای کسب‌وکار، کامپیوتر و چاپ دارند. از میز اطلاعات بپرس.", aiHelpH:"پیشنهاد هوش مصنوعی برای منطقهٔ تو", aiHelpNote:"اول تماس بگیر و مطمئن شو می‌توانند کمکت کنند." },
+ar:{ vaH:"قائمة مراجَعة لولاية فيرجينيا", vaChecked:"آخر مراجعة: {d}. القواعد تتغير، لذا تأكد مع كل جهة.", aiLocalH:"المزيد لفكرتك", aiLocalNote:"اقتراح من الذكاء الاصطناعي. تأكد من كل بند مع الجهة المذكورة.", otherState:"ليست لدينا قائمة مراجَعة لولايتك بعد. هذه الخطوات اقترحها الذكاء الاصطناعي. تأكد من كل خطوة مع الجهة المذكورة.",
+  official:"الموقع الرسمي", costL:"التكلفة", whoL:"أين",
+  va:[["سجّل اسم مشروعك","مالك فردي يستخدم اسمًا تجاريًا: قدّم شهادة الاسم التجاري (assumed name) لدى كاتب المحكمة الدائرية في مقاطعتك أو مدينتك. شركة LLC: سجّلها لدى State Corporation Commission (١٠٠ دولار ثم ٥٠ دولارًا كل سنة).","كاتب المحكمة الدائرية أو State Corporation Commission","رسوم بسيطة","scc","ليكون اسم مشروعك قانونيًا ويجدك الناس."],
+    ["احصل على EIN (مجانًا)","رقم تعريف صاحب العمل من مصلحة الضرائب IRS. إنه مجاني. لا تدفع لأي موقع مقابله.","IRS","٠ دولار","irs","تحتاجه لفتح حساب بنكي تجاري وللتوظيف."],
+    ["سجّل لدى ضرائب فيرجينيا","إذا كنت تبيع أشياء خاضعة للضريبة أو توظف أشخاصًا، سجّل عبر الإنترنت. تحصل على حسابك فورًا.","دائرة الضرائب في فيرجينيا","٠ دولار","tax","لتجمع الضرائب الصحيحة وتدفعها."],
+    ["الرخصة التجارية المحلية","معظم المقاطعات والمدن تطلب رخصة تجارية (BPOL). بعضها لا يفرض رسومًا تحت حد معيّن من المبيعات.","Commissioner of the Revenue في مقاطعتك أو مدينتك","حسب منطقتك","","العمل بدونها قد يعني غرامات."],
+    ["تعمل من البيت؟","اسأل إن كنت تحتاج تصريح عمل منزلي (home occupation).","مكتب تقسيم المناطق (zoning) في مقاطعتك أو مدينتك","غالبًا بسيط أو مجاني","","بعض الأحياء تحدّ من زيارات العملاء أو اللافتات أو المواقف."],
+    ["رخص خاصة لبعض الأعمال","أعمال الإصلاح أو البناء بقيمة ١٬٠٠٠ دولار أو أكثر، وأعمال الشعر والأظافر وما يشبهها، تحتاج رخصة من الولاية. والطعام المُعدّ في البيت له قواعده الخاصة.","DPOR (الرخص) أو VDACS (الطعام)","حسب الرخصة","dpor","بعض الأعمال غير مسموحة دون الرخصة الصحيحة."]],
+  advBtn:"ملخص للمستشار", advH:"خذ هذا إلى مستشارك المجاني", advLead:"مستشارو SBDC وSCORE المجانيون يساعدون أصحاب المشاريع الجدد. خذ هذه الصفحة إلى أول لقاء لتستفيد من الوقت جيدًا.",
+  advIdea:"فكرة مشروعي", advWhere:"أين", advPrice:"السعر وتكلفة البدء", advProgress:"ما أنجزته حتى الآن", advRules:"قواعد عليّ التحقق منها", advQs:"أسئلتي", advQsPh:"اكتب سؤالك…", addQ:"أضف",
+  advDefaultQs:["ما الرخص والتسجيلات التي أحتاجها فعلًا لهذا المشروع هنا؟","هل أبقى مالكًا فرديًا أم أؤسس شركة LLC، ومتى؟","كيف أفصل مال المشروع وأتابعه ببساطة؟","كم أطلب، وما التكاليف التي فاتتني؟"],
+  bilingual:"العناوين بالإنجليزية أيضًا (لمستشارك)", dlPdf:"تنزيل PDF", copyTxt:"نسخ كنص", savedPdf:"تم الحفظ.", noneDone:"لم تضع علامة على شيء بعد. لا بأس.",
+  helpH:"مساعدة مجانية قريبة منك", helpP:"هذه أدوات بحث رسمية تُظهر المساعدة المجانية قرب رمز بريدي. اكتب رمزك البريدي هناك.", zipL:"رمزك البريدي", helpNames:{sbdc:"البحث عن مركز تطوير المشاريع الصغيرة (SBDC)",score:"SCORE: مرشدون مجانيون",sba:"البحث عن مساعدة SBA المحلية"},
+  libHelp:"مكتبتك العامة: كثير منها يقدم مساعدة مجانية للمشاريع وحواسيب وطباعة. اسأل عند المدخل.", aiHelpH:"اقتراح من الذكاء الاصطناعي لمنطقتك", aiHelpNote:"اتصل أولًا لتتأكد أنهم يستطيعون مساعدتك." }
+};
+Object.keys(LOCAL3).forEach(l=>Object.assign(I18N[l],LOCAL3[l]));
+function vaListHtml(){
+  const t=T(), d=new Date(VA_CHECKED+"T12:00:00").toLocaleDateString(S.lang==="fa"?"fa-IR":S.lang==="ar"?"ar-EG":S.lang,{year:"numeric",month:"long",day:"numeric"});
+  return `<div class="valist"><span class="label">${t.vaH}</span><p class="why">${ICON.info}<span>${fmt(t.vaChecked,{d})}</span></p>
+  <ol class="plain">${t.va.map(v=>`<li><strong>${v[0]}</strong><span class="muted" style="display:block;font-size:.93rem">${v[1]}</span>
+    <span class="vameta"><span>${t.whoL}: <b>${v[2]}</b></span><span>${t.costL}: <b>${v[3]}</b></span>${v[4]?`<a href="${VA_LINKS[v[4]]}" target="_blank" rel="noopener">${t.official}</a>`:""}${v[1].includes("VDACS")||v[2].includes("VDACS")?` <a href="${VA_LINKS.vdacs}" target="_blank" rel="noopener">VDACS</a>`:""}</span>
+    <span class="why">${ICON.info}<span>${v[5]}</span></span></li>`).join("")}</ol></div>`;
+}
+function zipOf(loc){ const m=String(loc||"").match(/\b(\d{5})\b/); return m?m[1]:""; }
+function helpFinderHtml(det){
+  const t=T(), zip=S.profile.zip||zipOf(locationOf());
+  return `<section class="box" id="helpbox"><h3>${t.helpH}</h3><p class="muted" style="font-size:.93rem">${t.helpP}</p>
+    <div class="field"><label class="label" for="zipin">${t.zipL}</label><input id="zipin" class="txtin" inputmode="numeric" maxlength="5" dir="ltr" value="${esc(zip)}" style="max-width:9rem"></div>
+    <ul class="plain">${HELP_LINKS.map(([k,u])=>`<li><a href="${u}" target="_blank" rel="noopener">${t.helpNames[k]}</a></li>`).join("")}${isVirginia(locationOf())?`<li><a href="https://www.virginiasbdc.org/" target="_blank" rel="noopener">Virginia SBDC</a></li>`:""}<li>${t.libHelp}</li></ul>
+    ${det?.freeHelp?.length?`<div><strong>${t.aiHelpH}</strong><p class="muted" style="font-size:.9rem">${t.aiHelpNote}</p><ul class="plain">${det.freeHelp.map(f=>`<li><strong>${esc(f.name)}</strong><span class="why">${ICON.info}<span>${esc(f.what)}</span></span></li>`).join("")}</ul></div>`:""}
+  </section>`;
+}
+function wireHelpFinder(){ const z=document.getElementById("zipin"); if(z) z.oninput=()=>{ const v=z.value.replace(/\D/g,"").slice(0,5); z.value=v; S.profile.zip=v; saveProfile(); }; }
+function advQs(){ return S.profile.advQs || T().advDefaultQs.slice(); }
+function advisorView(noScroll){
+  S.view="advisor"; setStep(3,noScroll);
+  const p=person(), t=T(), d=p.ideas[S.idea], pl=d.plan||{}, det=store.get(detKey());
+  const week=store.get(planKey()+"-week")||[], done=(pl.steps||[]).filter((s,i)=>week[i]);
+  const bi=S.lang!=="en" && store.get("seedline-adv-bi")!==false, E=I18N.en;
+  const H=(k)=>`${t[k]}${bi?`<span class="en" dir="ltr">${E[k]}</span>`:""}`;
+  const va=isVirginia(locationOf());
+  const rules = (va? t.va.map(v=>`${v[0]}: ${v[2]}`):[]).concat((det?.local||[]).map(l=>`${l.step}: ${l.who}`));
+  const qs=advQs();
+  app.innerHTML=`<span class="label">${esc(pl.name||d.title)}</span><h2 style="margin-top:6px">${t.advH}</h2><p class="muted" style="margin-top:6px">${t.advLead}</p>
+  ${S.lang!=="en"?`<label class="bil"><input type="checkbox" id="bi" ${bi?"checked":""}> ${t.bilingual}</label>`:""}
+  <article class="advsheet" id="advsheet" dir="${t.dir}">
+    <header><h2>${esc(pl.name||d.title)}</h2><p>${S.profile.firstName?esc(S.profile.firstName)+" · ":""}${esc(locationOf())}</p></header>
+    <section><h3>${H("advIdea")}</h3><p><b>${esc(d.title)}</b>. ${esc(pl.offer||d.pitch||"")}</p></section>
+    <section><h3>${H("advPrice")}</h3><p>${esc(d.price||"")} · ${fmt(t.costs,{x:esc(d.startCost||"")})}</p></section>
+    <section><h3>${H("advProgress")}</h3>${done.length?`<ul>${done.map(s=>`<li>✓ ${esc(s)}</li>`).join("")}</ul>`:`<p>${t.noneDone}</p>`}</section>
+    <section><h3>${H("advRules")}</h3><ul>${rules.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></section>
+    <section><h3>${H("advQs")}</h3><ol>${qs.map((q,i)=>`<li>${esc(q)} <button type="button" class="xq" data-delq="${i}" aria-label="${t.remove||"×"}">×</button></li>`).join("")}</ol></section>
+  </article>
+  <div class="addrow" style="margin-top:8px"><input type="text" id="newq" dir="auto" placeholder="${t.advQsPh}">${micBtn("newq")}<button type="button" class="btn small" id="addq">${t.addQ}</button></div>
+  <div class="choices" style="margin-top:10px"><button type="button" class="btn small sun" id="advpdf">${t.dlPdf}</button><button type="button" class="btn small ghost" id="advcopy">${t.copyTxt}</button><button type="button" class="btn small ghost" id="advpf">${t.toPortfolio}</button><span class="muted" id="advmsg" aria-live="polite"></span></div>
+  ${helpFinderHtml(det)}
+  <div class="actions"><button class="btn ghost" type="button" id="advback">${t.back}</button></div>`;
+  wireHelpFinder();
+  const bx=document.getElementById("bi"); if(bx) bx.onchange=()=>{ store.set("seedline-adv-bi",bx.checked); advisorView(true); };
+  const saveQs=l=>{ S.profile.advQs=l; saveProfile(); advisorView(true); };
+  app.querySelectorAll("[data-delq]").forEach(b=>b.onclick=()=>{ const l=advQs(); l.splice(+b.dataset.delq,1); saveQs(l); });
+  document.getElementById("addq").onclick=()=>{ const v=document.getElementById("newq").value.trim(); if(v) saveQs(advQs().concat(v.slice(0,200))); };
+  const msg=document.getElementById("advmsg"), sheet=document.getElementById("advsheet");
+  const fname=ext=>(pl.name||"Seedline").replace(/[\\/:*?"<>|]+/g,"").trim().slice(0,40)+" advisor summary."+ext;
+  const pdfBlob=async()=>{ sheet.classList.add("printing"); try{ return await resumePdf(sheet); } finally { sheet.classList.remove("printing"); } };
+  document.getElementById("advpdf").onclick=async()=>{ msg.textContent=t.resMaking||"…"; try{ await saveDownload(fname("pdf"), await pdfBlob()); msg.textContent=t.savedPdf; }catch(e){ msg.textContent=e?.code==="declined"?"":t.resDlFail; } };
+  document.getElementById("advpf").onclick=async()=>{ msg.textContent=t.resMaking||"…"; try{ const b=await pdfBlob(); await pfPut({id:"f"+Date.now(), name:fname("pdf"), type:"application/pdf", size:b.size, blob:b, step:t.advH, note:"", added:Date.now()}); msg.textContent=t.addedPf; }catch{ msg.textContent=t.resDlFail; } };
+  document.getElementById("advcopy").onclick=async()=>{ const text=sheet.innerText.replace(/\s*×\s*$/gm,""); try{ await navigator.clipboard.writeText(text); msg.textContent=t.copied; }catch{ const ta=document.createElement("textarea"); ta.className="paste"; ta.value=text; msg.after(ta); ta.select(); } };
+  document.getElementById("advback").onclick=()=>plan();
+}
+
 /* ---------- levels + package ---------- */
 function levelsBox(here){
   const t=T();
@@ -2575,7 +2710,7 @@ function propose(label, apply){
     drawCoach();
   });
 }
-const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), kit:()=>kitView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView(), dream:()=>dreamView() };
+const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), kit:()=>kitView(), advisor:()=>advisorView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView(), dream:()=>dreamView() };
 function superTools(){
   const t=T(), needPlan=()=>{ const p=S.pi!=null?person():null, d=p?.ideas?.[S.idea]; if(!d?.plan) throw new Error("The person has not chosen an idea and plan yet."); return d.plan; };
   return [
@@ -2619,11 +2754,11 @@ function superTools(){
          else { const e=r.experience?.[Number(experience)||0]; if(e) (e.bullets ||= []).push(text); }
          store.set("seedline-resume",r); if(S.view==="resume") resumeView(); });
        return ok?"approved":"the person skipped it"; }},
-    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | kit (launch kit: names, ready-to-send messages, flyer, prices, practice) | agents | portfolio | resume | profile | dream.",
+    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | kit (launch kit: names, ready-to-send messages, flyer, prices, practice) | advisor (one-page summary to bring to a free SBDC/SCORE advisor, local rules, free help finder by ZIP) | agents | portfolio | resume | profile | dream.",
      inputSchema:{type:"object",properties:{section:{type:"string"}},required:["section"]},
      execute:async({section})=>{ const go=SECTION_GO[String(section)]; if(!go) throw new Error("unknown section");
-       if(["strengths","ideas","plan","day","package","kit"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
-       if(["plan","day","package","kit"].includes(section) && !person()?.ideas?.[S.idea]?.plan) throw new Error("No plan chosen yet.");
+       if(["strengths","ideas","plan","day","package","kit","advisor"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
+       if(["plan","day","package","kit","advisor"].includes(section) && !person()?.ideas?.[S.idea]?.plan) throw new Error("No plan chosen yet.");
        go(); C.log.push({role:"action", label:fmt(t.act.open,{x:section}), state:"applied"}); drawCoach(); return "opened"; }}
   ];
 }
