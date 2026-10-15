@@ -367,13 +367,54 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .advsheet p{margin:0}
 .xq{border:0;background:none;color:#8A979B;font-size:1.1rem;cursor:pointer;padding:0 6px}
 .printing .xq{display:none}
+/* simple view */
+.pathviz{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;position:relative}
+.pathviz::before{content:"";position:absolute;inset-inline:10%;top:24px;border-top:2px dashed var(--line)}
+.pathviz li{display:grid;justify-items:center;gap:6px;text-align:center;font-size:.8rem;font-weight:700;color:var(--muted);position:relative;min-width:0}
+.pathviz .pv{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:2px solid var(--teal);color:var(--teal)}
+.pathviz li:first-child .pv{background:var(--sun);border-color:var(--sun);color:var(--sun-ink)}
+.pathviz svg{width:22px;height:22px}
+.ticon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--teal-soft);color:var(--teal)}
+.ticon svg{width:22px;height:22px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+@media (max-width:520px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{display:grid;justify-items:center;gap:8px;padding:16px 8px;border-radius:18px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font-weight:700;font-size:.95rem;text-align:center}
+.tile svg{width:30px;height:30px;color:var(--teal)}
+.tile.sun{background:var(--sun);border-color:var(--sun);color:var(--sun-ink)}
+.tile.sun svg{color:var(--sun-ink)}
+.tile:hover{border-color:var(--teal)}
+.infobtn{display:inline-grid;place-items:center;vertical-align:middle;margin-inline-start:6px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--teal);padding:0}
+.infobtn svg{width:15px;height:15px}
+body:not(.simple) .infobtn{display:none}
+.simple .fold:not(.show){display:none}
+.simple .why:not(.keep):not(.open){display:inline-flex;width:fit-content;align-items:center;gap:4px;cursor:pointer;background:var(--teal-soft);color:var(--teal);border-radius:999px;padding:2px 10px 2px 8px;font-weight:700;font-size:.8rem;margin-top:6px}
+.simple .why:not(.keep):not(.open)>span{display:none}
+.simple .why:not(.keep):not(.open)::after{content:var(--why-label)}
+.simple .why:not(.keep).open{cursor:pointer}
+.simple .start{justify-items:center;text-align:center;padding:18px 10px}
+.simple .start .muted{display:none}
+.simple .start .icon{width:56px;height:56px;border-radius:18px}
+.simple .start .icon svg{width:30px;height:30px}
+.simple .starts{grid-template-columns:repeat(3,1fr)}
+.simple .start h3{font-size:.98rem}
+.simple .people{grid-auto-flow:column;grid-auto-columns:minmax(150px,46%);grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.simple .person{scroll-snap-align:start}
+.simple .difflist{grid-template-columns:1fr 1fr}
+.simple .difflist li{font-size:.9rem}
+.simple .trust{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+@media (max-width:420px){.simple .trust{grid-template-columns:1fr 1fr}}
+.simple .hint{display:none}
+.simple .help:not(.open){cursor:pointer;width:fit-content;padding-block:8px}
+.simple .help:not(.open) .helptext,.simple .help:not(.open) .helpcolon{display:none}
+.simple .person .role:first-of-type{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.simple .slot .whyd{display:none}
 </style>
 
 <div class="wrap">
   <header class="top">
     <div class="brandrow">
       <button class="brand" id="homeBtn" type="button"><span class="seed" aria-hidden="true"></span>Seedline</button>
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn small ghost" type="button" id="profBtn" hidden></button><div class="langs" id="langs" role="group" aria-label="Language"></div></div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn small ghost" type="button" id="profBtn" hidden></button><button class="btn small ghost" type="button" id="simpleBtn" aria-pressed="false"></button><div class="langs" id="langs" role="group" aria-label="Language"></div></div>
     </div>
     <nav class="hub" id="hub" aria-label="Sections"></nav>
     <nav class="steps" id="steps" aria-label="Progress"></nav>
@@ -1162,7 +1203,7 @@ function setStep(i,noScroll){
   if(i>=0){ const on=stepsEl.querySelector(".on"); on?.scrollIntoView?.({block:"nearest",inline:"nearest"}); }
   if(!noScroll) window.scrollTo({top:0, behavior: reduce ? "auto" : "smooth"});
 }
-const helpBox = i => `<div class="help">${ICON.hand}<div><strong>${T().helpLabel}:</strong> ${T().help[i]}</div></div>`;
+const helpBox = i => `<div class="help" tabindex="0" role="button">${ICON.hand}<div><strong>${T().helpLabel}<span class="helpcolon">:</span></strong> <span class="helptext">${T().help[i]}</span></div></div>`;
 const privacyLine = () => `<p class="privacy">${ICON.lock}<span>${T().privacy}</span></p>`;
 
 function renderChrome(){
@@ -1171,6 +1212,7 @@ function renderChrome(){
   document.getElementById("langs").innerHTML = LANGS.map(l=>`<button type="button" lang="${l}" aria-pressed="${l===S.lang}" data-l="${l}">${I18N[l].name}</button>`).join("");
   document.getElementById("langs").querySelectorAll("button").forEach(b=>b.onclick=()=>{ S.lang=b.dataset.l; store.set("seedline-lang",S.lang); renderChrome(); render(); });
   document.getElementById("footnote").textContent = t.footnote;
+  if(typeof applySimple==="function") applySimple();
 }
 function render(){
   ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, kit:()=>kitView(true), advisor:()=>advisorView(true), welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
@@ -1185,6 +1227,7 @@ function home(){
     <span class="label">${t.eyebrow}</span>
     <h1>${t.h1}</h1>
     <p class="muted">${t.lead}</p>
+    ${journeyStrip()}
   </section>
   ${S.profile.welcomed||S.profile.dream?dreamCard():""}
   <section class="section" style="margin-top:0">
@@ -1196,7 +1239,7 @@ function home(){
     ${privacyLine()}
   </section>
   <section class="section">
-    <div><h2>${t.examplesH}</h2><p class="muted" style="margin-top:4px">${t.examplesNote}</p></div>
+    <div><h2>${t.examplesH}</h2><p class="muted keep" style="margin-top:4px">${t.examplesNote}</p></div>
     <div class="people">${BASE.map((b,i)=>`
       <button class="person" type="button" data-i="${i}">
         <span class="avatar" aria-hidden="true">${b.initial}</span>
@@ -1206,7 +1249,7 @@ function home(){
   ${diffSection()}
   <section class="section">
     <h2>${t.trustH}</h2>
-    <div class="trust">${t.trust.map(c=>`<div class="tcard"><span class="dot" aria-hidden="true"></span><h3>${c[0]}</h3><p class="muted">${c[1]}</p></div>`).join("")}</div>
+    <div class="trust">${t.trust.map((c,i)=>`<div class="tcard"><span class="ticon" aria-hidden="true">${TRUST_ICONS()[i%6]}</span><h3>${c[0]}</h3><p class="muted">${c[1]}</p></div>`).join("")}</div>
     <div class="promise"><h3>${t.promiseH}</h3><p>${t.promiseP}</p></div>
     <div class="founder">
       <img src="${FOUNDER_IMG}" alt="Meddy Baraei">
@@ -1571,14 +1614,14 @@ function plan(noScroll){
     <div class="box">
       <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><h3>${t.thisWeek}</h3><span class="muted" id="count"></span></div>
       <div class="progress" aria-hidden="true"><i id="bar"></i></div>
-      <p class="muted" style="font-size:.92rem">${t.oneByOne}</p>
+      <p class="muted hint keep" style="font-size:.92rem">${t.oneByOne}</p>
       <ol class="steplist">${(pl.steps||[]).map(stepHtml).join("")}</ol>
     </div>
     <div class="box">
       <h3>${t.localH}</h3>
       <p class="muted" style="font-size:.92rem">${fmt(t.localP,{loc:esc(locationOf())})}</p>
       ${isVirginia(locationOf())?vaListHtml():""}
-      ${det?.local?.length?`<div><strong>${isVirginia(locationOf())?t.aiLocalH:""}</strong><p class="why">${ICON.info}<span>${isVirginia(locationOf())?t.aiLocalNote:t.otherState}</span></p><ol class="plain">${det.local.map(l=>`<li><strong>${esc(l.step)}</strong><span class="why">${ICON.info}<span>${t.whoLabel}: ${esc(l.who)}. ${esc(l.why)}</span></span></li>`).join("")}</ol></div>`:`<div>${detNote}</div>`}
+      ${det?.local?.length?`<div><strong>${isVirginia(locationOf())?t.aiLocalH:""}</strong><p class="why keep">${ICON.info}<span>${isVirginia(locationOf())?t.aiLocalNote:t.otherState}</span></p><ol class="plain">${det.local.map(l=>`<li><strong>${esc(l.step)}</strong><span class="why">${ICON.info}<span>${t.whoLabel}: ${esc(l.who)}. ${esc(l.why)}</span></span></li>`).join("")}</ol></div>`:`<div>${detNote}</div>`}
       <div><button class="btn small sun" type="button" id="advgo">${t.advBtn}</button></div>
     </div>
     ${helpFinderHtml(det)}
@@ -1588,7 +1631,8 @@ function plan(noScroll){
     </div>
     <p class="saved">${ICON.save}<span>${t.saved}</span></p>
   </div>
-  <div class="actions"><button class="btn sun" type="button" id="day">${t.planDay}</button><button class="btn sun" type="button" id="kit">${t.kitBtn}</button><button class="btn ghost" type="button" id="pkg">${t.packageBtn}</button><button class="btn ghost" type="button" id="launch">${t.launch}</button><button class="btn ghost" type="button" id="back">${t.pickAnother}</button></div>
+  <div class="tiles"><button class="tile sun" type="button" id="day">${ICON.sunny}<span>${t.tiles.day}</span></button><button class="tile" type="button" id="kit">${ICON.mega}<span>${t.tiles.kit}</span></button><button class="tile" type="button" id="advgo2">${ICON.people}<span>${t.tiles.advisor}</span></button><button class="tile" type="button" id="pkg">${ICON.box}<span>${t.tiles.pkg}</span></button></div>
+  <div class="actions"><button class="btn ghost small" type="button" id="launch">${t.launch}</button><button class="btn ghost small" type="button" id="back">${t.pickAnother}</button></div>
   <p id="launched" class="muted" hidden style="margin-top:10px">${fmt(t.launched,{name:p.own?t.you:esc(p.name)})}</p>
   ${levelsBox(0)}`;
   wireLevels();
@@ -1613,6 +1657,7 @@ function plan(noScroll){
   document.getElementById("pkg").onclick=packageView;
   document.getElementById("kit").onclick=()=>kitView();
   document.getElementById("advgo").onclick=()=>advisorView();
+  document.getElementById("advgo2").onclick=()=>advisorView();
   wireHelpFinder();
   document.getElementById("launch").onclick=()=>{document.getElementById("launched").hidden=false;};
   document.getElementById("back").onclick=ideas;
@@ -2364,7 +2409,7 @@ function kitView(noScroll){
   const key=kitKey(), saved=store.get(key), loading=KITS.loading[key], err=KITS.err[key];
   const k=saved||basicKit();
   const loc=locationOf(), st=stateOf(loc);
-  const aiNote = loading?`<p class="typing">${t.kitLoading}</p>`:err?`<p class="err">${errMsg(err)}</p><button class="btn small ghost" type="button" data-kitai>${t.tryAgain}</button>`:k.basic?`<p class="muted">${t.kitBasic}</p><button class="btn small sun" type="button" data-kitai>${t.kitMake}</button>`:`<p class="why">${ICON.info}<span>${t.kitAI}</span></p>`;
+  const aiNote = loading?`<p class="typing">${t.kitLoading}</p>`:err?`<p class="err">${errMsg(err)}</p><button class="btn small ghost" type="button" data-kitai>${t.tryAgain}</button>`:k.basic?`<p class="muted">${t.kitBasic}</p><button class="btn small sun" type="button" data-kitai>${t.kitMake}</button>`:`<p class="why keep">${ICON.info}<span>${t.kitAI}</span></p>`;
   const registry = isVirginia(loc)?`<a href="https://cis.scc.virginia.gov/" target="_blank" rel="noopener">${t.registryVA}</a>`:esc(fmt(t.registryOther,{state:st||"your state"}));
   app.innerHTML=`<span class="label">${esc(pl.name||d.title)}</span><h2 style="margin-top:6px">${t.kitH}</h2><p class="muted" style="margin-top:6px">${t.kitLead}</p>
   <div class="kitai">${aiNote}</div>
@@ -2492,7 +2537,7 @@ ar:{ vaH:"قائمة مراجَعة لولاية فيرجينيا", vaChecked:"�
 Object.keys(LOCAL3).forEach(l=>Object.assign(I18N[l],LOCAL3[l]));
 function vaListHtml(){
   const t=T(), d=new Date(VA_CHECKED+"T12:00:00").toLocaleDateString(S.lang==="fa"?"fa-IR":S.lang==="ar"?"ar-EG":S.lang,{year:"numeric",month:"long",day:"numeric"});
-  return `<div class="valist"><span class="label">${t.vaH}</span><p class="why">${ICON.info}<span>${fmt(t.vaChecked,{d})}</span></p>
+  return `<div class="valist"><span class="label">${t.vaH}</span><p class="why keep">${ICON.info}<span>${fmt(t.vaChecked,{d})}</span></p>
   <ol class="plain">${t.va.map(v=>`<li><strong>${v[0]}</strong><span class="muted" style="display:block;font-size:.93rem">${v[1]}</span>
     <span class="vameta"><span>${t.whoL}: <b>${v[2]}</b></span><span>${t.costL}: <b>${v[3]}</b></span>${v[4]?`<a href="${VA_LINKS[v[4]]}" target="_blank" rel="noopener">${t.official}</a>`:""}${v[1].includes("VDACS")||v[2].includes("VDACS")?` <a href="${VA_LINKS.vdacs}" target="_blank" rel="noopener">VDACS</a>`:""}</span>
     <span class="why">${ICON.info}<span>${v[5]}</span></span></li>`).join("")}</ol></div>`;
@@ -2543,6 +2588,58 @@ function advisorView(noScroll){
   document.getElementById("advpf").onclick=async()=>{ msg.textContent=t.resMaking||"…"; try{ const b=await pdfBlob(); await pfPut({id:"f"+Date.now(), name:fname("pdf"), type:"application/pdf", size:b.size, blob:b, step:t.advH, note:"", added:Date.now()}); msg.textContent=t.addedPf; }catch{ msg.textContent=t.resDlFail; } };
   document.getElementById("advcopy").onclick=async()=>{ const text=sheet.innerText.replace(/\s*×\s*$/gm,""); try{ await navigator.clipboard.writeText(text); msg.textContent=t.copied; }catch{ const ta=document.createElement("textarea"); ta.className="paste"; ta.value=text; msg.after(ta); ta.select(); } };
   document.getElementById("advback").onclick=()=>plan();
+}
+
+/* ---------- simple view: pictures first, fewer words ---------- */
+const SIMPLE = {
+en:{ whyChip:"Why?", moreChip:"More", simpleOn:"Simple view", simpleOff:"Show all text", heroSub:"Your story → your own business", tipStart:"Pick one to start", peopleStrip:"Real-life examples", trustShort:"We're with you",
+  tiles:{day:"My day",kit:"Launch kit",advisor:"Advisor",pkg:"My package",back:"Other ideas"} },
+es:{ whyChip:"¿Por qué?", moreChip:"Más", simpleOn:"Vista simple", simpleOff:"Ver todo el texto", heroSub:"Tu historia → tu propio negocio", tipStart:"Elige una para empezar", peopleStrip:"Ejemplos de la vida real", trustShort:"Estamos contigo",
+  tiles:{day:"Mi día",kit:"Kit de lanzamiento",advisor:"Asesor",pkg:"Mi paquete",back:"Otras ideas"} },
+fa:{ whyChip:"چرا؟", moreChip:"بیشتر", simpleOn:"نمای ساده", simpleOff:"نمایش همهٔ متن", heroSub:"داستان تو ← کسب‌وکار خودت", tipStart:"یکی را برای شروع انتخاب کن", peopleStrip:"نمونه‌هایی از زندگی واقعی", trustShort:"کنارت هستیم",
+  tiles:{day:"روز من",kit:"بستهٔ شروع",advisor:"مشاور",pkg:"بستهٔ من",back:"ایده‌های دیگر"} },
+ar:{ whyChip:"لماذا؟", moreChip:"المزيد", simpleOn:"عرض مبسّط", simpleOff:"عرض كل النص", heroSub:"قصتك ← مشروعك الخاص", tipStart:"اختر واحدًا للبدء", peopleStrip:"أمثلة من الحياة", trustShort:"نحن معك",
+  tiles:{day:"يومي",kit:"حقيبة الانطلاق",advisor:"المستشار",pkg:"حقيبتي",back:"أفكار أخرى"} }
+};
+Object.keys(SIMPLE).forEach(l=>Object.assign(I18N[l],SIMPLE[l]));
+const SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
+ICON.bulb=SV+'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>';
+ICON.sunny=SV+'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+ICON.mega=SV+'<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg>';
+ICON.people=SV+'<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0 1 21 19"/></svg>';
+ICON.box=SV+'<path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg>';
+ICON.shield=SV+'<path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="m9 12 2 2 4-4"/></svg>';
+ICON.back=SV+'<path d="M3 12h18M3 12l6-6M3 12l6 6"/></svg>';
+const STEP_ICONS=()=>[ICON.talk,ICON.star,ICON.bulb,ICON.route,ICON.sunny];
+const TRUST_ICONS=()=>[ICON.box,ICON.shield,ICON.people,ICON.lock,ICON.hand,ICON.star];
+function isSimple(){ return store.get("seedline-simple")!==false; }
+function applySimple(){
+  document.body.classList.toggle("simple", isSimple());
+  document.documentElement.style.setProperty("--why-label", JSON.stringify(T().whyChip));
+  const b=document.getElementById("simpleBtn"); if(b){ b.textContent=isSimple()?T().simpleOff:T().simpleOn; b.setAttribute("aria-pressed", String(!isSimple())); }
+}
+let LOCK_SVG=null;
+function foldPass(){
+  if(!LOCK_SVG){ const d=document.createElement("div"); d.innerHTML=ICON.lock; LOCK_SVG=d.firstElementChild.outerHTML; }
+  app.querySelectorAll(".why:not([data-f])").forEach(w=>{ w.dataset.f="1"; if(w.firstElementChild?.outerHTML===LOCK_SVG) w.classList.add("keep"); if(!w.classList.contains("keep")){ w.setAttribute("role","button"); w.tabIndex=0; w.setAttribute("aria-expanded","false"); } });
+  app.querySelectorAll("p.muted:not([data-f])").forEach(p=>{
+    p.dataset.f="1"; if(p.id || p.classList.contains("keep")) return;
+    let h=p.previousElementSibling, n=0; while(h && n<2 && !/^H[1-3]$/.test(h.tagName)){ h=h.previousElementSibling; n++; }
+    if(!h || !/^H[1-3]$/.test(h.tagName)) return;
+    p.classList.add("fold");
+    let b=h.querySelector(":scope > .infobtn");
+    if(!b){ b=document.createElement("button"); b.type="button"; b.className="infobtn"; b.setAttribute("aria-expanded","false"); b.setAttribute("aria-label",T().moreChip); b.innerHTML=ICON.info; b._folds=[]; 
+      b.onclick=e=>{ e.stopPropagation(); const open=b.getAttribute("aria-expanded")!=="true"; b._folds.forEach(x=>x.classList.toggle("show",open)); b.setAttribute("aria-expanded",String(open)); };
+      h.append(b); }
+    b._folds.push(p);
+  });
+}
+document.addEventListener("click",e=>{ const hb=e.target.closest(".help"); if(hb && document.body.classList.contains("simple")) hb.classList.toggle("open"); const w=e.target.closest(".why:not(.keep)"); if(w && document.body.classList.contains("simple") && !e.target.closest("a,button,input")){ w.classList.toggle("open"); w.setAttribute("aria-expanded",String(w.classList.contains("open"))); } });
+document.addEventListener("keydown",e=>{ if((e.key==="Enter"||e.key===" ") && e.target.matches?.(".why:not(.keep)")){ e.preventDefault(); e.target.click(); } });
+new MutationObserver(()=>foldPass()).observe(app,{childList:true,subtree:true});
+function journeyStrip(){
+  const t=T(), ic=STEP_ICONS();
+  return `<ol class="pathviz" aria-label="${esc(t.heroSub)}">${t.steps.map((s,i)=>`<li><span class="pv">${ic[i]}</span><span>${s}</span></li>`).join("")}</ol>`;
 }
 
 /* ---------- levels + package ---------- */
@@ -2814,5 +2911,6 @@ const _renderChrome = renderChrome;
 renderChrome = function(){ _renderChrome(); coachChrome(); renderProfBtn(); };
 document.getElementById("profBtn").onclick=profileView;
 document.getElementById("homeBtn").onclick=home;
+document.getElementById("simpleBtn").onclick=()=>{ store.set("seedline-simple",!isSimple()); applySimple(); };
 renderChrome(); home();
 </script>
