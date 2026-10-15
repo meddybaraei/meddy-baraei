@@ -1,0 +1,1050 @@
+<title>NovaProHome</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Northern Virginia's engineer-led smart home contractor. Security cameras, whole-home Wi-Fi, Lutron lighting and Google Nest automation, designed first and installed clean. Based in Sterling, VA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600&display=swap">
+<style>
+/* Layout: ATX-style dark & gold. Full-bleed bands, each with an inner .wrap carrying the safe-area gutter. */
+:root {
+  color-scheme: dark;
+  --ink: #0c0c0b;          /* page ground */
+  --ink-2: #131312;        /* alternate band */
+  --panel: #1a1a18;        /* cards */
+  --panel-2: #222220;
+  --rule: #2c2b28;
+  --text: #f6f5f2;
+  --soft: #d9d6cf;
+  --muted: #a6a29a;
+  --gold: #c9a34e;
+  --gold-hi: #e0bd66;
+  --gold-ink: #1b1508;
+  --night: #0d1424;        /* hero sky */
+  --glow: #ffd58a;         /* window light */
+  --wifi: #7fc8ff;
+  --ok: #5fd08a;
+  --f-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mark: "Oswald", "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+  --r: 10px;
+  --max: 1220px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; background: var(--ink); color: var(--text); font-family: var(--f-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 70; background: #161615; }
+img, svg { max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.1; letter-spacing: -0.02em; font-weight: 800; text-wrap: balance; }
+p { margin: 0; }
+button { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.band { padding-block: 112px; background: var(--ink); }
+.band--alt { background: var(--ink-2); }
+.band--deep { background: #080807; }
+
+.eyebrow { display: inline-block; color: var(--gold); font-size: .82rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.head { display: grid; gap: 16px; max-width: 760px; margin-bottom: 56px; }
+.head h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); }
+.head p { color: var(--muted); font-size: 1.12rem; max-width: 62ch; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 34px; border-radius: 6px; font-weight: 600; font-size: 1.05rem; border: 1px solid transparent; cursor: pointer; transition: background .2s, border-color .2s, transform .2s, color .2s; }
+.btn:hover { transform: translateY(-1px); }
+.btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.btn--gold { background: var(--gold); color: var(--gold-ink); }
+.btn--gold:hover { background: var(--gold-hi); }
+.btn--gold:hover svg { transform: translateX(3px); }
+.btn--gold svg { transition: transform .2s; }
+.btn--dark { background: rgba(8,8,8,.88); color: #fff; border-color: #3b3a36; }
+.btn--dark:hover { border-color: var(--gold); }
+.btn--sm { padding: 11px 22px; font-size: .95rem; }
+.btn--block { width: 100%; }
+
+/* Top bar + header */
+.topbar { background: #080807; border-bottom: 1px solid #1d1d1b; font-size: .86rem; color: var(--muted); }
+.topbar .wrap { display: flex; justify-content: space-between; gap: 16px; padding-block: 9px; flex-wrap: wrap; }
+.topbar b { color: var(--gold); font-weight: 600; }
+.header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 60; background: #161615; border-bottom: 1px solid #222; }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 100px; }
+.logo { display: inline-flex; flex-direction: column; align-items: center; color: var(--gold); line-height: 1; }
+.logo__row { display: flex; align-items: center; gap: 12px; font-family: var(--f-mark); font-weight: 600; font-size: 2rem; letter-spacing: .01em; }
+.logo__row svg { width: 38px; height: 38px; }
+.logo__tag { margin-top: 9px; font-size: .74rem; font-weight: 500; letter-spacing: .6em; padding-left: .6em; color: var(--soft); }
+
+.nav { display: flex; align-items: center; gap: 34px; }
+.nav > a:not(.btn), .dd > button { color: #fff; font-weight: 600; font-size: 1.04rem; background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: color .2s; }
+.nav > a:not(.btn):hover, .dd > button:hover { color: var(--gold); }
+.nav > a.btn { color: var(--gold-ink); }
+.dd { position: relative; }
+.dd > button svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; transition: transform .2s; }
+.dd.open > button svg { transform: rotate(180deg); }
+.dd__menu { position: absolute; top: calc(100% + 22px); left: -18px; min-width: 260px; display: grid; padding: 8px; background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; box-shadow: 0 24px 48px rgba(0,0,0,.55); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .18s, transform .18s, visibility .18s; }
+.dd__menu::before { content: ""; position: absolute; left: 0; right: 0; top: -24px; height: 24px; }
+.dd__menu a { padding: 10px 12px; border-radius: 6px; font-size: .95rem; color: var(--soft); display: grid; }
+.dd__menu a small { color: var(--muted); font-size: .8rem; }
+.dd__menu a:hover { background: var(--panel-2); color: var(--gold); }
+.dd:hover .dd__menu, .dd.open .dd__menu { opacity: 1; visibility: visible; transform: none; }
+.burger { display: none; width: 46px; height: 46px; border: 1px solid #3a3936; background: none; border-radius: 6px; cursor: pointer; padding: 12px 11px; flex-direction: column; justify-content: space-between; }
+.burger span { display: block; height: 2px; background: #fff; transition: transform .25s, opacity .25s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; background: #070b16; isolation: isolate; }
+.hero__scene { position: absolute; inset: 0 0 0 36%; z-index: -2; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%); mask-image: linear-gradient(90deg, transparent 0%, #000 18%); }
+.hero__scene svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(8,8,8,.92) 0%, rgba(8,8,8,.7) 36%, rgba(8,8,8,.05) 60%, rgba(8,8,8,0) 100%), linear-gradient(0deg, var(--ink) 0%, rgba(12,12,11,0) 22%); }
+.hero .wrap { padding-block: 110px 120px; }
+.hero__copy { max-width: 640px; display: grid; gap: 26px; padding-left: clamp(0px, 3vw, 40px); }
+.hero h1 { font-size: clamp(2.3rem, 4.3vw, 3.7rem); color: #fff; }
+.hero__lead { font-size: 1.24rem; color: var(--soft); max-width: 34em; }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 10px; }
+.try { display: grid; gap: 12px; margin-top: 18px; }
+.try__label { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.try__chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 9px; padding: 9px 16px; border-radius: 999px; background: rgba(20,20,19,.8); border: 1px solid #3b3a36; color: var(--soft); font-weight: 600; font-size: .92rem; cursor: pointer; transition: all .2s; }
+.chip i { width: 8px; height: 8px; border-radius: 50%; background: #55534e; transition: background .2s, box-shadow .2s; }
+.chip[aria-pressed="true"] { border-color: var(--gold); color: #fff; }
+.chip[aria-pressed="true"] i { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+
+/* Scene layers */
+.scene .win { fill: #1a2235; transition: fill .5s; }
+.scene.lights .win { fill: var(--glow); }
+.scene .lamp { opacity: 0; transition: opacity .5s; }
+.scene.lights .lamp { opacity: .55; }
+.scene .cone { opacity: 0; transition: opacity .4s; }
+.scene.cams .cone { opacity: 1; }
+.scene .camdot { fill: #3a3a3a; transition: fill .3s; }
+.scene.cams .camdot { fill: #ff5a4f; }
+.scene .wave { fill: none; stroke: var(--wifi); stroke-width: 3; opacity: 0; }
+.scene.wifi .wave { animation: wave 2.6s ease-out infinite; }
+.scene.wifi .wave:nth-of-type(2) { animation-delay: .85s; }
+.scene.wifi .wave:nth-of-type(3) { animation-delay: 1.7s; }
+@keyframes wave { 0% { opacity: .9; transform: scale(.3); } 100% { opacity: 0; transform: scale(1.6); } }
+.scene .lockring { fill: #333; transition: fill .3s; }
+.scene.lock .lockring { fill: var(--ok); }
+.scene .tag { opacity: 0; transition: opacity .4s; }
+.scene.cams .tag--cam, .scene.wifi .tag--wifi, .scene.lights .tag--light, .scene.lock .tag--lock { opacity: 1; }
+
+/* Proof strip */
+.proof { background: var(--ink); border-bottom: 1px solid var(--rule); }
+.proof .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.proof__item { padding: 32px 24px; display: grid; gap: 4px; border-left: 1px solid var(--rule); }
+.proof__item:first-child { border-left: 0; padding-left: 0; }
+.proof__item strong { color: var(--gold); font-size: 1.06rem; }
+.proof__item span { color: var(--muted); font-size: .92rem; }
+
+/* Services with tabs */
+.tabs { display: inline-flex; gap: 6px; padding: 6px; background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 36px; }
+.tabs button { padding: 11px 22px; border: 0; border-radius: 6px; background: none; color: var(--muted); font-weight: 600; font-size: 1rem; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--gold); color: var(--gold-ink); }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.svc { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--r); padding: 34px 30px; display: flex; flex-direction: column; gap: 14px; transition: border-color .25s, transform .25s; }
+.svc:hover { border-color: rgba(201,163,78,.6); transform: translateY(-3px); }
+.svc__ic { width: 54px; height: 54px; border-radius: 8px; display: grid; place-items: center; background: rgba(201,163,78,.12); color: var(--gold); }
+.svc__ic svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.svc h3 { font-size: 1.3rem; }
+.svc p { color: var(--muted); font-size: .98rem; }
+.svc ul { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 7px; font-size: .93rem; color: var(--soft); }
+.svc li { display: flex; gap: 10px; }
+.svc li::before { content: "—"; color: var(--gold); }
+.svc__brand { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--rule); font-size: .82rem; color: var(--muted); letter-spacing: .04em; }
+.svc__brand b { color: var(--gold); font-weight: 600; }
+.svc__more { color: var(--gold); font-weight: 600; font-size: .95rem; display: inline-flex; gap: 8px; }
+.svc__more span { transition: transform .2s; }
+.svc__more:hover span { transform: translateX(4px); }
+#panel-biz .svc__more { margin-top: auto; }
+
+/* Promise */
+.promise { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.vow { border: 1px solid var(--rule); border-radius: var(--r); padding: 28px 26px; display: grid; gap: 10px; align-content: start; background: var(--panel); }
+.vow svg { width: 30px; height: 30px; fill: none; stroke: var(--gold); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.vow h3 { font-size: 1.15rem; }
+.vow p { color: var(--muted); font-size: .96rem; }
+.reviewcta { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 24px 28px; border: 1px dashed rgba(201,163,78,.5); border-radius: var(--r); }
+.reviewcta p { color: var(--soft); max-width: 60ch; }
+.stars { color: var(--gold); letter-spacing: .2em; font-size: 1.1rem; }
+
+/* Planner */
+.planner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+.pcard { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 34px; display: grid; gap: 28px; }
+.field { display: grid; gap: 12px; }
+.field > label, .field > .flabel { font-weight: 600; font-size: .95rem; color: var(--soft); display: flex; justify-content: space-between; gap: 12px; }
+.field output { color: var(--gold); font-variant-numeric: tabular-nums; }
+input[type="range"] { width: 100%; accent-color: var(--gold); }
+.seg { display: flex; flex-wrap: wrap; gap: 8px; }
+.seg label { position: relative; }
+.seg input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.seg span { display: inline-block; padding: 9px 16px; border-radius: 999px; border: 1px solid #3b3a36; font-weight: 500; font-size: .93rem; color: var(--soft); transition: all .2s; }
+.seg input:checked + span { background: var(--gold); color: var(--gold-ink); border-color: var(--gold); }
+.seg input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.plan { position: sticky; top: 130px; background: linear-gradient(165deg, #2a2312 0%, var(--panel) 55%); border: 1px solid rgba(201,163,78,.4); border-radius: 12px; padding: 34px; display: grid; gap: 22px; }
+.plan h3 { font-size: 1.5rem; }
+.plan__rows { display: grid; gap: 0; }
+.plan__row { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); align-items: baseline; }
+.plan__row span { color: var(--soft); }
+.plan__row small { display: block; color: var(--muted); font-size: .84rem; }
+.plan__row b { font-size: 1.35rem; color: var(--gold); font-variant-numeric: tabular-nums; }
+.plan__row.off { opacity: .35; }
+.plan__note { color: var(--muted); font-size: .85rem; }
+
+/* Packages */
+.pkgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+.pkg { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 36px 32px; display: flex; flex-direction: column; gap: 18px; }
+.pkg--hot { border-color: var(--gold); position: relative; }
+.pkg--hot::before { content: "Most requested"; position: absolute; top: -13px; left: 32px; background: var(--gold); color: var(--gold-ink); font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; border-radius: 4px; }
+.pkg h3 { font-size: 1.45rem; }
+.pkg__for { color: var(--muted); font-size: .95rem; }
+.pkg ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; color: var(--soft); font-size: .96rem; }
+.pkg li { display: flex; gap: 12px; align-items: baseline; }
+.pkg li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; transform: translateY(-2px); }
+.pkg .btn { margin-top: auto; }
+
+/* Compare */
+.tablebox { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; min-width: 640px; }
+th, td { padding: 18px 22px; text-align: left; border-bottom: 1px solid var(--rule); font-size: .98rem; }
+thead th { background: var(--panel); font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+thead th.us { color: var(--gold); }
+tbody tr:last-child td { border-bottom: 0; }
+td.us { background: rgba(201,163,78,.07); color: #fff; font-weight: 600; }
+td:first-child { color: var(--soft); }
+.y { color: var(--ok); font-weight: 700; }
+.n { color: #8a867e; }
+
+/* Process */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; position: relative; }
+.step { padding: 30px 26px; background: var(--panel); border-top: 2px solid var(--gold); border-radius: 0 0 var(--r) var(--r); display: grid; gap: 10px; align-content: start; }
+.step__n { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+.step h3 { font-size: 1.2rem; }
+.step p { color: var(--muted); font-size: .97rem; }
+
+/* About */
+.about { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: center; }
+.about__photo { position: relative; max-width: 440px; width: 100%; }
+.about__photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 3px solid var(--gold); box-shadow: 0 30px 70px rgba(0,0,0,.65); display: block; }
+.about__tag { position: absolute; right: -8px; bottom: 16px; background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 8px; padding: 14px 20px; display: grid; }
+.about__tag span { color: var(--muted); font-size: .86rem; }
+.about__copy { display: grid; gap: 18px; }
+.about__copy h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+.about__copy p { color: var(--muted); font-size: 1.08rem; max-width: 60ch; }
+.certs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.certs span { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(201,163,78,.5); color: var(--gold); padding: 9px 16px; border-radius: 999px; font-size: .9rem; font-weight: 600; }
+.certs svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.4; }
+
+/* Areas */
+.areas { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: start; }
+.counties { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.county { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--r); padding: 26px; display: grid; gap: 12px; align-content: start; }
+.county h3 { font-size: 1.15rem; color: var(--gold); }
+.towns { display: flex; flex-wrap: wrap; gap: 6px; }
+.towns span { font-size: .84rem; padding: 4px 10px; border-radius: 999px; background: var(--panel-2); color: var(--soft); }
+.checker { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 32px; display: grid; gap: 16px; position: sticky; top: 130px; }
+.checker h3 { font-size: 1.35rem; }
+.checker p { color: var(--muted); font-size: .97rem; }
+.checker__row { display: flex; gap: 10px; }
+.checker__row input { flex: 1; min-width: 0; }
+.result { padding: 14px 16px; border-radius: 8px; font-weight: 600; font-size: .97rem; background: var(--panel-2); color: var(--soft); border: 1px solid var(--rule); }
+.result.yes { border-color: rgba(95,208,138,.5); color: var(--ok); background: rgba(95,208,138,.07); }
+.result.maybe { border-color: rgba(201,163,78,.5); color: var(--gold); background: rgba(201,163,78,.07); }
+
+/* FAQ */
+.faq { max-width: 880px; }
+.faq__list { display: grid; gap: 12px; }
+details { background: var(--panel); border: 1px solid var(--rule); border-radius: var(--r); padding: 0 26px; transition: border-color .2s; }
+details[open] { border-color: rgba(201,163,78,.5); }
+summary { cursor: pointer; list-style: none; padding: 22px 0; font-weight: 600; font-size: 1.07rem; display: flex; justify-content: space-between; gap: 20px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--gold); font-size: 1.5rem; line-height: 1; transition: transform .2s; }
+details[open] summary::after { transform: rotate(45deg); }
+details p { color: var(--muted); padding-bottom: 22px; max-width: 70ch; }
+
+/* Contact */
+.cta-band { background: radial-gradient(ellipse at 85% 0%, rgba(201,163,78,.16), transparent 55%), #080807; }
+.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.contact__copy { display: grid; gap: 18px; }
+.contact__copy h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); }
+.contact__copy > p { color: var(--muted); font-size: 1.1rem; }
+.cinfo { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 20px; }
+.cinfo li { display: grid; gap: 4px; }
+.cinfo span { color: var(--gold); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; }
+.cinfo div { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 1.2rem; font-weight: 600; user-select: all; }
+.copy { font-size: .8rem; font-weight: 600; padding: 5px 11px; border-radius: 4px; border: 1px solid #3b3a36; background: none; color: var(--soft); cursor: pointer; user-select: none; }
+.copy:hover { border-color: var(--gold); color: var(--gold); }
+.form { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 34px; display: grid; gap: 18px; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form label.f { display: grid; gap: 8px; font-size: .9rem; font-weight: 600; color: var(--soft); }
+input[type="text"], input[type="tel"], input[type="email"], textarea { width: 100%; font: inherit; font-size: 1rem; color: var(--text); background: #0f0f0e; border: 1px solid #383733; border-radius: 6px; padding: 13px 14px; transition: border-color .2s; }
+input:focus, textarea:focus { outline: none; border-color: var(--gold); }
+.invalid { border-color: #e5574f !important; }
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
+legend { font-size: .9rem; font-weight: 600; color: var(--soft); padding: 0; margin-bottom: 10px; }
+.form__note { color: var(--muted); font-size: .86rem; text-align: center; }
+.sent { display: grid; gap: 14px; background: rgba(95,208,138,.07); border: 1px solid rgba(95,208,138,.45); border-radius: 10px; padding: 22px; }
+.sent h3 { color: var(--ok); font-size: 1.2rem; }
+.sent p { color: var(--soft); font-size: .95rem; }
+.sent pre { margin: 0; white-space: pre-wrap; font: .88rem/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--soft); background: #0f0f0e; border: 1px solid var(--rule); padding: 14px; border-radius: 6px; max-height: 220px; overflow: auto; }
+.sent__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Footer */
+.footer { background: #070706; border-top: 1px solid var(--rule); padding-block: 76px 28px; }
+.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+.footer .logo { align-items: flex-start; }
+.footer .logo__row { font-size: 1.5rem; }
+.footer .logo__row svg { width: 28px; height: 28px; }
+.footer .logo__tag { font-size: .6rem; letter-spacing: .45em; padding-left: 0; }
+.footer__about { color: var(--muted); margin-top: 18px; max-width: 32ch; font-size: .95rem; }
+.footer h4 { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.footer__col { display: flex; flex-direction: column; gap: 10px; }
+.footer__col a, .footer__col span { color: var(--soft); font-size: .95rem; }
+.footer__col a:hover { color: var(--gold); }
+.footer__base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); color: #7c7870; font-size: .84rem; }
+
+.callbar { display: none; }
+
+/* Gentle entrance from a visible resting state */
+@media (prefers-reduced-motion: no-preference) {
+  .rise { animation: rise .8s ease both; }
+  .rise:nth-child(2) { animation-delay: .08s; }
+  .rise:nth-child(3) { animation-delay: .16s; }
+  .rise:nth-child(4) { animation-delay: .24s; }
+  @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scene.wifi .wave { animation: none; opacity: .5; }
+  * { transition: none !important; }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .nav { gap: 24px; }
+  .grid3, .pkgs { grid-template-columns: repeat(2, 1fr); }
+  .steps, .promise { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 940px) {
+  .header .wrap { min-height: 84px; }
+  .logo__row { font-size: 1.5rem; gap: 9px; }
+  .logo__row svg { width: 28px; height: 28px; }
+  .logo__tag { font-size: .58rem; letter-spacing: .48em; margin-top: 7px; }
+  .burger { display: flex; }
+  .nav { position: fixed; left: 0; right: 0; top: calc(84px + env(safe-area-inset-top, 0px)); flex-direction: column; align-items: stretch; gap: 0; background: #121211; border-bottom: 1px solid var(--rule); padding: 8px max(24px, env(safe-area-inset-right, 0px)) 24px max(24px, env(safe-area-inset-left, 0px)); max-height: calc(100vh - 84px); overflow-y: auto; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all .22s; }
+  .nav.open { opacity: 1; visibility: visible; transform: none; }
+  .nav > a, .dd > button { width: 100%; padding: 15px 0; border-bottom: 1px solid #232321; justify-content: space-between; }
+  .dd__menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; background: none; padding: 4px 0 10px 10px; display: none; min-width: 0; }
+  .dd.open .dd__menu { display: grid; }
+  .dd:hover .dd__menu { opacity: 1; }
+  .nav > a.btn { margin-top: 18px; border: 0; justify-content: center; }
+  html { scroll-padding-top: 84px; }
+  .hero::before { background: linear-gradient(90deg, rgba(8,8,8,.9), rgba(8,8,8,.7)), linear-gradient(0deg, var(--ink) 0%, rgba(12,12,11,0) 22%); }
+  .hero .wrap { padding-block: 72px 96px; }
+  .hero__scene { left: 0; -webkit-mask-image: none; mask-image: none; }
+  .proof .wrap { grid-template-columns: repeat(2, 1fr); }
+  .proof__item { border-left: 0; padding-left: 0; border-bottom: 1px solid var(--rule); }
+  .planner, .about, .areas, .contact { grid-template-columns: 1fr; gap: 44px; }
+  .plan, .checker { position: static; }
+  .about__photo { max-width: 340px; margin: 0 auto; }
+  .band { padding-block: 84px; }
+}
+@media (max-width: 620px) {
+  body { font-size: 16px; padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .topbar .wrap > span:first-child { display: none; }
+  .hero__lead { font-size: 1.08rem; }
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn { width: 100%; }
+  .grid3, .pkgs, .steps, .promise, .counties, .form__row, .footer__grid { grid-template-columns: 1fr; }
+  .proof .wrap { grid-template-columns: 1fr; }
+  .tabs { display: flex; }
+  .tabs button { flex: 1; padding: 11px 10px; }
+  .pcard, .plan, .form, .checker { padding: 24px 18px; }
+  .about__tag { right: 0; }
+  .callbar { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 65; background: var(--gold); color: var(--gold-ink); text-align: center; font-weight: 700; padding: 16px max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+}
+</style>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Serving <b>Loudoun</b>, <b>Fairfax</b>, <b>Arlington</b> &amp; all of Northern Virginia</span>
+    <span>Free in-home assessment · <b>(571) 241-9569</b></span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="NovaProHome, back to top">
+      <span class="logo__row">
+        <span>NOVA</span>
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19 20 6l15 13v15a1.5 1.5 0 0 1-1.5 1.5h-27A1.5 1.5 0 0 1 5 34z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M13 22.5a10 10 0 0 1 14 0M16 26a5.5 5.5 0 0 1 8 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="29.6" r="1.9" fill="currentColor"/></svg>
+        <span>PROHOME</span>
+      </span>
+      <span class="logo__tag">SMART CONNECTED SECURE</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#top">Home</a>
+      <div class="dd">
+        <button type="button" aria-expanded="false">About <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd__menu">
+          <a href="#about">Meet the founder<small>Engineer-led, locally owned</small></a>
+          <a href="#process">How we work<small>Assessment to walkthrough</small></a>
+          <a href="#compare">Why NovaProHome<small>How we compare</small></a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="dd">
+        <button type="button" aria-expanded="false">Residential <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd__menu">
+          <a href="#services" data-tab="home">Security Cameras</a>
+          <a href="#services" data-tab="home">Whole-Home Wi-Fi</a>
+          <a href="#services" data-tab="home">Lighting Control</a>
+          <a href="#services" data-tab="home">Smart Home Automation</a>
+          <a href="#planner">Plan your smart home<small>Interactive planner</small></a>
+          <a href="#packages">Packages</a>
+        </div>
+      </div>
+      <div class="dd">
+        <button type="button" aria-expanded="false">Commercial <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd__menu">
+          <a href="#services" data-tab="biz">Business Cameras</a>
+          <a href="#services" data-tab="biz">Office &amp; Retail Wi-Fi</a>
+          <a href="#services" data-tab="biz">Rentals &amp; Short-Term Stays</a>
+        </div>
+      </div>
+      <a href="#areas">Service Areas</a>
+      <a href="#contact" class="btn btn--gold btn--sm">Get a Quote</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__scene" aria-hidden="true">
+      <svg class="scene lights cams wifi lock" id="scene" viewBox="560 120 1040 780" preserveAspectRatio="xMaxYMax meet">
+        <defs>
+          <linearGradient id="sky" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="700"><stop offset="0" stop-color="#070b16"/><stop offset=".65" stop-color="#16213b"/><stop offset="1" stop-color="#26304a"/></linearGradient>
+          <radialGradient id="moon" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6dc"/><stop offset=".6" stop-color="#f0e2b8" stop-opacity=".9"/><stop offset="1" stop-color="#f0e2b8" stop-opacity="0"/></radialGradient>
+          <radialGradient id="lampg" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd58a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+          <linearGradient id="coneg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6a5c" stop-opacity=".45"/><stop offset="1" stop-color="#ff6a5c" stop-opacity="0"/></linearGradient>
+        </defs>
+        <rect x="-3000" y="-3000" width="8000" height="3900" fill="url(#sky)"/>
+        <g fill="#fff" opacity=".7"><circle cx="980" cy="90" r="1.6"/><circle cx="1120" cy="160" r="1.2"/><circle cx="1300" cy="70" r="1.8"/><circle cx="1440" cy="190" r="1.1"/><circle cx="860" cy="200" r="1.1"/><circle cx="1530" cy="110" r="1.4"/><circle cx="1210" cy="250" r="1"/><circle cx="760" cy="120" r="1.2"/></g>
+        <circle cx="1390" cy="150" r="70" fill="url(#moon)"/>
+        <!-- distant tree line -->
+        <path d="M600 640 Q640 590 680 625 Q720 570 770 615 Q820 575 860 620 Q900 585 950 630 L1600 630 L1600 700 L600 700Z" fill="#0d1527"/>
+        <path d="M1380 640 Q1420 560 1460 610 Q1500 540 1550 600 Q1580 570 1600 590 L1600 700 L1380 700Z" fill="#0b1222"/>
+        <!-- ground -->
+        <rect x="-3000" y="690" width="8000" height="900" fill="#0b0f18"/>
+        <path d="M1040 900 L1110 720 L1230 720 L1260 900Z" fill="#141a26"/>
+        <!-- house body -->
+        <g>
+          <rect x="820" y="420" width="620" height="290" fill="#1b1f29"/>
+          <rect x="960" y="270" width="400" height="160" fill="#20252f"/>
+          <rect x="930" y="252" width="460" height="22" fill="#2b313d"/>
+          <rect x="790" y="402" width="680" height="22" fill="#2b313d"/>
+          <rect x="1440" y="500" width="150" height="210" fill="#181c25"/>
+          <rect x="1430" y="484" width="170" height="18" fill="#2b313d"/>
+          <!-- lamp glows -->
+          <circle class="lamp" cx="910" cy="560" r="150" fill="url(#lampg)"/>
+          <circle class="lamp" cx="1160" cy="350" r="150" fill="url(#lampg)"/>
+          <circle class="lamp" cx="1290" cy="570" r="120" fill="url(#lampg)"/>
+          <!-- windows -->
+          <rect class="win" x="990" y="300" width="160" height="100" rx="2"/>
+          <rect class="win" x="1170" y="300" width="160" height="100" rx="2"/>
+          <rect class="win" x="850" y="460" width="190" height="180" rx="2"/>
+          <rect class="win" x="1220" y="460" width="190" height="120" rx="2"/>
+          <g stroke="#1b1f29" stroke-width="5"><path d="M1070 300v100M1250 300v100M945 460v180M1315 460v120"/></g>
+          <!-- door -->
+          <rect x="1080" y="540" width="100" height="170" fill="#0f1218"/>
+          <circle class="lockring" cx="1165" cy="628" r="7"/>
+          <!-- garage -->
+          <rect x="1455" y="560" width="120" height="150" fill="#232833"/>
+          <g stroke="#1a1e27" stroke-width="3"><path d="M1455 590h120M1455 620h120M1455 650h120M1455 680h120"/></g>
+          <!-- planters -->
+          <rect x="1040" y="690" width="200" height="10" fill="#2b313d"/>
+        </g>
+        <!-- cameras + cones -->
+        <polygon class="cone" points="826,430 700,700 830,720" fill="url(#coneg)"/>
+        <polygon class="cone" points="1434,430 1600,620 1600,760" fill="url(#coneg)"/>
+        <polygon class="cone" points="1100,520 1010,760 1250,760" fill="url(#coneg)"/>
+        <g><rect x="814" y="424" width="22" height="12" rx="3" fill="#d9d9d9"/><circle class="camdot" cx="830" cy="430" r="3"/></g>
+        <g><rect x="1424" y="424" width="22" height="12" rx="3" fill="#d9d9d9"/><circle class="camdot" cx="1430" cy="430" r="3"/></g>
+        <g><rect x="1188" y="572" width="12" height="26" rx="3" fill="#d9d9d9"/><circle class="camdot" cx="1194" cy="581" r="3"/></g>
+        <!-- wifi waves from hub -->
+        <g transform="translate(1160 480)">
+          <circle class="wave" r="120" style="transform-origin:0 0"/>
+          <circle class="wave" r="120" style="transform-origin:0 0"/>
+          <circle class="wave" r="120" style="transform-origin:0 0"/>
+          <circle r="7" fill="#7fc8ff"/>
+        </g>
+        <!-- tags -->
+        <g font-family="Inter, sans-serif" font-size="17" font-weight="600">
+          <g class="tag tag--cam"><rect x="1250" y="770" width="186" height="34" rx="17" fill="rgba(10,10,10,.8)" stroke="#ff6a5c"/><text x="1343" y="793" text-anchor="middle" fill="#fff">Driveway cam · Live</text></g>
+          <g class="tag tag--light"><rect x="1000" y="214" width="150" height="34" rx="17" fill="rgba(10,10,10,.8)" stroke="#ffd58a"/><text x="1075" y="237" text-anchor="middle" fill="#fff">Evening scene</text></g>
+          <g class="tag tag--wifi"><rect x="1230" y="430" width="170" height="34" rx="17" fill="rgba(10,10,10,.8)" stroke="#7fc8ff"/><text x="1315" y="453" text-anchor="middle" fill="#fff">Wi-Fi · 38 devices</text></g>
+          <g class="tag tag--lock"><rect x="1190" y="640" width="150" height="34" rx="17" fill="rgba(10,10,10,.8)" stroke="#5fd08a"/><text x="1265" y="663" text-anchor="middle" fill="#fff">Front door locked</text></g>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero__copy">
+        <span class="eyebrow rise">Smart Home Automation &bull; Northern Virginia</span>
+        <h1 class="rise">Northern Virginia's Choice for Professional Security Cameras, Networking, &amp; Smart Automation.</h1>
+        <p class="hero__lead rise">We turn NoVA homes into intelligent living spaces with smooth automation, security, lighting and whole-home Wi-Fi. An engineer designs every system, and we install it right the first time.</p>
+        <div class="hero__ctas rise">
+          <a href="#contact" class="btn btn--gold">Get a Quote <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="tel:+15712419569" class="btn btn--dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Call Now</a>
+        </div>
+        <div class="try">
+          <span class="try__label">Try it: tap to control this home</span>
+          <div class="try__chips" role="group" aria-label="Demo controls">
+            <button class="chip" type="button" data-layer="lights" aria-pressed="true"><i></i>Lights</button>
+            <button class="chip" type="button" data-layer="cams" aria-pressed="true"><i></i>Cameras</button>
+            <button class="chip" type="button" data-layer="wifi" aria-pressed="true"><i></i>Wi-Fi</button>
+            <button class="chip" type="button" data-layer="lock" aria-pressed="true"><i></i>Door lock</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof" aria-label="Credentials">
+    <div class="wrap">
+      <div class="proof__item"><strong>Google Nest Pro</strong><span>Authorized installer</span></div>
+      <div class="proof__item"><strong>Ring Authorized Partner</strong><span>Doorbells &amp; cameras</span></div>
+      <div class="proof__item"><strong>Lutron Preferred Pro</strong><span>Lighting control</span></div>
+      <div class="proof__item"><strong>Engineer-led</strong><span>Electrical engineering background</span></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="band" id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">What we install</span>
+        <h2>One contractor for the whole connected property.</h2>
+        <p>From the network everything runs on to the scenes you tap every evening, we design, install and support it end to end.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Service type">
+        <button role="tab" id="tab-home" aria-selected="true" aria-controls="panel-home" type="button">Residential</button>
+        <button role="tab" id="tab-biz" aria-selected="false" aria-controls="panel-biz" type="button">Commercial</button>
+      </div>
+
+      <div class="grid3" id="panel-home" role="tabpanel" aria-labelledby="tab-home">
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><path d="M3 7h13l5-3v16l-5-3H3z"/><circle cx="9.5" cy="12" r="2.5"/></svg></div>
+          <h3>Security Cameras</h3>
+          <p>Doorbell and perimeter cameras placed for real coverage of driveways, entries, side yards and packages.</p>
+          <ul><li>Video doorbells &amp; floodlight cams</li><li>Coverage plan before mounting</li><li>Smart alerts &amp; activity zones</li></ul>
+          <div class="svc__brand">Certified: <b>Ring Authorized Partner</b></div>
+          <a class="svc__more" href="#contact">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1.2"/></svg></div>
+          <h3>Whole-Home Wi-Fi</h3>
+          <p>Fast Wi-Fi in every room, the backyard and the basement office. Sized to your square footage with wired backhaul where it counts.</p>
+          <ul><li>Mesh &amp; access point design</li><li>Ethernet runs &amp; network racks</li><li>Separate guest &amp; smart-device networks</li></ul>
+          <div class="svc__brand">Every system starts here</div>
+          <a class="svc__more" href="#contact">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></div>
+          <h3>Lighting Control</h3>
+          <p>Smart dimmers, keypads and scenes that make every room feel right, with schedules, away modes and a one-tap Good Night.</p>
+          <ul><li>Caséta &amp; RadioRA 3 systems</li><li>Scenes, keypads &amp; schedules</li><li>Retrofit into existing switch boxes</li></ul>
+          <div class="svc__brand">Certified: <b>Lutron Preferred Pro</b></div>
+          <a class="svc__more" href="#contact">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4z"/><path d="M9 20v-5h6v5"/></svg></div>
+          <h3>Smart Home Automation</h3>
+          <p>Thermostats, locks, sensors and voice control in one simple app, so the house responds to you.</p>
+          <ul><li>Nest thermostats &amp; hubs</li><li>Smart locks &amp; leak sensors</li><li>Routines &amp; voice setup</li></ul>
+          <div class="svc__brand">Certified: <b>Google Nest Pro</b></div>
+          <a class="svc__more" href="#contact">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3>TV Mounting &amp; AV</h3>
+          <p>Clean TV mounting with hidden cables, plus streaming and sound set up properly the first time.</p>
+          <ul><li>In-wall cable concealment</li><li>Soundbars &amp; speakers</li><li>Streaming &amp; remote setup</li></ul>
+          <div class="svc__brand">Pairs with lighting scenes</div>
+          <a class="svc__more" href="#contact">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Support After Install</h3>
+          <p>Updates, new devices and adjustments from the same team that built your system. One number to call.</p>
+          <ul><li>Device adds &amp; reconfiguration</li><li>Network health check-ups</li><li>Family re-training on request</li></ul>
+          <div class="svc__brand">Same team, start to finish</div>
+          <a class="svc__more" href="#contact">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="grid3" id="panel-biz" role="tabpanel" aria-labelledby="tab-biz" hidden>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><path d="M3 7h13l5-3v16l-5-3H3z"/><circle cx="9.5" cy="12" r="2.5"/></svg></div>
+          <h3>Security Cameras &amp; Monitoring</h3>
+          <p>Clear coverage of entrances, registers, stockrooms and parking for offices, storefronts and warehouses.</p>
+          <ul><li>Entry, register &amp; lot coverage</li><li>Remote viewing for owners &amp; managers</li><li>Clean, tamper-resistant mounting</li></ul>
+          <a class="svc__more" href="#contact" data-pkg="Commercial cameras">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01M11 7h6M11 17h6"/></svg></div>
+          <h3>Networking &amp; Cable Management</h3>
+          <p>Reliable Wi-Fi for staff, point-of-sale and guests on separate networks, with racks and cabling that are labeled and tidy.</p>
+          <ul><li>Access point layout &amp; survey</li><li>Staff, POS &amp; guest networks</li><li>Rack builds &amp; cable cleanup</li></ul>
+          <a class="svc__more" href="#contact" data-pkg="Commercial networking">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="svc">
+          <div class="svc__ic"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></div>
+          <h3>Access Control &amp; Smart Entry</h3>
+          <p>Keyless entry for offices, rentals and short-term stays. Give each person or guest a code that expires on schedule.</p>
+          <ul><li>Smart locks with expiring codes</li><li>Doorbell &amp; entry cameras</li><li>Thermostat limits &amp; leak alerts for hosts</li></ul>
+          <a class="svc__more" href="#contact" data-pkg="Access control">Discover more <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section class="band" id="promise">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">The NovaProHome promise</span>
+        <h2>What every client gets, in writing.</h2>
+        <p>We're a new company and we plan to earn every review. These are the standards we hold each job to.</p>
+      </div>
+      <div class="promise">
+        <div class="vow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="M9 12l2 2 4-4"/></svg><h3>A written plan first</h3><p>You see device placement, coverage and price before we drill a single hole.</p></div>
+        <div class="vow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg><h3>Tested before we leave</h3><p>Every camera, access point and switch is checked from your phone with you.</p></div>
+        <div class="vow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg><h3>Your system, your accounts</h3><p>No lock-in. Equipment and logins are yours from day one.</p></div>
+        <div class="vow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg><h3>Clean job site</h3><p>Concealed wiring, patched holes and no packaging left behind.</p></div>
+      </div>
+      <div class="reviewcta">
+        <div><div class="stars" aria-hidden="true">★★★★★</div><p>Already a NovaProHome client? A short review helps your neighbors find a contractor they can trust.</p></div>
+        <a href="#contact" class="btn btn--dark btn--sm">Tell us how we did</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANNER -->
+  <section class="band band--alt" id="planner">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Smart home planner</span>
+        <h2>See what your home needs in 30 seconds.</h2>
+        <p>Tell us about your home and pick the systems you want. You get a starting equipment plan we refine during your free assessment.</p>
+      </div>
+      <div class="planner">
+        <form class="pcard" id="plannerForm" onsubmit="return false">
+          <div class="field">
+            <label for="sqft">Home size <output id="sqftOut" for="sqft">3,000 sq ft</output></label>
+            <input type="range" id="sqft" min="1000" max="8000" step="250" value="3000">
+          </div>
+          <div class="field">
+            <span class="flabel" id="floorsLbl">Floors (including finished basement)</span>
+            <div class="seg" role="radiogroup" aria-labelledby="floorsLbl">
+              <label><input type="radio" name="floors" id="fl1" value="1"><span>1</span></label>
+              <label><input type="radio" name="floors" id="fl2" value="2" checked><span>2</span></label>
+              <label><input type="radio" name="floors" id="fl3" value="3"><span>3</span></label>
+              <label><input type="radio" name="floors" id="fl4" value="4"><span>4</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <span class="flabel" id="doorsLbl">Exterior doors</span>
+            <div class="seg" role="radiogroup" aria-labelledby="doorsLbl">
+              <label><input type="radio" name="doors" id="dr1" value="1"><span>1</span></label>
+              <label><input type="radio" name="doors" id="dr2" value="2" checked><span>2</span></label>
+              <label><input type="radio" name="doors" id="dr3" value="3"><span>3</span></label>
+              <label><input type="radio" name="doors" id="dr4" value="4"><span>4+</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <span class="flabel" id="sysLbl">Systems you want</span>
+            <div class="seg" role="group" aria-labelledby="sysLbl">
+              <label><input type="checkbox" name="sys" id="sysWifi" value="wifi" checked><span>Wi-Fi</span></label>
+              <label><input type="checkbox" name="sys" id="sysCams" value="cams" checked><span>Cameras</span></label>
+              <label><input type="checkbox" name="sys" id="sysLights" value="lights" checked><span>Lighting</span></label>
+              <label><input type="checkbox" name="sys" id="sysClimate" value="climate"><span>Climate</span></label>
+              <label><input type="checkbox" name="sys" id="sysLocks" value="locks"><span>Smart locks</span></label>
+            </div>
+          </div>
+        </form>
+        <aside class="plan" aria-live="polite">
+          <span class="eyebrow">Your starting plan</span>
+          <h3 id="planTitle">Connected Home, 3,000 sq ft</h3>
+          <div class="plan__rows" id="planRows"></div>
+          <button class="btn btn--gold btn--block" id="sendPlan" type="button">Send me this plan <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="plan__note">Estimates use typical NoVA construction. Brick, stone and long lots change coverage, so we confirm every number on site.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="band" id="packages">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Packages</span>
+        <h2>Start where you are. Grow when you're ready.</h2>
+        <p>Every package is quoted for your home after a free assessment, and each one builds on the last.</p>
+      </div>
+      <div class="pkgs">
+        <article class="pkg">
+          <h3>Secure Start</h3>
+          <p class="pkg__for">For new homeowners who want eyes on the front door and driveway.</p>
+          <ul><li>Video doorbell</li><li>Two exterior cameras</li><li>Wi-Fi check &amp; tune-up</li><li>App setup &amp; alert zones</li></ul>
+          <a href="#contact" class="btn btn--dark" data-pkg="Secure Start">Get a quote</a>
+        </article>
+        <article class="pkg pkg--hot">
+          <h3>Connected Home</h3>
+          <p class="pkg__for">For families who want strong Wi-Fi, full perimeter coverage and smarter lighting.</p>
+          <ul><li>Whole-home mesh Wi-Fi</li><li>Doorbell plus four cameras</li><li>Smart lighting in main living areas</li><li>Smart thermostat</li><li>Family walkthrough</li></ul>
+          <a href="#contact" class="btn btn--gold" data-pkg="Connected Home">Get a quote</a>
+        </article>
+        <article class="pkg">
+          <h3>Whole-Home Smart</h3>
+          <p class="pkg__for">For larger homes and full renovations that want everything designed together.</p>
+          <ul><li>Wired access points &amp; network rack</li><li>Full perimeter cameras</li><li>Whole-home Lutron lighting &amp; keypads</li><li>Locks, sensors &amp; climate zones</li><li>TV mounting &amp; AV</li></ul>
+          <a href="#contact" class="btn btn--dark" data-pkg="Whole-Home Smart">Get a quote</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="band band--alt" id="compare">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Why NovaProHome</span>
+        <h2>Built like infrastructure, not a weekend gadget project.</h2>
+        <p>Most smart homes struggle because the pieces were never planned together. Here's what changes when one engineer-led team owns the whole system.</p>
+      </div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th scope="col">What you get</th><th scope="col" class="us">NovaProHome</th><th scope="col">DIY</th><th scope="col">Single-product installer</th></tr></thead>
+          <tbody>
+            <tr><td>Written plan before install</td><td class="us"><span class="y">✓</span> Every job</td><td class="n">—</td><td class="n">Rarely</td></tr>
+            <tr><td>Network designed for your devices</td><td class="us"><span class="y">✓</span> Included</td><td class="n">Trial &amp; error</td><td class="n">Out of scope</td></tr>
+            <tr><td>Cameras, Wi-Fi, lighting &amp; climate in one plan</td><td class="us"><span class="y">✓</span> One team</td><td class="n">Many apps</td><td class="n">One product</td></tr>
+            <tr><td>Certified on Nest, Ring &amp; Lutron</td><td class="us"><span class="y">✓</span> All three</td><td class="n">—</td><td class="n">Varies</td></tr>
+            <tr><td>Concealed, labeled wiring</td><td class="us"><span class="y">✓</span> Standard</td><td class="n">Depends</td><td class="n">Depends</td></tr>
+            <tr><td>You own the equipment &amp; accounts</td><td class="us"><span class="y">✓</span> Always</td><td><span class="y">✓</span></td><td class="n">Often leased</td></tr>
+            <tr><td>Local support after install</td><td class="us"><span class="y">✓</span> Sterling, VA</td><td class="n">Forums</td><td class="n">Call center</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="band" id="process">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How it works</span>
+        <h2>Simple from first call to final walkthrough.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="step__n">1</span><h3>Free assessment</h3><p>We walk your home, learn how you live and note what you already own.</p></li>
+        <li class="step"><span class="step__n">2</span><h3>System design</h3><p>You get a written plan and a clear quote. No surprises and no upsells.</p></li>
+        <li class="step"><span class="step__n">3</span><h3>Professional install</h3><p>Clean, tested installation scheduled around your week.</p></li>
+        <li class="step"><span class="step__n">4</span><h3>Walkthrough &amp; support</h3><p>We set up the app, show the whole household and stay a call away.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="band band--alt" id="about">
+    <div class="wrap about">
+      <div class="about__photo">
+        <img src="data:image/jpeg;base64,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" alt="Meddy Baraei, founder of NovaProHome" width="440" height="440">
+        <div class="about__tag"><strong>Meddy Baraei</strong><span>Founder · Sterling, VA</span></div>
+      </div>
+      <div class="about__copy">
+        <span class="eyebrow">Meet the founder</span>
+        <h2>Engineer-led. Locally owned. Accountable.</h2>
+        <p>NovaProHome was founded in Sterling, Virginia by Meddy Baraei, who pairs an electrical engineering background with Google Nest Pro, Ring and Lutron certifications.</p>
+        <p>The idea is simple. Treat every home like a real engineering project: listen first, design the system on paper, install it to the standard of a commercial job, and stand behind it afterward.</p>
+        <div class="certs">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Google Nest Pro</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Ring Authorized Partner</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Lutron Preferred Pro</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="band" id="areas">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Service areas</span>
+        <h2>Proudly serving Northern Virginia.</h2>
+        <p>Based in Sterling and working in homes across Loudoun, Fairfax and Arlington.</p>
+      </div>
+      <div class="areas">
+        <div class="counties">
+          <div class="county"><h3>Loudoun County</h3><div class="towns"><span>Sterling</span><span>Ashburn</span><span>Leesburg</span><span>South Riding</span><span>Brambleton</span><span>Purcellville</span><span>Aldie</span></div></div>
+          <div class="county"><h3>Fairfax County</h3><div class="towns"><span>Reston</span><span>Herndon</span><span>Chantilly</span><span>Centreville</span><span>Fairfax</span><span>McLean</span><span>Vienna</span><span>Great Falls</span><span>Oakton</span></div></div>
+          <div class="county"><h3>Arlington</h3><div class="towns"><span>Ballston</span><span>Clarendon</span><span>Rosslyn</span><span>Crystal City</span><span>Shirlington</span></div></div>
+          <div class="county"><h3>Rest of NoVA</h3><div class="towns"><span>Alexandria</span><span>Falls Church</span><span>Manassas</span><span>Gainesville</span><span>Haymarket</span></div></div>
+        </div>
+        <div class="checker">
+          <h3>Do you serve my area?</h3>
+          <p>Type your ZIP code or town.</p>
+          <div class="checker__row">
+            <input type="text" id="areaInput" inputmode="text" autocomplete="postal-code" placeholder="e.g. 20166 or Ashburn" aria-label="ZIP code or town">
+            <button class="btn btn--gold btn--sm" id="areaBtn" type="button">Check</button>
+          </div>
+          <div class="result" id="areaResult" role="status">Sterling (20164, 20165, 20166) is home base.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band band--alt" id="faq">
+    <div class="wrap faq">
+      <div class="head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, answered.</h2>
+      </div>
+      <div class="faq__list">
+        <details open><summary>Is the assessment really free?</summary><p>Yes. We visit, look at your home and network, and talk through what you want. You get a recommendation with no obligation.</p></details>
+        <details><summary>Can you work with devices I already own?</summary><p>Usually. We review what you have, keep what works and recommend upgrades only where they make a real difference.</p></details>
+        <details><summary>Do I need a monthly subscription?</summary><p>Not from us. Some manufacturers offer optional cloud plans, such as recorded video history. We explain exactly what each one does so you can decide.</p></details>
+        <details><summary>Will there be visible wires?</summary><p>We conceal wiring wherever the structure allows and tell you up front if anything can't be hidden.</p></details>
+        <details><summary>How long does an install take?</summary><p>A doorbell and a few cameras usually take part of a day. Whole-home Wi-Fi and lighting projects are scheduled over one or more days, and your written plan says how long before we start.</p></details>
+        <details><summary>What happens if something stops working?</summary><p>Call us. You'll talk to the same team that installed your system.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band cta-band" id="contact">
+    <div class="wrap contact">
+      <div class="contact__copy">
+        <span class="eyebrow">Get a quote</span>
+        <h2>Ready for a home that just works?</h2>
+        <p>Book a free in-home assessment. Tell us a little about your project and we'll get back to you quickly.</p>
+        <ul class="cinfo">
+          <li><span>Phone</span><div id="phoneTxt">(571) 241-9569 <button class="copy" type="button" data-copy="(571) 241-9569">Copy</button></div></li>
+          <li><span>Email</span><div>meddy@novaprohome.com <button class="copy" type="button" data-copy="meddy@novaprohome.com">Copy</button></div></li>
+          <li><span>Based in</span><div>Sterling, Virginia</div></li>
+        </ul>
+      </div>
+      <div id="formBox">
+        <form class="form" id="quoteForm" novalidate>
+          <div class="form__row">
+            <label class="f" for="qName">Name<input id="qName" name="name" type="text" autocomplete="name" required></label>
+            <label class="f" for="qPhone">Phone<input id="qPhone" name="phone" type="tel" autocomplete="tel" required></label>
+          </div>
+          <label class="f" for="qEmail">Email<input id="qEmail" name="email" type="email" autocomplete="email"></label>
+          <label class="f" for="qZip">ZIP or town<input id="qZip" name="zip" type="text" autocomplete="postal-code"></label>
+          <fieldset>
+            <legend>I'm interested in</legend>
+            <div class="seg">
+              <label><input type="checkbox" name="int" id="iCams" value="Security cameras"><span>Cameras</span></label>
+              <label><input type="checkbox" name="int" id="iWifi" value="Wi-Fi / networking"><span>Wi-Fi</span></label>
+              <label><input type="checkbox" name="int" id="iLights" value="Lighting control"><span>Lighting</span></label>
+              <label><input type="checkbox" name="int" id="iAuto" value="Smart home automation"><span>Automation</span></label>
+              <label><input type="checkbox" name="int" id="iAv" value="TV mounting / AV"><span>TV &amp; AV</span></label>
+              <label><input type="checkbox" name="int" id="iBiz" value="Commercial"><span>Business</span></label>
+            </div>
+          </fieldset>
+          <label class="f" for="qMsg">Project details<textarea id="qMsg" name="message" rows="5" placeholder="Tell us about your home and what you'd like to do"></textarea></label>
+          <button type="submit" class="btn btn--gold btn--block">Request My Free Assessment</button>
+          <p class="form__note" id="formNote">We reply within one business day. Prefer to talk? Call (571) 241-9569.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a href="#top" class="logo"><span class="logo__row"><span>NOVA</span><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 19 20 6l15 13v15a1.5 1.5 0 0 1-1.5 1.5h-27A1.5 1.5 0 0 1 5 34z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M13 22.5a10 10 0 0 1 14 0M16 26a5.5 5.5 0 0 1 8 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="29.6" r="1.9" fill="currentColor"/></svg><span>PROHOME</span></span><span class="logo__tag">SMART CONNECTED SECURE</span></a>
+        <p class="footer__about">Smart home, security cameras, networking and lighting for Northern Virginia homes and businesses.</p>
+      </div>
+      <div class="footer__col"><h4>Residential</h4><a href="#services">Security Cameras</a><a href="#services">Whole-Home Wi-Fi</a><a href="#services">Lighting Control</a><a href="#services">Smart Automation</a><a href="#planner">Smart Home Planner</a></div>
+      <div class="footer__col"><h4>Company</h4><a href="#about">About</a><a href="#process">Process</a><a href="#packages">Packages</a><a href="#areas">Service Areas</a><a href="#faq">FAQ</a></div>
+      <div class="footer__col"><h4>Contact</h4><span>(571) 241-9569</span><span>meddy@novaprohome.com</span><span>Sterling, VA</span><a href="#contact">Get a Quote →</a></div>
+    </div>
+    <div class="footer__base"><span>© <span id="yr">2026</span> NovaProHome. All rights reserved.</span><span>Google Nest, Ring and Lutron are trademarks of their respective owners.</span></div>
+  </div>
+</footer>
+
+<a href="tel:+15712419569" class="callbar">Call (571) 241-9569</a>
+
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  // Mobile menu + dropdowns
+  var nav = $("#nav"), burger = $("#burger");
+  burger.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+  $$(".dd").forEach(function (dd) {
+    var b = $("button", dd);
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      $$(".dd").forEach(function (o) { if (o !== dd) { o.classList.remove("open"); $("button", o).setAttribute("aria-expanded", "false"); } });
+      var open = dd.classList.toggle("open");
+      b.setAttribute("aria-expanded", String(open));
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dd")) $$(".dd").forEach(function (o) { o.classList.remove("open"); $("button", o).setAttribute("aria-expanded", "false"); });
+  });
+  nav.addEventListener("click", function (e) {
+    var a = e.target.closest("a");
+    if (!a) return;
+    if (a.dataset.tab) selectTab(a.dataset.tab);
+    nav.classList.remove("open");
+    burger.setAttribute("aria-expanded", "false");
+  });
+
+  // Hero demo
+  var scene = $("#scene");
+  $$(".chip").forEach(function (c) {
+    c.addEventListener("click", function () {
+      var on = c.getAttribute("aria-pressed") !== "true";
+      c.setAttribute("aria-pressed", String(on));
+      scene.classList.toggle(c.dataset.layer, on);
+    });
+  });
+
+  // Service tabs
+  function selectTab(which) {
+    ["home", "biz"].forEach(function (k) {
+      $("#tab-" + k).setAttribute("aria-selected", String(k === which));
+      $("#panel-" + k).hidden = k !== which;
+    });
+  }
+  $("#tab-home").addEventListener("click", function () { selectTab("home"); });
+  $("#tab-biz").addEventListener("click", function () { selectTab("biz"); });
+
+  // Planner
+  var sqft = $("#sqft"), sqftOut = $("#sqftOut"), rows = $("#planRows"), title = $("#planTitle");
+  var fmt = function (n) { return n.toLocaleString("en-US"); };
+  function val(name) { var el = $('input[name="' + name + '"]:checked'); return el ? +el.value : 1; }
+  function has(v) { return $('input[name="sys"][value="' + v + '"]').checked; }
+  var lastPlan = "";
+  function plan() {
+    var s = +sqft.value, f = val("floors"), d = val("doors");
+    sqftOut.textContent = fmt(s) + " sq ft";
+    var aps = Math.max(1, Math.ceil(s / 1500), f);
+    var cams = Math.min(10, 2 + Math.round(s / 1500) + (f > 2 ? 1 : 0));
+    var dimmers = Math.round(s / 220);
+    var zones = Math.max(1, Math.min(f, 3));
+    var items = [
+      ["wifi", "Wi-Fi access points", "Mesh or wired, one or more per floor", aps],
+      ["cams", "Doorbell + exterior cameras", "Entries, driveway, yard", "1 + " + cams],
+      ["lights", "Smart dimmers & keypads", "Main rooms, halls, exterior", dimmers],
+      ["climate", "Smart thermostats", "One per heating/cooling zone", zones],
+      ["locks", "Smart locks", "One per exterior door", d]
+    ];
+    var chosen = items.filter(function (i) { return has(i[0]); }).length;
+    var tier = chosen >= 4 || s >= 5000 ? "Whole-Home Smart" : chosen >= 2 ? "Connected Home" : "Secure Start";
+    title.textContent = tier + ", " + fmt(s) + " sq ft";
+    rows.innerHTML = items.map(function (i) {
+      return '<div class="plan__row' + (has(i[0]) ? "" : " off") + '"><span>' + i[1] + "<small>" + i[2] + "</small></span><b>" + (has(i[0]) ? i[3] : "—") + "</b></div>";
+    }).join("");
+    lastPlan = "Planner estimate: " + tier + "\nHome: " + fmt(s) + " sq ft, " + f + " floor(s), " + d + " exterior door(s)\n" +
+      items.filter(function (i) { return has(i[0]); }).map(function (i) { return "- " + i[1] + ": " + i[3]; }).join("\n");
+  }
+  $("#plannerForm").addEventListener("input", plan);
+  plan();
+  $("#sendPlan").addEventListener("click", function () {
+    $("#qMsg").value = lastPlan + "\n\n" + $("#qMsg").value.replace(/^Planner estimate:[\s\S]*?\n\n/, "");
+    var map = { wifi: "iWifi", cams: "iCams", lights: "iLights", climate: "iAuto", locks: "iAuto" };
+    Object.keys(map).forEach(function (k) { if (has(k)) $("#" + map[k]).checked = true; });
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    setTimeout(function () { $("#qName").focus({ preventScroll: true }); }, 600);
+  });
+
+  // Package buttons prefill
+  $$("[data-pkg]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var m = $("#qMsg");
+      if (m.value.indexOf("Package:") === -1) m.value = "Package: " + b.dataset.pkg + "\n" + m.value;
+    });
+  });
+
+  // Area checker
+  var towns = ["sterling","ashburn","leesburg","south riding","brambleton","purcellville","aldie","dulles","potomac falls","cascades","countryside","lansdowne","reston","herndon","chantilly","centreville","fairfax","mclean","vienna","great falls","oakton","burke","springfield","annandale","tysons","fairfax station","clifton","lorton","arlington","ballston","clarendon","rosslyn","crystal city","shirlington","alexandria","falls church","manassas","gainesville","haymarket","bristow","woodbridge"];
+  function checkArea() {
+    var q = $("#areaInput").value.trim().toLowerCase(), r = $("#areaResult");
+    r.className = "result";
+    if (!q) { r.textContent = "Type a ZIP code like 20166, or a town like Ashburn."; return; }
+    var zip = q.match(/^\d{5}$/);
+    if (zip) {
+      var n = +q;
+      if (n >= 20101 && n <= 20199 || n >= 22000 && n <= 22248 || n >= 22301 && n <= 22315) {
+        r.className = "result yes"; r.textContent = "Yes, " + q + " is in our Northern Virginia service area.";
+      } else if (n >= 20000 && n <= 22999) {
+        r.className = "result maybe"; r.textContent = q + " is close by. Call (571) 241-9569 and we'll confirm.";
+      } else {
+        r.textContent = q + " looks outside Northern Virginia. Call (571) 241-9569 and we'll tell you for sure.";
+      }
+      return;
+    }
+    var hit = towns.filter(function (t) { return t.indexOf(q) === 0 || q.indexOf(t) === 0; })[0];
+    if (hit) { r.className = "result yes"; r.textContent = "Yes, we serve " + hit.replace(/\b\w/g, function (c) { return c.toUpperCase(); }) + "."; }
+    else { r.className = "result maybe"; r.textContent = "We may still cover you. Call (571) 241-9569 and we'll confirm."; }
+  }
+  $("#areaBtn").addEventListener("click", checkArea);
+  $("#areaInput").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); checkArea(); } });
+
+  // Copy buttons
+  $$(".copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = b.dataset.copy, done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1600); };
+      try {
+        navigator.clipboard.writeText(t).then(done, function () { selectText(b.parentNode); });
+      } catch (e) { selectText(b.parentNode); }
+    });
+  });
+  function selectText(el) { var r = document.createRange(); r.selectNodeContents(el.firstChild); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+  // Quote form: shows the request on the page, with an email link as a convenience
+  $("#quoteForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = $("#qName"), phone = $("#qPhone"), ok = true;
+    [name, phone].forEach(function (f) { var bad = !f.value.trim(); f.classList.toggle("invalid", bad); if (bad) ok = false; });
+    if (!ok) { $("#formNote").textContent = "Add your name and phone number so we can reach you."; name.value.trim() ? phone.focus() : name.focus(); return; }
+    var ints = $$('input[name="int"]:checked').map(function (c) { return c.value; }).join(", ") || "Not specified";
+    var body = "Name: " + name.value + "\nPhone: " + phone.value + "\nEmail: " + $("#qEmail").value + "\nZIP / town: " + $("#qZip").value + "\nInterested in: " + ints + "\n\n" + $("#qMsg").value;
+    var href = "mailto:meddy@novaprohome.com?subject=" + encodeURIComponent("Free assessment request: " + name.value) + "&body=" + encodeURIComponent(body);
+    var box = document.createElement("div");
+    box.className = "sent";
+    box.innerHTML = '<h3>Your request is ready</h3><p>Send it by email, or call (571) 241-9569 and read it to us.</p><pre></pre><div class="sent__actions"><a class="btn btn--gold btn--sm" id="mailIt">Email it to NovaProHome</a><button class="btn btn--dark btn--sm" type="button" id="copyIt">Copy request</button><button class="btn btn--dark btn--sm" type="button" id="editIt">Edit</button></div>';
+    $("pre", box).textContent = body;
+    $("#mailIt", box).setAttribute("href", href);
+    var form = $("#quoteForm");
+    form.hidden = true;
+    $("#formBox").appendChild(box);
+    $("#copyIt", box).addEventListener("click", function () {
+      var b = this;
+      try { navigator.clipboard.writeText(body).then(function () { b.textContent = "Copied"; }, function () { selectPre(); }); } catch (err) { selectPre(); }
+      function selectPre() { var r = document.createRange(); r.selectNodeContents($("pre", box)); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    });
+    $("#editIt", box).addEventListener("click", function () { box.remove(); form.hidden = false; });
+  });
+
+  $("#yr").textContent = new Date().getFullYear();
+})();
+</script>
