@@ -1,0 +1,498 @@
+<title>باشگاه ساحلی کیش</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;700&display=swap">
+<style>
+/* Layout: one RTL reading column (~44rem) with full-width illustrated bands; sea, sand, timber and iron as the palette */
+:root{
+  --bg:#F2F5F2;          /* sea-mist paper */
+  --surface:#FFFFFF;
+  --sand:#E6D6B8;
+  --ink:#16302F;         /* deep gulf teal */
+  --muted:#4D6462;
+  --sea:#1F7A78;
+  --sea-soft:#BFDCD8;
+  --wood:#8A5A2B;        /* oiled timber */
+  --iron:#B24A2A;        /* rust / forged iron */
+  --line:#CFDAD6;
+  --sky1:#F7D9A8; --sky2:#BFE0DC;
+  --sun:#F2A23A;
+  --display:"Lalezar","Vazirmatn",Tahoma,sans-serif;
+  --body:"Vazirmatn",Tahoma,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1C1F; --surface:#142729; --sand:#3A3224; --ink:#E4EEEA; --muted:#9DB4B0;
+    --sea:#4FB3AE; --sea-soft:#1E4644; --wood:#D19A62; --iron:#E0774F; --line:#264042;
+    --sky1:#3B2E3A; --sky2:#173638; --sun:#F0A54A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1C1F; --surface:#142729; --sand:#3A3224; --ink:#E4EEEA; --muted:#9DB4B0;
+  --sea:#4FB3AE; --sea-soft:#1E4644; --wood:#D19A62; --iron:#E0774F; --line:#264042;
+  --sky1:#3B2E3A; --sky2:#173638; --sun:#F0A54A; color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.9}
+.page{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+.col{max-width:46rem;margin-inline:auto;display:flex;flex-direction:column;gap:20px}
+.wide{max-width:64rem;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;line-height:1.35;margin:0}
+h1{font-size:clamp(2.1rem,6vw,3.4rem);color:var(--ink)}
+h2{font-size:clamp(1.6rem,4vw,2.1rem);color:var(--sea)}
+h3{font-size:1.25rem;color:var(--wood)}
+p{margin:0}
+.lead{font-size:1.15rem;color:var(--muted)}
+.eyebrow{font-size:.85rem;font-weight:700;color:var(--iron);letter-spacing:.02em}
+section{display:flex;flex-direction:column;gap:14px;padding-top:28px;border-top:1px solid var(--line)}
+ul,ol{margin:0;padding-inline-start:1.4rem;display:flex;flex-direction:column;gap:6px}
+strong{color:var(--ink)}
+.hero{display:flex;flex-direction:column;gap:18px;margin-bottom:8px}
+figure{margin:0;display:flex;flex-direction:column;gap:8px}
+figcaption{font-size:.88rem;color:var(--muted)}
+.art{width:100%;height:auto;display:block;border-radius:14px;background:var(--surface)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem;background:var(--surface)}
+th,td{padding:9px 10px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;color:var(--muted);font-size:.85rem;background:var(--bg)}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+tfoot td{font-weight:700;border-top:2px solid var(--ink)}
+.zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.zone{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.zone b{font-family:var(--display);font-weight:400;font-size:1.15rem;color:var(--wood)}
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.kit figure{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;align-items:center;text-align:center}
+.kit svg{width:96px;height:96px}
+.kit figcaption{color:var(--ink);font-size:.9rem}
+.note{font-size:.9rem;color:var(--muted)}
+.check{list-style:none;padding:0}
+.check li{padding-inline-start:1.6rem;position:relative}
+.check li::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:.9rem;height:.9rem;border:2px solid var(--sea);border-radius:3px}
+.steps{list-style:none;padding:0;gap:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:4.5rem 1fr;gap:12px;padding-block:12px;border-bottom:1px dashed var(--line)}
+.steps .when{font-weight:700;color:var(--iron);font-size:.9rem}
+.prompt{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.prompt .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.prompt pre{margin:0;direction:ltr;text-align:left;white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:.85rem;line-height:1.6;color:var(--ink);background:var(--bg);border-radius:8px;padding:12px}
+.prompt pre.fa{direction:rtl;text-align:right;font-family:var(--body);font-size:.92rem}
+button.copy{font-family:var(--body);font-size:.85rem;font-weight:700;color:var(--surface);background:var(--sea);border:0;border-radius:999px;padding:6px 16px;cursor:pointer}
+button.copy:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.big{font-family:var(--display);font-size:2rem;color:var(--iron);font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stats div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column}
+.stats span{font-size:.88rem;color:var(--muted)}
+/* svg tokens */
+.f-sky1{stop-color:var(--sky1)} .f-sky2{stop-color:var(--sky2)}
+.f-sun{fill:var(--sun)} .f-sea{fill:var(--sea)} .f-seasoft{fill:var(--sea-soft)} .f-sand{fill:var(--sand)}
+.f-wood{fill:var(--wood)} .f-iron{fill:var(--iron)} .f-ink{fill:var(--ink)} .f-surface{fill:var(--surface)} .f-muted{fill:var(--muted)}
+.s-wood{stroke:var(--wood)} .s-iron{stroke:var(--iron)} .s-ink{stroke:var(--ink)} .s-surface{stroke:var(--surface)} .s-muted{stroke:var(--muted)} .s-sea{stroke:var(--sea)}
+.lbl{font-family:var(--body);font-size:15px;font-weight:700;fill:var(--ink)}
+.lbl-s{font-family:var(--body);font-size:12px;fill:var(--muted)}
+@media (prefers-reduced-motion:no-preference){ .wave{animation:drift 7s ease-in-out infinite alternate} }
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-18px)}}
+</style>
+
+<div class="page" dir="rtl" lang="fa">
+
+<div class="wide hero">
+  <figure>
+    <svg class="art" viewBox="0 0 900 400" role="img" aria-label="نقاشی باشگاه: ساحل، دریا، خورشید، سایبان برگ نخل و سازه چوبی بارفیکس">
+      <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="f-sky1"/><stop offset="1" class="f-sky2"/></linearGradient></defs>
+      <rect width="900" height="400" fill="url(#sky)"/>
+      <circle cx="160" cy="150" r="58" class="f-sun"/>
+      <rect y="200" width="900" height="70" class="f-sea"/>
+      <g class="wave" fill="none" stroke-width="3" opacity=".55">
+        <path class="s-surface" d="M0 222 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+        <path class="s-surface" d="M20 248 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+      </g>
+      <path d="M0 262 Q450 248 900 266 V400 H0Z" class="f-sand"/>
+      <!-- palm -->
+      <path d="M800 380 C792 300 790 230 772 150" class="s-wood" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <g class="f-sea" opacity=".85">
+        <path d="M772 150 q-70 -30 -120 10 q60 -5 120 -10z"/><path d="M772 150 q60 -50 120 -20 q-60 0 -120 20z"/>
+        <path d="M772 150 q-20 -70 30 -110 q-15 60 -30 110z"/><path d="M772 150 q-80 20 -100 80 q40 -50 100 -80z"/><path d="M772 150 q70 10 100 70 q-50 -40 -100 -70z"/>
+      </g>
+      <!-- palm-frond canopy over recovery deck -->
+      <g>
+        <rect x="470" y="250" width="10" height="110" class="f-wood"/><rect x="690" y="250" width="10" height="110" class="f-wood"/>
+        <path d="M450 255 L585 215 L720 255 Z" class="f-wood" opacity=".9"/>
+        <path d="M455 256 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14 l20 -14 l20 14" class="s-wood" stroke-width="4" fill="none"/>
+        <rect x="480" y="335" width="210" height="14" rx="3" class="f-wood"/>
+      </g>
+      <!-- calisthenics rig -->
+      <g>
+        <rect x="250" y="210" width="12" height="160" class="f-wood"/><rect x="390" y="210" width="12" height="160" class="f-wood"/>
+        <rect x="244" y="206" width="164" height="9" rx="4" class="f-iron"/>
+        <line x1="300" y1="215" x2="300" y2="262" class="s-ink" stroke-width="3"/><line x1="340" y1="215" x2="340" y2="262" class="s-ink" stroke-width="3"/>
+        <circle cx="300" cy="270" r="9" fill="none" class="s-wood" stroke-width="5"/><circle cx="340" cy="270" r="9" fill="none" class="s-wood" stroke-width="5"/>
+      </g>
+      <!-- athlete doing pull-up -->
+      <g class="f-ink">
+        <circle cx="365" cy="236" r="10"/>
+        <path d="M352 214 L360 230 L370 230 L378 214" class="s-ink" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <rect x="357" y="246" width="16" height="38" rx="7"/>
+        <path d="M360 282 L356 318 M370 282 L376 318" class="s-ink" stroke-width="6" stroke-linecap="round"/>
+      </g>
+      <!-- stones and kettlebells on sand -->
+      <ellipse cx="140" cy="350" rx="34" ry="24" class="f-muted"/>
+      <ellipse cx="200" cy="358" rx="22" ry="16" class="f-muted" opacity=".8"/>
+      <g><circle cx="560" cy="372" r="16" class="f-muted"/><path d="M549 360 q11 -22 22 0" class="s-iron" stroke-width="5" fill="none"/></g>
+      <g><circle cx="600" cy="374" r="13" class="f-muted"/><path d="M591 364 q9 -18 18 0" class="s-iron" stroke-width="4" fill="none"/></g>
+    </svg>
+    <figcaption>طرح مفهومی: سازه بارفیکس چوب و آهن، سایبان برگ نخل، سنگ‌ها و کتل‌بل‌های بتنی روی شن.</figcaption>
+  </figure>
+  <div class="col" style="gap:12px">
+    <span class="eyebrow">طرح کسب‌وکار · جزیره کیش · مهر ۱۴۰۵</span>
+    <h1>باشگاه ورزشی طبیعی ساحل کیش</h1>
+    <p class="lead">یک باشگاه روباز کنار دریا، بدون دیوار و بدون دستگاه برقی. همه وسایل با دست ساخته می‌شوند: از چوب، سنگ، بتن، طناب و آهن آهنگری‌شده. ورزش با نور خورشید، نسیم دریا و وزن بدن خودت.</p>
+  </div>
+</div>
+
+<div class="col">
+
+<section id="concept-image">
+  <h2>تصویر مفهومی</h2>
+  <figure>
+    <img class="art" src="images/kish-gym-concept.jpg" width="1254" height="1254" alt="تصویر مفهومی باشگاه: سازه چوبی بارفیکس کنار دریا، وزنه‌های سنگی و بتنی روی شن، حیاط قدرتی، گود زورخانه و سکوی یوگا در غروب" loading="lazy">
+    <figcaption>تصویر ساخته‌شده با هوش مصنوعی از روی پرامپت‌های همین صفحه. فقط برای نشان دادن حس و حال است، نه طرح نهایی.</figcaption>
+  </figure>
+</section>
+
+<section id="idea">
+  <h2>ایده در یک نگاه</h2>
+  <p>چیزی که می‌فروشیم یک <strong>تجربه</strong> است، نه فقط باشگاه. ورزش در طلوع و غروب کنار خلیج فارس، با وسایلی که انگار از خود طبیعت آمده‌اند. هیچ باشگاه سرپوشیده‌ای در کیش نمی‌تواند این را کپی کند.</p>
+  <p><strong>اسم‌های پیشنهادی:</strong> ساحل · زورخانه دریا · سنگ و چوب کیش · پهلوان ساحل</p>
+  <ul>
+    <li><strong>همه چیز دست‌ساز:</strong> چوب، بتن، سنگ معدنی (هرگز مرجان دریا)، طناب و آهن.</li>
+    <li><strong>فضای باز:</strong> سایه با سایبان برزنتی و برگ نخل. کولر ما نسیم دریاست.</li>
+    <li><strong>ریشه در فرهنگ ایرانی:</strong> میل، کباده و تخته شنای زورخانه کنار تمرینات امروزی.</li>
+    <li><strong>اول طبیعت:</strong> دویدن روی شن، شنا در دریا، یوگا، استراحت در سایه با شربت خرما و نارگیل.</li>
+  </ul>
+</section>
+
+<section id="map">
+  <h2>نقشه باشگاه</h2>
+  <p>پنج بخش اصلی از کنار آب تا ورودی چیده شده‌اند. بخش بانوان جدا و با دیواره نی پوشیده است.</p>
+  <figure>
+    <div class="scroll">
+    <svg class="art" viewBox="0 0 900 520" role="img" aria-label="نقشه از بالا: دریا بالا، مسیر دویدن کنار آب، گود زورخانه، سازه کالیستنیکس، حیاط قدرتی، سکوی آرامش، بخش بانوان، کیوسک و ورودی" style="min-width:560px">
+      <rect width="900" height="520" class="f-sand"/>
+      <rect width="900" height="70" class="f-sea"/>
+      <text x="450" y="44" text-anchor="middle" class="lbl" style="fill:var(--surface)">خلیج فارس</text>
+      <rect x="30" y="86" width="840" height="44" rx="22" class="f-surface" opacity=".7"/>
+      <text x="450" y="114" text-anchor="middle" class="lbl">۴. مسیر دویدن روی شن و سورتمه چوبی</text>
+      <circle cx="160" cy="240" r="80" class="f-surface" opacity=".75"/><circle cx="160" cy="240" r="80" fill="none" class="s-wood" stroke-width="4" stroke-dasharray="8 6"/>
+      <text x="160" y="236" text-anchor="middle" class="lbl">۳. گود زورخانه</text><text x="160" y="258" text-anchor="middle" class="lbl-s">میل، کباده، تخته شنا</text>
+      <rect x="290" y="160" width="250" height="140" rx="14" class="f-surface" opacity=".75"/>
+      <g class="s-iron" stroke-width="5"><line x1="310" y1="185" x2="520" y2="185"/></g>
+      <g class="f-wood"><rect x="310" y="185" width="8" height="40"/><rect x="380" y="185" width="8" height="40"/><rect x="450" y="185" width="8" height="40"/><rect x="512" y="185" width="8" height="40"/></g>
+      <text x="415" y="258" text-anchor="middle" class="lbl">۲. سازه کالیستنیکس</text><text x="415" y="280" text-anchor="middle" class="lbl-s">بارفیکس، پارالل، حلقه و طناب</text>
+      <rect x="570" y="160" width="300" height="140" rx="14" class="f-surface" opacity=".75"/>
+      <g class="f-muted"><circle cx="610" cy="200" r="14"/><circle cx="645" cy="205" r="11"/><circle cx="675" cy="200" r="16"/></g>
+      <rect x="720" y="192" width="120" height="10" rx="5" class="f-wood"/>
+      <text x="720" y="258" text-anchor="middle" class="lbl">۱. حیاط قدرتی</text><text x="720" y="280" text-anchor="middle" class="lbl-s">دمبل و کتل‌بل بتنی، هالتر کنده درخت</text>
+      <rect x="290" y="325" width="330" height="100" rx="14" class="f-wood" opacity=".25"/>
+      <rect x="290" y="325" width="330" height="100" rx="14" fill="none" class="s-wood" stroke-width="3"/>
+      <text x="455" y="370" text-anchor="middle" class="lbl">۵. سکوی آرامش زیر سایبان نخل</text><text x="455" y="394" text-anchor="middle" class="lbl-s">یوگا، کشش، دوش روباز</text>
+      <rect x="650" y="325" width="220" height="150" rx="14" class="f-seasoft"/>
+      <rect x="650" y="325" width="220" height="150" rx="14" fill="none" class="s-sea" stroke-width="3" stroke-dasharray="3 5"/>
+      <text x="760" y="392" text-anchor="middle" class="lbl">بخش بانوان</text><text x="760" y="414" text-anchor="middle" class="lbl-s">دیواره نی و گیاه، ورودی جدا</text>
+      <rect x="40" y="350" width="220" height="80" rx="14" class="f-surface" opacity=".75"/>
+      <text x="150" y="386" text-anchor="middle" class="lbl">کیوسک شربت و پذیرش</text><text x="150" y="408" text-anchor="middle" class="lbl-s">سوغاتی دست‌ساز</text>
+      <path d="M380 515 L420 470 L460 515" class="f-ink" opacity=".8"/>
+      <text x="420" y="462" text-anchor="middle" class="lbl">ورودی از خیابان ساحلی</text>
+    </svg>
+    </div>
+    <figcaption>نقشه از بالا (بدون مقیاس). زمین پیشنهادی ۱٬۵۰۰ تا ۲٬۵۰۰ متر مربع.</figcaption>
+  </figure>
+  <div class="zones">
+    <div class="zone"><b>حیاط قدرتی</b><span>وزنه‌های سنگی و بتنی، هالتر کنده درخت، کیسه‌شن.</span></div>
+    <div class="zone"><b>سازه کالیستنیکس</b><span>بارفیکس، پارالل، نردبان افقی، حلقه روی طناب.</span></div>
+    <div class="zone"><b>گود زورخانه</b><span>دایره گود شنی برای میل‌بازی و کلاس گروهی با ضرب.</span></div>
+    <div class="zone"><b>مسیر دویدن</b><span>کنار آب، با سورتمه چوبی برای کشیدن.</span></div>
+    <div class="zone"><b>سکوی آرامش</b><span>سکوی چوبی برای یوگا، کشش و دوش روباز.</span></div>
+    <div class="zone"><b>بخش بانوان</b><span>جدا و پوشیده با نی، با مربی خانم.</span></div>
+  </div>
+</section>
+
+<section id="kit">
+  <h2>وسایل دست‌ساز</h2>
+  <p>۱۷ نوع وسیله برای افتتاح کافی است و کل آن حدود <strong>۱۳٬۴۰۰ دلار</strong> می‌شود (تقریبی). یک نجار، یک آهنگر و یک استادکار بتن از کیش یا بندرعباس کافی است. اول نمونه بسازند و مربی امتحان کند، بعد همه را بسازند.</p>
+  <div class="kit">
+    <figure><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M34 44 q16 -40 32 0" class="s-iron" stroke-width="7" fill="none"/><circle cx="50" cy="64" r="26" class="f-muted"/></svg><figcaption>کتل‌بل بتنی با دسته آهنی</figcaption></figure>
+    <figure><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M44 12 h12 l4 30 q6 40 -10 50 q-16 -10 -10 -50z" class="f-wood"/><rect x="45" y="6" width="10" height="10" rx="3" class="f-wood"/></svg><figcaption>میل چوبی زورخانه</figcaption></figure>
+    <figure><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="8" y="40" width="84" height="20" rx="10" class="f-wood"/><rect x="34" y="36" width="5" height="28" class="f-iron"/><rect x="61" y="36" width="5" height="28" class="f-iron"/></svg><figcaption>هالتر کنده درخت</figcaption></figure>
+    <figure><svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="60" rx="36" ry="30" class="f-muted"/><ellipse cx="40" cy="48" rx="10" ry="6" class="f-surface" opacity=".35"/></svg><figcaption>سنگ اطلس بتنی</figcaption></figure>
+    <figure><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M14 70 Q50 10 86 70" class="s-iron" stroke-width="6" fill="none"/><path d="M14 70 Q50 40 86 70" class="s-ink" stroke-width="2" stroke-dasharray="4 3" fill="none"/></svg><figcaption>کباده آهنی</figcaption></figure>
+    <figure><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="10" y="56" width="80" height="10" rx="4" class="f-wood"/><rect x="22" y="66" width="8" height="12" class="f-wood"/><rect x="70" y="66" width="8" height="12" class="f-wood"/></svg><figcaption>تخته شنای زورخانه</figcaption></figure>
+  </div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>وسیله</th><th>تعداد</th><th>جنس</th><th>سازنده</th><th>هزینه تقریبی (دلار)</th></tr></thead>
+    <tbody>
+      <tr><td>سازه کالیستنیکس (بارفیکس، دیپ، نردبان افقی)</td><td>۱ بزرگ</td><td>آهن گالوانیزه + چوب</td><td>آهنگر + نجار</td><td class="num">۳٬۰۰۰</td></tr>
+      <tr><td>سکوی آرامش، نیمکت و قفسه وسایل</td><td>۱ ست</td><td>چوب</td><td>نجار</td><td class="num">۲٬۰۰۰</td></tr>
+      <tr><td>دمبل سنگی و بتنی (۵ تا ۴۰ کیلو)</td><td>۱۶ جفت</td><td>بتن + میله آهنی</td><td>بتن‌کار + آهنگر</td><td class="num">۱٬۲۰۰</td></tr>
+      <tr><td>رک اسکات و پرس</td><td>۳</td><td>تیر چوبی + گیره آهنی</td><td>نجار + آهنگر</td><td class="num">۱٬۲۰۰</td></tr>
+      <tr><td>میل زورخانه (۵ تا ۲۰ کیلو)</td><td>۱۵ جفت</td><td>چوب سخت</td><td>خراط</td><td class="num">۹۰۰</td></tr>
+      <tr><td>صفحه وزنه بتنی روی میله</td><td>۴ ست</td><td>بتن + آهن</td><td>بتن‌کار + آهنگر</td><td class="num">۹۰۰</td></tr>
+      <tr><td>کتل‌بل بتنی (۸ تا ۳۲ کیلو)</td><td>۱۲</td><td>بتن + آهن</td><td>بتن‌کار + آهنگر</td><td class="num">۶۰۰</td></tr>
+      <tr><td>هالتر کنده درخت</td><td>۴</td><td>چوب سخت + آهن</td><td>نجار + آهنگر</td><td class="num">۵۰۰</td></tr>
+      <tr><td>کیسه‌شن و یوغ حمل</td><td>۱۰ + ۱</td><td>برزنت/چرم، چوب</td><td>چرم‌دوز + آهنگر</td><td class="num">۵۰۰</td></tr>
+      <tr><td>کباده زورخانه</td><td>۴</td><td>آهن آهنگری‌شده</td><td>آهنگر</td><td class="num">۴۰۰</td></tr>
+      <tr><td>جعبه پرش</td><td>۸</td><td>چوب</td><td>نجار</td><td class="num">۴۰۰</td></tr>
+      <tr><td>سنگ اطلس (۴۰ تا ۱۲۰ کیلو)</td><td>۶</td><td>بتن ریخته‌گری</td><td>بتن‌کار</td><td class="num">۳۰۰</td></tr>
+      <tr><td>پارالل و پارالت</td><td>۶</td><td>چوب سخت</td><td>نجار</td><td class="num">۳۰۰</td></tr>
+      <tr><td>حلقه ژیمناستیک و طناب بالارونده</td><td>۶ + ۳</td><td>چوب، طناب کنفی</td><td>نجار</td><td class="num">۳۰۰</td></tr>
+      <tr><td>تخته شنای زورخانه</td><td>۲۰</td><td>چوب سخت</td><td>نجار</td><td class="num">۳۰۰</td></tr>
+      <tr><td>سورتمه چوبی برای کشیدن</td><td>۴</td><td>چوب + طناب</td><td>نجار</td><td class="num">۳۰۰</td></tr>
+      <tr><td>طناب نبرد (بتل روپ)</td><td>۴</td><td>طناب کنفی</td><td>خرید + تمام‌کاری دستی</td><td class="num">۳۰۰</td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4">جمع</td><td class="num">۱۳٬۴۰۰</td></tr></tfoot>
+  </table>
+  </div>
+  <ul>
+    <li>هر وسیله بتنی وزن می‌شود و عدد وزن روی آن حک می‌شود.</li>
+    <li>همه آهن‌ها گالوانیزه، همه لبه‌های چوب گرد و روغن‌خورده.</li>
+    <li>نشان سازنده روی هر وسیله حک می‌شود. استادکارها بخشی از داستان برند می‌شوند.</li>
+  </ul>
+</section>
+
+<section id="place">
+  <h2>مکان و آب‌وهوا</h2>
+  <p>بهترین جا ساحل جنوب یا شرق جزیره، نزدیک هتل‌ها و بازارها (مثلاً منطقه میرمهنا و مرجان) است؛ جایی که گردشگرها پیاده رد می‌شوند.</p>
+  <ul class="check">
+    <li>فاصله پیاده کم تا هتل‌ها یا مسیر اصلی ساحلی</li>
+    <li>جا برای کاشت نخل و ساخت سایبان</li>
+    <li>آب شیرین و برق برای دوش، نور و کیوسک</li>
+    <li>بالاتر از خط مد و طوفان؛ وسایل روی پایه بتنی</li>
+    <li>جا برای بخش جدای بانوان</li>
+  </ul>
+  <h3>ساختن برای گرما، نمک و باد</h3>
+  <p class="note">تابستان کیش حدود ۳۵ تا ۴۵ درجه و شرجی است (تقریبی).</p>
+  <ul>
+    <li><strong>فصل اصلی:</strong> مهر تا اردیبهشت. در تابستان فقط صبح زود (۵ تا ۹) و شب (۱۸ تا ۲۲) باز است.</li>
+    <li><strong>سایه:</strong> سایبان برزنتی و سایبان برگ نخل (پیش) روی تیرهای چوبی، به سبک بندری.</li>
+    <li><strong>زنگ‌زدگی:</strong> آهن گالوانیزه، پیچ و مهره استیل.</li>
+    <li><strong>چوب:</strong> چوب سخت و مقاوم (ساج، اقاقیا یا کنار)، هر ۳ تا ۴ ماه روغن بزرک.</li>
+    <li><strong>بتن:</strong> بتن مخصوص محیط دریایی با الیاف، لبه‌ها گرد برای پای برهنه.</li>
+    <li><strong>شب:</strong> فانوس خورشیدی با نور گرم، حس کمپ ساحلی.</li>
+  </ul>
+</section>
+
+<section id="customers">
+  <h2>مشتریان و قیمت‌ها</h2>
+  <p>گردشگرها تعداد زیاد و قیمت بالاتر می‌آورند؛ ساکنان جزیره درآمد ماهانه ثابت. قیمت‌ها پیشنهادی‌اند و باید با بازار روز چک شوند.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>گروه مشتری</th><th>چه می‌خواهند</th><th>پیشنهاد ما</th><th>قیمت (تومان)</th></tr></thead>
+    <tbody>
+      <tr><td>گردشگر (۱ تا ۷ روز)</td><td>تجربه متفاوت و عکس</td><td>بلیط یک‌روزه، کلاس طلوع و غروب</td><td class="num">۴۰۰ تا ۷۰۰ هزار هر جلسه</td></tr>
+      <tr><td>ساکنان و کارکنان جزیره</td><td>تمرین منظم و جمع دوستانه</td><td>عضویت ماهانه</td><td class="num">۲٫۵ تا ۴ میلیون در ماه</td></tr>
+      <tr><td>مهمانان هتل‌ها</td><td>ورزش نزدیک هتل</td><td>کوپن هتل‌های طرف قرارداد</td><td class="num">۳۰۰ هزار (عمده)</td></tr>
+      <tr><td>ورزشکاران و رزمی‌کاران</td><td>آمادگی بدنی و قدرت</td><td>اردوی ۱ تا ۲ هفته‌ای</td><td class="num">۸ تا ۱۵ میلیون</td></tr>
+      <tr><td>شرکت‌ها و گروه‌ها</td><td>کار تیمی و تفریح</td><td>کلاس خصوصی زورخانه یا بوت‌کمپ</td><td class="num">از ۱۵ میلیون</td></tr>
+      <tr><td>تولیدکنندگان محتوا</td><td>لوکیشن خاص</td><td>مجوز عکاسی و فیلم</td><td class="num">۲ میلیون در ساعت</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>درآمد جانبی: مربی خصوصی، کیوسک شربت و خرما، تی‌شرت و حوله با لوگو، و فروش میل و کتل‌بل دست‌ساز به عنوان سوغاتی.</p>
+</section>
+
+<section id="rules">
+  <h2>قوانین و مجوزها</h2>
+  <p>زمین ساحلی مال سازمان منطقه آزاد کیش است و فقط اجاره داده می‌شود. قبل از هر هزینه‌ای، این‌ها را بگیرید:</p>
+  <ul class="check">
+    <li>اجاره یا واگذاری زمین از سازمان منطقه آزاد کیش</li>
+    <li>مجوز باشگاه از اداره ورزش و جوانان (یا واحد ورزش منطقه آزاد)</li>
+    <li>مدرک مربیگری معتبر برای مربی‌ها و یک مسئول فنی</li>
+    <li>مجوز محیط زیست و ساخت نزدیک ساحل</li>
+    <li>بیمه مسئولیت مدنی ورزشکاران</li>
+    <li>کارت بهداشت برای کیوسک</li>
+    <li>نجات‌غریق مدرک‌دار، اگر شنا در دریا در برنامه است</li>
+  </ul>
+  <h3>آقایان و بانوان</h3>
+  <p>طبق قوانین ایران ورزش مختلط مجاز نیست. دو راه داریم:</p>
+  <ol>
+    <li><strong>سانس‌بندی:</strong> ساعت‌های جدا برای آقایان و بانوان، با مربی هم‌جنس.</li>
+    <li><strong>دو بخش جدا:</strong> بخش بانوان با دیواره نی و گیاه، مثل ساحل بانوان کیش.</li>
+  </ol>
+  <p>پیشنهاد: با سانس‌بندی شروع کنید و اگر تقاضا بالا بود بخش دوم را بسازید.</p>
+</section>
+
+<section id="team">
+  <h2>کارکنان و برنامه روزانه</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>نقش</th><th>تعداد</th><th>کار</th></tr></thead>
+    <tbody>
+      <tr><td>مدیر (خود شما)</td><td>۱</td><td>فروش، هتل‌ها، حساب‌وکتاب</td></tr>
+      <tr><td>مربی آقا</td><td>۲</td><td>کلاس‌ها و مربی خصوصی</td></tr>
+      <tr><td>مربی خانم</td><td>۱ تا ۲</td><td>سانس‌ها و بخش بانوان</td></tr>
+      <tr><td>مرشد زورخانه (پاره‌وقت)</td><td>۱</td><td>کلاس زورخانه با ضرب در غروب</td></tr>
+      <tr><td>استادکار نگهداری</td><td>۱</td><td>روغن‌کاری چوب، تعمیر، تمیزی</td></tr>
+      <tr><td>کیوسک و پذیرش</td><td>۱</td><td>بلیط، شربت، سوغاتی</td></tr>
+      <tr><td>نجات‌غریق (فصلی)</td><td>۱</td><td>ایمنی شنا</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>یک روز در فصل اصلی</h3>
+  <ul>
+    <li><strong>۵:۳۰</strong> کلاس طلوع روی شن (گروهی)</li>
+    <li><strong>۷ تا ۱۰</strong> تمرین آزاد اعضا</li>
+    <li><strong>۹ تا ۱۲</strong> سانس بانوان (روزهای مشخص)</li>
+    <li><strong>۱۲ تا ۱۶</strong> تعطیل به خاطر گرما؛ نگهداری وسایل</li>
+    <li><strong>۱۶:۳۰ تا ۲۱:۳۰</strong> تمرین آزاد و کلاس‌ها</li>
+    <li><strong>غروب</strong> کلاس زورخانه با ضرب، جاذبه اصلی برای گردشگرها</li>
+  </ul>
+</section>
+
+<section id="marketing">
+  <h2>بازاریابی</h2>
+  <p>خود جا تبلیغ است. هر کس آنجا عکس بگیرد، باشگاه را معرفی کرده.</p>
+  <ul>
+    <li><strong>اینستاگرام و ریلز:</strong> ویدیوی ساخت وسایل در کارگاه، تمرین در طلوع، میل‌بازی در غروب.</li>
+    <li><strong>تلگرام، روبیکا و ایتا:</strong> کانال اعضا برای برنامه کلاس‌ها.</li>
+    <li><strong>هتل‌ها و آژانس‌ها:</strong> کوپن در پذیرش هتل و در تورهای کیش.</li>
+    <li><strong>کلاس رایگان جمعه صبح:</strong> برای ساکنان جزیره.</li>
+    <li><strong>رویداد فصلی:</strong> «بازی‌های پهلوانی ساحل کیش» با سنگ اطلس، طناب‌کشی و میل.</li>
+    <li><strong>اینفلوئنسرهای ورزشی:</strong> یک روز رایگان در ازای محتوا.</li>
+  </ul>
+</section>
+
+<section id="money">
+  <h2>هزینه راه‌اندازی و پیش‌بینی درآمد</h2>
+  <p>کل سرمایه لازم حدود <strong>۶۵ هزار دلار</strong> است (تقریبی، به خاطر نوسان ارز به دلار نوشته شده). اگر حساب‌ها درست باشد، سرمایه در حدود ۱۸ تا ۲۴ ماه برمی‌گردد.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>بخش</th><th>هزینه تقریبی (دلار)</th></tr></thead>
+    <tbody>
+      <tr><td>سایبان‌ها، سکوی چوبی، پایه‌های بتنی، دوش</td><td class="num">۱۵٬۰۰۰</td></tr>
+      <tr><td>وسایل دست‌ساز</td><td class="num">۱۳٬۴۰۰</td></tr>
+      <tr><td>سرمایه در گردش ۳ ماه اول</td><td class="num">۱۲٬۰۰۰</td></tr>
+      <tr><td>ودیعه اجاره زمین و مجوزها</td><td class="num">۸٬۰۰۰</td></tr>
+      <tr><td>کیوسک، نور خورشیدی، آب</td><td class="num">۶٬۰۰۰</td></tr>
+      <tr><td>هزینه پیش‌بینی‌نشده (حدود ۱۰٪)</td><td class="num">۶٬۰۰۰</td></tr>
+      <tr><td>برند، سایت و تبلیغ افتتاحیه</td><td class="num">۴٬۰۰۰</td></tr>
+    </tbody>
+    <tfoot><tr><td>جمع</td><td class="num">۶۴٬۴۰۰</td></tr></tfoot>
+  </table>
+  </div>
+  <h3>یک ماه معمولی در فصل اصلی (تقریبی)</h3>
+  <div class="stats">
+    <div><span class="big">۹٬۰۰۰$</span><span>۱۵۰ عضو × حدود ۶۰ دلار</span></div>
+    <div><span class="big">۶٬۰۰۰$</span><span>۶۰۰ بلیط گردشگر × حدود ۱۰ دلار</span></div>
+    <div><span class="big">۵٬۰۰۰$</span><span>هزینه ماهانه: اجاره، حقوق، نگهداری</span></div>
+  </div>
+  <p class="note">در تابستان درآمد گردشگر تقریباً صفر می‌شود؛ برای همین سرمایه در گردش لازم است. همه اعداد باید با قیمت واقعی کیش دوباره حساب شوند.</p>
+</section>
+
+<section id="risks">
+  <h2>ریسک‌ها و راه‌حل‌ها</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>ریسک</th><th>راه‌حل</th></tr></thead>
+    <tbody>
+      <tr><td>مجوز زمین ساحلی دیر بیاید یا داده نشود</td><td>قبل از ساخت وسایل، قرارداد زمین را بگیرید؛ با هتلی که ساحل اختصاصی دارد شریک شوید.</td></tr>
+      <tr><td>گرمای تابستان و کم شدن مشتری</td><td>ساعت کاری کوتاه، اردوهای ورزشی زمستانه، تخفیف عضویت سالانه.</td></tr>
+      <tr><td>نمک، رطوبت و طوفان</td><td>آهن گالوانیزه، روغن‌کاری منظم، وسایل سبک را شب‌ها در انبار چوبی بگذارید.</td></tr>
+      <tr><td>تورم و نوسان ارز</td><td>وسایل را زود و یک‌جا بخرید؛ قیمت‌ها را هر فصل به‌روز کنید.</td></tr>
+      <tr><td>آسیب ورزشکار با وسایل دست‌ساز</td><td>امتحان هر نمونه، بیمه، کف نرم، حضور همیشگی مربی.</td></tr>
+      <tr><td>کپی شدن ایده</td><td>برند قوی، داستان استادکارها و جامعه اعضا را کسی نمی‌تواند کپی کند.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="launch">
+  <h2>مراحل راه‌اندازی</h2>
+  <p>هدف: افتتاح در شروع فصل خنک (مهر ۱۴۰۶)، حدود ۶ تا ۹ ماه از امروز.</p>
+  <ol class="steps">
+    <li><span class="when">ماه ۱–۲</span><span>پیدا کردن زمین، صحبت با سازمان منطقه آزاد، گرفتن مجوزها.</span></li>
+    <li><span class="when">ماه ۲–۳</span><span>طراحی نقشه، پیدا کردن نجار، آهنگر و بتن‌کار؛ ساخت نمونه‌ها.</span></li>
+    <li><span class="when">ماه ۳–۵</span><span>ساخت همه وسایل، سایبان‌ها، سکو و دوش‌ها.</span></li>
+    <li><span class="when">ماه ۴–۶</span><span>استخدام مربی‌ها، قرارداد با هتل‌ها، شروع پیج اینستاگرام با ویدیوی ساخت.</span></li>
+    <li><span class="when">ماه ۶</span><span>افتتاح آزمایشی با دوستان و ساکنان جزیره، اصلاح ایرادها.</span></li>
+    <li><span class="when">مهر</span><span>افتتاح رسمی با رویداد پهلوانی ساحل.</span></li>
+  </ol>
+</section>
+
+<section id="prompts">
+  <h2>پرامپت آماده برای ساخت عکس و ویدیو</h2>
+  <p>این متن‌ها را در Midjourney، DALL·E، Leonardo یا ابزار ویدیو مثل Sora، Runway و Kling بچسبانید. نسخه انگلیسی معمولاً نتیجه بهتری می‌دهد.</p>
+
+  <div class="prompt">
+    <div class="top"><h3>۱. عکس اصلی باشگاه</h3><button class="copy" type="button" data-target="p1">کپی</button></div>
+    <pre id="p1">Wide cinematic photo of an open-air beach gym on Kish Island, Iran, at golden sunrise. No walls, no machines. All equipment is handmade: a calisthenics pull-up rig of dark oiled hardwood posts with hand-forged rusted-iron bars and wooden gymnastic rings on hemp rope, concrete kettlebells and round concrete atlas stones resting on white sand, log barbells, Persian zurkhaneh wooden meel clubs. Palm-frond and reed shade canopies on timber poles, canvas shade sails, a raised wooden yoga deck, turquoise Persian Gulf water and small waves behind, palm trees, warm natural light, rustic, earthy, eco-friendly, natural materials, documentary style, 35mm lens, high detail, photorealistic --ar 16:9</pre>
+  </div>
+
+  <div class="prompt">
+    <div class="top"><h3>۲. نمای نزدیک وسایل دست‌ساز</h3><button class="copy" type="button" data-target="p2">کپی</button></div>
+    <pre id="p2">Close-up product photo of handmade gym equipment on beach sand: a cast-concrete kettlebell with a hand-forged black iron handle, its weight "16 kg" stamped into the concrete, next to a pair of turned hardwood Persian meel clubs and a rough log barbell with iron sleeves. Craftsman's mark carved in the wood. Soft late-afternoon light, shallow depth of field, turquoise sea blurred in background, texture of wood grain and concrete visible, photorealistic --ar 4:5</pre>
+  </div>
+
+  <div class="prompt">
+    <div class="top"><h3>۳. کلاس زورخانه در غروب</h3><button class="copy" type="button" data-target="p3">کپی</button></div>
+    <pre id="p3">A group of men in traditional zurkhaneh outfits swinging wooden meel clubs in a circular sunken sand ring on a beach at sunset on Kish Island, Iran. A drummer with a zarb drum sits under a palm-frond canopy. Orange and purple sky, sun setting into the Persian Gulf, warm lanterns glowing on timber posts, silhouettes, sand in the air, cinematic, photorealistic --ar 16:9</pre>
+  </div>
+
+  <div class="prompt">
+    <div class="top"><h3>۴. سانس بانوان</h3><button class="copy" type="button" data-target="p4">کپی</button></div>
+    <pre id="p4">Women in modest athletic wear with sport hijabs training with handmade concrete kettlebells and wooden plyo boxes in a private beach gym area screened by tall woven reed walls and green plants, on Kish Island, Iran. Morning light, palm shade, turquoise sea glimpsed above the reed walls, friendly and energetic mood, natural materials, photorealistic --ar 3:2</pre>
+  </div>
+
+  <div class="prompt">
+    <div class="top"><h3>۵. ویدیوی کوتاه (۲۰ تا ۳۰ ثانیه)</h3><button class="copy" type="button" data-target="p5">کپی</button></div>
+    <pre id="p5">A 25-second cinematic promo video for a handmade open-air beach gym on Kish Island, Iran. Shot list:
+1) Dawn, drone shot gliding over turquoise Persian Gulf toward a sandy beach with palm-frond canopies and a wooden pull-up rig.
+2) Close-up in a workshop: a blacksmith hammering a glowing iron kettlebell handle, sparks flying.
+3) A carpenter turning a wooden meel club on a lathe, wood shavings falling.
+4) Wet concrete poured into a round mould to make an atlas stone.
+5) Sunrise: an athlete doing pull-ups on the wooden rig, sea behind him.
+6) Slow motion: bare feet sprinting on sand pulling a wooden sled.
+7) Sunset: a zurkhaneh group swinging meel clubs to the beat of a zarb drum.
+8) Final wide shot at dusk, warm lanterns lighting up, text appears: "Built by hand. Trained by nature."
+Style: warm natural colors, real textures, handheld documentary feel mixed with smooth drone shots, Persian percussion soundtrack, 16:9, 4K.</pre>
+  </div>
+
+  <div class="prompt">
+    <div class="top"><h3>نسخه فارسی پرامپت اصلی</h3><button class="copy" type="button" data-target="p6">کپی</button></div>
+    <pre id="p6" class="fa">عکس واقعی و سینمایی از یک باشگاه ورزشی روباز کنار ساحل جزیره کیش در طلوع آفتاب. بدون دیوار و بدون دستگاه. همه وسایل دست‌ساز: سازه بارفیکس با تیرهای چوب تیره و میله‌های آهن آهنگری‌شده، حلقه‌های چوبی روی طناب کنفی، کتل‌بل و سنگ‌های گرد بتنی روی شن سفید، هالتر کنده درخت، میل‌های چوبی زورخانه. سایبان برگ نخل و نی روی تیرهای چوبی، سکوی چوبی یوگا، آب فیروزه‌ای خلیج فارس و درخت نخل در پس‌زمینه. نور گرم و طبیعی، حس روستایی و طبیعی، جزئیات زیاد.</pre>
+  </div>
+</section>
+
+<section id="questions">
+  <h2>سوال‌هایی که قبل از سرمایه‌گذاری باید جواب بدهیم</h2>
+  <ul class="check">
+    <li>سازمان منطقه آزاد کیش کدام قطعه ساحلی را اجاره می‌دهد و با چه قیمت و مدتی؟</li>
+    <li>قانون دقیق سانس بانوان در فضای باز چیست؟</li>
+    <li>کدام هتل‌ها حاضرند شریک شوند یا ساحل اختصاصی بدهند؟</li>
+    <li>قیمت واقعی نجار، آهنگر و بتن‌کار در کیش و بندرعباس چقدر است؟</li>
+    <li>سرمایه از کجا می‌آید و چقدر از آن شخصی است؟</li>
+  </ul>
+  <p class="note">همه اعداد این صفحه تقریبی‌اند و از تجربه عمومی آمده‌اند، نه از تحقیق میدانی در کیش. قبل از تصمیم، آن‌ها را چک کنید.</p>
+</section>
+
+</div>
+</div>
+
+<script>
+document.querySelectorAll('button.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var pre = document.getElementById(btn.dataset.target);
+    var text = pre.textContent;
+    var done = function(){ btn.textContent = 'کپی شد'; setTimeout(function(){ btn.textContent = 'کپی'; }, 1800); };
+    var fallback = function(){
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'انتخاب شد، Ctrl+C بزنید';
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    } catch (e) { fallback(); }
+  });
+});
+</script>
