@@ -67,6 +67,7 @@ Ring Battery Doorbell Pro + install. Rules: `video/GIVEAWAY_RULES.md` (public li
 
 ## Affiliate links
 - Ring Battery Doorbell (Amazon affiliate, owner earns commission): https://link.amazon/B0fNtx7iN
+- Schlage Encode Smart WiFi Deadbolt, Camelot trim, Aged Bronze (Amazon affiliate, owner Oct 16): https://link.amazon/B0aLPKozm
 - Every post using an affiliate link must say so next to it: "Affiliate link: as an Amazon Associate, Nova Pro Home earns from qualifying purchases."
 - Only use it where a battery doorbell fits; never in giveaway posts (no purchase necessary).
 - Owner's standard doorbell install price: $100. Giveaway ARV $329.99. Owner can't edit novaprohome.com, so rules stay on the GitHub link.
