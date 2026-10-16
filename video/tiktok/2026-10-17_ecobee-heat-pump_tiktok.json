@@ -1,0 +1,42 @@
+{
+ "hook": "POV: your thermostat has 7 wires and zero labels",
+ "hook_hl": "7 wires",
+ "hook_photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
+ "clips": [
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
+   "text": "rule #1: photo every wire first",
+   "hl": "photo"
+  },
+  {
+   "photo": "video/weekly/photos/carrier_air_handler.jpg",
+   "text": "heat pump + backup heat strips",
+   "hl": "heat pump"
+  },
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring.jpg",
+   "text": "the O/B wire flips heat and cool",
+   "hl": "O/B"
+  },
+  {
+   "photo": "video/weekly/photos/ecobee_in_box.jpg",
+   "text": "the upgrade: ecobee premium",
+   "hl": "ecobee"
+  },
+  {
+   "photo": "video/weekly/photos/product_ecobee_premium.png",
+   "text": "control it from your phone",
+   "hl": "phone"
+  },
+  {
+   "photo": "video/weekly/photos/carrier_air_handler.jpg",
+   "text": "test heat, cool and backup heat",
+   "hl": "test"
+  }
+ ],
+ "cta": [
+  "Book your thermostat install",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}
