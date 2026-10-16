@@ -408,6 +408,41 @@ body:not(.simple) .infobtn{display:none}
 .simple .help:not(.open) .helptext,.simple .help:not(.open) .helpcolon{display:none}
 .simple .person .role:first-of-type{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .simple .slot .whyd{display:none}
+.tile.wide{grid-column:1/-1;grid-auto-flow:column;justify-content:center;align-items:center;gap:10px;padding:12px}
+.tile.wide svg{width:24px;height:24px}
+.pstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.pstat{display:grid;justify-items:center;gap:4px;text-align:center;font-size:.85rem;font-weight:700;color:var(--muted)}
+.pstat svg{width:84px;height:84px}
+.pstat .bgc{fill:none;stroke:var(--line);stroke-width:10}
+.pstat .fg{fill:none;stroke:var(--teal);stroke-width:10;stroke-linecap:round}
+.pstat text{font-family:var(--display);font-weight:800;font-size:26px;fill:var(--ink)}
+.msline{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+.msline li{display:grid;gap:2px}
+.msline button{display:flex;gap:12px;align-items:center;width:100%;text-align:start;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;color:var(--ink)}
+.msline .msdot{width:36px;height:36px;flex:none;border-radius:50%;display:grid;place-items:center;border:2px dashed var(--line);color:var(--muted);font-weight:800}
+.msline .msdot svg{width:18px;height:18px}
+.msline .got button{border-color:var(--teal)}
+.msline .got .msdot{background:var(--teal);border:2px solid var(--teal);color:var(--bg)}
+.mst{display:grid;gap:1px;min-width:0}
+.mst .muted{font-size:.85rem}
+.pausebar,.duebar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-radius:14px;padding:12px;margin:10px 0;background:var(--warn-soft);color:var(--ink);border:0;text-align:start;width:100%;font:inherit}
+.pausebar svg,.duebar svg{width:22px;height:22px;flex:none;color:var(--warn)}
+.pausebar span{flex:1 1 200px}
+.duebar{background:var(--teal-soft);font-weight:700;cursor:pointer}
+.duebar svg{color:var(--teal)}
+.sugg{border:1.5px solid var(--sun);border-radius:14px;padding:12px;display:grid;gap:8px;margin-top:10px}
+.sugg li{display:grid;gap:6px;justify-items:start}
+.cipast{margin-top:12px}
+.cipast summary{cursor:pointer;font-weight:700;color:var(--teal)}
+.ciitem{border-top:1px solid var(--line);padding:8px 0;display:grid;gap:4px}
+.ciitem p{margin:0;font-size:.93rem}
+.wins{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.wins li{display:flex;gap:10px;align-items:flex-start;background:color-mix(in srgb,var(--sun) 14%,var(--surface));border-radius:12px;padding:10px}
+.wins .star svg{width:18px;height:18px;color:var(--sun-ink)}
+.wins span:nth-child(2){flex:1;min-width:0}
+.wins time{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.pausebox{border-style:dashed}
+.pausebox .btn svg{width:14px;height:14px;vertical-align:-2px}
 </style>
 
 <div class="wrap">
@@ -1215,7 +1250,7 @@ function renderChrome(){
   if(typeof applySimple==="function") applySimple();
 }
 function render(){
-  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, kit:()=>kitView(true), advisor:()=>advisorView(true), welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
+  ({home, talk:()=>talkView(true), own:()=>talkOwn(true), resume_up:()=>uploadView("resume"), work:()=>uploadView("work"), resume:()=>resumeView(), agents:()=>agentsView(), agentChat:()=>agentChat(S.agentId), portfolio:()=>portfolioView(), strengths:()=>strengths(true), ideas, plan:()=>plan(true), day:()=>day(true), package:packageView, kit:()=>kitView(true), advisor:()=>advisorView(true), progress:()=>progressView(true), welcome:()=>welcome(), profile:profileView, dream:()=>dreamView()})[S.view]();
 }
 
 /* ---------- home ---------- */
@@ -1631,7 +1666,7 @@ function plan(noScroll){
     </div>
     <p class="saved">${ICON.save}<span>${t.saved}</span></p>
   </div>
-  <div class="tiles"><button class="tile sun" type="button" id="day">${ICON.sunny}<span>${t.tiles.day}</span></button><button class="tile" type="button" id="kit">${ICON.mega}<span>${t.tiles.kit}</span></button><button class="tile" type="button" id="advgo2">${ICON.people}<span>${t.tiles.advisor}</span></button><button class="tile" type="button" id="pkg">${ICON.box}<span>${t.tiles.pkg}</span></button></div>
+  <div class="tiles"><button class="tile wide" type="button" data-prog>${ICON.flag}<span>${t.tileProg}</span></button><button class="tile sun" type="button" id="day">${ICON.sunny}<span>${t.tiles.day}</span></button><button class="tile" type="button" id="kit">${ICON.mega}<span>${t.tiles.kit}</span></button><button class="tile" type="button" id="advgo2">${ICON.people}<span>${t.tiles.advisor}</span></button><button class="tile" type="button" id="pkg">${ICON.box}<span>${t.tiles.pkg}</span></button></div>
   <div class="actions"><button class="btn ghost small" type="button" id="launch">${t.launch}</button><button class="btn ghost small" type="button" id="back">${t.pickAnother}</button></div>
   <p id="launched" class="muted" hidden style="margin-top:10px">${fmt(t.launched,{name:p.own?t.you:esc(p.name)})}</p>
   ${levelsBox(0)}`;
@@ -1678,7 +1713,7 @@ function day(noScroll){
     .filter(x=>!st.removed[x.id]).concat(st.custom, agentTasks()).sort((a,b)=>a.time.localeCompare(b.time));
   const save=()=>store.set(key,st);
   app.innerHTML=`<span class="label">${fmt(t.stepOf,{n:num(5)})}</span><h2 style="margin-top:6px">${t.dayH}</h2>
-  <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${helpBox(4)}${dreamCard()}${knowCard("day")}
+  <p class="muted" style="margin-top:6px;max-width:62ch">${t.dayLead}</p>${pauseBanner()}${checkinDue()?`<button type="button" class="duebar" data-prog>${ICON.flag}<span>${t.ciDue}</span></button>`:""}${helpBox(4)}${dreamCard()}${knowCard("day")}
   <div class="dayhead">
     <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bgc" cx="50" cy="50" r="40"/><circle class="fg" id="ring" cx="50" cy="50" r="40" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)"/><text id="ringtxt" x="50" y="56" text-anchor="middle"></text></svg>
     <div><h3 id="kept"></h3><p class="muted">${esc(pl.name||"")}</p><p class="muted" style="font-size:.88rem">${t.forgive}</p></div>
@@ -1697,7 +1732,7 @@ function day(noScroll){
     <button class="btn" type="submit">${t.add}</button>
   </form>
   <p class="saved" style="margin-top:12px">${ICON.save}<span>${t.saved}</span></p>
-  <div class="actions"><button class="btn sun" type="button" id="pkg">${t.packageBtn}</button><button class="btn ghost" type="button" id="newday">${t.newDay}</button><button class="btn ghost" type="button" id="back">${t.back}</button><button class="btn ghost" type="button" id="restart">${t.restart}</button></div>`;
+  <div class="actions"><button class="btn sun" type="button" data-prog>${t.progBtn}</button><button class="btn ghost" type="button" id="pkg">${t.packageBtn}</button><button class="btn ghost" type="button" id="newday">${t.newDay}</button><button class="btn ghost" type="button" id="back">${t.back}</button><button class="btn ghost" type="button" id="restart">${t.restart}</button></div>`;
   const upd=()=>{
     const all=[...app.querySelectorAll(".slot")], n=all.filter(li=>st.checked[li.dataset.id]).length;
     document.getElementById("kept").textContent=fmt(t.kept,{n:num(n),t:num(all.length)});
@@ -1913,7 +1948,7 @@ function renderHub(){
     else { if(S.journeyView && S.pi!=null){ S.view=S.journeyView; render(); } else home(); }
   });
 }
-const JOURNEY_VIEWS=["talk","own","resume_up","work","strengths","ideas","plan","day","package","kit","advisor","welcome"];
+const JOURNEY_VIEWS=["talk","own","resume_up","work","strengths","ideas","plan","day","package","kit","advisor","progress","welcome"];
 
 /* ---------- agents ---------- */
 const AG={ list: store.get("seedline-agents") || [] };
@@ -2642,6 +2677,111 @@ function journeyStrip(){
   return `<ol class="pathviz" aria-label="${esc(t.heroSub)}">${t.steps.map((s,i)=>`<li><span class="pv">${ic[i]}</span><span>${s}</span></li>`).join("")}</ol>`;
 }
 
+/* ---------- progress: weekly check-in, milestones, pause, wins (Day 4) ---------- */
+const PROG = {
+en:{ progBtn:"My progress", progH:"How far you've come", progDays:"days on your journey", progSteps:"plan steps done", progMs:"milestones",
+  msH:"Milestones", msP:"Every first is a big deal. Tap one when it happens.", msDone:"Done {d}", msNot:"Not yet", msCheer:"You did it! That's a real step. Many people never get this far.", msPartial:"{n} of {t} milestones. Every one counts.",
+  ms:[["talk","First conversation","You talked to a possible customer about your idea."],["test","First test","You tried your weekend test."],["cust","First customer","Someone paid you or booked you."],["review","First review","A customer said something good about your work."],["again","Customer came back","Someone bought again or sent a friend."]],
+  ciH:"Weekly check-in", ciP:"Three short questions, once a week. Your answers help your plan fit your real life.", ciDue:"Your weekly check-in is ready.", ciQ:["What worked this week?","What got stuck?","What will you try next week?"], ciPh:"A few words is enough…",
+  ciSave:"Save check-in", ciSaved:"Saved. Thank you for being honest with yourself.", ciAI:"Save and update my plan with AI", ciThinking:"Looking at your plan…", ciSuggest:"Suggested changes to your plan", ciApply:"Use this", ciApplied:"Updated", ciSkip:"Keep my plan", ciPast:"Past check-ins", ciWeek:"Week {n}", ciNone:"No check-ins yet.",
+  pauseH:"Need a break?", pauseP:"Life happens: work, family, health. Pause for a week. Nothing is lost and there are no penalties.", pauseBtn:"Pause one week", pausedMsg:"You're on a break until {d}. Take care of yourself. Your plan will be here.", resumeBtn:"I'm back",
+  winsH:"Wins jar", winsP:"Write down small wins. On hard days, read them again.", winsPh:"For example: I told my neighbor about my business", winsAdd:"Add win", winsNone:"Your first win goes here. Even a small one counts.",
+  stepLabel:"Step {n}", tileProg:"Progress", winTool:"Add to your wins jar: {x}", msTool:"Mark milestone: {x}" },
+es:{ progBtn:"Mi progreso", progH:"Todo lo que has avanzado", progDays:"días en tu camino", progSteps:"pasos del plan hechos", progMs:"logros",
+  msH:"Logros", msP:"Cada primera vez es importante. Tócala cuando pase.", msDone:"Hecho {d}", msNot:"Todavía no", msCheer:"¡Lo lograste! Es un paso real. Mucha gente nunca llega hasta aquí.", msPartial:"{n} de {t} logros. Cada uno cuenta.",
+  ms:[["talk","Primera conversación","Hablaste con un posible cliente sobre tu idea."],["test","Primera prueba","Hiciste tu prueba de fin de semana."],["cust","Primer cliente","Alguien te pagó o te contrató."],["review","Primera reseña","Un cliente dijo algo bueno de tu trabajo."],["again","Cliente que regresa","Alguien volvió a comprar o te recomendó."]],
+  ciH:"Revisión semanal", ciP:"Tres preguntas cortas, una vez por semana. Tus respuestas ayudan a que tu plan se ajuste a tu vida real.", ciDue:"Tu revisión semanal está lista.", ciQ:["¿Qué funcionó esta semana?","¿Qué se atoró?","¿Qué vas a intentar la próxima semana?"], ciPh:"Unas pocas palabras bastan…",
+  ciSave:"Guardar revisión", ciSaved:"Guardado. Gracias por ser honesto contigo.", ciAI:"Guardar y actualizar mi plan con IA", ciThinking:"Revisando tu plan…", ciSuggest:"Cambios sugeridos para tu plan", ciApply:"Usar esto", ciApplied:"Actualizado", ciSkip:"Mantener mi plan", ciPast:"Revisiones anteriores", ciWeek:"Semana {n}", ciNone:"Todavía no hay revisiones.",
+  pauseH:"¿Necesitas un descanso?", pauseP:"La vida pasa: trabajo, familia, salud. Haz una pausa de una semana. No se pierde nada y no hay penalidades.", pauseBtn:"Pausar una semana", pausedMsg:"Estás en pausa hasta el {d}. Cuídate. Tu plan te espera aquí.", resumeBtn:"Ya volví",
+  winsH:"Frasco de logros", winsP:"Anota tus pequeños logros. En los días difíciles, vuelve a leerlos.", winsPh:"Por ejemplo: le conté a mi vecina sobre mi negocio", winsAdd:"Agregar logro", winsNone:"Tu primer logro va aquí. Hasta uno pequeño cuenta.",
+  stepLabel:"Paso {n}", tileProg:"Progreso", winTool:"Agregar a tu frasco de logros: {x}", msTool:"Marcar logro: {x}" },
+fa:{ progBtn:"پیشرفت من", progH:"چقدر جلو آمده‌ای", progDays:"روز در مسیرت", progSteps:"قدم برنامه انجام شده", progMs:"دستاورد",
+  msH:"دستاوردها", msP:"هر «اولین بار» مهم است. وقتی اتفاق افتاد، رویش بزن.", msDone:"انجام شد {d}", msNot:"هنوز نه", msCheer:"انجامش دادی! این یک قدم واقعی است. خیلی‌ها هرگز تا اینجا نمی‌رسند.", msPartial:"{n} از {t} دستاورد. هر کدام مهم است.",
+  ms:[["talk","اولین گفت‌وگو","با یک مشتری احتمالی دربارهٔ ایده‌ات صحبت کردی."],["test","اولین آزمایش","آزمایش آخر هفته‌ات را انجام دادی."],["cust","اولین مشتری","کسی به تو پول داد یا وقت گرفت."],["review","اولین نظر","یک مشتری از کارت تعریف کرد."],["again","مشتری برگشت","کسی دوباره خرید یا دوستش را معرفی کرد."]],
+  ciH:"مرور هفتگی", ciP:"سه سؤال کوتاه، هفته‌ای یک بار. جواب‌هایت کمک می‌کند برنامه‌ات با زندگی واقعی‌ات جور شود.", ciDue:"مرور هفتگی‌ات آماده است.", ciQ:["این هفته چه چیزی جواب داد؟","کجا گیر کردی؟","هفتهٔ بعد چه چیزی را امتحان می‌کنی؟"], ciPh:"چند کلمه کافی است…",
+  ciSave:"ذخیرهٔ مرور", ciSaved:"ذخیره شد. ممنون که با خودت صادقی.", ciAI:"ذخیره و به‌روزرسانی برنامه با هوش مصنوعی", ciThinking:"در حال بررسی برنامه‌ات…", ciSuggest:"تغییرهای پیشنهادی برای برنامه‌ات", ciApply:"همین را بگذار", ciApplied:"به‌روز شد", ciSkip:"برنامه‌ام را نگه دار", ciPast:"مرورهای قبلی", ciWeek:"هفتهٔ {n}", ciNone:"هنوز مروری نداری.",
+  pauseH:"به استراحت نیاز داری؟", pauseP:"زندگی است دیگر: کار، خانواده، سلامتی. یک هفته مکث کن. چیزی از دست نمی‌رود و جریمه‌ای ندارد.", pauseBtn:"یک هفته مکث", pausedMsg:"تا {d} در استراحتی. مراقب خودت باش. برنامه‌ات همین‌جا منتظر است.", resumeBtn:"برگشتم",
+  winsH:"شیشهٔ موفقیت‌ها", winsP:"موفقیت‌های کوچکت را بنویس. در روزهای سخت دوباره بخوانشان.", winsPh:"مثلاً: دربارهٔ کسب‌وکارم به همسایه‌ام گفتم", winsAdd:"افزودن موفقیت", winsNone:"اولین موفقیتت اینجا می‌آید. حتی یک موفقیت کوچک هم مهم است.",
+  stepLabel:"قدم {n}", tileProg:"پیشرفت", winTool:"افزودن به شیشهٔ موفقیت‌ها: {x}", msTool:"علامت دستاورد: {x}" },
+ar:{ progBtn:"تقدّمي", progH:"كم تقدّمت", progDays:"يومًا في رحلتك", progSteps:"خطوات منجزة من الخطة", progMs:"إنجازات",
+  msH:"الإنجازات", msP:"كل «أول مرة» شيء كبير. اضغط عليها عندما تحدث.", msDone:"تمّ {d}", msNot:"ليس بعد", msCheer:"فعلتها! هذه خطوة حقيقية. كثيرون لا يصلون إلى هنا.", msPartial:"{n} من {t} إنجازات. كل واحد مهم.",
+  ms:[["talk","أول محادثة","تحدّثت مع عميل محتمل عن فكرتك."],["test","أول تجربة","جرّبت اختبار نهاية الأسبوع."],["cust","أول عميل","شخص دفع لك أو حجز معك."],["review","أول تقييم","عميل قال شيئًا جيدًا عن عملك."],["again","عميل عاد","شخص اشترى مرة أخرى أو أرسل صديقًا."]],
+  ciH:"المراجعة الأسبوعية", ciP:"ثلاثة أسئلة قصيرة، مرة في الأسبوع. إجاباتك تساعد خطتك على أن تناسب حياتك الحقيقية.", ciDue:"مراجعتك الأسبوعية جاهزة.", ciQ:["ما الذي نجح هذا الأسبوع؟","أين تعثّرت؟","ماذا ستجرّب الأسبوع القادم؟"], ciPh:"كلمات قليلة تكفي…",
+  ciSave:"احفظ المراجعة", ciSaved:"تم الحفظ. شكرًا لصدقك مع نفسك.", ciAI:"احفظ وحدّث خطتي بالذكاء الاصطناعي", ciThinking:"نراجع خطتك…", ciSuggest:"تغييرات مقترحة لخطتك", ciApply:"استخدم هذا", ciApplied:"تم التحديث", ciSkip:"أبقِ خطتي", ciPast:"مراجعات سابقة", ciWeek:"الأسبوع {n}", ciNone:"لا توجد مراجعات بعد.",
+  pauseH:"تحتاج استراحة؟", pauseP:"الحياة تحدث: العمل، العائلة، الصحة. توقّف أسبوعًا. لا يضيع شيء ولا توجد عقوبات.", pauseBtn:"توقّف أسبوعًا", pausedMsg:"أنت في استراحة حتى {d}. اعتنِ بنفسك. خطتك هنا في انتظارك.", resumeBtn:"عدتُ",
+  winsH:"جرّة النجاحات", winsP:"اكتب نجاحاتك الصغيرة. في الأيام الصعبة، اقرأها مرة أخرى.", winsPh:"مثلًا: أخبرت جاري عن مشروعي", winsAdd:"أضف نجاحًا", winsNone:"نجاحك الأول يُكتب هنا. حتى الصغير منه مهم.",
+  stepLabel:"الخطوة {n}", tileProg:"التقدّم", winTool:"أضف إلى جرّة النجاحات: {x}", msTool:"سجّل إنجاز: {x}" }
+};
+Object.keys(PROG).forEach(l=>Object.assign(I18N[l],PROG[l]));
+ICON.flag=SV+'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>';
+ICON.jar=SV+'<path d="M8 3h8M9 3v3L6 9v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9l-3-3V3"/><path d="m12 12 1 2 2 .3-1.5 1.4.4 2.1-1.9-1-1.9 1 .4-2.1L9 14.3l2-.3z"/></svg>';
+ICON.pause=SV+'<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+function progKey(){ return planKey()+"-prog"; }
+function progData(){ return Object.assign({ms:{}, checkins:[], wins:[]}, store.get(progKey())||{}); }
+function saveProg(d){ store.set(progKey(), d); }
+function dateLabel(ts){ return new Date(ts).toLocaleDateString(S.lang==="fa"?"fa-IR":S.lang==="ar"?"ar-EG":S.lang,{month:"short",day:"numeric"}); }
+function isPaused(){ return S.profile.pausedUntil && Date.now()<S.profile.pausedUntil; }
+function pauseBanner(){ const t=T(); return isPaused()?`<div class="pausebar">${ICON.pause}<span>${fmt(t.pausedMsg,{d:dateLabel(S.profile.pausedUntil)})}</span><button type="button" class="btn small" data-resume>${t.resumeBtn}</button></div>`:""; }
+function checkinDue(){ if(S.pi==null || !person()?.ideas?.[S.idea]?.plan || isPaused()) return false; const d=progData(), last=d.checkins.at(-1)?.at || S.profile.started || Date.now(); return Date.now()-last >= 7*86400000; }
+document.addEventListener("click",e=>{ if(e.target.closest("[data-resume]")){ delete S.profile.pausedUntil; saveProfile(); render(); } if(e.target.closest("[data-prog]")){ progressView(); } });
+const CI={busy:false, sugg:null};
+function progressView(noScroll){
+  S.view="progress"; setStep(4,noScroll);
+  const p=person(), t=T(), d=p.ideas[S.idea], pl=d.plan||{}, pg=progData();
+  const week=store.get(planKey()+"-week")||[], stepsDone=(pl.steps||[]).filter((s,i)=>week[i]).length, tot=(pl.steps||[]).length;
+  const msN=t.ms.filter(m=>pg.ms[m[0]]).length;
+  const ring=(n,max,label)=>`<div class="pstat"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bgc" cx="50" cy="50" r="40"/><circle class="fg" cx="50" cy="50" r="40" stroke-dasharray="251.3" stroke-dashoffset="${251.3*(1-(max?Math.min(n,max)/max:0))}" transform="rotate(-90 50 50)"/><text x="50" y="57" text-anchor="middle">${num(n)}</text></svg><span>${label}</span></div>`;
+  const ans=pg.draft||["","",""];
+  app.innerHTML=`<span class="label">${esc(pl.name||d.title)}</span><h2 style="margin-top:6px">${t.progH}</h2>
+  ${pauseBanner()}
+  <div class="pstats">${ring(journeyDays(),Math.max(7,journeyDays()),t.progDays)}${ring(stepsDone,tot,t.progSteps)}${ring(msN,t.ms.length,t.progMs)}</div>
+  <section class="box"><h3>${t.msH}</h3><p class="muted">${t.msP}</p>
+    <ol class="msline">${t.ms.map(m=>{ const at=pg.ms[m[0]]; return `<li class="${at?"got":""}"><button type="button" data-ms="${m[0]}" aria-pressed="${!!at}" title="${m[2]}"><span class="msdot">${at?"✓":ICON.flag}</span><span class="mst"><b>${m[1]}</b><span class="muted">${at?fmt(t.msDone,{d:dateLabel(at)}):t.msNot}</span></span></button></li>`; }).join("")}</ol>
+    <p class="cheer" id="mscheer" ${pg.lastMs&&Date.now()-pg.lastMs<5000?"":"hidden"}>${t.msCheer}</p>
+    ${msN&&msN<t.ms.length?`<p class="muted keep" style="font-size:.9rem">${fmt(t.msPartial,{n:num(msN),t:num(t.ms.length)})}</p>`:""}
+  </section>
+  <section class="box" id="checkin"><h3>${t.ciH}</h3><p class="muted">${t.ciP}</p>
+    ${t.ciQ.map((q,i)=>`<div class="field"><label class="label" for="ci${i}">${q}</label><div class="composer" style="margin:0"><textarea id="ci${i}" rows="2" dir="auto" placeholder="${t.ciPh}">${esc(ans[i]||"")}</textarea>${micBtn("ci"+i)}</div></div>`).join("")}
+    <div class="choices"><button type="button" class="btn small sun" id="cisave">${t.ciSave}</button><button type="button" class="btn small ghost" id="ciai">${t.ciAI}</button><span class="muted" id="cimsg" aria-live="polite">${CI.busy?t.ciThinking:""}</span></div>
+    ${CI.sugg?`<div class="sugg"><strong>${t.ciSuggest}</strong>${CI.sugg.note?`<p>${esc(CI.sugg.note)}</p>`:""}<ul class="plain">${(CI.sugg.changes||[]).map((c,i)=>`<li><b>${fmt(t.stepLabel,{n:num(c.step)})}:</b> ${esc(c.text)} ${c.done?`<span class="tag">${t.ciApplied}</span>`:`<button type="button" class="btn small" data-apply="${i}">${t.ciApply}</button>`}</li>`).join("")}</ul><button type="button" class="btn small ghost" id="ciskip">${t.ciSkip}</button></div>`:""}
+    <details class="cipast"><summary>${t.ciPast} (${num(pg.checkins.length)})</summary>${pg.checkins.length?pg.checkins.slice().reverse().map((c,i)=>`<div class="ciitem"><b>${fmt(t.ciWeek,{n:num(pg.checkins.length-i)})} · ${dateLabel(c.at)}</b>${c.a.map((a,j)=>a?`<p><span class="muted">${t.ciQ[j]}</span> ${esc(a)}</p>`:"").join("")}</div>`).join(""):`<p class="muted keep">${t.ciNone}</p>`}</details>
+  </section>
+  <section class="box"><h3>${t.winsH}</h3><p class="muted">${t.winsP}</p>
+    <div class="addrow"><input type="text" id="winin" dir="auto" maxlength="160" placeholder="${t.winsPh}">${micBtn("winin")}<button type="button" class="btn small" id="winadd">${t.winsAdd}</button></div>
+    ${pg.wins.length?`<ul class="wins">${pg.wins.slice().reverse().map(w=>`<li><span class="star">${ICON.star}</span><span>${esc(w.text)}</span><time>${dateLabel(w.at)}</time></li>`).join("")}</ul>`:`<p class="muted keep">${t.winsNone}</p>`}
+  </section>
+  ${isPaused()?"":`<section class="box pausebox"><h3>${t.pauseH}</h3><p class="muted keep">${t.pauseP}</p><div><button type="button" class="btn small ghost" id="pausebtn">${ICON.pause} ${t.pauseBtn}</button></div></section>`}
+  <div class="actions"><button class="btn sun" type="button" id="pday">${t.tiles.day}</button><button class="btn ghost" type="button" id="pback">${t.back}</button></div>`;
+  app.querySelectorAll("[data-ms]").forEach(b=>b.onclick=()=>{ const k=b.dataset.ms, g=progData(); if(g.ms[k]) delete g.ms[k]; else { g.ms[k]=Date.now(); g.lastMs=Date.now(); } saveProg(g); progressView(true); });
+  const answers=()=>[0,1,2].map(i=>document.getElementById("ci"+i).value.trim());
+  app.querySelectorAll("#checkin textarea").forEach(ta=>ta.oninput=()=>{ const g=progData(); g.draft=answers(); saveProg(g); });
+  const saveCI=()=>{ const a=answers(); if(!a.some(Boolean)) return false; const g=progData(); g.checkins.push({at:Date.now(), a}); delete g.draft; saveProg(g); return a; };
+  document.getElementById("cisave").onclick=()=>{ if(saveCI()){ progressView(true); document.getElementById("cimsg").textContent=t.ciSaved; } };
+  document.getElementById("ciai").onclick=async()=>{
+    const a=saveCI(); if(!a) return; CI.busy=true; CI.sugg=null; progressView(true);
+    try{
+      const sample=await getSample();
+      const prompt=`You are Seedline, an honest, kind small-business coach. The person did their weekly check-in. Suggest small changes to the next steps of their plan so it fits their real life.
+Rules:
+${COMMON_RULES(locationOf())}
+- Never promise income. Never use the word "passive". Be warm and realistic. If they are stuck, make the next step smaller.
+Business: ${d.title}. Plan steps (done marked): ${(pl.steps||[]).map((s,i)=>`${i+1}. ${s}${week[i]?" (done)":""}`).join(" | ")}
+Check-in: worked: ${a[0]} | stuck: ${a[1]} | next: ${a[2]}${profileText()}
+Return only JSON: {"note":"1-2 kind sentences about their week","changes":[{"step":number of a step that is NOT done,"text":"new wording for that step, one concrete action"}]} with 0 to 2 changes.`;
+      const r=await sample.json(prompt,{modelTier:"default"});
+      const okSteps=new Set((pl.steps||[]).map((s,i)=>i+1).filter(n=>!week[n-1]));
+      CI.sugg={note:String(r?.note||"").slice(0,400), changes:(Array.isArray(r?.changes)?r.changes:[]).filter(c=>okSteps.has(Number(c.step))&&c.text).slice(0,2).map(c=>({step:Number(c.step),text:String(c.text).slice(0,240)}))};
+    }catch(e){ CI.sugg=null; CI.err=errMsg(e); }
+    CI.busy=false; progressView(true); if(CI.err){ document.getElementById("cimsg").textContent=CI.err; CI.err=null; }
+  };
+  app.querySelectorAll("[data-apply]").forEach(b=>b.onclick=()=>{ const c=CI.sugg.changes[+b.dataset.apply]; ensureCopy().ideas[S.idea].plan.steps[c.step-1]=c.text; c.done=true; progressView(true); });
+  const sk=document.getElementById("ciskip"); if(sk) sk.onclick=()=>{ CI.sugg=null; progressView(true); };
+  document.getElementById("winadd").onclick=()=>{ const v=document.getElementById("winin").value.trim(); if(!v) return; const g=progData(); g.wins.push({at:Date.now(), text:v.slice(0,160)}); saveProg(g); progressView(true); };
+  const pb=document.getElementById("pausebtn"); if(pb) pb.onclick=()=>{ S.profile.pausedUntil=Date.now()+7*86400000; saveProfile(); progressView(true); };
+  document.getElementById("pday").onclick=()=>day();
+  document.getElementById("pback").onclick=()=>plan();
+}
+
 /* ---------- levels + package ---------- */
 function levelsBox(here){
   const t=T();
@@ -2798,7 +2938,8 @@ async function superState(){
     agents: AG.list.map(a=>({name:a.name, goal:a.goal})),
     portfolio: files.slice(0,30).map(f=>({file:f.name, step:f.step, note:f.note||""})),
     resume: RS.data?{name:RS.data.name, headline:RS.data.headline, summary:RS.data.summary, skills:RS.data.skills}:null,
-    myDayAddedTasks: agentTasks().map(x=>x.text).slice(-10) };
+    myDayAddedTasks: agentTasks().map(x=>x.text).slice(-10),
+    progress: p&&d?(()=>{ const g=progData(); return {milestonesReached:Object.keys(g.ms), wins:g.wins.slice(-10).map(w=>w.text), lastCheckin:g.checkins.at(-1)||null, pausedUntil:isPaused()?new Date(S.profile.pausedUntil).toDateString():null}; })():null };
   return JSON.stringify(st).slice(0,12000);
 }
 function propose(label, apply){
@@ -2807,7 +2948,7 @@ function propose(label, apply){
     drawCoach();
   });
 }
-const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), kit:()=>kitView(), advisor:()=>advisorView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView(), dream:()=>dreamView() };
+const SECTION_GO = { home:()=>home(), strengths:()=>strengths(), ideas:()=>ideas(), plan:()=>plan(), day:()=>day(), package:()=>packageView(), kit:()=>kitView(), advisor:()=>advisorView(), progress:()=>progressView(), agents:()=>agentsView(), portfolio:()=>portfolioView(), resume:()=>resumeView(), profile:()=>profileView(), dream:()=>dreamView() };
 function superTools(){
   const t=T(), needPlan=()=>{ const p=S.pi!=null?person():null, d=p?.ideas?.[S.idea]; if(!d?.plan) throw new Error("The person has not chosen an idea and plan yet."); return d.plan; };
   return [
@@ -2851,11 +2992,21 @@ function superTools(){
          else { const e=r.experience?.[Number(experience)||0]; if(e) (e.bullets ||= []).push(text); }
          store.set("seedline-resume",r); if(S.view==="resume") resumeView(); });
        return ok?"approved":"the person skipped it"; }},
-    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | kit (launch kit: names, ready-to-send messages, flyer, prices, practice) | advisor (one-page summary to bring to a free SBDC/SCORE advisor, local rules, free help finder by ZIP) | agents | portfolio | resume | profile | dream.",
+    {name:"add_win", description:"Propose adding a small win to the person's wins jar (things they did well, in their words). Returns whether it was approved.",
+     inputSchema:{type:"object",properties:{text:{type:"string"}},required:["text"]},
+     execute:async({text})=>{ needPlan(); text=String(text||"").slice(0,160); if(!text) throw new Error("text is required");
+       const ok=await propose(fmt(t.winTool,{x:text}),()=>{ const g=progData(); g.wins.push({at:Date.now(),text}); saveProg(g); if(S.view==="progress") progressView(true); });
+       return ok?"approved and added":"the person skipped it"; }},
+    {name:"mark_milestone", description:"Propose marking a milestone as reached. milestone: talk (first conversation with a possible customer) | test (first weekend test) | cust (first paying customer) | review (first good review) | again (customer came back or referred someone). Only when the person said it happened.",
+     inputSchema:{type:"object",properties:{milestone:{type:"string",enum:["talk","test","cust","review","again"]}},required:["milestone"]},
+     execute:async({milestone})=>{ needPlan(); const m=t.ms.find(x=>x[0]===milestone); if(!m) throw new Error("unknown milestone");
+       const ok=await propose(fmt(t.msTool,{x:m[1]}),()=>{ const g=progData(); g.ms[milestone]=Date.now(); g.lastMs=Date.now(); saveProg(g); if(S.view==="progress") progressView(true); });
+       return ok?"approved":"the person skipped it"; }},
+    {name:"open_section", description:"Take the person to a part of the app right away (no approval needed). section: home | strengths | ideas | plan | day | package | kit (launch kit: names, ready-to-send messages, flyer, prices, practice) | progress (milestones, weekly check-in, wins jar, pause a week) | advisor (one-page summary to bring to a free SBDC/SCORE advisor, local rules, free help finder by ZIP) | agents | portfolio | resume | profile | dream.",
      inputSchema:{type:"object",properties:{section:{type:"string"}},required:["section"]},
      execute:async({section})=>{ const go=SECTION_GO[String(section)]; if(!go) throw new Error("unknown section");
-       if(["strengths","ideas","plan","day","package","kit","advisor"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
-       if(["plan","day","package","kit","advisor"].includes(section) && !person()?.ideas?.[S.idea]?.plan) throw new Error("No plan chosen yet.");
+       if(["strengths","ideas","plan","day","package","kit","advisor","progress"].includes(section) && S.pi==null) throw new Error("The person hasn't started a journey yet.");
+       if(["plan","day","package","kit","advisor","progress"].includes(section) && !person()?.ideas?.[S.idea]?.plan) throw new Error("No plan chosen yet.");
        go(); C.log.push({role:"action", label:fmt(t.act.open,{x:section}), state:"applied"}); drawCoach(); return "opened"; }}
   ];
 }
