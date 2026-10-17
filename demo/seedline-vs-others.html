@@ -1,0 +1,119 @@
+<title>Seedline vs Others</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: a briefing page — thesis, capability grid, then problem → fix ledger. */
+:root{
+  --bg:#F3F6F6; --surface:#FFFFFF; --ink:#13232B; --muted:#56666D; --line:#D9E2E3;
+  --teal:#1C6B67; --teal-soft:#E1EFED; --sun:#F2B33D; --sun-ink:#3A2600;
+  --yes:#2F7D4F; --yes-soft:#E3F2E8; --part:#9A6A00; --part-soft:#FFF3D6; --no:#B23A3A; --no-soft:#FBE7E7;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F; --teal:#5FC2B9; --teal-soft:#183A3A;
+  --yes:#6FCF97; --yes-soft:#163323; --part:#F2C96B; --part-soft:#332710; --no:#F28B8B; --no-soft:#3A1D1D; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F; --teal:#5FC2B9; --teal-soft:#183A3A;
+  --yes:#6FCF97; --yes-soft:#163323; --part:#F2C96B; --part-soft:#332710; --no:#F28B8B; --no-soft:#3A1D1D; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:grid;gap:28px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:800}
+h2{font-size:1.5rem}
+p{margin:0}
+.muted{color:var(--muted)}
+.label{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:800}
+.seed{width:20px;height:20px;border-radius:50% 50% 50% 0;background:var(--sun);transform:rotate(-45deg)}
+.lead{font-size:1.12rem;max-width:66ch}
+.callout{background:var(--teal-soft);border-radius:18px;padding:18px;display:grid;gap:6px}
+section{display:grid;gap:12px}
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+thead th{font-size:.8rem;color:var(--muted);font-weight:700;background:var(--surface);position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+tr.us td{background:color-mix(in srgb,var(--sun) 12%,var(--surface))}
+tr.us td:first-child{font-weight:800}
+.pill{display:inline-block;border-radius:999px;padding:.12rem .55rem;font-weight:700;font-size:.8rem;white-space:nowrap}
+.y{background:var(--yes-soft);color:var(--yes)} .p{background:var(--part-soft);color:var(--part)} .n{background:var(--no-soft);color:var(--no)}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:.88rem}
+.ledger{display:grid;gap:10px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;grid-template-columns:2.2rem 1fr 1fr;gap:12px}
+.row .num{font-family:var(--display);font-weight:800;color:var(--teal);font-size:1.2rem;font-variant-numeric:tabular-nums}
+.row h3{font-size:1.02rem}
+.row .who{font-size:.86rem;color:var(--muted)}
+.fix{display:grid;gap:6px;min-width:0}
+.fix p{font-size:.95rem}
+@media (max-width:640px){.row{grid-template-columns:2rem 1fr}.row .fix{grid-column:2}}
+.note{font-size:.86rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+a{color:var(--teal);font-weight:700}
+</style>
+
+<div class="wrap">
+  <div class="brand"><span class="seed" aria-hidden="true"></span>Seedline</div>
+  <section>
+    <span class="label">Competitor comparison · October 2026</span>
+    <h1>What others get wrong, and how Seedline fixes it</h1>
+    <p class="lead muted">We studied the closest products and the real complaints their users post on Trustpilot, G2, app stores and in FTC cases. Every problem below became a feature in Seedline.</p>
+  </section>
+
+  <div class="callout">
+    <strong>The gap no one fills</strong>
+    <p>No product we found combines all five: made for beginners, rules for where you live, Spanish, Persian and Arabic, a daily coach, and small one-time prices. The closest is Wix Business Launcher. It turns a résumé into ideas, but then funnels you into a Wix website subscription, works mainly in English, and says its own advice “may be inaccurate” and is not business advice.</p>
+  </div>
+
+  <section>
+    <h2>Side by side</h2>
+    <div class="legend"><span><span class="pill y">Yes</span></span><span><span class="pill p">Partly</span></span><span><span class="pill n">No</span></span><span class="muted">Based on public information as of October 2026.</span></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Product</th><th>Starts from your life or résumé</th><th>Rules for where you live</th><th>Persian &amp; Arabic</th><th>Daily coach &amp; routine</th><th>Honest reality check</th><th>Small, clear prices</th><th>You keep everything</th></tr></thead>
+      <tbody id="grid"></tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Their biggest problems → what Seedline does</h2>
+    <p class="muted">Ranked by how often it shows up and how much it hurts a beginner.</p>
+    <div class="ledger" id="ledger"></div>
+  </section>
+
+  <p class="note">Sources: the full research notes, with links and how reliable each source is, are in the project files under “Competitor complaints and opportunities”. Some prices and review counts conflict between sources or change often; check them before using this page externally. “In the demo” means you can try it now. “Next” means it is planned.</p>
+</div>
+
+<script>
+const G = [
+ ["Seedline", "y","y","y","y","y","y","y", true],
+ ["Wix Business Launcher", "y","n","p","n","n","p","p"],
+ ["ChatGPT or Claude on their own", "p","n","y","n","n","y","y"],
+ ["Sintra AI", "n","n","p","p","n","n","p"],
+ ["Polsia", "n","n","p","n","n","n","n"],
+ ["Durable", "n","n","p","n","n","p","n"],
+ ["LivePlan / Upmetrics", "n","n","n","n","p","p","y"],
+ ["SCORE / SBDC (free mentors)", "y","p","p","p","y","y","y"],
+ ["“Make money with AI” programs", "n","n","n","p","n","n","n"]
+];
+const L = {y:"Yes", p:"Partly", n:"No"};
+document.getElementById("grid").innerHTML = G.map(r=>`<tr class="${r[8]?"us":""}"><td>${r[0]}</td>${r.slice(1,8).map(v=>`<td><span class="pill ${v}">${L[v]}</span></td>`).join("")}</tr>`).join("");
+
+const P = [
+ ["Billing traps: hard to cancel, surprise renewals, refused refunds","Sintra, Noom ($56M settlement), Fabulous, LivePlan, Hostinger, Taskade, Polsia","Prices shown up front. No free trials that turn into charges. Cancel in one tap on your phone. A reminder 3 days before any renewal. Refunds one tap away.","In the demo (pricing promise). Real billing next."],
+ ["Promises of easy or “passive” AI income","FTC cases: Automators AI, Ascend Ecom, Click Profit, Air AI","No income promises, ever. The word “passive” is banned. Every idea shows real costs, time and risks.","In the demo"],
+ ["Generic ideas that could fit anyone","ChatGPT lists, online courses, idea newsletters","Every idea says why it fits, quoting the person's own words, résumé or photos. They can edit any answer and the ideas update.","In the demo"],
+ ["AI that says every idea is great","ChatGPT's 2025 “flattery” rollback; Polsia builds with no testing","A reality check on every idea (demand, competition, main risk) and a cheap weekend test before spending money.","In the demo"],
+ ["Wrong or non-local legal advice","NYC's business chatbot gave illegal advice; mentors who don't know state rules","Local rules for their ZIP, county and state, naming the office to confirm with. Free government steps are marked free.","In the demo, with a checked Virginia list and official links"],
+ ["AI hurts beginners who don't know what to ask","Study of 640 business owners: AI advice helped strong ones, hurt weaker ones","Guided questions, one step at a time, suggested questions for the coach, and screenshot help.","In the demo"],
+ ["People quit after setup","Polsia ~50% leave in month one; website builders stop at the website","A daily routine around work, gym and family, with business tasks taken from their plan.","In the demo, with weekly check-ins that update the plan"],
+ ["Help only in English","SBDC reports, government programs, most tools","English, Spanish, Persian and Arabic, right-to-left layout, and voice typing with spelling fixed as you go.","In the demo"],
+ ["A bot pretending to be a human coach","Noom; Hostinger (31% of 1-star reviews about AI support)","The coach says clearly it is AI, is honest, and points to free local help (SBDC, SCORE, library) when a person is needed.","In the demo"],
+ ["Credits that run out or get wasted","Sintra, Base44, Polsia, Taskade","No credits. The coach doesn't count down.","In the demo (promise). Real billing next."],
+ ["30-page business plans beginners don't need","LivePlan, Upmetrics","A one-page plan and a first-week checklist. A lender-ready plan only if they ask for it.","In the demo"],
+ ["Upsells when people are most unsure","LegalZoom charging up to $159 for an EIN that's free from the IRS","The launch plan says what is free and official, what is optional, and real fees.","In the demo"],
+ ["You can't take your work with you","Durable sites can't be exported","Copy your whole plan as text for free. You own it.","In the demo"],
+ ["Guilt and streak shame","Habitica, streak-based habit apps","“Missed a day? That's okay.” Progress counts as promises kept, with no penalties.","In the demo"],
+ ["Real human help is rare and slow","SCORE quality varies; immigrant programs are full","Free help finder by ZIP, and a one-page summary to bring to an SBDC or SCORE meeting, with headings also in English.","In the demo"]
+];
+document.getElementById("ledger").innerHTML = P.map((r,i)=>`<div class="row"><span class="num">${i+1}</span><div><h3>${r[0]}</h3><p class="who">${r[1]}</p></div><div class="fix"><p>${r[2]}</p><span><span class="pill ${r[3].startsWith("In the demo")&&!r[3].includes("next")?"y":"p"}">${r[3]}</span></span></div></div>`).join("");
+</script>

@@ -1,0 +1,215 @@
+<title>Seedline Test Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: a tester's checklist column; owner summary on top; one card per test. */
+:root{
+  --bg:#F3F6F6; --surface:#FFFFFF; --ink:#13232B; --muted:#56666D; --line:#D9E2E3;
+  --teal:#1C6B67; --teal-soft:#E1EFED; --sun:#F2B33D; --sun-ink:#3A2600;
+  --ok:#2F7D4F; --ok-soft:#E3F2E8; --bad:#B23A3A; --bad-soft:#FBE7E7; --skip:#6B6F78;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F;
+  --teal:#5FC2B9; --teal-soft:#183A3A; --sun:#F2B33D; --sun-ink:#2B1C00;
+  --ok:#6FCF97; --ok-soft:#163323; --bad:#F28B8B; --bad-soft:#3A1D1D; --skip:#A3A9B3; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F;
+  --teal:#5FC2B9; --teal-soft:#183A3A; --sun:#F2B33D; --sun-ink:#2B1C00;
+  --ok:#6FCF97; --ok-soft:#163323; --bad:#F28B8B; --bad-soft:#3A1D1D; --skip:#A3A9B3; color-scheme:dark }
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:800px;margin:0 auto;padding-inline:16px;padding-block:24px 64px;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(1.9rem,6vw,2.6rem);font-weight:800}
+h2{font-size:1.4rem}
+h3{font-size:1.08rem}
+p{margin:0}
+.muted{color:var(--muted)}
+.label{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:800}
+.seed{width:20px;height:20px;border-radius:50% 50% 50% 0;background:var(--sun);transform:rotate(-45deg)}
+a{color:var(--teal);font-weight:700}
+button{font:inherit;cursor:pointer}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.btn{border:0;border-radius:999px;padding:.6rem 1.2rem;font-weight:700;background:var(--sun);color:var(--sun-ink);text-decoration:none;display:inline-block}
+.intro{display:grid;gap:10px}
+.howto{background:var(--teal-soft);border-radius:16px;padding:14px 16px}
+.howto ol{margin:6px 0 0;padding-inline-start:1.2rem;display:grid;gap:4px}
+.status{font-size:.9rem;color:var(--muted)}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.group{display:grid;gap:10px}
+.test{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:10px;border-inline-start:5px solid var(--line)}
+.test.s-ok{border-inline-start-color:var(--ok)} .test.s-bad{border-inline-start-color:var(--bad)} .test.s-skip{border-inline-start-color:var(--skip)}
+.test .num{font-family:var(--display);font-weight:800;color:var(--teal);font-variant-numeric:tabular-nums}
+.test ul{margin:0;padding-inline-start:1.2rem;display:grid;gap:3px;font-size:.95rem}
+.choices{display:flex;gap:8px;flex-wrap:wrap}
+.choice{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:.4rem .9rem;font-weight:700;font-size:.92rem}
+.choice[aria-pressed="true"].ok{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.choice[aria-pressed="true"].bad{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.choice[aria-pressed="true"].skip{background:var(--line);border-color:var(--skip)}
+textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:.6rem .75rem;min-height:64px;resize:vertical}
+.saved{font-size:.82rem;color:var(--muted)}
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.tile{border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.tile strong{display:block;font-family:var(--display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:start;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td.n{font-variant-numeric:tabular-nums;text-align:center}
+.notes{display:grid;gap:8px}
+.note{border-inline-start:3px solid var(--bad);padding-inline-start:10px;font-size:.93rem}
+.note.ok{border-inline-start-color:var(--ok)}
+.err{background:var(--bad-soft);border-radius:12px;padding:.7rem .9rem}
+</style>
+
+<div class="wrap">
+  <div class="brand"><span class="seed" aria-hidden="true"></span>Seedline</div>
+  <section class="intro">
+    <span class="label">Beta test</span>
+    <h1>Help us test Seedline</h1>
+    <p class="muted">Seedline turns your life story into a small business plan. Please try each part below and tell us what works and what doesn't. Honest feedback helps the most. It takes about 20–30 minutes.</p>
+    <div class="howto"><strong>How to test</strong>
+      <ol>
+        <li>Open the demo in a new tab: <a href="https://claude.ai/artifact/VVy1ZZPmhKa5XGf5M9AT1f" target="_blank" rel="noopener">Open the Seedline demo</a></li>
+        <li>Do each test below, in any order.</li>
+        <li>Mark it <b>Works</b>, <b>Problem</b> or <b>Skipped</b>, and write what you saw. Your answers save automatically.</li>
+      </ol>
+    </div>
+    <div><a class="btn" href="https://claude.ai/artifact/VVy1ZZPmhKa5XGf5M9AT1f" target="_blank" rel="noopener">Open the demo →</a></div>
+    <p class="status" id="status">Connecting…</p>
+    <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+  </section>
+
+  <section class="summary" id="summary" hidden>
+    <div><span class="label">Only you and editors see this</span><h2>Results from all testers</h2></div>
+    <div class="tiles" id="tiles"></div>
+    <div class="tablewrap"><table><thead><tr><th>Test</th><th>Works</th><th>Problem</th><th>Skipped</th></tr></thead><tbody id="sumrows"></tbody></table></div>
+    <h3>Notes from testers</h3>
+    <div class="notes" id="notes"><p class="muted">No notes yet. They will appear here as testers fill in the page.</p></div>
+  </section>
+
+  <div id="tests" class="group"></div>
+</div>
+
+<script>
+const TESTS = [
+ {g:"First look", items:[
+  {id:"home", t:"The home page", d:["Read the top of the page.","Can you tell in 10 seconds what Seedline does?","Does anything feel confusing or hard to trust?"]},
+  {id:"lang", t:"Languages", d:["Switch to Español, فارسی and العربية at the top.","Is the text correct and natural?","Persian and Arabic should read right to left."]},
+  {id:"trust", t:"Trust", d:["Read “We're with you at every step”, “Our honest promise” and the founder section.","Would you trust Seedline with your story? What would make you trust it more?"]}]},
+ {g:"Example people", items:[
+  {id:"persona", t:"Follow one example person through all 5 steps", d:["Pick Maria, Daniel, Sam or Amir.","Go through Talk → Strengths → Ideas → Launch plan → My day.","Does each step make sense for that person?"]},
+  {id:"edit", t:"Edit an answer", d:["On the Talk step, tap Edit on one answer and change it.","Tap “Update my results”.","Did the strengths and ideas change to match?"]},
+  {id:"strengths", t:"Change the strengths", d:["Remove one strength with × and add your own.","Tap “Update my ideas”.","Does each group show why it was suggested?"]},
+  {id:"compare", t:"Compare ideas and see what was ruled out", d:["On the Ideas step, look at “Compare side by side” and “Ideas we ruled out, and why”.","Do the hours, cost and risk look realistic? Do the reasons make sense?"]},
+  {id:"adjust", t:"Ask for different ideas", d:["On the Ideas step, write in “Not quite right?”, for example “I don't have a car”.","Did the new ideas respect what you asked?"]}]},
+ {g:"Your own story", items:[
+  {id:"own", t:"Tell your own story", d:["From the home page, tap “Talk with us”.","Answer the 6 questions in your own language, including where you live.","Do the ideas fit you? Would you actually try the first one?"]},
+  {id:"resume", t:"Share a résumé", d:["Tap “Share your résumé” and upload a PDF or a photo, or paste the text.","Do the strengths match your real experience?"]},
+  {id:"photos", t:"Show photos of your work", d:["Tap “Show your work” and upload 1–4 photos of something you made, fixed, cooked or sold.","Did Seedline understand what it saw?"]}]},
+ {g:"Plan and daily help", items:[
+  {id:"steps", t:"Open the plan steps one by one", d:["On the Launch plan, open each step.","Is the why, time, cost and “how to do it” clear enough to do alone?","Try “Done, next step” and edit one step."]},
+  {id:"local", t:"Local rules for your area", d:["Check “Your local rules and setup”.","Are the offices and rules right for your city, county and state?","Tell us anything that looks wrong or made up."]},
+  {id:"coach", t:"Ask the coach", d:["Tap “Ask your coach” and ask a question.","Then send a screenshot or a photo and ask “what do I do next?”","Was the answer simple and useful?"]},
+  {id:"day", t:"My day", d:["Tick items, edit one, remove one and add your own.","Does the schedule fit a real day with work, gym, groceries and family?"]}]},
+ {g:"Your AI workspace", items:[
+  {id:"simple", t:"Simple view and your data", d:["Use the app in simple view: tap an ⓘ or “Why?” to open an explanation, and try “Show all text”. Then open your profile and try “Download all my data”.","Is anything hard to find now that there are fewer words? Do you feel in control of your data?"]},
+  {id:"progress", t:"Track your progress", d:["On your plan, tap “Progress”. Mark a milestone, do the weekly check-in (3 short questions), add a win to the wins jar, and try “Pause one week”.","Did the check-in feel helpful or like homework? Did the pause feel safe, with no guilt?"]},
+  {id:"advisor", t:"Local rules and your advisor summary", d:["On your plan, look at “Local rules” (Virginia shows a checked list with official links) and “Free help near you”. Then tap “Advisor summary”, add a question and download the PDF.","Would you bring this page to a free advisor? Is anything about the rules confusing or missing?"]},
+  {id:"kit", t:"Use the launch kit", d:["On your plan, tap “Launch kit”. Pick a name, edit a message and copy it, add how to reach you and save the flyer.","Would you actually send these messages? Does the price advice feel fair for your area? Try “Practice with Seedline AI”."]},
+  {id:"dream", t:"Write down your dream", d:["Write your dream and why it matters (on the welcome screen or with “Write down my dream”).","Do you see it every day with “Today's step toward it”? Does the “ready to go out on your own” checklist feel honest and helpful?"]},
+  {id:"superai", t:"Ask Seedline AI to do things for you", d:["Tap “Seedline AI” and ask it to add your next step to your day, or to make you an agent.","Does it ask first, with “Do it” and “Skip”? Did it do exactly what you approved, and nothing else?"]},
+  {id:"agents", t:"Create your own agent", d:["Open “My agents”, start from an idea or make your own, and give it a goal.","Chat with it. Does it work step by step toward your goal? Try “Add to my day” on its next step."]},
+  {id:"portfolio", t:"Build your portfolio", d:["Open “Portfolio” and drag in or choose a few files (photos of your work, a flyer, a certificate).","Add a note to one. Close and reopen the page: are your files still there?"]},
+  {id:"resume", t:"Build and download your résumé", d:["Open “Résumé” and tap “Build my résumé”. Tap any text to fix it.","Download the PDF and the Word file. Do they look right? Is anything made up that you didn't say?"]}]},
+ {g:"Paying for it", items:[
+  {id:"pay", t:"Levels and the business package", d:["Look at “Grow at your pace” and “See my business package”.","Would you pay $9 for the launch kit? $29 for the package? $19 a month for the coach?","What would make it worth it to you?"]},
+  {id:"overall", t:"Overall", d:["Would you use Seedline to start a business? Would you tell a friend?","What is the one thing we should fix first?"]}]}
+];
+const ALL = TESTS.flatMap(g=>g.items);
+const STATUS = {ok:"Works", bad:"Problem", skip:"Skipped"};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let state = {tests:{}};
+let docRef = null, saving = Promise.resolve(), noteTimers = {};
+
+function renderTests(){
+  let n=0;
+  $("tests").innerHTML = TESTS.map(g=>`<section class="group"><h2>${esc(g.g)}</h2>${g.items.map(x=>{ n++; const r=state.tests[x.id]||{};
+    return `<article class="test ${r.status?"s-"+r.status:""}" data-id="${x.id}">
+      <div><span class="num">${n}.</span> <h3 style="display:inline">${esc(x.t)}</h3></div>
+      <ul>${x.d.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>
+      <div class="choices" role="group" aria-label="Result">${Object.entries(STATUS).map(([k,v])=>`<button type="button" class="choice ${k}" data-s="${k}" aria-pressed="${r.status===k}">${v}</button>`).join("")}</div>
+      <label class="label" for="note-${x.id}">What did you see?</label>
+      <textarea id="note-${x.id}" placeholder="Write anything: what worked, what was confusing, what broke.">${esc(r.note||"")}</textarea>
+      <span class="saved" id="sv-${x.id}">${r.at?"Saved":""}</span>
+    </article>`; }).join("")}</section>`).join("");
+  document.querySelectorAll(".test").forEach(card=>{
+    const id=card.dataset.id;
+    card.querySelectorAll(".choice").forEach(b=>b.onclick=()=>{
+      const r=state.tests[id]={...(state.tests[id]||{})}; r.status = r.status===b.dataset.s ? "" : b.dataset.s;
+      card.querySelectorAll(".choice").forEach(c=>c.setAttribute("aria-pressed", c.dataset.s===r.status));
+      card.className="test "+(r.status?"s-"+r.status:""); save(id); progress();
+    });
+    card.querySelector("textarea").oninput=e=>{
+      state.tests[id]={...(state.tests[id]||{}), note:e.target.value};
+      clearTimeout(noteTimers[id]); noteTimers[id]=setTimeout(()=>save(id),900);
+    };
+  });
+  progress();
+}
+function progress(){
+  const done=ALL.filter(x=>state.tests[x.id]?.status).length;
+  $("bar").style.width=(done/ALL.length*100)+"%";
+  if(docRef) $("status").textContent=`${done} of ${ALL.length} tests done. Your answers save automatically.`;
+}
+function save(id){
+  state.tests[id]={...state.tests[id], at:new Date().toISOString()};
+  try{ localStorage.setItem("seedline-test", JSON.stringify(state)); }catch{}
+  if(!docRef){ const s=$("sv-"+id); if(s) s.textContent="Saved on this device only"; return; }
+  const body={tests:state.tests, updatedAt:new Date().toISOString(), ua:navigator.userAgent.slice(0,160), lang:navigator.language||""};
+  saving = saving.then(()=>docRef.set(body)).then(()=>{ const s=$("sv-"+id); if(s) s.textContent="Saved"; })
+    .catch(e=>{ const s=$("sv-"+id); if(s) s.textContent = e?.code==="permission_denied"?"You can view this page but not save. Ask the owner for Contributor access.":"Couldn't save. Check your connection and try again."; });
+}
+
+function renderSummary(docs, profiles){
+  const testers=docs.length;
+  let ok=0,bad=0;
+  const rows=ALL.map(x=>{ const c={ok:0,bad:0,skip:0}; docs.forEach(d=>{ const s=d.tests?.[x.id]?.status; if(c[s]!==undefined) c[s]++; }); ok+=c.ok; bad+=c.bad; return `<tr><td>${esc(x.t)}</td><td class="n">${c.ok}</td><td class="n">${c.bad}</td><td class="n">${c.skip}</td></tr>`; });
+  $("tiles").innerHTML=[["Testers",testers],["Works",ok],["Problems",bad]].map(([l,v])=>`<div class="tile"><span class="label">${l}</span><strong>${v}</strong></div>`).join("");
+  $("sumrows").innerHTML=rows.join("");
+  const notes=[]; docs.forEach(d=>ALL.forEach(x=>{ const r=d.tests?.[x.id]; if(r?.note?.trim()) notes.push({who:profiles[d.id]?.name||"A tester", test:x.t, status:r.status, note:r.note, at:r.at||""}); }));
+  notes.sort((a,b)=>(a.status==="bad"?0:1)-(b.status==="bad"?0:1) || b.at.localeCompare(a.at));
+  if(notes.length){
+    $("notes").innerHTML="";
+    notes.forEach(n=>{ const p=document.createElement("div"); p.className="note "+(n.status==="ok"?"ok":""); const h=document.createElement("strong"); h.textContent=`${n.who} · ${n.test}${n.status?" · "+STATUS[n.status]:""}`; const t=document.createElement("p"); t.textContent=n.note; p.append(h,t); $("notes").append(p); });
+  }
+}
+
+(async function start(){
+  try{ const local=JSON.parse(localStorage.getItem("seedline-test")); if(local?.tests) state=local; }catch{}
+  renderTests();
+  $("status").textContent="Your answers save on this device until the page connects.";
+  const [db,user] = await Promise.all([window.claude?.use?.("db")??null, window.claude?.use?.("user")??null].map(p=>Promise.resolve(p).catch(()=>null)));
+  if(!db || !user){ $("status").textContent="Sign in to claude.ai to send your answers to the Seedline team. For now they save on this device only."; return; }
+  const uid = await user.id();
+  if(!uid){ $("status").textContent="Sign in to send your answers. For now they save on this device only."; return; }
+  docRef = db.doc("results/"+uid);
+  try{ const snap=await docRef.get(); if(snap.exists){ const d=snap.data(); state={tests:{...(d.tests||{}), ...Object.fromEntries(Object.entries(state.tests).filter(([k,v])=>v.at && (!d.tests?.[k]?.at || v.at>d.tests[k].at)))}}; renderTests(); } }catch{}
+  progress();
+  const admin = await user.canEdit().catch(()=>false);
+  if(admin){
+    $("summary").hidden=false;
+    db.collection("results").onSnapshot(async snap=>{
+      const docs=snap.docs.map(d=>({id:d.id, ...d.data()}));
+      const profiles=await user.profiles(docs.map(d=>d.id)).catch(()=>({}));
+      renderSummary(docs, profiles);
+    }, ()=>{ $("notes").innerHTML='<p class="err">Couldn\'t load results. Reload the page to try again.</p>'; });
+  }
+})();
+</script>
