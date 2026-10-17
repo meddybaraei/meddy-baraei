@@ -175,7 +175,7 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 @media (max-width:480px){.slot{grid-template-columns:1fr auto}.slot time{grid-column:1/-1}}
 
 /* edit + why + steps */
-.editbtn{border:0;background:none;color:inherit;opacity:.8;font-size:.8rem;font-weight:700;text-decoration:underline;padding:0;cursor:pointer}
+.editbtn{border:0;background:none;color:inherit;font-size:.8rem;font-weight:700;text-decoration:underline;padding:0;cursor:pointer}
 .msg .editbtn{display:block;margin-top:4px}
 .edtext{width:100%;min-width:0;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:.5rem .6rem}
 .msg.me .edtext{min-width:min(260px,60vw)}
@@ -387,8 +387,8 @@ ol.plain,ul.plain{margin:0;padding-inline-start:1.2rem;display:grid;gap:6px}
 .infobtn svg{width:15px;height:15px}
 body:not(.simple) .infobtn{display:none}
 .simple .fold:not(.show){display:none}
-.simple .why:not(.keep):not(.open){display:inline-flex;width:fit-content;align-items:center;gap:4px;cursor:pointer;background:var(--teal-soft);color:var(--teal);border-radius:999px;padding:2px 10px 2px 8px;font-weight:700;font-size:.8rem;margin-top:6px}
-.simple .why:not(.keep):not(.open)>span{display:none}
+.simple .why:not(.keep):not(.open){position:relative;display:inline-flex;width:fit-content;align-items:center;gap:4px;cursor:pointer;background:var(--teal-soft);color:var(--teal);border-radius:999px;padding:2px 10px 2px 8px;font-weight:700;font-size:.8rem;margin-top:6px}
+.simple .why:not(.keep):not(.open)>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 .simple .why:not(.keep):not(.open)::after{content:var(--why-label)}
 .simple .why:not(.keep).open{cursor:pointer}
 .simple .start{justify-items:center;text-align:center;padding:18px 10px}
@@ -443,6 +443,10 @@ body:not(.simple) .infobtn{display:none}
 .wins time{font-size:.8rem;color:var(--muted);white-space:nowrap}
 .pausebox{border-style:dashed}
 .pausebox .btn svg{width:14px;height:14px;vertical-align:-2px}
+.databox{margin-top:16px}
+.btn.danger{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,var(--line))}
+.dangerbox{border:1.5px solid var(--warn);background:var(--warn-soft);border-radius:14px;padding:12px;display:grid;gap:10px;margin-top:10px}
+.btn.danger-solid{background:var(--warn);color:var(--bg)}
 </style>
 
 <div class="wrap">
@@ -452,7 +456,7 @@ body:not(.simple) .infobtn{display:none}
       <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn small ghost" type="button" id="profBtn" hidden></button><button class="btn small ghost" type="button" id="simpleBtn" aria-pressed="false"></button><div class="langs" id="langs" role="group" aria-label="Language"></div></div>
     </div>
     <nav class="hub" id="hub" aria-label="Sections"></nav>
-    <nav class="steps" id="steps" aria-label="Progress"></nav>
+    <nav class="steps" id="steps" aria-label="Progress" tabindex="0"></nav>
   </header>
   <main id="app" aria-live="polite"></main>
   <p class="note" id="footnote"></p>
@@ -1847,6 +1851,7 @@ function profileView(){
   <div class="plist">${PQ.map(q=>`<div class="box"><span class="label">${esc(pqLabel(q,p[q.id]))}</span>${pqItem(q,true)}</div>`).join("")}</div>
   <div class="actions"><button class="btn ghost" type="button" id="back">${t.back}</button><button class="btn ghost" type="button" id="delp">${t.deleteP}</button></div>
   <p id="delmsg" class="muted" aria-live="polite"></p>`;
+  app.insertAdjacentHTML("beforeend", dataBox()); wireDataBox();
   document.getElementById("savena").onclick=()=>{ const n=document.getElementById("fn").value.trim(), a=parseInt(document.getElementById("agein").value,10); if(n) S.profile.firstName=n; else delete S.profile.firstName; if(a>=13) S.profile.age=a; else delete S.profile.age; saveProfile(); profileView(); };
   document.getElementById("delp").onclick=()=>{ S.profile={}; saveProfile(); profileView(); document.getElementById("delmsg").textContent=t.deleted; };
   document.getElementById("back").onclick=()=>{ S.view=S.prevView&&S.prevView!=="profile"?S.prevView:"home"; render(); };
@@ -1916,7 +1921,7 @@ function compareTable(p){
   const metas=p.ideas.map((d,i)=>ideaMeta(p,i));
   if(!metas.some(m=>m.hours||m.risk)) return "";
   const row=(label,cells)=>`<tr><th scope="row">${label}</th>${cells.map(c=>`<td>${c}</td>`).join("")}</tr>`;
-  return `<section class="compare"><h3>${t.compareH}</h3><div class="tablewrap"><table>
+  return `<section class="compare"><h3>${t.compareH}</h3><div class="tablewrap" tabindex="0" role="region" aria-label="${T().compareH||""}"><table>
     <thead><tr><th></th>${p.ideas.map(d=>`<th scope="col">${esc(d.title)}${d.startHere?` <span class="badge">${t.startHere}</span>`:""}</th>`).join("")}</tr></thead>
     <tbody>
       ${row(t.fFirst,p.ideas.map(d=>esc(d.firstDollar)))}
@@ -2656,7 +2661,7 @@ function applySimple(){
 let LOCK_SVG=null;
 function foldPass(){
   if(!LOCK_SVG){ const d=document.createElement("div"); d.innerHTML=ICON.lock; LOCK_SVG=d.firstElementChild.outerHTML; }
-  app.querySelectorAll(".why:not([data-f])").forEach(w=>{ w.dataset.f="1"; if(w.firstElementChild?.outerHTML===LOCK_SVG) w.classList.add("keep"); if(!w.classList.contains("keep")){ w.setAttribute("role","button"); w.tabIndex=0; w.setAttribute("aria-expanded","false"); } });
+  app.querySelectorAll(".why:not([data-f])").forEach(w=>{ w.dataset.f="1"; if(w.firstElementChild?.outerHTML===LOCK_SVG || w.querySelector("a,button,input")) w.classList.add("keep"); if(!w.classList.contains("keep")){ w.setAttribute("role","button"); w.tabIndex=0; w.setAttribute("aria-expanded","false"); } });
   app.querySelectorAll("p.muted:not([data-f])").forEach(p=>{
     p.dataset.f="1"; if(p.id || p.classList.contains("keep")) return;
     let h=p.previousElementSibling, n=0; while(h && n<2 && !/^H[1-3]$/.test(h.tagName)){ h=h.previousElementSibling; n++; }
@@ -2670,7 +2675,7 @@ function foldPass(){
   });
 }
 document.addEventListener("click",e=>{ const hb=e.target.closest(".help"); if(hb && document.body.classList.contains("simple")) hb.classList.toggle("open"); const w=e.target.closest(".why:not(.keep)"); if(w && document.body.classList.contains("simple") && !e.target.closest("a,button,input")){ w.classList.toggle("open"); w.setAttribute("aria-expanded",String(w.classList.contains("open"))); } });
-document.addEventListener("keydown",e=>{ if((e.key==="Enter"||e.key===" ") && e.target.matches?.(".why:not(.keep)")){ e.preventDefault(); e.target.click(); } });
+document.addEventListener("keydown",e=>{ if((e.key==="Enter"||e.key===" ") && e.target.matches?.(".why:not(.keep), .help")){ e.preventDefault(); e.target.click(); } });
 new MutationObserver(()=>foldPass()).observe(app,{childList:true,subtree:true});
 function journeyStrip(){
   const t=T(), ic=STEP_ICONS();
@@ -2780,6 +2785,41 @@ Return only JSON: {"note":"1-2 kind sentences about their week","changes":[{"ste
   const pb=document.getElementById("pausebtn"); if(pb) pb.onclick=()=>{ S.profile.pausedUntil=Date.now()+7*86400000; saveProfile(); progressView(true); };
   document.getElementById("pday").onclick=()=>day();
   document.getElementById("pback").onclick=()=>plan();
+}
+
+/* ---------- your data: download everything, delete everything (Day 5) ---------- */
+const MYDATA = {
+en:{ dataH:"Your data", dataP:"Everything you put in Seedline stays on this device. It's yours. Take a copy anytime, or delete it all.", dataDl:"Download all my data", dataDone:"Downloaded.", dataFail:"Downloads aren't available here. Use Copy instead.", dataCopy:"Copy all my data", dataDel:"Delete everything on this device", dataSure:"This deletes your profile, plans, progress, agents, résumé and portfolio files on this device. It can't be undone.", dataYes:"Yes, delete everything", dataNo:"Keep my data", dataGone:"Everything is deleted from this device." },
+es:{ dataH:"Tus datos", dataP:"Todo lo que pones en Seedline se queda en este dispositivo. Es tuyo. Llévate una copia cuando quieras o bórralo todo.", dataDl:"Descargar todos mis datos", dataDone:"Descargado.", dataFail:"Las descargas no están disponibles aquí. Usa Copiar.", dataCopy:"Copiar todos mis datos", dataDel:"Borrar todo en este dispositivo", dataSure:"Esto borra tu perfil, planes, progreso, agentes, currículum y archivos del portafolio en este dispositivo. No se puede deshacer.", dataYes:"Sí, borrar todo", dataNo:"Conservar mis datos", dataGone:"Todo se borró de este dispositivo." },
+fa:{ dataH:"داده‌های تو", dataP:"هر چیزی که در Seedline می‌گذاری روی همین دستگاه می‌ماند. مال خودت است. هر وقت خواستی یک نسخه بردار یا همه را پاک کن.", dataDl:"دانلود همهٔ داده‌هایم", dataDone:"دانلود شد.", dataFail:"اینجا دانلود ممکن نیست. از «کپی» استفاده کن.", dataCopy:"کپی همهٔ داده‌هایم", dataDel:"پاک کردن همه‌چیز روی این دستگاه", dataSure:"این کار پروفایل، برنامه‌ها، پیشرفت، دستیارها، رزومه و فایل‌های نمونه‌کارت را روی این دستگاه پاک می‌کند. برگشت‌پذیر نیست.", dataYes:"بله، همه را پاک کن", dataNo:"داده‌هایم بماند", dataGone:"همه‌چیز از این دستگاه پاک شد." },
+ar:{ dataH:"بياناتك", dataP:"كل ما تضعه في Seedline يبقى على هذا الجهاز. إنه ملكك. خذ نسخة متى شئت، أو احذفه كله.", dataDl:"نزّل كل بياناتي", dataDone:"تم التنزيل.", dataFail:"التنزيل غير متاح هنا. استخدم النسخ بدلًا من ذلك.", dataCopy:"انسخ كل بياناتي", dataDel:"احذف كل شيء على هذا الجهاز", dataSure:"سيحذف هذا ملفك الشخصي وخططك وتقدّمك ووكلاءك وسيرتك الذاتية وملفات أعمالك على هذا الجهاز. لا يمكن التراجع عنه.", dataYes:"نعم، احذف كل شيء", dataNo:"احتفظ ببياناتي", dataGone:"تم حذف كل شيء من هذا الجهاز." }
+};
+Object.keys(MYDATA).forEach(l=>Object.assign(I18N[l],MYDATA[l]));
+async function allMyData(){
+  const out={exported:new Date().toISOString(), app:"Seedline demo", data:{}};
+  try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k&&k.startsWith("seedline")) out.data[k]=store.get(k); } }catch{}
+  const files=await pfAll().catch(()=>[]); out.portfolioFiles=files.map(f=>({name:f.name, type:f.type, size:f.size, step:f.step, note:f.note, added:new Date(f.added).toISOString()}));
+  return JSON.stringify(out,null,2);
+}
+function dataBox(){
+  const t=T();
+  return `<section class="box databox"><h3>${t.dataH}</h3><p class="muted keep">${t.dataP}</p>
+    <div class="choices"><button type="button" class="btn small" id="dataDl">${t.dataDl}</button><button type="button" class="btn small ghost" id="dataCp">${t.dataCopy}</button><button type="button" class="btn small ghost danger" id="dataDel">${t.dataDel}</button></div>
+    <div class="dangerbox" id="dataSure" hidden><p>${t.dataSure}</p><div class="choices"><button type="button" class="btn small danger-solid" id="dataYes">${t.dataYes}</button><button type="button" class="btn small ghost" id="dataNo">${t.dataNo}</button></div></div>
+    <p class="muted keep" id="datamsg" aria-live="polite"></p></section>`;
+}
+function wireDataBox(){
+  const t=T(), msg=document.getElementById("datamsg"), sure=document.getElementById("dataSure");
+  document.getElementById("dataDl").onclick=async()=>{ try{ const blob=new Blob([await allMyData()],{type:"application/json"}); await saveDownload("my-seedline-data.json", blob); msg.textContent=t.dataDone; }catch(e){ msg.textContent=e?.code==="declined"?"":t.dataFail; } };
+  document.getElementById("dataCp").onclick=async()=>{ const text=await allMyData(); try{ await navigator.clipboard.writeText(text); msg.textContent=t.copied; }catch{ const ta=document.createElement("textarea"); ta.className="paste"; ta.value=text; msg.after(ta); ta.select(); } };
+  document.getElementById("dataDel").onclick=()=>{ sure.hidden=false; document.getElementById("dataNo").focus(); };
+  document.getElementById("dataNo").onclick=()=>{ sure.hidden=true; };
+  document.getElementById("dataYes").onclick=async()=>{
+    try{ const ks=[]; for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(k&&k.startsWith("seedline")&&k!=="seedline-lang") ks.push(k); } ks.forEach(k=>localStorage.removeItem(k)); }catch{}
+    for(const f of await pfAll().catch(()=>[])) await pfDel(f.id);
+    S.profile={}; AG.list=[]; RS.data=null; S.own=null; S.ownPerson=null; S.pi=null; C.log=[];
+    renderProfBtn(); profileView(); document.getElementById("datamsg").textContent=t.dataGone;
+  };
 }
 
 /* ---------- levels + package ---------- */

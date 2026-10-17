@@ -1,0 +1,148 @@
+<title>Seedline Partner Brief</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: one printed-page brief — a thesis band, then a 2-column grid of short blocks that stacks on phones. */
+:root{
+  --bg:#F3F6F6; --surface:#FFFFFF; --ink:#13232B; --muted:#56666D; --line:#D9E2E3;
+  --teal:#1C6B67; --teal-soft:#E1EFED; --sun:#F2B33D; --sun-ink:#3A2600;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F; --teal:#5FC2B9; --teal-soft:#183A3A; --sun:#F2B33D; --sun-ink:#2B1C00; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1A1F; --surface:#15252B; --ink:#E7EFEF; --muted:#9DB0B4; --line:#26393F; --teal:#5FC2B9; --teal-soft:#183A3A; --sun:#F2B33D; --sun-ink:#2B1C00; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(1.9rem,5.5vw,2.8rem);font-weight:800}
+h2{font-size:1.15rem;font-weight:800}
+p{margin:0}
+.muted{color:var(--muted)}
+.label{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--muted)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:800;font-size:1.1rem}
+.seed{width:20px;height:20px;border-radius:50% 50% 50% 0;background:var(--sun);transform:rotate(-45deg)}
+.stage{font-size:.82rem;font-weight:700;border:1.5px solid var(--line);border-radius:999px;padding:.2rem .7rem;color:var(--muted)}
+.thesis{display:grid;gap:10px}
+.thesis p{font-size:1.1rem;max-width:64ch}
+.path{list-style:none;margin:4px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;counter-reset:s}
+.path li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;font-size:.88rem;display:grid;gap:2px;min-width:0}
+.path b{font-family:var(--display);color:var(--teal)}
+@media (max-width:640px){.path{grid-template-columns:1fr 1fr}.path li:last-child{grid-column:1/-1}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:720px){.grid{grid-template-columns:1fr}}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.block ul{margin:0;padding-inline-start:18px;display:grid;gap:5px}
+.block.accent{background:var(--teal-soft);border-color:transparent}
+.src{font-size:.78rem;color:var(--muted)}
+.src a{color:var(--teal)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:start;padding:6px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+tr:last-child td{border-bottom:0}
+.founder{display:flex;gap:14px;align-items:center}
+.founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--sun);flex:none}
+.ask{background:var(--sun);color:var(--sun-ink);border-radius:16px;padding:16px;display:grid;gap:8px}
+.ask ul{margin:0;padding-inline-start:18px;display:grid;gap:4px}
+.ask a{color:var(--sun-ink);font-weight:700}
+.foot{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+a{color:var(--teal)}
+a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+</style>
+
+<div class="wrap">
+  <div class="top"><div class="brand"><span class="seed" aria-hidden="true"></span>Seedline</div><span class="stage">Partner brief · October 2026 · Working demo, pilot next</span></div>
+
+  <section class="thesis">
+    <span class="label">What we do</span>
+    <h1>We help people turn their own life and skills into a small business they own.</h1>
+    <p class="muted">Seedline is a guided AI coach for beginners who have never used AI and never run a business: immigrants, retail and sales workers, people who sell things on the side. It speaks English, Spanish, Persian and Arabic and works on a phone.</p>
+    <ol class="path" aria-label="How Seedline works">
+      <li><b>1 · Talk</b><span>Answer 5 questions, upload a résumé or photos of your work</span></li>
+      <li><b>2 · Strengths</b><span>What you're good at, in your own words</span></li>
+      <li><b>3 · 3 honest ideas</b><span>With cost, time, risk and a weekend test</span></li>
+      <li><b>4 · Launch plan</b><span>Step by step, with local rules for your ZIP code</span></li>
+      <li><b>5 · My day</b><span>A daily routine around work, family and health</span></li>
+    </ol>
+  </section>
+
+  <div class="grid">
+    <section class="block">
+      <h2>The problem</h2>
+      <ul>
+        <li>Most new owners have little to spend. In one survey of 7,413 new business owners, about 90% planned under $200 a month on marketing and 26% planned $0.</li>
+        <li>About 20–22% of new businesses close in their first year.</li>
+        <li>The help that exists is in English, generic, or sold with income promises. Since 2023 the FTC has brought at least six cases against sellers who promised people a money-making business, several of them using AI.</li>
+      </ul>
+      <p class="src">Sources: <a href="https://ueni.com/blog/small-business-marketing-budget/" target="_blank" rel="noopener">UENI, Aug 2026</a> (not a representative sample) · <a href="https://www.score.org/greaterphoenix/resource/blog-post/small-business-failure-rates-2024-summary" target="_blank" rel="noopener">SCORE</a> · <a href="https://www.ftc.gov/legal-library/browse/cases-proceedings/automators" target="_blank" rel="noopener">FTC, Automators AI</a></p>
+    </section>
+
+    <section class="block">
+      <h2>What's built today</h2>
+      <ul>
+        <li>The full journey above, plus a launch kit: business names, ready-to-send messages, a flyer and a price helper.</li>
+        <li>A checked list of Virginia setup rules with official links, and a one-page summary to bring to a free SBDC or SCORE advisor.</li>
+        <li>Weekly check-ins, milestones, a "pause a week" button and a wins jar.</li>
+        <li>Personal AI agents, a portfolio and a résumé builder with PDF and Word download.</li>
+        <li>One assistant that can act in the app, but only after the person taps "Do it".</li>
+      </ul>
+      <p class="src">Built and tested on phone screens in all 4 languages. No real users yet.</p>
+    </section>
+
+    <section class="block">
+      <h2>Why it's different</h2>
+      <ul>
+        <li><b>Starts from the person</b>, not from a business idea they don't have yet.</li>
+        <li><b>Local rules</b> for where they live, with the office to confirm with.</li>
+        <li><b>Persian and Arabic</b>, right-to-left, alongside English and Spanish.</li>
+        <li><b>Honest by design:</b> no income promises, reality checks on every idea, and advice to keep the day job until they're ready.</li>
+        <li><b>They own their data:</b> it stays on their phone, with one-tap download or delete.</li>
+      </ul>
+      <p class="src">The closest product, Wix Business Launcher, turns a résumé into ideas but leads into a website subscription and works mainly in English.</p>
+    </section>
+
+    <section class="block">
+      <h2>How it makes money</h2>
+      <table>
+        <tbody>
+          <tr><td>Free</td><td class="num">$0</td><td>Talk, strengths, 3 ideas, launch plan, daily routine</td></tr>
+          <tr><td>Launch kit</td><td class="num">$9 once</td><td>Website, booking page and Google listing, set up with them</td></tr>
+          <tr><td>Business package</td><td class="num">$29 once</td><td>Download and keep the whole plan and brand</td></tr>
+          <tr><td>Coach + ads</td><td class="num">$19/mo</td><td>Daily coaching, weekly human check-ins, help with small ads</td></tr>
+          <tr><td>Partners</td><td class="num">To test</td><td>A branded version for nonprofits, libraries and workforce programs</td></tr>
+        </tbody>
+      </table>
+      <p class="src">Prices are the demo's proposed levels. Payments aren't turned on yet; nothing is charged during the pilot.</p>
+    </section>
+
+    <section class="block accent">
+      <h2>The pilot plan</h2>
+      <ul>
+        <li>4–6 weeks, free, with 20–40 people from 2–3 community organizations and a few local groups.</li>
+        <li>We measure: how many finish a plan, take a real first step, come back in week 2–3, and would pay for the next level.</li>
+        <li>We form the company and build the full site (with accounts and Telegram) only if the pilot shows people use it.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>The founder</h2>
+      <div class="founder"><img src="data:image/jpeg;base64,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" alt="Meddy Baraei"><div><h3>Meddy Baraei</h3><p class="muted">Retail sales leader · Sterling, Virginia</p></div></div>
+      <p>Meddy has led stores and sales teams for years and helped launch NovaProHome, a home-services business, from the ground up. Seedline packages what he did by hand for one business so anyone can do it with a coach beside them.</p>
+    </section>
+  </div>
+
+  <section class="ask">
+    <h2>What we're asking for</h2>
+    <ul>
+      <li><b>Pilot partners:</b> community, immigrant, workforce or library programs willing to host a free 45-minute session.</li>
+      <li><b>Advisors:</b> small-business advisors (SBDC, SCORE) and people who know consumer-protection law.</li>
+      <li><b>Feedback:</b> try the demo and tell us what's confusing. <a href="https://claude.ai/artifact/VVy1ZZPmhKa5XGf5M9AT1f" target="_blank" rel="noopener">Open the Seedline demo</a></li>
+    </ul>
+  </section>
+
+  <p class="foot">Seedline is a working name. Figures above come from the cited sources and the October 2026 research report; they describe the market, not Seedline's results. Seedline makes no promise that anyone will earn money.</p>
+</div>
