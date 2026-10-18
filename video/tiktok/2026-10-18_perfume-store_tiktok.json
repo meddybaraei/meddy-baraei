@@ -1,0 +1,10 @@
+{"hook": "POV: we set up a brand new perfume store before opening day", "hook_hl": "opening day",
+ "hook_photo": "video/weekly/photos/perfume_nvr_monitor.jpg",
+ "clips": [
+  {"photo": "video/weekly/photos/perfume_cam_corner.jpg", "text": "indoor + outdoor cameras", "hl": "cameras"},
+  {"photo": "video/weekly/photos/perfume_nvr_monitor.jpg", "text": "every corner on one screen", "hl": "one screen"},
+  {"photo": "video/weekly/photos/perfume_lock_outside.jpg", "text": "smart lock, codes for staff", "hl": "smart lock"},
+  {"photo": "video/weekly/photos/perfume_lock_inside.jpg", "text": "unlock from your phone", "hl": "phone"},
+  {"photo": "video/weekly/photos/perfume_cam_wifi.jpg", "text": "business Wi-Fi + POS ready", "hl": "POS"}
+ ],
+ "cta": ["Opening a new store?", "novaprohome.com/contact", "link in bio"]}
