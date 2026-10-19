@@ -230,6 +230,10 @@ def end_card():
     return lambda t: im
 
 scenes = [(s.get('dur', 4.0), photo_scene(s) if 'photo' in s else product_scene(s) if 'product' in s else card_scene(s)) for s in CFG['scenes']]
+if CFG.get('shop_qr', True):  # QR to the website shop (affiliate products) before the end card
+    scenes.append((4.0, card_scene({'art': 'qr', 'url': 'https://novaprohome.com/shop?utm_source=qr&utm_medium=video',
+                                     'title': 'Shop the products we install', 'body': 'Scan or visit novaprohome.com/shop',
+                                     'note': 'Some shop links are affiliate links: NovaProHome may earn a commission.'})))
 scenes.append((3.5, end_card()))
 total = sum(d for d, _ in scenes)
 scenes[0][1](0.0).save(OUT.rsplit('.', 1)[0] + '_thumb.jpg', quality=90)

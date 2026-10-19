@@ -84,6 +84,9 @@ for c in CFG['clips']:
         if c.get('text'): caption(im, c['text'], c.get('hl', ''), pop=ease_pop(t))
         return im
     frames.append((BEAT * BPC, fn))
+if 'qr' not in CFG:  # default: QR to the website shop (affiliate products)
+    CFG['qr'] = {'url': 'https://novaprohome.com/shop?utm_source=qr&utm_medium=tiktok', 'text': 'shop what we install', 'hl': 'shop',
+                 'note': 'novaprohome.com/shop · some links are affiliate'}
 if CFG.get('qr'):
     import qrcode
     qc = CFG['qr']
