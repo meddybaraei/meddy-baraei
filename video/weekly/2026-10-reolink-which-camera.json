@@ -1,0 +1,76 @@
+{
+ "badge": "Reolink · Business & Home",
+ "music": "upbeat",
+ "scenes": [
+  {
+   "art": "chapter",
+   "title": "Which Reolink camera fits your property?",
+   "body": "Business or home: 6 setups we install across Northern Virginia.",
+   "dur": 4.4
+  },
+  {
+   "art": "chapter",
+   "num": 1,
+   "title": "Shops, offices & restaurants",
+   "body": "PoE cameras + an NVR recorder: 24/7 local recording, no required monthly fee.",
+   "dur": 4.6
+  },
+  {
+   "art": "chapter",
+   "num": 2,
+   "title": "Parking lots & warehouses",
+   "body": "Dual-lens 180° panoramic cameras cover a wide area with fewer cameras.",
+   "dur": 4.6
+  },
+  {
+   "art": "chapter",
+   "num": 3,
+   "title": "Entrances & driveways",
+   "body": "Auto-tracking cameras follow people and cars, and zoom in on details.",
+   "dur": 4.6
+  },
+  {
+   "art": "chapter",
+   "num": 4,
+   "title": "Dark corners at night",
+   "body": "Color night vision cameras show real colors in very low light.",
+   "dur": 4.4
+  },
+  {
+   "art": "chapter",
+   "num": 5,
+   "title": "No power or Wi-Fi?",
+   "body": "4G LTE + solar cameras for construction sites, farms and vacant properties.",
+   "dur": 4.6
+  },
+  {
+   "art": "chapter",
+   "num": 6,
+   "title": "Homes & rentals",
+   "body": "Video doorbell, Wi-Fi and battery cameras with person, vehicle and pet alerts.",
+   "dur": 4.6
+  },
+  {
+   "art": "chapter",
+   "title": "Works with what you already use",
+   "body": "Synology & QNAP NAS, Blue Iris, Milestone and more. Support varies by model; we check yours.",
+   "dur": 4.6
+  },
+  {
+   "art": "list",
+   "title": "Why owners pick it",
+   "items": [
+    "No required monthly fees",
+    "Local recording (NVR or SD)",
+    "Person / vehicle / pet alerts",
+    "One app for every camera"
+   ],
+   "body": "We design, install and set it up for you.",
+   "dur": 5.2
+  }
+ ],
+ "end": [
+  "Not sure which one?",
+  "novaprohome.com"
+ ]
+}
