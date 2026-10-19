@@ -135,3 +135,12 @@ Real job, Vienna VA (Carrier heat pump + ecobee Premium). Files: video/weekly/20
 
 ## Reolink affiliate link (pending)
 - Meddy will send a Reolink affiliate link. When it arrives: add it (caption link + QR scene, like the Schlage one) to the Reolink "which camera fits your property" Short/carousel and future Reolink posts on all platforms, with the disclosure "Affiliate link: NovaProHome earns a commission from qualifying purchases." No giveaway block on posts carrying it. Hold Reolink posts until the link arrives (or Meddy says post without it).
+
+## Role (Oct 19): social media manager
+Meddy: "act as my social media manager to promote my business and services, and work on my platforms to get people to use the affiliate links to buy products so we make money."
+Two goals, in this order: (1) install bookings via novaprohome.com/contact, (2) affiliate sales (Amazon: Ring Battery Doorbell, Schlage Encode; Reolink via impact.com once approved).
+Affiliate funnel rules:
+- YouTube Shorts / TikTok captions: links are not clickable. Put the affiliate link on screen as a QR code + "link in bio", and point bios to one "Shop our picks" page (novaprohome.com/picks, Meddy to add) listing every affiliate product.
+- Clickable affiliate links live in: long YouTube videos (description + pinned comment), Facebook posts/Reels, LinkedIn posts.
+- Every affiliate post carries the disclosure; Amazon: "As an Amazon Associate, NovaProHome earns from qualifying purchases." No giveaway block on posts with affiliate links. Never put Amazon links in emails or printed/offline material (Amazon Associates rule).
+- Content mix per week: 4 job/install posts (trust + bookings), 2 product "worth it?" reviews or comparisons with affiliate link, 1 long video (6-10 min, watch hours + clickable links), 1 tip/how-to.
