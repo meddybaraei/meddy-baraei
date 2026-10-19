@@ -49,3 +49,14 @@
 
 ## Latest numbers (Oct 12-18)
 YouTube 4 subs (+2), ~1,100 views; TikTok 559 views (4x up); Facebook 198 video views, 37 post impressions; LinkedIn 2 impressions. Best: real-job install Shorts (Ring Alarm Pro Chantilly 303 views). Worst: FB photo posts.
+
+## Oct 19 evening: Gemini rebuild (session_01EBb8bvqS7qdcrdUoBbigq1)
+- Scheduled tasks moved to this session: trig_015fNt17QcfJcGdgBQujTRaL (YouTube Mon/Thu 9:13 AM) and trig_011gPdHHYNGgXqSY8YnscD2H (weekly review Mon 8:41 AM). Old ones disabled.
+- Gemini works without GEMINI_API_KEY (the proxy adds the credentials). Models: gemini-3.1-flash-image (Nano Banana), veo-3.1-fast/lite-generate-preview, gemini-3.1-pro-preview (review/brainstorm).
+- `video/tools/enhance_photos.py`: Nano Banana color-corrects job photos; only low-frequency tone is kept on the original pixels (nothing added, blurs preserved). Output in video/enhanced/, used automatically by make_series/make_tiktok (NPH_ENHANCED=0 for originals). All 72 photos done.
+- `video/tools/gen_images.py`: AI illustrations for tip posts, stamped "AI-generated illustration". make_series now supports {"clip": ..., "ai": true} scenes (labeled Veo b-roll). Veo clips: video/broll/ (6 clips, Fast 1080p 8 s, ~$1 each; letterboxed ones need "crop").
+- `video/tools/rebuild_pending.sh` re-rendered every unposted video (Oct 20+) with enhanced photos (+ shop QR; giveaway videos have the QR off).
+- 34 text-only FB+LinkedIn posts (Oct 26 to Nov 29) rebuilt as 15 s Reels: video/social/reels/<date>_<slug>.mp4 (spec text_posts.json).
+- `video/tools/gemini_review.py`: Gemini watches each video and critiques hook/title/caption (items list in scratchpad; rebuild with the post list).
+- BLOCKED: Gemini prepaid credits ran out (HTTP 402) after ~$14 of use. Meddy asked to brainstorm with Gemini before posting anything, so NO Metricool media swaps have been made yet. When credits are topped up: run gemini_review.py on all items + strategy brainstorm, apply good ideas, then updateScheduledPost each pending post with media https://raw.githubusercontent.com/meddybaraei/meddy-baraei/<SHA>/<path> (Reels: facebookData type REEL + title; keep LinkedIn).
+- Duplicate FB slot: Thu Oct 22 6:30 PM has ecobee Reel + Reston perfume Reel; move perfume to Fri Oct 23 12 PM when swapping media.
