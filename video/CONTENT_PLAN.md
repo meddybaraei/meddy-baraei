@@ -123,3 +123,12 @@ Real job, Vienna VA (Carrier heat pump + ecobee Premium). Files: video/weekly/20
 - End card shows a red "LIKE & SUBSCRIBE · for more smart home tips" badge (make_series.py default; set "subscribe": "" in a config to hide).
 - Every YouTube description includes: "👍 Like & subscribe to @NovaProHome for more smart home tips!"
 - Subscribing is never a condition of the giveaway entry.
+
+## Weekly review Oct 12–18 (trends)
+- YouTube: 4 subscribers (+2 this week). Views on that week's new videos 912 (8 videos) vs 3,238 (18 videos) the week before; fewer uploads = fewer views. Shorts feed (2,635) and YouTube search (1,602) are the main traffic sources, so "<Product> Installation in <City>, VA" titles keep working.
+- Top: Ring Alarm Pro Installation in Chantilly #shorts (303 views), Ring Solar Panel McLean #shorts (132), Ring Floodlight Cam Sterling #shorts (124). Real-job install Shorts win; long how-to (Ring Alarm Pro step by step) got 5 views.
+- Facebook: photo posts get 1–2 impressions; Reels get ~27 views each. Prefer Reels.
+- LinkedIn: 2 followers, ~2 impressions/week. Needs followers before content matters.
+- TikTok: 7 videos, 559 views (up from 142). Ring Alarm explainer and ecobee "7 wires" POV best (109 each).
+- Giveaway: 0 comment entries on the giveaway Short so far (Metricool count).
+- vidIQ out of credits until Nov 7 (no comment text / CTR). No website-traffic data: UTM links + Metricool pixel still missing.
