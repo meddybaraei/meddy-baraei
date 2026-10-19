@@ -139,6 +139,28 @@ def card_scene(s):
             y += 20
             for ln in wrap(d, s['body'], fs(44), W - 300): ctr(d, y, ln, fs(44), SUB, cx); y += 60
         return lambda t: im
+    if s['art'] == 'qr':
+        import qrcode
+        q = qrcode.make(s['url'], border=2).convert('RGB').resize((560, 560) if V else (480, 480), Image.NEAREST)
+        cx = W / 2 if V else 1440; y = 380 if V else 200
+        if not V: cx_t, y_t = 140, 300
+        if V:
+            for ln in wrap(d, s.get('title', ''), fb(76), W - 200): ctr(d, y, ln, fb(76), TXT, cx); y += 94
+            y += 30
+        d.rounded_rectangle((cx - q.width / 2 - 24, y - 24, cx + q.width / 2 + 24, y + q.height + 24), 28, fill=WHITE)
+        im.paste(q, (int(cx - q.width / 2), int(y)))
+        if V:
+            y += q.height + 70
+            for ln in wrap(d, s.get('body', ''), fs(46), W - 220): ctr(d, y, ln, fs(46), SUB, cx); y += 62
+            y += 20
+            for ln in wrap(d, s.get('note', ''), fs(32), W - 220): ctr(d, y, ln, fs(32), SUB, cx); y += 44
+        else:
+            for ln in wrap(d, s.get('title', ''), fb(72), 900): d.text((cx_t, y_t), ln, font=fb(72), fill=TXT); y_t += 90
+            y_t += 20
+            for ln in wrap(d, s.get('body', ''), fs(44), 900): d.text((cx_t, y_t), ln, font=fs(44), fill=SUB); y_t += 60
+            y_t += 20
+            for ln in wrap(d, s.get('note', ''), fs(30), 900): d.text((cx_t, y_t), ln, font=fs(30), fill=SUB); y_t += 42
+        return lambda t: im
     if s['art'] == 'list':
         y = 520 if V else 220
         d.text((80 if V else 140, y - 10), s.get('title', ''), font=fb(72 if V else 70), fill=TXT)

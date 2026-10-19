@@ -1,14 +1,78 @@
 {
- "badge": "Commercial Job · Northern Virginia",
+ "badge": "Commercial Job · Reston, VA",
  "scenes": [
-  {"photo": "video/weekly/photos/perfume_nvr_monitor.jpg", "kicker": "Commercial job · Northern Virginia", "title": "A brand new perfume store, fully secured", "body": "Cameras, smart lock, Wi-Fi and point of sale, all set up before opening day.", "dur": 4.6},
-  {"photo": "video/weekly/photos/perfume_cam_corner.jpg", "kicker": "Step 1", "title": "Indoor + outdoor cameras", "body": "Every aisle, the counter and the entrance covered.", "dur": 4.2},
-  {"photo": "video/weekly/photos/perfume_cam_close.jpg", "kicker": "Clean install", "title": "Ceiling-mounted, cables tidied", "body": "Out of reach and out of the way.", "dur": 4.0},
-  {"photo": "video/weekly/photos/perfume_nvr_monitor.jpg", "kicker": "Step 2", "title": "Live view of the whole store", "body": "Recording 24/7 on a local NVR, plus live view on the owner's phone.", "dur": 4.6},
-  {"photo": "video/weekly/photos/perfume_lock_outside.jpg", "kicker": "Step 3", "title": "Schlage smart lock on the back door", "body": "Codes for each employee. No more copied keys.", "dur": 4.4},
-  {"photo": "video/weekly/photos/perfume_lock_inside.jpg", "kicker": "Inside view", "title": "Wi-Fi connected", "body": "Lock, unlock and see who came in, right from the app.", "dur": 4.0},
-  {"photo": "video/weekly/photos/perfume_cam_wifi.jpg", "kicker": "Step 4", "title": "Business Wi-Fi + point of sale", "body": "Strong Wi-Fi for the cameras and a POS that is ready for day one.", "dur": 4.4},
-  {"art": "list", "title": "Ready for opening day", "items": ["Indoor + outdoor cameras", "NVR + live view on the phone", "Schlage Wi-Fi smart lock", "Business Wi-Fi + POS setup"], "body": "One installer, everything working together.", "dur": 5.0}
+  {
+   "photo": "video/weekly/photos/perfume_nvr_monitor.jpg",
+   "kicker": "Commercial job · Reston, VA",
+   "title": "A brand new perfume store, fully secured",
+   "body": "Cameras, smart lock, Wi-Fi and point of sale, all set up before opening day.",
+   "dur": 4.6
+  },
+  {
+   "photo": "video/weekly/photos/perfume_cam_corner.jpg",
+   "kicker": "Step 1",
+   "title": "Indoor + outdoor cameras",
+   "body": "Every aisle, the counter and the entrance covered.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/perfume_cam_close.jpg",
+   "kicker": "Clean install",
+   "title": "Ceiling-mounted, cables tidied",
+   "body": "Out of reach and out of the way.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/perfume_nvr_monitor.jpg",
+   "kicker": "Step 2",
+   "title": "Live view of the whole store",
+   "body": "Recording 24/7 on a local NVR, plus live view on the owner's phone.",
+   "dur": 4.6
+  },
+  {
+   "photo": "video/weekly/photos/perfume_lock_outside.jpg",
+   "kicker": "Step 3",
+   "title": "Schlage smart lock on the back door",
+   "body": "Codes for each employee. No more copied keys.",
+   "dur": 4.4
+  },
+  {
+   "photo": "video/weekly/photos/perfume_lock_inside.jpg",
+   "kicker": "Inside view",
+   "title": "Wi-Fi connected",
+   "body": "Lock, unlock and see who came in, right from the app.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/perfume_cam_wifi.jpg",
+   "kicker": "Step 4",
+   "title": "Business Wi-Fi + point of sale",
+   "body": "Strong Wi-Fi for the cameras and a POS that is ready for day one.",
+   "dur": 4.4
+  },
+  {
+   "art": "qr",
+   "url": "https://link.amazon/B0aLPKozm",
+   "title": "The smart lock we installed",
+   "body": "Scan to get the Schlage Encode Wi-Fi smart lock",
+   "note": "Affiliate link: as an Amazon Associate, NovaProHome earns from qualifying purchases.",
+   "dur": 5.0
+  },
+  {
+   "art": "list",
+   "title": "Ready for opening day",
+   "items": [
+    "Indoor + outdoor cameras",
+    "NVR + live view on the phone",
+    "Schlage Wi-Fi smart lock",
+    "Business Wi-Fi + POS setup"
+   ],
+   "body": "One installer, everything working together.",
+   "dur": 5.0
+  }
  ],
- "end": ["Opening a new store?", "novaprohome.com"]
+ "end": [
+  "Opening a new store?",
+  "novaprohome.com"
+ ]
 }

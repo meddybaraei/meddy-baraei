@@ -84,6 +84,18 @@ for c in CFG['clips']:
         if c.get('text'): caption(im, c['text'], c.get('hl', ''), pop=ease_pop(t))
         return im
     frames.append((BEAT * BPC, fn))
+if CFG.get('qr'):
+    import qrcode
+    qc = CFG['qr']
+    qimg = qrcode.make(qc['url'], border=2).convert('RGB').resize((600, 600), Image.NEAREST)
+    def qr_fn(t):
+        im = Image.new('RGB', (W, H), INK)
+        caption(im, qc.get('text', 'Scan to shop'), qc.get('hl', ''), size=88, cy=0.20, pop=ease_pop(t))
+        d = ImageDraw.Draw(im); d.rounded_rectangle((W / 2 - 330, 690, W / 2 + 330, 1350), 30, fill=WHITE)
+        im.paste(qimg, (W // 2 - 300, 720))
+        if qc.get('note'): caption(im, qc['note'], '', size=40, cy=0.76)
+        return im
+    frames.append((BEAT * 6, qr_fn))
 cta = CFG.get('cta', ['Book your install', 'novaprohome.com/contact', 'link in bio'])
 logo = Image.open(HERE + 'logo.png').convert('RGBA'); logo.thumbnail((620, 620))
 def cta_fn(t):
