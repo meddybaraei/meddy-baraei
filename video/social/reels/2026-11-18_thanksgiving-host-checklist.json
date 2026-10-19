@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_thanksgiving_table.mp4",
+   "crop": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "ai": true,
+   "kicker": "Hosting Thanksgiving?",
+   "title": "Smart home prep checklist",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/thanksgiving-host-checklist.jpg",
+   "title": "",
+   "body": "Guest lock codes · guest Wi-Fi · warm-up schedule · doorbell check",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

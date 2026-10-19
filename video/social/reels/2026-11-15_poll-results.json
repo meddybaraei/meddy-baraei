@@ -1,0 +1,18 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/social/reels/img/poll-results.jpg",
+   "kicker": "Poll results",
+   "title": "Our pick: start with a video doorbell",
+   "body": "It's the device you'll use every day, and your first line of security.",
+   "dur": 7.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

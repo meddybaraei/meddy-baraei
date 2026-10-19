@@ -1,0 +1,18 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/social/reels/img/daylight-saving-check.jpg",
+   "kicker": "Clocks fell back",
+   "title": "Did your house notice?",
+   "body": "Check fixed-time light schedules, plug-in timers, and sensor batteries.",
+   "dur": 7.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

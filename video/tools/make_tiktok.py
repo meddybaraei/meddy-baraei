@@ -11,6 +11,11 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__)) + '/'
 ROOT = os.path.abspath(HERE + '../..') + '/'
+
+def photo_path(p):
+    """Gemini-enhanced copy (video/enhanced/, see enhance_photos.py) when present; NPH_ENHANCED=0 uses originals."""
+    e = ROOT + 'video/enhanced/' + p
+    return e if os.environ.get('NPH_ENHANCED', '1') != '0' and os.path.exists(e) else ROOT + p
 CFG = json.load(open(sys.argv[1])); OUT = sys.argv[2]
 W, H, FPS = 1080, 1920, 30
 BEAT = 60 / CFG.get('bpm', 140); BPC = CFG.get('beats_per_clip', 4)
@@ -19,7 +24,7 @@ BLACK = lambda s: ImageFont.truetype(F + 'Inter-Black.otf', s)
 YEL, WHITE, INK = (255, 225, 26), (255, 255, 255), (12, 12, 14)
 
 def load(path, focus=(0.5, 0.5)):
-    src = ImageOps.exif_transpose(Image.open(ROOT + path)).convert('RGB')
+    src = ImageOps.exif_transpose(Image.open(photo_path(path))).convert('RGB')
     size = (int(W * 1.18), int(H * 1.18))
     if path.endswith('.png'):  # product shot: whole product on a blurred, darkened copy of itself
         from PIL import ImageFilter

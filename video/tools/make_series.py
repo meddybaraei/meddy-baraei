@@ -13,6 +13,11 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__)) + '/'
 ROOT = os.path.abspath(HERE + '../..') + '/'
+
+def photo_path(p):
+    """Gemini-enhanced copy (video/enhanced/, see enhance_photos.py) when present; NPH_ENHANCED=0 uses originals."""
+    e = ROOT + 'video/enhanced/' + p
+    return e if os.environ.get('NPH_ENHANCED', '1') != '0' and os.path.exists(e) else ROOT + p
 CFG = json.load(open(sys.argv[1])); OUT = sys.argv[2]
 ORIENT = sys.argv[3] if len(sys.argv) > 3 else 'v'
 W, H = (1080, 1920) if ORIENT == 'v' else (1920, 1080)
@@ -66,7 +71,7 @@ def top(im):
 def panel(d, s):
     """Text panel: kicker / title / body."""
     if V:
-        tl = wrap(d, s.get('title', ''), fb(74), W - 180)
+        tl = wrap(d, s['title'], fb(74), W - 180) if s.get('title') else []
         bl = wrap(d, s.get('body', ''), fs(46), W - 180) if s.get('body') else []
         h = 70 + (56 if s.get('kicker') else 0) + 88 * len(tl) + (20 + 60 * len(bl) if bl else 0)
         y0 = H - 260 - h
@@ -78,7 +83,7 @@ def panel(d, s):
         y += 20
         for ln in bl: d.text((90, y), ln, font=fs(46), fill=SUB); y += 60
     else:
-        tl = wrap(d, s.get('title', ''), fb(66), 1060)
+        tl = wrap(d, s['title'], fb(66), 1060) if s.get('title') else []
         bl = wrap(d, s.get('body', ''), fs(40), 1060) if s.get('body') else []
         h = 60 + (52 if s.get('kicker') else 0) + 80 * len(tl) + (16 + 54 * len(bl) if bl else 0)
         y0 = H - 70 - h
@@ -91,7 +96,7 @@ def panel(d, s):
         for ln in bl: d.text((110, y), ln, font=fs(40), fill=SUB); y += 54
 
 def photo_scene(s):
-    src = ImageOps.exif_transpose(Image.open(ROOT + s['photo'])).convert('RGB')
+    src = ImageOps.exif_transpose(Image.open(photo_path(s['photo']))).convert('RGB')
     if s.get('crop'):
         l, t, r, b = s['crop']; src = src.crop((int(l * src.width), int(t * src.height), int(r * src.width), int(b * src.height)))
     base = ImageOps.fit(src, (int(W * 1.1), int(H * 1.1)), Image.LANCZOS, centering=tuple(s.get('focus', (0.5, 0.5))))
@@ -101,6 +106,31 @@ def photo_scene(s):
         x, y = (base.width - cw) // 2, (base.height - ch) // 2
         im = base.crop((x, y, x + cw, y + ch)).resize((W, H), Image.BILINEAR)
         d = top(im); panel(d, s); return im
+    return f
+
+def clip_scene(s):
+    """Video clip scene (e.g. labeled AI b-roll from Veo): {"clip": path, "crop": [l, t, r, b] fractions, "ai": true}.
+    Frames are streamed from ffmpeg; the clip's own audio is dropped (music only)."""
+    l, tp, r, b = s.get('crop', (0, 0, 1, 1))
+    vf = (f"crop=iw*{r - l}:ih*{b - tp}:iw*{l}:ih*{tp},scale={W}:{H}:force_original_aspect_ratio=increase,"
+          f"crop={W}:{H},fps={FPS}")
+    st = {'p': None, 'k': -1, 'im': None}
+    def open_():
+        st['p'] = subprocess.Popen(['ffmpeg', '-loglevel', 'error', '-i', ROOT + s['clip'], '-vf', vf, '-f', 'rawvideo',
+                                    '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE); st['k'] = -1
+    def f(t):
+        want = int(t * (s.get('dur', 4.0) * FPS - 1))
+        if st['p'] is None or want < st['k']: open_()
+        while st['k'] < want:
+            buf = st['p'].stdout.read(W * H * 3)
+            if len(buf) < W * H * 3: break
+            st['im'] = Image.frombytes('RGB', (W, H), buf); st['k'] += 1
+        im = st['im'].copy()
+        d = top(im); panel(d, s)
+        if s.get('ai'):
+            tag = 'AI-generated b-roll'; tf = fs(30); w = d.textlength(tag, font=tf); x = W - 110 - w
+            d.rounded_rectangle((x - 16, 142, x + w + 16, 194), 22, fill=(0, 0, 0, 140)); d.text((x, 150), tag, font=tf, fill=WHITE)
+        return im
     return f
 
 def draw_art(d, kind, cx, cy, r):
@@ -229,7 +259,7 @@ def end_card():
         ctr(d, y, 'for more smart home tips', fs(40), TXT)
     return lambda t: im
 
-scenes = [(s.get('dur', 4.0), photo_scene(s) if 'photo' in s else product_scene(s) if 'product' in s else card_scene(s)) for s in CFG['scenes']]
+scenes = [(s.get('dur', 4.0), photo_scene(s) if 'photo' in s else clip_scene(s) if 'clip' in s else product_scene(s) if 'product' in s else card_scene(s)) for s in CFG['scenes']]
 if CFG.get('shop_qr', True):  # QR to the website shop (affiliate products) before the end card
     scenes.append((4.0, card_scene({'art': 'qr', 'url': 'https://novaprohome.com/shop?utm_source=qr&utm_medium=video',
                                      'title': 'Shop the products we install', 'body': 'Scan or visit novaprohome.com/shop',

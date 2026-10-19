@@ -1,0 +1,28 @@
+{
+ "badge": "Real Job",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/deck_installer_wide.jpg",
+   "kicker": "Real job · Arlington, VA",
+   "title": "The space under the deck was a blind spot",
+   "dur": 4.5
+  },
+  {
+   "photo": "video/weekly/photos/deck_spotlight_closeup.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "kicker": "",
+   "title": "",
+   "body": "Spotlight Cam on the beam + Floodlight Cam on the stairs. Whole backyard covered.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

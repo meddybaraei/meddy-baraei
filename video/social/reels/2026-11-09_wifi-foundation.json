@@ -1,0 +1,18 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/social/reels/img/wifi-foundation.jpg",
+   "kicker": "Wi-Fi first",
+   "title": "Camera offline? Check the network",
+   "body": "Signal where it's mounted · router location · mesh for garage and yard",
+   "dur": 7.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

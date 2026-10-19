@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_winter_house.mp4",
+   "crop": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "ai": true,
+   "kicker": "Winter is coming",
+   "title": "Is your home ready?",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/winter-prep.jpg",
+   "title": "",
+   "body": "Leak sensors · freeze alerts · fresh camera batteries · solar for winter",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

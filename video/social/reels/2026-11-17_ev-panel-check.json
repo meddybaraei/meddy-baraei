@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_ev_garage.mp4",
+   "crop": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "ai": true,
+   "kicker": "Thinking about an EV?",
+   "title": "Check your panel first",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/ev-panel-check.jpg",
+   "title": "",
+   "body": "Level 2 needs a dedicated circuit. We assess, design, and handle permits.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

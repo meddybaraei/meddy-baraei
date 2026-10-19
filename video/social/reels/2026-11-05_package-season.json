@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_package_porch.mp4",
+   "crop": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "ai": true,
+   "kicker": "Package season",
+   "title": "Protect your porch deliveries",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/package-season.jpg",
+   "title": "",
+   "body": "Camera that sees the ground · package alerts · smart delivery instructions",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

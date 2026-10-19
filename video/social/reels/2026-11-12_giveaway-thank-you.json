@@ -1,0 +1,19 @@
+{
+ "badge": "Giveaway",
+ "scenes": [
+  {
+   "photo": "video/social/reels/img/giveaway-thank-you.jpg",
+   "kicker": "Thank you!",
+   "title": "Thanks to everyone who entered",
+   "body": "The winner will be contacted per the rules. Want a better doorbell? Free quote.",
+   "dur": 7.5
+  }
+ ],
+ "end": [
+  "Comment your city to enter!",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "upbeat",
+ "shop_qr": false
+}

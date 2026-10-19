@@ -1,0 +1,18 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/social/reels/img/privacy-tips.jpg",
+   "kicker": "Privacy tips",
+   "title": "5 rules for every smart home",
+   "body": "2FA · unique passwords · firmware updates · aim cameras at your property · review shared access",
+   "dur": 7.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}
