@@ -4,7 +4,9 @@
 Meddy Baraei is a Regional / Division Sales Director at Regency Management Services, LLC (dba Ashley), a multi-unit home furniture retailer based in Sterling, Northern Virginia.
 
 ## Google Gemini API
-This environment has Google Gemini API access already connected (host `generativelanguage.googleapis.com`). Requests are authenticated by the proxy, so no API key is needed in code or chat. Billing is enabled.
+Google Gemini API access is connected only in the cloud environment named **"Google -API-key"** (host `generativelanguage.googleapis.com`). There, the network proxy adds the key to requests, so no API key is needed in code or chat, and no `GEMINI_API_KEY` variable exists. Billing is enabled.
+
+Sessions in other environments (such as "Default") have no key, and Google rejects requests with "unregistered caller". If that happens, tell the user to start a new session in the "Google -API-key" environment, or to add the Google key to the current environment's network settings.
 
 - Images: `gemini-3.1-flash-image` (about $0.07 per standard 1K image). Send `"generationConfig": {"responseModalities": ["IMAGE", "TEXT"]}` and decode the base64 `inlineData` from the response.
 - Text: `gemini-3.5-flash`.
