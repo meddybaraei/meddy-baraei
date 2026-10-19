@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/agent-closing-gift.jpg",
+   "photo": "facebook-post/extras/ring_doorbell_trim.jpg",
    "kicker": "Real estate agents",
    "title": "A closing gift they'll actually use",
-   "body": "A doorbell or thermostat installed and set up on move-in day.",
-   "dur": 7.5
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/extras/ring_doorbell_trim.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "A doorbell or thermostat, installed and set up on move-in day.",
+   "dur": 4.5
   }
  ],
  "end": [

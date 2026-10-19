@@ -11,14 +11,21 @@
    ],
    "ai": true,
    "kicker": "Thinking about an EV?",
-   "title": "Check your panel first",
-   "dur": 5.5
+   "title": "Check your panel before the car arrives",
+   "dur": 5.0
   },
   {
-   "photo": "video/social/reels/img/ev-panel-check.jpg",
+   "clip": "video/broll/veo_ev_garage.mp4",
+   "crop": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "ai": true,
    "title": "",
-   "body": "Level 2 needs a dedicated circuit. We assess, design, and handle permits.",
-   "dur": 5.0
+   "body": "Level 2 needs a dedicated circuit. We assess your panel, design it and handle permits.",
+   "dur": 3.0
   }
  ],
  "end": [

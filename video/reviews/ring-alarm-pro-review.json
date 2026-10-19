@@ -3,11 +3,11 @@
  "badge": "Installer's Review",
  "scenes": [
   {
-   "product": "video/series/photos/product_ring_alarm_kit.png",
-   "kicker": "Installer's review",
-   "title": "Ring Alarm Pro: Worth Buying?",
-   "body": "We just installed a 14-piece kit in Chantilly, VA. Here's our honest take.",
-   "dur": 6.0
+   "photo": "video/weekly/photos/alarm_pro_base_station.jpg",
+   "kicker": "Installer's review · Chantilly, VA",
+   "title": "Ring Alarm Pro: worth buying?",
+   "dur": 6.0,
+   "body": "We installed a 14-piece kit. Here is our honest take."
   },
   {
    "art": "list",
@@ -24,21 +24,21 @@
   },
   {
    "photo": "video/weekly/photos/alarm_pro_base_station.jpg",
-   "kicker": "1 \u00b7 Base station",
+   "kicker": "1 · Base station",
    "title": "The brain of the system",
    "body": "Sensors, keypad and siren all connect to it. Arm and disarm from your phone or the keypad.",
    "dur": 5.5
   },
   {
    "photo": "video/weekly/photos/alarm_pro_base_app_setup.jpg",
-   "kicker": "2 \u00b7 Wi-Fi",
+   "kicker": "2 · Wi-Fi",
    "title": "eero Wi-Fi 6 router built in",
    "body": "Covers up to 1,500 sq ft and supports 75+ connected devices. Use it as your router or join your network.",
    "dur": 6.0
   },
   {
    "photo": "video/weekly/photos/alarm_contact_sensor_door.jpg",
-   "kicker": "3 \u00b7 Sensors",
+   "kicker": "3 · Sensors",
    "title": "Contact sensors on doors & windows",
    "body": "Get an alert the moment a door or window opens.",
    "dur": 5.0,
@@ -49,7 +49,7 @@
   },
   {
    "photo": "video/weekly/photos/alarm_motion_detector.jpg",
-   "kicker": "3 \u00b7 Sensors",
+   "kicker": "3 · Sensors",
    "title": "Motion detectors",
    "body": "Mounted high in a corner to cover the room.",
    "dur": 4.8,
@@ -60,7 +60,7 @@
   },
   {
    "photo": "video/weekly/photos/alarm_keypad.jpg",
-   "kicker": "3 \u00b7 Keypad",
+   "kicker": "3 · Keypad",
    "title": "Keypad by the main door",
    "body": "Arm, disarm and set access codes for everyone at home.",
    "dur": 4.8,
@@ -71,7 +71,7 @@
   },
   {
    "art": "list",
-   "title": "4 \u00b7 Backup & monitoring",
+   "title": "4 · Backup & monitoring",
    "items": [
     "Battery backup up to 24 hrs",
     "Backup internet with a plan",
@@ -82,7 +82,7 @@
   },
   {
    "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
-   "kicker": "5 \u00b7 Install",
+   "kicker": "5 · Install",
    "title": "14-piece kit + 2 extra sensors",
    "body": "Our Chantilly install took under 2 hours, tested and explained.",
    "dur": 5.5
@@ -109,7 +109,7 @@
   },
   {
    "product": "video/series/photos/product_ring_alarm_kit.png",
-   "kicker": "6 \u00b7 Verdict",
+   "kicker": "6 · Verdict",
    "title": "Worth it for whole-home security",
    "body": "especially if you already use Ring or need better Wi-Fi.",
    "dur": 5.5

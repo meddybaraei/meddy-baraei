@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/who-smart-home-is-for.jpg",
-   "kicker": "Who's it for?",
-   "title": "Not just tech lovers",
-   "body": "Parents aging in place · young families · travelers · first-time buyers",
-   "dur": 7.5
+   "photo": "video/series/photos/ring_doorbell_storm_door.jpg",
+   "kicker": "Who is it for?",
+   "title": "Worried about parents living alone?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_storm_door.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "See the door, automatic night lights, family check-ins. Also great for young families and travelers.",
+   "dur": 4.5
   }
  ],
  "end": [

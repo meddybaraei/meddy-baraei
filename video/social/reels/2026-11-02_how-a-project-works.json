@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/how-a-project-works.jpg",
+   "photo": "video/weekly/photos/perfume_nvr_monitor.jpg",
    "kicker": "How it works",
    "title": "5 steps, no surprises",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/perfume_nvr_monitor.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
    "body": "Free call · send photos · we design first · fixed written quote · clean install + walkthrough",
-   "dur": 7.5
+   "dur": 4.5
   }
  ],
  "end": [

@@ -2,10 +2,9 @@
  "badge": "Installer's Review",
  "scenes": [
   {
-   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
-   "kicker": "Installer's review",
-   "title": "Ring Wired Doorbell 4K Pro: Worth Buying?",
-   "body": "We install these across Northern Virginia. Here's our honest take.",
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "kicker": "Installer's review · real install",
+   "title": "Ring Wired Doorbell 4K Pro: worth it?",
    "dur": 6.0
   },
   {
@@ -23,14 +22,14 @@
   },
   {
    "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
-   "kicker": "1 \u00b7 Video quality",
+   "kicker": "1 · Video quality",
    "title": "Retinal 4K video",
    "body": "4K detail makes faces and packages at the door easier to make out.",
    "dur": 5.5
   },
   {
    "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
-   "kicker": "2 \u00b7 Zoom",
+   "kicker": "2 · Zoom",
    "title": "10x Enhanced Zoom",
    "body": "Zoom in to check details on whoever is at your door.",
    "dur": 5.5,
@@ -41,14 +40,14 @@
   },
   {
    "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
-   "kicker": "3 \u00b7 Night view",
+   "kicker": "3 · Night view",
    "title": "Low Light Sight",
    "body": "Built for clearer video at night and in low light.",
    "dur": 5.5
   },
   {
    "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
-   "kicker": "4 \u00b7 Power",
+   "kicker": "4 · Power",
    "title": "Hardwired: never needs charging",
    "body": "It runs on your existing doorbell wires, so there is no battery to recharge.",
    "dur": 5.5,
@@ -59,7 +58,7 @@
   },
   {
    "photo": "facebook-post/05_installer_garage.jpg",
-   "kicker": "4 \u00b7 Install",
+   "kicker": "4 · Install",
    "title": "Check your wiring first",
    "body": "Your doorbell wiring and transformer need to meet Ring's requirements. We check this before we install.",
    "dur": 6.0
@@ -73,7 +72,7 @@
   },
   {
    "art": "list",
-   "title": "5 \u00b7 App & subscription",
+   "title": "5 · App & subscription",
    "items": [
     "Live view",
     "Two-way talk",
@@ -104,7 +103,7 @@
   },
   {
    "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
-   "kicker": "6 \u00b7 Verdict",
+   "kicker": "6 · Verdict",
    "title": "Worth it if you have doorbell wiring",
    "body": "and want clear 4K detail at your front door.",
    "dur": 5.5

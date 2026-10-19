@@ -1,10 +1,10 @@
 {
  "hook": "POV: you finally see who keeps opening the garage",
  "hook_hl": "garage",
- "hook_photo": "facebook-post/10_security_collage.jpg",
+ "hook_photo": "facebook-post/05_installer_garage.jpg",
  "clips": [
   {
-   "photo": "video/series/photos/product_ring_stick_up_cam_4k.png",
+   "photo": "facebook-post/05_installer_garage.jpg",
    "text": "ring stick up cam",
    "hl": "stick up"
   },
@@ -14,7 +14,7 @@
    "hl": "24/7"
   },
   {
-   "photo": "facebook-post/05_installer_garage.jpg",
+   "photo": "video/series/photos/product_ring_stick_up_cam_4k.png",
    "text": "battery, plug-in or solar",
    "hl": "solar"
   },

@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/builders-agents-partners.jpg",
+   "photo": "facebook-post/05_installer_garage.jpg",
    "kicker": "Builders · remodelers · agents",
-   "title": "Your installer on call",
-   "body": "Doorbell, lock, thermostat and solid Wi-Fi on day one. Permits handled.",
-   "dur": 7.5
+   "title": "Buyers expect a smart home on day one",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Doorbell, lock, thermostat and solid Wi-Fi, installed and handed off. Permits handled.",
+   "dur": 4.5
   }
  ],
  "end": [

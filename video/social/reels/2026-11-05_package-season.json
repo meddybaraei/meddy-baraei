@@ -2,23 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "clip": "video/broll/veo_package_porch.mp4",
-   "crop": [
-    0,
-    0,
-    1,
-    1
-   ],
-   "ai": true,
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
    "kicker": "Package season",
-   "title": "Protect your porch deliveries",
-   "dur": 5.5
+   "title": "Packages going missing?",
+   "dur": 4.0
   },
   {
-   "photo": "video/social/reels/img/package-season.jpg",
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
    "title": "",
    "body": "Camera that sees the ground · package alerts · smart delivery instructions",
-   "dur": 5.0
+   "dur": 4.5
   }
  ],
  "end": [

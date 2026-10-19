@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/black-friday-buyers.jpg",
+   "photo": "video/weekly/photos/lock_hole_empty.jpg",
    "kicker": "Bought a gadget today?",
    "title": "Read this before you open the box",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/lock_hole_empty.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
    "body": "Transformers · C-wires · Wi-Fi at the mount · door alignment",
-   "dur": 7.5
+   "dur": 4.5
   }
  ],
  "end": [

@@ -2,23 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "clip": "video/broll/veo_thanksgiving_table.mp4",
-   "crop": [
-    0,
-    0,
-    1,
-    1
-   ],
-   "ai": true,
+   "photo": "video/weekly/photos/lock_interior_done.jpg",
    "kicker": "Hosting Thanksgiving?",
-   "title": "Smart home prep checklist",
-   "dur": 5.5
+   "title": "Give guests a code, not a key",
+   "dur": 4.0
   },
   {
-   "photo": "video/social/reels/img/thanksgiving-host-checklist.jpg",
+   "photo": "video/weekly/photos/lock_interior_done.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
    "title": "",
    "body": "Guest lock codes · guest Wi-Fi · warm-up schedule · doorbell check",
-   "dur": 5.0
+   "dur": 4.5
   }
  ],
  "end": [

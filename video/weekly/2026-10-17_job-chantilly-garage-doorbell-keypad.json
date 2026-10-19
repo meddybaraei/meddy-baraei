@@ -1,11 +1,48 @@
 {
  "badge": "Job of the Week · Chantilly, VA",
  "scenes": [
-  {"photo": "video/weekly/photos/garage_doorbell_wide.jpg", "kicker": "Job of the week · Chantilly, VA", "title": "A second doorbell + a garage keypad", "body": "Done in under an hour.", "dur": 4.2},
-  {"photo": "video/weekly/photos/garage_doorbell_close.jpg", "kicker": "Upgrade 1", "title": "Ring doorbell by the garage", "body": "Visitors at the garage side get answered too, with live view on the homeowner's phone.", "dur": 4.6},
-  {"photo": "video/weekly/photos/garage_keypad_closed.jpg", "kicker": "Upgrade 2", "title": "Wireless garage keypad", "body": "Mounted on the door frame, weather cover closed.", "dur": 4.2},
-  {"photo": "video/weekly/photos/garage_keypad_open.jpg", "kicker": "How it works", "title": "Enter your PIN, the door opens", "body": "No remote needed. Open and close the garage with a code.", "dur": 4.6},
-  {"art": "list", "title": "Under 1 hour, done", "items": ["Second doorbell at the garage", "Garage door keypad", "Tested + set up in the app"], "body": "Small upgrades, big convenience.", "dur": 4.4}
+  {
+   "photo": "video/weekly/photos/garage_doorbell_wide.jpg",
+   "kicker": "Real job · Chantilly, VA",
+   "title": "Who rang the garage door?",
+   "body": "Done in under an hour.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/garage_doorbell_close.jpg",
+   "kicker": "Upgrade 1",
+   "title": "Ring doorbell by the garage",
+   "body": "Visitors at the garage side get answered too, with live view on the homeowner's phone.",
+   "dur": 4.6
+  },
+  {
+   "photo": "video/weekly/photos/garage_keypad_closed.jpg",
+   "kicker": "Upgrade 2",
+   "title": "Wireless garage keypad",
+   "body": "Mounted on the door frame, weather cover closed.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/garage_keypad_open.jpg",
+   "kicker": "How it works",
+   "title": "Enter your PIN, the door opens",
+   "body": "No remote needed. Open and close the garage with a code.",
+   "dur": 4.6
+  },
+  {
+   "art": "list",
+   "title": "Under 1 hour, done",
+   "items": [
+    "Second doorbell at the garage",
+    "Garage door keypad",
+    "Tested + set up in the app"
+   ],
+   "body": "Small upgrades, big convenience.",
+   "dur": 4.4
+  }
  ],
- "end": ["Want this at your home?", "novaprohome.com"]
+ "end": [
+  "Want this at your home?",
+  "novaprohome.com"
+ ]
 }

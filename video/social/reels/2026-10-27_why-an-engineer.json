@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/why-an-engineer.jpg",
+   "photo": "video/weekly/photos/old_thermostat_wiring.jpg",
    "kicker": "Why an engineer?",
-   "title": "Most smart home problems aren't the device",
-   "body": "Wi-Fi dead zones, old wiring, undersized transformers, a full panel. We fix the whole system.",
-   "dur": 7.5
+   "title": "Smart device failing? It's usually the wiring",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Wi-Fi dead zones, old wiring, small transformers, a full panel. We fix the whole system.",
+   "dur": 4.5
   }
  ],
  "end": [

@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/daylight-saving-check.jpg",
+   "photo": "video/weekly/photos/alarm_contact_sensor_door.jpg",
    "kicker": "Clocks fell back",
-   "title": "Did your house notice?",
-   "body": "Check fixed-time light schedules, plug-in timers, and sensor batteries.",
-   "dur": 7.5
+   "title": "Lights turning on at the wrong time?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_door.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Check fixed-time schedules, plug-in timers and sensor batteries today.",
+   "dur": 4.5
   }
  ],
  "end": [

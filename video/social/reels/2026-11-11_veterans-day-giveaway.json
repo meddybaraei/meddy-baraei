@@ -2,11 +2,20 @@
  "badge": "Giveaway",
  "scenes": [
   {
-   "photo": "video/social/reels/img/veterans-day-giveaway.jpg",
+   "photo": "facebook-post/extras/ring_doorbell_trim.jpg",
    "kicker": "Happy Veterans Day",
    "title": "Thank you for your service",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/extras/ring_doorbell_trim.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
    "body": "Last day of our giveaway: comment your city before 11:59 PM ET.",
-   "dur": 7.5
+   "dur": 4.5
   }
  ],
  "end": [

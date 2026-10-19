@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/meet-the-founder.jpg",
+   "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
    "kicker": "Meet the founder",
-   "title": "Install it right. Explain it clearly.",
-   "body": "Meddy Baraei: BS in Electrical Engineering, 5+ years hands-on electrical work.",
-   "dur": 7.5
+   "title": "Why an electrical engineer installs your doorbell",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Meddy Baraei: BS in Electrical Engineering, 5+ years of hands-on electrical work.",
+   "dur": 4.5
   }
  ],
  "end": [

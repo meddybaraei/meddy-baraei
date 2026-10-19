@@ -2,11 +2,20 @@
  "badge": "Giveaway",
  "scenes": [
   {
-   "photo": "video/social/reels/img/giveaway-thank-you.jpg",
-   "kicker": "Thank you!",
-   "title": "Thanks to everyone who entered",
-   "body": "The winner will be contacted per the rules. Want a better doorbell? Free quote.",
-   "dur": 7.5
+   "photo": "video/weekly/photos/garage_doorbell_close.jpg",
+   "kicker": "Giveaway closed",
+   "title": "Want one installed anyway?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/garage_doorbell_close.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Thanks to everyone who entered! Free quotes at novaprohome.com/contact.",
+   "dur": 4.5
   }
  ],
  "end": [

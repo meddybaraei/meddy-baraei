@@ -1,12 +1,12 @@
 {
- "badge": "Smart Home Starter Series \u00b7 Bonus",
+ "badge": "Smart Home Starter Series · Bonus",
  "scenes": [
   {
-   "product": "video/series/photos/product_ring_elite_180.png",
-   "kicker": "Bonus \u00b7 Ring's new pro camera",
-   "title": "Ring Elite 180 4K",
-   "body": "Three lenses in one camera for a wide 180\u00b0 view.",
-   "dur": 4.2
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "Real install · Northern Virginia",
+   "title": "One camera for the whole driveway?",
+   "dur": 4.2,
+   "body": "Ring Elite 180 4K: 180° view, no blind spots."
   },
   {
    "product": "video/series/photos/product_ring_elite_180.png",

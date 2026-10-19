@@ -2,23 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "clip": "video/broll/veo_holiday_lights.mp4",
-   "crop": [
-    0,
-    0,
-    1,
-    0.92
-   ],
-   "ai": true,
+   "photo": "video/series/photos/ring_floodlight_back_door.jpg",
    "kicker": "Smart lighting",
-   "title": "The best setup is the one you never touch",
-   "dur": 5.5
+   "title": "Tired of flipping switches?",
+   "dur": 4.0
   },
   {
-   "photo": "video/social/reels/img/smart-lighting.jpg",
+   "photo": "video/series/photos/ring_floodlight_back_door.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
    "title": "",
-   "body": "Sunset porch lights · 10% night hallway · driveway arrival · Away mode",
-   "dur": 5.0
+   "body": "Sunset porch lights · motion floodlights · driveway arrival · Away mode",
+   "dur": 4.5
   }
  ],
  "end": [

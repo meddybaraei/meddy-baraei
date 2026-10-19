@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/smart-home-wish-list.jpg",
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
    "kicker": "Quick question",
-   "title": "What's the ONE thing you wish worked on its own?",
-   "body": "Lights · thermostat · locks · cameras · EV charging. Tell us in the comments!",
-   "dur": 7.5
+   "title": "What do you wish just worked on its own?",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Lights · thermostat · locks · cameras · EV charging. Tell us below!",
+   "dur": 4.5
   }
  ],
  "end": [

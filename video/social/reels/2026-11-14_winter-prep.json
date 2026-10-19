@@ -2,23 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "clip": "video/broll/veo_winter_house.mp4",
-   "crop": [
-    0,
-    0,
-    1,
-    1
-   ],
-   "ai": true,
-   "kicker": "Winter is coming",
-   "title": "Is your home ready?",
-   "dur": 5.5
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "kicker": "Winter prep",
+   "title": "Camera battery dying faster in the cold?",
+   "dur": 4.0
   },
   {
-   "photo": "video/social/reels/img/winter-prep.jpg",
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
    "title": "",
-   "body": "Leak sensors · freeze alerts · fresh camera batteries · solar for winter",
-   "dur": 5.0
+   "body": "Solar panels, leak sensors and freeze alerts before the first freeze.",
+   "dur": 4.5
   }
  ],
  "end": [

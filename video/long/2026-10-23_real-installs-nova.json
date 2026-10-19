@@ -1,10 +1,10 @@
 {
- "badge": "Real Installs \u00b7 Northern Virginia",
+ "badge": "Real Installs · Northern Virginia",
  "scenes": [
   {
-   "art": "chapter",
-   "title": "Real Smart Home Installs",
-   "body": "5 real jobs across Northern Virginia, start to finish",
+   "photo": "video/weekly/photos/deck_installer_wide.jpg",
+   "kicker": "Northern Virginia",
+   "title": "5 real smart home installs, start to finish",
    "dur": 4.5
   },
   {
@@ -16,7 +16,7 @@
   },
   {
    "photo": "video/weekly/photos/ecobee_in_box.jpg",
-   "kicker": "Job of the week \u00b7 Vienna, VA",
+   "kicker": "Job of the week · Vienna, VA",
    "title": "Smart thermostat on a heat pump",
    "body": "ecobee Smart Thermostat Premium, installed today.",
    "dur": 5.0
@@ -30,7 +30,7 @@
   },
   {
    "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
-   "kicker": "Step 1 \u00b7 Power off first",
+   "kicker": "Step 1 · Power off first",
    "title": "Photo & label every wire",
    "body": "This heat pump had 7 wires. Turn the breaker off before you touch them.",
    "dur": 5.5
@@ -51,7 +51,7 @@
   },
   {
    "art": "list",
-   "title": "Step 3 \u00b7 Test it all",
+   "title": "Step 3 · Test it all",
    "items": [
     "Cooling",
     "Heating",
@@ -69,7 +69,7 @@
   },
   {
    "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
-   "kicker": "Job of the week \u00b7 Chantilly, VA",
+   "kicker": "Job of the week · Chantilly, VA",
    "title": "Ring Alarm Pro: 14-piece kit + 2 extra sensors",
    "body": "Installed and set up in under 2 hours.",
    "dur": 5.2
@@ -91,7 +91,7 @@
   {
    "photo": "video/weekly/photos/alarm_contact_sensor_window.jpg",
    "kicker": "Step 2",
-   "title": "\u2026and on the windows",
+   "title": "…and on the windows",
    "body": "Your phone gets an alert the moment one opens.",
    "dur": 4.8
   },
@@ -154,7 +154,7 @@
   },
   {
    "photo": "video/weekly/photos/alarm_pro_base_app_setup.jpg",
-   "kicker": "Step 1 \u00b7 Base station",
+   "kicker": "Step 1 · Base station",
    "title": "Plug it in and follow the app",
    "body": "Alarm Pro has eero Wi-Fi built in: use it as your router or join your network.",
    "dur": 6.8
@@ -168,7 +168,7 @@
   },
   {
    "art": "list",
-   "title": "Step 2 \u00b7 Pair before you mount",
+   "title": "Step 2 · Pair before you mount",
    "items": [
     "Pull the battery tab",
     "Add the device in the Ring app",
@@ -179,7 +179,7 @@
   },
   {
    "photo": "video/weekly/photos/alarm_contact_sensor_door.jpg",
-   "kicker": "Step 3 \u00b7 Contact sensors",
+   "kicker": "Step 3 · Contact sensors",
    "title": "Sensor and magnet, lined up",
    "body": "Mount one piece on the door, the other on the frame, close together.",
    "dur": 6.2,
@@ -208,8 +208,8 @@
   },
   {
    "photo": "video/weekly/photos/alarm_motion_detector.jpg",
-   "kicker": "Step 4 \u00b7 Motion detector",
-   "title": "High in a corner, about 6\u20138 ft up",
+   "kicker": "Step 4 · Motion detector",
+   "title": "High in a corner, about 6–8 ft up",
    "body": "Point it at the room, away from heaters and windows.",
    "dur": 6.2,
    "focus": [
@@ -219,7 +219,7 @@
   },
   {
    "photo": "video/weekly/photos/alarm_keypad.jpg",
-   "kicker": "Step 5 \u00b7 Keypad",
+   "kicker": "Step 5 · Keypad",
    "title": "Mount it by the main door",
    "body": "Plug it in or use the battery, then set your access codes.",
    "dur": 6.2,
@@ -230,7 +230,7 @@
   },
   {
    "art": "list",
-   "title": "Step 6 \u00b7 Test everything",
+   "title": "Step 6 · Test everything",
    "items": [
     "Arm Home & Away modes",
     "Open each door & window",
@@ -251,12 +251,12 @@
    "photo": "video/weekly/photos/ecobee_humidity_two_readings.jpg",
    "kicker": "The problem",
    "title": "Ecobee says 63%. The meter says 50%.",
-   "body": "A 13-point humidity gap, with spikes to 70%. Normal sensor error is about \u00b15%.",
+   "body": "A 13-point humidity gap, with spikes to 70%. Normal sensor error is about ±5%.",
    "dur": 6.0
   },
   {
    "photo": "video/weekly/photos/ecobee_humidity_air_handler.jpg",
-   "kicker": "Real job \u00b7 Vienna, VA",
+   "kicker": "Real job · Vienna, VA",
    "title": "New ecobee on a Carrier heat pump",
    "body": "Here's how we found the cause and fixed it, in 6 steps.",
    "dur": 5.2
@@ -265,12 +265,12 @@
    "photo": "video/weekly/photos/ecobee_humidity_fan_mode.jpg",
    "kicker": "Step 1",
    "title": "Test it properly",
-   "body": "Tape the meter right beside the thermostat. Fan on Auto, minimum runtime 0. Wait 30\u201360 min.",
+   "body": "Tape the meter right beside the thermostat. Fan on Auto, minimum runtime 0. Wait 30–60 min.",
    "dur": 6.0
   },
   {
    "photo": "video/weekly/photos/ecobee_humidity_wall_hole.jpg",
-   "kicker": "Step 2 \u00b7 The #1 cause",
+   "kicker": "Step 2 · The #1 cause",
    "title": "Seal the hole behind the thermostat",
    "body": "Power off. Pack duct seal around the wires so wall-cavity air can't hit the sensor.",
    "dur": 6.2
@@ -298,15 +298,15 @@
   },
   {
    "photo": "video/weekly/photos/ecobee_humidity_humidity_correction.jpg",
-   "kicker": "Step 6 \u00b7 Last, not first",
+   "kicker": "Step 6 · Last, not first",
    "title": "Correct what's left",
-   "body": "Only after sealing: enter the steady gap in Humidity Correction (e.g. 60% vs 50% \u2192 \u221210%).",
+   "body": "Only after sealing: enter the steady gap in Humidity Correction (e.g. 60% vs 50% → −10%).",
    "dur": 6.2
   },
   {
    "photo": "video/weekly/photos/ecobee_humidity_result.jpg",
    "kicker": "The result",
-   "title": "52% \u2014 matching the meter",
+   "title": "52% — matching the meter",
    "body": "Air quality went from Poor to Clean. Most \"bad sensor\" calls are air leaks.",
    "dur": 5.8
   },
@@ -319,7 +319,7 @@
   },
   {
    "photo": "video/weekly/photos/deck_ladder_stairs.jpg",
-   "kicker": "Job \u00b7 Arlington, VA",
+   "kicker": "Job · Arlington, VA",
    "title": "The space under the deck was a blind spot",
    "body": "No light, no camera, nothing covering the backyard.",
    "dur": 5.6

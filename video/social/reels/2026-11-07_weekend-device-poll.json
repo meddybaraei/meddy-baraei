@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/weekend-device-poll.jpg",
+   "photo": "facebook-post/07_ring_floodlight.jpg",
    "kicker": "Weekend poll",
    "title": "Only ONE smart device this year?",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/07_ring_floodlight.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
    "body": "Doorbell · lock · thermostat · lighting · outdoor camera. Vote below!",
-   "dur": 7.5
+   "dur": 4.5
   }
  ],
  "end": [

@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/wifi-foundation.jpg",
+   "photo": "video/weekly/photos/perfume_cam_wifi.jpg",
    "kicker": "Wi-Fi first",
-   "title": "Camera offline? Check the network",
-   "body": "Signal where it's mounted · router location · mesh for garage and yard",
-   "dur": 7.5
+   "title": "Camera keeps going offline?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/perfume_cam_wifi.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Check signal where it's mounted, router location, and mesh for the garage and yard.",
+   "dur": 4.5
   }
  ],
  "end": [

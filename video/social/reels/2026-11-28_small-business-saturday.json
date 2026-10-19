@@ -2,11 +2,20 @@
  "badge": "Smart Home Tips",
  "scenes": [
   {
-   "photo": "video/social/reels/img/small-business-saturday.jpg",
+   "photo": "video/weekly/photos/perfume_cam_corner.jpg",
    "kicker": "Small Business Saturday",
-   "title": "Shop local, NoVA",
+   "title": "We secure local NoVA shops too",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/perfume_cam_corner.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
    "body": "Tell us your favorite Northern Virginia small business!",
-   "dur": 7.5
+   "dur": 4.5
   }
  ],
  "end": [

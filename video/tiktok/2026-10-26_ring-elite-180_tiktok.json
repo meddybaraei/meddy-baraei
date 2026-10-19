@@ -1,10 +1,10 @@
 {
  "hook": "POV: one camera sees your whole driveway",
  "hook_hl": "whole",
- "hook_photo": "video/series/photos/product_ring_elite_180.png",
+ "hook_photo": "facebook-post/04_installer_on_ladder.jpg",
  "clips": [
   {
-   "photo": "video/series/photos/product_ring_elite_180.png",
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
    "text": "ring elite 180 4k",
    "hl": "4k"
   },
@@ -14,7 +14,7 @@
    "hl": "businesses"
   },
   {
-   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "photo": "video/series/photos/product_ring_elite_180.png",
    "text": "we run the cable + mount it",
    "hl": "cable"
   },

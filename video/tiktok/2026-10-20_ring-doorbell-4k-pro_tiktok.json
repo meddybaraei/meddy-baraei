@@ -4,12 +4,12 @@
  "hook_photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
  "clips": [
   {
-   "photo": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
    "text": "retinal 4K video",
    "hl": "4K"
   },
   {
-   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "photo": "video/series/photos/product_ring_doorbell_4k_pro.png",
    "focus": [
     0.45,
     0.4
