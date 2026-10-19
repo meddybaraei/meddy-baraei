@@ -144,3 +144,6 @@ Affiliate funnel rules:
 - Clickable affiliate links live in: long YouTube videos (description + pinned comment), Facebook posts/Reels, LinkedIn posts.
 - Every affiliate post carries the disclosure; Amazon: "As an Amazon Associate, NovaProHome earns from qualifying purchases." No giveaway block on posts with affiliate links. Never put Amazon links in emails or printed/offline material (Amazon Associates rule).
 - Content mix per week: 4 job/install posts (trust + bookings), 2 product "worth it?" reviews or comparisons with affiliate link, 1 long video (6-10 min, watch hours + clickable links), 1 tip/how-to.
+
+## Approval rule (UPDATED Oct 19): FULL AUTONOMY
+Meddy chose "Full autonomy": I create AND schedule posts myself following this plan, and apply weekly improvements myself. No "go" needed. Report what was scheduled/changed (short message) and send the weekly report every Monday. Never delete published posts; Meddy can pull any post. This replaces the older "wait for go" rule above.

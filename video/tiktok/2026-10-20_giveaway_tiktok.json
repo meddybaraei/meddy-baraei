@@ -1,0 +1,27 @@
+{
+ "hook": "POV: you win a Ring doorbell + free install",
+ "hook_hl": "win",
+ "hook_photo": "video/weekly/photos/garage_doorbell_close.jpg",
+ "clips": [
+  {
+   "photo": "video/weekly/photos/garage_doorbell_wide.jpg",
+   "text": "worth $329.99, totally free",
+   "hl": "free"
+  },
+  {
+   "photo": "video/weekly/photos/garage_doorbell_close.jpg",
+   "text": "NoVA homeowners near Sterling",
+   "hl": "Sterling"
+  },
+  {
+   "photo": "video/weekly/photos/garage_doorbell_wide.jpg",
+   "text": "ends Nov 11",
+   "hl": "Nov 11"
+  }
+ ],
+ "cta": [
+  "Comment your city",
+  "on YouTube or Facebook",
+  "to enter free"
+ ]
+}
