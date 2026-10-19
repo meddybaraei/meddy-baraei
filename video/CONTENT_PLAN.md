@@ -132,3 +132,6 @@ Real job, Vienna VA (Carrier heat pump + ecobee Premium). Files: video/weekly/20
 - TikTok: 7 videos, 559 views (up from 142). Ring Alarm explainer and ecobee "7 wires" POV best (109 each).
 - Giveaway: 0 comment entries on the giveaway Short so far (Metricool count).
 - vidIQ out of credits until Nov 7 (no comment text / CTR). No website-traffic data: UTM links + Metricool pixel still missing.
+
+## Reolink affiliate link (pending)
+- Meddy will send a Reolink affiliate link. When it arrives: add it (caption link + QR scene, like the Schlage one) to the Reolink "which camera fits your property" Short/carousel and future Reolink posts on all platforms, with the disclosure "Affiliate link: NovaProHome earns a commission from qualifying purchases." No giveaway block on posts carrying it. Hold Reolink posts until the link arrives (or Meddy says post without it).
