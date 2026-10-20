@@ -12,6 +12,13 @@ Rough prices (verify on https://ai.google.dev/gemini-api/docs/pricing):
 Cheap-first habits: review with gemini-3.5-flash unless a decision really needs Pro; re-use enhanced photos
 (video/enhanced/ is cached, never re-run); re-use Veo clips in video/broll/; batch only what will actually be posted.
 
+## When to use Gemini (owner, Oct 20: "use it when we need it the most")
+Default is NO Gemini. Use it only when it clearly moves bookings or affiliate sales:
+1. New real-job photos from Meddy: one Nano Banana color-correct per photo actually used (~$0.07 each).
+2. A final check of a high-stakes post before it goes out (long YouTube video, giveaway winner, a paid boost): one gemini-3.5-flash review.
+3. Veo only when there is no real footage AND the post is important (seasonal/holiday hook); reuse video/broll/ first; ask Meddy first.
+Never: re-enhancing cached photos, AI images for tip posts (real photos score higher), routine Pro reviews, test batches.
+
 ## Ledger (estimates)
 | Month | Date | Job | Est. cost |
 |---|---|---|---|
