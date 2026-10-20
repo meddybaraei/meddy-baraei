@@ -68,3 +68,6 @@ YouTube 4 subs (+2), ~1,100 views; TikTok 559 views (4x up); Facebook 198 video 
 - Metricool: 63 pending posts updated to media from commit d995d23 (all videos Oct 20-27 + 34 FB/LinkedIn text posts Oct 26-Nov 29 now Reels; UTMs added to Nov 16-29). Removed giveaway block from 3 posts that also carry affiliate/shop links (4K Pro review + Short, Reolink Short). Reston perfume FB Reel moved to Wed Oct 28 6:30 PM. Oct 27 Schlage FB is now a Reel.
 - Not rebuilt: 12 AI promo posts (promo/*) and Reolink video (art-only). Remaking promos with Veo Fast ~$16.
 - Gemini's top asks for Meddy: GA4 + Meta Pixel on the site (Hadi), short phone clips (5-10 s) on every job, seed giveaway comments + share in local FB groups, maybe a $15 local boost on the giveaway Reel, Facebook cadence max 1 feed post/day.
+
+
+## Gemini budget (owner, Oct 20 2026): MAX $20/month total for all Gemini use. Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.

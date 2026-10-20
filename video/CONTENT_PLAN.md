@@ -150,3 +150,6 @@ Meddy chose "Full autonomy": I create AND schedule posts myself following this p
 - (Oct 19) Meddy's site already has a "Shop by category" section on novaprohome.com (cameras & doorbells, thermostats, lighting, locks, Wi-Fi, EV charging, ...) with his affiliate links. Use novaprohome.com as the "link in bio" shop until Hadi adds a direct /shop link. No separate /picks page.
 - Shop URL confirmed: https://novaprohome.com/shop. Use it as the "link in bio" shop and the shop QR target in videos ("Shop the products we install: novaprohome.com/shop").
 - (Oct 19) Every video now ends with a "Shop the products we install" QR scene → novaprohome.com/shop (make_series: before the end card, disable with "shop_qr": false; make_tiktok: default QR slide unless the config sets its own "qr"). Product-specific affiliate QR (e.g. Schlage) can be added as an extra "art":"qr" scene.
+
+
+## Gemini budget (owner, Oct 20 2026): MAX $20/month total for all Gemini use. Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.
