@@ -58,5 +58,13 @@ YouTube 4 subs (+2), ~1,100 views; TikTok 559 views (4x up); Facebook 198 video 
 - `video/tools/rebuild_pending.sh` re-rendered every unposted video (Oct 20+) with enhanced photos (+ shop QR; giveaway videos have the QR off).
 - 34 text-only FB+LinkedIn posts (Oct 26 to Nov 29) rebuilt as 15 s Reels: video/social/reels/<date>_<slug>.mp4 (spec text_posts.json).
 - `video/tools/gemini_review.py`: Gemini watches each video and critiques hook/title/caption (items list in scratchpad; rebuild with the post list).
-- BLOCKED: Gemini prepaid credits ran out (HTTP 402) after ~$14 of use. Meddy asked to brainstorm with Gemini before posting anything, so NO Metricool media swaps have been made yet. When credits are topped up: run gemini_review.py on all items + strategy brainstorm, apply good ideas, then updateScheduledPost each pending post with media https://raw.githubusercontent.com/meddybaraei/meddy-baraei/<SHA>/<path> (Reels: facebookData type REEL + title; keep LinkedIn).
+- (resolved Oct 20) Gemini prepaid credits ran out (HTTP 402) after ~$14 of use. Meddy asked to brainstorm with Gemini before posting anything, so NO Metricool media swaps have been made yet. When credits are topped up: run gemini_review.py on all items + strategy brainstorm, apply good ideas, then updateScheduledPost each pending post with media https://raw.githubusercontent.com/meddybaraei/meddy-baraei/<SHA>/<path> (Reels: facebookData type REEL + title; keep LinkedIn).
 - Duplicate FB slot: Thu Oct 22 6:30 PM has ecobee Reel + Reston perfume Reel; move perfume to Fri Oct 23 12 PM when swapping media.
+
+## Oct 20: Gemini review round + Metricool swap (DONE)
+- Meddy set up auto-prepaid for Gemini. Gemini 3.1 Pro reviewed all 56 videos (scores 2-8; real-job openers win, slides/product renders/AI images lose) + strategy session: video/GEMINI_STRATEGY_2026-10-19.md.
+- Applied: every opener is now a real job photo + question hook; tip Reels use real job photos (AI b-roll only on holiday Reels + EV, labeled on screen and "(Video contains AI-generated b-roll.)" in caption); QR scene 3 s; no subscribe badge on giveaway.
+- Ignore Gemini when it calls our own logo a "brand logo", flags the phone on TikTok, or says Ring has no 4K doorbell.
+- Metricool: 63 pending posts updated to media from commit d995d23 (all videos Oct 20-27 + 34 FB/LinkedIn text posts Oct 26-Nov 29 now Reels; UTMs added to Nov 16-29). Removed giveaway block from 3 posts that also carry affiliate/shop links (4K Pro review + Short, Reolink Short). Reston perfume FB Reel moved to Wed Oct 28 6:30 PM. Oct 27 Schlage FB is now a Reel.
+- Not rebuilt: 12 AI promo posts (promo/*) and Reolink video (art-only). Remaking promos with Veo Fast ~$16.
+- Gemini's top asks for Meddy: GA4 + Meta Pixel on the site (Hadi), short phone clips (5-10 s) on every job, seed giveaway comments + share in local FB groups, maybe a $15 local boost on the giveaway Reel, Facebook cadence max 1 feed post/day.
