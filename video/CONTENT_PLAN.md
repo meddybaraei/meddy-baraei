@@ -165,4 +165,4 @@ Owner made it and posted it on YouTube himself. Cross-posted with a 4 s contact 
 - Doorbell Wi-Fi test: TikTok Fri Oct 23 8:30 PM, LinkedIn Mon Oct 26 11 AM, FB Reel Fri Oct 30 6:30 PM
 - Camera placement: TikTok Sun Oct 25 6 PM, LinkedIn Wed Oct 28 11 AM, FB Reel Sun Nov 1 6:30 PM
 - Nest thermostat 3 checks: TikTok Thu Oct 29 6 PM, LinkedIn Fri Oct 30 11 AM, FB Reel Mon Nov 2 6:30 PM
-- YouTube: not scheduled yet (ask owner whether he already uploaded them; *_youtube.mp4 ready).
+- YouTube Shorts (owner had not uploaded them; isAiGeneratedContent true): doorbell Wi-Fi Sat Oct 24 4 PM, camera placement Wed Oct 28 4 PM, thermostat 3 checks Fri Oct 30 4 PM.
