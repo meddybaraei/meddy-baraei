@@ -1,0 +1,136 @@
+{
+ "slug": "novaprohome-how-we-work",
+ "title": "How a Smart Home Install Should Work (5 Steps) #shorts",
+ "beats": [
+  {
+   "text": "Here's how a smart home install should work, start to finish."
+  },
+  {
+   "text": "One. A free twenty-minute discovery call. How you live, what frustrates you, and what your home already has."
+  },
+  {
+   "text": "Two. An on-site assessment. We review your panel, network, and layout, and design the system on paper before anything is ordered."
+  },
+  {
+   "text": "Three. A fixed written quote, line by line. The number you approve is the number you pay."
+  },
+  {
+   "text": "Four. Permits and a clean professional install."
+  },
+  {
+   "text": "Five. App setup and a full walkthrough, so every family member knows how it works before we leave."
+  },
+  {
+   "text": "That's how we do it at NovaProHome. Book your free call at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 0,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 220,
+     "html": "NOVAPROHOME",
+     "at": 0
+    },
+    {
+     "t": "big",
+     "top": 520,
+     "html": "How an install<br><span style='color:var(--teal)'>should</span> work",
+     "at": 0,
+     "d": 0.3,
+     "pop": true
+    }
+   ]
+  },
+  {
+   "from": 1,
+   "to": 3,
+   "els": [
+    {
+     "t": "card",
+     "top": 300,
+     "color": "amber",
+     "n": "1",
+     "html": "Free 20-min discovery call",
+     "at": 1
+    },
+    {
+     "t": "card",
+     "top": 540,
+     "color": "violet",
+     "n": "2",
+     "html": "On-site assessment & design",
+     "at": 2
+    },
+    {
+     "t": "card",
+     "top": 780,
+     "color": "teal",
+     "n": "3",
+     "html": "Fixed written quote",
+     "at": 3
+    },
+    {
+     "t": "mid",
+     "top": 1040,
+     "html": "Approve it = <span style='color:var(--teal)'>pay it</span>",
+     "at": 3,
+     "d": 2.4
+    }
+   ]
+  },
+  {
+   "from": 4,
+   "to": 5,
+   "els": [
+    {
+     "t": "card",
+     "top": 300,
+     "color": "blue",
+     "n": "4",
+     "html": "Permits + clean install",
+     "at": 4
+    },
+    {
+     "t": "card",
+     "top": 540,
+     "color": "amber",
+     "n": "5",
+     "html": "App setup & walkthrough",
+     "at": 5
+    },
+    {
+     "t": "chip",
+     "top": 820,
+     "html": "Every family member onboarded",
+     "at": 5,
+     "d": 2.4
+    }
+   ]
+  },
+  {
+   "from": 6,
+   "to": 6,
+   "els": [
+    {
+     "t": "big",
+     "top": 440,
+     "html": "Book your<br><span style='color:var(--teal)'>free call</span>",
+     "at": 6,
+     "d": 0.6,
+     "pop": true
+    },
+    {
+     "t": "mid",
+     "top": 1120,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 6,
+     "d": 1.0
+    }
+   ]
+  }
+ ]
+}

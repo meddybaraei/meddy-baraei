@@ -1,0 +1,33 @@
+{"slug":"video-doorbell-wifi-test",
+ "title":"Test This Before You Drill for a Ring Doorbell #shorts",
+ "beats":[
+  {"text":"Before you drill a single hole for a video doorbell, test your Wi-Fi at the front door."},
+  {"text":"The doorbell lives outside, often behind brick or stucco, and that's exactly where Wi-Fi gets weak."},
+  {"text":"Here's how I check it. Stand right where the doorbell will go, connect your phone to your home Wi-Fi, and run a speed test."},
+  {"text":"If it's slow there, the doorbell will be slow too. Laggy live view, and late notifications."},
+  {"text":"After setup, open the Ring app, go to Device Health, and check the signal strength."},
+  {"text":"Weak signal? Move the router closer, or add a mesh point or an extender near the door."},
+  {"text":"Strong Wi-Fi first, then drill. Follow NovaProHome for more install tips."}
+ ],
+ "scenes":[
+  {"from":0,"to":1,"els":[
+    {"t":"kicker","top":220,"html":"VIDEO DOORBELL INSTALL","at":0},
+    {"t":"big","top":440,"html":"Test the<br><span style='color:var(--blue)'>Wi-Fi</span> before<br>you drill","at":0,"d":0.3,"pop":true},
+    {"t":"chip","top":1000,"html":"Brick · stucco · distance<br>= <span style='color:var(--red)'>weak signal</span>","at":1}]},
+  {"from":2,"to":3,"els":[
+    {"t":"card","top":320,"color":"blue","n":"1","html":"Stand where it mounts","at":2},
+    {"t":"card","top":560,"color":"blue","n":"2","html":"Phone on home Wi-Fi","at":2,"d":2.2},
+    {"t":"card","top":800,"color":"blue","n":"3","html":"Run a speed test","at":2,"d":3.6},
+    {"t":"warn","top":1080,"html":"Slow here = slow doorbell<br>laggy live view, late alerts","at":3}]},
+  {"from":4,"to":5,"els":[
+    {"t":"kicker","top":220,"html":"AFTER SETUP","at":4},
+    {"t":"chip","top":360,"html":"Ring app → <b>Device Health</b>","at":4,"d":0.6},
+    {"t":"chip","top":540,"html":"Check <span style='color:var(--teal)'>signal strength</span>","at":4,"d":2.2},
+    {"t":"mid","top":800,"html":"Weak signal?","at":5,"color":"red"},
+    {"t":"chip","top":920,"html":"Move the router closer","at":5,"d":0.9},
+    {"t":"chip","top":1090,"html":"Mesh point / extender","at":5,"d":2.4}]},
+  {"from":6,"to":6,"els":[
+    {"t":"big","top":440,"color":"blue","html":"Strong Wi-Fi first.","at":6,"pop":true},
+    {"t":"big","top":680,"html":"Then drill.","at":6,"d":1.2,"pop":true},
+    {"t":"mid","top":1000,"html":"Follow <b>NovaProHome</b><br>for more install tips","at":6,"d":2.2}]}
+ ]}

@@ -1,0 +1,40 @@
+{"slug":"nest-thermostat-before-you-install",
+ "title":"3 Checks Before You Install a Nest Thermostat #shorts",
+ "beats":[
+  {"text":"Installing a smart thermostat? Do these three checks before you touch a single wire."},
+  {"text":"One. Turn off the power to your heating and cooling system at the breaker."},
+  {"text":"Not just at the thermostat. At the breaker."},
+  {"text":"Two. Take a clear photo of your old wiring before you disconnect anything."},
+  {"text":"The letter on each terminal tells you where every wire goes back."},
+  {"text":"Three. Look for a C wire. That's the common wire that gives the thermostat steady power."},
+  {"text":"No C wire? Some systems still work and some don't, so run your wiring through Google's compatibility checker before you buy."},
+  {"text":"And if you see thick wires joined with wire nuts, it may be a line-voltage system. That's a hard stop. Call a pro."},
+  {"text":"Breaker off. Photo first. Check for C. Follow NovaProHome for more install tips."}
+ ],
+ "tintBeat":7,
+ "scenes":[
+  {"from":0,"to":0,"els":[
+    {"t":"kicker","top":220,"html":"NEST THERMOSTAT INSTALL","at":0},
+    {"t":"big","top":560,"html":"3 checks<br>before you<br><span style='color:var(--amber)'>touch a wire</span>","at":0,"d":0.3,"pop":true}]},
+  {"from":1,"to":2,"els":[
+    {"t":"card","top":320,"color":"amber","n":"1","html":"Power off","at":1},
+    {"t":"chip","top":620,"html":"At the <span style='color:var(--amber)'>breaker</span>","at":1,"d":1.2,"pop":true},
+    {"t":"chip","top":800,"html":"<s style='color:var(--mute)'>Just the thermostat</s>","at":2}]},
+  {"from":3,"to":4,"els":[
+    {"t":"card","top":320,"color":"violet","n":"2","html":"Photo the old wiring","at":3},
+    {"t":"chips","top":660,"items":["R","W","Y","G","C"],"at":4},
+    {"t":"mid","top":860,"html":"Each letter = where<br>that wire goes back","at":4,"d":0.8}]},
+  {"from":5,"to":6,"els":[
+    {"t":"card","top":320,"color":"teal","n":"3","html":"Find the C wire","at":5},
+    {"t":"mid","top":600,"html":"<span style='color:var(--teal)'>C = common</span><br>steady power","at":5,"d":1.6},
+    {"t":"chip","top":900,"html":"No C wire? Run Google's<br>compatibility checker first","at":6}]},
+  {"from":7,"to":7,"els":[
+    {"t":"kicker","top":220,"html":"HARD STOP","color":"red","at":7},
+    {"t":"warn","top":420,"html":"Thick wires + wire nuts<br>= maybe <b>line voltage</b>","at":7,"pop":true},
+    {"t":"big","top":860,"color":"red","html":"Call a pro.","at":7,"d":3.2,"pop":true}]},
+  {"from":8,"to":8,"els":[
+    {"t":"big","top":380,"color":"amber","html":"Breaker off.","at":8,"pop":true},
+    {"t":"big","top":560,"color":"violet","html":"Photo first.","at":8,"d":0.7,"pop":true},
+    {"t":"big","top":740,"color":"teal","html":"Check for C.","at":8,"d":1.4,"pop":true},
+    {"t":"mid","top":1020,"html":"Follow <b>NovaProHome</b><br>for more install tips","at":8,"d":2.2}]}
+ ]}
