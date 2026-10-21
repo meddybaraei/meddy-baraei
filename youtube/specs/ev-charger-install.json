@@ -1,0 +1,181 @@
+{
+ "slug": "ev-charger-install-explained",
+ "title": "What a Home EV Charger Install Really Involves #shorts",
+ "beats": [
+  {
+   "text": "Thinking about a Level 2 EV charger at home? Here's what a proper install actually involves."
+  },
+  {
+   "text": "Step one is a load calculation. We check your electrical panel to see if it can handle the charger on top of everything else in your house."
+  },
+  {
+   "text": "That answer decides the cost. Panel capacity, how far the cable has to run, and whether you need a panel upgrade."
+  },
+  {
+   "text": "Step two is the permit. In Loudoun and Fairfax County, an EV charger needs an electrical permit and an inspection."
+  },
+  {
+   "text": "Skip it, and you could have problems with insurance or when you sell the house."
+  },
+  {
+   "text": "Step three, set up off-peak scheduling, so the car charges overnight when power often costs less."
+  },
+  {
+   "text": "Load calc, permit, off-peak. NovaProHome handles all three. Free quote at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 0,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 220,
+     "html": "EV CHARGER INSTALL",
+     "at": 0
+    },
+    {
+     "t": "big",
+     "top": 520,
+     "html": "Level 2<br>at home?<br><span style='color:var(--teal)'>Do it right.</span>",
+     "at": 0,
+     "d": 0.3,
+     "pop": true
+    }
+   ]
+  },
+  {
+   "from": 1,
+   "to": 2,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "amber",
+     "n": "1",
+     "html": "Load calculation",
+     "at": 1
+    },
+    {
+     "t": "mid",
+     "top": 600,
+     "html": "Can your panel handle<br>the charger <span style='color:var(--amber)'>plus</span> your house?",
+     "at": 1,
+     "d": 1.5
+    },
+    {
+     "t": "chip",
+     "top": 880,
+     "html": "Panel capacity",
+     "at": 2,
+     "d": 0.6
+    },
+    {
+     "t": "chip",
+     "top": 1050,
+     "html": "Cable run distance",
+     "at": 2,
+     "d": 1.6
+    },
+    {
+     "t": "chip",
+     "top": 1220,
+     "html": "Panel upgrade needed?",
+     "at": 2,
+     "d": 2.8
+    }
+   ]
+  },
+  {
+   "from": 3,
+   "to": 4,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "violet",
+     "n": "2",
+     "html": "Permit + inspection",
+     "at": 3
+    },
+    {
+     "t": "chip",
+     "top": 620,
+     "html": "Loudoun & Fairfax County",
+     "at": 3,
+     "d": 1.2
+    },
+    {
+     "t": "warn",
+     "top": 880,
+     "html": "No permit = insurance and<br>resale headaches",
+     "at": 4,
+     "pop": true
+    }
+   ]
+  },
+  {
+   "from": 5,
+   "to": 5,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "teal",
+     "n": "3",
+     "html": "Off-peak scheduling",
+     "at": 5
+    },
+    {
+     "t": "big",
+     "top": 640,
+     "color": "teal",
+     "html": "Charge<br>overnight",
+     "at": 5,
+     "d": 1.4,
+     "pop": true
+    }
+   ]
+  },
+  {
+   "from": 6,
+   "to": 6,
+   "els": [
+    {
+     "t": "big",
+     "top": 340,
+     "color": "amber",
+     "html": "Load calc.",
+     "at": 6,
+     "pop": true
+    },
+    {
+     "t": "big",
+     "top": 500,
+     "color": "violet",
+     "html": "Permit.",
+     "at": 6,
+     "d": 0.6,
+     "pop": true
+    },
+    {
+     "t": "big",
+     "top": 660,
+     "color": "teal",
+     "html": "Off-peak.",
+     "at": 6,
+     "d": 1.2,
+     "pop": true
+    },
+    {
+     "t": "mid",
+     "top": 1120,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 6,
+     "d": 1.0
+    }
+   ]
+  }
+ ]
+}
