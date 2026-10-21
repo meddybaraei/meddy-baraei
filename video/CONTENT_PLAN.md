@@ -160,3 +160,9 @@ Replaced 3 generic AI promo posts with this real job (same topic): YouTube Short
 
 ## Owner video: "Trigger, Condition, Action" smart home tip (Oct 21)
 Owner made it and posted it on YouTube himself. Cross-posted with a 4 s contact end card (video/owner/2026-10-21_trigger-condition-action_social.mp4): LinkedIn Thu Oct 22 11 AM, TikTok Thu Oct 22 8:30 PM, Facebook Reel Thu Oct 29 6:30 PM. Narration is an AI voice (owner confirmed Oct 21): TikTok isAigc true, FB/LinkedIn captions say "Video narrated with an AI voice."
+
+## Owner tip videos, Oct 21 (AI voiceover, labeled): end-card cuts in video/owner/*_social.mp4 (phone) and *_youtube.mp4 (no phone, made via video/tools/add_endcard.py --no-phone)
+- Doorbell Wi-Fi test: TikTok Fri Oct 23 8:30 PM, LinkedIn Mon Oct 26 11 AM, FB Reel Fri Oct 30 6:30 PM
+- Camera placement: TikTok Sun Oct 25 6 PM, LinkedIn Wed Oct 28 11 AM, FB Reel Sun Nov 1 6:30 PM
+- Nest thermostat 3 checks: TikTok Thu Oct 29 6 PM, LinkedIn Fri Oct 30 11 AM, FB Reel Mon Nov 2 6:30 PM
+- YouTube: not scheduled yet (ask owner whether he already uploaded them; *_youtube.mp4 ready).
