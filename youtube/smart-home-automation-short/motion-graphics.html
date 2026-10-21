@@ -1,0 +1,130 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--bg:#0b1020;--panel:#151c33;--ink:#f3f5fb;--mute:#8d97b5;--trig:#ffb020;--cond:#a78bfa;--act:#2dd4bf;--bad:#ff4d5e}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Inter,sans-serif;color:var(--ink)}
+#stage{position:absolute;inset:0}
+#tint{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(255,77,94,.35),transparent 70%);opacity:0}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.035) 2px,transparent 2px);background-size:90px 90px}
+.scene{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0}
+.kicker{left:0;right:0;top:170px;text-align:center;font:600 34px Inter;letter-spacing:8px;color:var(--mute)}
+.big{left:70px;right:70px;text-align:center;font:800 104px/1.05 "Inter Display",Inter;letter-spacing:-2px}
+.mid{left:70px;right:70px;text-align:center;font:700 64px/1.15 "Inter Display",Inter}
+.card{left:110px;right:110px;height:200px;border-radius:36px;background:var(--panel);border:4px solid;display:flex;align-items:center;gap:40px;padding:0 50px;font:800 76px "Inter Display",Inter;letter-spacing:2px}
+.card .n{width:100px;height:100px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 56px Inter;color:var(--bg)}
+.chip{left:140px;right:140px;height:150px;border-radius:30px;background:var(--panel);display:flex;align-items:center;justify-content:center;gap:28px;font:700 56px Inter;border:3px solid rgba(255,255,255,.08)}
+.row{left:80px;right:80px;border-radius:32px;background:var(--panel);padding:30px 40px;border-left:16px solid}
+.row h4{font:800 34px Inter;letter-spacing:6px;margin-bottom:12px}
+.row p{font:700 52px/1.2 Inter}
+.row .sub{font:600 42px/1.3 Inter;color:var(--ink);margin-top:8px}
+.badge{right:90px;top:300px;padding:18px 34px;border-radius:24px;font:800 54px "JetBrains Mono";background:#000;border:3px solid var(--mute)}
+#cap{position:absolute;left:60px;right:60px;bottom:150px;text-align:center;font:700 50px/1.25 Inter;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.8)}
+#cap span{background:rgba(0,0,0,.55);padding:6px 18px;border-radius:14px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+svg{display:block}
+</style></head><body>
+<div id="stage"><div class="grid"></div><div id="tint"></div>
+
+<!-- A: hook -->
+<div class="scene" id="A">
+  <div class="a kicker" data-in="0.2">SMART HOME TIP</div>
+  <div class="a" style="left:0;right:0;top:420px;display:flex;justify-content:center;gap:70px" data-in="0.5">
+    <div class="a" style="position:relative" data-in="0.5" data-pop><svg width="220" height="220" viewBox="0 0 100 100"><circle cx="50" cy="42" r="26" fill="none" stroke="#ffb020" stroke-width="6"/><rect x="38" y="70" width="24" height="16" rx="3" fill="#ffb020"/></svg></div>
+    <div class="a" style="position:relative" data-in="1.2" data-pop><svg width="220" height="220" viewBox="0 0 100 100"><rect x="22" y="18" width="56" height="64" rx="14" fill="none" stroke="#2dd4bf" stroke-width="6"/><rect x="38" y="38" width="6" height="16" rx="2" fill="#2dd4bf"/><rect x="56" y="38" width="6" height="16" rx="2" fill="#2dd4bf"/></svg></div>
+    <div class="a" style="position:relative" data-in="1.9" data-pop><svg width="220" height="220" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" fill="#a78bfa"/><path d="M28 28a31 31 0 0 0 0 44M72 28a31 31 0 0 1 0 44M17 17a46 46 0 0 0 0 66M83 17a46 46 0 0 1 0 66" fill="none" stroke="#a78bfa" stroke-width="6" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="a big" style="top:820px" data-in="3.65">It's <u style="text-decoration-color:var(--bad);text-decoration-thickness:10px">not</u><br>the gadgets.</div>
+</div>
+
+<!-- B: problem -->
+<div class="scene" id="B">
+  <div class="a big" style="top:640px" data-in="7.6">It's the</div>
+  <div class="a big" style="top:770px;color:var(--trig);font-size:124px" data-in="10.5" data-pop>automations.</div>
+</div>
+
+<!-- C: three parts -->
+<div class="scene" id="C">
+  <div class="a kicker" data-in="13.1">EVERY AUTOMATION THAT WORKS</div>
+  <div class="a mid" style="top:250px" data-in="13.3">has 3 parts</div>
+  <div class="a card" style="top:520px;border-color:var(--trig)" data-in="15.7"><div class="n" style="background:var(--trig)">1</div>TRIGGER</div>
+  <div class="a card" style="top:780px;border-color:var(--cond)" data-in="16.74"><div class="n" style="background:var(--cond)">2</div>CONDITION</div>
+  <div class="a card" style="top:1040px;border-color:var(--act)" data-in="17.75"><div class="n" style="background:var(--act)">3</div>ACTION</div>
+</div>
+
+<!-- D: trigger -->
+<div class="scene" id="D">
+  <div class="a card" style="top:300px;border-color:var(--trig)" data-in="19.5"><div class="n" style="background:var(--trig)">1</div>TRIGGER</div>
+  <div class="a mid" style="top:580px" data-in="19.8">The event that<br><span style="color:var(--trig)">starts it</span></div>
+  <div class="a chip" style="top:850px" data-in="21.6">Someone walks in</div>
+  <div class="a chip" style="top:1040px" data-in="23.23">Leak sensor gets wet</div>
+</div>
+
+<!-- E: condition -->
+<div class="scene" id="E">
+  <div class="a card" style="top:300px;border-color:var(--cond)" data-in="25.4"><div class="n" style="background:var(--cond)">2</div>CONDITION</div>
+  <div class="a mid" style="top:580px" data-in="25.7">The check that must<br>be <span style="color:var(--cond)">true first</span></div>
+  <div class="a chip" style="top:900px;border-color:var(--cond)" data-in="27.24">Only after sunset</div>
+</div>
+
+<!-- F: action -->
+<div class="scene" id="F">
+  <div class="a card" style="top:300px;border-color:var(--act)" data-in="31.88"><div class="n" style="background:var(--act)">3</div>ACTION</div>
+  <div class="a mid" style="top:580px" data-in="32.1">What <span style="color:var(--act)">actually<br>happens</span></div>
+  <div class="a chip" style="top:850px" data-in="34.38">Light turns on</div>
+  <div class="a chip" style="top:1040px" data-in="35.69">Valve closes</div>
+</div>
+
+<!-- G: example 1 -->
+<div class="scene" id="G">
+  <div class="a kicker" data-in="37.43">EXAMPLE 1</div>
+  <div class="a mid" style="top:230px;left:80px;right:auto;text-align:left" data-in="37.5">Leak alert</div>
+  <div class="a badge" style="top:225px" data-in="38.57" data-pop>2:00 AM</div>
+  <div class="a row" id="g1" style="top:420px;border-color:var(--trig)" data-in="39.53"><h4 style="color:var(--trig)">TRIGGER</h4><p>Leak sensor under a pipe gets wet</p></div>
+  <div class="a row" style="top:690px;border-color:var(--cond)" data-in="43.4"><h4 style="color:var(--cond)">CONDITION</h4><p>None</p><div class="sub" style="color:var(--mute)">A leak is always urgent</div></div>
+  <div class="a row" style="top:990px;border-color:var(--act)" data-in="46.63"><h4 style="color:var(--act)">ACTION</h4>
+    <div class="sub a" style="position:relative" data-in="47.8">→ Close main water shut-off valve</div>
+    <div class="sub a" style="position:relative" data-in="50.11">→ Send an alert to your phone</div>
+    <div class="sub a" style="position:relative" data-in="51.68">→ <span style="color:var(--bad)">Turn the lights red</span></div>
+  </div>
+</div>
+
+<!-- H: example 2 -->
+<div class="scene" id="H">
+  <div class="a kicker" data-in="53.63">EXAMPLE 2</div>
+  <div class="a mid" style="top:230px;left:80px;right:auto;text-align:left" data-in="53.7">Porch light</div>
+  <div class="a badge" id="clock2" style="top:225px" data-in="60.11" data-pop>2:00 PM</div>
+  <div class="a row" id="h1" style="top:420px;border-color:var(--trig)" data-in="55.19"><h4 style="color:var(--trig)">TRIGGER</h4><p>Motion on the porch</p><div class="sub a" id="fired" style="position:relative;color:var(--trig)" data-in="61.3">✓ Fired</div></div>
+  <div class="a row" id="h2" style="top:720px;border-color:var(--cond)" data-in="57.36"><h4 style="color:var(--cond)">CONDITION</h4><p>Only between sunset &amp; midnight</p><div class="sub a" style="position:relative;color:var(--bad)" data-in="63.42">✕ Not met: action blocked</div></div>
+  <div class="a row" id="h3" style="top:1060px;border-color:var(--act)" data-in="55.6"><h4 style="color:var(--act)">ACTION</h4><p>Porch light turns on</p></div>
+</div>
+
+<!-- I: recap -->
+<div class="scene" id="I">
+  <div class="a big" style="top:420px;color:var(--trig)" data-in="65.87" data-pop>TRIGGER</div>
+  <div class="a big" style="top:620px;color:var(--cond)" data-in="66.61" data-pop>CONDITION</div>
+  <div class="a big" style="top:820px;color:var(--act)" data-in="67.54" data-pop>ACTION</div>
+  <div class="a mid" style="top:1100px" data-in="68.65">Build every automation<br>this way.</div>
+</div>
+
+<div id="cap"></div>
+</div>
+<script>
+const scenes=[["A",0,7.4],["B",7.5,12.9],["C",13.0,19.3],["D",19.4,25.2],["E",25.3,31.7],["F",31.8,37.25],["G",37.35,53.45],["H",53.55,65.7],["I",65.8,99]];
+const caps=[[0,"Most smart homes don't fail because of bad gadgets."],[7.6,"They fail because of bad automations."],[13.08,"Every automation that works has three parts:"],[15.7,"a trigger, a condition, and an action."],[19.48,"The trigger is the event that starts it."],[21.58,"Someone walks into a room. A leak sensor gets wet."],[25.39,"The condition is the check."],[27.24,"It's a rule that has to be true first, like \"only after sunset.\""],[31.88,"The action is what actually happens."],[34.38,"A light turns on. A valve closes."],[37.43,"Here's one."],[38.57,"At 2 A.M., a leak sensor under a pipe gets wet."],[41.83,"That's the trigger."],[43.4,"There's no condition, because a leak is always urgent."],[46.63,"The action: the hub closes the main water shut-off valve,"],[50.11,"sends an alert to your phone, and turns the lights red."],[53.63,"Now add a condition."],[55.19,"Motion on the porch turns on the porch light,"],[57.36,"but only between sunset and midnight."],[60.11,"At 2 P.M., the motion still fires the trigger,"],[63.42,"and the condition blocks the action."],[65.87,"Trigger. Condition. Action."],[68.65,"Build every automation this way."]];
+const clamp=x=>Math.max(0,Math.min(1,x)), ease=x=>1-Math.pow(1-clamp(x),3);
+const back=x=>{x=clamp(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const els=[...document.querySelectorAll('.a')].map(e=>({e,t:+e.dataset.in,pop:'pop' in e.dataset}));
+window.render=function(t){
+  for(const[id,a,b]of scenes){const s=document.getElementById(id);const o=Math.min(ease((t-a)/.3),1-ease((t-b)/.3));s.style.opacity=Math.max(0,o);s.style.transform=`translateY(${(1-ease((t-a)/.4))*40-ease((t-b)/.3)*40}px)`}
+  for(const{e,t:ti,pop}of els){const p=(t-ti)/.45;e.style.opacity=ease(p*1.6);e.style.transform=pop?`scale(${.6+.4*back(p)})`:`translateY(${(1-ease(p))*50}px)`}
+  // emphasis
+  document.getElementById('tint').style.opacity=t>51.68&&t<53.5?.6+.4*Math.sin((t-51.68)*9):0;
+  const g1=document.getElementById('g1');g1.style.boxShadow=t>41.83&&t<53.4?`0 0 ${30+20*Math.sin(t*8)}px rgba(255,176,32,.55)`:'none';
+  const h1=document.getElementById('h1');h1.style.boxShadow=t>61.3?`0 0 ${30+20*Math.sin(t*8)}px rgba(255,176,32,.55)`:'none';
+  document.getElementById('h2').style.boxShadow=t>63.42?'0 0 40px rgba(255,77,94,.6)':'none';
+  document.getElementById('h3').style.filter=t>63.42?`grayscale(1) brightness(${1-.5*ease((t-63.42)/.4)})`:'none';
+  let c='';for(const[ct,tx]of caps)if(t>=ct)c=tx;document.getElementById('cap').innerHTML=c?`<span>${c}</span>`:'';
+};
+render(0);
+</script></body></html>
