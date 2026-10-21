@@ -1,0 +1,21 @@
+  0.59-  5.66
+  script: Thinking about a Level 2 EV charger at home? Here's what a proper install actually involves.
+  heard:  Thinking about a Level 2 EV charger at home? Here's what a proper install actually involves.
+  6.27- 12.62
+  script: Step one is a load calculation. We check your electrical panel to see if it can handle the charger on top of everything else in your house.
+  heard:  Step one is a load calculation. We check your electrical panel to see if it can handle the charger on top of everything else in your house.
+ 13.22- 19.41
+  script: That answer decides the cost. Panel capacity, how far the cable has to run, and whether you need a panel upgrade.
+  heard:  that answer decides the cost. Panel capacity, how far the cable has to run, and whether you need a panel upgrade.
+ 19.99- 25.79
+  script: Step two is the permit. In Loudoun and Fairfax County, an EV charger needs an electrical permit and an inspection.
+  heard:  Step 2 is the permit. In Loudoun and Fairfax County, an EV charger needs an electrical permit and an inspection.
+ 26.27- 29.64
+  script: Skip it, and you could have problems with insurance or when you sell the house.
+  heard:  Skip it, and you could have problems with insurance or when you sell the house.
+ 30.16- 35.29
+  script: Step three, set up off-peak scheduling, so the car charges overnight when power often costs less.
+  heard:  Step 3: set up off-peak scheduling, so the car charges overnight when power often costs less.
+ 35.88- 42.25
+  script: Load calc, permit, off-peak. NovaProHome handles all three. Free quote at novaprohome.com.
+  heard:  Load calc permit off peak NovaPro Home handles all three free quote at NovaProHome.com
