@@ -1,0 +1,9 @@
+{"hook": "POV: your Ring doorbell is 10 years old", "hook_hl": "10 years",
+ "hook_photo": "video/weekly/photos/greatfalls_old_front.jpg",
+ "clips": [
+  {"photo": "video/weekly/photos/greatfalls_old_angle.jpg", "text": "out with the old one", "hl": "old"},
+  {"photo": "video/weekly/photos/greatfalls_tools.jpg", "text": "test the wires first", "hl": "test"},
+  {"photo": "video/weekly/photos/greatfalls_bracket.jpg", "text": "new bracket, same wires", "hl": "new"},
+  {"photo": "video/weekly/photos/greatfalls_new_done.jpg", "text": "done in under 30 min", "hl": "30 min"}
+ ],
+ "cta": ["Want this at your home?", "novaprohome.com/contact", "link in bio"]}
