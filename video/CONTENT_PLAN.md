@@ -153,3 +153,7 @@ Meddy chose "Full autonomy": I create AND schedule posts myself following this p
 
 
 ## Gemini budget (owner, Oct 20 2026): MAX $20/month total for all Gemini use. Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.
+
+## Job of the week: Ring doorbell replacement, Great Falls VA (Oct 21)
+Owner's 5 photos (old 10-yr Ring doorbell -> new Ring video doorbell + chime, under 30 min). Files: video/weekly/2026-10-21_job-great-falls-ring-doorbell(.json|.mp4), video/tiktok/2026-10-21_great-falls-doorbell_tiktok.mp4. Exact new model not confirmed, so captions say "new Ring video doorbell".
+Replaced 3 generic AI promo posts with this real job (same topic): YouTube Short Fri Oct 23 12 PM (was AI promo Oct 24 4 PM), TikTok Sat Oct 24 6 PM (was AI promo Oct 29), Facebook Reel Sat Oct 24 6:30 PM. Giveaway block on YT/FB, no affiliate links. Open slots now: YouTube Sat Oct 24 4 PM, TikTok Thu Oct 29 6 PM.
