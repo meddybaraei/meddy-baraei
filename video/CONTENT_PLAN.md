@@ -157,3 +157,6 @@ Meddy chose "Full autonomy": I create AND schedule posts myself following this p
 ## Job of the week: Ring doorbell replacement, Great Falls VA (Oct 21)
 Owner's 5 photos (old 10-yr Ring doorbell -> Ring Wired Doorbell + chime, under 30 min; owner confirmed wired model).
 Replaced 3 generic AI promo posts with this real job (same topic): YouTube Short Fri Oct 23 12 PM (was AI promo Oct 24 4 PM), TikTok Sat Oct 24 6 PM (was AI promo Oct 29), Facebook Reel Sat Oct 24 6:30 PM. Giveaway block on YT/FB, no affiliate links. Open slots now: YouTube Sat Oct 24 4 PM, TikTok Thu Oct 29 6 PM.
+
+## Owner video: "Trigger, Condition, Action" smart home tip (Oct 21)
+Owner made it and posted it on YouTube himself. Cross-posted with a 4 s contact end card (video/owner/2026-10-21_trigger-condition-action_social.mp4): LinkedIn Thu Oct 22 11 AM, TikTok Thu Oct 22 8:30 PM, Facebook Reel Thu Oct 29 6:30 PM. isAigc false (ask owner if the narration is an AI voice; if yes, set TikTok isAigc true).
