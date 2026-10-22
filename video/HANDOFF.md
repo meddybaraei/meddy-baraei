@@ -71,3 +71,11 @@ YouTube 4 subs (+2), ~1,100 views; TikTok 559 views (4x up); Facebook 198 video 
 
 
 ## Gemini budget (owner, Oct 20 2026): MAX $20/month total for all Gemini use. Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.
+
+## Six AI-voiced service Shorts (Oct 22)
+From the motion-graphics session (branch claude/jolly-knuth-8q5382), saved in video/owner/shorts/. Scheduled YouTube Short 7:00 PM + TikTok 7:30 PM, all AI-labeled (isAiGeneratedContent / isAigc), giveaway block on YouTube, no affiliate links:
+Oct 23 EV charger explained · Oct 24 smart bulbs vs switches · Oct 25 smart lock door test · Oct 26 smart garage upgrade · Oct 27 one-app smart home · Oct 28 how NovaProHome works.
+Facebook has a Reel every day at noon through Nov 20 (max 1 FB post/day), so instead of new FB slots the Shorts replaced the media of the matching text Reels: Nov 13 smart lighting → bulbs-vs-switches Short, Nov 17 EV panel check → EV Short (FB+LinkedIn). Lock/garage/one-app/how-we-work are still unposted on FB/LinkedIn: use them for late-Nov/Dec Facebook slots.
+
+## New job photos (Oct 22, city TBD)
+12 real photos saved as video/weekly/photos/job2_*.jpg (+ Nano Banana enhanced): Ring Wired Doorbell Pro (3rd gen) + chime, 3 Spotlight Cam Plus with solar panels (siding + fence), Solar Steplights, Ring Bridge. 3 AI illustrations from the same upload were NOT used (Ring logos, garbled text). Waiting on the job city from Meddy before building the Job of the Week Short/TikTok/FB Reel.
