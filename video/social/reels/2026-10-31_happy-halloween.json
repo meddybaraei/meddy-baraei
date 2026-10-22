@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_halloween_porch.mp4",
+   "crop": [
+    0,
+    0.08,
+    1,
+    0.92
+   ],
+   "ai": true,
+   "kicker": "Happy Halloween, NoVA!",
+   "title": "Porch lights on tonight?",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/happy-halloween.jpg",
+   "title": "",
+   "body": "Porch lights on, drive slowly, have fun. Show us your costumes!",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

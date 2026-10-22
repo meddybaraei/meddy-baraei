@@ -1,0 +1,10 @@
+{"hook": "POV: you never carry house keys again", "hook_hl": "never",
+ "hook_photo": "video/weekly/photos/lock_keypad_front.jpg",
+ "clips": [
+  {"photo": "video/weekly/photos/lock_before.jpg", "text": "before: old-school deadbolt", "hl": "before:"},
+  {"photo": "video/weekly/photos/lock_old_removed.jpg", "text": "out with the old", "hl": "old"},
+  {"photo": "video/weekly/photos/lock_hole_adapter.jpg", "text": "new bolt + keypad cable", "hl": "keypad"},
+  {"photo": "video/weekly/photos/lock_interior_done.jpg", "text": "connected to wi-fi", "hl": "wi-fi"},
+  {"photo": "video/weekly/photos/lock_keypad_front.jpg", "text": "unlock from your phone", "hl": "phone"}
+ ],
+ "cta": ["Want a smart lock?", "novaprohome.com/contact", "link in bio"]}

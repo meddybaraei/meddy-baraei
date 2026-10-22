@@ -1,0 +1,28 @@
+{
+ "badge": "Giveaway",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/garage_doorbell_close.jpg",
+   "kicker": "Giveaway closed",
+   "title": "Want one installed anyway?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/garage_doorbell_close.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Thanks to everyone who entered! Free quotes at novaprohome.com/contact.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Comment your city to enter!",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "upbeat",
+ "shop_qr": false
+}

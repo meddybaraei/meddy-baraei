@@ -1,0 +1,122 @@
+{
+ "badge": "How-To \u00b7 Ring Alarm Pro",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
+   "kicker": "Step-by-step guide",
+   "title": "How to install a Ring Alarm Pro 14-piece kit",
+   "body": "Our real install in Chantilly, VA. About 2 hours.",
+   "dur": 5.0
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
+   "kicker": "What's in the box",
+   "title": "Base station, keypads, sensors & more",
+   "body": "Contact sensors, motion detectors and a range extender.",
+   "dur": 4.6
+  },
+  {
+   "art": "list",
+   "title": "Before you start",
+   "items": [
+    "Ring app on your phone",
+    "A central spot for the base station",
+    "Your internet modem nearby"
+   ],
+   "body": "Always follow the instructions in your Ring box.",
+   "dur": 5.0
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_app_setup.jpg",
+   "kicker": "Step 1 \u00b7 Base station",
+   "title": "Plug it in and follow the app",
+   "body": "Alarm Pro has eero Wi-Fi built in: use it as your router or join your network.",
+   "dur": 5.4
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_station.jpg",
+   "kicker": "Step 1",
+   "title": "Put it in a central spot",
+   "body": "The closer to the middle of the home, the better every sensor reaches it.",
+   "dur": 4.8
+  },
+  {
+   "art": "list",
+   "title": "Step 2 \u00b7 Pair before you mount",
+   "items": [
+    "Pull the battery tab",
+    "Add the device in the Ring app",
+    "Name it (e.g. Front Door)"
+   ],
+   "body": "Pairing first means no ladder work twice.",
+   "dur": 5.0
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_door.jpg",
+   "kicker": "Step 3 \u00b7 Contact sensors",
+   "title": "Sensor and magnet, lined up",
+   "body": "Mount one piece on the door, the other on the frame, close together.",
+   "dur": 5.0,
+   "focus": [
+    0.5,
+    0.25
+   ]
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_window.jpg",
+   "kicker": "Step 3",
+   "title": "Do the same on windows",
+   "body": "Sash and frame, lined up, so it alerts the moment it opens.",
+   "dur": 4.6
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_door3.jpg",
+   "kicker": "Step 3",
+   "title": "Cover every door that leads outside",
+   "body": "Then the windows you use most.",
+   "dur": 4.2,
+   "focus": [
+    0.5,
+    0.12
+   ]
+  },
+  {
+   "photo": "video/weekly/photos/alarm_motion_detector.jpg",
+   "kicker": "Step 4 \u00b7 Motion detector",
+   "title": "High in a corner, about 6\u20138 ft up",
+   "body": "Point it at the room, away from heaters and windows.",
+   "dur": 5.0,
+   "focus": [
+    0.5,
+    0.22
+   ]
+  },
+  {
+   "photo": "video/weekly/photos/alarm_keypad.jpg",
+   "kicker": "Step 5 \u00b7 Keypad",
+   "title": "Mount it by the main door",
+   "body": "Plug it in or use the battery, then set your access codes.",
+   "dur": 5.0,
+   "focus": [
+    0.5,
+    0.38
+   ]
+  },
+  {
+   "art": "list",
+   "title": "Step 6 \u00b7 Test everything",
+   "items": [
+    "Arm Home & Away modes",
+    "Open each door & window",
+    "Walk past the motion detector",
+    "Check the alerts on your phone"
+   ],
+   "body": "Not sure about any step? We install it for you.",
+   "dur": 5.6
+  }
+ ],
+ "end": [
+  "Want it installed for you?",
+  "novaprohome.com"
+ ]
+}

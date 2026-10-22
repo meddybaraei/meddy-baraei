@@ -1,0 +1,28 @@
+{
+ "badge": "Real Job",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_station.jpg",
+   "kicker": "Real job · Chantilly, VA",
+   "title": "Dead Wi-Fi zones AND need an alarm?",
+   "dur": 4.5
+  },
+  {
+   "photo": "video/weekly/photos/alarm_keypad.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "kicker": "",
+   "title": "",
+   "body": "Ring Alarm Pro: sensors on every door, motion detector, keypad, eero Wi-Fi 6 built in.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

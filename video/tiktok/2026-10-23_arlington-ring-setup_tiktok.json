@@ -1,0 +1,52 @@
+{
+ "hook": "POV: your whole house gets Ring in one day",
+ "hook_hl": "one day",
+ "hook_photo": "video/weekly/photos/job2_products.jpg",
+ "clips": [
+  {
+   "photo": "video/weekly/photos/job2_doorbell_bracket.jpg",
+   "text": "doorbell Pro on the old wires",
+   "hl": "Pro"
+  },
+  {
+   "photo": "video/weekly/photos/job2_chime.jpg",
+   "text": "chime wired and tested",
+   "hl": "tested"
+  },
+  {
+   "photo": "video/weekly/photos/job2_doorbell_front.jpg",
+   "text": "Ring Wired Doorbell Pro done",
+   "hl": "done"
+  },
+  {
+   "photo": "video/weekly/photos/job2_solar_spotlight.jpg",
+   "text": "solar Spotlight Cams, no battery swaps",
+   "hl": "solar"
+  },
+  {
+   "photo": "video/weekly/photos/job2_fence_cam_up.jpg",
+   "text": "side gate covered too",
+   "hl": "gate"
+  },
+  {
+   "photo": "video/weekly/photos/job2_products.jpg",
+   "text": "+ 3 Solar Steplights for the walkway",
+   "hl": "Steplights"
+  },
+  {
+   "photo": "video/weekly/photos/job2_cleanup_recycling.jpg",
+   "text": "boxes recycled, no mess left",
+   "hl": "no mess"
+  },
+  {
+   "photo": "video/weekly/photos/job2_wide_ladder.jpg",
+   "text": "Arlington, VA: front to backyard",
+   "hl": "Arlington"
+  }
+ ],
+ "cta": [
+  "Want this at your home?",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}

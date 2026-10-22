@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/ecobee_in_box.jpg",
+   "kicker": "Black Friday",
+   "title": "Buying smart gear? Check this first",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/ecobee_in_box.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Wiring · HVAC compatibility · one app ecosystem · Wi-Fi at the mount",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

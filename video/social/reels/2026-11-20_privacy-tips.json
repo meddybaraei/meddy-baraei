@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/tiktok/photos/nest_left.jpg",
+   "kicker": "Privacy tips",
+   "title": "Is your camera actually secure?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/tiktok/photos/nest_left.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "2FA · unique passwords · firmware updates · aim at your property · review shared access",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}
