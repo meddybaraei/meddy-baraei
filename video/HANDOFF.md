@@ -84,3 +84,6 @@ Oct 22: Meddy confirmed 3 Solar Steplights were installed (no photo); added to f
 
 ## Free leads plan (Oct 24)
 See video/FREE_LEADS_PLAN.md. Google Business Profile is NOT connected in Metricool (only FB, LinkedIn, TikTok, YouTube, FB Ads, Google Ads); once Meddy connects it, post 2x/week with real job photos (gmbData type publication/photo). Waiting on Meddy: GBP connection, review link, referral reward approval.
+- Oct 24: Google Business Profile CONNECTED in Metricool (gbpData accounts/107627548290470625370/locations/2009781620080554964). Scheduled (gmbData): photo gallery upload Sat Oct 24 1 PM (6 real job photos), posts 10 AM: Oct 25 Arlington full Ring setup, Oct 28 Great Falls doorbell, Oct 31 Chantilly Alarm Pro, Nov 4 Vienna ecobee fix, Nov 7 Reston store cameras, Nov 10 Arlington deck cams. Rule for GBP posts: no phone number in text (Google rejects), no giveaway, city + service in the first line, end with novaprohome.com/contact. Keep 2/week with every new job.
+- Oct 24: Meddy said NO $25 referral offer. Never offer paid referral rewards.
+- Oct 24: Google Ads (Sep 24-Oct 23): $304.61, 57 clicks, 26 "conversions"; ~$122 on zero-conversion keywords. Waiting on Meddy: real lead count (verify conversion tracking) + OK to pause zero-conversion keywords. Hadi Zahedi (prozco.com) has Manager access to the GBP.

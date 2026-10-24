@@ -1,12 +1,12 @@
 # Free customer plan (no ad spend), Oct 24 2026
 
 Goal: more install bookings at novaprohome.com/contact without paying for ads.
-Rule: only spend money when a job is already booked (referral rewards), never per click or per lead.
+Rule: no new ad spend and no paid referral rewards.
 
 ## 1. Google Business Profile (biggest free lever)
 Most "ring doorbell installer near me" / "security camera installation sterling va" searches end in the Google Maps 3-pack, not on social media.
 - [ ] Meddy: confirm the profile is verified, category "Security system installer" + secondary "Electrician" / "Home automation company", service area = Loudoun, Fairfax, Arlington.
-- [ ] Meddy: connect Google Business Profile in Metricool (Settings > Connections > Google Business Profile). It is NOT connected today (checked Oct 24).
+- [x] Google Business Profile connected in Metricool (Oct 24, after fixing Business Manager app access).
 - [ ] Claude, once connected: 2 GBP posts a week with real job photos + city (Arlington full Ring setup, Great Falls doorbell, Chantilly alarm, Reston...), and upload every job photo to the gallery.
 - [ ] Meddy: send Claude the "Ask for reviews" short link (GBP > Ask for reviews).
 
@@ -21,9 +21,8 @@ Follow-up 3 days later (only if no review):
 
 Also text every past customer from 2026 once with the first message (adjusted: "thanks again for choosing NovaProHome").
 
-## 3. Referral reward (paid only after a booked job)
-Proposal for Meddy to approve: "Refer a neighbor: when they book an install, you get $25 (gift card or credit) and they get $25 off." Costs nothing unless it produces a job.
-Add one line to the review SMS and the job invoice: "Know someone who needs this? Send them to novaprohome.com/contact and mention your name."
+## 3. Referrals (no reward: Meddy decided Oct 24, no $25 referral offer)
+Just ask. Add one line to the review SMS and the job invoice: "Know someone who needs this? Send them to novaprohome.com/contact and mention your name." Never promise money or discounts for referrals unless Meddy changes this.
 
 ## 4. Partners who send repeat work (free)
 Who: real estate agents (closing gift: doorbell + install), property managers (smart locks between tenants), builders/remodelers, electricians and HVAC techs who don't do low-voltage/Wi-Fi, handymen, home inspectors.
