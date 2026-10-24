@@ -8,16 +8,16 @@ Most "ring doorbell installer near me" / "security camera installation sterling 
 - [ ] Meddy: confirm the profile is verified, category "Security system installer" + secondary "Electrician" / "Home automation company", service area = Loudoun, Fairfax, Arlington.
 - [x] Google Business Profile connected in Metricool (Oct 24, after fixing Business Manager app access).
 - [ ] Claude, once connected: 2 GBP posts a week with real job photos + city (Arlington full Ring setup, Great Falls doorbell, Chantilly alarm, Reston...), and upload every job photo to the gallery.
-- [ ] Meddy: send Claude the "Ask for reviews" short link (GBP > Ask for reviews).
+- [x] Google review link: https://g.page/r/CeeJDbkRDpk2EAE/review (QR card: video/reviews_qr_card.png)
 
 ## 2. Reviews after every job (feeds #1)
 Target: 20 Google reviews by Dec 31. Ask the same day, while they are happy.
 
 SMS (send from your phone right after the job):
-> Hi [Name], thanks for choosing NovaProHome today! If you're happy with the install, a quick Google review helps a small local business a lot: [review link]. Questions about your new [doorbell/cameras]? Just text me. – Meddy
+> Hi [Name], thanks for choosing NovaProHome today! If you're happy with the install, a quick Google review helps a small local business a lot: https://g.page/r/CeeJDbkRDpk2EAE/review. Questions about your new [doorbell/cameras]? Just text me. – Meddy
 
 Follow-up 3 days later (only if no review):
-> Hi [Name], Meddy from NovaProHome. Is everything working well with your [device]? If you have 1 minute, a review would mean a lot: [review link]
+> Hi [Name], Meddy from NovaProHome. Is everything working well with your [device]? If you have 1 minute, a review would mean a lot: https://g.page/r/CeeJDbkRDpk2EAE/review
 
 Also text every past customer from 2026 once with the first message (adjusted: "thanks again for choosing NovaProHome").
 
