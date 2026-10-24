@@ -88,3 +88,4 @@ See video/FREE_LEADS_PLAN.md. Google Business Profile is NOT connected in Metric
 - Oct 24: Meddy said NO $25 referral offer. Never offer paid referral rewards.
 - Oct 24: Google Ads (Sep 24-Oct 23): $304.61, 57 clicks, 26 "conversions"; ~$122 on zero-conversion keywords. Waiting on Meddy: real lead count (verify conversion tracking) + OK to pause zero-conversion keywords. Hadi Zahedi (prozco.com) has Manager access to the GBP.
 - Oct 24: Google review link https://g.page/r/CeeJDbkRDpk2EAE/review (in FREE_LEADS_PLAN texts) + printable QR card video/reviews_qr_card.png.
+- Oct 24: Meddy: only 3 real leads from Google Ads last 30 days (Ads reported 26 conversions) => conversion tracking counts the wrong actions; real cost ~$100/lead. Adspirer quota used up until Nov 14 (can't audit/edit Ads from here). Asked Meddy: how many of the 3 became jobs + job value; fix Primary conversion actions in Google Ads > Goals.
