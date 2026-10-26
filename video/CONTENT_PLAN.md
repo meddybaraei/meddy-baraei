@@ -166,3 +166,12 @@ Owner made it and posted it on YouTube himself. Cross-posted with a 4 s contact 
 - Camera placement: TikTok Sun Oct 25 6 PM, LinkedIn Wed Oct 28 11 AM, FB Reel Sun Nov 1 6:30 PM
 - Nest thermostat 3 checks: TikTok Thu Oct 29 6 PM, LinkedIn Fri Oct 30 11 AM, FB Reel Mon Nov 2 6:30 PM
 - YouTube Shorts (owner had not uploaded them; isAiGeneratedContent true): doorbell Wi-Fi Sat Oct 24 4 PM, camera placement Wed Oct 28 4 PM, thermostat 3 checks Fri Oct 30 4 PM.
+
+## Weekly review Oct 19–25 (trends)
+- YouTube: 5 subscribers (+1). 762 views Oct 19–23 (no Metricool data yet for Oct 24–25) vs 1,100 for the same 5 days the week before; 13 uploads. Top: Retail Store Cameras + Smart Lock Reston #shorts 69, Nest Cam Floodlight Vienna #shorts 67 (22 s avg view), Ring Camera Arlington Backyard #shorts 61, Ring Elite 180 Sterling & Ashburn #shorts 56, Schlage Encode before/after Sterling 53. Bottom: Ecobee 6-step long video 1, Trigger→Condition→Action #shorts 7, 4K Pro long review 9, Giveaway #shorts 10, "Engineered, Not Just Installed" promo 12. Real job + city wins; promos, long text reviews and generic tips lose.
+- TikTok: biggest grower, about 1,200 views on 16 videos (559 the week before); followers 3. Top: Nest Cam floodlight POV 123, EV charger (AI voice) 116, Great Falls doorbell POV 106, Arlington deck cams 100, Trigger/Condition/Action 100. Bottom: Ring Solar McLean 14, giveaway 16.
+- Facebook: 188 media views (206), Reel views 106 (93), interactions 6 (2), followers 9, 16 posts. LinkedIn: 18 impressions (about 2), followers 2.
+- Comments: 0 YouTube, 0 TikTok, 0 giveaway entries. Leads came by email (Ring network + past customers), not comments.
+- Applied Oct 26: retitled Oct 27 Short to "Too Many Smart Home Apps? One-App Setup Explained | Northern Virginia" and Oct 28 Short to "Hiring a Smart Home Installer? What to Expect (5 Steps) | Sterling, VA". Google Business Profile live, 2 posts/week.
+- Next: real-job + city Shorts first; TikTok POV hooks; giveaway needs sharing in local Facebook groups; no more long text-only reviews.
+- Privacy rule: never write customer names, emails or addresses into this repo (it may be public). Keep them in Gmail only.
