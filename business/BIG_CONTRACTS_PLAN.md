@@ -11,7 +11,7 @@ DCJS (Virginia Dept. of Criminal Justice Services) says electronic security busi
 alarm and camera systems — need a DCJS business license, and installers need individual registration.
 This matters for the camera/alarm work you already do, and every government or commercial client will ask for it.
 
-- [ ] **Meddy:** call/email DCJS Private Security Services to confirm exactly what NovaProHome needs (residential Ring cameras/alarms, access control). Claude drafts the email.
+- [x] (Oct 26: question sent via DCJS contact form, waiting for reply) **Meddy:** call/email DCJS Private Security Services to confirm exactly what NovaProHome needs (residential Ring cameras/alarms, access control). Claude drafts the email.
 - [ ] **Meddy:** DCJS **business license** application (online, DCJS "Lotus" portal). Name yourself the **compliance agent**.
 - [ ] **Meddy:** **Electronic Security Technician** registration: state-approved training (reported ~14 hours; confirm), fingerprints, fee.
 - [ ] **Meddy:** ask your insurance agent for a certificate of insurance ($1M+ general liability) listing **DCJS as certificate holder**.
