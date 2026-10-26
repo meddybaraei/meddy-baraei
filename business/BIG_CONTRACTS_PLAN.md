@@ -76,4 +76,4 @@ Watch out: companies that charge to "register you in SAM" are resellers. SAM.gov
 | 9–12 | Bonding; first sub jobs / small purchases | Track replies, prep bid responses |
 
 ## Progress log
-- Oct 26: plan created.
+- Oct 26: plan created. DCJS question email saved as Gmail draft (no verified DCJS email found; call (804) 786-4700, ask for Private Security Services, get the right address or ask on the phone). SAM.gov answer sheet + capability statement PDF made (kept private in session scratchpad, not in repo: contain EIN/address). Next: Meddy does Login.gov + SAM.gov, sends UEI/CAGE so the capability statement can be updated.
