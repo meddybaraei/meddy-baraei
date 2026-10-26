@@ -22,7 +22,7 @@ This matters for the camera/alarm work you already do, and every government or c
 |---|---|---|---|---|
 | 1 | **Login.gov → SAM.gov** "Register Entity" | Required for ALL federal contracts; gives your UEI | Free; UEI same day, active in ~3–10 business days; renew yearly | Meddy (Claude preps answers) |
 | 2 | **Virginia eVA** (eva.virginia.gov) | State agencies, universities, many localities buy here | Check current vendor fees | Meddy |
-| 3 | **Virginia SWaM "Small" certification** (sbsd.virginia.gov) | Set-asides + preference for small businesses; reduced eVA fees | Free; review ~60 business days → **start now**; valid 5 yrs | Meddy (Claude preps docs list) |
+| 3 | ✅ SUBMITTED (Small + Micro) **Virginia SWaM "Small" certification** (sbsd.virginia.gov) | Set-asides + preference for small businesses; reduced eVA fees | Free; review ~60 business days → **start now**; valid 5 yrs | Meddy (Claude preps docs list) |
 | 4 | **Loudoun County** procurement vendor registration | County buildings, parks, libraries | Free | Meddy |
 | 5 | **Fairfax County** procurement vendor registration | Same, bigger county | Free | Meddy |
 | 6 | **Loudoun County Public Schools** + **Fairfax County Public Schools** vendor lists | Cameras, access control, low-voltage | Free | Meddy |
@@ -77,3 +77,4 @@ Watch out: companies that charge to "register you in SAM" are resellers. SAM.gov
 
 ## Progress log
 - Oct 26: plan created. DCJS question email saved as Gmail draft (no verified DCJS email found; call (804) 786-4700, ask for Private Security Services, get the right address or ask on the phone). SAM.gov answer sheet + capability statement PDF made (kept private in session scratchpad, not in repo: contain EIN/address). Next: Meddy does Login.gov + SAM.gov, sends UEI/CAGE so the capability statement can be updated.
+- SWaM certification application submitted (Small + Micro designations, FOIA exemption requested). Review is about 60 business days. Next: eVA registration, then SAM.gov.
