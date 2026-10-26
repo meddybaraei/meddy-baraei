@@ -21,7 +21,7 @@ This matters for the camera/alarm work you already do, and every government or c
 | # | Registration | Why | Cost / time | Who |
 |---|---|---|---|---|
 | 1 | **Login.gov → SAM.gov** "Register Entity" | Required for ALL federal contracts; gives your UEI | Free; UEI same day, active in ~3–10 business days; renew yearly | Meddy (Claude preps answers) |
-| 2 | **Virginia eVA** (eva.virginia.gov) | State agencies, universities, many localities buy here | Check current vendor fees | Meddy |
+| 2 | ✅ REGISTERED (Oct 2026; W-9 upload pending) **Virginia eVA** (eva.virginia.gov) | State agencies, universities, many localities buy here | Check current vendor fees | Meddy |
 | 3 | ✅ SUBMITTED (Small + Micro) **Virginia SWaM "Small" certification** (sbsd.virginia.gov) | Set-asides + preference for small businesses; reduced eVA fees | Free; review ~60 business days → **start now**; valid 5 yrs | Meddy (Claude preps docs list) |
 | 4 | **Loudoun County** procurement vendor registration | County buildings, parks, libraries | Free | Meddy |
 | 5 | **Fairfax County** procurement vendor registration | Same, bigger county | Free | Meddy |
@@ -78,3 +78,4 @@ Watch out: companies that charge to "register you in SAM" are resellers. SAM.gov
 ## Progress log
 - Oct 26: plan created. DCJS question email saved as Gmail draft (no verified DCJS email found; call (804) 786-4700, ask for Private Security Services, get the right address or ask on the phone). SAM.gov answer sheet + capability statement PDF made (kept private in session scratchpad, not in repo: contain EIN/address). Next: Meddy does Login.gov + SAM.gov, sends UEI/CAGE so the capability statement can be updated.
 - SWaM certification application submitted (Small + Micro designations, FOIA exemption requested). Review is about 60 business days. Next: eVA registration, then SAM.gov.
+- eVA supplier registration done (commodities 99050 security/alarm install, 68087 surveillance cameras, 91597 data/voice wiring; Northern Virginia regions; bid alerts on). Pending: create login from eVA email, upload signed COVA Substitute W-9. Next: SAM.gov.
