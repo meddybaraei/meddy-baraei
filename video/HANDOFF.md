@@ -100,3 +100,10 @@ See video/FREE_LEADS_PLAN.md. Google Business Profile is NOT connected in Metric
 - Oct 24: Amazon Professional Services (Assemble & Install) applications temporarily closed; recheck reminder Nov 23 (trig_018ef6jDZgXTGezv7GQKYDKz). SENT to prochannel@ring.com: ask for Amazon install-job referral/waitlist, expand lead service area (Loudoun/Fairfax/Arlington), how to get more leads. Meddy already accepted the Ring-Amazon Leads Agreement (Jun 19) and Ring Dealer Agreement; Amazon Business ID A38OOMVXAISAHD. Ring said samples/showroom units come after Learn-tab certifications.
 - Oct 24: Meddy decided NOT to join HelloTech (don't suggest it again). Focus: own pipeline (Ring leads, GBP, property managers, posts); Amazon pro applications recheck Nov 23.
 - Oct 26: DCJS licensing contact = Division of Licensure & Regulatory Services, Customer Service (804) 786-4700, website 'Click Here to Email Us' link at dcjs.virginia.gov/licensure-and-regulatory-affairs. FOIA page/emails are for public-records requests only, not licensing questions.
+- Oct 27, money push. Stalled quotes followed up by email; customer names are kept out of the repo:
+  - Fair Oaks 6-camera quote ($1,750): answered the customer's unanswered 4K question and offered a Reolink 4K option.
+  - Sterling office, 3 Ring Elite cameras ($3,940, a property-management company): refreshed the quote and offered a walk-around.
+  - Vienna townhouse (doorbell + Schlage + patio camera): follow-up sent.
+  - A website-chat lead from Sep 30 left only a phone number, and Meddy's reply bounced to noreply@. Meddy needs to call or text it.
+  - Commercial camera prospect (limo company, Capitol Heights MD office first, then Sterling HQ): they asked for a site meeting Fri Oct 30 or Mon Nov 2. Waiting on Meddy's pick. Check Maryland security-installer licensing before doing work in MD.
+  - Floodlight job ($245): the customer asked "what time Sunday Nov 1". Waiting on Meddy.
