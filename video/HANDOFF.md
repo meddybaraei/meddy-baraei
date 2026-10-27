@@ -104,6 +104,6 @@ See video/FREE_LEADS_PLAN.md. Google Business Profile is NOT connected in Metric
   - Fair Oaks 6-camera quote ($1,750): answered the customer's unanswered 4K question and offered a Reolink 4K option.
   - Sterling office, 3 Ring Elite cameras ($3,940, a property-management company): refreshed the quote and offered a walk-around.
   - Vienna townhouse (doorbell + Schlage + patio camera): follow-up sent.
-  - A website-chat lead from Sep 30 left only a phone number, and Meddy's reply bounced to noreply@. Meddy needs to call or text it.
+  - A website-chat lead from Sep 30 (phone only; the email reply bounced to noreply@): Meddy says the job is fully done, so nothing to do. Note: replies to website-form leads must go to the customer's own email or phone, never to noreply@.
   - Commercial camera prospect (limo company, Capitol Heights MD office first, then Sterling HQ): they asked for a site meeting Fri Oct 30 or Mon Nov 2. Waiting on Meddy's pick. Check Maryland security-installer licensing before doing work in MD.
   - Floodlight job ($245): the customer asked "what time Sunday Nov 1". Waiting on Meddy.
