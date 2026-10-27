@@ -1,0 +1,15 @@
+{
+  "name": "agent-hub",
+  "version": "0.1.0",
+  "description": "Agents dashboard pane, session-to-session messaging, and cheaper-model routing for simple jobs",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "cheapModel": {
+      "type": "string",
+      "title": "Cheap model",
+      "description": "Model used for simple sub-agent jobs",
+      "default": "haiku",
+      "options": ["haiku", "sonnet"]
+    }
+  }
+}
