@@ -1,8 +1,8 @@
 # Google Gemini budget (owner rule, Oct 20 2026)
 
-**Hard cap: $20 per calendar month, total across all Gemini models (text, Nano Banana images, Veo video).**
+**Hard cap: $10 per calendar month from Nov 1 2026 (Meddy cut it from $20 on Oct 27), total across all Gemini models (text, Nano Banana images, Veo video).** October keeps its old $20 cap.
 Use it only where it clearly improves results. Before any Gemini job, estimate its cost, check this ledger, and
-skip or shrink the job if it would push the month over $20. Never start a Veo batch without telling Meddy the cost first.
+skip or shrink the job if it would push the month over the cap. Never start a Veo batch without telling Meddy the cost first.
 
 Rough prices (verify on https://ai.google.dev/gemini-api/docs/pricing):
 - Nano Banana (gemini-3.1-flash-image): ~$0.07 per image
@@ -32,3 +32,4 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-10 | Oct 26 | Gemini 3.5 Flash url_context: DCJS contact pages | ~$0.01 |
 | 2026-10 | Oct 27 | Gemini 3.5 Flash url_context: news-site contact pages | ~$0.01 |
 | **2026-10** | | **Total so far** | **~$17.23 of $20 (≈ $2.77 left until Nov 1)** |
+| **2026-11** | | **Cap $10** | **$0 so far. Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |

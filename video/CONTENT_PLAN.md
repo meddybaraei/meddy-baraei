@@ -152,7 +152,7 @@ Meddy chose "Full autonomy": I create AND schedule posts myself following this p
 - (Oct 19) Every video now ends with a "Shop the products we install" QR scene → novaprohome.com/shop (make_series: before the end card, disable with "shop_qr": false; make_tiktok: default QR slide unless the config sets its own "qr"). Product-specific affiliate QR (e.g. Schlage) can be added as an extra "art":"qr" scene.
 
 
-## Gemini budget (owner, Oct 20 2026): MAX $20/month total for all Gemini use. Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.
+## Gemini budget (owner, Oct 20 2026): MAX $10/month total for all Gemini use from Nov 1 2026 (cut from $20 by Meddy on Oct 27). Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.
 
 ## Job of the week: Ring doorbell replacement, Great Falls VA (Oct 21)
 Owner's 5 photos (old 10-yr Ring doorbell -> Ring Wired Doorbell + chime, under 30 min; owner confirmed wired model).

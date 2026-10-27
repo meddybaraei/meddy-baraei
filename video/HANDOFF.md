@@ -70,7 +70,7 @@ YouTube 4 subs (+2), ~1,100 views; TikTok 559 views (4x up); Facebook 198 video 
 - Gemini's top asks for Meddy: GA4 + Meta Pixel on the site (Hadi), short phone clips (5-10 s) on every job, seed giveaway comments + share in local FB groups, maybe a $15 local boost on the giveaway Reel, Facebook cadence max 1 feed post/day.
 
 
-## Gemini budget (owner, Oct 20 2026): MAX $20/month total for all Gemini use. Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.
+## Gemini budget (owner, Oct 20 2026): MAX $10/month total for all Gemini use from Nov 1 2026 (cut from $20 by Meddy on Oct 27). Check and update video/GEMINI_SPEND.md before and after every Gemini job; estimate cost first; prefer gemini-3.5-flash and cached assets; tell Meddy before any Veo batch.
 
 ## Six AI-voiced service Shorts (Oct 22)
 From the motion-graphics session (branch claude/jolly-knuth-8q5382), saved in video/owner/shorts/. Scheduled YouTube Short 7:00 PM + TikTok 7:30 PM, all AI-labeled (isAiGeneratedContent / isAigc), giveaway block on YouTube, no affiliate links:
