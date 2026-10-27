@@ -84,3 +84,9 @@ That session handed everything over; this file is now the single plan.
   - [ ] Payments: no decision yet. Advice: avoid long auto-renew contracts (Navy Federal / Global Payments); prefer no-contract flat rate with invoicing + tap-to-pay.
 - Note: "novaprohome.com does not resolve" from Claude's sandbox is the sandbox proxy blocking it, not a site outage. Check from a phone if unsure.
 - Oct 27: news tips emailed to The Burn and FFXnow. Loudoun Now's contact page couldn't be read from here; try again later.
+
+## 10. Cost cuts (Oct 27)
+- Polsia ($20/month, "Gridline Home Systems" landing page): cancelled by Meddy.
+- Google Ads (about $305/month, 3 real leads in 30 days): paused for 2 weeks (Option B). Review on Nov 10: stay paused, or resume at half or full budget. Resume only after Hadi fixes the quote-form conversion.
+- Don't sign up for Housecall Pro ($49 first month) or add a card to Thumbtack yet.
+- To check: Google Workspace seat count (only 1 user needed); recurring charges on the card statement.
