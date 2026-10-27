@@ -66,3 +66,20 @@ Recommendation requests: search Nextdoor and groups daily for "doorbell", "Ring"
 - 4+ real-job posts with city in the title on YouTube, TikTok, Facebook, LinkedIn; local SEO captions with UTM links.
 - Monday performance review: which posts drive contact-page visits; double down on those cities/topics.
 - Once GBP is connected: 2 GBP posts/week.
+
+## 9. Merged from the "Novaprohome marketing agent" session (Oct 27)
+That session handed everything over; this file is now the single plan.
+- Outreach page (private artifact): https://claude.ai/artifact/72CT5pdqkvbek6V1zGEK6M (25+ outlets, 4 templates, 45-day plan).
+- Local PR / partner targets:
+  - News: The Burn, Loudoun Now, FFXnow / ARLnow, Patch, Ashburn Magazine, Northern Virginia Magazine
+  - Bloggers: DullesMoms.com, DC Area Moms Blog
+  - Groups: Loudoun Chamber, NVAR / DAAR realtor associations, HOAs, senior centers
+  - Online: r/nova, r/loudoun (helpful answers only), Houzz free profile
+  - Home shows: the Dulles Expo Center has closed, so look for another venue.
+- Content Meddy has to post himself: Nextdoor intro, giveaway, seasonal tips, a "who installs…?" reply template, and Nextdoor ad copy (headline: "Smart Home Installs by a Sterling Engineer").
+- Open items:
+  - [ ] Nextdoor Business Page logo (still the default)
+  - [ ] Giveaway rules must accept Nextdoor entries before it's posted there
+  - [ ] Reply to comments as NovaProHome (Metricool can't read comments; paste them to Claude for a draft reply)
+  - [ ] Payments: no decision yet. Advice: avoid long auto-renew contracts (Navy Federal / Global Payments); prefer no-contract flat rate with invoicing + tap-to-pay.
+- Note: "novaprohome.com does not resolve" from Claude's sandbox is the sandbox proxy blocking it, not a site outage. Check from a phone if unsure.
