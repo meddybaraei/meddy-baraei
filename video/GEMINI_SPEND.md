@@ -31,3 +31,4 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-10 | Oct 24 | Gemini 3.5 Flash url_context: website tracking check | ~$0.01 |
 | 2026-10 | Oct 26 | Gemini 3.5 Flash url_context: DCJS contact pages | ~$0.01 |
 | **2026-10** | | **Total so far** | **~$17.22 of $20 (≈ $2.78 left until Nov 1)** |
+| 2026-10-27 | flash url_context: read news-site contact pages | ~$0.01 |

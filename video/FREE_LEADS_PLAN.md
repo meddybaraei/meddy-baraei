@@ -83,3 +83,4 @@ That session handed everything over; this file is now the single plan.
   - [ ] Reply to comments as NovaProHome (Metricool can't read comments; paste them to Claude for a draft reply)
   - [ ] Payments: no decision yet. Advice: avoid long auto-renew contracts (Navy Federal / Global Payments); prefer no-contract flat rate with invoicing + tap-to-pay.
 - Note: "novaprohome.com does not resolve" from Claude's sandbox is the sandbox proxy blocking it, not a site outage. Check from a phone if unsure.
+- Oct 27: news tips emailed to The Burn and FFXnow. Loudoun Now's contact page couldn't be read from here; try again later.

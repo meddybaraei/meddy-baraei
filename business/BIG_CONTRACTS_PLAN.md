@@ -80,3 +80,10 @@ Watch out: companies that charge to "register you in SAM" are resellers. SAM.gov
 - SWaM certification application submitted (Small + Micro designations, FOIA exemption requested). Review is about 60 business days. Next: eVA registration, then SAM.gov.
 - eVA supplier registration done (commodities 99050 security/alarm install, 68087 surveillance cameras, 91597 data/voice wiring; Northern Virginia regions; bid alerts on). Pending: create login from eVA email, upload signed COVA Substitute W-9. Next: SAM.gov.
 - SWaM confirmation: certification #848712 submitted Mon Oct 26, 2026 1:29 PM (email from noreply@sbsd.virginia.gov). Watch for SBSD follow-up requests; expect decision ~January 2027.
+
+### Oct 27: Virginia ABC RFP 185-26 (intrusion, monitoring and cameras, about 390 stores)
+- We can't bid as prime: the mandatory pre-proposal conference was Oct 1 and we didn't attend. DCJS and DPOR licenses must also be held before submitting.
+- Addendum 1: proposals are now due Jan 15, 2027. The contract runs Jul 1, 2027 – Jun 30, 2032, plus ten 1-year renewals. Addendum 2 (Q&A and camera packages) comes out by Nov 16.
+- Northern Virginia has 5 districts (about 75 stores). Subcontractors must also hold DCJS and contractor licenses.
+- Subcontractor pitch emailed to 8 firms on the sign-in sheet: IPConfigure, Security 101, New Era Technology, Everon, Interface Security, Securitas Technology, i2G Systems, South Bay Communications & Security. Follow up around Nov 3 if there's no reply.
+- Never contact Virginia ABC staff or visit stores about this RFP; their rules forbid it.
