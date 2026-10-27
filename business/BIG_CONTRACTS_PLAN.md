@@ -87,3 +87,15 @@ Watch out: companies that charge to "register you in SAM" are resellers. SAM.gov
 - Northern Virginia has 5 districts (about 75 stores). Subcontractors must also hold DCJS and contractor licenses.
 - Subcontractor pitch emailed to 8 firms on the sign-in sheet: IPConfigure, Security 101, New Era Technology, Everon, Interface Security, Securitas Technology, i2G Systems, South Bay Communications & Security. Follow up around Nov 3 if there's no reply.
 - Never contact Virginia ABC staff or visit stores about this RFP; their rules forbid it.
+
+### Oct 27: Maryland licensing (Reston Limousine, Capitol Heights MD office)
+- Maryland State Police require two things before any "security systems services" in MD, including CCTV:
+  - A **Security Systems Agency License** for the business.
+  - **Technician registration** for each installer, with Livescan fingerprints (valid 30 days).
+- "Services" includes **surveying** property for an installation, plus installing, maintaining or repairing.
+- Apply through the MSP Licensing Portal. An older MSP page says to allow up to 90 business days.
+- Sources: https://mdsp.maryland.gov/Organization/Pages/CriminalInvestigationBureau/LicensingDivision/ProfessionalLicenses/SecuritySystemsAgencies.aspx and https://mdsp.maryland.gov/firearms-permits-professional-licenses/professional-licenses/security-systems-technician-license
+- Plan:
+  - Use the MD meeting as a sales and requirements meeting only, not a site survey.
+  - Apply for the MD agency license and technician registration now.
+  - Offer to start with the Sterling, VA HQ once the Virginia DCJS license is in place.
