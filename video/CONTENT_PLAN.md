@@ -11,7 +11,7 @@ Work top to bottom; mark each one done with the date.
 |---|---|---|---|---|
 | 1 | How to Wire a Ring Doorbell (Step by Step Install) | ~5,400 | low (19) | ✅ posted Oct 7 |
 | 2 | Ring Doorbell Not Working? 5 Fixes to Try First (long version; a 3-check Short was posted Oct 7) | ~5,400 | low (14) | ✅ Oct 8 (video + Short, music only) |
-| 3 | How to Make Your Ring Doorbell More Sensitive to Motion | ~5,300 | very low (12) | moved to Thu Oct 29 |
+| 3 | How to Make Your Ring Doorbell More Sensitive to Motion | ~5,300 | very low (12) | ✅ Oct 29 (video 4 PM + Short 4:30 PM, music only) |
 | 4 | How to Hook Up a Ring Solar Panel (use McLean solar photos) | ~5,300 | low (16) | |
 | 5 | How to Reset Your Ring Doorbell | ~5,300 | low (16) | |
 | 6 | How to Install a Ring Doorbell Without Drilling | ~5,400 | low (20) | |
