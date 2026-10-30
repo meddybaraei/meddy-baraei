@@ -107,3 +107,11 @@ See video/FREE_LEADS_PLAN.md. Google Business Profile is NOT connected in Metric
   - A website-chat lead from Sep 30 (phone only; the email reply bounced to noreply@): Meddy says the job is fully done, so nothing to do. Note: replies to website-form leads must go to the customer's own email or phone, never to noreply@.
   - Commercial camera prospect (limo company, Capitol Heights MD office first, then Sterling HQ): they asked for a site meeting Fri Oct 30 or Mon Nov 2. Waiting on Meddy's pick. Check Maryland security-installer licensing before doing work in MD.
   - Floodlight job ($245): the customer asked "what time Sunday Nov 1". Waiting on Meddy.
+- Oct 30 follow-up check:
+  - ABC subcontractor outreach: Interface Security replied "happy to chat". Meddy offered a Zoom on Oct 28, 10–12; no time confirmed yet. Everon forwarded us to its Installation Manager. New Era and South Bay sent auto-replies. i2G bounced (blocked). No reply from Security 101, IPConfigure or Securitas.
+  - Property managers: 0 replies to the 15 Oct 24 emails. Sent one short follow-up to each on Oct 30. Pitch was locks, thermostats and Wi-Fi between tenants, which need no DCJS license.
+  - New web lead Oct 30 (Ashburn, full Ring system replacing ADT): replied with discovery questions. Meddy to schedule.
+  - Burke Home Assistant project (Meddy handling): $3.6k–8.6k options sent. Walkthrough after Nov 16 closing.
+  - Limo company: Fri Oct 30 meeting cancelled by them. Meddy will propose a day next week.
+  - eVA W-9: Meddy resubmitted it signed and dated on Oct 27. No acceptance email yet.
+  - No replies yet from DCJS, Ring Pro Channel, the news sites or the 3 stalled quotes.
