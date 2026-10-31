@@ -159,6 +159,53 @@ Only use material Meddy owns or that is public. Anything from an employer gets r
 7. Ultimate prompt list for store owners
 8. Year-one wrap-up and thank-you
 
+## Pillar 2: "Claude in Daily Life and Saving Money" (added Oct 31)
+Meddy wants to also teach people how to use Claude every day, for business and personal life, with a focus on **budget and how much money it can save**.
+
+**Where it fits in the schedule:** every other Friday "quick win" becomes a **Claude Money Saver** episode, about 26 a year. Plus 1 Short a week from this pillar.
+
+**How we show savings honestly**
+- Savings = time saved × what that hour is worth, plus subscriptions or services cancelled, plus mistakes avoided.
+- Always show the method and label example numbers as examples. Never promise results.
+- Real case study we can tell (NovaProHome, Oct 2026). Claude reviewed the subscriptions and ad spend, and the owner cut about **$480/month**:
+  - Paused Google Ads that brought about 3 real leads for about $305 a month. The budget was $15/day, about $450/month.
+  - Cancelled a $20/month website tool that wasn't used.
+  - Lowered the AI budget cap from $20 to $10.
+- Claude plan prices: never quote from memory. Check claude.com/pricing on the day we film, and show the date on screen.
+
+**Topics (business)**
+1. Audit every subscription you pay for with Claude (upload a card statement and find waste)
+2. Is your advertising working? Find your real cost per customer
+3. Claude as your bookkeeper's helper: categorize expenses and prep for tax time (and what to leave to a CPA)
+4. Replace 5 paid tools with one AI subscription (honest pros and cons)
+5. Write contracts, policies and letters: when Claude is enough, when you need a lawyer
+6. Compare vendor quotes and negotiate better prices
+7. Cut overtime: build schedules around real traffic
+8. Find grants, small-business certifications and government contracts (SWaM, eVA, SAM.gov example)
+9. Price your products right: margin and discount calculator built with Claude
+10. Plan a cash-flow budget for the next 90 days
+11. Stop losing quotes: AI follow-up that recovered thousands in old leads
+12. Claude for insurance, utilities and merchant fees: questions to ask before you sign
+
+**Topics (daily life)**
+1. Your monthly household budget in 15 minutes
+2. Meal planning and grocery lists that cut spending
+3. Compare phone, internet and insurance plans
+4. Plan a trip on a budget
+5. Read any bill, lease or contract in plain English
+6. Help kids with homework the right way (learn, not copy)
+7. Organize your week: email, calendar and to-dos with connectors
+8. Big purchase decisions: car, appliance, furniture. Compare honestly
+9. Write any hard email or letter (refund requests, complaints, disputes)
+10. Health and medical questions: how to use AI safely and when to ask a doctor
+11. Learn a new skill in 30 days with Claude as a tutor
+12. Privacy: what you should never paste into any AI
+
+**Rules for this pillar**
+- Plain language, real examples, no hype.
+- Money, tax, legal and medical topics end with "check with a professional for your situation."
+- Show the free option first. Recommend paid plans only where they clearly pay for themselves.
+
 ## Meddy's to-do
 1. Pick the channel name.
 2. Create the channel in YouTube Studio (Create channel → custom name).
