@@ -1,0 +1,72 @@
+{
+ "badge": "Job of the Week · Ring Security",
+ "shop_qr": false,
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/job2_products.jpg",
+   "kicker": "Real job · Arlington, VA",
+   "title": "Full Ring setup in one visit",
+   "dur": 3.5
+  },
+  {
+   "photo": "video/weekly/photos/job2_doorbell_bracket.jpg",
+   "kicker": "Step 1",
+   "title": "Doorbell Pro on the existing wires",
+   "body": "New bracket mounted right over the original doorbell wiring.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/job2_chime.jpg",
+   "kicker": "Step 2",
+   "title": "Chime wired and tested",
+   "body": "We connect and test the chime so it rings every time.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/job2_doorbell_front.jpg",
+   "kicker": "Done",
+   "title": "Ring Wired Doorbell Pro",
+   "body": "Clean, flush install at the front door.",
+   "dur": 3.5
+  },
+  {
+   "photo": "video/weekly/photos/job2_siding_solar_cam.jpg",
+   "kicker": "Step 3",
+   "title": "Spotlight Cams on the siding",
+   "body": "Mounted high on the side of the house to cover the walkway.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/job2_solar_spotlight.jpg",
+   "kicker": "Solar power",
+   "title": "No battery swaps",
+   "body": "A solar panel above each camera keeps the battery charged.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/job2_fence_cam_up.jpg",
+   "kicker": "Step 4",
+   "title": "Covering the side gate",
+   "body": "One more camera on the fence post watches the gate.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/job2_cleanup_recycling.jpg",
+   "kicker": "Clean-up",
+   "title": "We leave no mess",
+   "body": "Every box broken down and recycled before we leave.",
+   "dur": 3.5
+  },
+  {
+   "photo": "video/weekly/photos/job2_wide_ladder.jpg",
+   "kicker": "After",
+   "title": "Front door to backyard, covered",
+   "body": "Doorbell, chime, solar Spotlight Cams and Solar Steplights, all in one app.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Want your home covered like this?",
+  "novaprohome.com"
+ ]
+}

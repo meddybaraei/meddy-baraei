@@ -1,0 +1,28 @@
+{
+ "badge": "Giveaway",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/garage_doorbell_wide.jpg",
+   "kicker": "Final days",
+   "title": "Free Ring doorbell + install: ends Nov 11",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/garage_doorbell_wide.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Comment your city to enter. No purchase needed.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Comment your city to enter!",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "upbeat",
+ "shop_qr": false
+}

@@ -1,0 +1,37 @@
+{
+ "hook": "POV: your backyard is pitch black at night",
+ "hook_hl": "pitch black",
+ "hook_photo": "facebook-post/extras/ring_spotlight_cam_stone.jpg",
+ "clips": [
+  {
+   "photo": "facebook-post/extras/ring_spotlight_cam_stone.jpg",
+   "text": "enter: ring spotlight cam",
+   "hl": "spotlight"
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "text": "light + video where you need it",
+   "hl": "light"
+  },
+  {
+   "photo": "video/tiktok/photos/arlington_left.jpg",
+   "text": "wired, battery or solar",
+   "hl": "solar"
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "text": "mounted at the perfect angle",
+   "hl": "perfect"
+  },
+  {
+   "photo": "facebook-post/extras/ring_spotlight_cam_stone.jpg",
+   "text": "no more blind spots",
+   "hl": "blind spots"
+  }
+ ],
+ "cta": [
+  "Want your yard covered?",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}

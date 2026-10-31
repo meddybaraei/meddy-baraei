@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_halloween_porch.mp4",
+   "crop": [
+    0,
+    0.08,
+    1,
+    0.92
+   ],
+   "ai": true,
+   "kicker": "Halloween is Saturday",
+   "title": "Doorbell going crazy on Halloween?",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/halloween-smart-home-tips.jpg",
+   "title": "",
+   "body": "Light schedules · doorbell motion zones · arm Away mode before you head out",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

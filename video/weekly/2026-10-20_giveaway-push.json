@@ -1,0 +1,45 @@
+{
+ "badge": "Giveaway · Sterling, VA",
+ "music": "upbeat",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/garage_doorbell_close.jpg",
+   "kicker": "Free giveaway · Northern Virginia",
+   "title": "Win a Ring Battery Doorbell Pro + free install",
+   "body": "Worth $329.99. Ends Nov 11, 2026.",
+   "dur": 4.6
+  },
+  {
+   "art": "chapter",
+   "num": 1,
+   "title": "How to enter (free)",
+   "body": "Comment your city on any NovaProHome YouTube video or Facebook post. Or send GIVEAWAY at novaprohome.com/contact.",
+   "dur": 5.4
+  },
+  {
+   "art": "chapter",
+   "num": 2,
+   "title": "Who can enter",
+   "body": "Virginia homeowners 18+ within 20 miles of Sterling 20165: Ashburn, Leesburg, Herndon, Reston, Chantilly, Fairfax and more.",
+   "dur": 5.4
+  },
+  {
+   "art": "list",
+   "title": "Quick rules",
+   "items": [
+    "No purchase necessary",
+    "Subscribing not required",
+    "One entry per person",
+    "Winner drawn by Nov 18"
+   ],
+   "body": "Full rules in the description.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Comment your city below",
+  "novaprohome.com"
+ ],
+ "shop_qr": false,
+ "subscribe": ""
+}

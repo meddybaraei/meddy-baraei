@@ -1,0 +1,28 @@
+{
+ "badge": "Real Job",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/ecobee_humidity_two_readings.jpg",
+   "kicker": "Real job · Vienna, VA",
+   "title": "Thermostat says 63%. Room says 50%.",
+   "dur": 4.5
+  },
+  {
+   "photo": "video/weekly/photos/ecobee_humidity_wall_hole.jpg",
+   "focus": [
+    0.5,
+    0.4
+   ],
+   "kicker": "",
+   "title": "",
+   "body": "The cause: an open hole behind it. Sealed it, checked the heat pump: 52%.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}
