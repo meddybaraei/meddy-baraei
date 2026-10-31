@@ -1,0 +1,62 @@
+{
+ "title": "AI for Beginners: Where to Start (No Tech Skills Needed)",
+ "voice": "Charon",
+ "style": "Read this like a friendly, confident teacher explaining to a small business owner. Warm, clear, unhurried, natural pauses.",
+ "segments": [
+  {"kicker": "Run It With AI", "title": "Everyone says \"use AI.\"\nBut where do you start?",
+   "bullets": [],
+   "say": "Everyone keeps telling you to use AI. Your friends, the news, maybe even your customers. But nobody tells you where to actually start. If you run a business, or you just want an easier week, this video is for you. In the next few minutes, you'll set up your first AI assistant, write your first prompts, and leave with a ten-minute daily plan. No tech skills needed."},
+
+  {"kicker": "What AI actually is", "title": "A helper you talk to in plain English",
+   "bullets": ["It reads, writes, summarizes and explains", "You type (or talk) like you would to a person", "It works in seconds, any time of day"],
+   "say": "First, what are we even talking about? An AI assistant is a helper you talk to in plain English. You type, or even speak, the way you'd talk to a smart assistant sitting next to you. It can read, write, summarize, explain and organize. And it does it in seconds, any time of day."},
+
+  {"kicker": "Pick one tool", "title": "Claude, ChatGPT or Gemini",
+   "bullets": ["All three have a free version", "Pick one and stick with it for 30 days", "On this channel we use Claude"],
+   "say": "There are three big names you'll hear: Claude, ChatGPT and Gemini. All three have a free version, and all three are good. The biggest mistake beginners make is jumping between tools. So pick one, and stick with it for thirty days. On this channel, we use Claude, because it writes clearly and it can connect to tools you already use. But everything you learn here works in the others too."},
+
+  {"kicker": "Step 1", "title": "Sign up in 2 minutes",
+   "bullets": ["Go to claude.ai or download the app", "Sign in with your email or Google account", "Start on the free plan"],
+   "say": "Step one. Go to claude dot ai, or download the Claude app on your phone. Sign in with your email or your Google account. Start on the free plan. You don't need to pay anything to follow along with this video."},
+
+  {"kicker": "Step 2", "title": "The prompt formula",
+   "bullets": ["WHO: \"Act as my customer service manager\"", "WHAT: \"Write a reply to this customer\"", "DETAILS: who it's for, the facts, the tone", "FORMAT: \"Short, friendly, 3 sentences\""],
+   "say": "Step two. Learn one simple formula for asking. Who, what, details, format. Who: tell it what role to play, like, act as my customer service manager. What: tell it the job, like, write a reply to this customer. Details: give it the facts and the tone you want. And format: say how you want it back, like, short and friendly, three sentences. That's it. Better details in, better answers out."},
+
+  {"kicker": "Example 1 · Business", "title": "A delayed delivery email",
+   "bullets": ["\"Act as a friendly store manager.\"", "\"Write an email to a customer whose sofa delivery is delayed one week.\"", "\"Apologize, give the new date, offer free delivery.\"", "\"Keep it under 100 words.\""],
+   "say": "Let's try it. Imagine you run a furniture store, and a customer's sofa delivery is delayed a week. You type: act as a friendly store manager. Write an email to a customer whose sofa delivery is delayed one week. Apologize, give the new date, and offer free delivery. Keep it under one hundred words. In about five seconds, you have a calm, professional email that would have taken you fifteen minutes to write while stressed."},
+
+  {"kicker": "Example 2 · Daily life", "title": "A week of meals on a budget",
+   "bullets": ["\"Plan 5 dinners for a family of 4.\"", "\"Budget: $100 for the week.\"", "\"Give me one grocery list grouped by store aisle.\""],
+   "say": "It works for your personal life too. Try this: plan five dinners for a family of four. My budget is one hundred dollars for the week. Give me one grocery list grouped by store aisle. You get a meal plan and a shopping list you can take straight to the store. That's real time and real money saved, every single week."},
+
+  {"kicker": "Example 3 · Paperwork", "title": "Understand any document",
+   "bullets": ["Upload a bill, lease or contract (PDF or photo)", "\"Explain this in plain English.\"", "\"What fees or deadlines should I watch for?\""],
+   "say": "Example three. Paperwork. You can upload a bill, a lease, or a contract, as a PDF or even a photo from your phone. Then ask: explain this in plain English. What fees or deadlines should I watch for? It's like having someone patient read the fine print with you."},
+
+  {"kicker": "Step 3", "title": "Have a conversation, not one question",
+   "bullets": ["\"Make it shorter.\"", "\"Make it friendlier.\"", "\"Give me three other versions.\"", "\"What did I forget?\""],
+   "say": "Step three. This is the secret most people miss. Don't stop after the first answer. Talk back to it. Say, make it shorter. Make it friendlier. Give me three other versions. Or my favorite: what did I forget? The second and third answers are usually much better than the first."},
+
+  {"kicker": "Stay safe", "title": "What NOT to do",
+   "bullets": ["Never paste passwords, card numbers or Social Security numbers", "Don't share customers' private information", "Double-check facts, prices and numbers", "For legal, tax or medical: ask a professional"],
+   "say": "Now, a few rules to stay safe. Never paste passwords, card numbers, or Social Security numbers. Don't share your customers' private information. AI can make mistakes, so double check facts, prices and numbers before you send anything. And for legal, tax or medical decisions, use AI to prepare your questions, then ask a professional."},
+
+  {"kicker": "Coming soon", "title": "Connectors: AI that works with your tools",
+   "bullets": ["Email: sort, summarize and draft replies", "Drive: find any document in seconds", "Calendar: plan your week and appointments", "We'll set these up step by step in future videos"],
+   "say": "Here's where it gets exciting. Claude can connect to tools you already use, like your email, your Google Drive and your calendar. That means it can summarize your inbox, find a document in seconds, or plan your week around your appointments. We'll set these up together, step by step, in upcoming videos, including what's safe to connect and what's not."},
+
+  {"kicker": "Real result", "title": "One small business: about $480 a month saved",
+   "bullets": ["Asked AI to review every subscription and ad", "Paused ads that brought very few real customers", "Cancelled a tool nobody used", "Results vary. The method works for anyone"],
+   "say": "Does this actually save money? Here's a real example. A small installation business asked AI to review every subscription and every ad it was paying for. It paused ads that were bringing very few real customers, and cancelled a tool nobody was using. The result: about four hundred eighty dollars a month saved. Your results will be different, but the method works for anyone. We'll show you exactly how in a future video."},
+
+  {"kicker": "Your 7-day challenge", "title": "10 minutes a day",
+   "bullets": ["Day 1: Rewrite one email you'd normally send", "Day 2: Plan your week", "Day 3: Summarize a long document", "Day 4: Write a social media post", "Day 5: Plan meals and a grocery list", "Day 6: Ask it to explain something you never understood", "Day 7: Ask \"how could AI save me time?\""],
+   "say": "So here's your challenge. Ten minutes a day, for seven days. Day one: rewrite one email you'd normally send. Day two: plan your week. Day three: summarize a long document. Day four: write a social media post. Day five: plan meals and a grocery list. Day six: ask it to explain something you never quite understood. And day seven: ask it, here's what my week looks like, how could AI save me time? Tell me in the comments how it goes. We'll feature the best results in a future video."},
+
+  {"kicker": "Run It With AI", "title": "Subscribe and run it with AI",
+   "bullets": ["Free prompts from this video: pinned comment and description", "New videos every Tuesday & Friday", "Next: your first 5 prompts to save time every day"],
+   "say": "All the prompts from this video are in the description and the pinned comment, so you can copy and paste them. New videos every Tuesday and Friday. On Friday: your first five prompts to save time every single day. Subscribe, and start running it with AI. See you there."}
+ ]
+}
