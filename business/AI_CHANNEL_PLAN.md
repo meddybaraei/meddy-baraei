@@ -206,6 +206,40 @@ Meddy wants to also teach people how to use Claude every day, for business and p
 - Money, tax, legal and medical topics end with "check with a professional for your situation."
 - Show the free option first. Recommend paid plans only where they clearly pay for themselves.
 
+## SEO update (Oct 31): titles general, examples specific
+Meddy wants every video findable by **everyone**, not only store owners.
+- **Title, description and tags are written for the broad search.** Example: "How to Use Claude AI to Cut Your Monthly Bills (Step by Step)", not "AI for furniture store owners".
+- The first line of each description answers the general search, followed by 3–5 general keywords (Claude AI, AI for beginners, AI for small business, save money with AI, AI productivity).
+- Store and retail examples stay **inside** the video as the worked example. That's our credibility, and the broad audience still learns.
+- Each title gets a general version and a niche version tested over time. Thumbnails say the benefit ("Save $480/month") rather than the industry.
+- The channel name should be general too. New shortlist: **"Claude Made Simple"** (careful: "Claude" is Anthropic's trademark, so check YouTube and trademark rules before using it in the name, or use it in titles only), **"AI Made Simple"**, **"The Everyday AI"**, **"AI Money Saver"**.
+
+## Subscription platform (members pay monthly)
+Goal: turn viewers into paying members. Start with **zero monthly cost**, move up only when people pay.
+
+**Tiers (prices are proposals until Meddy approves)**
+- **Free:** weekly email with that week's prompts, plus the free prompt pack from each video. This builds the list.
+- **Member, about $9–15/month:**
+  - full prompt and template library: business, budget, store, daily life
+  - step-by-step workflow guides
+  - a monthly live Q&A
+  - early access to videos
+- **Pro / done-with-you, about $99+ one-time or monthly:** custom Claude setup for your business (connectors, assistants, templates), plus a 1:1 call. NovaProHome can sell this as a service.
+
+**Platform path (cheapest first; check each platform's current fees before signing up)**
+1. **Now ($0 a month):** a free email newsletter (Substack or beehiiv free plan, with paid subscriptions turned on later) plus Gumroad or Stan Store for one-time prompt packs. These platforms take a % of sales instead of a monthly fee.
+2. **At 500+ subscribers:** turn on **YouTube Channel Memberships** (part of the YouTube Partner Program's lower tier).
+3. **When 50+ people pay:** move members to a community platform (Skool, Circle or Kajabi) for courses, challenges and the live Q&A, but only once revenue covers its monthly cost.
+4. **Later:** a members area on our own website.
+
+**What's inside the library**
+- Prompt packs by topic: budget, marketing, sales, customer service, hiring, daily life.
+- Fill-in templates: budgets, SOPs, policies, follow-up scripts.
+- Short video walkthroughs and checklists.
+- A monthly challenge with member results featured on the channel.
+
+**Rules:** no guaranteed income claims, clear cancel-anytime terms, refund policy, and money/tax/legal disclaimers.
+
 ## Meddy's to-do
 1. Pick the channel name.
 2. Create the channel in YouTube Studio (Create channel → custom name).
