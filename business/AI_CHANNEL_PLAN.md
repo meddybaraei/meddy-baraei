@@ -248,3 +248,9 @@ Goal: turn viewers into paying members. Start with **zero monthly cost**, move u
 
 ## After 4 weeks: decide with numbers
 Track views, average watch time, subscribers, comments on the challenge and clicks on the free download. Double down on what works.
+
+## Setup status (Oct 31)
+- YouTube channel **Run It With AI**, handle **@RunItWithAIchannel**, channel ID UCWIw0IrEZFjGFKr1XrdGApQ.
+- Branding: profile picture B and banner (`ai-channel/brand/`).
+- Metricool brand **RunItWithAIchannel**, blogId **7786768** (America/New_York). Only YouTube is connected. NovaProHome stays on blogId 6916320: never mix the two.
+- Video 1 (Tue Nov 3): "AI for Beginners: Where to Start (No Tech Skills Needed)", plus 2 Shorts.
