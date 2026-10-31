@@ -33,6 +33,7 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-10 | Oct 27 | Gemini 3.5 Flash url_context: news-site contact pages | ~$0.01 |
 | 2026-10 | Oct 28 | Gemini 3.5 Flash + Google Search: plan critique and DCJS research (2 calls) | ~$0.05 |
 | 2026-10 | Oct 31 | Gemini TTS: Run It With AI video 1 voice (14 takes, ~7.5 min audio) + 1 flash transcription check | ~$0.20 (estimate) |
-| **2026-10** | | **Total so far** | **~$17.48 of $20 (≈ $2.52 left until Nov 1)** |
+| 2026-10 | Oct 31 | Nano Banana: 9 illustrations for Run It With AI video 1 | ~$0.35 (estimate) |
+| **2026-10** | | **Total so far** | **~$17.83 of $20 (≈ $2.17 left until Nov 1)** |
 | 2026-11 | Mondays from Nov 2 | Weekly Short (other session): 1 Gemini TTS take + ~30 flash transcription calls, est. a few cents each | ~$0.05–0.20/week (estimate) |
 | **2026-11** | | **Cap $10** | **$0 so far. Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
