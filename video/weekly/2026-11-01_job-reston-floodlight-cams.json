@@ -1,0 +1,51 @@
+{
+ "badge": "Real Job \u00b7 Reston, VA",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/job3_reston_installed_wide.jpg",
+   "kicker": "Real job \u00b7 Reston, VA",
+   "title": "2 old motion lights \u2192 2 Ring Floodlight Cam Pro",
+   "body": "One covers the deck and sunroom, the other the backyard and hot tub.",
+   "dur": 4.6
+  },
+  {
+   "photo": "video/weekly/photos/job3_reston_box.jpg",
+   "kicker": "The upgrade",
+   "title": "Ring Floodlight Cam Pro (2nd Gen, wired)",
+   "body": "4K video, 3D motion detection, and bright LED floodlights in one unit.",
+   "dur": 4.4
+  },
+  {
+   "photo": "video/weekly/photos/job3_reston_unbox.jpg",
+   "kicker": "What's inside",
+   "title": "Two LED floodlights + a 4K camera",
+   "body": "One unit replaces the old motion light on the same box.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/job3_reston_old_box.jpg",
+   "kicker": "Step 1 \u00b7 Safety first",
+   "title": "Power off, old light removed",
+   "body": "Breaker off and tested before we touch a wire. The existing box is reused.",
+   "dur": 4.6
+  },
+  {
+   "photo": "video/weekly/photos/job3_reston_wiring.jpg",
+   "kicker": "Step 2",
+   "title": "Wired to the existing fixture box",
+   "body": "Hot, neutral and ground connected, then sealed against the weather.",
+   "dur": 4.4
+  },
+  {
+   "photo": "video/weekly/photos/job3_reston_installed_close.jpg",
+   "kicker": "The result",
+   "title": "Mounted, aimed and connected",
+   "body": "Deck, sunroom, backyard and hot tub covered. Motion turns the lights on and sends an alert in the Ring app.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Want floodlight cams installed?",
+  "novaprohome.com"
+ ]
+}
