@@ -36,4 +36,5 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-10 | Oct 31 | Nano Banana: 9 illustrations for Run It With AI video 1 | ~$0.35 (estimate) |
 | **2026-10** | | **Total so far** | **~$17.83 of $20 (≈ $2.17 left until Nov 1)** |
 | 2026-11 | Mondays from Nov 2 | Weekly Short (other session): 1 Gemini TTS take + ~30 flash transcription calls, est. a few cents each | ~$0.05–0.20/week (estimate) |
+| 2026-11 | Nov 2 | Weekly Short (other session): mesh Wi-Fi, 1 TTS take + ~35 flash transcriptions | ~$0.05 (their estimate) |
 | **2026-11** | | **Cap $10** | **$0 so far. Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
