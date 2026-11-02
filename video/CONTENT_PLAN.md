@@ -175,3 +175,11 @@ Owner made it and posted it on YouTube himself. Cross-posted with a 4 s contact 
 - Applied Oct 26: retitled Oct 27 Short to "Too Many Smart Home Apps? One-App Setup Explained | Northern Virginia" and Oct 28 Short to "Hiring a Smart Home Installer? What to Expect (5 Steps) | Sterling, VA". Google Business Profile live, 2 posts/week.
 - Next: real-job + city Shorts first; TikTok POV hooks; giveaway needs sharing in local Facebook groups; no more long text-only reviews.
 - Privacy rule: never write customer names, emails or addresses into this repo (it may be public). Keep them in Gmail only.
+
+## Job of the week, Mon Nov 2 (already done; don't make another one)
+Reston, VA: 2 motion lights replaced with Ring Floodlight Cam Pro (2nd Gen, wired). One covers the deck and sunroom, the other the backyard and hot tub. Photos are in `video/weekly/photos/job3_reston_*`. Video: `video/weekly/2026-11-01_job-reston-floodlight-cams_short.mp4`.
+- Scheduled:
+  - YouTube Short Mon Nov 2, 4 PM
+  - TikTok Mon Nov 2, 6 PM
+  - Facebook Reel Thu Nov 5, 6:30 PM
+  - Google Business Profile post Mon Nov 2
