@@ -2,7 +2,7 @@
 
 Two videos a week, posted at 4:00 PM Eastern (Claude picked these from Metricool audience data; Wed/Thu/Tue 4 PM are the strongest slots, weekends the weakest):
 - **Monday: Job of the week.** A vertical Short (under 60s) built from the newest real job photos/clips. If no new photos were added since the last Monday, make a Short from the next "Tip" topic below instead.
-- **Thursday: Tip / How-to.** A 16:9 how-to (60–90s) answering one real YouTube search, plus a vertical Short cut of the same tip (Short posted 4:30 PM).
+- **Thursday: Tip / How-to.** Short-first (since Nov 2): a vertical Short answering one real YouTube search, posted 4 PM. Make a 16:9 long version only for real job footage or reviews.
 
 ## Topic queue (from vidIQ search data, Oct 2026)
 Work top to bottom; mark each one done with the date.
@@ -183,3 +183,22 @@ Reston, VA: 2 motion lights replaced with Ring Floodlight Cam Pro (2nd Gen, wire
   - TikTok Mon Nov 2, 6 PM
   - Facebook Reel Thu Nov 5, 6:30 PM
   - Google Business Profile post Mon Nov 2
+
+## Weekly review Oct 26 – Nov 1 (trends)
+- **YouTube:** about 595 views (Oct 26–30; Oct 31–Nov 1 data not in yet) vs 1,045 the week before. Subscribers flat at 5.
+  - Top: "Ring Doorbell Missing Motion? 6 Fixes" Short, 138 views.
+  - Bottom: the same topic as a long 16:9 video, 6 views. "Where to Mount Security Cameras" Short, 1 view. Wi-Fi Short, 4 views.
+- **Facebook:** Reel views 578 vs 120 (+380%). Page media views 668 vs 190.
+  - Top: "Builders/agents partner" Reel (223) and "Why does an electrical engineer install doorbells?" (179). People and story posts beat tips.
+  - Bottom: Halloween (3), giveaway reminder (3), Reolink setups (6), perfume store (5).
+  - Followers flat at 9.
+- **TikTok:** about 622 views vs 1,361. Top: real Arlington job (108), thermostat checks (107), Elite 180 (104). Weak: AI "POV" camera clip (11), "How we work" (11). Followers 3 → 5.
+- **LinkedIn:** impressions 51 vs 18, followers 2 → 4.
+- **Leads in comments:** none. **Giveaway entries:** 0 so far, ends Nov 11.
+- **Changes applied:**
+  1. Moved "Meet the founder" from Nov 19 to Wed Nov 4, 6:30 PM (Facebook + LinkedIn), because founder and story posts win on Facebook.
+  2. Added the Reston real job (YouTube Short, TikTok, Facebook Reel, Google Business Profile).
+- **Rules from now on:**
+  - On the NovaProHome channel, Thursday tips are **Short-first**. Make a long 16:9 video only when it's real job footage or a review (long how-tos keep getting under 10 views).
+  - Each week, at least 1 Facebook post about Meddy or the people side (founder story, partners, behind the scenes).
+  - Giveaway: Meddy must share it in local Facebook and Nextdoor groups. Our own posts got 0 entries.
