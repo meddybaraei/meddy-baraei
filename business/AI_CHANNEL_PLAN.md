@@ -254,3 +254,9 @@ Track views, average watch time, subscribers, comments on the challenge and clic
 - Branding: profile picture B and banner (`ai-channel/brand/`).
 - Metricool brand **RunItWithAIchannel**, blogId **7786768** (America/New_York). Only YouTube is connected. NovaProHome stays on blogId 6916320: never mix the two.
 - Video 1 (Tue Nov 3): "AI for Beginners: Where to Start (No Tech Skills Needed)", plus 2 Shorts.
+- Nov 2: video 1 is live (published Oct 31, https://www.youtube.com/watch?v=EWW_S00KpOQ). First 2 days: 5 views, about 27 s average view, 1 like, 1 share. Its end slide shows two "no glyph" boxes where the emojis were (font has no emoji). Fixed in the tools from now on.
+- Scheduled on blogId 7786768 (Nov 2):
+  - Short "The AI Prompt Formula in 30 Seconds": Wed Nov 4, 4 PM ET (uuid 1377467507704614904)
+  - Short "Never Paste These 3 Things Into AI": Thu Nov 5, 4 PM ET (uuid -5374728162176056906)
+  - Video 2 "Your First 5 AI Prompts to Save Time Every Day (Copy & Paste)", 5:48, custom thumbnail: Fri Nov 6, 4 PM ET (uuid 6406985400009706916)
+- Next: video 3 "Claude vs ChatGPT vs Gemini" (Tue Nov 10). Shorts tool: `ai-channel/tools/make_short.py` (same script format as make_lesson.py; optional "big" number and "chat" panel).

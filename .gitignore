@@ -1,3 +1,4 @@
 youtube-package/
 ai-channel/videos/*/build/
 ai-channel/shorts/build_*/
+__pycache__/
