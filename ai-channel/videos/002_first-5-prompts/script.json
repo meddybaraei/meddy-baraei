@@ -1,0 +1,196 @@
+{
+ "title": "Your First 5 AI Prompts to Save Time Every Day",
+ "voice": "Charon",
+ "style": "Read this like a friendly, confident teacher explaining to a small business owner. Warm, clear, unhurried, natural pauses.",
+ "segments": [
+  {
+   "kicker": "Run It With AI",
+   "title": "5 prompts that save you time every day",
+   "bullets": [],
+   "say": "What if five simple prompts could give you back thirty minutes or more, every single day? In this video, I'll give you five copy-and-paste prompts for your email, your day, your paperwork, your marketing and your decisions. They work in Claude, ChatGPT or Gemini, and every one of them is in the description. If you're new here, hit subscribe, because every week we make AI simple, one step at a time.",
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "img": "A happy small business owner at a tidy shop counter with a laptop, a large friendly clock behind them with time flying back, five colorful glowing cards floating around the laptop, relaxed and productive mood. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern explainer-video style, no text, no words, no letters, no numbers, no logos, no brand names."
+  },
+  {
+   "kicker": "Before we start",
+   "title": "How to use these prompts",
+   "bullets": [
+    "Copy the prompt from the description",
+    "Replace anything in [BRACKETS] with your details",
+    "Never paste passwords, card numbers or private customer data",
+    "Talk back: \"shorter\", \"friendlier\", \"what did I miss?\""
+   ],
+   "say": "Quick setup. Copy each prompt from the description. Anything in square brackets, you replace with your own details. Keep it safe: never paste passwords, card numbers or private customer information. And remember from our first video: don't stop at the first answer. Talk back. Say, make it shorter, make it friendlier, or, what did I miss?",
+   "accent": [
+    170,
+    110,
+    255
+   ]
+  },
+  {
+   "kicker": "Prompt 1 · Email",
+   "title": "Reply to any email in seconds",
+   "bullets": [
+    "Paste the email you received",
+    "Say what you want to happen",
+    "Set the tone and the length"
+   ],
+   "say": "Prompt one: reply to any email. Paste in the email you got, then say: write a reply that, and what you want to happen. Then the tone and the length. For example, a customer wants to return a table after thirty days. Your policy says no, but you want to keep them happy. In seconds you get a kind, clear reply that offers store credit instead. You just edit and send.",
+   "accent": [
+    255,
+    90,
+    120
+   ],
+   "chat": {
+    "user": "Here's an email I got: [paste]. Write a reply that says we can't refund after 30 days, but offer store credit. Kind and clear, under 80 words.",
+    "ai": "Hi Maria, thank you for reaching out, and I'm sorry the table isn't working out. Our refund window is 30 days, so we can't issue a refund, but we'd be happy to give you full store credit for the table. Just stop by any time. — Dana"
+   }
+  },
+  {
+   "kicker": "Prompt 2 · Your day",
+   "title": "Plan your day in one minute",
+   "bullets": [
+    "List everything on your plate",
+    "Tell it how many hours you have",
+    "Ask for an order and time blocks"
+   ],
+   "say": "Prompt two: plan your day. Dump everything on your plate into the chat, messy is fine. Tell it how many hours you have. Then ask it to put the tasks in order, most important first, with time blocks. It's like having a calm assistant who turns your to-do pile into a real plan, and tells you what can wait until tomorrow.",
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "My tasks today: [call supplier, post sale on Facebook, pay invoices, train new hire, reorder mattresses]. I have 6 hours. Order them, most important first, with time blocks.",
+    "ai": "9:00 Pay invoices (30 min)\n9:30 Call supplier + reorder mattresses (45 min)\n10:15 Train new hire (2 hrs)\n12:15 Lunch\n1:00 Post the sale on Facebook (30 min)\nCan wait: deep-cleaning the stockroom."
+   }
+  },
+  {
+   "kicker": "Prompt 3 · Paperwork",
+   "title": "Summarize anything long",
+   "bullets": [
+    "Paste text or upload a PDF or photo",
+    "Ask for 5 bullet points",
+    "Ask for action items and deadlines"
+   ],
+   "say": "Prompt three: summarize anything long. A contract, a supplier update, a long email thread, a policy. Paste it in or upload the file, and ask for a summary in five bullet points, plus every action item and deadline. Reading a twenty-page document now takes two minutes. Just remember to double check the important numbers yourself.",
+   "accent": [
+    255,
+    150,
+    40
+   ],
+   "chat": {
+    "user": "[supplier_terms.pdf] Summarize this in 5 bullet points. Then list every action item and deadline.",
+    "ai": "• Prices go up 4% on Jan 1\n• Free shipping now starts at $1,500\n• Returns need approval within 14 days\n• Net-30 payment terms stay the same\n• New online ordering portal\nAction items: place holiday orders before Dec 10 to lock in current prices."
+   }
+  },
+  {
+   "kicker": "Prompt 4 · Marketing",
+   "title": "Write a week of posts",
+   "bullets": [
+    "Say what you sell and who buys it",
+    "Give the offer or news",
+    "Ask for 3 versions to choose from"
+   ],
+   "say": "Prompt four: marketing. Tell it what you sell, who your customers are, and what you want to promote. Then ask for three short posts to choose from, friendly, with a question at the end to get comments. Pick the one you like, ask for small changes, and post it. That's a week of social media in about ten minutes.",
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "chat": {
+    "user": "I run a [furniture store]. Write 3 short Facebook posts about our [weekend recliner sale, 20% off]. Friendly, one emoji max, end with a question.",
+    "ai": "1) Sunday naps just got an upgrade. All recliners are 20% off this weekend only! Which color would you pick? 🛋️\n2) ...\n3) ..."
+   }
+  },
+  {
+   "kicker": "Prompt 5 · Decisions",
+   "title": "Make better decisions",
+   "bullets": [
+    "Describe the two options",
+    "Ask it to ask YOU questions first",
+    "Then get pros, cons and a recommendation"
+   ],
+   "say": "Prompt five is my favorite: make better decisions. Describe the choice you're stuck on. Then add this magic line: ask me three questions first, before you answer. Now it understands your situation, and gives you pros, cons and a recommendation that actually fits you. Use it for hiring, buying, pricing, or even which phone plan to pick. You still make the final call.",
+   "accent": [
+    255,
+    190,
+    40
+   ],
+   "chat": {
+    "user": "I'm deciding between [hiring a part-time helper] and [paying for a delivery service]. Ask me 3 questions first, then give pros, cons and a recommendation.",
+    "ai": "Happy to help! First:\n1. How many deliveries do you do per week?\n2. What's your monthly budget for this?\n3. Would a helper also cover the store floor?"
+   }
+  },
+  {
+   "kicker": "Save time",
+   "title": "Keep your favorite prompts handy",
+   "bullets": [
+    "Save them in a note on your phone",
+    "Make a version for each repeat task",
+    "Reuse the same chat for the same job"
+   ],
+   "say": "A quick tip to save even more time. Save your favorite prompts in a note on your phone, with the brackets ready to fill. Make one version for each task you repeat every week. And when you come back to the same job, like weekly posts, continue in the same chat, so the AI already knows your store and your style.",
+   "accent": [
+    170,
+    110,
+    255
+   ],
+   "img": "A smartphone showing a neat list of colorful note cards, a hand saving a card into the phone, small sparkles and a bookmark ribbon, organized and calm mood. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern explainer-video style, no text, no words, no letters, no numbers, no logos, no brand names."
+  },
+  {
+   "kicker": "The math",
+   "title": "How much time could this save?",
+   "bullets": [
+    "Email replies: about 10 minutes a day",
+    "Planning your day: about 10 minutes",
+    "Reading and summarizing: about 10 minutes",
+    "Your results will vary. Track it for one week"
+   ],
+   "say": "Let's do some rough math. If these prompts save you around ten minutes on email, ten on planning, and ten on reading, that's half an hour a day, or about two and a half hours in a work week. These are estimates, and your results will be different. So track it yourself for one week, and tell me in the comments what you saved.",
+   "accent": [
+    0,
+    200,
+    170
+   ]
+  },
+  {
+   "kicker": "Your challenge",
+   "title": "Try one prompt a day this week",
+   "bullets": [
+    "Mon: Reply to an email",
+    "Tue: Plan your day",
+    "Wed: Summarize a document",
+    "Thu: Write a post",
+    "Fri: Make a decision"
+   ],
+   "say": "Here's your challenge. One prompt a day, this week. Monday: reply to an email. Tuesday: plan your day. Wednesday: summarize a document. Thursday: write a social post. Friday: make a decision with the ask me questions first trick. Comment which prompt helped you most. I read every comment.",
+   "accent": [
+    255,
+    90,
+    120
+   ]
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Like, subscribe and run it with AI",
+   "bullets": [
+    "👍 Like this video if it helped you",
+    "🔔 Subscribe and turn on notifications",
+    "All 5 prompts are in the description",
+    "Next: Claude vs ChatGPT vs Gemini"
+   ],
+   "say": "If this saved you time, do me a quick favor: hit the like button and subscribe to Run It With AI, so you don't miss the next lesson. It really helps the channel grow. All five prompts are in the description, ready to copy. Next time: Claude versus ChatGPT versus Gemini, which one should you pick? See you there, and start running it with AI.",
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "img": "A cheerful small shop owner giving a thumbs up next to a big glowing play button and a notification bell, confetti and sparkles, celebratory mood. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern explainer-video style, no text, no words, no letters, no numbers, no logos, no brand names."
+  }
+ ]
+}

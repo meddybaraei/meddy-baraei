@@ -3,7 +3,7 @@
 Each segment = one Gemini TTS take + one slide whose bullets appear one by one.
 Usage: python3 make_lesson.py SCRIPT.json OUT.mp4   (FRESH_VOICE=1 re-records all takes)
 """
-import base64, json, os, subprocess, sys, time, urllib.request, wave
+import base64, json, os, re, subprocess, sys, time, urllib.request, wave
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 TTS_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash-tts:streamGenerateContent?alt=sse"
@@ -99,7 +99,11 @@ def background():
     return Image.composite(Image.new('RGB', (W, H), (20, 90, 200)), img, glow)
 
 
+EMOJI = re.compile("[\U0001F000-\U0001FFFF\u2600-\u27BF\uFE0F\u200D]")  # Inter has no emoji glyphs
+
+
 def wrap(d, text, font, maxw):
+    text = EMOJI.sub("", text).strip()
     lines = []
     for para in text.split("\n"):
         cur = ""
