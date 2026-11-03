@@ -260,3 +260,4 @@ Track views, average watch time, subscribers, comments on the challenge and clic
   - Short "Never Paste These 3 Things Into AI": Thu Nov 5, 4 PM ET (uuid -5374728162176056906)
   - Video 2 "Your First 5 AI Prompts to Save Time Every Day (Copy & Paste)", 5:48, custom thumbnail: Fri Nov 6, 4 PM ET (uuid 6406985400009706916)
 - Next: video 3 "Claude vs ChatGPT vs Gemini" (Tue Nov 10). Shorts tool: `ai-channel/tools/make_short.py` (same script format as make_lesson.py; optional "big" number and "chat" panel).
+- Nov 3: hook-first rule adopted for all content (see `video/HOOKS_PLAYBOOK.md`). Both Shorts re-rendered with joke openings; titles rewritten to be about the viewer's problem, not the tool.

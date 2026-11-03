@@ -5,9 +5,9 @@
  "segments": [
   {
    "kicker": "AI safety",
-   "title": "Never paste these 3 things into AI",
+   "title": "Pasting your password into AI? Stop.",
    "bullets": [],
-   "say": "Using ChatGPT, Claude or Gemini? Never paste these three things.",
+   "say": "Pasting your password into ChatGPT is like shouting your PIN in the bank line. Please don't. Here are three things you should never paste into AI.",
    "accent": [
     255,
     90,

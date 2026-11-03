@@ -1,18 +1,18 @@
 {
  "title": "The AI Prompt Formula in 30 Seconds",
  "voice": "Charon",
- "style": "Read this like an energetic, friendly teacher in a quick social video. Clear, upbeat, natural pace.",
+ "style": "Read this like a funny, energetic friend in a quick social video. Playful on the joke, then clear and upbeat.",
  "segments": [
   {
-   "kicker": "30-second lesson",
-   "title": "Get better AI answers with 4 words",
+   "kicker": "Be honest",
+   "title": "You: \"write an email.\" AI: writes a novel.",
    "bullets": [
     "WHO",
     "WHAT",
     "DETAILS",
     "FORMAT"
    ],
-   "say": "Want better answers from AI? Remember four words. Who. What. Details. Format.",
+   "say": "You ask AI to write a quick email, and it writes you a novel. Sound familiar? Here is the fix, in four words. Who. What. Details. Format.",
    "accent": [
     255,
     90,
