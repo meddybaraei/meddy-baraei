@@ -26,3 +26,8 @@ Goal: more people stop, watch, comment and come back. Titles must be attractive 
 - Nov 27 Black Friday / Nov 30 Cyber Monday: "what to buy (and what not to)"
 - First freeze: thermostats, leak sensors, vacant homes
 - Check TikTok Creative Center / Know Your Meme each Monday review for a usable meme format.
+
+## Applied (Nov 3)
+- NovaProHome: every scheduled Facebook/LinkedIn/YouTube/TikTok post from Nov 3 to Nov 29 (30 posts) rewritten with a hook first line, a person-focused Reel/video title and one closing question. Videos unchanged.
+- Kept as they were: Veterans Day (Nov 11, respectful) and the Google Business Profile posts (people find those by searching for a service).
+- Run It With AI: both Shorts re-recorded with joke openings; video 2 retitled.
