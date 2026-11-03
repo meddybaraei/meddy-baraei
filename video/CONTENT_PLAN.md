@@ -1,3 +1,5 @@
+> **Nov 3 2026 rule (Meddy): HOOK FIRST on every post.** Start with a joke, trend or curiosity line; titles about the viewer's problem or feeling, not the product; end with one easy question. Full rules: `video/HOOKS_PLAYBOOK.md`.
+
 # Nova Pro Home YouTube Plan (@NovaProHome)
 
 Two videos a week, posted at 4:00 PM Eastern (Claude picked these from Metricool audience data; Wed/Thu/Tue 4 PM are the strongest slots, weekends the weakest):

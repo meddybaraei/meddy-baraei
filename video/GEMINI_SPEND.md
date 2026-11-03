@@ -38,4 +38,5 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-11 | Mondays from Nov 2 | Weekly Short (other session): 1 Gemini TTS take + ~30 flash transcription calls, est. a few cents each | ~$0.05–0.20/week (estimate) |
 | 2026-11 | Nov 2 | Weekly Short (other session): mesh Wi-Fi, 1 TTS take + ~35 flash transcriptions | ~$0.05 (their estimate) |
 | 2026-11 | Nov 2 | Run It With AI: 2 Shorts (7 TTS takes) + video 2 (11 TTS takes, 3 illustrations) | ~$0.27 (estimate) |
-| **2026-11** | | **Cap $10** | **≈ $0.32–0.47 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
+| 2026-11 | Nov 3 | Re-recorded 2 Short openings with joke hooks (2 TTS takes) | ~$0.02 (estimate) |
+| **2026-11** | | **Cap $10** | **≈ $0.34–0.49 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
