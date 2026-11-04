@@ -261,3 +261,4 @@ Track views, average watch time, subscribers, comments on the challenge and clic
   - Video 2 "Your First 5 AI Prompts to Save Time Every Day (Copy & Paste)", 5:48, custom thumbnail: Fri Nov 6, 4 PM ET (uuid 6406985400009706916)
 - Next: video 3 "Claude vs ChatGPT vs Gemini" (Tue Nov 10). Shorts tool: `ai-channel/tools/make_short.py` (same script format as make_lesson.py; optional "big" number and "chat" panel).
 - Nov 3: hook-first rule adopted for all content (see `video/HOOKS_PLAYBOOK.md`). Both Shorts re-rendered with joke openings; titles rewritten to be about the viewer's problem, not the tool.
+- Nov 3: cadence raised to one upload every day. Added Shorts Sat Nov 7 ("47 Unread Emails?"), Sun Nov 8 ("Your To-Do List Has a To-Do List"), Mon Nov 9 ("The AI Trick Most People Don't Know"). Weekly production task runs Sundays 1:37 PM ET (trig_01XjxKoS3kBPgHwa1pQReVWs) and fills every empty day with a Short.
