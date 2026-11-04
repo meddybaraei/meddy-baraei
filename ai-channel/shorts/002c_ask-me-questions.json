@@ -13,7 +13,8 @@
     190,
     40
    ],
-   "big": "?"
+   "big": "?",
+   "skip": true
   },
   {
    "kicker": "Copy this",

@@ -13,7 +13,8 @@
     255,
     190,
     40
-   ]
+   ],
+   "skip": true
   },
   {
    "kicker": "Real example",

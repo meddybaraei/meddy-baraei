@@ -173,7 +173,10 @@ def main():
     work = os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), "build"); os.makedirs(work, exist_ok=True)
     segs = spec["segments"]; bg = background()
     durs = []
+    keep = [i for i, s in enumerate(segs) if not s.get("skip")]  # "skip": true drops a segment, keeps take numbering
     for i, s in enumerate(segs):
+        if s.get("skip"):
+            durs.append(0); continue
         wav = f"{work}/seg{i:02d}.wav"
         if not os.path.exists(wav) or os.environ.get("FRESH_VOICE"):
             pcm = tts(s["say"], spec.get("voice", "Charon"), spec.get("style", ""))
@@ -183,7 +186,7 @@ def main():
         print(f"seg {i}: {d:.1f}s", flush=True)
     arts = {}
     for i, s in enumerate(segs):
-        if s.get("img"):
+        if s.get("img") and not s.get("skip"):
             dst = f"{work}/img{i:02d}.jpg"
             if not os.path.exists(dst):
                 gen_image(s["img"], dst); print("img", i, flush=True)
@@ -191,19 +194,21 @@ def main():
     # images + concat list
     lst = open(f"{work}/frames.txt", "w")
     for i, s in enumerate(segs):
+        if s.get("skip"):
+            continue
         n = len(s["bullets"]); steps = max(n, 1); first = 0.6 if n else 0
         times = [durs[i]] if not n else [first + (durs[i] - first) / n] * n
         if n: times[0] = first + (durs[i] - first) / n
         for k in range(steps):
             p = f"{work}/s{i:02d}_{k}.png"
-            slide(bg, s, k + 1 if n else 0, i, len(segs), arts.get(i), show_ai=(k >= n // 2)).save(p)
+            slide(bg, s, k + 1 if n else 0, keep.index(i), len(keep), arts.get(i), show_ai=(k >= n // 2)).save(p)
             lst.write(f"file '{p}'\nduration {times[k]:.3f}\n")
     lst.write(f"file '{p}'\n"); lst.close()
     # audio: segments with gaps
     pad = f"{work}/gap.wav"
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i", f"anullsrc=r={RATE}:cl=mono", "-t", str(GAP), pad], check=True)
     al = open(f"{work}/audio.txt", "w")
-    for i in range(len(segs)):
+    for i in keep:
         al.write(f"file '{work}/seg{i:02d}.wav'\nfile '{pad}'\n")
     al.close()
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{work}/audio.txt", f"{work}/voice.wav"], check=True)

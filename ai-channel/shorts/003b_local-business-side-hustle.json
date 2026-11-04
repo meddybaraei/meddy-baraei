@@ -13,7 +13,8 @@
     255,
     150,
     40
-   ]
+   ],
+   "skip": true
   },
   {
    "kicker": "How it works",

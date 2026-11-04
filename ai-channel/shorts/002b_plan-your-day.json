@@ -13,7 +13,8 @@
     150,
     40
    ],
-   "big": "1"
+   "big": "1",
+   "skip": true
   },
   {
    "kicker": "Copy this",

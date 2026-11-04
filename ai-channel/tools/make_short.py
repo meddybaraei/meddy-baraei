@@ -71,7 +71,10 @@ def main():
     work = os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), "build_" + os.path.splitext(os.path.basename(out))[0])
     os.makedirs(work, exist_ok=True)
     segs = spec["segments"]; bg = background(); durs = []
+    keep = [i for i, s in enumerate(segs) if not s.get("skip")]  # "skip": true drops a segment, keeps take numbering
     for i, s in enumerate(segs):
+        if s.get("skip"):
+            durs.append(0); continue
         wav = f"{work}/seg{i:02d}.wav"
         if not os.path.exists(wav) or os.environ.get("FRESH_VOICE"):
             pcm = tts(s["say"], spec.get("voice", "Charon"), spec.get("style", ""))
@@ -81,17 +84,19 @@ def main():
         print(f"seg {i}: {dd:.1f}s", flush=True)
     lst = open(f"{work}/frames.txt", "w")
     for i, s in enumerate(segs):
+        if s.get("skip"):
+            continue
         n = len(s["bullets"]); steps = max(n, 1)
         times = [durs[i]] if not n else [0.4 + (durs[i] - 0.4) / n] + [(durs[i] - 0.4) / n] * (n - 1)
         for k in range(steps):
             p = f"{work}/s{i:02d}_{k}.png"
-            slide(bg, s, k + 1 if n else 0, i, len(segs), show_ai=(k >= n // 2)).save(p)
+            slide(bg, s, k + 1 if n else 0, keep.index(i), len(keep), show_ai=(k >= n // 2)).save(p)
             lst.write(f"file '{p}'\nduration {times[k]:.3f}\n")
     lst.write(f"file '{p}'\n"); lst.close()
     pad = f"{work}/gap.wav"
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi", "-i", f"anullsrc=r={RATE}:cl=mono", "-t", str(GAP), pad], check=True)
     with open(f"{work}/audio.txt", "w") as al:
-        for i in range(len(segs)):
+        for i in keep:
             al.write(f"file '{work}/seg{i:02d}.wav'\nfile '{pad}'\n")
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{work}/audio.txt", f"{work}/voice.wav"], check=True)
     total = sum(durs); music = f"{work}/music.wav"
