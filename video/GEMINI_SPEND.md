@@ -42,4 +42,5 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-11 | Nov 3 | Run It With AI: 3 more Shorts (9 TTS takes) + 4 failed YouTube-link analysis calls | ~$0.06 (estimate) |
 | 2026-11 | Nov 3 | Run It With AI: 3 Make-Money-With-AI Shorts (9 TTS takes) | ~$0.05 (estimate) |
 | 2026-11 | Nov 4 | Gemini 3.5 Flash + Google Search: follower-growth review (1 call, ~5.5k tokens) | ~$0.02 |
-| **2026-11** | | **Cap $10** | **≈ $0.47–0.62 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
+| 2026-11 | Nov 4 | Gemini + Google Search: AI-recommendation baseline (2 questions) + 3 failed YouTube-link calls | ~$0.03 |
+| **2026-11** | | **Cap $10** | **≈ $0.50–0.65 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |

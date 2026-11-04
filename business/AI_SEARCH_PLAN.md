@@ -14,9 +14,9 @@ They pull from Google Business Profile and Maps (Gemini), Bing Places (ChatGPT s
 ## Actions
 ### Claude does (free, ongoing)
 - [x] Keep YouTube titles/descriptions naming the service AND the city in the description and tags (the hook-first title stays).
-- [ ] Every Google Business Profile post names one service + one city (doing this already, 2/week).
-- [ ] Monthly AI-visibility check: the same 6 questions to Gemini (search on), logged below.
-- [ ] Ask the website session for LocalBusiness schema, service + city pages, an FAQ and credentials (needs Meddy's OK to merge).
+- [x] Every Google Business Profile post names one service + one city (2/week). Added Thu Nov 12: Nest thermostat + smart locks, Ashburn (the gap found in the baseline).
+- [x] Monthly AI-visibility check scheduled for the 2nd of each month (trig_01KMcJECMWh2b6ZVtg79ksZe).
+- [x] Asked the website session for LocalBusiness schema, service + city pages, an FAQ and credentials (needs Meddy's OK to merge).
 ### Meddy does (free, about 1 hour total)
 1. **One name everywhere: "NovaProHome".** Check Google Business Profile, Facebook, YouTube, Yelp. Some old posts said "Nova Pro Home".
 2. **Bing Places for Business** (bingplaces.com): import from Google Business Profile in 2 minutes. ChatGPT and Copilot rely on Bing.
