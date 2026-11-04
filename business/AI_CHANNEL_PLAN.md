@@ -262,3 +262,23 @@ Track views, average watch time, subscribers, comments on the challenge and clic
 - Next: video 3 "Claude vs ChatGPT vs Gemini" (Tue Nov 10). Shorts tool: `ai-channel/tools/make_short.py` (same script format as make_lesson.py; optional "big" number and "chat" panel).
 - Nov 3: hook-first rule adopted for all content (see `video/HOOKS_PLAYBOOK.md`). Both Shorts re-rendered with joke openings; titles rewritten to be about the viewer's problem, not the tool.
 - Nov 3: cadence raised to one upload every day. Added Shorts Sat Nov 7 ("47 Unread Emails?"), Sun Nov 8 ("Your To-Do List Has a To-Do List"), Mon Nov 9 ("The AI Trick Most People Don't Know"). Weekly production task runs Sundays 1:37 PM ET (trig_01XjxKoS3kBPgHwa1pQReVWs) and fills every empty day with a Short.
+
+## Pillar 3: Make Money With AI (added Nov 3, Meddy's request; trending topic)
+AI explains, step by step, how ordinary people use AI as a real source of extra income. Honest version only:
+- No income promises, no "passive income while you sleep", no fake screenshots. Every money video says "results vary, it takes real work" (FTC earnings-claim rules and YouTube's spam/scam policies).
+- Show the work: the prompt, the edit, what to charge, how to find the first customer.
+Topic list:
+1. AI won't make you rich overnight, but it can do this (3 real ways)
+2. The local-business social-media side hustle (posts, review replies, menus)
+3. Saving money is making money: audit your subscriptions with AI (real $480/month case)
+4. Freelancers: finish client work faster (writing, design briefs, research)
+5. Turn what you already know into templates, checklists and planners
+6. Resume and cover-letter help for neighbors (with their own facts)
+7. AI for your existing job: get noticed, ask for the raise with data
+8. Pricing your AI-assisted service (flat fee vs hourly)
+9. How to find your first 3 customers without ads
+10. Scams to avoid: "AI money" courses, fake bots, crypto bots
+11. Etsy/print-on-demand with AI art: rules, disclosure, what sells
+12. Year-end: what actually worked (viewer results)
+Cadence: one money Short per week, plus a money lesson every other Friday. First lesson: Fri Nov 13, "How to Make Money With AI (Honest Beginner's Guide)".
+- Nov 3: Shorts 003a (Wed Nov 11), 003b (Thu Nov 12), 003c (Sat Nov 14) scheduled.
