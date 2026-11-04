@@ -1,0 +1,52 @@
+{
+ "title": "The AI Trick Most People Don't Know",
+ "voice": "Charon",
+ "style": "Read this like a funny, energetic friend in a quick social video. Playful on the joke, then clear and upbeat.",
+ "segments": [
+  {
+   "kicker": "Secret trick",
+   "title": "Make AI interview YOU first",
+   "bullets": [],
+   "say": "Most people ask AI for advice and get a generic answer. Here's the trick: make it interview you first.",
+   "accent": [
+    255,
+    190,
+    40
+   ],
+   "big": "?"
+  },
+  {
+   "kicker": "Copy this",
+   "title": "Add one magic line",
+   "bullets": [
+    "Describe your decision",
+    "Add: ask me 3 questions first",
+    "Then get pros, cons and a pick"
+   ],
+   "say": "Describe the decision you're stuck on. Then add one magic line: ask me three questions first, before you answer. Now the advice actually fits your situation. You still make the final call.",
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "I'm deciding between [hiring a helper] and [a delivery service]. Ask me 3 questions first, then give pros, cons and a recommendation.",
+    "ai": "Happy to help! First:\n1. How many deliveries a week?\n2. What's your monthly budget?\n3. Would a helper also cover the floor?"
+   }
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Follow for more AI tricks",
+   "bullets": [
+    "Copy the prompt from the description",
+    "Subscribe for more"
+   ],
+   "say": "What decision are you stuck on right now? Tell me and I'll write you the prompt. Follow Run It With AI for a new trick every week.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  }
+ ]
+}
