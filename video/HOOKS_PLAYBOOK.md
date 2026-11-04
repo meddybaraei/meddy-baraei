@@ -32,3 +32,13 @@ Goal: more people stop, watch, comment and come back. Titles must be attractive 
 - NovaProHome: every scheduled Facebook/LinkedIn/YouTube/TikTok post from Nov 3 to Nov 29 (30 posts) rewritten with a hook first line, a person-focused Reel/video title and one closing question. Videos unchanged.
 - Kept as they were: Veterans Day (Nov 11, respectful) and the Google Business Profile posts (people find those by searching for a service).
 - Run It With AI: both Shorts re-recorded with joke openings; video 2 retitled.
+
+## Follower growth (Nov 4 2026)
+Baseline Nov 3: NovaProHome YouTube 5, Facebook 9, TikTok 4, LinkedIn 4; Run It With AI YouTube 1. Total 23.
+Problem: posts get views (FB reels ~578/week, TikTok ~622/week) but almost nobody follows. Viewers get no reason to follow.
+Rules from now on:
+1. **Give a reason to follow, every post.** Last line of every video and caption: one specific follow ask tied to what's next ("Follow, part 2 shows the wiring tomorrow", "Subscribe, Friday is the money lesson"). Not a generic "like & subscribe".
+2. **Series beat one-offs.** Group posts into numbered series ("Doorbell Fixes 1/5", "AI Money Moves 1/12"). People follow to see the next part.
+3. **Answer comments the same day**, and turn good questions into the next video ("You asked…").
+4. **Pin a first comment** on YouTube with the closing question.
+5. 30-day targets (by Dec 4): NovaProHome YT 30, FB 60, TikTok 40, LinkedIn 60; Run It With AI 50.
