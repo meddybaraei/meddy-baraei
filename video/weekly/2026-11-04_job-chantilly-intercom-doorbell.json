@@ -1,11 +1,65 @@
 {
  "badge": "Smart Home Fixes #1 · Chantilly, VA",
  "scenes": [
-  {"photo": "video/weekly/photos/job4_chantilly_after_wide.jpg", "kicker": "Real job · Chantilly, VA", "title": "Old intercom → Ring video doorbell", "body": "Same spot, same doorbell wires. Now they can see who's at the door from their phone.", "dur": 4.8},
-  {"photo": "video/weekly/photos/job4_chantilly_old_intercom.jpg", "kicker": "Before", "title": "A NuTone intercom speaker from another era", "body": "The old speaker box came off the brick.", "dur": 4.4},
-  {"photo": "video/weekly/photos/job4_chantilly_wires.jpg", "kicker": "Step 1", "title": "Reuse the existing doorbell wires", "body": "The low-voltage wires were already there, so no new wiring through the wall.", "dur": 4.4},
-  {"photo": "video/weekly/photos/job4_chantilly_bracket.jpg", "kicker": "Step 2", "title": "Mounting bracket on the brick", "body": "Leveled, anchored into the masonry, and the wires connected.", "dur": 4.4},
-  {"photo": "video/weekly/photos/job4_chantilly_after_close.jpg", "kicker": "The result", "title": "Mounted, connected and ringing", "body": "Live view, motion alerts and two-way talk in the Ring app.", "dur": 5.0}
+  {
+   "photo": "video/weekly/photos/job4_chantilly_after_wide.jpg",
+   "kicker": "Real job · Chantilly, VA",
+   "title": "Old intercom → Ring video doorbell",
+   "body": "Same spot, same doorbell wires. Now they can see who's at the door from their phone.",
+   "dur": 3.6
+  },
+  {
+   "photo": "video/weekly/photos/job4_chantilly_old_intercom.jpg",
+   "kicker": "Before",
+   "title": "A NuTone intercom speaker from another era",
+   "body": "The old speaker box came off the brick.",
+   "dur": 3.2
+  },
+  {
+   "photo": "video/weekly/photos/job4_chantilly_wires.jpg",
+   "kicker": "Step 1",
+   "title": "Reuse the existing doorbell wires",
+   "body": "The low-voltage wires were already there, so no new wiring through the wall.",
+   "dur": 3.2
+  },
+  {
+   "photo": "video/weekly/diagrams/wiring_doorbell.png",
+   "kicker": "How it's wired",
+   "title": "Transformer → chime → doorbell",
+   "body": "The same low-voltage loop powers the new video doorbell.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/job4_chantilly_bracket.jpg",
+   "kicker": "Step 2",
+   "title": "Mounting bracket on the brick",
+   "body": "Leveled, anchored into the masonry, and the wires connected.",
+   "dur": 3.2
+  },
+  {
+   "photo": "video/weekly/photos/job4_chantilly_after_close.jpg",
+   "kicker": "The result",
+   "title": "Mounted, connected and ringing",
+   "body": "Live view, motion alerts and two-way talk. The old lighted button stays to cover a hole from a previous install.",
+   "dur": 3.2
+  },
+  {
+   "art": "list",
+   "kicker": "Above and beyond",
+   "title": "Set up for the whole family",
+   "items": [
+    "Email accounts for both",
+    "Ring account created",
+    "Shared access for both",
+    "Grandkids added too",
+    "Training before we left"
+   ],
+   "dur": 4.6
+  }
  ],
- "end": ["Old intercom at your door? Follow for more real installs", "novaprohome.com"]
+ "end": [
+  "Old intercom at your door? Follow for more real installs",
+  "novaprohome.com"
+ ],
+ "shop_qr": false
 }

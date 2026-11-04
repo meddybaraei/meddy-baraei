@@ -42,3 +42,15 @@ Rules from now on:
 3. **Answer comments the same day**, and turn good questions into the next video ("You asked…").
 4. **Pin a first comment** on YouTube with the closing question.
 5. 30-day targets (by Dec 4): NovaProHome YT 30, FB 60, TikTok 40, LinkedIn 60; Run It With AI 50.
+
+## Gemini growth review (Nov 4, search-grounded) — adopted
+- Biggest problem: YouTube Shorts average view 2-6 s. First frame must SHOW the problem or the result (no text/joke card), a visual change every 1.5-2 s, Shorts 18-25 s.
+- Stop near-identical titles ("Ring X Installation in Sterling & Ashburn"). Title = the viewer's problem; each one different.
+- Facebook Reels: short caption (1-3 lines). Phone number and links go in the FIRST COMMENT, not the caption.
+- Quality over volume: fewer, stronger videos. Run It With AI: 1 lesson + 3-4 Shorts a week from Nov 15.
+- Ask Meddy for 3-5 second phone VIDEO clips on jobs (drill, mount, the reveal), not only photos.
+- Connect Instagram (NovaProHome) in Metricool: Reels reach for local homeowners. Meddy's action.
+- Local Facebook groups from Meddy's personal profile: helpful answers, no links.
+- Realistic 30-day expectation (Gemini): +10-25 per account; judge NovaProHome by leads/calls, not followers.
+- Install videos include a simple wiring diagram (video/tools/make_wiring.py) when wiring is involved (Meddy, Nov 4). Diagrams are "typical wiring", never a claim about a specific house.
+- Show the people side: account setup, family sharing, training. It's the strongest trust content.
