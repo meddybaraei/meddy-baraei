@@ -3,6 +3,7 @@ Applies to every post on both brands (NovaProHome 6916320 and Run It With AI 778
 Goal: more people stop, watch, comment and come back. Titles must be attractive and about the PERSON, not about the product or service.
 
 ## Rules
+0. **Meddy, Nov 3: no unrelated opener.** The video starts directly on the topic in its title/description: no separate joke card, intro or "before we start" segment. The hook is the first line of the actual lesson (said over the real content), not a stand-alone card.
 1. **First line / first 2 seconds = the hook.** Use one of these:
    - Joke or relatable moment ("Your router is in a closet. Your camera is in the backyard. They are not on speaking terms.")
    - Trend or calendar moment (clocks falling back, porch-pirate season, Thanksgiving, Black Friday, first freeze, a trending meme format)
