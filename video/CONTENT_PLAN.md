@@ -206,4 +206,4 @@ Reston, VA: 2 motion lights replaced with Ring Floodlight Cam Pro (2nd Gen, wire
   - Giveaway: Meddy must share it in local Facebook and Nextdoor groups. Our own posts got 0 entries.
 
 ### Job of the week (Nov 4): Chantilly, VA
-Old NuTone intercom speaker replaced with a Ring video doorbell on the brick, reusing the existing low-voltage doorbell wires. Photos: `video/weekly/photos/job4_chantilly_*`. Short: `video/weekly/2026-11-04_job-chantilly-intercom-doorbell_short.mp4` ("Smart Home Fixes #1").
+Old NuTone intercom speaker replaced with a Ring video doorbell on the brick, reusing the existing low-voltage doorbell wires. Photos: `video/weekly/photos/job4_chantilly_*`. Short: `video/weekly/2026-11-04_job-chantilly-intercom-doorbell_short.mp4` ("Smart Home Fixes #2"; mesh Wi-Fi Short Nov 4 is #1, other session numbers the rest).
