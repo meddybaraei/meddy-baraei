@@ -31,7 +31,7 @@ const B=SPEC.beats; // [{text,start,end}]
 const root=document.getElementById('scenes');const scenes=[],els=[];
 SPEC.scenes.forEach(sc=>{
   const s=document.createElement('div');s.className='scene';root.appendChild(s);
-  const a=B[sc.from].start-0.05,b=sc.to+1<B.length?B[sc.to+1].start-0.15:1e9;scenes.push({s,a,b});
+  const a=sc.from===0?-1:B[sc.from].start-0.05,b=sc.to+1<B.length?B[sc.to+1].start-0.15:1e9;scenes.push({s,a,b}); // first scene is on screen from frame 0
   sc.els.forEach(e=>{
     const d=document.createElement('div');d.className='a '+e.t;d.style.top=e.top+'px';
     if(e.color){d.style.borderColor=`var(--${e.color})`;if(e.t!=='card'&&e.t!=='chip'&&e.t!=='warn')d.style.color=`var(--${e.color})`}
@@ -40,14 +40,14 @@ SPEC.scenes.forEach(sc=>{
     else if(e.t==='chip')d.innerHTML=`<div>${e.html}</div>`; // one flex child so inline spans don't split into columns
     else d.innerHTML=e.html;
     s.appendChild(d);
-    els.push({d,t:B[e.at].start+(e.d||0),pop:!!e.pop,dim:e.dimAt!=null?B[e.dimAt].start:null});
+    els.push({d,t:e.at===0&&!e.d?-1:B[e.at].start+(e.d||0),pop:!!e.pop,dim:e.dimAt!=null?B[e.dimAt].start:null});
   });
 });
 window.render=function(t){
   for(const{s,a,b}of scenes){s.style.opacity=Math.max(0,Math.min(ease((t-a)/.3),1-ease((t-b)/.3)));s.style.transform=`translateY(${(1-ease((t-a)/.4))*40-ease((t-b)/.3)*40}px)`}
   for(const{d,t:ti,pop,dim}of els){const p=(t-ti)/.45;d.style.opacity=ease(p*1.6)*(dim!=null&&t>dim?.35:1);d.style.transform=pop?`scale(${.6+.4*back(p)})`:`translateY(${(1-ease(p))*50}px)`}
   const tb=SPEC.tintBeat;document.getElementById('tint').style.opacity=tb!=null&&t>=B[tb].start&&t<B[tb].end+.3?.55+.35*Math.sin((t-B[tb].start)*7):0;
-  let c='';for(const x of B)if(t>=x.start-.05)c=x.cap||x.text;document.getElementById('cap').innerHTML=`<span>${c}</span>`;
+  let c='';for(const x of B)if(t>=x.start-.05)c=x.cap||x.text;document.getElementById('cap').innerHTML=c?`<span>${c}</span>`:'';
 };
 render(0);
 </script></body></html>
