@@ -1,0 +1,151 @@
+{
+ "slug": "smart-bulbs-vs-smart-switches",
+ "title": "Smart Bulbs vs Smart Switches: The Mistake Everyone Makes #shorts",
+ "beats": [
+  {
+   "text": "The most common smart lighting mistake? Putting smart bulbs on a regular wall switch."
+  },
+  {
+   "text": "Someone flips the switch off, the bulb loses power, and every schedule and voice command stops working."
+  },
+  {
+   "text": "The fix is a smart switch or dimmer. It replaces the wall switch, so the light works from the wall, the app, and your voice."
+  },
+  {
+   "text": "That's why we install a lot of Lutron Caseta. The dimmers don't need a neutral wire, so they work in most older homes."
+  },
+  {
+   "text": "Smart bulbs still have a place. Use them in lamps, or when you want color, like Philips Hue."
+  },
+  {
+   "text": "Switches for your ceiling lights, bulbs for lamps and color. Free quote at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 1,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 220,
+     "html": "SMART LIGHTING",
+     "at": 0
+    },
+    {
+     "t": "big",
+     "top": 440,
+     "html": "Smart bulb<br>+ regular switch<br>= <span style='color:var(--red)'>problem</span>",
+     "at": 0,
+     "d": 0.3,
+     "pop": true
+    },
+    {
+     "t": "warn",
+     "top": 960,
+     "html": "Switch off → no power<br>→ schedules & voice stop",
+     "at": 1
+    }
+   ]
+  },
+  {
+   "from": 2,
+   "to": 3,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "teal",
+     "n": "✓",
+     "html": "Smart switch or dimmer",
+     "at": 2
+    },
+    {
+     "t": "chip",
+     "top": 600,
+     "html": "Works from the wall",
+     "at": 2,
+     "d": 2.6
+    },
+    {
+     "t": "chip",
+     "top": 770,
+     "html": "The app",
+     "at": 2,
+     "d": 3.4
+    },
+    {
+     "t": "chip",
+     "top": 940,
+     "html": "Your voice",
+     "at": 2,
+     "d": 4.0
+    },
+    {
+     "t": "mid",
+     "top": 1160,
+     "html": "Lutron Caseta dimmers:<br><span style='color:var(--teal)'>no neutral wire needed</span>",
+     "at": 3
+    }
+   ]
+  },
+  {
+   "from": 4,
+   "to": 4,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "violet",
+     "n": "💡",
+     "html": "Smart bulbs still win for…",
+     "at": 4
+    },
+    {
+     "t": "chip",
+     "top": 620,
+     "html": "Lamps",
+     "at": 4,
+     "d": 1.6
+    },
+    {
+     "t": "chip",
+     "top": 790,
+     "html": "Color (Philips Hue)",
+     "at": 4,
+     "d": 2.6
+    }
+   ]
+  },
+  {
+   "from": 5,
+   "to": 5,
+   "els": [
+    {
+     "t": "big",
+     "top": 360,
+     "color": "teal",
+     "html": "Switches → ceiling lights",
+     "at": 5,
+     "pop": true
+    },
+    {
+     "t": "big",
+     "top": 680,
+     "color": "violet",
+     "html": "Bulbs → lamps & color",
+     "at": 5,
+     "d": 1.4,
+     "pop": true
+    },
+    {
+     "t": "mid",
+     "top": 1120,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 5,
+     "d": 1.0
+    }
+   ]
+  }
+ ]
+}

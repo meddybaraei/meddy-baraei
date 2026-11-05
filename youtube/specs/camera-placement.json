@@ -1,0 +1,39 @@
+{"slug":"security-camera-placement",
+ "title":"Where to Mount a Security Camera (Installer Tips) #shorts",
+ "beats":[
+  {"text":"Most people mount their security camera in the wrong spot. Here's where I put them."},
+  {"text":"First, go high, but not too high. Around eight to ten feet keeps it out of reach and still sees faces."},
+  {"text":"Second, cover the entry points. Front door, back door, and the driveway. That's where people actually come in."},
+  {"text":"Third, watch the sun. A camera facing east or west can get blinded at sunrise or sunset."},
+  {"text":"Fourth, check the Wi-Fi right where it mounts, before you drill."},
+  {"text":"And respect privacy. Don't point it into your neighbor's windows."},
+  {"text":"High, on the doors, out of the sun, strong Wi-Fi. Follow NovaProHome for more install tips."}
+ ],
+ "scenes":[
+  {"from":0,"to":0,"els":[
+    {"t":"kicker","top":220,"html":"SECURITY CAMERA INSTALL","at":0},
+    {"t":"big","top":560,"html":"Wrong spot<br>= <span style='color:var(--red)'>useless</span><br>camera","at":0,"d":0.3,"pop":true}]},
+  {"from":1,"to":1,"els":[
+    {"t":"card","top":320,"color":"amber","n":"1","html":"Go high, not too high","at":1},
+    {"t":"big","top":640,"color":"amber","html":"8–10 ft","at":1,"d":1.6,"pop":true},
+    {"t":"chip","top":900,"html":"Out of reach","at":1,"d":3.0},
+    {"t":"chip","top":1070,"html":"Still sees faces","at":1,"d":4.2}]},
+  {"from":2,"to":2,"els":[
+    {"t":"card","top":320,"color":"violet","n":"2","html":"Cover entry points","at":2},
+    {"t":"chip","top":620,"html":"Front door","at":2,"d":1.6},
+    {"t":"chip","top":790,"html":"Back door","at":2,"d":2.4},
+    {"t":"chip","top":960,"html":"Driveway","at":2,"d":3.2}]},
+  {"from":3,"to":4,"els":[
+    {"t":"card","top":320,"color":"amber","n":"3","html":"Watch the sun","at":3},
+    {"t":"chip","top":600,"html":"Facing east or west →<br>blinded at sunrise / sunset","at":3,"d":1.2},
+    {"t":"card","top":900,"color":"blue","n":"4","html":"Test Wi-Fi where it mounts","at":4}]},
+  {"from":5,"to":5,"els":[
+    {"t":"kicker","top":220,"html":"BE A GOOD NEIGHBOR","at":5},
+    {"t":"warn","top":480,"html":"Don't point it into<br>your neighbor's windows","at":5,"d":0.9,"pop":true}]},
+  {"from":6,"to":6,"els":[
+    {"t":"big","top":340,"color":"amber","html":"High.","at":6,"pop":true},
+    {"t":"big","top":500,"color":"violet","html":"On the doors.","at":6,"d":0.5,"pop":true},
+    {"t":"big","top":660,"color":"amber","html":"Out of the sun.","at":6,"d":1.2,"pop":true},
+    {"t":"big","top":820,"color":"blue","html":"Strong Wi-Fi.","at":6,"d":2.0,"pop":true},
+    {"t":"mid","top":1080,"html":"Follow <b>NovaProHome</b><br>for more install tips","at":6,"d":3.0}]}
+ ]}

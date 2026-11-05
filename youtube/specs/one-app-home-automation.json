@@ -1,0 +1,174 @@
+{
+ "slug": "one-app-smart-home",
+ "title": "10 Smart Home Apps? Here's the Fix #shorts",
+ "beats": [
+  {
+   "text": "Ten smart devices, ten different apps? That's not a smart home. That's a junk drawer."
+  },
+  {
+   "text": "Full home automation means everything works as one system: thermostat, lights, locks, garage, cameras, and audio."
+  },
+  {
+   "text": "Here's what that looks like. Tap one Goodnight button."
+  },
+  {
+   "text": "The doors lock, the garage closes, the lights turn off, and the thermostat sets back for the night."
+  },
+  {
+   "text": "That only works when the system is planned before anything gets installed."
+  },
+  {
+   "text": "One app, one system, planned first. Free quote at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 0,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 220,
+     "html": "HOME AUTOMATION",
+     "at": 0
+    },
+    {
+     "t": "big",
+     "top": 440,
+     "html": "10 devices.<br>10 apps.<br><span style='color:var(--red)'>Junk drawer.</span>",
+     "at": 0,
+     "d": 0.3,
+     "pop": true
+    }
+   ]
+  },
+  {
+   "from": 1,
+   "to": 1,
+   "els": [
+    {
+     "t": "mid",
+     "top": 300,
+     "html": "One <span style='color:var(--teal)'>system</span>:",
+     "at": 1
+    },
+    {
+     "t": "chips",
+     "top": 480,
+     "items": [
+      "🌡",
+      "💡",
+      "🔒"
+     ],
+     "at": 1,
+     "d": 1.5
+    },
+    {
+     "t": "chips",
+     "top": 680,
+     "items": [
+      "🚗",
+      "📷",
+      "🔊"
+     ],
+     "at": 1,
+     "d": 2.5
+    }
+   ]
+  },
+  {
+   "from": 2,
+   "to": 3,
+   "els": [
+    {
+     "t": "big",
+     "top": 320,
+     "color": "violet",
+     "html": "“Goodnight”",
+     "at": 2,
+     "d": 0.8,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 600,
+     "html": "🔒 Doors lock",
+     "at": 3
+    },
+    {
+     "t": "chip",
+     "top": 770,
+     "html": "🚗 Garage closes",
+     "at": 3,
+     "d": 0.9
+    },
+    {
+     "t": "chip",
+     "top": 940,
+     "html": "💡 Lights off",
+     "at": 3,
+     "d": 1.8
+    },
+    {
+     "t": "chip",
+     "top": 1110,
+     "html": "🌡 Thermostat sets back",
+     "at": 3,
+     "d": 2.6
+    }
+   ]
+  },
+  {
+   "from": 4,
+   "to": 4,
+   "els": [
+    {
+     "t": "big",
+     "top": 520,
+     "html": "Plan the system<br><span style='color:var(--amber)'>before</span> you install.",
+     "at": 4,
+     "pop": true
+    }
+   ]
+  },
+  {
+   "from": 5,
+   "to": 5,
+   "els": [
+    {
+     "t": "big",
+     "top": 360,
+     "color": "teal",
+     "html": "One app.",
+     "at": 5,
+     "pop": true
+    },
+    {
+     "t": "big",
+     "top": 520,
+     "color": "violet",
+     "html": "One system.",
+     "at": 5,
+     "d": 0.6,
+     "pop": true
+    },
+    {
+     "t": "big",
+     "top": 680,
+     "color": "amber",
+     "html": "Planned first.",
+     "at": 5,
+     "d": 1.2,
+     "pop": true
+    },
+    {
+     "t": "mid",
+     "top": 1120,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 5,
+     "d": 1.0
+    }
+   ]
+  }
+ ]
+}

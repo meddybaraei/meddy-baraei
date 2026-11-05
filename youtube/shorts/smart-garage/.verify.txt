@@ -1,0 +1,18 @@
+  0.50-  3.23
+  script: Ever drive away and wonder if you left the garage door open?
+  heard:  Ever drive away and wonder if you left the garage door open?
+  3.83- 10.03
+  script: You usually don't need a new opener. In many homes, a smart controller can be added to the opener you already have.
+  heard:  You usually don't need a new opener. In many homes a smart controller can be added to the opener you already have.
+ 10.46- 13.87
+  script: Then your phone tells you when the door opens, and you can close it from anywhere.
+  heard:  Then your phone tells you when the door opens, and you can close it from anywhere.
+ 14.44- 17.33
+  script: You can even get an alert if it's been left open too long at night.
+  heard:  You can even get an alert if it's been left open too long at night
+ 17.86- 23.57
+  script: One rule: your opener's safety sensors at the bottom of the door still have to work. Never bypass them.
+  heard:  One rule, your opener's safety sensors at the bottom of the door still have to work. Never bypass them.
+ 24.30- 29.69
+  script: Keep your opener, add smart control, keep the safety sensors. Free quote at novaprohome.com.
+  heard:  Keep your opener, add smart control, keep the safety sensors. Free quote at novaprohome.com.

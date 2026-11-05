@@ -1,0 +1,13 @@
+Camera dropping offline? Doorbell slow? The problem usually isn't the device. It's the Wi-Fi.
+
+One router in a corner of the house can't reach the garage, the backyard, and the front door.
+
+A mesh system fixes that. Several nodes work together as one network, with one name and one password.
+
+Placement matters. Put each node in the open, about halfway between the router and the dead zone. Not in a closet, and not behind the TV.
+
+If you can, connect the nodes with an Ethernet cable. A wired backhaul is faster and more stable than wireless.
+
+And many smart home devices only connect on 2.4 gigahertz, so keep that band turned on.
+
+Strong Wi-Fi first, smart devices second. Free quote at novaprohome.com.
