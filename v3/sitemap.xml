@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://novaprohome.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://novaprohome.com/services/video-doorbells/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novaprohome.com/services/security-cameras/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novaprohome.com/services/ring-alarm/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novaprohome.com/services/nest-thermostats/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novaprohome.com/services/smart-locks/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novaprohome.com/services/lutron-lighting/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novaprohome.com/services/mesh-wifi/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novaprohome.com/faq/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
