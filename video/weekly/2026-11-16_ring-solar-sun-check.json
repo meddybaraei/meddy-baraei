@@ -1,0 +1,50 @@
+{
+ "badge": "Smart Home Fixes · The Sun Check",
+ "shop_qr": false,
+ "scenes": [
+  {
+   "photo": "facebook-post/extras/ring_solar_floodlight.jpg",
+   "kicker": "Real job · McLean, VA",
+   "title": "Your solar panel can sit in the sun and still not charge",
+   "body": "Here's why, and The Sun Check that fixes it.",
+   "dur": 3.6
+  },
+  {
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "kicker": "The Sun Check · S",
+   "title": "South: face the panel south",
+   "body": "Ring's own advice for the U.S.: aim it south, toward the sun.",
+   "dur": 3.2
+  },
+  {
+   "art": "list",
+   "kicker": "The Sun Check",
+   "title": "4 checks before you drill",
+   "items": [
+    "South: face it south",
+    "Angle: tilt about 45°",
+    "Clear: no overhang or tree shade",
+    "Sun: hours of direct sun daily"
+   ],
+   "dur": 4.6
+  },
+  {
+   "photo": "video/weekly/photos/job2_solar_spotlight.jpg",
+   "kicker": "The payoff",
+   "title": "Shade is the hidden problem",
+   "body": "An overhang or tree shadow can stop charging, even on a sunny day.",
+   "dur": 3.6
+  },
+  {
+   "photo": "video/weekly/photos/job2_siding_solar_cam.jpg",
+   "kicker": "The result",
+   "title": "Mounted in the open, aimed at the sky",
+   "body": "The camera stays topped up, so fewer ladder trips to recharge.",
+   "dur": 3.4
+  }
+ ],
+ "end": [
+  "No outlet? We can help",
+  "novaprohome.com"
+ ]
+}
