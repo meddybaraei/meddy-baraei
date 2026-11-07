@@ -48,5 +48,26 @@ def doorbell(out):
     im.save(out)
 
 
+def floodlight(out):
+    im = Image.new('RGB', (W, H), NAVY); d = ImageDraw.Draw(im)
+    d.text((70, 290), 'How a wired floodlight cam connects', font=fb(48), fill=WHITE)
+    d.text((70, 358), 'House power, 120 V AC: breaker OFF first', font=fm(34), fill=RED)
+    box(d, (60, 440, 470, 630), 'Outdoor box', 'the existing\nlight fixture box', YEL)
+    box(d, (610, 440, 1020, 630), 'Floodlight cam', 'mounting plate\non the same box', GREEN)
+    rows = [('BLACK = hot', (90, 90, 90), 720), ('WHITE = neutral', WHITE, 800), ('GREEN / bare = ground', GREEN, 880)]
+    for label, col, y in rows:
+        d.ellipse((150, y - 14, 178, y + 14), fill=col); d.ellipse((902, y - 14, 930, y + 14), fill=col)
+        d.line([(178, y), (902, y)], fill=col, width=8)
+        lw = d.textlength(label, font=fb(30)); d.rounded_rectangle((540 - lw / 2 - 18, y - 26, 540 + lw / 2 + 18, y + 26), 14, fill=NAVY)
+        d.text((540 - lw / 2, y - 18), label, font=fb(30), fill=col if col != (90, 90, 90) else SOFT)
+    d.text((150, 660), 'box', font=fm(26), fill=YEL); d.text((850, 660), 'camera', font=fm(26), fill=GREEN)
+    d.text((70, 960), 'Wire nuts snug, cover sealed against rain.', font=fm(30), fill=SOFT)
+    d.text((70, 1010), 'Usually an inside light switch controls it.', font=fm(30), fill=SOFT)
+    d.rounded_rectangle((60, 1080, 1020, 1185), 18, fill=(60, 30, 30))
+    d.text((84, 1094), 'Line voltage. Typical wiring: check your manual,', font=fm(27), fill=(255, 200, 200))
+    d.text((84, 1134), 'and hire a licensed electrician where required.', font=fm(27), fill=(255, 200, 200))
+    im.save(out)
+
+
 if __name__ == '__main__':
-    {'doorbell': doorbell}[sys.argv[1]](sys.argv[2])
+    {'doorbell': doorbell, 'floodlight': floodlight}[sys.argv[1]](sys.argv[2])

@@ -207,3 +207,6 @@ Reston, VA: 2 motion lights replaced with Ring Floodlight Cam Pro (2nd Gen, wire
 
 ### Job of the week (Nov 4): Chantilly, VA
 Old NuTone intercom speaker replaced with a Ring video doorbell on the brick, reusing the existing low-voltage doorbell wires. Photos: `video/weekly/photos/job4_chantilly_*`. Short: `video/weekly/2026-11-04_job-chantilly-intercom-doorbell_short.mp4` ("Smart Home Fixes #2"; mesh Wi-Fi Short Nov 4 is #1, other session numbers the rest).
+
+### Job (Nov 7): Ashburn, VA, full-home security
+5 cameras, a Ring video doorbell and a home alarm with 16 sensors. Photos: `video/weekly/photos/job5_ashburn_*`, from the Drive folder "Nova Pro Home - Video Inbox". Homeowner faces (IMG_8431, IMG_8436) were left out. The new floodlight wiring diagram is `video/weekly/diagrams/wiring_floodlight.png` (`make_wiring.py floodlight`). Short: `video/weekly/2026-11-07_job-ashburn-full-home-security_short.mp4`.
