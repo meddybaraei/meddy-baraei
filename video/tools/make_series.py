@@ -74,9 +74,9 @@ def panel(d, s):
         tl = wrap(d, s['title'], fb(74), W - 180) if s.get('title') else []
         bl = wrap(d, s.get('body', ''), fs(46), W - 180) if s.get('body') else []
         h = 70 + (56 if s.get('kicker') else 0) + 88 * len(tl) + (20 + 60 * len(bl) if bl else 0)
-        y0 = H - 260 - h
-        d.rounded_rectangle((50, y0, W - 50, H - 260), 34, fill=PANEL + (238,))
-        if WARM: d.rounded_rectangle((50, y0, 64, H - 260), 7, fill=ACC)
+        y0 = 330 if s.get('panel_top') else H - 260 - h  # panel_top: keep the action at the bottom of the frame visible
+        d.rounded_rectangle((50, y0, W - 50, y0 + h), 34, fill=PANEL + (238,))
+        if WARM: d.rounded_rectangle((50, y0, 64, y0 + h), 7, fill=ACC)
         y = y0 + 36
         if s.get('kicker'): d.text((90, y), s['kicker'], font=fs(40), fill=ACC); y += 56
         for ln in tl: d.text((90, y), ln, font=fb(74), fill=TXT); y += 88
@@ -128,7 +128,7 @@ def clip_scene(s):
         im = st['im'].copy()
         d = top(im); panel(d, s)
         if s.get('ai'):
-            tag = 'AI-generated b-roll'; tf = fs(30); w = d.textlength(tag, font=tf); x = W - 110 - w
+            tag = s.get('ai_label', 'AI-generated b-roll'); tf = fs(30); w = d.textlength(tag, font=tf); x = W - 110 - w
             d.rounded_rectangle((x - 16, 142, x + w + 16, 194), 22, fill=(0, 0, 0, 140)); d.text((x, 150), tag, font=tf, fill=WHITE)
         return im
     return f

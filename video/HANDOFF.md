@@ -120,3 +120,8 @@ See video/FREE_LEADS_PLAN.md. Google Business Profile is NOT connected in Metric
 - Lives in `.claude/skills/watch/`. It lets Claude watch a video and answer questions about it, using Gemini.
 - In a new cloud container, run this once: `mkdir -p ~/.config/watch && printf 'WATCH_ENGINE=gemini\nGEMINI_API_KEY=proxy-injected-placeholder\n' > ~/.config/watch/.env && python3 .claude/skills/watch/scripts/setup.py --engine gemini`. The real Gemini key is added by the network proxy, so it never goes in the file.
 - Works: local video files (tested on the Chantilly Short, about 25 s). Fails: YouTube links (Gemini returns HTTP 502 here), and the local engine (youtube.com is blocked from this environment). To review a YouTube video, ask Meddy for the file or a Google Drive link.
+
+## AI video (Nov 7)
+- Veo models are gone from our key's model list (404). Realistic video now comes from **Gemini Omni 1.2 Flash** via `video/tools/gen_omni.py`. It uses the Interactions API in background mode and polls for the result, because one long request times out at the proxy with HTTP 502. Output is 720x1280, 8 s, with audio. Budget about $1 per clip, an estimate to confirm on the billing page.
+- Every AI clip in a video is labeled on screen (`"ai": true, "ai_label": ...` in make_series). Set isAiGeneratedContent/isAigc to true. Never present AI clips as a real customer job.
+- make_series: a clip or photo scene can set `"panel_top": true` so the caption box doesn't cover the action at the bottom of the frame.
