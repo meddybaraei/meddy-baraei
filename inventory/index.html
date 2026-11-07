@@ -1,0 +1,515 @@
+<title>Stock Count Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+/* Layout: a warehouse clipboard. Tab strip on top, paste panel, summary row, category chips, then the count sheet. */
+:root{
+  --bg:#eef1f4; --panel:#ffffff; --ink:#18222d; --muted:#5b6876; --line:#d5dce3; --soft:#f5f7f9;
+  --accent:#1f5f8b; --on-accent:#ffffff;
+  --ashley:#1f5f8b; --other:#7a4f9a; --bedding:#2f7d62;
+  --ok:#2f7d4f; --ok-bg:#e3f2e8; --warn:#9a6200; --warn-bg:#fdf0d5; --bad:#b3261e; --bad-bg:#fbe4e2;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161c; --panel:#19212a; --ink:#e6ebf0; --muted:#97a4b2; --line:#2c3743; --soft:#1e2731;
+  --accent:#5aa6dc; --on-accent:#0b1520;
+  --ashley:#5aa6dc; --other:#b58fd6; --bedding:#5ec39c;
+  --ok:#7fd29c; --ok-bg:#1d3326; --warn:#f0bd5c; --warn-bg:#3a2f17; --bad:#f2948c; --bad-bg:#3d1f1d;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161c; --panel:#19212a; --ink:#e6ebf0; --muted:#97a4b2; --line:#2c3743; --soft:#1e2731;
+  --accent:#5aa6dc; --on-accent:#0b1520;
+  --ashley:#5aa6dc; --other:#b58fd6; --bedding:#5ec39c;
+  --ok:#7fd29c; --ok-bg:#1d3326; --warn:#f0bd5c; --warn-bg:#3a2f17; --bad:#f2948c; --bad-bg:#3d1f1d;
+  color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;margin:0}
+table,input,select,textarea,button{font-size:inherit;font-family:inherit;color:inherit}
+.wrap{--tab:var(--ashley);max-width:1180px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+.wrap[data-tab="non-ashley"]{--tab:var(--other)} .wrap[data-tab="bedding"]{--tab:var(--bedding)}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 20px}
+h1{font-family:var(--display);font-weight:700;font-size:2rem;letter-spacing:.01em;margin:0;line-height:1.05;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0;max-width:62ch}
+.tabs{display:flex;gap:6px;border-bottom:2px solid var(--line);overflow-x:auto}
+.tab{appearance:none;border:0;background:none;cursor:pointer;padding:10px 16px 9px;font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.tab .n{font-family:var(--mono);font-size:.75rem;font-weight:600;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);letter-spacing:0}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--c)}
+.tab[aria-selected="true"] .n{background:var(--c);border-color:var(--c);color:var(--on-accent)}
+.tab:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.import{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:16px}
+@media (max-width:760px){.import{grid-template-columns:minmax(0,1fr)}}
+.label{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:8px;background:var(--soft);padding:10px;font-family:var(--mono);font-size:.8rem}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{appearance:none;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:8px 14px;font-weight:600;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--tab);border-color:var(--tab);color:var(--on-accent)}
+.btn.danger{color:var(--bad)}
+.btn.small{padding:4px 10px;font-size:.85rem}
+.file input{position:absolute;opacity:0;width:1px;height:1px}
+.drop{border:2px dashed var(--line);border-radius:10px;padding:14px;text-align:center;color:var(--muted);display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;min-height:110px}
+.drop.over{border-color:var(--tab);background:var(--soft)}
+.hint{color:var(--muted);font-size:.85rem;margin:0}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.map label{display:flex;flex-direction:column;gap:4px;font-size:.8rem;font-weight:600;color:var(--muted)}
+select,input[type=search],input[type=number]{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:7px 9px}
+.preview{border-top:1px solid var(--line);margin-top:14px;padding-top:14px;display:flex;flex-direction:column;gap:12px}
+.result{margin-top:12px;border-radius:8px;background:var(--ok-bg);color:var(--ok);padding:8px 12px;font-weight:600;font-size:.9rem;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font-family:var(--display);font-size:2rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat.warn b{color:var(--warn)} .stat.bad b{color:var(--bad)}
+.cats{display:flex;gap:8px;flex-wrap:wrap}
+.cat{appearance:none;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 12px;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;line-height:1.2;min-width:96px}
+.cat b{font-weight:600}
+.cat small{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.cat[aria-pressed="true"]{border-color:var(--tab);box-shadow:inset 0 0 0 1px var(--tab);background:var(--soft)}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.toolbar label{font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+input[type=search]{width:240px;max-width:100%}
+input[type=number]{width:64px}
+#vendorSel{max-width:220px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{appearance:none;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:4px 12px;cursor:pointer;font-size:.85rem;font-weight:600}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.sheet{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel);max-height:70vh}
+table{border-collapse:collapse;width:100%}
+th,td{padding:7px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+td.name{white-space:normal;min-width:200px}
+th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--soft);position:sticky;top:0;z-index:1}
+th[data-k]{cursor:pointer;user-select:none}
+th.num,td.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono)}
+td.sku,td.ven,td.codes{font-family:var(--mono);font-size:.85rem}
+td.sku{font-weight:600}
+td.codes,td.style{color:var(--muted)}
+td.total{font-weight:600;font-size:1.05em}
+tbody tr:hover td{background:var(--soft)}
+tfoot td{font-weight:600;background:var(--soft);border-bottom:0;position:sticky;bottom:0}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.75rem;font-weight:600}
+.pill.ok{background:var(--ok-bg);color:var(--ok)} .pill.warn{background:var(--warn-bg);color:var(--warn)} .pill.bad{background:var(--bad-bg);color:var(--bad)}
+.banner{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;background:var(--warn-bg);color:var(--warn);border-radius:8px;padding:8px 12px;font-weight:600;font-size:.9rem}
+.sources ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2px;font-size:.85rem;color:var(--muted)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--panel);padding:10px 16px;border-radius:8px;font-weight:600;z-index:20;max-width:calc(100% - 32px)}
+.empty{padding:28px;text-align:center;color:var(--muted);white-space:normal}
+.confirm{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){.tab,.btn,.chip,.cat{transition:background .15s,border-color .15s,color .15s}}
+</style>
+
+<div class="wrap" id="wrap">
+  <header class="top">
+    <div>
+      <h1>Stock Count Board</h1>
+      <p class="sub">Paste an inventory report from the system. ASH rows go to Ashley, every other vendor goes to Non-Ashley, and Bedding or Mattress rows go to Bedding.</p>
+    </div>
+    <p class="hint">Saved in this browser.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Inventory groups">
+    <button class="tab" role="tab" id="tab-ashley" data-tab="ashley" style="--c:var(--ashley)">Ashley <span class="n" id="n-ashley">0</span></button>
+    <button class="tab" role="tab" id="tab-non-ashley" data-tab="non-ashley" style="--c:var(--other)">Non-Ashley <span class="n" id="n-non-ashley">0</span></button>
+    <button class="tab" role="tab" id="tab-bedding" data-tab="bedding" style="--c:var(--bedding)">Bedding <span class="n" id="n-bedding">0</span></button>
+  </nav>
+
+  <section class="panel" aria-labelledby="importTitle">
+    <div class="import">
+      <div>
+        <p class="label" id="importTitle">Paste a report</p>
+        <textarea id="paste" placeholder="Paste rows here, for example:&#10;ASH	B954 Neo · Modern · Bedroom [A]	385	---&#10;GLO	ASPEN-BK Aspen Black · · Bedroom [RU]	205	---"></textarea>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <p class="label">Or upload a file</p>
+        <div class="drop" id="drop">
+          <span>Drop a .xlsx, .xls or .csv file here</span>
+          <label class="btn file">Choose file<input type="file" id="fileIn" accept=".xlsx,.xls,.csv,.tsv,.txt"></label>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn primary" id="readBtn">Update counts</button>
+      <p class="hint">A new report for a category replaces the old counts for that category. Items missing from the new report show as Out.</p>
+    </div>
+    <div class="result" id="result" hidden><span id="resultText"></span><button class="btn small" id="undoBtn">Undo</button></div>
+
+    <div class="preview" id="preview" hidden>
+      <p class="label" id="previewTitle">Check columns</p>
+      <div class="map">
+        <label for="mapVendor">Vendor<select id="mapVendor"></select></label>
+        <label for="mapItem">Item #<select id="mapItem"></select></label>
+        <label for="mapName">Description<select id="mapName"></select></label>
+        <label for="mapCat">Category<select id="mapCat"></select></label>
+        <label for="mapQty">Quantity<select id="mapQty"></select></label>
+      </div>
+      <p class="hint" id="previewInfo"></p>
+      <div class="row">
+        <button class="btn primary" id="addBtn">Update counts</button>
+        <button class="btn" id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner" id="sampleBanner" hidden>
+    <span>Sample rows from your Bedroom, Motion and Stationary reports. Paste a full report to replace them.</span>
+    <button class="btn small" id="clearSample">Clear sample</button>
+  </div>
+
+  <section class="stats" aria-label="Summary">
+    <div class="stat"><b id="sItems">0</b><span>Items</span></div>
+    <div class="stat"><b id="sUnits">0</b><span>Units in stock</span></div>
+    <div class="stat warn"><b id="sLow">0</b><span>Low stock</span></div>
+    <div class="stat bad"><b id="sOut">0</b><span>Out (left the report)</span></div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:10px">
+    <div class="cats" id="cats" role="group" aria-label="Filter by category"></div>
+    <div class="toolbar">
+      <div class="row">
+        <input type="search" id="search" placeholder="Search item # or name" aria-label="Search items">
+        <select id="vendorSel" aria-label="Filter by vendor"></select>
+        <div class="chips" role="group" aria-label="Filter by status">
+          <button class="chip" data-f="all" aria-pressed="true">All</button>
+          <button class="chip" data-f="in" aria-pressed="false">In stock</button>
+          <button class="chip" data-f="low" aria-pressed="false">Low</button>
+          <button class="chip" data-f="out" aria-pressed="false">Out</button>
+        </div>
+      </div>
+      <div class="row">
+        <label for="lowAt">Low at or below <input type="number" id="lowAt" min="0" value="2"></label>
+        <button class="btn" id="copyBtn">Copy table</button>
+        <span id="clearWrap"></span>
+      </div>
+    </div>
+    <div class="sheet"><table id="sheet"></table></div>
+    <div class="sources" id="sources"></div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+const TABS = ['ashley','non-ashley','bedding'];
+const NAMES = {'ashley':'Ashley','non-ashley':'Non-Ashley','bedding':'Bedding'};
+const BEDDING = /bedding|mattress|sleep|foundation|pillow|protector/i;
+const KNOWN_CATS = /^(Bedroom|Motion|Stationary|Dining|Occasional|Bedding|Mattress(es)?|Accents?|Youth|Upholstery|Rugs?|Lighting|Home Office|Outdoor)(?=[A-Z0-9])/;
+const $ = id => document.getElementById(id);
+const KEY = 'stockboard:v2';
+const store = {
+  get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+const esc = s => String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = n => Number(n).toLocaleString('en-US');
+function toast(msg){ const el=$('toast'); el.textContent=msg; el.hidden=false; clearTimeout(toast.t); toast.t=setTimeout(()=>el.hidden=true,2600); }
+
+// Sample: a few real rows from the reports, marked as sample in the UI.
+const SAMPLE_TEXT = [
+ 'ASH\tB4802 Finaria - CONTAINER ONLY - SOLD AS SET · · Bedroom [unassigned]\t502\t---',
+ 'ASH\tB954 Neo · Modern · Bedroom [A]\t385\t---',
+ 'ASH\tB742 Robbinsdale - Antique White · Modern · Bedroom [RA]\t339\t---',
+ 'HCT\tB101CH Bolton N Cherry · · Bedroom [RU]\t251\t---',
+ 'WWW\t0428 Lyla · · Bedroom [R]\t223\t---',
+ 'GLO\tASPEN-BK Aspen Black · · Bedroom [RU]\t205\t---',
+ 'ASH\tB446 Trinell - Brown · · Bedroom [AH]\t51\t---',
+ 'ASH\tB355 Korabella · · Bedroom [A]\t1\t---',
+ 'ASH\t61003 Next-Gen DuraPella Slate · Modern · Motion [A12]\t228\t---',
+ 'SHF\t5093 Teramo Saddle · Modern · Motion [RU1]\t189\t---',
+ 'ASH\tU27105 Boyington Gray · Modern · Motion [A12]\t133\t---',
+ 'KKH\tKMT6027 Argo Denim · · Motion [R]\t112\t---',
+ 'ASH\t38805 Danum - Stone · · Motion [unassigned]\t1\t---',
+ 'SHE\tCHAIR Arabella · · Stationary [RMHU]\t355\t---',
+ 'ASH\t87213 Altari- Slate · Modern · Stationary [RA]\t261\t---',
+ 'ASH\t92121 Modmax - Ink · Modern · Stationary [A]\t197\t---',
+ 'DAI\t3950C Mona Lisa · Modern · Stationary [RU]\t139\t---',
+ 'ASH\t75005 Darcy- Cobblestone · · Stationary [RAH]\t20\t---',
+ 'ASH\t30902 Emilia - Black · Modern · Stationary [A]\t1\t---'
+].join('\n');
+
+// ---------- parsing ----------
+function splitRows(text){
+  text = text.replace(/\r\n?/g,'\n').replace(/\n+$/,'');
+  const first = text.split('\n').find(l=>l.trim()) || '';
+  const delim = first.includes('\t') ? '\t' : (first.split(';').length > first.split(',').length ? ';' : ',');
+  const rows=[]; let row=[], field='', q=false;
+  for (let i=0;i<text.length;i++){
+    const c=text[i];
+    if (q){ if(c==='"'){ if(text[i+1]==='"'){field+='"';i++;} else q=false; } else field+=c; }
+    else if (c==='"' && field.trim()==='') { q=true; field=''; }
+    else if (c===delim){ row.push(field); field=''; }
+    else if (c==='\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+    else field+=c;
+  }
+  row.push(field); rows.push(row);
+  return rows.map(r=>r.map(v=>v.trim())).filter(r=>r.some(v=>v!==''));
+}
+const isNum = v => /^-?[\d,]+(\.\d+)?$/.test((v||'').trim());
+const toNum = v => parseFloat(String(v).replace(/,/g,'')) || 0;
+
+// "B954 Neo · Modern · Bedroom [A]" -> item, name, style, cat, codes
+function parseDetail(s){
+  const parts = s.split('·').map(x=>x.trim());
+  let first = parts[0] || '';
+  const km = first.match(KNOWN_CATS); if (km) first = first.slice(km[0].length); // "Stationary87213 Altari" glitch
+  const last = parts.length>1 ? parts[parts.length-1] : '';
+  const style = parts.length>2 ? parts.slice(1,-1).filter(Boolean).join(', ') : '';
+  const m = first.match(/^(\S+)\s*(.*)$/) || [null, first, ''];
+  const lm = last.match(/^(.*?)\s*\[([^\]]*)\]\s*$/);
+  return { item:m[1]||'', name:m[2]||'', style, cat:(lm?lm[1]:last).trim() || 'Other', codes: lm ? lm[2] : '' };
+}
+function vendorOf(cell){
+  const t = (cell||'').trim().split(/\s+/).pop() || '';
+  return t.toUpperCase();
+}
+// Detect the system report: [vendor] TAB "item name · style · Category [codes]" TAB qty TAB ---
+function parseReport(rows){
+  const out=[]; let skipped=0, noVendor=[];
+  rows.forEach(r=>{
+    let vendor, detail, qty;
+    if (r.length>=3 && r[1].includes('·')) { vendor=vendorOf(r[0]); detail=r[1]; qty=r[2]; }
+    else if (r.length>=2 && r[0].includes('·')) { vendor=null; detail=r[0]; qty=r[1]; }
+    else { skipped++; return; }
+    if (!isNum(qty)) { skipped++; return; }
+    const d = parseDetail(detail);
+    if (!d.item) { skipped++; return; }
+    const row = { vendor, ...d, qty:toNum(qty) };
+    if (!vendor) noVendor.push(row);
+    out.push(row);
+  });
+  // rows with no vendor column take the most common vendor in this paste
+  if (noVendor.length){
+    const counts={}; out.forEach(r=>{ if(r.vendor) counts[r.vendor]=(counts[r.vendor]||0)+1; });
+    const top = Object.keys(counts).sort((a,b)=>counts[b]-counts[a])[0] || 'ASH';
+    noVendor.forEach(r=>r.vendor=top);
+  }
+  return { rows:out, skipped };
+}
+function looksLikeReport(rows){
+  const hits = rows.filter(r=>(r.length>=3 && r[1].includes('·')) || (r.length>=2 && r[0].includes('·'))).length;
+  return hits >= Math.max(1, rows.length*0.5);
+}
+
+// ---------- state ----------
+let data = store.get(KEY);
+let cur='ashley', catSel='all', vendorSel='all', filter='all', sortKey='qty', sortDir=-1, pending=null, undo=null, lastView=null;
+const lowSaved = store.get('stockboard:lowAt'); if (lowSaved!=null) $('lowAt').value = lowSaved;
+function save(){ if (!data.sample) store.set(KEY, data); }
+
+const keyOf = r => (r.vendor+'|'+r.item+' '+r.name).toUpperCase();
+const isAsh = v => v==='ASH';
+const tabOf = r => BEDDING.test(r.cat) ? 'bedding' : (isAsh(r.vendor) ? 'ashley' : 'non-ashley');
+function loadSample(){ data = { sample:true, rows:[], sources:[] }; applyImport(parseReport(splitRows(SAMPLE_TEXT)).rows, 'Sample', true); }
+
+// A report is a snapshot. For each category in the paste, replace the matching scope:
+// only ASH rows -> ASH rows of that category; only other vendors -> non-ASH rows; mixed -> all rows.
+// Items in scope that are missing from the new report stay with qty 0 (shown as Out).
+function applyImport(rows, name, quiet){
+  if (!quiet) undo = JSON.parse(JSON.stringify(data));
+  if (data.sample){ data = { sample:false, rows:[], sources:[] }; if (quiet) data.sample = true; }
+  // merge duplicates inside the paste
+  const incoming = new Map();
+  rows.forEach(r=>{ const k=keyOf(r); const e=incoming.get(k); if(e) e.qty+=r.qty; else incoming.set(k,{...r}); });
+  const byCat = {};
+  incoming.forEach(r=>{ const c=r.cat.toUpperCase(); (byCat[c]=byCat[c]||{ash:false,other:false}); byCat[c][isAsh(r.vendor)?'ash':'other']=true; });
+  const inScope = r => { const s=byCat[r.cat.toUpperCase()]; if(!s) return false; return (s.ash && s.other) || (s.ash ? isAsh(r.vendor) : !isAsh(r.vendor)); };
+  let gone=0;
+  const kept = [];
+  data.rows.forEach(r=>{
+    if (!inScope(r)) { kept.push(r); return; }
+    if (!incoming.has(keyOf(r))) { if (r.qty>0) gone++; kept.push({...r, qty:0}); }
+  });
+  data.rows = kept.concat([...incoming.values()]);
+  const cats = Object.keys(byCat).map(c=>c[0]+c.slice(1).toLowerCase());
+  data.sources.push({ name, rows:incoming.size, cats, at:new Date().toISOString() });
+  if (data.sources.length>30) data.sources.shift();
+  save();
+  return { count:incoming.size, gone, cats };
+}
+
+function finishImport(res, skipped){
+  $('paste').value=''; pending=null; $('preview').hidden=true;
+  const pl=(n,w)=>`${fmt(n)} ${w}${n===1?'':'s'}`;
+  let msg = `Updated ${pl(res.count,'item')} in ${res.cats.join(', ')}.`;
+  if (res.gone) msg += ` ${pl(res.gone,'item')} left the report and now ${res.gone===1?'shows':'show'} as Out.`;
+  if (skipped) msg += ` ${pl(skipped,'row')} skipped (no quantity).`;
+  $('resultText').textContent = msg; $('result').hidden=false;
+  // jump to the tab that got the most rows if the current one got none
+  render();
+}
+function importText(text, name){
+  const rows = splitRows(text);
+  if (!rows.length){ toast('No rows found. Paste the report rows and try again.'); return; }
+  if (looksLikeReport(rows)){
+    const { rows:parsed, skipped } = parseReport(rows);
+    if (!parsed.length){ toast('No rows with a quantity were found.'); return; }
+    finishImport(applyImport(parsed, name), skipped);
+  } else prepareMapping(rows, name);
+}
+
+// ---------- generic spreadsheet path ----------
+const PAT = {
+  qty:/^(qty|quantity|on ?hand|qoh|soh|avail(able)?|in ?stock|stock|units?|count|total)/i,
+  item:/^(item|sku|model|series|part|style ?#|product ?(id|code|#|no))/i,
+  name:/(desc|description|name|product)/i,
+  vendor:/(vendor|brand|mfr|manufacturer|supplier)/i,
+  cat:/(category|class|dept|department|group)/i
+};
+function prepareMapping(rows, name){
+  let h = rows.slice(0,10).findIndex(r=>r.some(v=>PAT.qty.test(v)));
+  let header, body;
+  if (h>=0){ header=rows[h]; body=rows.slice(h+1); }
+  else { const w=Math.max(...rows.map(r=>r.length)); header=Array.from({length:w},(_,i)=>'Column '+(i+1)); body=rows; }
+  header = header.map((v,i)=>v||('Column '+(i+1)));
+  const used=new Set(), map={};
+  ['qty','vendor','cat','item','name'].forEach(k=>{ const i=header.findIndex((v,ix)=>!used.has(ix)&&PAT[k].test(v)); map[k]=i; if(i>=0) used.add(i); });
+  if (map.qty<0) for(let i=header.length-1;i>=0;i--){ if(!used.has(i) && body.slice(0,20).every(r=>!r[i]||isNum(r[i]))){ map.qty=i; used.add(i); break; } }
+  if (map.item<0) for(let i=0;i<header.length;i++){ if(!used.has(i)){ map.item=i; used.add(i); break; } }
+  pending = { header, body, name };
+  [['Vendor','vendor',true],['Item','item',false],['Name','name',true],['Cat','cat',true],['Qty','qty',false]].forEach(([id,k,opt])=>{
+    const sel=$('map'+id);
+    sel.innerHTML=(opt?'<option value="-1">(none)</option>':'')+header.map((v,i)=>`<option value="${i}">${esc(v)}</option>`).join('');
+    sel.value=String(map[k]>=0?map[k]:(opt?-1:0));
+  });
+  $('previewTitle').textContent='Check columns: '+name;
+  updatePreview(); $('preview').hidden=false; $('result').hidden=true;
+}
+function mappedRows(){
+  const m={}; ['Vendor','Item','Name','Cat','Qty'].forEach(id=>m[id]=+$('map'+id).value);
+  const defVendor = cur==='ashley' ? 'ASH' : 'OTHER';
+  const defCat = cur==='bedding' ? 'Bedding' : 'General';
+  const out=[];
+  pending.body.forEach(r=>{
+    const item=(r[m.Item]||'').trim(); if(!item || /^(grand )?total|subtotal/i.test(item)) return;
+    const q=(r[m.Qty]||'').trim(); if(q!=='' && !isNum(q)) return;
+    out.push({ vendor: m.Vendor>=0 ? vendorOf(r[m.Vendor])||defVendor : defVendor, item, name: m.Name>=0?(r[m.Name]||'').trim():'', style:'',
+      cat: m.Cat>=0 ? ((r[m.Cat]||'').trim()||defCat) : defCat, codes:'', qty: q===''?0:toNum(q) });
+  });
+  return out;
+}
+function updatePreview(){ if(!pending) return; const rs=mappedRows(); $('previewInfo').textContent=`${fmt(rs.length)} rows · ${fmt(rs.reduce((a,r)=>a+r.qty,0))} units. With no vendor column, rows count as ${cur==='ashley'?'Ashley':'Non-Ashley'}.`; }
+
+function readFile(file){
+  if (/\.(csv|tsv|txt)$/i.test(file.name)) { file.text().then(t=>importText(t, file.name)); return; }
+  if (typeof XLSX==='undefined'){ toast('The Excel reader did not load. Save the sheet as CSV and try again.'); return; }
+  file.arrayBuffer().then(buf=>{
+    const wb=XLSX.read(buf,{type:'array'}); const ws=wb.Sheets[wb.SheetNames[0]];
+    const tsv = XLSX.utils.sheet_to_csv(ws,{FS:'\t'});
+    importText(tsv, file.name);
+  }).catch(()=>toast('Could not read that file. Try .xlsx or .csv.'));
+}
+
+// ---------- render ----------
+function status(q, low){ return q<=0 ? 'out' : (q<=low ? 'low' : 'in'); }
+function render(){
+  const wrap=$('wrap'); wrap.dataset.tab=cur;
+  const all = data.rows;
+  TABS.forEach(t=>{ $('tab-'+t).setAttribute('aria-selected', t===cur); $('n-'+t).textContent=fmt(all.filter(r=>tabOf(r)===t && r.qty>0).length); });
+  $('sampleBanner').hidden = !data.sample;
+  const low = Math.max(0, +$('lowAt').value || 0);
+  const tabRows = all.filter(r=>tabOf(r)===cur);
+
+  // category cards
+  const cats = {};
+  tabRows.forEach(r=>{ const c=cats[r.cat]||(cats[r.cat]={items:0,units:0}); if(r.qty>0){ c.items++; c.units+=r.qty; } });
+  const catNames = Object.keys(cats).sort((a,b)=>cats[b].units-cats[a].units);
+  if (catSel!=='all' && !cats[catSel]) catSel='all';
+  const totalUnits = tabRows.reduce((a,r)=>a+Math.max(0,r.qty),0);
+  $('cats').innerHTML = !catNames.length ? '' :
+    `<button class="cat" data-c="all" aria-pressed="${catSel==='all'}"><b>All categories</b><small>${fmt(totalUnits)} units</small></button>` +
+    catNames.map(c=>`<button class="cat" data-c="${esc(c)}" aria-pressed="${catSel===c}"><b>${esc(c)}</b><small>${fmt(cats[c].units)} units · ${fmt(cats[c].items)} items</small></button>`).join('');
+
+  // vendor select (not needed on Ashley tab)
+  const inCat = tabRows.filter(r=>catSel==='all'||r.cat===catSel);
+  const vendors = {}; inCat.forEach(r=>{ if(r.qty>0) vendors[r.vendor]=(vendors[r.vendor]||0)+r.qty; });
+  const vNames = Object.keys(vendors).sort((a,b)=>vendors[b]-vendors[a]);
+  const showVendor = cur!=='ashley';
+  $('vendorSel').hidden = !showVendor;
+  if (showVendor){
+    if (vendorSel!=='all' && !(vendorSel in vendors)) vendorSel='all';
+    $('vendorSel').innerHTML = `<option value="all">All vendors (${vNames.length})</option>` + vNames.map(v=>`<option value="${esc(v)}">${esc(v)} · ${fmt(vendors[v])} units</option>`).join('');
+    $('vendorSel').value = vendorSel;
+  } else vendorSel='all';
+
+  const scoped = inCat.filter(r=>vendorSel==='all'||r.vendor===vendorSel);
+  $('sItems').textContent = fmt(scoped.filter(r=>r.qty>0).length);
+  $('sUnits').textContent = fmt(scoped.reduce((a,r)=>a+Math.max(0,r.qty),0));
+  $('sLow').textContent = fmt(scoped.filter(r=>status(r.qty,low)==='low').length);
+  $('sOut').textContent = fmt(scoped.filter(r=>status(r.qty,low)==='out').length);
+
+  const q = $('search').value.trim().toLowerCase();
+  let rows = scoped.filter(r=>(!q || (r.item+' '+r.name+' '+r.vendor).toLowerCase().includes(q)) && (filter==='all' || status(r.qty,low)===filter));
+  rows.sort((a,b)=>{
+    const va=a[sortKey], vb=b[sortKey];
+    if (typeof va==='number') return (va-vb)*sortDir || a.item.localeCompare(b.item);
+    return String(va).localeCompare(String(vb), undefined, {numeric:true})*sortDir;
+  });
+  const shown = rows.slice(0, 1000);
+  lastView = { rows, low, showVendor };
+  const ar = k => sortKey===k ? (sortDir>0?' ▲':' ▼') : '';
+  const cols = (showVendor?1:0) + 7;
+  let html = '<thead><tr>' + (showVendor?`<th data-k="vendor">Vendor${ar('vendor')}</th>`:'') +
+    `<th data-k="item">Item #${ar('item')}</th><th data-k="name">Name${ar('name')}</th><th data-k="style">Style${ar('style')}</th><th data-k="cat">Category${ar('cat')}</th><th data-k="codes">Codes${ar('codes')}</th><th class="num" data-k="qty">In stock${ar('qty')}</th><th>Status</th></tr></thead><tbody>`;
+  if (!rows.length) html += `<tr><td colspan="${cols}" class="empty">${tabRows.length ? 'No items match this search or filter.' : (cur==='bedding' ? 'No bedding yet. Paste the Bedding or Mattress report above and those rows will land here.' : 'Nothing here yet. Paste a report above.')}</td></tr>`;
+  shown.forEach(r=>{
+    const s=status(r.qty,low);
+    html += '<tr>' + (showVendor?`<td class="ven">${esc(r.vendor)}</td>`:'') +
+      `<td class="sku">${esc(r.item)}</td><td class="name">${esc(r.name)}</td><td class="style">${esc(r.style)}</td><td>${esc(r.cat)}</td><td class="codes">${esc(r.codes)}</td><td class="num total">${fmt(r.qty)}</td>` +
+      `<td><span class="pill ${s==='in'?'ok':s==='low'?'warn':'bad'}">${s==='in'?'In stock':s==='low'?'Low':'Out'}</span></td></tr>`;
+  });
+  html += '</tbody>';
+  if (rows.length) html += `<tfoot><tr><td colspan="${cols-2}">${fmt(rows.length)} items${rows.length>shown.length?` (first ${fmt(shown.length)} shown, search to narrow)`:''}</td><td class="num">${fmt(rows.reduce((a,r)=>a+Math.max(0,r.qty),0))}</td><td></td></tr></tfoot>`;
+  $('sheet').innerHTML = html;
+
+  $('sources').innerHTML = data.sources.length && !data.sample
+    ? '<p class="label">Reports loaded</p><ul>' + data.sources.slice().reverse().slice(0,8).map(s=>`<li>${esc(s.name)} · ${esc((s.cats||[]).join(', '))} · ${fmt(s.rows)} items · ${new Date(s.at).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</li>`).join('') + '</ul>' : '';
+  resetClear();
+}
+
+// ---------- events ----------
+function setTab(t){ if(!TABS.includes(t)) t='ashley'; if(t!==cur){ catSel='all'; vendorSel='all'; } cur=t; render(); }
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{ location.hash=b.dataset.tab; setTab(b.dataset.tab); }));
+window.addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
+$('readBtn').addEventListener('click',()=>{ const v=$('paste').value; if(!v.trim()){ toast('Paste the report rows first'); return; } importText(v,'Pasted report'); });
+$('paste').addEventListener('paste',()=>setTimeout(()=>{ const v=$('paste').value; if(v.trim()) importText(v,'Pasted report'); },0));
+$('fileIn').addEventListener('change',e=>{ const f=e.target.files[0]; if(f) readFile(f); e.target.value=''; });
+const drop=$('drop');
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{ e.preventDefault(); drop.classList.add('over'); }));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{ e.preventDefault(); drop.classList.remove('over'); }));
+drop.addEventListener('drop',e=>{ const f=e.dataTransfer.files[0]; if(f) readFile(f); });
+['mapVendor','mapItem','mapName','mapCat','mapQty'].forEach(id=>$(id).addEventListener('change',updatePreview));
+$('addBtn').addEventListener('click',()=>{ const rs=mappedRows(); if(!rs.length){ toast('No rows with an item and quantity. Check the column choices.'); return; } finishImport(applyImport(rs,pending.name),0); });
+$('cancelBtn').addEventListener('click',()=>{ pending=null; $('preview').hidden=true; });
+$('undoBtn').addEventListener('click',()=>{ if(!undo) return; data=undo; undo=null; if(data.sample) store.set(KEY,null); else save(); $('result').hidden=true; render(); toast('Last report undone'); });
+$('search').addEventListener('input',render);
+$('vendorSel').addEventListener('change',e=>{ vendorSel=e.target.value; render(); });
+$('lowAt').addEventListener('input',()=>{ store.set('stockboard:lowAt',$('lowAt').value); render(); });
+$('cats').addEventListener('click',e=>{ const b=e.target.closest('.cat'); if(!b) return; catSel=b.dataset.c; render(); });
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{ filter=c.dataset.f; document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c)); render(); }));
+$('sheet').addEventListener('click',e=>{ const th=e.target.closest('th[data-k]'); if(!th) return; const k=th.dataset.k; if(sortKey===k) sortDir=-sortDir; else { sortKey=k; sortDir= k==='qty'?-1:1; } render(); });
+$('clearSample').addEventListener('click',()=>{ data={sample:false,rows:[],sources:[]}; save(); render(); });
+function resetClear(){ $('clearWrap').innerHTML='<button class="btn danger" id="clearBtn">Clear all data</button>'; $('clearBtn').onclick=askClear; }
+function askClear(){
+  $('clearWrap').innerHTML='<span class="confirm">Clear every tab? <button class="btn danger small" id="yesClear">Clear</button><button class="btn small" id="noClear">Keep</button></span>';
+  $('yesClear').onclick=()=>{ undo=JSON.parse(JSON.stringify(data)); data={sample:false,rows:[],sources:[]}; save(); render(); toast('All data cleared'); };
+  $('noClear').onclick=resetClear;
+}
+$('copyBtn').addEventListener('click',()=>{
+  if(!lastView) return; const {rows,low,showVendor}=lastView;
+  const lines=[[...(showVendor?['Vendor']:[]),'Item #','Name','Style','Category','Codes','In stock','Status'].join('\t')];
+  rows.forEach(r=>{ const s=status(r.qty,low); lines.push([...(showVendor?[r.vendor]:[]),r.item,r.name,r.style,r.cat,r.codes,r.qty,s==='in'?'In stock':s==='low'?'Low':'Out'].join('\t')); });
+  const text=lines.join('\n');
+  const fallback=()=>{ $('paste').value=text; $('paste').select(); toast('Copy is blocked here. The table is selected in the paste box, so press Ctrl+C.'); };
+  try{ navigator.clipboard.writeText(text).then(()=>toast(`Copied ${fmt(rows.length)} rows. Paste into Excel or an email.`),fallback); }catch(e){ fallback(); }
+});
+
+if (!data || !Array.isArray(data.rows)) loadSample();
+setTab(location.hash.slice(1)||'ashley');
+render();
+})();
+</script>
