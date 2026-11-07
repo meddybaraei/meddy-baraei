@@ -1,0 +1,37 @@
+{
+ "hook": "POV: your old flood light just got a brain",
+ "hook_hl": "brain",
+ "hook_photo": "facebook-post/extras/nest_floodlight_garage.jpg",
+ "clips": [
+  {
+   "photo": "facebook-post/extras/nest_floodlight_garage.jpg",
+   "text": "nest cam with floodlight",
+   "hl": "floodlight"
+  },
+  {
+   "photo": "video/tiktok/photos/nest_left.jpg",
+   "text": "lights on when it sees motion",
+   "hl": "motion"
+  },
+  {
+   "photo": "video/tiktok/photos/nest_top_right.jpg",
+   "text": "garages, driveways, backyards",
+   "hl": "driveways"
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "text": "we swap out your old flood light",
+   "hl": "swap"
+  },
+  {
+   "photo": "facebook-post/extras/nest_floodlight_garage.jpg",
+   "text": "upgrade complete.",
+   "hl": "complete."
+  }
+ ],
+ "cta": [
+  "Upgrade your flood light",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}

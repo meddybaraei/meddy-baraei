@@ -1,0 +1,10 @@
+{"hook": "POV: the space under your deck is a total blind spot", "hook_hl": "blind spot",
+ "hook_photo": "video/weekly/photos/deck_ladder_stairs.jpg",
+ "clips": [
+  {"photo": "video/weekly/photos/deck_installer_wide.jpg", "focus": [0.45, 0.5], "text": "so we fixed it", "hl": "fixed"},
+  {"photo": "video/weekly/photos/deck_installer_mounting.jpg", "focus": [0.5, 0.45], "text": "ring spotlight cam on the deck beam", "hl": "spotlight"},
+  {"photo": "video/weekly/photos/deck_spotlight_closeup.jpg", "focus": [0.5, 0.4], "text": "perfect angle on the whole yard", "hl": "whole yard"},
+  {"photo": "video/weekly/photos/stairs_floodlight.jpg", "focus": [0.5, 0.35], "text": "+ floodlight cam on the stairs", "hl": "floodlight"},
+  {"photo": "video/weekly/photos/deck_ladder_stairs.jpg", "focus": [0.4, 0.3], "text": "backyard covered. done.", "hl": "done."}
+ ],
+ "cta": ["Want your yard covered?", "novaprohome.com/contact", "link in bio"]}

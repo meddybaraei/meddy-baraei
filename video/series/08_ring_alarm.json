@@ -1,0 +1,55 @@
+{
+ "badge": "Smart Home Starter Series \u00b7 8/10",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
+   "kicker": "Product 8 \u00b7 Whole-home security",
+   "title": "Ring Alarm",
+   "body": "A base station, door & window sensors, motion detectors and keypads.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_station.jpg",
+   "kicker": "The base station",
+   "title": "The heart of the system",
+   "body": "Connects every sensor to your phone.",
+   "dur": 3.6
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_window.jpg",
+   "kicker": "Why it's smart",
+   "title": "An alert the moment a door or window opens",
+   "body": "",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/alarm_keypad.jpg",
+   "kicker": "Arm & disarm",
+   "title": "From your phone or the keypad",
+   "body": "",
+   "dur": 3.6
+  },
+  {
+   "art": "list",
+   "title": "Works with",
+   "items": [
+    "Ring doorbells",
+    "Ring cameras",
+    "Smart locks"
+   ],
+   "body": "Optional professional monitoring is available with a Ring plan.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/alarm_motion_detector.jpg",
+   "kicker": "NovaProHome",
+   "title": "We place every sensor & test the system",
+   "body": "Shown: our recent install in Chantilly, VA.",
+   "dur": 3.8
+  }
+ ],
+ "end": [
+  "Shop it & book your install",
+  "novaprohome.com"
+ ]
+}

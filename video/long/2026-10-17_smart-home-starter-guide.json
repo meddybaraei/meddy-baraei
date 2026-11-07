@@ -1,0 +1,559 @@
+{
+ "badge": "Smart Home Starter Guide",
+ "scenes": [
+  {
+   "art": "chapter",
+   "title": "Smart Home Starter Guide",
+   "body": "11 devices explained by a Ring Authorized Dealer & Google Nest Pro in Northern Virginia",
+   "dur": 4.5
+  },
+  {
+   "art": "chapter",
+   "num": 1,
+   "title": "Why automate first?",
+   "body": "Start here",
+   "dur": 3.0
+  },
+  {
+   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
+   "kicker": "Why make your home smart?",
+   "title": "Start with automation first",
+   "body": "Let your home do the work for you.",
+   "dur": 6.1
+  },
+  {
+   "photo": "facebook-post/extras/ring_doorbell_trim.jpg",
+   "kicker": "Reason 1",
+   "title": "See who's at your door from anywhere",
+   "body": "Answer from your phone, at work or on vacation.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/07_ring_floodlight.jpg",
+   "kicker": "Reason 2",
+   "title": "Lights that turn on by themselves",
+   "body": "Motion lights up the driveway and starts recording.",
+   "dur": 5.7
+  },
+  {
+   "art": "thermostat",
+   "kicker": "Reason 3",
+   "title": "Save energy automatically",
+   "body": "A smart thermostat lowers heating & cooling when you're away.",
+   "dur": 5.7
+  },
+  {
+   "art": "lock",
+   "kicker": "Reason 4",
+   "title": "No more lost keys",
+   "body": "Lock from your phone and give guests their own code.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/10_security_collage.jpg",
+   "kicker": "Reason 5",
+   "title": "Peace of mind when you're away",
+   "body": "An alarm system alerts your phone the moment a door opens.",
+   "dur": 5.7,
+   "crop": [
+    0,
+    0.5,
+    0.5,
+    1
+   ]
+  },
+  {
+   "art": "list",
+   "title": "Where to start",
+   "items": [
+    "Video doorbell",
+    "Smart lock",
+    "Smart thermostat",
+    "Cameras & lights",
+    "Alarm system"
+   ],
+   "body": "Next: one video for each product.",
+   "dur": 7.4
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "NovaProHome",
+   "title": "We install it and set it all up",
+   "body": "Ring Authorized Dealer & Google Nest Pro in Northern Virginia.",
+   "dur": 6.1
+  },
+  {
+   "art": "chapter",
+   "num": 2,
+   "title": "Ring Video Doorbell",
+   "body": "See who's at the door",
+   "dur": 3.0
+  },
+  {
+   "product": "video/series/photos/product_ring_doorbell_4k_pro.png",
+   "kicker": "Product 1 \u00b7 The best place to start",
+   "title": "Ring Video Doorbell",
+   "body": "See, hear and talk to anyone at your door.",
+   "dur": 5.1
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "kicker": "Our install",
+   "title": "Wired Doorbell 4K Pro",
+   "body": "Mounted on the door trim, wired and set up.",
+   "dur": 5.1
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_storm_door.jpg",
+   "kicker": "Why it's smart",
+   "title": "Alerts on your phone",
+   "body": "Get notified when someone rings or moves near the door.",
+   "dur": 5.1
+  },
+  {
+   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
+   "kicker": "Wired or battery",
+   "title": "Wired models never need charging",
+   "body": "Battery models install almost anywhere.",
+   "dur": 5.1
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "NovaProHome",
+   "title": "We mount it, wire it & set up the app",
+   "body": "",
+   "dur": 5.1
+  },
+  {
+   "art": "chapter",
+   "num": 3,
+   "title": "Smart Lock",
+   "body": "Never worry about lost keys",
+   "dur": 3.0
+  },
+  {
+   "art": "lock",
+   "kicker": "Product 2 \u00b7 Automation that saves time",
+   "title": "Smart Lock",
+   "body": "Lock and unlock your door from your phone.",
+   "dur": 5.7
+  },
+  {
+   "art": "lock",
+   "kicker": "Why it's smart",
+   "title": "A code for every guest",
+   "body": "Family, cleaners and Airbnb guests each get their own code.",
+   "dur": 5.7
+  },
+  {
+   "art": "lock",
+   "kicker": "Peace of mind",
+   "title": "Auto-lock & alerts",
+   "body": "Many locks can lock themselves and tell you who came in.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "NovaProHome",
+   "title": "We install it & set up every code",
+   "body": "Ask us which lock fits your door.",
+   "dur": 5.7
+  },
+  {
+   "art": "chapter",
+   "num": 4,
+   "title": "Google Nest Thermostat",
+   "body": "Save energy automatically",
+   "dur": 3.0
+  },
+  {
+   "art": "thermostat",
+   "kicker": "Product 3 \u00b7 Automation that saves money",
+   "title": "Google Nest Learning Thermostat",
+   "body": "Learns the temperatures you like and builds a schedule.",
+   "dur": 5.9
+  },
+  {
+   "art": "thermostat",
+   "kicker": "Why it's smart",
+   "title": "Eco mode when you're away",
+   "body": "Saves energy automatically when nobody's home.",
+   "dur": 5.7
+  },
+  {
+   "art": "thermostat",
+   "kicker": "Control from anywhere",
+   "title": "Adjust from your phone",
+   "body": "Come home to the right temperature.",
+   "dur": 5.7
+  },
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
+   "kicker": "NovaProHome",
+   "title": "We check your wiring first",
+   "body": "Not sure about a C-wire? We check compatibility, then install it.",
+   "dur": 5.4
+  },
+  {
+   "art": "chapter",
+   "num": 5,
+   "title": "Ring Floodlight Cam",
+   "body": "Light up the driveway",
+   "dur": 3.0
+  },
+  {
+   "photo": "video/series/photos/ring_floodlight_siding.jpg",
+   "kicker": "Product 4 \u00b7 Lights + camera in one",
+   "title": "Ring Floodlight Cam",
+   "body": "Bright motion-activated lights with a built-in camera.",
+   "dur": 5.1
+  },
+  {
+   "photo": "video/series/photos/ring_floodlight_back_door.jpg",
+   "kicker": "Why it's smart",
+   "title": "Lights up when someone walks by",
+   "body": "And sends a live view to your phone.",
+   "dur": 5.1
+  },
+  {
+   "photo": "facebook-post/07_ring_floodlight.jpg",
+   "kicker": "Perfect for",
+   "title": "Driveways, garages & backyards",
+   "body": "Built-in siren you can trigger from the app.",
+   "dur": 5.1
+  },
+  {
+   "photo": "facebook-post/extras/ring_floodlight_ivy.jpg",
+   "kicker": "NovaProHome",
+   "title": "We replace your old flood light",
+   "body": "Clean wiring, aimed right, set up in the app.",
+   "dur": 5.1
+  },
+  {
+   "art": "chapter",
+   "num": 6,
+   "title": "Ring Spotlight Cam",
+   "body": "Light + video anywhere",
+   "dur": 3.0
+  },
+  {
+   "photo": "facebook-post/extras/ring_spotlight_cam_stone.jpg",
+   "kicker": "Product 5 \u00b7 Back doors & side yards",
+   "title": "Ring Spotlight Cam",
+   "body": "A camera with LED spotlights built in.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "Why it's smart",
+   "title": "Light + video where you need it",
+   "body": "Motion turns on the lights and starts recording.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/01_arlington_ring_install.jpg",
+   "kicker": "Power options",
+   "title": "Wired, battery or solar",
+   "body": "We help you pick the right one for each spot.",
+   "dur": 5.7,
+   "crop": [
+    0,
+    0.15,
+    0.57,
+    0.92
+   ]
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "NovaProHome",
+   "title": "We mount it at the right height & angle",
+   "body": "",
+   "dur": 5.7
+  },
+  {
+   "art": "chapter",
+   "num": 7,
+   "title": "Ring Solar Panel",
+   "body": "No outlet? No problem",
+   "dur": 3.0
+  },
+  {
+   "photo": "facebook-post/extras/ring_solar_floodlight.jpg",
+   "kicker": "Product 6 \u00b7 No outlet? No problem",
+   "title": "Ring Solar Panel",
+   "body": "Keeps battery cameras and doorbells charged with sunlight.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "kicker": "Why it's smart",
+   "title": "Fewer battery swaps",
+   "body": "Solar keeps the battery topped up.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/03_mclean_solar_install.jpg",
+   "kicker": "Tip",
+   "title": "Give it direct sunlight",
+   "body": "Placement matters. We find the sunniest spot.",
+   "dur": 5.7,
+   "crop": [
+    0.51,
+    0.53,
+    0.99,
+    0.9
+   ]
+  },
+  {
+   "photo": "facebook-post/03_mclean_solar_install.jpg",
+   "kicker": "NovaProHome",
+   "title": "4 solar panels installed in McLean",
+   "body": "Neat, secure, no wires to run.",
+   "dur": 5.7,
+   "crop": [
+    0.67,
+    0.02,
+    0.99,
+    0.53
+   ]
+  },
+  {
+   "art": "chapter",
+   "num": 8,
+   "title": "Ring Stick Up Cam",
+   "body": "Fits almost anywhere",
+   "dur": 3.0
+  },
+  {
+   "product": "video/series/photos/product_ring_stick_up_cam_4k.png",
+   "kicker": "Product 7 \u00b7 Inside or outside",
+   "title": "Ring Stick Up Cam",
+   "body": "A small camera that fits almost anywhere.",
+   "dur": 5.1
+  },
+  {
+   "photo": "facebook-post/10_security_collage.jpg",
+   "kicker": "Our install",
+   "title": "Watching the garage",
+   "body": "Motion alerts and live view on your phone.",
+   "dur": 5.1,
+   "crop": [
+    0.505,
+    0,
+    1,
+    0.33
+   ],
+   "focus": [
+    0.85,
+    0.5
+   ]
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "Power options",
+   "title": "Battery, plug-in or solar",
+   "body": "Wall, ceiling or tabletop mount.",
+   "dur": 5.1
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "NovaProHome",
+   "title": "We install & connect every camera",
+   "body": "",
+   "dur": 5.1
+  },
+  {
+   "art": "chapter",
+   "num": 9,
+   "title": "Ring Alarm",
+   "body": "Whole-home security",
+   "dur": 3.0
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
+   "kicker": "Product 8 \u00b7 Whole-home security",
+   "title": "Ring Alarm",
+   "body": "A base station, door & window sensors, motion detectors and keypads.",
+   "dur": 5.4
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_station.jpg",
+   "kicker": "The base station",
+   "title": "The heart of the system",
+   "body": "Connects every sensor to your phone.",
+   "dur": 4.9
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_window.jpg",
+   "kicker": "Why it's smart",
+   "title": "An alert the moment a door or window opens",
+   "body": "",
+   "dur": 5.1
+  },
+  {
+   "photo": "video/weekly/photos/alarm_keypad.jpg",
+   "kicker": "Arm & disarm",
+   "title": "From your phone or the keypad",
+   "body": "",
+   "dur": 4.9
+  },
+  {
+   "art": "list",
+   "title": "Works with",
+   "items": [
+    "Ring doorbells",
+    "Ring cameras",
+    "Smart locks"
+   ],
+   "body": "Optional professional monitoring is available with a Ring plan.",
+   "dur": 5.7
+  },
+  {
+   "photo": "video/weekly/photos/alarm_motion_detector.jpg",
+   "kicker": "NovaProHome",
+   "title": "We place every sensor & test the system",
+   "body": "Shown: our recent install in Chantilly, VA.",
+   "dur": 5.1
+  },
+  {
+   "art": "chapter",
+   "num": 10,
+   "title": "Google Nest Cam",
+   "body": "Smart alerts that know what they see",
+   "dur": 3.0
+  },
+  {
+   "photo": "facebook-post/06_nest_cam.jpg",
+   "kicker": "Product 9 \u00b7 Smart alerts",
+   "title": "Google Nest Cam",
+   "body": "Indoor and outdoor cameras from Google.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Why it's smart",
+   "title": "Knows a person from a car or an animal",
+   "body": "So you get the alerts that matter.",
+   "dur": 5.7,
+   "crop": [
+    0.01,
+    0.14,
+    0.57,
+    0.925
+   ]
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Works with",
+   "title": "The Google Home app",
+   "body": "See all your cameras in one place.",
+   "dur": 5.7,
+   "crop": [
+    0.58,
+    0.54,
+    0.99,
+    0.925
+   ]
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "NovaProHome",
+   "title": "Google Nest Pro installs",
+   "body": "Mounted, connected and explained.",
+   "dur": 5.7
+  },
+  {
+   "art": "chapter",
+   "num": 11,
+   "title": "Nest Cam with Floodlight",
+   "body": "Your flood light, upgraded",
+   "dur": 3.0
+  },
+  {
+   "photo": "facebook-post/extras/nest_floodlight_garage.jpg",
+   "kicker": "Product 10 \u00b7 Light up your driveway",
+   "title": "Google Nest Cam with Floodlight",
+   "body": "A Nest camera with two bright LED lights.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Why it's smart",
+   "title": "Lights turn on when it sees motion",
+   "body": "And you can turn them on from your phone.",
+   "dur": 5.7,
+   "crop": [
+    0.58,
+    0.14,
+    0.99,
+    0.53
+   ]
+  },
+  {
+   "photo": "facebook-post/02_nest_install.jpg",
+   "kicker": "Perfect for",
+   "title": "Garages, driveways & backyards",
+   "body": "Wired, so it never needs charging.",
+   "dur": 5.7,
+   "crop": [
+    0.01,
+    0.14,
+    0.57,
+    0.925
+   ],
+   "focus": [
+    0.6,
+    0.4
+   ]
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "NovaProHome",
+   "title": "We replace your old flood light",
+   "body": "Google Nest Pro installation in Northern Virginia.",
+   "dur": 5.7
+  },
+  {
+   "art": "chapter",
+   "num": 12,
+   "title": "Ring Elite 180 4K",
+   "body": "The whole driveway in one view",
+   "dur": 3.0
+  },
+  {
+   "product": "video/series/photos/product_ring_elite_180.png",
+   "kicker": "Bonus \u00b7 Ring's new pro camera",
+   "title": "Ring Elite 180 4K",
+   "body": "Three lenses in one camera for a wide 180\u00b0 view.",
+   "dur": 5.7
+  },
+  {
+   "product": "video/series/photos/product_ring_elite_180.png",
+   "kicker": "Perfect for",
+   "title": "Driveways, parking areas & businesses",
+   "body": "A wide view from a single camera.",
+   "dur": 5.4
+  },
+  {
+   "art": "list",
+   "title": "Power options",
+   "items": [
+    "Plug-in",
+    "PoE (Power over Ethernet)"
+   ],
+   "body": "PoE runs power and internet through one cable. We run it for you.",
+   "dur": 5.7
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "NovaProHome",
+   "title": "We run the cable, mount it & set it up",
+   "body": "Ring Authorized Dealer in Northern Virginia.",
+   "dur": 5.1
+  }
+ ],
+ "end": [
+  "Ready to make your home smart?",
+  "novaprohome.com"
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/series/photos/ring_doorbell_storm_door.jpg",
+   "kicker": "Who is it for?",
+   "title": "Worried about parents living alone?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_storm_door.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "See the door, automatic night lights, family check-ins. Also great for young families and travelers.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "kicker": "Builders · remodelers · agents",
+   "title": "Buyers expect a smart home on day one",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Doorbell, lock, thermostat and solid Wi-Fi, installed and handed off. Permits handled.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

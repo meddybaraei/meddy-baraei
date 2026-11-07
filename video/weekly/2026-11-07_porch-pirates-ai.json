@@ -1,0 +1,61 @@
+{
+ "badge": "Smart Home Tips · Porch Pirates",
+ "shop_qr": false,
+ "scenes": [
+  {
+   "clip": "video/broll/omni_porch_thief.mp4",
+   "ai": true,
+   "ai_label": "AI-generated dramatization",
+   "kicker": "Porch pirate season",
+   "title": "Gone in about 5 seconds",
+   "body": "Here's how to stop it.",
+   "dur": 6.0,
+   "panel_top": true
+  },
+  {
+   "clip": "video/broll/omni_phone_alert.mp4",
+   "ai": true,
+   "ai_label": "AI-generated dramatization",
+   "kicker": "Tip 1 · Get the alert",
+   "title": "Motion and package alerts on",
+   "body": "See it live, and talk through the doorbell.",
+   "dur": 5.0,
+   "panel_top": false
+  },
+  {
+   "clip": "video/broll/omni_porch_light_scare.mp4",
+   "ai": true,
+   "ai_label": "AI-generated dramatization",
+   "kicker": "Tip 2 · Light it up",
+   "title": "A motion light at the door",
+   "body": "Bright light makes most thieves turn around.",
+   "dur": 5.5
+  },
+  {
+   "clip": "video/broll/veo_package_porch.mp4",
+   "ai": true,
+   "ai_label": "AI-generated b-roll",
+   "kicker": "Tip 3 · Hide the box",
+   "title": "Delivery notes: out of sight",
+   "body": "Ask carriers to leave packages where the street can't see them.",
+   "dur": 3.6
+  },
+  {
+   "art": "list",
+   "kicker": "Save this",
+   "title": "Porch pirate checklist",
+   "items": [
+    "Camera that sees the ground",
+    "Package + motion alerts on",
+    "Motion light at the door",
+    "Delivery out of sight",
+    "Lockbox for big orders"
+   ],
+   "dur": 4.2
+  }
+ ],
+ "end": [
+  "Want your porch covered? Follow for Smart Home Fixes",
+  "novaprohome.com"
+ ]
+}

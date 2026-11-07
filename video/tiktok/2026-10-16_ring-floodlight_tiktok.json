@@ -1,0 +1,37 @@
+{
+ "hook": "POV: someone walks up your driveway at 2 AM",
+ "hook_hl": "2 AM",
+ "hook_photo": "video/series/photos/ring_floodlight_back_door.jpg",
+ "clips": [
+  {
+   "photo": "video/series/photos/ring_floodlight_siding.jpg",
+   "text": "ring floodlight cam goes up",
+   "hl": "floodlight"
+  },
+  {
+   "photo": "video/series/photos/ring_floodlight_back_door.jpg",
+   "text": "lights blast on when someone walks by",
+   "hl": "lights"
+  },
+  {
+   "photo": "facebook-post/07_ring_floodlight.jpg",
+   "text": "live view straight to your phone",
+   "hl": "phone"
+  },
+  {
+   "photo": "facebook-post/extras/ring_floodlight_ivy.jpg",
+   "text": "+ a siren you trigger from the app",
+   "hl": "siren"
+  },
+  {
+   "photo": "facebook-post/07_ring_floodlight.jpg",
+   "text": "driveway: handled.",
+   "hl": "handled."
+  }
+ ],
+ "cta": [
+  "Want your driveway lit up?",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}

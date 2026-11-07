@@ -1,0 +1,9 @@
+{"hook": "POV: your garage gets its own doorbell AND a keypad", "hook_hl": "keypad",
+ "hook_photo": "video/weekly/photos/garage_doorbell_wide.jpg",
+ "clips": [
+  {"photo": "video/weekly/photos/garage_doorbell_close.jpg", "text": "second doorbell by the garage", "hl": "second"},
+  {"photo": "video/weekly/photos/garage_keypad_closed.jpg", "text": "wireless garage keypad", "hl": "keypad"},
+  {"photo": "video/weekly/photos/garage_keypad_open.jpg", "text": "type your code, door opens", "hl": "opens"},
+  {"photo": "video/weekly/photos/garage_doorbell_wide.jpg", "text": "done in under an hour", "hl": "hour"}
+ ],
+ "cta": ["Want this at your home?", "novaprohome.com/contact", "link in bio"]}

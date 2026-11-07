@@ -1,0 +1,60 @@
+{
+ "title": "The AI Prompt Formula in 30 Seconds",
+ "voice": "Charon",
+ "style": "Read this like a funny, energetic friend in a quick social video. Playful on the joke, then clear and upbeat.",
+ "segments": [
+  {
+   "kicker": "Be honest",
+   "title": "You: \"write an email.\" AI: writes a novel.",
+   "bullets": [
+    "WHO",
+    "WHAT",
+    "DETAILS",
+    "FORMAT"
+   ],
+   "say": "You ask AI to write a quick email, and it writes you a novel. Sound familiar? Here is the fix, in four words. Who. What. Details. Format.",
+   "accent": [
+    255,
+    90,
+    120
+   ],
+   "big": "4",
+   "skip": true
+  },
+  {
+   "kicker": "The formula",
+   "title": "Try it like this",
+   "bullets": [
+    "WHO: act as my store manager",
+    "WHAT: write a reply to this customer",
+    "DETAILS: the facts and the tone",
+    "FORMAT: friendly, 3 sentences"
+   ],
+   "say": "Who: give it a role, like, act as my store manager. What: the job, write a reply to this customer. Details: the facts and the tone you want. Format: friendly, three sentences.",
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "chat": {
+    "user": "Act as my store manager. Write a reply to a customer asking when their sofa arrives. Friendly, 3 sentences.",
+    "ai": "Hi Sarah, thanks for checking in! Your sofa is scheduled for Thursday between 10 AM and 2 PM. We'll text you when the driver is 30 minutes away."
+   }
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Like & subscribe for more",
+   "bullets": [
+    "Better details in, better answers out",
+    "👍 Like if this helped",
+    "🔔 Subscribe: new lessons every week"
+   ],
+   "say": "Better details in, better answers out. If that helped, hit like and subscribe to Run It With AI for a new lesson every week.",
+   "accent": [
+    0,
+    200,
+    170
+   ]
+  }
+ ]
+}
