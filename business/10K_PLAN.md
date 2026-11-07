@@ -48,3 +48,8 @@ One offer, one avatar, one channel for 90 days (MILLION_PLAN §2). New ideas go 
 3. Answer quote requests within 5 minutes (turn on an auto-reply text).
 4. Ask for a review and 1–2 referral names on every job.
 5. Offer the next device at every handoff.
+
+## Lead log notes (Nov 7)
+- Lead sources, last 60 days: **Ring referrals about 9** (the biggest by far), website/word of mouth about 4, Google search 1 (Springfield walkthrough Nov 17). Google Business Profile Oct 8–29: about 57 views, 2 website clicks, 1 call, 5 five-star reviews.
+- Lost Nov 7: a commercial Ring camera quote went to another Amazon-approved vendor offering 15% off cameras. Lesson (Hormozi): don't race to the lowest price. Quote a **package** with a written fixed price, a 1-year workmanship guarantee and a Health Check, and follow up within 24 hours.
+- Nov 7: Gmail drafts written for Meddy to review: 5 review requests (finished Ring/website jobs), CMC Management (property manager, 3 floodlights) follow-up, an Alex re-confirm, and Eli's thermostat question. Nothing is sent without Meddy.
