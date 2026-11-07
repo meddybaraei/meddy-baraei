@@ -115,3 +115,8 @@ See video/FREE_LEADS_PLAN.md. Google Business Profile is NOT connected in Metric
   - Limo company: Fri Oct 30 meeting cancelled by them. Meddy will propose a day next week.
   - eVA W-9: Meddy resubmitted it signed and dated on Oct 27. No acceptance email yet.
   - No replies yet from DCJS, Ring Pro Channel, the news sites or the 3 stalled quotes.
+
+## /watch skill (installed Nov 7 from github.com/bradautomates/claude-video, MIT)
+- Lives in `.claude/skills/watch/`. It lets Claude watch a video and answer questions about it, using Gemini.
+- In a new cloud container, run this once: `mkdir -p ~/.config/watch && printf 'WATCH_ENGINE=gemini\nGEMINI_API_KEY=proxy-injected-placeholder\n' > ~/.config/watch/.env && python3 .claude/skills/watch/scripts/setup.py --engine gemini`. The real Gemini key is added by the network proxy, so it never goes in the file.
+- Works: local video files (tested on the Chantilly Short, about 25 s). Fails: YouTube links (Gemini returns HTTP 502 here), and the local engine (youtube.com is blocked from this environment). To review a YouTube video, ask Meddy for the file or a Google Drive link.
