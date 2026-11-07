@@ -21,6 +21,7 @@ BIZ_ID = SITE + "/#business"
 SERVICES = [
     {
         "slug": "video-doorbells",
+        "photos": [('chantilly-doorbell-after', 'Ring doorbell replacing an old intercom, Chantilly'), ('great-falls-doorbell-after', 'Slim wired doorbell upgrade, Great Falls'), ('ring-doorbell-brick', 'Wired video doorbell on brick')],
         "noun": "video doorbells",
         "name": "Video Doorbell Installation",
         "short": "Video Doorbells",
@@ -52,6 +53,7 @@ SERVICES = [
     },
     {
         "slug": "security-cameras",
+        "photos": [('ring-floodlight-brick', 'Floodlight camera on brick'), ('vienna-nest-cam-garage', 'Nest camera over the driveway, Vienna'), ('reston-ring-floodlight', 'Floodlight camera, Reston')],
         "noun": "security cameras",
         "name": "Security Camera Installation",
         "short": "Security Cameras",
@@ -83,6 +85,7 @@ SERVICES = [
     },
     {
         "slug": "ring-alarm",
+        "photos": [('ring-alarm-keypad', 'Ring Alarm keypad by the entry'), ('ring-alarm-pro-base', 'Ring Alarm Pro base station')],
         "noun": "Ring Alarm systems",
         "name": "Ring Alarm Installation",
         "short": "Ring Alarm",
@@ -113,6 +116,7 @@ SERVICES = [
     },
     {
         "slug": "nest-thermostats",
+        "photos": [('thermostat-wiring-check', "Checking the old thermostat's wiring before an install")],
         "noun": "Nest thermostats",
         "name": "Nest Thermostat Installation",
         "short": "Nest Thermostats",
@@ -143,6 +147,7 @@ SERVICES = [
     },
     {
         "slug": "smart-locks",
+        "photos": [('smart-lock-keypad', 'Keypad smart lock, fitted and aligned')],
         "noun": "smart locks",
         "name": "Smart Lock Installation",
         "short": "Smart Locks",
@@ -366,6 +371,16 @@ def service_page(parts, s):
     steps = "\n".join(f"<li><span><b>{esc(t)}.</b> {esc(d)}</span></li>" for t, d in s["steps"])
     know = "\n".join(f"<p><b>{esc(t)}{'' if t[-1] in '?.!' else '.'}</b> {esc(d)}</p>" for t, d in s["know"])
     cities = "".join(f"<span>{esc(c)}</span>" for c in CITIES)
+    photos = ""
+    if s.get("photos"):
+        figs = "".join(f'<figure class="shot"><img src="/assets/work/{f}.jpg" alt="{esc(c)}" loading="lazy" width="1050" height="1400"><figcaption>{esc(c)}</figcaption></figure>' for f, c in s["photos"])
+        photos = f"""<section class="band">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">From our installs</span><h2>Real {esc(s['noun'])} jobs by {NAME}</h2></div>
+    <div class="photos">{figs}</div>
+  </div>
+</section>
+"""
     related = "".join(f'<a href="/services/{o["slug"]}/">{esc(o["short"])} →</a>' for o in SERVICES if o is not s)
     body = f"""<section class="page-hero">
   <div class="wrap">
@@ -382,7 +397,7 @@ def service_page(parts, s):
     <div class="panel"><h2>How we install</h2><ol class="numlist">{steps}</ol></div>
   </div>
 </section>
-<section class="band band--alt">
+{photos}<section class="band band--alt">
   <div class="wrap">
     <div class="head"><span class="eyebrow">Good to know</span><h2>Advice from our installs</h2></div>
     <div class="prose">{know}</div>

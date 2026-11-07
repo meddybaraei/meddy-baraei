@@ -396,6 +396,26 @@ select:focus { outline: none; border-color: var(--gold); }
 @media (max-width: 940px) { .two-col { grid-template-columns: 1fr; } .related { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .related { grid-template-columns: 1fr; } .panel { padding: 24px 18px; } }
 
+/* Recent work */
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-bottom: 22px; }
+.ba__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 10px 10px 16px; }
+.ba__pair figure { margin: 0; position: relative; }
+.ba__pair img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px; display: block; }
+.ba__pair p { grid-column: 1 / -1; color: var(--muted); font-size: .95rem; padding: 6px 6px 0; }
+.ba__pair p b { color: var(--soft); }
+.ba__tag { position: absolute; left: 10px; top: 10px; background: rgba(10,10,10,.82); color: var(--soft); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 10px; border-radius: 4px; }
+.ba__tag--after { background: var(--gold); color: var(--gold-ink); }
+.shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.shot { margin: 0; position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--rule); background: var(--panel); }
+.shot img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; display: block; transition: transform .4s; }
+.shot:hover img { transform: scale(1.04); }
+.shot figcaption { position: absolute; inset: auto 0 0 0; padding: 30px 14px 12px; background: linear-gradient(transparent, rgba(0,0,0,.85)); font-size: .88rem; font-weight: 600; color: #fff; display: grid; gap: 2px; }
+.shot figcaption span { color: var(--gold); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; }
+.photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 1100px) { .shots { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 940px) { .ba { grid-template-columns: 1fr; } .photos { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .shots { grid-template-columns: 1fr 1fr; gap: 10px; } .shot figcaption { font-size: .8rem; padding: 24px 10px 10px; } }
+
 /* Gentle entrance from a visible resting state */
 @media (prefers-reduced-motion: no-preference) {
   .rise { animation: rise .8s ease both; }
