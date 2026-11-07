@@ -21,6 +21,7 @@ BIZ_ID = SITE + "/#business"
 SERVICES = [
     {
         "slug": "video-doorbells",
+        "video": ("esbnKEEaq_M", "This Old Intercom Just Became a Video Doorbell (Chantilly install)"),
         "photos": [('chantilly-doorbell-after', 'Ring doorbell replacing an old intercom, Chantilly'), ('great-falls-doorbell-after', 'Slim wired doorbell upgrade, Great Falls'), ('ring-doorbell-brick', 'Wired video doorbell on brick')],
         "noun": "video doorbells",
         "name": "Video Doorbell Installation",
@@ -371,13 +372,17 @@ def service_page(parts, s):
     steps = "\n".join(f"<li><span><b>{esc(t)}.</b> {esc(d)}</span></li>" for t, d in s["steps"])
     know = "\n".join(f"<p><b>{esc(t)}{'' if t[-1] in '?.!' else '.'}</b> {esc(d)}</p>" for t, d in s["know"])
     cities = "".join(f"<span>{esc(c)}</span>" for c in CITIES)
+    vid = ""
+    if s.get("video"):
+        vid_id, vid_title = s["video"]
+        vid = f'''<div class="vid" style="margin-top:22px"><div class="vid__copy"><span class="eyebrow">Watch the install</span><h3>{esc(vid_title)}</h3><a class="btn btn--dark btn--sm" href="https://www.youtube.com/@NovaProHome?sub_confirmation=1" target="_blank" rel="noopener">More installs on YouTube</a></div><div class="vid__frame"><iframe src="https://www.youtube-nocookie.com/embed/{vid_id}" title="{esc(vid_title)}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>'''
     photos = ""
     if s.get("photos"):
         figs = "".join(f'<figure class="shot"><img src="/assets/work/{f}.jpg" alt="{esc(c)}" loading="lazy" width="1050" height="1400"><figcaption>{esc(c)}</figcaption></figure>' for f, c in s["photos"])
         photos = f"""<section class="band">
   <div class="wrap">
     <div class="head"><span class="eyebrow">From our installs</span><h2>Real {esc(s['noun'])} jobs by {NAME}</h2></div>
-    <div class="photos">{figs}</div>
+    <div class="photos">{figs}</div>{vid}
   </div>
 </section>
 """

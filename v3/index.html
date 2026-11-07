@@ -432,6 +432,15 @@ select:focus { outline: none; border-color: var(--gold); }
 @media (max-width: 940px) { .ba { grid-template-columns: 1fr; } .photos { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .shots { grid-template-columns: 1fr 1fr; gap: 10px; } .shot figcaption { font-size: .8rem; padding: 24px 10px 10px; } }
 
+/* Video */
+.vid { display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: center; background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; padding: 32px; margin-bottom: 22px; }
+.vid__copy { display: grid; gap: 14px; justify-items: start; }
+.vid__copy h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); }
+.vid__copy p { color: var(--muted); max-width: 52ch; }
+.vid__frame { position: relative; width: 100%; max-width: 340px; aspect-ratio: 9 / 16; border-radius: 12px; overflow: hidden; background: #000; border: 1px solid var(--rule); }
+.vid__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 940px) { .vid { grid-template-columns: 1fr; padding: 24px 18px; } .vid__frame { margin: 0 auto; max-width: 320px; } }
+
 /* Gentle entrance from a visible resting state */
 @media (prefers-reduced-motion: no-preference) {
   .rise { animation: rise .8s ease both; }
@@ -766,6 +775,15 @@ select:focus { outline: none; border-color: var(--gold); }
           <figure><img src="/assets/work/great-falls-doorbell-after.jpg" alt="New slim wired Ring doorbell, Great Falls" loading="lazy" width="1050" height="1400"><span class="ba__tag ba__tag--after">After</span></figure>
           <p><b>Great Falls:</b> an older doorbell on a bulky wedge swapped for a slim wired model.</p>
         </div>
+      </div>
+      <div class="vid">
+        <div class="vid__copy">
+          <span class="eyebrow">Watch the install</span>
+          <h3>This old intercom just became a video doorbell</h3>
+          <p>Watch the Chantilly job above from start to finish: the old NuTone intercom comes out, the wiring gets checked, and a wired Ring doorbell goes in.</p>
+          <a class="btn btn--dark btn--sm" href="https://www.youtube.com/@NovaProHome?sub_confirmation=1" target="_blank" rel="noopener">More installs on YouTube</a>
+        </div>
+        <div class="vid__frame"><iframe src="https://www.youtube-nocookie.com/embed/esbnKEEaq_M" title="This Old Intercom Just Became a Video Doorbell, NovaProHome install in Chantilly" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       </div>
       <div class="shots">
         <figure class="shot"><img src="/assets/work/chantilly-doorbell-after.jpg" alt="Ring video doorbell replacing an old intercom, Chantilly" loading="lazy" width="1050" height="1400"><figcaption>Ring video doorbell replacing an old intercom<span>Chantilly</span></figcaption></figure>
