@@ -54,3 +54,11 @@ Rules from now on:
 - Realistic 30-day expectation (Gemini): +10-25 per account; judge NovaProHome by leads/calls, not followers.
 - Install videos include a simple wiring diagram (video/tools/make_wiring.py) when wiring is involved (Meddy, Nov 4). Diagrams are "typical wiring", never a claim about a specific house.
 - Show the people side: account setup, family sharing, training. It's the strongest trust content.
+
+## Techniques from Hormozi x Diary of a CEO (Nov 7), see business/10K_PLAN.md §8
+- Open loop: promise the payoff, then make them wait for it (still on topic).
+- Packaged frameworks: give every tip a short memorable name ("The 3-Point Front Door Check", "The 4 Rs").
+- Fast cuts (1–2 s) in the first 10 s, then let the lesson breathe.
+- Real story and real struggle from Meddy (true details only) beat polish.
+- Say the goal out loud: "trying to reach 100 subscribers by Dec 31". Honest, no fake reverse psychology.
+- Every post serves the $10k plan: book installs first (speed to lead, reviews, referrals, add-ons).
