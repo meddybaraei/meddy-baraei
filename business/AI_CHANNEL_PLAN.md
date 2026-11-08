@@ -282,3 +282,5 @@ Topic list:
 12. Year-end: what actually worked (viewer results)
 Cadence: one money Short per week, plus a money lesson every other Friday. First lesson: Fri Nov 13, "How to Make Money With AI (Honest Beginner's Guide)".
 - Nov 3: Shorts 003a (Wed Nov 11), 003b (Thu Nov 12), 003c (Sat Nov 14) scheduled.
+- Nov 8 weekly run: subscribers Run It With AI 2 (from 1). NovaProHome YouTube 6, Facebook 9, TikTok 7, LinkedIn 9: total 33, up from 23 on Nov 3. Video 1: 15 views, 19 s avg view, 1 like. The Shorts from Nov 4 on aren't in Metricool's per-video data yet.
+- Scheduled: lesson 3 "Claude vs ChatGPT vs Gemini" Tue Nov 10 4 PM (3:57); lesson 4 "How to Make Money With AI (Honest Beginner's Guide)" Fri Nov 13 4 PM (4:32). This week's Shorts were already booked (Nov 9, 11, 12, 14, 15). Prices in lesson 3 are kept general ("free plans; main paid plans about $20/month; check official pages").
