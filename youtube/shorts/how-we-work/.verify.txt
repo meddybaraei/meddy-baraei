@@ -1,0 +1,21 @@
+  0.54-  3.52
+  script: Here's how a smart home install should work, start to finish.
+  heard:  Here's how a smart home install should work, start to finish.
+  4.25-  9.96
+  script: One. A free twenty-minute discovery call. How you live, what frustrates you, and what your home already has.
+  heard:  1. A free 20-minute discovery call. How you live, what frustrates you, and what your home already has.
+ 10.84- 18.21
+  script: Two. An on-site assessment. We review your panel, network, and layout, and design the system on paper before anything is ordered.
+  heard:  Two, an onsite assessment. We review your panel, network, and layout, and design the system on paper before anything is ordered.
+ 18.96- 24.05
+  script: Three. A fixed written quote, line by line. The number you approve is the number you pay.
+  heard:  3. A fixed, written quote, line by line. The number you approve is the number you pay.
+ 24.95- 27.68
+  script: Four. Permits and a clean professional install.
+  heard:  four permits and a clean professional install
+ 28.48- 33.44
+  script: Five. App setup and a full walkthrough, so every family member knows how it works before we leave.
+  heard:  Five app setup and a full walkthrough so every family member knows how it works before we leave
+ 34.35- 38.41
+  script: That's how we do it at NovaProHome. Book your free call at novaprohome.com.
+  heard:  that's how we do it at NovaPro Home. Book your free call at novaprohome.com
