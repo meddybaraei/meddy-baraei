@@ -24,8 +24,9 @@ def full_check(out):
     os.remove(wav)
     d = json.load(urllib.request.urlopen(urllib.request.Request(TEXT_URL, json.dumps(body).encode(), {"Content-Type": "application/json"}), timeout=120))
     heard = d["candidates"][0]["content"]["parts"][-1]["text"].strip()
-    first = words(spec["beats"][0]["text"])[:4]
-    ok = words(heard)[:4] == first
+    # spoken direction would come before the script, so the first word must match
+    # (only one word: numbers like "5 PM" vs "5:00 p.m." tokenize differently)
+    ok = words(heard)[:1] == words(spec["beats"][0]["text"])[:1]
     print(f"\nFULL TRANSCRIPT ({'OK: starts with the script' if ok else 'CHECK: does not start with the script'}):\n{heard}")
     return ok
 

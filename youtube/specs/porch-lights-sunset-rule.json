@@ -1,0 +1,177 @@
+{
+ "slug": "porch-lights-sunset-rule",
+ "title": "Dark at 5 PM and Your Porch Is Pitch Black? | Smart Home Fixes #3",
+ "beats": [
+  {
+   "text": "Dark at 5 PM? A lot of porch lights miss one job, and it's not brightness."
+  },
+  {
+   "text": "The Sunset Rule. On at sunset, off on a timer."
+  },
+  {
+   "text": "And the part most people miss: light the door, not the yard, so your camera sees faces, not shadows."
+  },
+  {
+   "text": "Easiest upgrade: a floodlight camera. Light and camera in one."
+  },
+  {
+   "text": "Is your porch light on a schedule yet?"
+  },
+  {
+   "text": "We're a small local business aiming for 100 subscribers by December 31. Subscribing helps a lot."
+  },
+  {
+   "text": "Follow for number 4: leak sensors before the first freeze. Free quote at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 0,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 170,
+     "html": "SMART HOME FIXES #3",
+     "at": 0
+    },
+    {
+     "t": "mid",
+     "top": 250,
+     "html": "<svg width=\"760\" height=\"560\" viewBox=\"0 0 760 560\" style=\"display:block;margin:0 auto\"><rect width=\"760\" height=\"560\" rx=\"36\" fill=\"#060912\"/><rect x=\"60\" y=\"120\" width=\"420\" height=\"400\" fill=\"#10162a\"/><rect x=\"250\" y=\"210\" width=\"160\" height=\"300\" rx=\"8\" fill=\"#1d2440\" stroke=\"#2a3358\" stroke-width=\"6\"/><circle cx=\"385\" cy=\"370\" r=\"7\" fill=\"#8d97b5\"/><circle cx=\"330\" cy=\"300\" r=\"34\" fill=\"#151a2b\"/><rect x=\"290\" y=\"336\" width=\"80\" height=\"120\" rx=\"30\" fill=\"#151a2b\"/><rect x=\"168\" y=\"230\" width=\"34\" height=\"50\" rx=\"8\" fill=\"#2a3358\"/><circle cx=\"185\" cy=\"262\" r=\"14\" fill=\"#3a4260\"/><rect x=\"500\" y=\"70\" width=\"160\" height=\"150\" rx=\"16\" fill=\"#000\" stroke=\"#2a3358\" stroke-width=\"4\"/><text x=\"580\" y=\"150\" fill=\"#ff4d5e\" font-size=\"56\" font-family=\"Inter\" font-weight=\"800\" text-anchor=\"middle\">?</text><text x=\"580\" y=\"200\" fill=\"#8d97b5\" font-size=\"22\" font-family=\"Inter\" font-weight=\"700\" text-anchor=\"middle\">TOO DARK</text><text x=\"512\" y=\"96\" fill=\"#ff4d5e\" font-size=\"18\" font-family=\"JetBrains Mono\" font-weight=\"800\">● CAM</text></svg>",
+     "at": 0
+    },
+    {
+     "t": "badge",
+     "top": 840,
+     "html": "5:02 PM",
+     "at": 0
+    },
+    {
+     "t": "chip",
+     "top": 1000,
+     "html": "Misses <span style='color:var(--red)'>one job</span>",
+     "at": 0,
+     "d": 1.6
+    },
+    {
+     "t": "chip",
+     "top": 1160,
+     "html": "…and it's not brightness",
+     "at": 0,
+     "d": 3.0
+    }
+   ]
+  },
+  {
+   "from": 1,
+   "to": 1,
+   "els": [
+    {
+     "t": "big",
+     "top": 330,
+     "color": "amber",
+     "html": "The Sunset Rule",
+     "at": 1,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 620,
+     "html": "1 · On at sunset",
+     "at": 1,
+     "d": 1.0
+    },
+    {
+     "t": "chip",
+     "top": 790,
+     "html": "2 · Off on a timer",
+     "at": 1,
+     "d": 2.0
+    }
+   ]
+  },
+  {
+   "from": 2,
+   "to": 2,
+   "els": [
+    {
+     "t": "card",
+     "top": 180,
+     "color": "teal",
+     "n": "3",
+     "html": "Light the door, not the yard",
+     "at": 2
+    },
+    {
+     "t": "mid",
+     "top": 430,
+     "html": "<svg width=\"760\" height=\"560\" viewBox=\"0 0 760 560\" style=\"display:block;margin:0 auto\"><rect width=\"760\" height=\"560\" rx=\"36\" fill=\"#060912\"/><rect x=\"60\" y=\"120\" width=\"420\" height=\"400\" fill=\"#10162a\"/><radialGradient id=\"g\"><stop offset=\"0\" stop-color=\"#ffd166\" stop-opacity=\".55\"/><stop offset=\"1\" stop-color=\"#ffd166\" stop-opacity=\"0\"/></radialGradient><ellipse cx=\"330\" cy=\"330\" rx=\"260\" ry=\"230\" fill=\"url(#g)\"/><rect x=\"250\" y=\"210\" width=\"160\" height=\"300\" rx=\"8\" fill=\"#1d2440\" stroke=\"#2a3358\" stroke-width=\"6\"/><circle cx=\"385\" cy=\"370\" r=\"7\" fill=\"#8d97b5\"/><circle cx=\"330\" cy=\"300\" r=\"34\" fill=\"#f3d2b3\"/><circle cx=\"319\" cy=\"296\" r=\"4\" fill=\"#222\"/><circle cx=\"341\" cy=\"296\" r=\"4\" fill=\"#222\"/><path d=\"M318 314q12 10 24 0\" stroke=\"#222\" stroke-width=\"3\" fill=\"none\"/><rect x=\"290\" y=\"336\" width=\"80\" height=\"120\" rx=\"30\" fill=\"#5b7cfa\"/><rect x=\"168\" y=\"230\" width=\"34\" height=\"50\" rx=\"8\" fill=\"#2a3358\"/><circle cx=\"185\" cy=\"262\" r=\"14\" fill=\"#ffd166\"/><rect x=\"500\" y=\"70\" width=\"160\" height=\"150\" rx=\"16\" fill=\"#000\" stroke=\"#2a3358\" stroke-width=\"4\"/><circle cx=\"580\" cy=\"128\" r=\"16\" fill=\"#f3d2b3\"/><rect x=\"566\" y=\"146\" width=\"28\" height=\"30\" rx=\"10\" fill=\"#5b7cfa\"/><text x=\"580\" y=\"200\" fill=\"#2dd4bf\" font-size=\"22\" font-family=\"Inter\" font-weight=\"700\" text-anchor=\"middle\">FACE ✓</text><text x=\"512\" y=\"96\" fill=\"#ff4d5e\" font-size=\"18\" font-family=\"JetBrains Mono\" font-weight=\"800\">● CAM</text></svg>",
+     "at": 2,
+     "d": 1.8,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 1060,
+     "html": "Faces, <span style='color:var(--teal)'>not shadows</span>",
+     "at": 2,
+     "d": 3.6
+    }
+   ]
+  },
+  {
+   "from": 3,
+   "to": 3,
+   "els": [
+    {
+     "t": "card",
+     "top": 330,
+     "color": "blue",
+     "n": "+",
+     "html": "Upgrade: floodlight camera",
+     "at": 3
+    },
+    {
+     "t": "mid",
+     "top": 640,
+     "html": "💡 + 📷<br><span style='color:var(--blue)'>light and camera in one</span>",
+     "at": 3,
+     "d": 1.4
+    }
+   ]
+  },
+  {
+   "from": 4,
+   "to": 6,
+   "els": [
+    {
+     "t": "big",
+     "top": 260,
+     "html": "Is your porch light <span style='color:var(--amber)'>on a schedule</span> yet?",
+     "at": 4,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 680,
+     "html": "Goal: <b>100 subscribers</b> by Dec 31",
+     "at": 5
+    },
+    {
+     "t": "mid",
+     "top": 880,
+     "html": "Follow for <b style='color:var(--teal)'>#4: leak sensors</b><br>before the first freeze",
+     "at": 6
+    },
+    {
+     "t": "mid",
+     "top": 1110,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 6,
+     "d": 2.4
+    }
+   ]
+  }
+ ]
+}
