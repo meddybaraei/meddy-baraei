@@ -46,4 +46,5 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-11 | Nov 7 | Gemini Omni 1.2 Flash video: 3 clips x 8 s for the porch pirates Short (about 46k video output tokens each; Veo is no longer listed on our key) + 2 failed calls | ~$3.00 (estimate; check the billing page) |
 | 2026-11 | Nov 7 | Gemini 3.7 Flash watched the 3 h 14 min DOAC/Hormozi video (~96k tokens) + 4 Rs Short TTS (3 takes) | ~$0.10 |
 | 2026-11 | Nov 8 | Run It With AI lessons 3 + 4: 19 TTS takes + 3 illustrations | ~$0.30 (estimate) |
-| **2026-11** | | **Cap $10** | **≈ $3.90–4.05 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
+| 2026-11 | Nov 9 | Re-recorded 10 Run It With AI videos (~42 TTS takes) after the TTS read the style direction aloud; ~80 flash transcription checks | ~$0.35 (estimate) |
+| **2026-11** | | **Cap $10** | **≈ $4.25–4.40 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |

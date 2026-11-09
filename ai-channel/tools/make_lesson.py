@@ -19,7 +19,9 @@ BLUE, WHITE, SOFT = (0, 175, 255), (255, 255, 255), (205, 215, 235)
 
 
 def tts(text, voice, style):
-    body = {"contents": [{"parts": [{"text": f"{style}\n\n{text}"}]}],
+    # Only the script goes to the voice. Never prepend style/direction text: the TTS model
+    # sometimes reads it aloud ("Read this like a friendly teacher...", Meddy, Nov 9).
+    body = {"contents": [{"parts": [{"text": text}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
     req = urllib.request.Request(TTS_URL, json.dumps(body).encode(), {"Content-Type": "application/json"})
