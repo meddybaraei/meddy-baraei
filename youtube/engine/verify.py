@@ -10,3 +10,26 @@ with ThreadPoolExecutor(6) as ex:
     heard = list(ex.map(lambda b: transcribe(f"{out}/voiceover.mp3", b["start"], b["end"]), spec["beats"]))
 for b, h in zip(spec["beats"], heard):
     print(f'{b["start"]:6.2f}-{b["end"]:6.2f}\n  script: {b["text"]}\n  heard:  {h.strip()}')
+
+
+def full_check(out):
+    """Transcribe the whole voiceover as one wav (short snippets can make the transcriber invent words)
+    and confirm it starts with the script's first words, i.e. no spoken style direction."""
+    import base64, subprocess, urllib.request
+    from build import TEXT_URL, words
+    wav = f"{out}/.full.wav"
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{out}/voiceover.mp3", "-ac", "1", "-ar", "16000", wav], check=True)
+    body = {"contents": [{"parts": [{"inlineData": {"mimeType": "audio/wav", "data": base64.b64encode(open(wav, "rb").read()).decode()}},
+                                    {"text": "Transcribe this audio verbatim. Only the words."}]}]}
+    os.remove(wav)
+    d = json.load(urllib.request.urlopen(urllib.request.Request(TEXT_URL, json.dumps(body).encode(), {"Content-Type": "application/json"}), timeout=120))
+    heard = d["candidates"][0]["content"]["parts"][-1]["text"].strip()
+    first = words(spec["beats"][0]["text"])[:4]
+    ok = words(heard)[:4] == first
+    print(f"\nFULL TRANSCRIPT ({'OK: starts with the script' if ok else 'CHECK: does not start with the script'}):\n{heard}")
+    return ok
+
+
+import os
+if not full_check(out):
+    sys.exit(1)
