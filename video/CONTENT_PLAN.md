@@ -210,3 +210,11 @@ Old NuTone intercom speaker replaced with a Ring video doorbell on the brick, re
 
 ### Job (Nov 7): Ashburn, VA, full-home security
 5 cameras, a Ring video doorbell and a home alarm with 16 sensors. Photos: `video/weekly/photos/job5_ashburn_*`, from the Drive folder "Nova Pro Home - Video Inbox". Homeowner faces (IMG_8431, IMG_8436) were left out. The new floodlight wiring diagram is `video/weekly/diagrams/wiring_floodlight.png` (`make_wiring.py floodlight`). Short: `video/weekly/2026-11-07_job-ashburn-full-home-security_short.mp4`.
+
+## Weekly review Nov 2–8 vs Oct 26–Nov 1 (run Nov 9)
+- Facebook Reel views 777 vs 608 (+28%). Top: "Porch pirates already have their holiday list" 230, "Clocks fell back. Your Wi-Fi fell behind years ago" 229, "Nobody expects the alarm to fix the Wi-Fi" 121, founder "Plot twist" 79. Bottom: thermostat 3-checks 4, weekend poll 4, "Mom calling" 11. **Hook-first topical posts (season/trend) win by roughly 20x over generic tips.**
+- YouTube views 322 vs 760, but Nov 7–8 data hadn't come in yet. Top Short: Reston floodlight 97. Subscribers 5 → 6.
+- TikTok: Chantilly intercom → Ring 114 views (best of the week), mesh 40, Reston 27. Followers 4 → 7.
+- LinkedIn impressions 39 vs 51, followers 4 → 9.
+- Leads (Gmail): Ed C. (Yale lock, a friend referral, Nov 19 offered), Eli K. (Google search, Springfield walkthrough Nov 17); the commercial Ring quote was lost to a 15% discount. Giveaway entries can't be counted through Metricool; Meddy checks the comments before the Nov 12 drawing.
+- Changes applied: (1) Facebook/LinkedIn posts Nov 9–15 now have short captions, with the link and phone moved to the first comment (Gemini review). (2) Veterans Day post is just the thank-you; the giveaway reminder moved to the first comment. (3) Smart Home Fixes #3 scheduled: YouTube 4:30 PM, TikTok 6 PM, Facebook 6:30 PM Nov 9. (4) Next week: more seasonal/porch/holiday angles (packages, early dark, freeze), with Wi-Fi as a recurring winner.
