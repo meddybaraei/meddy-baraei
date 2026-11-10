@@ -53,3 +53,15 @@ One offer, one avatar, one channel for 90 days (MILLION_PLAN §2). New ideas go 
 - Lead sources, last 60 days: **Ring referrals about 9** (the biggest by far), website/word of mouth about 4, Google search 1 (Springfield walkthrough Nov 17). Google Business Profile Oct 8–29: about 57 views, 2 website clicks, 1 call, 5 five-star reviews.
 - Lost Nov 7: a commercial Ring camera quote went to another Amazon-approved vendor offering 15% off cameras. Lesson (Hormozi): don't race to the lowest price. Quote a **package** with a written fixed price, a 1-year workmanship guarantee and a Health Check, and follow up within 24 hours.
 - Nov 7: Gmail drafts written for Meddy to review: 5 review requests (finished Ring/website jobs), CMC Management (property manager, 3 floodlights) follow-up, an Alex re-confirm, and Eli's thermostat question. Nothing is sent without Meddy.
+
+## Google Ads pause review (Nov 10, 2 weeks after pausing on Oct 27)
+- Free-channel leads Oct 27 – Nov 9 ($0 ad spend):
+  - **7 real leads.**
+  - 5 from the website form: Ashburn full Ring system (became the Ashburn job), Burke whole-home Home Assistant, Springfield thermostat (Google search, walkthrough Nov 17), Yale lock fix (friend/neighbor), FiOS/Wi-Fi networking (Google search).
+  - 1 Ring referral (the Chantilly job).
+  - 1 commercial camera proposal still active.
+  - 1 more form entry was a lead-broker pitch (contractorsranked.com), not a customer.
+- Compare: while Ads were running (Sep 24 – Oct 23), 3 real leads cost $304.61, about $100 per lead.
+- Two of the form leads chose "Google search" in the new "How did you find us?" field, so organic search and the Google Business Profile are working.
+- Conversion tracking: no confirmation yet that the "Quote request" conversion fires on form submit. Meddy can check Google Ads > Goals: the "Quote request" status should no longer say "Needs attention". Hadi did add the "How did you find us?" field.
+- **Recommendation: stay paused.** After the Adspirer quota resets on Nov 14, re-check the campaigns. Only restart, as a small test (about half budget, Ring and Nest keywords only), once "Quote request" shows real conversions.
