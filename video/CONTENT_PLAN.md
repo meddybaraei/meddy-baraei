@@ -218,3 +218,8 @@ Old NuTone intercom speaker replaced with a Ring video doorbell on the brick, re
 - LinkedIn impressions 39 vs 51, followers 4 → 9.
 - Leads (Gmail): Ed C. (Yale lock, a friend referral, Nov 19 offered), Eli K. (Google search, Springfield walkthrough Nov 17); the commercial Ring quote was lost to a 15% discount. Giveaway entries can't be counted through Metricool; Meddy checks the comments before the Nov 12 drawing.
 - Changes applied: (1) Facebook/LinkedIn posts Nov 9–15 now have short captions, with the link and phone moved to the first comment (Gemini review). (2) Veterans Day post is just the thank-you; the giveaway reminder moved to the first comment. (3) Smart Home Fixes #3 scheduled: YouTube 4:30 PM, TikTok 6 PM, Facebook 6:30 PM Nov 9. (4) Next week: more seasonal/porch/holiday angles (packages, early dark, freeze), with Wi-Fi as a recurring winner.
+
+## Nov 11: more activity (Meddy: "we need more activities")
+- Reused the 11 finished Facebook Reels for Nov 14-25 (winter prep, which device first, EV panel check, guest lock codes, meet the founder, camera privacy, Vienna ecobee, Black Friday advice, agent closing gift, Thanksgiving travel, thank you) as YouTube Shorts (4:30 PM) and TikToks (6:00 PM). 22 new posts. New problem-first titles; no phone number in YouTube text; EV one flagged AI-generated (AI b-roll).
+- YouTube and TikTok now post daily Nov 13-25 (was 2 posts in that window). Facebook/LinkedIn unchanged (max 1-2 a day).
+- Media pinned to commit 4adab5e.
