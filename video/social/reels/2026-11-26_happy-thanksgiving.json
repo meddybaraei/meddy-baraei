@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_thanksgiving_table.mp4",
+   "crop": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "ai": true,
+   "kicker": "Happy Thanksgiving!",
+   "title": "Wi-Fi crashing during the game?",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/happy-thanksgiving.jpg",
+   "title": "",
+   "body": "And Wi-Fi that survives the whole family streaming the game.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

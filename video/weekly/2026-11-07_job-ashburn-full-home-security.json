@@ -1,0 +1,15 @@
+{
+ "badge": "Real Job · Ashburn, VA",
+ "shop_qr": false,
+ "scenes": [
+  {"photo": "video/weekly/photos/job5_ashburn_ladder1.jpg", "focus": [0.45, 0.5], "kicker": "Real job · Ashburn, VA", "title": "A whole house, secured", "body": "5 cameras, a Ring video doorbell and a 16-sensor alarm system.", "dur": 3.6},
+  {"art": "list", "kicker": "The full system", "title": "What we installed", "items": ["5 security cameras", "Ring video doorbell", "Alarm base + keypad", "16 alarm sensors", "All in one app"], "dur": 4.2},
+  {"photo": "video/weekly/photos/job5_ashburn_patio.jpg", "kicker": "Step 1", "title": "Map every way in", "body": "Front door, patio doors and the sunroom, before a single hole is drilled.", "dur": 3.2},
+  {"photo": "video/weekly/photos/job5_ashburn_deck_box.jpg", "kicker": "Step 2", "title": "Power where the cameras go", "body": "Floodlight cams mount on outdoor electrical boxes like this one.", "dur": 3.2},
+  {"photo": "video/weekly/diagrams/wiring_floodlight.png", "kicker": "How it's wired", "title": "Black to black, white to white, ground to green", "body": "Breaker off first. This is house power, not doorbell power.", "dur": 4.2},
+  {"photo": "video/weekly/photos/job5_ashburn_floodlight_unbox.jpg", "kicker": "Step 3", "title": "Floodlight cam out of the box", "body": "Two LED lights and a camera in one unit.", "dur": 3.0},
+  {"photo": "video/weekly/photos/job5_ashburn_doorbell.jpg", "kicker": "Step 4", "title": "Ring video doorbell at the front door", "body": "Live view, motion alerts and two-way talk.", "dur": 3.0},
+  {"photo": "video/weekly/photos/job5_ashburn_ladder2.jpg", "focus": [0.6, 0.5], "kicker": "The result", "title": "Mounted, aimed and tested", "body": "Every camera, sensor and alert checked in the app before we left.", "dur": 3.4}
+ ],
+ "end": ["Want your whole home covered? Follow for Smart Home Fixes #3", "novaprohome.com"]
+}

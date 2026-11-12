@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/series/photos/ring_floodlight_back_door.jpg",
+   "kicker": "Smart lighting",
+   "title": "Tired of flipping switches?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/series/photos/ring_floodlight_back_door.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Sunset porch lights · motion floodlights · driveway arrival · Away mode",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

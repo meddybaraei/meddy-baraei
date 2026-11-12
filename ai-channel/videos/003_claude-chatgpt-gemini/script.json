@@ -1,0 +1,148 @@
+{
+ "title": "Claude vs ChatGPT vs Gemini: Which AI Should You Actually Use?",
+ "voice": "Charon",
+ "style": "Read this like a friendly, confident teacher explaining to a small business owner. Warm, clear, unhurried, natural pauses.",
+ "segments": [
+  {
+   "kicker": "The honest answer",
+   "title": "Which AI should you pick? It depends on one thing",
+   "bullets": [
+    "Where your work already lives",
+    "What you do most: write, search or create",
+    "How much you'll pay: $0 or about $20"
+   ],
+   "say": "Claude, ChatGPT or Gemini. Which one should you actually use? The honest answer depends on one thing most comparison videos skip, and I'll show you that by the end. First, here's what matters: where your work already lives, what you do most every day, and whether you want to pay nothing or about twenty dollars a month.",
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "img": "Three friendly different-colored robot assistants standing side by side on podiums while a small shop owner thinks about which one to choose. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern explainer-video style, no text, no words, no letters, no numbers, no logos, no brand names."
+  },
+  {
+   "kicker": "Good news first",
+   "title": "All three have a free plan",
+   "bullets": [
+    "Free is enough to learn",
+    "Paid plans: about $20 a month",
+    "Prices change: check the official page"
+   ],
+   "say": "Good news first. All three have a free plan, and free is enough to learn everything on this channel. The main paid plans are about twenty dollars a month each, and there are cheaper and more expensive options too. Prices change often, so always check the official pricing page before you pay.",
+   "accent": [
+    0,
+    200,
+    170
+   ]
+  },
+  {
+   "kicker": "ChatGPT",
+   "title": "The all-rounder most people know",
+   "bullets": [
+    "Very popular, lots of tutorials online",
+    "Text, images, voice in one app",
+    "Great if you want one tool for everything"
+   ],
+   "say": "ChatGPT is the one most people have heard of. It's an all-rounder: writing, images and voice in one app, and there are tutorials for almost everything. If you want one tool that does a bit of everything, it's a safe choice.",
+   "accent": [
+    0,
+    200,
+    170
+   ]
+  },
+  {
+   "kicker": "Gemini",
+   "title": "Best if you live in Google",
+   "bullets": [
+    "Works inside Gmail, Docs and Drive",
+    "Built into many Android phones",
+    "Great with Google search"
+   ],
+   "say": "Gemini is Google's assistant. If your business already runs on Gmail, Google Docs and Google Drive, Gemini fits right in, and it's built into many Android phones. If you live in Google, start here.",
+   "accent": [
+    255,
+    150,
+    40
+   ]
+  },
+  {
+   "kicker": "Claude",
+   "title": "Strong writer, connects to your tools",
+   "bullets": [
+    "Clear, natural writing",
+    "Handles long documents well",
+    "Connectors: email, calendar, files"
+   ],
+   "say": "Claude is known for clear, natural writing and for handling long documents. It can also connect to tools you already use, like your email, calendar and files, which is why we use it on this channel. But I'll be fair: you can follow every lesson here with any of the three.",
+   "accent": [
+    170,
+    110,
+    255
+   ]
+  },
+  {
+   "kicker": "Try this test",
+   "title": "Give all three the same job",
+   "bullets": [
+    "Use the exact same prompt",
+    "Ask for something you really need",
+    "Pick the answer you'd actually send"
+   ],
+   "say": "Here's the best way to choose, and it's free. Give all three the exact same job, something you really need this week. Then pick the one whose answer you would actually send without fixing. That's your AI.",
+   "accent": [
+    255,
+    90,
+    120
+   ],
+   "chat": {
+    "user": "I run a [furniture store]. A customer says our [sofa] price is too high. Write a friendly reply that explains the value and offers [free delivery]. Under 80 words.",
+    "ai": "(Example answer) Hi Sam, thanks for asking! Our sofas use solid hardwood frames and come with a 5-year warranty, so they last for years. To make it easier, we'll include free delivery this week. Want me to hold one for you?"
+   }
+  },
+  {
+   "kicker": "Quick picks",
+   "title": "Our simple recommendation",
+   "bullets": [
+    "Live in Gmail and Google Docs: Gemini",
+    "Want one app for everything: ChatGPT",
+    "Write a lot, want connectors: Claude",
+    "Not sure: try all three free for a week"
+   ],
+   "say": "So here are quick picks. If you live in Gmail and Google Docs, start with Gemini. If you want one app for everything, ChatGPT. If you write a lot and want it connected to your tools, Claude. And if you're not sure, use all three free for one week with the same test.",
+   "accent": [
+    255,
+    190,
+    40
+   ]
+  },
+  {
+   "kicker": "The one thing",
+   "title": "The skill matters more than the tool",
+   "bullets": [
+    "A good prompt works in all three",
+    "Who, what, details, format",
+    "Switching later is easy"
+   ],
+   "say": "And here's the one thing comparison videos skip. The tool matters much less than how you ask. A good prompt works in all three. Who, what, details, format, the formula from our first video. Learn that, and switching tools later is easy.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Subscribe: next is setting up Claude in 10 minutes",
+   "bullets": [
+    "Test prompt is in the description",
+    "We're trying to reach 100 subscribers by Dec 31"
+   ],
+   "say": "The test prompt is in the description, so try it today and tell me in the comments which AI won for you. Next lesson: setting up Claude in ten minutes, connectors included. We're a small channel trying to reach a hundred subscribers by December thirty first, so if this helped, please subscribe.",
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "img": "A cheerful small shop owner giving a thumbs up next to a big glowing play button and a notification bell, confetti, celebratory mood. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern explainer-video style, no text, no words, no letters, no numbers, no logos, no brand names."
+  }
+ ]
+}

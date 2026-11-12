@@ -1,0 +1,10 @@
+{"badge": "Job of the Week · Video Doorbell",
+ "shop_qr": false,
+ "scenes": [
+  {"photo": "video/weekly/photos/greatfalls_old_front.jpg", "kicker": "Real job · Great Falls, VA", "title": "Ring doorbell over 10 years old?", "dur": 3.5},
+  {"photo": "video/weekly/photos/greatfalls_old_angle.jpg", "kicker": "Before", "title": "Time for an upgrade", "body": "The original Ring doorbell, installed more than 10 years ago.", "dur": 3.8},
+  {"photo": "video/weekly/photos/greatfalls_tools.jpg", "focus": [0.45, 0.45], "kicker": "Step 1", "title": "Test the wiring first", "body": "We check the doorbell wires and transformer before we mount anything.", "dur": 4.0},
+  {"photo": "video/weekly/photos/greatfalls_bracket.jpg", "kicker": "Step 2", "title": "New bracket on the old wires", "body": "The new mounting bracket goes right over the existing doorbell wiring.", "dur": 4.0},
+  {"photo": "video/weekly/photos/greatfalls_new_done.jpg", "kicker": "After", "title": "Done in under 30 minutes", "body": "New Ring Wired Doorbell + chime installed and set up in the app.", "dur": 4.5}
+ ],
+ "end": ["Want a new doorbell installed?", "novaprohome.com"]}

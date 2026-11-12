@@ -1,0 +1,13 @@
+{"hook": "POV: you install a whole alarm system in under 2 hours", "hook_hl": "2 hours",
+ "hook_photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
+ "clips": [
+  {"photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg", "text": "14 pieces. one box.", "hl": "14"},
+  {"photo": "video/weekly/photos/alarm_pro_base_station.jpg", "text": "Step 1: base station = wifi router too", "hl": "wifi"},
+  {"photo": "video/weekly/photos/alarm_pro_base_app_setup.jpg", "text": "Step 2: pair it in the app first", "hl": "first"},
+  {"photo": "video/weekly/photos/alarm_contact_sensor_door.jpg", "focus": [0.5, 0.25], "text": "Step 3: sensors on every door", "hl": "every"},
+  {"photo": "video/weekly/photos/alarm_contact_sensor_window.jpg", "text": "+ the windows you actually use", "hl": "actually"},
+  {"photo": "video/weekly/photos/alarm_motion_detector.jpg", "focus": [0.5, 0.22], "text": "Step 4: motion sensor up high", "hl": "high"},
+  {"photo": "video/weekly/photos/alarm_keypad.jpg", "focus": [0.5, 0.38], "text": "Step 5: keypad by the door", "hl": "keypad"},
+  {"photo": "video/weekly/photos/alarm_contact_sensor_door3.jpg", "focus": [0.5, 0.12], "text": "Step 6: test everything. done.", "hl": "done."}
+ ],
+ "cta": ["Want it done for you?", "novaprohome.com/contact", "link in bio"]}

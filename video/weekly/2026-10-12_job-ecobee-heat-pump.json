@@ -1,0 +1,55 @@
+{
+ "badge": "Job of the Week \u00b7 Vienna",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/ecobee_in_box.jpg",
+   "kicker": "Job of the week \u00b7 Vienna, VA",
+   "title": "Smart thermostat on a heat pump",
+   "body": "ecobee Smart Thermostat Premium, installed today.",
+   "dur": 4.0
+  },
+  {
+   "product": "video/weekly/photos/product_ecobee_premium.png",
+   "kicker": "The upgrade",
+   "title": "ecobee Smart Thermostat Premium",
+   "body": "Comes with a room sensor to even out hot and cold rooms.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
+   "kicker": "Step 1 \u00b7 Power off first",
+   "title": "Photo & label every wire",
+   "body": "This heat pump had 7 wires. Turn the breaker off before you touch them.",
+   "dur": 4.4
+  },
+  {
+   "photo": "video/weekly/photos/carrier_air_handler.jpg",
+   "kicker": "Step 2",
+   "title": "Know your system",
+   "body": "Heat pump with an electric air handler. Electric heat strips are the backup heat.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring.jpg",
+   "kicker": "Heat pump tip",
+   "title": "The O/B wire switches heat & cool",
+   "body": "Many systems use \"energized on cool.\" Getting cold air on heat? Switch that setting.",
+   "dur": 4.6
+  },
+  {
+   "art": "list",
+   "title": "Step 3 \u00b7 Test it all",
+   "items": [
+    "Cooling",
+    "Heating",
+    "Backup (aux) heat"
+   ],
+   "body": "Then we walk the homeowner through the app.",
+   "dur": 4.4
+  }
+ ],
+ "end": [
+  "Book your thermostat install",
+  "novaprohome.com"
+ ]
+}

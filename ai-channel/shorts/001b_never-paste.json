@@ -1,0 +1,68 @@
+{
+ "title": "Never Paste These 3 Things Into AI",
+ "voice": "Charon",
+ "style": "Read this like a calm, trustworthy teacher giving an important safety tip in a quick social video. Clear, serious but friendly.",
+ "segments": [
+  {
+   "kicker": "AI safety",
+   "title": "Pasting your password into AI? Stop.",
+   "bullets": [],
+   "say": "Pasting your password into ChatGPT is like shouting your PIN in the bank line. Please don't. Here are three things you should never paste into AI.",
+   "accent": [
+    255,
+    90,
+    120
+   ],
+   "big": "3",
+   "skip": true
+  },
+  {
+   "kicker": "Keep these out",
+   "title": "Stop before you paste",
+   "bullets": [
+    "1. Passwords and login codes",
+    "2. Card, bank or Social Security numbers",
+    "3. Your customers' private information"
+   ],
+   "say": "One: passwords and login codes. Two: card numbers, bank numbers or Social Security numbers. Three: your customers' private information, like their address, phone number or order history.",
+   "accent": [
+    255,
+    150,
+    40
+   ]
+  },
+  {
+   "kicker": "Do this instead",
+   "title": "Swap in placeholders",
+   "bullets": [
+    "Use [CUSTOMER NAME], [ORDER #]",
+    "Double-check facts, prices and numbers",
+    "Legal, tax or medical? Ask a professional"
+   ],
+   "say": "Instead, use placeholders, like customer name in brackets. Always double check facts and numbers. And for legal, tax or medical decisions, ask a professional.",
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "Write a thank-you note to [CUSTOMER NAME] for order [ORDER #]. Warm, 2 sentences.",
+    "ai": "Hi [CUSTOMER NAME], thank you so much for your order [ORDER #]! We hope you love it, and we're here if you need anything."
+   }
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Like & subscribe to stay safe with AI",
+   "bullets": [
+    "👍 Like and share with a friend",
+    "🔔 Subscribe for simple AI lessons"
+   ],
+   "say": "Share this with someone who just started using AI. Like and subscribe to Run It With AI for more simple, safe lessons.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  }
+ ]
+}

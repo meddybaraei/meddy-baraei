@@ -1,0 +1,53 @@
+{
+ "title": "Turn Your Messy To-Do List Into a Plan",
+ "voice": "Charon",
+ "style": "Read this like a funny, energetic friend in a quick social video. Playful on the joke, then clear and upbeat.",
+ "segments": [
+  {
+   "kicker": "Be honest",
+   "title": "Your to-do list has a to-do list.",
+   "bullets": [],
+   "say": "Be honest. Your to-do list has its own to-do list. Here's how AI turns that mess into a real plan in one minute.",
+   "accent": [
+    255,
+    150,
+    40
+   ],
+   "big": "1",
+   "skip": true
+  },
+  {
+   "kicker": "Copy this",
+   "title": "The plan-my-day prompt",
+   "bullets": [
+    "Dump every task, messy is fine",
+    "Say how many hours you have",
+    "Ask for an order with time blocks"
+   ],
+   "say": "Dump every task into the chat, messy is fine. Say how many hours you have. Then ask it to put them in order, most important first, with time blocks, and tell you what can wait.",
+   "accent": [
+    170,
+    110,
+    255
+   ],
+   "chat": {
+    "user": "My tasks: [call supplier, post sale, pay invoices, train new hire]. I have 6 hours. Order them with time blocks. What can wait?",
+    "ai": "9:00 Pay invoices (30 min)\n9:30 Call supplier (45 min)\n10:15 Train new hire (2 hrs)\n1:00 Post the sale (30 min)\nCan wait: cleaning the stockroom."
+   }
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Follow for more AI tricks",
+   "bullets": [
+    "Copy the prompt from the description",
+    "Subscribe for more"
+   ],
+   "say": "What's the one task you always push to tomorrow? Comment it. Follow Run It With AI for a new trick every week.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  }
+ ]
+}

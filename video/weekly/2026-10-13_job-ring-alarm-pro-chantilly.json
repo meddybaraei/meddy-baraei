@@ -1,0 +1,62 @@
+{
+ "badge": "Job of the Week \u00b7 Chantilly",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/alarm_pro_kit_flatlay.jpg",
+   "kicker": "Job of the week \u00b7 Chantilly, VA",
+   "title": "Ring Alarm Pro: 14-piece kit + 2 extra sensors",
+   "body": "Installed and set up in under 2 hours.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/alarm_pro_base_app_setup.jpg",
+   "kicker": "Step 1",
+   "title": "Base station with built-in eero Wi-Fi",
+   "body": "We set up the router and got the home online.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_door.jpg",
+   "kicker": "Step 2",
+   "title": "Contact sensors on the doors",
+   "body": "",
+   "dur": 3.4
+  },
+  {
+   "photo": "video/weekly/photos/alarm_contact_sensor_window.jpg",
+   "kicker": "Step 2",
+   "title": "\u2026and on the windows",
+   "body": "Your phone gets an alert the moment one opens.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/alarm_motion_detector.jpg",
+   "kicker": "Step 3",
+   "title": "Motion detector up in the corner",
+   "body": "Placed high to cover the whole room.",
+   "dur": 3.8
+  },
+  {
+   "photo": "video/weekly/photos/alarm_keypad.jpg",
+   "kicker": "Step 4",
+   "title": "Keypad by the door",
+   "body": "Arm and disarm without your phone.",
+   "dur": 3.6
+  },
+  {
+   "art": "list",
+   "title": "Before we leave",
+   "items": [
+    "Test every sensor",
+    "Walk through the app",
+    "Plan the next upgrade"
+   ],
+   "body": "Happy customer, and more smart home devices already on her list.",
+   "dur": 4.6
+  }
+ ],
+ "end": [
+  "Book your alarm install",
+  "novaprohome.com"
+ ]
+}

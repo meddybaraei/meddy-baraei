@@ -1,0 +1,15 @@
+{
+ "badge": "Real Job · Vienna, VA",
+ "scenes": [
+  {"photo": "video/weekly/photos/ecobee_humidity_two_readings.jpg", "kicker": "The problem", "title": "Ecobee says 63%. The meter says 50%.", "body": "A 13-point humidity gap, with spikes to 70%. Normal sensor error is about ±5%.", "dur": 4.8},
+  {"photo": "video/weekly/photos/ecobee_humidity_air_handler.jpg", "kicker": "Real job · Vienna, VA", "title": "New ecobee on a Carrier heat pump", "body": "Here's how we found the cause and fixed it, in 6 steps.", "dur": 4.2},
+  {"photo": "video/weekly/photos/ecobee_humidity_fan_mode.jpg", "kicker": "Step 1", "title": "Test it properly", "body": "Tape the meter right beside the thermostat. Fan on Auto, minimum runtime 0. Wait 30–60 min.", "dur": 4.8},
+  {"photo": "video/weekly/photos/ecobee_humidity_wall_hole.jpg", "kicker": "Step 2 · The #1 cause", "title": "Seal the hole behind the thermostat", "body": "Power off. Pack duct seal around the wires so wall-cavity air can't hit the sensor.", "dur": 5.0},
+  {"photo": "video/weekly/photos/ecobee_humidity_cable_entry.jpg", "kicker": "Step 3", "title": "Seal the other end", "body": "Seal where the thermostat cable enters the air handler. The blower pulls air down the wall.", "dur": 4.8},
+  {"photo": "video/weekly/photos/ecobee_humidity_wires_detected.jpg", "kicker": "Step 4", "title": "Verify the wiring", "body": "Old thermostat, ecobee and air handler must match. Tug-test every wire.", "dur": 4.4},
+  {"photo": "video/weekly/photos/ecobee_humidity_heatpump_settings.jpg", "kicker": "Step 5", "title": "Check the setup", "body": "Heat pump type, O/B on cool (Carrier), fan controlled by the thermostat.", "dur": 4.4},
+  {"photo": "video/weekly/photos/ecobee_humidity_humidity_correction.jpg", "kicker": "Step 6 · Last, not first", "title": "Correct what's left", "body": "Only after sealing: enter the steady gap in Humidity Correction (e.g. 60% vs 50% → −10%).", "dur": 5.0},
+  {"photo": "video/weekly/photos/ecobee_humidity_result.jpg", "kicker": "The result", "title": "52% — matching the meter", "body": "Air quality went from Poor to Clean. Most \"bad sensor\" calls are air leaks.", "dur": 4.6}
+ ],
+ "end": ["Need a thermostat pro?", "novaprohome.com"]
+}
