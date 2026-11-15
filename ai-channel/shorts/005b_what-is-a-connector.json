@@ -1,0 +1,56 @@
+{
+ "title": "Claude Quick Start #2",
+ "voice": "Charon",
+ "style": "",
+ "segments": [
+  {
+   "kicker": "Claude Quick Start #2",
+   "title": "Still copying emails into AI by hand?",
+   "bullets": [
+    "Copy, paste, repeat",
+    "There's a faster way",
+    "It's called a connector"
+   ],
+   "accent": [
+    170,
+    110,
+    255
+   ],
+   "say": "Still copying your emails and calendar into A I by hand? There's a faster way. It's called a connector."
+  },
+  {
+   "kicker": "What it is",
+   "title": "A safe link to your tools",
+   "bullets": [
+    "Email, calendar, files",
+    "It only looks when you ask",
+    "Find it in Settings, Connectors"
+   ],
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "chat": {
+    "user": "Look at my calendar for next week and list my busiest days. Don't send anything.",
+    "ai": "(Example answer) Your busiest days are Tuesday and Friday."
+   },
+   "say": "A connector links Claude to your email, calendar or files, and it only looks when you ask. You'll find it in Settings, under Connectors. What's available depends on your plan."
+  },
+  {
+   "kicker": "Stay safe",
+   "title": "Connect only what you need",
+   "bullets": [
+    "Read the permissions first",
+    "Disconnect any time",
+    "Subscribe for the next quick start"
+   ],
+   "accent": [
+    255,
+    190,
+    40
+   ],
+   "say": "Two rules. Connect only what you need, and read the permissions first. You can disconnect any time. Subscribe for the next Claude quick start."
+  }
+ ]
+}

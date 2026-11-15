@@ -1,0 +1,55 @@
+{
+ "title": "Claude Quick Start #1",
+ "voice": "Charon",
+ "style": "",
+ "segments": [
+  {
+   "kicker": "Claude Quick Start #1",
+   "title": "Generic answers from AI? It doesn't know you",
+   "bullets": [
+    "It doesn't know your business",
+    "It doesn't know your customers",
+    "Fix it once, in Settings"
+   ],
+   "accent": [
+    255,
+    150,
+    40
+   ],
+   "say": "If A I keeps giving you generic answers, here's why. It doesn't know your business. Fix it once, and every answer gets better."
+  },
+  {
+   "kicker": "The fix",
+   "title": "Tell it who you are, one time",
+   "bullets": [
+    "Open Settings",
+    "Find your preferences",
+    "Paste 3 sentences about you"
+   ],
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "I own a [furniture store] in [Virginia]. My customers are [first-time home buyers]. Write in a friendly, plain tone and keep it short.",
+    "ai": "(Saved. Claude uses this in future chats.)"
+   },
+   "say": "Open Settings, find your preferences, and paste three sentences: your business, your customers, and the tone you like. Now you never repeat it."
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Tuesday: full Claude setup in 10 minutes",
+   "bullets": [
+    "The 3 sentences are in the description",
+    "Help us reach 100 subscribers"
+   ],
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "say": "The three sentences are in the description. Subscribe for Tuesday's lesson: the full Claude setup in ten minutes."
+  }
+ ]
+}

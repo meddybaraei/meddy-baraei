@@ -1,0 +1,155 @@
+{
+ "title": "New to Claude? Set It Up Right in 10 Minutes (Connectors Explained)",
+ "voice": "Charon",
+ "style": "",
+ "segments": [
+  {
+   "kicker": "10-minute setup",
+   "title": "Claude, set up right, in 10 minutes",
+   "bullets": [
+    "Sign up free",
+    "Tell it who you are, once",
+    "Connect your tools safely"
+   ],
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "img": "A small shop owner at a counter with a laptop, a friendly round robot assistant beside them, and a big clock showing ten minutes. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern, no text, no logos.",
+   "say": "In the next few minutes you'll set up Claude the right way: sign up free, tell it who you are once so every answer fits your business, and connect it to your tools safely. Let's start with step one."
+  },
+  {
+   "kicker": "Step 1",
+   "title": "Sign up: the free plan is enough",
+   "bullets": [
+    "Go to claude.ai or get the Claude app",
+    "Sign up with your email or Google account",
+    "Start on the free plan"
+   ],
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "say": "Step one. Go to claude dot A I on your computer, or get the Claude app on your phone. Sign up with your email or your Google account. Start on the free plan. It's enough to learn everything on this channel, and you can upgrade later if you hit the limits."
+  },
+  {
+   "kicker": "Step 2",
+   "title": "Tell it who you are, once",
+   "bullets": [
+    "Open Settings and find your preferences",
+    "Your business, your customers, your tone",
+    "Now you don't repeat it in every chat"
+   ],
+   "accent": [
+    255,
+    150,
+    40
+   ],
+   "chat": {
+    "user": "I own a [furniture store] in [Virginia] with [8 employees]. My customers are [families furnishing a first home]. Write in a friendly, plain tone. Keep answers short and give me steps.",
+    "ai": "(Saved as your preferences. Claude uses this in future chats.)"
+   },
+   "say": "Step two is the one most people skip. Open Settings and look for your preferences, the place where you tell Claude about yourself. Write two or three sentences: what your business is, who your customers are, and the tone you like. Now you don't have to repeat it in every chat."
+  },
+  {
+   "kicker": "Step 3",
+   "title": "Give it one real job today",
+   "bullets": [
+    "Pick something from today's to-do list",
+    "Say who, what, details, format",
+    "Ask it to fix what you don't like"
+   ],
+   "accent": [
+    255,
+    90,
+    120
+   ],
+   "chat": {
+    "user": "Write a text to my team: we open at 9 on Saturday for the holiday sale, everyone in by 8:30, lunch is on me. Friendly, under 50 words.",
+    "ai": "(Example answer) Team, big day Saturday! Doors open at 9 for the holiday sale, so please be in by 8:30. Lunch is on me. Let's make it a great one!"
+   },
+   "say": "Step three. Give it one real job from today's list, not a test question. Say who it's for, what you need, the details, and the format. If the answer isn't right, don't start over. Just tell it what to change."
+  },
+  {
+   "kicker": "Step 4",
+   "title": "Use a Project for your store",
+   "bullets": [
+    "One place for your store's files",
+    "Upload price lists and policies",
+    "Claude answers from your documents"
+   ],
+   "accent": [
+    170,
+    110,
+    255
+   ],
+   "say": "Step four. Look for Projects. A project is one place for your store's files and instructions. Upload things like your return policy or price list, and Claude can answer from your own documents instead of guessing. What you can do here depends on your plan."
+  },
+  {
+   "kicker": "Connectors",
+   "title": "What is a connector?",
+   "bullets": [
+    "A safe link between Claude and a tool",
+    "Email, calendar, files and more",
+    "It only looks when you ask"
+   ],
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "img": "A friendly round robot assistant in the middle connected by glowing lines to an envelope, a calendar and a folder. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern, no text, no logos.",
+   "say": "Now, connectors. A connector is a link between Claude and a tool you already use, like your email, your calendar or your files. Once it's connected, you can say: look at my calendar and plan my week. You'll find them in Settings, under Connectors. Which ones you get depends on your plan."
+  },
+  {
+   "kicker": "Stay safe",
+   "title": "3 rules before you connect anything",
+   "bullets": [
+    "Connect only what you need",
+    "Read what it asks permission for",
+    "You can disconnect any time"
+   ],
+   "accent": [
+    255,
+    190,
+    40
+   ],
+   "say": "Three safety rules before you connect anything. One, connect only what you need. Two, read what it asks permission for before you click allow. Three, remember you can disconnect any time in Settings. And never paste passwords or customer card numbers into any A I tool."
+  },
+  {
+   "kicker": "Try it",
+   "title": "Your first connector prompt",
+   "bullets": [
+    "Works after you connect a calendar",
+    "Ask for a draft, then review it",
+    "You press send, not the AI"
+   ],
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "Look at my calendar for next week. List my busiest days and draft a short email to my team with the schedule. Don't send anything.",
+    "ai": "(Example answer) Your busiest days are Tuesday and Friday. Here's a draft email for your team to review..."
+   },
+   "say": "Here's a first connector prompt to try. Ask Claude to look at next week's calendar, list your busiest days, and draft an email to your team. Notice the last line: don't send anything. You review it, and you press send."
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Subscribe: next is a week of staff emails in 15 minutes",
+   "bullets": [
+    "The setup checklist is in the description",
+    "We're trying to reach 100 subscribers by Dec 31"
+   ],
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "say": "The full setup checklist is in the description. Next lesson, we write a whole week of staff emails in fifteen minutes. We're a small channel trying to reach a hundred subscribers by December thirty first, so if this helped, subscribe and you won't miss it."
+  }
+ ]
+}

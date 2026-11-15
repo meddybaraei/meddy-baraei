@@ -1,0 +1,56 @@
+{
+ "title": "AI Money Moves #5",
+ "voice": "Charon",
+ "style": "",
+ "segments": [
+  {
+   "kicker": "AI Money Moves #5",
+   "title": "Quoting one price? You're leaving money on the table",
+   "bullets": [
+    "One price: yes or no",
+    "Three packages: which one?",
+    "People often pick the middle"
+   ],
+   "big": "3",
+   "accent": [
+    255,
+    190,
+    40
+   ],
+   "say": "If you quote one price, the customer can only say yes or no. Offer three packages, and the question becomes: which one?"
+  },
+  {
+   "kicker": "Let AI build them",
+   "title": "One prompt, three packages",
+   "bullets": [
+    "Basic, standard, premium",
+    "What each one includes",
+    "Questions to ask before pricing"
+   ],
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "I offer [service] to [type of customer]. Suggest 3 package names, what each includes, and questions I should ask before I set prices.",
+    "ai": "(Example answer) Starter: the essentials. Plus: adds setup and training. Complete: everything, with a 1-year check-up."
+   },
+   "say": "Paste this prompt. A I suggests three package names, what goes in each one, and the questions to ask before you set a price. You decide the numbers."
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Results vary. The prompt is free",
+   "bullets": [
+    "Prompt is in the description",
+    "Help us reach 100 subscribers by Dec 31"
+   ],
+   "accent": [
+    0,
+    175,
+    255
+   ],
+   "say": "Results vary, and you still have to do great work. The prompt is in the description. Subscribe for the next A I money move."
+  }
+ ]
+}

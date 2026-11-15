@@ -47,4 +47,6 @@ Never: re-enhancing cached photos, AI images for tip posts (real photos score hi
 | 2026-11 | Nov 7 | Gemini 3.7 Flash watched the 3 h 14 min DOAC/Hormozi video (~96k tokens) + 4 Rs Short TTS (3 takes) | ~$0.10 |
 | 2026-11 | Nov 8 | Run It With AI lessons 3 + 4: 19 TTS takes + 3 illustrations | ~$0.30 (estimate) |
 | 2026-11 | Nov 9 | Re-recorded 10 Run It With AI videos (~42 TTS takes) after the TTS read the style direction aloud; ~80 flash transcription checks | ~$0.35 (estimate) |
-| **2026-11** | | **Cap $10** | **≈ $4.25–4.40 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
+| 2026-11 | Nov 12 | Transcribed Meddy's 18 s presenter clip (1 flash call) | ~$0.01 |
+| 2026-11 | Nov 15 | Run It With AI lesson 5 + 3 Shorts: 18 TTS takes, 2 illustrations, 4 transcription checks | ~$0.25 (estimate) |
+| **2026-11** | | **Cap $10** | **≈ $4.50–4.70 so far (estimates). Use Gemini only for photo clean-up and the occasional key video; prefer real job photos.** |
