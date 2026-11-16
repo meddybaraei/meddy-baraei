@@ -1,0 +1,173 @@
+{
+ "slug": "leak-sensors-first-freeze",
+ "title": "A Burst Pipe Usually Shows Up as a Wet Floor | Smart Home Fixes #4",
+ "beats": [
+  {
+   "text": "First freeze is coming. A burst pipe usually announces itself with a wet floor."
+  },
+  {
+   "text": "Here's the 3-Spot Leak Check."
+  },
+  {
+   "text": "Leak sensors go under the water heater, under the sink, and behind the washer."
+  },
+  {
+   "text": "Water touches one, your phone gets an alert. Many also warn you when it's freezing.",
+   "start_at": 9.84
+  },
+  {
+   "text": "Upgrade: an automatic shut-off closes the main water valve for you."
+  },
+  {
+   "text": "Which spot would you check first?"
+  },
+  {
+   "text": "We're a small local business aiming for 100 subscribers by December 31. Subscribing helps a lot."
+  },
+  {
+   "text": "Follow for number 5: Thanksgiving guest Wi-Fi. Free quote at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 0,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 170,
+     "html": "SMART HOME FIXES #4",
+     "at": 0
+    },
+    {
+     "t": "mid",
+     "top": 250,
+     "html": "<svg width=\"760\" height=\"560\" viewBox=\"0 0 760 560\" style=\"display:block;margin:0 auto\"><rect width=\"760\" height=\"560\" rx=\"36\" fill=\"#0b1226\"/><rect x=\"120\" y=\"230\" width=\"520\" height=\"56\" rx=\"28\" fill=\"#8d97b5\"/><path d=\"M150 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M196 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M242 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M288 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M334 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M380 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M426 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M472 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M518 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M564 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M360 232 l20 54 l20 -54\" stroke=\"#0b1226\" stroke-width=\"10\" fill=\"none\"/><rect x=\"60\" y=\"520\" width=\"640\" height=\"10\" fill=\"#2a3358\"/><path d=\"M372 300 q-14 26 0 34 q14 -8 0 -34z\" fill=\"#60a5fa\"/><path d=\"M380 370 q-18 32 0 42 q18 -10 0 -42z\" fill=\"#60a5fa\"/><ellipse cx=\"380\" cy=\"500\" rx=\"210\" ry=\"28\" fill=\"#60a5fa\" opacity=\".55\"/><text x=\"380\" y=\"120\" fill=\"#cfe3ff\" font-size=\"44\" font-family=\"Inter\" font-weight=\"800\" text-anchor=\"middle\">❄ FIRST FREEZE</text></svg>",
+     "at": 0
+    },
+    {
+     "t": "chip",
+     "top": 880,
+     "html": "Burst pipe = <span style='color:var(--blue)'>wet floor</span>",
+     "at": 0,
+     "d": 2.4
+    }
+   ]
+  },
+  {
+   "from": 1,
+   "to": 2,
+   "els": [
+    {
+     "t": "big",
+     "top": 280,
+     "color": "blue",
+     "html": "The 3-Spot<br>Leak Check",
+     "at": 1,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 640,
+     "html": "1 · Under the water heater",
+     "at": 2,
+     "d": 0.6
+    },
+    {
+     "t": "chip",
+     "top": 810,
+     "html": "2 · Under the sink",
+     "at": 2,
+     "d": 1.8
+    },
+    {
+     "t": "chip",
+     "top": 980,
+     "html": "3 · Behind the washer",
+     "at": 2,
+     "d": 2.8
+    }
+   ]
+  },
+  {
+   "from": 3,
+   "to": 3,
+   "els": [
+    {
+     "t": "mid",
+     "top": 200,
+     "html": "<svg width=\"760\" height=\"560\" viewBox=\"0 0 760 560\" style=\"display:block;margin:0 auto\"><rect width=\"760\" height=\"560\" rx=\"36\" fill=\"#0b1226\"/><rect x=\"120\" y=\"230\" width=\"520\" height=\"56\" rx=\"28\" fill=\"#8d97b5\"/><path d=\"M150 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M196 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M242 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M288 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M334 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M380 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M426 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M472 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M518 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M564 228 l10 -18 l10 18\" stroke=\"#cfe3ff\" stroke-width=\"5\" fill=\"none\"/><path d=\"M360 232 l20 54 l20 -54\" stroke=\"#0b1226\" stroke-width=\"10\" fill=\"none\"/><rect x=\"60\" y=\"520\" width=\"640\" height=\"10\" fill=\"#2a3358\"/><path d=\"M372 300 q-14 26 0 34 q14 -8 0 -34z\" fill=\"#60a5fa\"/><path d=\"M380 370 q-18 32 0 42 q18 -10 0 -42z\" fill=\"#60a5fa\"/><ellipse cx=\"380\" cy=\"500\" rx=\"210\" ry=\"28\" fill=\"#60a5fa\" opacity=\".55\"/><rect x=\"300\" y=\"470\" width=\"160\" height=\"56\" rx=\"18\" fill=\"#e9edf7\"/><circle cx=\"380\" cy=\"498\" r=\"10\" fill=\"#2dd4bf\"/><text x=\"380\" y=\"455\" fill=\"#2dd4bf\" font-size=\"26\" font-family=\"Inter\" font-weight=\"800\" text-anchor=\"middle\">SENSOR</text><text x=\"380\" y=\"120\" fill=\"#cfe3ff\" font-size=\"44\" font-family=\"Inter\" font-weight=\"800\" text-anchor=\"middle\">❄ FIRST FREEZE</text></svg>",
+     "at": 3,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 820,
+     "html": "📱 Leak detected: kitchen sink",
+     "at": 3,
+     "d": 0.6
+    },
+    {
+     "t": "chip",
+     "top": 990,
+     "html": "❄ Many also send low-temp alerts",
+     "at": 3,
+     "d": 2.2
+    }
+   ]
+  },
+  {
+   "from": 4,
+   "to": 4,
+   "els": [
+    {
+     "t": "card",
+     "top": 330,
+     "color": "teal",
+     "n": "+",
+     "html": "Upgrade: automatic water shut-off",
+     "at": 4
+    },
+    {
+     "t": "mid",
+     "top": 640,
+     "html": "Leak detected →<br><span style='color:var(--teal)'>main valve closes</span>",
+     "at": 4,
+     "d": 1.6
+    }
+   ]
+  },
+  {
+   "from": 5,
+   "to": 7,
+   "els": [
+    {
+     "t": "big",
+     "top": 260,
+     "html": "Which spot would you <span style='color:var(--blue)'>check first?</span>",
+     "at": 5,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 680,
+     "html": "Goal: <b>100 subscribers</b> by Dec 31",
+     "at": 6
+    },
+    {
+     "t": "mid",
+     "top": 880,
+     "html": "Follow for <b style='color:var(--teal)'>#5: Thanksgiving<br>guest Wi-Fi</b>",
+     "at": 7
+    },
+    {
+     "t": "mid",
+     "top": 1110,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 7,
+     "d": 2.2
+    }
+   ]
+  }
+ ]
+}

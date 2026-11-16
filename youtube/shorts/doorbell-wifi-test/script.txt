@@ -1,0 +1,13 @@
+Before you drill a single hole for a video doorbell, test your Wi-Fi at the front door.
+
+The doorbell lives outside, often behind brick or stucco, and that's exactly where Wi-Fi gets weak.
+
+Here's how I check it. Stand right where the doorbell will go, connect your phone to your home Wi-Fi, and run a speed test.
+
+If it's slow there, the doorbell will be slow too. Laggy live view, and late notifications.
+
+After setup, open the Ring app, go to Device Health, and check the signal strength.
+
+Weak signal? Move the router closer, or add a mesh point or an extender near the door.
+
+Strong Wi-Fi first, then drill. Follow NovaProHome for more install tips.

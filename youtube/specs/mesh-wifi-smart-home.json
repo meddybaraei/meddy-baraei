@@ -1,0 +1,229 @@
+{
+ "slug": "mesh-wifi-smart-home",
+ "title": "Smart Devices Keep Dropping? Fix Your Wi-Fi First #shorts",
+ "beats": [
+  {
+   "text": "Camera dropping offline? Doorbell slow? The problem usually isn't the device. It's the Wi-Fi."
+  },
+  {
+   "text": "One router in a corner of the house can't reach the garage, the backyard, and the front door."
+  },
+  {
+   "text": "A mesh system fixes that. Several nodes work together as one network, with one name and one password."
+  },
+  {
+   "text": "Placement matters. Put each node in the open, about halfway between the router and the dead zone. Not in a closet, and not behind the TV."
+  },
+  {
+   "text": "If you can, connect the nodes with an Ethernet cable. A wired backhaul is faster and more stable than wireless."
+  },
+  {
+   "text": "And many smart home devices only connect on 2.4 gigahertz, so keep that band turned on."
+  },
+  {
+   "text": "Strong Wi-Fi first, smart devices second. Free quote at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 0,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 220,
+     "html": "WHOLE-HOME WI-FI",
+     "at": 0
+    },
+    {
+     "t": "chip",
+     "top": 380,
+     "html": "📷 Camera offline?",
+     "at": 0,
+     "d": 0.2
+    },
+    {
+     "t": "chip",
+     "top": 550,
+     "html": "🔔 Doorbell slow?",
+     "at": 0,
+     "d": 1.2
+    },
+    {
+     "t": "big",
+     "top": 820,
+     "html": "It's the<br><span style='color:var(--blue)'>Wi-Fi.</span>",
+     "at": 0,
+     "d": 3.0,
+     "pop": true
+    }
+   ]
+  },
+  {
+   "from": 1,
+   "to": 1,
+   "els": [
+    {
+     "t": "warn",
+     "top": 340,
+     "html": "One router in a corner",
+     "at": 1,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 620,
+     "html": "Garage ✕",
+     "at": 1,
+     "d": 1.8
+    },
+    {
+     "t": "chip",
+     "top": 790,
+     "html": "Backyard ✕",
+     "at": 1,
+     "d": 2.4
+    },
+    {
+     "t": "chip",
+     "top": 960,
+     "html": "Front door ✕",
+     "at": 1,
+     "d": 3.0
+    }
+   ]
+  },
+  {
+   "from": 2,
+   "to": 2,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "teal",
+     "n": "✓",
+     "html": "Mesh Wi-Fi",
+     "at": 2
+    },
+    {
+     "t": "chips",
+     "top": 620,
+     "items": [
+      "📶",
+      "📶",
+      "📶"
+     ],
+     "at": 2,
+     "d": 1.2
+    },
+    {
+     "t": "mid",
+     "top": 860,
+     "html": "One network<br><span style='color:var(--teal)'>one name · one password</span>",
+     "at": 2,
+     "d": 2.6
+    }
+   ]
+  },
+  {
+   "from": 3,
+   "to": 3,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "amber",
+     "n": "1",
+     "html": "Place nodes in the open",
+     "at": 3
+    },
+    {
+     "t": "chip",
+     "top": 600,
+     "html": "Halfway: router ↔ dead zone",
+     "at": 3,
+     "d": 2.0
+    },
+    {
+     "t": "warn",
+     "top": 820,
+     "html": "Not in a closet<br>Not behind the TV",
+     "at": 3,
+     "d": 4.5
+    }
+   ]
+  },
+  {
+   "from": 4,
+   "to": 4,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "violet",
+     "n": "2",
+     "html": "Wire the nodes if you can",
+     "at": 4
+    },
+    {
+     "t": "mid",
+     "top": 620,
+     "html": "Ethernet backhaul =<br><span style='color:var(--violet)'>faster & more stable</span>",
+     "at": 4,
+     "d": 2.4
+    }
+   ]
+  },
+  {
+   "from": 5,
+   "to": 5,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "blue",
+     "n": "3",
+     "html": "Keep 2.4 GHz on",
+     "at": 5
+    },
+    {
+     "t": "mid",
+     "top": 620,
+     "html": "Many smart devices<br>only connect on <span style='color:var(--blue)'>2.4 GHz</span>",
+     "at": 5,
+     "d": 1.0
+    }
+   ]
+  },
+  {
+   "from": 6,
+   "to": 6,
+   "els": [
+    {
+     "t": "big",
+     "top": 380,
+     "color": "blue",
+     "html": "Strong Wi-Fi first.",
+     "at": 6,
+     "pop": true
+    },
+    {
+     "t": "big",
+     "top": 680,
+     "color": "teal",
+     "html": "Smart devices second.",
+     "at": 6,
+     "d": 1.2,
+     "pop": true
+    },
+    {
+     "t": "mid",
+     "top": 1120,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 6,
+     "d": 1.0
+    }
+   ]
+  }
+ ]
+}

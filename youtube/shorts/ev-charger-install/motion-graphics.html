@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--bg:#0b1020;--panel:#151c33;--ink:#f3f5fb;--mute:#8d97b5;--amber:#ffb020;--violet:#a78bfa;--teal:#2dd4bf;--red:#ff4d5e;--blue:#60a5fa}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:Inter,sans-serif;color:var(--ink)}
+#stage{position:absolute;inset:0}
+#tint{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(255,77,94,.35),transparent 70%);opacity:0}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.035) 2px,transparent 2px);background-size:90px 90px}
+.brand{position:absolute;top:70px;left:0;right:0;text-align:center;font:700 30px Inter;letter-spacing:6px;color:var(--mute);opacity:.7}
+.scene{position:absolute;inset:0;opacity:0}
+.a{position:absolute;opacity:0}
+.kicker{left:0;right:0;text-align:center;font:600 34px Inter;letter-spacing:8px;color:var(--mute)}
+.big{left:70px;right:70px;text-align:center;font:800 100px/1.05 "Inter Display",Inter;letter-spacing:-2px}
+.mid{left:70px;right:70px;text-align:center;font:700 62px/1.15 "Inter Display",Inter}
+.card{left:100px;right:100px;min-height:190px;border-radius:36px;background:var(--panel);border:4px solid;display:flex;align-items:center;gap:36px;padding:24px 46px;font:800 64px/1.1 "Inter Display",Inter}
+.card .n{flex:none;width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 54px Inter;color:var(--bg)}
+.chip{left:140px;right:140px;min-height:140px;padding:20px 30px;border-radius:30px;background:var(--panel);display:flex;align-items:center;justify-content:center;text-align:center;font:700 52px/1.2 Inter;border:3px solid rgba(255,255,255,.08)}
+.chips{left:80px;right:80px;display:flex;justify-content:center;gap:26px}
+.chips div{width:140px;height:140px;border-radius:28px;background:var(--panel);border:3px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font:800 60px "JetBrains Mono"}
+.warn{left:90px;right:90px;border-radius:32px;padding:36px 44px;background:rgba(255,77,94,.12);border:4px solid var(--red);font:700 54px/1.25 Inter;text-align:center}
+#cap{position:absolute;left:60px;right:60px;bottom:150px;text-align:center;font:700 50px/1.25 Inter;color:#fff}
+#cap span{background:rgba(0,0,0,.6);padding:6px 18px;border-radius:14px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+</style></head><body>
+<div id="stage"><div class="grid"></div><div id="tint"></div><div class="brand">NOVAPROHOME</div><div id="scenes"></div><div id="cap"></div></div>
+<script>
+const SPEC={"slug": "ev-charger-install-explained", "title": "What a Home EV Charger Install Really Involves #shorts", "beats": [{"text": "Thinking about a Level 2 EV charger at home? Here's what a proper install actually involves.", "start": 0.59, "end": 5.655}, {"text": "Step one is a load calculation. We check your electrical panel to see if it can handle the charger on top of everything else in your house.", "start": 6.267, "end": 12.616}, {"text": "That answer decides the cost. Panel capacity, how far the cable has to run, and whether you need a panel upgrade.", "start": 13.219, "end": 19.406}, {"text": "Step two is the permit. In Loudoun and Fairfax County, an EV charger needs an electrical permit and an inspection.", "start": 19.986, "end": 25.794}, {"text": "Skip it, and you could have problems with insurance or when you sell the house.", "start": 26.266, "end": 29.642}, {"text": "Step three, set up off-peak scheduling, so the car charges overnight when power often costs less.", "start": 30.159, "end": 35.294}, {"text": "Load calc, permit, off-peak. NovaProHome handles all three. Free quote at novaprohome.com.", "start": 35.875, "end": 42.246}], "scenes": [{"from": 0, "to": 0, "els": [{"t": "kicker", "top": 220, "html": "EV CHARGER INSTALL", "at": 0}, {"t": "big", "top": 520, "html": "Level 2<br>at home?<br><span style='color:var(--teal)'>Do it right.</span>", "at": 0, "d": 0.3, "pop": true}]}, {"from": 1, "to": 2, "els": [{"t": "card", "top": 320, "color": "amber", "n": "1", "html": "Load calculation", "at": 1}, {"t": "mid", "top": 600, "html": "Can your panel handle<br>the charger <span style='color:var(--amber)'>plus</span> your house?", "at": 1, "d": 1.5}, {"t": "chip", "top": 880, "html": "Panel capacity", "at": 2, "d": 0.6}, {"t": "chip", "top": 1050, "html": "Cable run distance", "at": 2, "d": 1.6}, {"t": "chip", "top": 1220, "html": "Panel upgrade needed?", "at": 2, "d": 2.8}]}, {"from": 3, "to": 4, "els": [{"t": "card", "top": 320, "color": "violet", "n": "2", "html": "Permit + inspection", "at": 3}, {"t": "chip", "top": 620, "html": "Loudoun & Fairfax County", "at": 3, "d": 1.2}, {"t": "warn", "top": 880, "html": "No permit = insurance and<br>resale headaches", "at": 4, "pop": true}]}, {"from": 5, "to": 5, "els": [{"t": "card", "top": 320, "color": "teal", "n": "3", "html": "Off-peak scheduling", "at": 5}, {"t": "big", "top": 640, "color": "teal", "html": "Charge<br>overnight", "at": 5, "d": 1.4, "pop": true}]}, {"from": 6, "to": 6, "els": [{"t": "big", "top": 340, "color": "amber", "html": "Load calc.", "at": 6, "pop": true}, {"t": "big", "top": 500, "color": "violet", "html": "Permit.", "at": 6, "d": 0.6, "pop": true}, {"t": "big", "top": 660, "color": "teal", "html": "Off-peak.", "at": 6, "d": 1.2, "pop": true}, {"t": "mid", "top": 1120, "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>", "at": 6, "d": 1.0}]}]};
+const clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>1-Math.pow(1-clamp(x),3);
+const back=x=>{x=clamp(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const B=SPEC.beats; // [{text,start,end}]
+const root=document.getElementById('scenes');const scenes=[],els=[];
+SPEC.scenes.forEach(sc=>{
+  const s=document.createElement('div');s.className='scene';root.appendChild(s);
+  const a=B[sc.from].start-0.05,b=sc.to+1<B.length?B[sc.to+1].start-0.15:1e9;scenes.push({s,a,b});
+  sc.els.forEach(e=>{
+    const d=document.createElement('div');d.className='a '+e.t;d.style.top=e.top+'px';
+    if(e.color){d.style.borderColor=`var(--${e.color})`;if(e.t!=='card'&&e.t!=='chip'&&e.t!=='warn')d.style.color=`var(--${e.color})`}
+    if(e.t==='card')d.innerHTML=`<div class="n" style="background:var(--${e.color})">${e.n}</div><div>${e.html}</div>`;
+    else if(e.t==='chips')d.innerHTML=e.items.map(x=>`<div>${x}</div>`).join('');
+    else if(e.t==='chip')d.innerHTML=`<div>${e.html}</div>`; // one flex child so inline spans don't split into columns
+    else d.innerHTML=e.html;
+    s.appendChild(d);
+    els.push({d,t:B[e.at].start+(e.d||0),pop:!!e.pop,dim:e.dimAt!=null?B[e.dimAt].start:null});
+  });
+});
+window.render=function(t){
+  for(const{s,a,b}of scenes){s.style.opacity=Math.max(0,Math.min(ease((t-a)/.3),1-ease((t-b)/.3)));s.style.transform=`translateY(${(1-ease((t-a)/.4))*40-ease((t-b)/.3)*40}px)`}
+  for(const{d,t:ti,pop,dim}of els){const p=(t-ti)/.45;d.style.opacity=ease(p*1.6)*(dim!=null&&t>dim?.35:1);d.style.transform=pop?`scale(${.6+.4*back(p)})`:`translateY(${(1-ease(p))*50}px)`}
+  const tb=SPEC.tintBeat;document.getElementById('tint').style.opacity=tb!=null&&t>=B[tb].start&&t<B[tb].end+.3?.55+.35*Math.sin((t-B[tb].start)*7):0;
+  let c='';for(const x of B)if(t>=x.start-.05)c=x.cap||x.text;document.getElementById('cap').innerHTML=`<span>${c}</span>`;
+};
+render(0);
+</script></body></html>

@@ -1,0 +1,18 @@
+  0.62-  4.98
+  script: The most common smart lighting mistake? Putting smart bulbs on a regular wall switch.
+  heard:  The most common smart lighting mistake? Putting smart bulbs on a regular wall switch.
+  5.86- 11.18
+  script: Someone flips the switch off, the bulb loses power, and every schedule and voice command stops working.
+  heard:  Someone flips the switch off, the bulb loses power, and every scheduled voice command stops working.
+ 12.25- 19.46
+  script: The fix is a smart switch or dimmer. It replaces the wall switch, so the light works from the wall, the app, and your voice.
+  heard:  The Flics is a smart switch or dimmer. It replaces the wall switch, so the light works from the wall, the app, and your voice.
+ 20.56- 26.07
+  script: That's why we install a lot of Lutron Caseta. The dimmers don't need a neutral wire, so they work in most older homes.
+  heard:  That's why we install a lot of Lutron Caséta. The dimmers don't need a neutral wire, so they work in most older homes.
+ 27.08- 31.96
+  script: Smart bulbs still have a place. Use them in lamps, or when you want color, like Philips Hue.
+  heard:  Smart bulbs still have a place. Use them in lamps, or when you want color, like Philips Hue.
+ 33.02- 38.48
+  script: Switches for your ceiling lights, bulbs for lamps and color. Free quote at novaprohome.com.
+  heard:  Switches for your ceiling lights, bulbs for lamps and color. Free quote at novaprohome.com.

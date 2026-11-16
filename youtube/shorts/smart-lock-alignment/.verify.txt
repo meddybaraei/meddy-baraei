@@ -1,0 +1,18 @@
+  0.51-  3.99
+  script: Before you install a smart lock, do this ten-second test on your door.
+  heard:  Before you install a smart lock, do this 10-second test on your door.
+  4.74-  6.97
+  script: Close the door and turn the deadbolt by hand.
+  heard:  Close the door and turn the deadbolt by hand
+  7.68- 13.05
+  script: If you have to push or pull the door to make it lock, a smart lock will struggle, jam, and drain its batteries.
+  heard:  If you have to push or pull the door to make it lock, a smart lock will struggle, jam, and drain its batteries.
+ 13.74- 19.19
+  script: The fix is alignment first. Adjust the strike plate or the hinges until the bolt slides in smoothly.
+  heard:  Fix is alignment first. Adjust the strike plate or the hinges until the bolt slides in smoothly.
+ 19.81- 24.70
+  script: Then install the lock, and always keep a backup way in, like a key or a keypad code.
+  heard:  Then install the lock and always keep a backup way in like a key or a keypad code
+ 25.34- 30.31
+  script: Smooth deadbolt first, smart lock second. Free quote at novaprohome.com.
+  heard:  Smooth deadbolt first, smart lock second. Free quote at novaprohome.com.

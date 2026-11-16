@@ -1,0 +1,18 @@
+  0.52-  5.39
+  script: Ten smart devices, ten different apps? That's not a smart home. That's a junk drawer.
+  heard:  10 smart devices, 10 different apps? That's not a smart home, that's a junk drawer.
+  6.10- 13.39
+  script: Full home automation means everything works as one system: thermostat, lights, locks, garage, cameras, and audio.
+  heard:  Full home automation means everything works as one system. Thermostat, lights, locks, garage, cameras, and audio.
+ 13.95- 16.41
+  script: Here's what that looks like. Tap one Goodnight button.
+  heard:  Here's what that looks like. Tap one good night button.
+ 16.98- 22.26
+  script: The doors lock, the garage closes, the lights turn off, and the thermostat sets back for the night.
+  heard:  The doors lock. The garage closes. The lights turn off, and the thermostat sets back for the night.
+ 22.92- 26.04
+  script: That only works when the system is planned before anything gets installed.
+  heard:  That only works when the system is planned before anything gets installed
+ 26.64- 31.41
+  script: One app, one system, planned first. Free quote at novaprohome.com.
+  heard:  One app, one system, Plan First. Free quote at novaprohome.com.

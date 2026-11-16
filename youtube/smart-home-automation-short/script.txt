@@ -1,0 +1,15 @@
+Most smart homes don't fail because of bad gadgets. They fail because of bad automations.
+
+Every automation that works has three parts: a trigger, a condition, and an action.
+
+The trigger is the event that starts it. Someone walks into a room. A leak sensor gets wet.
+
+The condition is the check. It's a rule that has to be true first, like "only after sunset."
+
+The action is what actually happens. A light turns on. A valve closes.
+
+Here's one. At 2 A.M., a leak sensor under a pipe gets wet. That's the trigger. There's no condition, because a leak is always urgent. The action: the hub closes the main water shut-off valve, sends an alert to your phone, and turns the lights red.
+
+Now add a condition. Motion on the porch turns on the porch light, but only between sunset and midnight. At 2 P.M., the motion still fires the trigger, and the condition blocks the action.
+
+Trigger. Condition. Action. Build every automation this way.

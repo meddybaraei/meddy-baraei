@@ -1,0 +1,17 @@
+Installing a smart thermostat? Do these three checks before you touch a single wire.
+
+One. Turn off the power to your heating and cooling system at the breaker.
+
+Not just at the thermostat. At the breaker.
+
+Two. Take a clear photo of your old wiring before you disconnect anything.
+
+The letter on each terminal tells you where every wire goes back.
+
+Three. Look for a C wire. That's the common wire that gives the thermostat steady power.
+
+No C wire? Some systems still work and some don't, so run your wiring through Google's compatibility checker before you buy.
+
+And if you see thick wires joined with wire nuts, it may be a line-voltage system. That's a hard stop. Call a pro.
+
+Breaker off. Photo first. Check for C. Follow NovaProHome for more install tips.

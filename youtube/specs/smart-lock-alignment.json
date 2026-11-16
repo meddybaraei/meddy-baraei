@@ -1,0 +1,146 @@
+{
+ "slug": "smart-lock-door-alignment",
+ "title": "Check This Before Installing a Smart Lock #shorts",
+ "beats": [
+  {
+   "text": "Before you install a smart lock, do this ten-second test on your door."
+  },
+  {
+   "text": "Close the door and turn the deadbolt by hand."
+  },
+  {
+   "text": "If you have to push or pull the door to make it lock, a smart lock will struggle, jam, and drain its batteries."
+  },
+  {
+   "text": "The fix is alignment first. Adjust the strike plate or the hinges until the bolt slides in smoothly."
+  },
+  {
+   "text": "Then install the lock, and always keep a backup way in, like a key or a keypad code."
+  },
+  {
+   "text": "Smooth deadbolt first, smart lock second. Free quote at novaprohome.com."
+  }
+ ],
+ "scenes": [
+  {
+   "from": 0,
+   "to": 1,
+   "els": [
+    {
+     "t": "kicker",
+     "top": 220,
+     "html": "SMART LOCK INSTALL",
+     "at": 0
+    },
+    {
+     "t": "big",
+     "top": 480,
+     "html": "The<br><span style='color:var(--amber)'>10-second</span><br>door test",
+     "at": 0,
+     "d": 0.3,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 1000,
+     "html": "Close door → turn deadbolt by hand",
+     "at": 1
+    }
+   ]
+  },
+  {
+   "from": 2,
+   "to": 3,
+   "els": [
+    {
+     "t": "warn",
+     "top": 320,
+     "html": "Have to push or pull<br>the door to lock it?",
+     "at": 2,
+     "pop": true
+    },
+    {
+     "t": "chip",
+     "top": 640,
+     "html": "Jams",
+     "at": 2,
+     "d": 2.6
+    },
+    {
+     "t": "chip",
+     "top": 810,
+     "html": "Drains batteries",
+     "at": 2,
+     "d": 3.4
+    },
+    {
+     "t": "card",
+     "top": 1040,
+     "color": "teal",
+     "n": "✓",
+     "html": "Align first: strike plate or hinges",
+     "at": 3
+    }
+   ]
+  },
+  {
+   "from": 4,
+   "to": 4,
+   "els": [
+    {
+     "t": "card",
+     "top": 320,
+     "color": "violet",
+     "n": "🔑",
+     "html": "Keep a backup way in",
+     "at": 4,
+     "d": 1.4
+    },
+    {
+     "t": "chip",
+     "top": 620,
+     "html": "Physical key",
+     "at": 4,
+     "d": 2.4
+    },
+    {
+     "t": "chip",
+     "top": 790,
+     "html": "Keypad code",
+     "at": 4,
+     "d": 3.0
+    }
+   ]
+  },
+  {
+   "from": 5,
+   "to": 5,
+   "els": [
+    {
+     "t": "big",
+     "top": 380,
+     "color": "amber",
+     "html": "Smooth deadbolt first.",
+     "at": 5,
+     "pop": true
+    },
+    {
+     "t": "big",
+     "top": 700,
+     "color": "teal",
+     "html": "Smart lock second.",
+     "at": 5,
+     "d": 1.2,
+     "pop": true
+    },
+    {
+     "t": "mid",
+     "top": 1120,
+     "html": "Free quote at<br><b style='color:var(--teal)'>novaprohome.com</b>",
+     "at": 5,
+     "d": 1.0
+    }
+   ]
+  }
+ ]
+}
