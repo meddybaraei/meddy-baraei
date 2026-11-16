@@ -95,6 +95,10 @@ def main(spec_path, out):
         w = wave.open(f"{out}/voiceover.wav", "wb"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(RATE); w.writeframes(audio); w.close()
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{out}/voiceover.wav", "-b:a", "160k", f"{out}/voiceover.mp3"], check=True)
     align(spec["beats"], silences(f"{out}/voiceover.wav"), total, f"{out}/voiceover.mp3")
+    for i, b in enumerate(spec["beats"]):  # manual fix when the voice runs two lines together with no detectable pause
+        if "start_at" in b:
+            b["start"] = b["start_at"]
+            if i: spec["beats"][i - 1]["end"] = min(spec["beats"][i - 1]["end"], b["start_at"] - 0.1)
     for b in spec["beats"]:
         print(f'{b["start"]:6.2f}-{b["end"]:6.2f}  {b["text"]}')
 
