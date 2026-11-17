@@ -1,0 +1,65 @@
+{
+ "badge": "Job of the Week · Smart Lock",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/lock_before.jpg",
+   "kicker": "Before · Sterling, VA",
+   "title": "Still using keys?",
+   "body": "Keys only. No codes, no app, no idea if it's locked.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/lock_old_removed.jpg",
+   "kicker": "Step 1",
+   "title": "Out with the old",
+   "body": "Old deadbolt and latch removed.",
+   "dur": 3.6
+  },
+  {
+   "photo": "video/weekly/photos/lock_latch_wood.jpg",
+   "kicker": "Step 2",
+   "title": "Prep the door edge",
+   "body": "Clean up the bore and latch pocket so the new bolt sits flush.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/lock_hole_empty.jpg",
+   "kicker": "Step 3",
+   "title": "New bolt goes in",
+   "body": "Latch installed, square and smooth.",
+   "dur": 3.6
+  },
+  {
+   "photo": "video/weekly/photos/lock_hole_adapter.jpg",
+   "kicker": "Step 4",
+   "title": "Connect the keypad cable",
+   "body": "The outside keypad's cable routes through to the inside unit.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/lock_interior_plate.jpg",
+   "kicker": "Step 5",
+   "title": "Mount the inside unit",
+   "body": "Tip: keep the code label off camera, it has your lock's codes.",
+   "dur": 4.2
+  },
+  {
+   "photo": "video/weekly/photos/lock_interior_done.jpg",
+   "kicker": "Step 6",
+   "title": "Cover on, batteries in",
+   "body": "Then connect it to Wi-Fi in the Schlage Home app.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/lock_keypad_front.jpg",
+   "kicker": "After",
+   "title": "Schlage smart lock: done",
+   "body": "Unlock with a code, a key or your phone, from anywhere.",
+   "dur": 4.6
+  }
+ ],
+ "end": [
+  "Want a smart lock installed?",
+  "novaprohome.com"
+ ]
+}

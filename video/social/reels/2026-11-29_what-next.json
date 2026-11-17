@@ -1,0 +1,30 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "clip": "video/broll/veo_holiday_lights.mp4",
+   "crop": [
+    0,
+    0,
+    1,
+    0.92
+   ],
+   "ai": true,
+   "kicker": "Thank you",
+   "title": "What should we cover next?",
+   "dur": 5.5
+  },
+  {
+   "photo": "video/social/reels/img/what-next.jpg",
+   "title": "",
+   "body": "Coming up: holiday lighting, winter-proofing and gift ideas.",
+   "dur": 5.0
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

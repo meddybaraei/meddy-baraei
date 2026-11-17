@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "kicker": "Quick question",
+   "title": "What do you wish just worked on its own?",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Lights · thermostat · locks · cameras · EV charging. Tell us below!",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

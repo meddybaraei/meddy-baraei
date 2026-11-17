@@ -1,0 +1,37 @@
+{
+ "hook": "POV: one camera sees your whole driveway",
+ "hook_hl": "whole",
+ "hook_photo": "facebook-post/04_installer_on_ladder.jpg",
+ "clips": [
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "text": "ring elite 180 4k",
+   "hl": "4k"
+  },
+  {
+   "photo": "video/series/photos/product_ring_elite_180.png",
+   "text": "built for driveways + businesses",
+   "hl": "businesses"
+  },
+  {
+   "photo": "video/series/photos/product_ring_elite_180.png",
+   "text": "we run the cable + mount it",
+   "hl": "cable"
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "text": "set up and ready same day",
+   "hl": "same day"
+  },
+  {
+   "photo": "video/series/photos/product_ring_elite_180.png",
+   "text": "180 degrees. zero blind spots.",
+   "hl": "zero"
+  }
+ ],
+ "cta": [
+  "Want the full view?",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}

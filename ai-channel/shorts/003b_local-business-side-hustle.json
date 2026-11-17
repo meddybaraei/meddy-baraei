@@ -1,0 +1,54 @@
+{
+ "title": "The AI Side Hustle Hiding on Main Street",
+ "voice": "Charon",
+ "style": "Read this like a funny, honest, energetic friend in a quick social video. Playful on the joke, then clear and practical.",
+ "segments": [
+  {
+   "kicker": "Side hustle",
+   "title": "Your favorite pizza shop hasn't posted since 2019.",
+   "bullets": [],
+   "big": "$",
+   "say": "Your favorite pizza shop hasn't posted on Facebook since twenty nineteen. That's a side hustle sitting right there.",
+   "accent": [
+    255,
+    150,
+    40
+   ],
+   "skip": true
+  },
+  {
+   "kicker": "How it works",
+   "title": "Offer a month of posts",
+   "bullets": [
+    "Ask the owner what's new and what sells",
+    "AI drafts 12 posts in minutes",
+    "You edit, add real photos, they approve",
+    "Charge a flat monthly fee"
+   ],
+   "say": "Ask the owner what's new and what sells. Use AI to draft twelve posts in a few minutes. Then you edit them, add real photos from the shop, and get the owner's okay before anything goes live. Charge a simple flat monthly fee. Start with one business you already know.",
+   "accent": [
+    170,
+    110,
+    255
+   ],
+   "chat": {
+    "user": "Write 12 short Facebook posts for [Tony's Pizza] for this month. Specials: [$10 Tuesday large pie, new garlic knots]. Friendly, local, end each with a question.",
+    "ai": "1) Tuesday = $10 large pie day. Pepperoni or plain, which team are you on?\n2) Our new garlic knots just dropped. Dip or no dip?\n3) ..."
+   }
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Follow for more real AI money tips",
+   "bullets": [
+    "Prompts are in the description",
+    "Results vary. It still takes real work"
+   ],
+   "say": "What local business near you needs this? Tell me below. Follow Run It With AI for more real, no-hype tips.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  }
+ ]
+}

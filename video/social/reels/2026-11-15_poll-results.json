@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
+   "kicker": "Poll results",
+   "title": "Which device first? Start at the door",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "A video doorbell is the device you use every day.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

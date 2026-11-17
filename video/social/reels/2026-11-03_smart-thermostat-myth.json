@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/ecobee_humidity_result.jpg",
+   "kicker": "Thermostat myth",
+   "title": "Is your smart thermostat wasting money?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/ecobee_humidity_result.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Only if it's set up wrong: heat pump settings, aux heat, sensor placement.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

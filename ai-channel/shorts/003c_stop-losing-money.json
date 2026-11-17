@@ -1,0 +1,53 @@
+{
+ "title": "The Fastest Way to Make Money With AI: Stop Losing It",
+ "voice": "Charon",
+ "style": "Read this like a funny, honest, energetic friend in a quick social video. Playful on the joke, then clear and practical.",
+ "segments": [
+  {
+   "kicker": "Plot twist",
+   "title": "The fastest AI money move? Stop losing it.",
+   "bullets": [],
+   "big": "$",
+   "say": "Here's the fastest way to make money with AI that nobody talks about. Stop losing it.",
+   "accent": [
+    255,
+    190,
+    40
+   ],
+   "skip": true
+  },
+  {
+   "kicker": "Real example",
+   "title": "One small business: about $480 a month saved",
+   "bullets": [
+    "Listed every subscription and ad",
+    "Asked AI: what's worth keeping?",
+    "Paused weak ads, cancelled an unused tool"
+   ],
+   "say": "A small installation business listed every subscription and every ad it was paying for, and asked AI which ones were actually worth it. It paused ads that brought very few customers and cancelled a tool nobody used. That's about four hundred eighty dollars a month back. Your numbers will be different, but you can do this tonight.",
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "Here are my monthly costs: [list with prices]. Here's what each one brought in: [results]. Which should I keep, cut or test?",
+    "ai": "Keep: your scheduling app (used daily).\nCut: the design tool, not used in 3 months.\nTest: pause the ads for 2 weeks and watch how many calls you lose."
+   }
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Follow for more real AI money tips",
+   "bullets": [
+    "Prompts are in the description",
+    "Results vary. It still takes real work"
+   ],
+   "say": "What subscription are you paying for and never use? Confess below. Follow Run It With AI for more real, no-hype tips.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  }
+ ]
+}

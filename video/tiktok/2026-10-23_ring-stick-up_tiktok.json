@@ -1,0 +1,37 @@
+{
+ "hook": "POV: you finally see who keeps opening the garage",
+ "hook_hl": "garage",
+ "hook_photo": "facebook-post/05_installer_garage.jpg",
+ "clips": [
+  {
+   "photo": "facebook-post/05_installer_garage.jpg",
+   "text": "ring stick up cam",
+   "hl": "stick up"
+  },
+  {
+   "photo": "facebook-post/10_security_collage.jpg",
+   "text": "watching the garage 24/7",
+   "hl": "24/7"
+  },
+  {
+   "photo": "video/series/photos/product_ring_stick_up_cam_4k.png",
+   "text": "battery, plug-in or solar",
+   "hl": "solar"
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "text": "we install + connect every cam",
+   "hl": "every cam"
+  },
+  {
+   "photo": "facebook-post/10_security_collage.jpg",
+   "text": "mystery solved.",
+   "hl": "solved."
+  }
+ ],
+ "cta": [
+  "Want eyes on your garage?",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}

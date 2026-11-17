@@ -1,0 +1,53 @@
+{
+ "title": "Reply to Any Email in 10 Seconds",
+ "voice": "Charon",
+ "style": "Read this like a funny, energetic friend in a quick social video. Playful on the joke, then clear and upbeat.",
+ "segments": [
+  {
+   "kicker": "Inbox zero?",
+   "title": "47 unread emails. Zero energy.",
+   "bullets": [],
+   "big": "47",
+   "say": "Forty-seven unread emails and zero energy to answer them? Let AI write the first draft.",
+   "accent": [
+    255,
+    90,
+    120
+   ],
+   "skip": true
+  },
+  {
+   "kicker": "Copy this",
+   "title": "The reply-for-me prompt",
+   "bullets": [
+    "Paste the email you got",
+    "Say what you want to happen",
+    "Set the tone and length"
+   ],
+   "say": "Paste the email you got. Then say: write a reply that, and what you want to happen. Add the tone and the length. You just edit and hit send.",
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "Here's an email: [paste]. Write a reply that says no refund after 30 days, but offers store credit. Kind, under 80 words.",
+    "ai": "Hi Maria, I'm sorry the table isn't working out. Our refund window is 30 days, but we'd be happy to give you full store credit. Stop by any time!"
+   }
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Follow for more AI tricks",
+   "bullets": [
+    "Copy the prompt from the description",
+    "Subscribe for more"
+   ],
+   "say": "Which email do you hate answering the most? Tell me below. Follow Run It With AI for a new trick every week.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  }
+ ]
+}

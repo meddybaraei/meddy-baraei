@@ -1,0 +1,10 @@
+{"hook": "POV: your ecobee says 63% humidity but it's really 50%", "hook_hl": "63%",
+ "hook_photo": "video/weekly/photos/ecobee_humidity_two_readings.jpg",
+ "clips": [
+  {"photo": "video/weekly/photos/ecobee_humidity_wall_hole.jpg", "text": "the culprit: a hole behind the thermostat", "hl": "hole"},
+  {"photo": "video/weekly/photos/ecobee_humidity_wall_hole.jpg", "text": "seal it with duct seal", "hl": "seal"},
+  {"photo": "video/weekly/photos/ecobee_humidity_cable_entry.jpg", "text": "then seal the air handler end", "hl": "air handler"},
+  {"photo": "video/weekly/photos/ecobee_humidity_humidity_correction.jpg", "text": "correct last, not first", "hl": "last"},
+  {"photo": "video/weekly/photos/ecobee_humidity_result.jpg", "text": "52%. fixed.", "hl": "fixed."}
+ ],
+ "cta": ["Need a thermostat pro?", "novaprohome.com/contact", "link in bio"]}

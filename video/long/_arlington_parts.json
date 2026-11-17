@@ -1,0 +1,39 @@
+{
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/deck_ladder_stairs.jpg",
+   "kicker": "Job \u00b7 Arlington, VA",
+   "title": "The space under the deck was a blind spot",
+   "body": "No light, no camera, nothing covering the backyard.",
+   "dur": 4.5
+  },
+  {
+   "photo": "video/weekly/photos/deck_installer_mounting.jpg",
+   "kicker": "The fix",
+   "title": "Ring Spotlight Cam on the deck beam",
+   "body": "Mounted high, aimed at the yard, wired and set up in the Ring app.",
+   "dur": 4.5
+  },
+  {
+   "photo": "video/weekly/photos/deck_spotlight_closeup.jpg",
+   "kicker": "Angle check",
+   "title": "Covering the whole yard",
+   "body": "We set the angle and motion zones so it sees the yard, not the street.",
+   "dur": 4.5
+  },
+  {
+   "photo": "video/weekly/photos/stairs_floodlight.jpg",
+   "kicker": "Plus",
+   "title": "Ring Floodlight Cam on the stairs",
+   "body": "Bright light and video where people actually walk up.",
+   "dur": 4.5
+  },
+  {
+   "photo": "video/weekly/photos/deck_installer_wide.jpg",
+   "kicker": "Result",
+   "title": "Backyard covered. Done.",
+   "body": "Motion alerts and live view on the homeowner's phone.",
+   "dur": 4.5
+  }
+ ]
+}

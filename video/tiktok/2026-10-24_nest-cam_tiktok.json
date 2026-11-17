@@ -1,0 +1,37 @@
+{
+ "hook": "POV: your camera knows a person from a raccoon",
+ "hook_hl": "raccoon",
+ "hook_photo": "facebook-post/06_nest_cam.jpg",
+ "clips": [
+  {
+   "photo": "facebook-post/06_nest_cam.jpg",
+   "text": "google nest cam",
+   "hl": "nest cam"
+  },
+  {
+   "photo": "video/tiktok/photos/nest_left.jpg",
+   "text": "person, car or animal? it knows",
+   "hl": "knows"
+  },
+  {
+   "photo": "video/tiktok/photos/nest_top_right.jpg",
+   "text": "all in the google home app",
+   "hl": "google home"
+  },
+  {
+   "photo": "facebook-post/04_installer_on_ladder.jpg",
+   "text": "installed by a google nest pro",
+   "hl": "nest pro"
+  },
+  {
+   "photo": "facebook-post/06_nest_cam.jpg",
+   "text": "smart alerts only.",
+   "hl": "smart"
+  }
+ ],
+ "cta": [
+  "Want a smarter camera?",
+  "novaprohome.com/contact",
+  "link in bio"
+ ]
+}

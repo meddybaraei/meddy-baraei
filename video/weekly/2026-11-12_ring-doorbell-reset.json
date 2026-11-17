@@ -1,0 +1,50 @@
+{
+ "badge": "Smart Home Fixes · The 20-Second Reset",
+ "shop_qr": false,
+ "scenes": [
+  {
+   "photo": "facebook-post/08_ring_doorbell_brick.jpg",
+   "kicker": "Doorbell frozen or offline?",
+   "title": "Don't rip it off the wall yet",
+   "body": "The reset is one hidden button and 20 seconds.",
+   "dur": 3.6
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_4k_pro_install.jpg",
+   "kicker": "Step 1 · Find it",
+   "title": "Find the setup button",
+   "body": "Wired: under the faceplate, right side. Battery models: on the back or under the faceplate.",
+   "dur": 4.2
+  },
+  {
+   "art": "list",
+   "kicker": "The 20-Second Reset",
+   "title": "4 steps, per Ring",
+   "items": [
+    "Find the setup button",
+    "Hold it for 20 seconds",
+    "Let go and wait a minute",
+    "Set it up again in the app"
+   ],
+   "dur": 4.8
+  },
+  {
+   "photo": "video/series/photos/ring_doorbell_storm_door.jpg",
+   "kicker": "Good to know",
+   "title": "A reset does not remove it from your account",
+   "body": "Selling or moving? Also remove the doorbell in the Ring app.",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/greatfalls_new_done.jpg",
+   "kicker": "Still stuck?",
+   "title": "It may be power or Wi-Fi, not the doorbell",
+   "body": "We check the transformer and signal before replacing anything.",
+   "dur": 3.6
+  }
+ ],
+ "end": [
+  "Doorbell still down? We can help",
+  "novaprohome.com"
+ ]
+}

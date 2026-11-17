@@ -1,0 +1,166 @@
+{
+ "title": "How to Make Money With AI (Honest Beginner's Guide)",
+ "voice": "Charon",
+ "style": "Read this like a friendly, confident teacher explaining to a small business owner. Warm, clear, unhurried, natural pauses.",
+ "segments": [
+  {
+   "kicker": "Real talk",
+   "title": "AI won't make you rich. It can make you faster.",
+   "bullets": [
+    "No get-rich-quick here",
+    "AI does the first draft, you do the judgment",
+    "Results vary. It takes real work"
+   ],
+   "say": "Let's be honest. AI won't make you rich while you sleep, and anyone promising that is selling something. But AI can make you much faster at work people already pay for. In this guide you'll get four honest ways to earn with AI, how to price them, and how to find your first customer. Results vary, and it still takes real work.",
+   "accent": [
+    255,
+    90,
+    120
+   ],
+   "img": "A small business owner at a desk with a laptop where a friendly robot helper hands over a neatly written document, coins and a calendar floating nearby, realistic hopeful mood. Flat vector illustration, bright friendly colors (teal, orange, purple, yellow, sky blue) on a clean light background, simple shapes, modern explainer-video style, no text, no words, no letters, no numbers, no logos, no brand names."
+  },
+  {
+   "kicker": "The rule",
+   "title": "Sell the result, not the AI",
+   "bullets": [
+    "People pay for a finished job",
+    "Your skill and your review are the value",
+    "Always check AI's work before it goes out"
+   ],
+   "say": "First, one rule. Nobody pays for AI. They pay for a finished job. AI writes the first draft, and your skill, your judgment and your review are what make it worth money. So always check its work before anything goes out with your name on it.",
+   "accent": [
+    255,
+    190,
+    40
+   ]
+  },
+  {
+   "kicker": "Way 1",
+   "title": "Social posts for local businesses",
+   "bullets": [
+    "Many local shops rarely post",
+    "AI drafts a month of posts in minutes",
+    "You add real photos and get approval",
+    "Charge a flat monthly fee"
+   ],
+   "say": "Way one: social media posts for local businesses. Many local shops and restaurants rarely post. Ask the owner what's new and what sells, let AI draft a month of posts, add real photos from the shop, and get the owner's approval before anything goes live. Charge a simple flat monthly fee.",
+   "accent": [
+    0,
+    200,
+    170
+   ],
+   "chat": {
+    "user": "Write 12 short Facebook posts for [Tony's Pizza] this month. Specials: [$10 Tuesday large pie, new garlic knots]. Friendly, local, end each with a question.",
+    "ai": "1) Tuesday = $10 large pie day. Pepperoni or plain, which team are you on?\n2) Our new garlic knots just dropped. Dip or no dip?\n3) ..."
+   }
+  },
+  {
+   "kicker": "Way 2",
+   "title": "Do your freelance work faster",
+   "bullets": [
+    "Writing, research, proposals, emails",
+    "AI drafts, you edit and improve",
+    "Faster work = more clients, same hours"
+   ],
+   "say": "Way two: if you already freelance, writing, design briefs, research, bookkeeping notes, use AI for the first draft and spend your time on the parts that need you. Faster work means you can take on more clients in the same hours.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  },
+  {
+   "kicker": "Way 3",
+   "title": "Sell templates from what you know",
+   "bullets": [
+    "Checklists, planners, scripts, guides",
+    "Your know-how + AI formatting",
+    "Sell on your own site or a marketplace"
+   ],
+   "say": "Way three: turn what you already know into templates. If you run a store, a checklist for opening day. If you're a contractor, a homeowner's maintenance planner. AI helps you organize and format it, but the know-how is yours, and that's what people buy.",
+   "accent": [
+    170,
+    110,
+    255
+   ]
+  },
+  {
+   "kicker": "Way 4",
+   "title": "Stop losing money first",
+   "bullets": [
+    "List every subscription and ad",
+    "Ask AI: keep, cut or test?",
+    "Saved money counts too"
+   ],
+   "say": "Way four, the fastest: stop losing money. List every subscription and ad you pay for, and what each one brings in. Ask AI which ones to keep, cut or test. One small business we know saved about four hundred eighty dollars a month this way. Your numbers will be different, but saved money is real money.",
+   "accent": [
+    0,
+    200,
+    170
+   ]
+  },
+  {
+   "kicker": "Pricing",
+   "title": "Price the job, not the hours",
+   "bullets": [
+    "Flat fee per job or per month",
+    "Write down exactly what's included",
+    "Start fair, raise prices with reviews"
+   ],
+   "say": "How to price it. Charge for the result, not the hours, because AI makes you fast. Use a flat fee per job or per month, write down exactly what's included, start at a fair price, and raise it as you collect good reviews.",
+   "accent": [
+    255,
+    150,
+    40
+   ],
+   "chat": {
+    "user": "I want to offer [monthly social posts] to [local restaurants]. Suggest 3 package names, what each includes, and questions I should ask before I set a price.",
+    "ai": "Starter: 8 posts a month\nGrowth: 12 posts + 2 photo visits\nPro: 20 posts + review replies\nAsk first: How many locations? Who approves posts? Which platforms?"
+   }
+  },
+  {
+   "kicker": "First customer",
+   "title": "Find your first 3 customers",
+   "bullets": [
+    "Start with people who already know you",
+    "Do one free sample, then ask",
+    "Ask happy customers for a referral"
+   ],
+   "say": "Your first three customers usually come from people who already know you. Offer one free sample, like a week of posts, show the result, then ask if they'd like it every month. And when they're happy, ask who else could use it.",
+   "accent": [
+    255,
+    90,
+    120
+   ]
+  },
+  {
+   "kicker": "Stay honest",
+   "title": "Avoid the scams",
+   "bullets": [
+    "No course that promises income",
+    "Disclose AI when the client asks",
+    "Never paste private client data"
+   ],
+   "say": "Stay safe and honest. Skip any course that promises a guaranteed income. Be open about using AI if your client asks, and never paste their private data into an AI tool.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  },
+  {
+   "kicker": "Run It With AI",
+   "title": "Subscribe for the next AI Money Move",
+   "bullets": [
+    "All prompts are in the description",
+    "We're trying to reach 100 subscribers by Dec 31"
+   ],
+   "say": "All the prompts are in the description. Comment which of the four ways you'll try first, and I'll make a prompt for it. We're a small channel trying to reach a hundred subscribers by December thirty first, so if this helped, please subscribe. Results vary, and it still takes real work, but you can start today.",
+   "accent": [
+    0,
+    175,
+    255
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "badge": "Smart Home Fixes · The 3-Point Front Door Check",
+ "shop_qr": false,
+ "scenes": [
+  {"photo": "video/weekly/photos/job4_chantilly_after_wide.jpg", "kicker": "The 3-Point Front Door Check", "title": "30 seconds. Point #3 is the one people forget.", "body": "Stand at your front door and check these.", "dur": 3.4},
+  {"photo": "video/weekly/photos/job5_ashburn_doorbell.jpg", "kicker": "Point 1 · See", "title": "Your camera sees faces AND the ground", "body": "If it can't see the package on the mat, it can't help you.", "dur": 3.4},
+  {"clip": "video/broll/omni_porch_light_scare.mp4", "ai": true, "ai_label": "AI-generated dramatization", "kicker": "Point 2 · Light", "title": "A light that turns on by itself", "body": "Motion or a sunset schedule. Dark doors invite trouble.", "dur": 4.2},
+  {"photo": "video/weekly/photos/lock_keypad_front.jpg", "kicker": "Point 3 · Lock", "title": "Can you lock it from your phone?", "body": "The one people forget: a smart lock you can check from anywhere.", "dur": 3.6},
+  {"art": "list", "kicker": "Your score", "title": "How many did you pass?", "items": ["3 of 3: you're covered", "2 of 3: one easy upgrade", "1 or 0: let's talk"], "dur": 3.6}
+ ],
+ "end": ["Failed a point? Free quote at novaprohome.com", "Follow for Smart Home Fixes"]
+}

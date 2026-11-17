@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "facebook-post/06_nest_cam.jpg",
+   "kicker": "Traveling?",
+   "title": "Leaving for Thanksgiving? Do this first",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/06_nest_cam.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Thermostat Away at 55°F+ · light schedules · arm the alarm · pause deliveries",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

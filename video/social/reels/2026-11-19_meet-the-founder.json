@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
+   "kicker": "Meet the founder",
+   "title": "Why an electrical engineer installs your doorbell",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/old_thermostat_wiring_close.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Meddy Baraei: BS in Electrical Engineering, 5+ years of hands-on electrical work.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

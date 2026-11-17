@@ -1,0 +1,14 @@
+{
+ "badge": "Installer Tip · Northern VA",
+ "scenes": [
+  {"photo": "video/enhanced/video/weekly/photos/garage_doorbell_wide.jpg", "kicker": "The problem", "title": "Ring doorbell missing people?", "body": "No alert until they're already at the door, or no alert at all. Here's what we check on every install.", "dur": 4.6},
+  {"photo": "video/enhanced/video/weekly/photos/job2_doorbell_front.jpg", "kicker": "Step 1", "title": "Open Motion Settings", "body": "Ring app → Devices → your doorbell → Motion Settings. Names vary a little by model.", "dur": 4.4},
+  {"photo": "video/enhanced/video/weekly/photos/greatfalls_new_done.jpg", "kicker": "Step 2", "title": "Raise Motion Sensitivity", "body": "Move the slider up one or two notches. Higher = longer detection range.", "dur": 4.4},
+  {"photo": "video/enhanced/video/weekly/photos/garage_doorbell_close.jpg", "kicker": "Step 3", "title": "Fix your Motion Zones", "body": "Make sure the zones cover your walkway and porch, not just the doorstep. Up to 3 zones per device.", "dur": 4.8},
+  {"photo": "video/enhanced/video/weekly/photos/greatfalls_old_angle.jpg", "kicker": "Step 4 · Battery models", "title": "Set Motion Frequency to Frequently", "body": "Advanced Settings → Motion Frequency. Uses more battery, catches more events.", "dur": 4.6},
+  {"photo": "video/enhanced/video/weekly/photos/job2_doorbell_side.jpg", "kicker": "Step 5", "title": "Check height and angle", "body": "About 4 ft high works best. A wedge or corner kit points it at the path people actually walk.", "dur": 4.6},
+  {"photo": "video/enhanced/video/weekly/photos/job2_chime.jpg", "kicker": "Step 6", "title": "Check Wi-Fi and power", "body": "Device Health: a weak signal or low battery means late or missed alerts. Fix those first.", "dur": 4.6},
+  {"photo": "video/enhanced/video/weekly/photos/greatfalls_bracket.jpg", "kicker": "Too many alerts now?", "title": "Go back one notch", "body": "Lower sensitivity or trim the zone to drop street traffic. Change one setting at a time and test.", "dur": 4.6}
+ ],
+ "end": ["Need a Ring pro?", "novaprohome.com"]
+}

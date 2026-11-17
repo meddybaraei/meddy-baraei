@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "video/weekly/photos/lock_keypad_front.jpg",
+   "kicker": "Property managers",
+   "title": "Tired of re-keying between tenants?",
+   "dur": 4.0
+  },
+  {
+   "photo": "video/weekly/photos/lock_keypad_front.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Remote lock codes · leak sensors · freeze protection for vacant units",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

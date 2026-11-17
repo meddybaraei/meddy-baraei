@@ -1,0 +1,27 @@
+{
+ "badge": "Smart Home Tips",
+ "scenes": [
+  {
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "kicker": "Winter prep",
+   "title": "Camera battery dying faster in the cold?",
+   "dur": 4.0
+  },
+  {
+   "photo": "facebook-post/extras/ring_solar_stucco.jpg",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "title": "",
+   "body": "Solar panels, leak sensors and freeze alerts before the first freeze.",
+   "dur": 4.5
+  }
+ ],
+ "end": [
+  "Book your free quote",
+  "novaprohome.com"
+ ],
+ "subscribe": "",
+ "music": "calm"
+}

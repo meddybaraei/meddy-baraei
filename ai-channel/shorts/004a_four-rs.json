@@ -1,0 +1,17 @@
+{
+ "title": "Make More Money From Customers You Already Have (The 4 Rs)",
+ "voice": "Charon",
+ "style": "Read this like an energetic, honest small-business coach in a quick social video. Punchy on the hook, then clear.",
+ "segments": [
+  {"kicker": "AI Money Moves", "title": "The easiest money is customers you already have", "bullets": ["Retain", "Review", "Refer", "Resell"], "big": "4",
+   "say": "The easiest money in your business isn't new customers. It's the ones you already have. It's called the four Rs, from Alex Hormozi, and the fourth R is where most of the money hides.",
+   "accent": [255, 190, 40]},
+  {"kicker": "Let AI write them", "title": "One prompt, all 4 Rs", "bullets": ["Retain: a check-in 3 days later", "Review: ask the same day", "Refer: who else needs this?", "Resell: offer the next item"],
+   "say": "Retain: check in three days after the sale. Review: ask for a review the same day. Refer: ask who else could use it. And resell: offer the next thing they'll need. Paste this prompt and AI writes all four messages for you in seconds.",
+   "accent": [0, 200, 170],
+   "chat": {"user": "I sell [furniture]. A customer just bought [a sofa]. Write 4 short texts: a 3-day check-in, a review request, a referral ask, and an offer for [a matching rug].", "ai": "1) Hi Sam! How's the new sofa settling in?\n2) Would you leave us a quick review? It helps a lot.\n3) Know anyone else shopping for furniture?\n4) Our matching rugs are 15% off this week."}},
+  {"kicker": "Run It With AI", "title": "Help us hit 100 subscribers", "bullets": ["Prompt is in the description", "Results vary. It still takes real work"],
+   "say": "Results vary, and you still have to send the messages. We're a small channel trying to reach a hundred subscribers by December thirty first. If this helped, subscribing really helps.",
+   "accent": [0, 175, 255]}
+ ]
+}
